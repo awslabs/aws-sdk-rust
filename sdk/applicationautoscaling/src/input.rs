@@ -42,7 +42,7 @@ impl DeleteScalingPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_scaling_policy(&self)?
+            crate::protocol_serde::shape_delete_scaling_policy::ser_delete_scaling_policy_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -119,7 +119,7 @@ impl DeleteScheduledActionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_scheduled_action(&self)?
+            crate::protocol_serde::shape_delete_scheduled_action::ser_delete_scheduled_action_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -196,7 +196,7 @@ impl DeregisterScalableTargetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deregister_scalable_target(&self)?
+            crate::protocol_serde::shape_deregister_scalable_target::ser_deregister_scalable_target_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -273,7 +273,7 @@ impl DescribeScalableTargetsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_scalable_targets(&self)?
+            crate::protocol_serde::shape_describe_scalable_targets::ser_describe_scalable_targets_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -350,7 +350,7 @@ impl DescribeScalingActivitiesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_activities(&self)?
+            crate::protocol_serde::shape_describe_scaling_activities::ser_describe_scaling_activities_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -427,7 +427,7 @@ impl DescribeScalingPoliciesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_policies(&self)?
+            crate::protocol_serde::shape_describe_scaling_policies::ser_describe_scaling_policies_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -504,7 +504,7 @@ impl DescribeScheduledActionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_scheduled_actions(&self)?
+            crate::protocol_serde::shape_describe_scheduled_actions::ser_describe_scheduled_actions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -581,7 +581,7 @@ impl PutScalingPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_scaling_policy(&self)?
+            crate::protocol_serde::shape_put_scaling_policy::ser_put_scaling_policy_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -658,7 +658,7 @@ impl PutScheduledActionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_scheduled_action(&self)?
+            crate::protocol_serde::shape_put_scheduled_action::ser_put_scheduled_action_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -735,7 +735,7 @@ impl RegisterScalableTargetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_scalable_target(&self)?
+            crate::protocol_serde::shape_register_scalable_target::ser_register_scalable_target_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

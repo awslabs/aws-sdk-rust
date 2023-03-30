@@ -42,7 +42,7 @@ impl CreateEnvironmentEc2Input {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_environment_ec2(&self)?
+            crate::protocol_serde::shape_create_environment_ec2::ser_create_environment_ec2_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -119,7 +119,7 @@ impl CreateEnvironmentMembershipInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_environment_membership(&self)?
+            crate::protocol_serde::shape_create_environment_membership::ser_create_environment_membership_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -196,7 +196,7 @@ impl DeleteEnvironmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment(&self)?
+            crate::protocol_serde::shape_delete_environment::ser_delete_environment_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -273,7 +273,7 @@ impl DeleteEnvironmentMembershipInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment_membership(&self)?
+            crate::protocol_serde::shape_delete_environment_membership::ser_delete_environment_membership_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -350,7 +350,7 @@ impl DescribeEnvironmentMembershipsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_environment_memberships(&self)?
+            crate::protocol_serde::shape_describe_environment_memberships::ser_describe_environment_memberships_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -427,7 +427,7 @@ impl DescribeEnvironmentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_environments(&self)?
+            crate::protocol_serde::shape_describe_environments::ser_describe_environments_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -504,7 +504,7 @@ impl DescribeEnvironmentStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_environment_status(&self)?
+            crate::protocol_serde::shape_describe_environment_status::ser_describe_environment_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -581,7 +581,7 @@ impl ListEnvironmentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_environments(&self)?
+            crate::protocol_serde::shape_list_environments::ser_list_environments_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -658,7 +658,7 @@ impl ListTagsForResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
+            crate::protocol_serde::shape_list_tags_for_resource::ser_list_tags_for_resource_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -735,7 +735,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -812,7 +812,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -889,7 +889,7 @@ impl UpdateEnvironmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?
+            crate::protocol_serde::shape_update_environment::ser_update_environment_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -966,7 +966,7 @@ impl UpdateEnvironmentMembershipInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_environment_membership(&self)?
+            crate::protocol_serde::shape_update_environment_membership::ser_update_environment_membership_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

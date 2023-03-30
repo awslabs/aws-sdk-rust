@@ -43,7 +43,7 @@ impl BatchCreateRumMetricDefinitionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_rum_metric_definitions(&self)?
+            crate::protocol_serde::shape_batch_create_rum_metric_definitions::ser_batch_create_rum_metric_definitions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -304,7 +304,7 @@ impl CreateAppMonitorInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_app_monitor(&self)?
+            crate::protocol_serde::shape_create_app_monitor::ser_create_app_monitor_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -617,7 +617,7 @@ impl GetAppMonitorDataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_app_monitor_data(&self)?
+            crate::protocol_serde::shape_get_app_monitor_data::ser_get_app_monitor_data_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -941,7 +941,7 @@ impl PutRumEventsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_rum_events(&self)?
+            crate::protocol_serde::shape_put_rum_events::ser_put_rum_events_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1023,7 +1023,7 @@ impl PutRumMetricsDestinationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_rum_metrics_destination(&self)?
+            crate::protocol_serde::shape_put_rum_metrics_destination::ser_put_rum_metrics_destination_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1101,7 +1101,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1263,7 +1263,7 @@ impl UpdateAppMonitorInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_app_monitor(&self)?
+            crate::protocol_serde::shape_update_app_monitor::ser_update_app_monitor_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1341,7 +1341,7 @@ impl UpdateRumMetricDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_rum_metric_definition(&self)?
+            crate::protocol_serde::shape_update_rum_metric_definition::ser_update_rum_metric_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

@@ -72,7 +72,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_accelerators_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_accelerators_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -168,7 +168,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_byoip_cidrs_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_byoip_cidrs_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -264,7 +264,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_accelerators_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_custom_routing_accelerators_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -354,7 +354,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_endpoint_groups_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_custom_routing_endpoint_groups_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -450,7 +450,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_listeners_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_custom_routing_listeners_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -546,7 +546,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_port_mappings_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_custom_routing_port_mappings_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -642,7 +642,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_port_mappings_by_destination_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_custom_routing_port_mappings_by_destination_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -738,7 +738,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_endpoint_groups_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_endpoint_groups_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -834,7 +834,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_listeners_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_listeners_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -870,7 +870,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Accelerator, aws_smithy_http::result::SdkError<crate::error::ListAcceleratorsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_accelerators_output_accelerators(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_accelerators_output_accelerators(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -887,7 +887,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ByoipCidr, aws_smithy_http::result::SdkError<crate::error::ListByoipCidrsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_byoip_cidrs_output_byoip_cidrs(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_byoip_cidrs_output_byoip_cidrs(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -904,7 +904,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::CustomRoutingAccelerator, aws_smithy_http::result::SdkError<crate::error::ListCustomRoutingAcceleratorsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_accelerators_output_accelerators(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_custom_routing_accelerators_output_accelerators(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -921,7 +921,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::CustomRoutingListener, aws_smithy_http::result::SdkError<crate::error::ListCustomRoutingListenersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_listeners_output_listeners(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_custom_routing_listeners_output_listeners(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -938,7 +938,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::PortMapping, aws_smithy_http::result::SdkError<crate::error::ListCustomRoutingPortMappingsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_port_mappings_output_port_mappings(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_custom_routing_port_mappings_output_port_mappings(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -955,7 +955,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DestinationPortMapping, aws_smithy_http::result::SdkError<crate::error::ListCustomRoutingPortMappingsByDestinationError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_port_mappings_by_destination_output_destination_port_mappings(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_custom_routing_port_mappings_by_destination_output_destination_port_mappings(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -972,7 +972,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::EndpointGroup, aws_smithy_http::result::SdkError<crate::error::ListEndpointGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_endpoint_groups_output_endpoint_groups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_endpoint_groups_output_endpoint_groups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -989,7 +989,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Listener, aws_smithy_http::result::SdkError<crate::error::ListListenersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_listeners_output_listeners(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_listeners_output_listeners(page).unwrap_or_default().into_iter())
                     }
                 }
 

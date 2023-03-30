@@ -26,11 +26,11 @@ impl aws_smithy_http::response::ParseHttpResponse for GetClip {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_get_clip(response))
+                    Some(crate::protocol_serde::shape_get_clip::de_get_clip_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_get_clip_error(response)
+                    crate::protocol_serde::shape_get_clip::de_get_clip_http_error(response)
                 }
             }
 
@@ -59,9 +59,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDASHStreamingSessionU
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_dash_streaming_session_url_error(response)
+                        crate::protocol_serde::shape_get_dash_streaming_session_url::de_get_dash_streaming_session_url_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_dash_streaming_session_url_response(response)
+                        crate::protocol_serde::shape_get_dash_streaming_session_url::de_get_dash_streaming_session_url_http_response(response)
                      }
                 }
             }
@@ -91,9 +91,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionUR
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_hls_streaming_session_url_error(response)
+                        crate::protocol_serde::shape_get_hls_streaming_session_url::de_get_hls_streaming_session_url_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_hls_streaming_session_url_response(response)
+                        crate::protocol_serde::shape_get_hls_streaming_session_url::de_get_hls_streaming_session_url_http_response(response)
                      }
                 }
             }
@@ -123,9 +123,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImages {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_images_error(response)
+                        crate::protocol_serde::shape_get_images::de_get_images_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_images_response(response)
+                        crate::protocol_serde::shape_get_images::de_get_images_http_response(response)
                      }
                 }
             }
@@ -157,11 +157,11 @@ impl aws_smithy_http::response::ParseHttpResponse for GetMediaForFragmentList {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_get_media_for_fragment_list(response))
+                    Some(crate::protocol_serde::shape_get_media_for_fragment_list::de_get_media_for_fragment_list_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_get_media_for_fragment_list_error(response)
+                    crate::protocol_serde::shape_get_media_for_fragment_list::de_get_media_for_fragment_list_http_error(response)
                 }
             }
 
@@ -190,9 +190,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFragments {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_fragments_error(response)
+                        crate::protocol_serde::shape_list_fragments::de_list_fragments_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_fragments_response(response)
+                        crate::protocol_serde::shape_list_fragments::de_list_fragments_http_response(response)
                      }
                 }
             }

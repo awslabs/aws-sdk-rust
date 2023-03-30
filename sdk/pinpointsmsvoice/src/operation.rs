@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_configuration_set_error(response)
+                        crate::protocol_serde::shape_create_configuration_set::de_create_configuration_set_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_configuration_set_response(response)
+                        crate::protocol_serde::shape_create_configuration_set::de_create_configuration_set_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEv
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_configuration_set_event_destination_error(response)
+                        crate::protocol_serde::shape_create_configuration_set_event_destination::de_create_configuration_set_event_destination_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_configuration_set_event_destination_response(response)
+                        crate::protocol_serde::shape_create_configuration_set_event_destination::de_create_configuration_set_event_destination_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_configuration_set_error(response)
+                        crate::protocol_serde::shape_delete_configuration_set::de_delete_configuration_set_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_configuration_set_response(response)
+                        crate::protocol_serde::shape_delete_configuration_set::de_delete_configuration_set_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEv
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_configuration_set_event_destination_error(response)
+                        crate::protocol_serde::shape_delete_configuration_set_event_destination::de_delete_configuration_set_event_destination_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_configuration_set_event_destination_response(response)
+                        crate::protocol_serde::shape_delete_configuration_set_event_destination::de_delete_configuration_set_event_destination_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_configuration_set_event_destinations_error(response)
+                        crate::protocol_serde::shape_get_configuration_set_event_destinations::de_get_configuration_set_event_destinations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_configuration_set_event_destinations_response(response)
+                        crate::protocol_serde::shape_get_configuration_set_event_destinations::de_get_configuration_set_event_destinations_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_configuration_sets_error(response)
+                        crate::protocol_serde::shape_list_configuration_sets::de_list_configuration_sets_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_configuration_sets_response(response)
+                        crate::protocol_serde::shape_list_configuration_sets::de_list_configuration_sets_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_send_voice_message_error(response)
+                        crate::protocol_serde::shape_send_voice_message::de_send_voice_message_http_error(response)
                      } else {
-                        crate::operation_deser::parse_send_voice_message_response(response)
+                        crate::protocol_serde::shape_send_voice_message::de_send_voice_message_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationSetEv
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_configuration_set_event_destination_error(response)
+                        crate::protocol_serde::shape_update_configuration_set_event_destination::de_update_configuration_set_event_destination_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_configuration_set_event_destination_response(response)
+                        crate::protocol_serde::shape_update_configuration_set_event_destination::de_update_configuration_set_event_destination_http_response(response)
                      }
                 }
             }

@@ -84,11 +84,7 @@ pub mod middleware;
 
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
-mod json_deser;
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;

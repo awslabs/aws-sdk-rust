@@ -57,7 +57,7 @@ impl CreateProjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_project_input( self.contents)?
+            crate::protocol_serde::shape_create_project_input::ser_contents_http_payload( self.contents)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -695,7 +695,7 @@ impl UpdateProjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_project_input( self.contents)?
+            crate::protocol_serde::shape_update_project_input::ser_contents_http_payload( self.contents)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

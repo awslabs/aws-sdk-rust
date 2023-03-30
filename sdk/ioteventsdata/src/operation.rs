@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_batch_acknowledge_alarm_error(response)
+                        crate::protocol_serde::shape_batch_acknowledge_alarm::de_batch_acknowledge_alarm_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_acknowledge_alarm_response(response)
+                        crate::protocol_serde::shape_batch_acknowledge_alarm::de_batch_acknowledge_alarm_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDetector {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_delete_detector_error(response)
+                        crate::protocol_serde::shape_batch_delete_detector::de_batch_delete_detector_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_delete_detector_response(response)
+                        crate::protocol_serde::shape_batch_delete_detector::de_batch_delete_detector_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisableAlarm {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_batch_disable_alarm_error(response)
+                        crate::protocol_serde::shape_batch_disable_alarm::de_batch_disable_alarm_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_disable_alarm_response(response)
+                        crate::protocol_serde::shape_batch_disable_alarm::de_batch_disable_alarm_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEnableAlarm {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_batch_enable_alarm_error(response)
+                        crate::protocol_serde::shape_batch_enable_alarm::de_batch_enable_alarm_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_enable_alarm_response(response)
+                        crate::protocol_serde::shape_batch_enable_alarm::de_batch_enable_alarm_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutMessage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_put_message_error(response)
+                        crate::protocol_serde::shape_batch_put_message::de_batch_put_message_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_put_message_response(response)
+                        crate::protocol_serde::shape_batch_put_message::de_batch_put_message_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchResetAlarm {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_batch_reset_alarm_error(response)
+                        crate::protocol_serde::shape_batch_reset_alarm::de_batch_reset_alarm_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_reset_alarm_response(response)
+                        crate::protocol_serde::shape_batch_reset_alarm::de_batch_reset_alarm_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchSnoozeAlarm {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_batch_snooze_alarm_error(response)
+                        crate::protocol_serde::shape_batch_snooze_alarm::de_batch_snooze_alarm_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_snooze_alarm_response(response)
+                        crate::protocol_serde::shape_batch_snooze_alarm::de_batch_snooze_alarm_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDetector {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_update_detector_error(response)
+                        crate::protocol_serde::shape_batch_update_detector::de_batch_update_detector_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_update_detector_response(response)
+                        crate::protocol_serde::shape_batch_update_detector::de_batch_update_detector_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarm {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_alarm_error(response)
+                        crate::protocol_serde::shape_describe_alarm::de_describe_alarm_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_alarm_response(response)
+                        crate::protocol_serde::shape_describe_alarm::de_describe_alarm_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetector {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_detector_error(response)
+                        crate::protocol_serde::shape_describe_detector::de_describe_detector_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_detector_response(response)
+                        crate::protocol_serde::shape_describe_detector::de_describe_detector_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarms {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_alarms_error(response)
+                        crate::protocol_serde::shape_list_alarms::de_list_alarms_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_alarms_response(response)
+                        crate::protocol_serde::shape_list_alarms::de_list_alarms_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectors {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_detectors_error(response)
+                        crate::protocol_serde::shape_list_detectors::de_list_detectors_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_detectors_response(response)
+                        crate::protocol_serde::shape_list_detectors::de_list_detectors_http_response(response)
                      }
                 }
             }

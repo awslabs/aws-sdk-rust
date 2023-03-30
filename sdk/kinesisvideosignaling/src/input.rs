@@ -37,7 +37,7 @@ impl GetIceServerConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_ice_server_config(&self)?
+            crate::protocol_serde::shape_get_ice_server_config::ser_get_ice_server_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -109,7 +109,7 @@ impl SendAlexaOfferToMasterInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_alexa_offer_to_master(&self)?
+            crate::protocol_serde::shape_send_alexa_offer_to_master::ser_send_alexa_offer_to_master_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

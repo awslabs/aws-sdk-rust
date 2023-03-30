@@ -66,7 +66,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_aggregate_compliance_by_config_rules_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_aggregate_compliance_by_config_rules_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -162,7 +162,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_aggregate_compliance_by_conformance_packs_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_aggregate_compliance_by_conformance_packs_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -258,7 +258,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_aggregation_authorizations_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_aggregation_authorizations_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -348,7 +348,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_compliance_by_config_rule_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_compliance_by_config_rule_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -444,7 +444,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_compliance_by_resource_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_compliance_by_resource_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -540,7 +540,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_config_rule_evaluation_status_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_config_rule_evaluation_status_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -630,7 +630,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_config_rules_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_config_rules_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -726,7 +726,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_configuration_aggregators_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_configuration_aggregators_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -822,7 +822,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_configuration_aggregator_sources_status_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_configuration_aggregator_sources_status_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -912,7 +912,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_conformance_pack_compliance_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_conformance_pack_compliance_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1008,7 +1008,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_conformance_packs_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_conformance_packs_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1104,7 +1104,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_conformance_pack_status_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_conformance_pack_status_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1200,7 +1200,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_organization_config_rules_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_organization_config_rules_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1296,7 +1296,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_organization_config_rule_statuses_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_organization_config_rule_statuses_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1392,7 +1392,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_organization_conformance_packs_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_organization_conformance_packs_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1488,7 +1488,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_organization_conformance_pack_statuses_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_organization_conformance_pack_statuses_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1584,7 +1584,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_pending_aggregation_requests_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_pending_aggregation_requests_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1674,7 +1674,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_remediation_exceptions_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_remediation_exceptions_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1770,7 +1770,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_remediation_execution_status_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_remediation_execution_status_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1860,7 +1860,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_retention_configurations_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_describe_retention_configurations_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1956,7 +1956,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_aggregate_compliance_details_by_config_rule_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_aggregate_compliance_details_by_config_rule_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2046,7 +2046,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_aggregate_config_rule_compliance_summary_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_aggregate_config_rule_compliance_summary_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2136,7 +2136,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_aggregate_conformance_pack_compliance_summary_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_aggregate_conformance_pack_compliance_summary_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2226,7 +2226,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_aggregate_discovered_resource_counts_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_aggregate_discovered_resource_counts_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2322,7 +2322,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_compliance_details_by_config_rule_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_compliance_details_by_config_rule_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2412,7 +2412,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_compliance_details_by_resource_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_compliance_details_by_resource_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2502,7 +2502,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_conformance_pack_compliance_details_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_conformance_pack_compliance_details_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2598,7 +2598,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_conformance_pack_compliance_summary_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_conformance_pack_compliance_summary_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2688,7 +2688,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_discovered_resource_counts_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_discovered_resource_counts_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2784,7 +2784,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_organization_config_rule_detailed_status_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_organization_config_rule_detailed_status_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2880,7 +2880,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_organization_conformance_pack_detailed_status_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_organization_conformance_pack_detailed_status_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2976,7 +2976,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_resource_config_history_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_get_resource_config_history_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3072,7 +3072,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_aggregate_discovered_resources_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_aggregate_discovered_resources_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3162,7 +3162,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_conformance_pack_compliance_scores_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_conformance_pack_compliance_scores_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3258,7 +3258,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_discovered_resources_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_discovered_resources_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3354,7 +3354,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_resource_evaluations_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_resource_evaluations_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3444,7 +3444,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_stored_queries_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_stored_queries_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3540,7 +3540,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_list_tags_for_resource_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3636,7 +3636,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_select_aggregate_resource_config_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_select_aggregate_resource_config_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3732,7 +3732,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_select_resource_config_output_next_token(resp);
+                                    let new_token = crate::lens::reflens_select_resource_config_output_next_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3768,7 +3768,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::AggregateComplianceByConformancePack, aws_smithy_http::result::SdkError<crate::error::DescribeAggregateComplianceByConformancePacksError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_aggregate_compliance_by_conformance_packs_output_aggregate_compliance_by_conformance_packs(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_aggregate_compliance_by_conformance_packs_output_aggregate_compliance_by_conformance_packs(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3785,7 +3785,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::AggregationAuthorization, aws_smithy_http::result::SdkError<crate::error::DescribeAggregationAuthorizationsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_aggregation_authorizations_output_aggregation_authorizations(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_aggregation_authorizations_output_aggregation_authorizations(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3802,7 +3802,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ComplianceByConfigRule, aws_smithy_http::result::SdkError<crate::error::DescribeComplianceByConfigRuleError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_compliance_by_config_rule_output_compliance_by_config_rules(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_compliance_by_config_rule_output_compliance_by_config_rules(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3819,7 +3819,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ComplianceByResource, aws_smithy_http::result::SdkError<crate::error::DescribeComplianceByResourceError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_compliance_by_resource_output_compliance_by_resources(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_compliance_by_resource_output_compliance_by_resources(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3836,7 +3836,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConfigRuleEvaluationStatus, aws_smithy_http::result::SdkError<crate::error::DescribeConfigRuleEvaluationStatusError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_config_rule_evaluation_status_output_config_rules_evaluation_status(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_config_rule_evaluation_status_output_config_rules_evaluation_status(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3853,7 +3853,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConfigRule, aws_smithy_http::result::SdkError<crate::error::DescribeConfigRulesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_config_rules_output_config_rules(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_config_rules_output_config_rules(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3870,7 +3870,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConfigurationAggregator, aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationAggregatorsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_configuration_aggregators_output_configuration_aggregators(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_configuration_aggregators_output_configuration_aggregators(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3887,7 +3887,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::AggregatedSourceStatus, aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationAggregatorSourcesStatusError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_configuration_aggregator_sources_status_output_aggregated_source_status_list(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_configuration_aggregator_sources_status_output_aggregated_source_status_list(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3904,7 +3904,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConformancePackDetail, aws_smithy_http::result::SdkError<crate::error::DescribeConformancePacksError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_conformance_packs_output_conformance_pack_details(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_conformance_packs_output_conformance_pack_details(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3921,7 +3921,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConformancePackStatusDetail, aws_smithy_http::result::SdkError<crate::error::DescribeConformancePackStatusError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_conformance_pack_status_output_conformance_pack_status_details(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_conformance_pack_status_output_conformance_pack_status_details(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3938,7 +3938,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OrganizationConfigRule, aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigRulesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_organization_config_rules_output_organization_config_rules(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_organization_config_rules_output_organization_config_rules(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3955,7 +3955,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OrganizationConfigRuleStatus, aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigRuleStatusesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_organization_config_rule_statuses_output_organization_config_rule_statuses(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_organization_config_rule_statuses_output_organization_config_rule_statuses(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3972,7 +3972,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OrganizationConformancePack, aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConformancePacksError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_organization_conformance_packs_output_organization_conformance_packs(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_organization_conformance_packs_output_organization_conformance_packs(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3989,7 +3989,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OrganizationConformancePackStatus, aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConformancePackStatusesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_organization_conformance_pack_statuses_output_organization_conformance_pack_statuses(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_organization_conformance_pack_statuses_output_organization_conformance_pack_statuses(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4006,7 +4006,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::PendingAggregationRequest, aws_smithy_http::result::SdkError<crate::error::DescribePendingAggregationRequestsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_pending_aggregation_requests_output_pending_aggregation_requests(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_pending_aggregation_requests_output_pending_aggregation_requests(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4023,7 +4023,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::RemediationExecutionStatus, aws_smithy_http::result::SdkError<crate::error::DescribeRemediationExecutionStatusError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_remediation_execution_status_output_remediation_execution_statuses(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_remediation_execution_status_output_remediation_execution_statuses(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4040,7 +4040,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::RetentionConfiguration, aws_smithy_http::result::SdkError<crate::error::DescribeRetentionConfigurationsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_retention_configurations_output_retention_configurations(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_retention_configurations_output_retention_configurations(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4057,7 +4057,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::AggregateEvaluationResult, aws_smithy_http::result::SdkError<crate::error::GetAggregateComplianceDetailsByConfigRuleError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_aggregate_compliance_details_by_config_rule_output_aggregate_evaluation_results(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_aggregate_compliance_details_by_config_rule_output_aggregate_evaluation_results(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4074,7 +4074,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::EvaluationResult, aws_smithy_http::result::SdkError<crate::error::GetComplianceDetailsByConfigRuleError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_compliance_details_by_config_rule_output_evaluation_results(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_compliance_details_by_config_rule_output_evaluation_results(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4091,7 +4091,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::EvaluationResult, aws_smithy_http::result::SdkError<crate::error::GetComplianceDetailsByResourceError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_compliance_details_by_resource_output_evaluation_results(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_compliance_details_by_resource_output_evaluation_results(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4108,7 +4108,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConformancePackComplianceSummary, aws_smithy_http::result::SdkError<crate::error::GetConformancePackComplianceSummaryError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_conformance_pack_compliance_summary_output_conformance_pack_compliance_summary_list(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_conformance_pack_compliance_summary_output_conformance_pack_compliance_summary_list(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4125,7 +4125,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::MemberAccountStatus, aws_smithy_http::result::SdkError<crate::error::GetOrganizationConfigRuleDetailedStatusError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_organization_config_rule_detailed_status_output_organization_config_rule_detailed_status(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_organization_config_rule_detailed_status_output_organization_config_rule_detailed_status(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4142,7 +4142,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OrganizationConformancePackDetailedStatus, aws_smithy_http::result::SdkError<crate::error::GetOrganizationConformancePackDetailedStatusError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_organization_conformance_pack_detailed_status_output_organization_conformance_pack_detailed_statuses(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_organization_conformance_pack_detailed_status_output_organization_conformance_pack_detailed_statuses(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4159,7 +4159,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ConfigurationItem, aws_smithy_http::result::SdkError<crate::error::GetResourceConfigHistoryError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_resource_config_history_output_configuration_items(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_resource_config_history_output_configuration_items(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4176,7 +4176,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::AggregateResourceIdentifier, aws_smithy_http::result::SdkError<crate::error::ListAggregateDiscoveredResourcesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_aggregate_discovered_resources_output_resource_identifiers(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_aggregate_discovered_resources_output_resource_identifiers(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4193,7 +4193,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ResourceIdentifier, aws_smithy_http::result::SdkError<crate::error::ListDiscoveredResourcesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_discovered_resources_output_resource_identifiers(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_discovered_resources_output_resource_identifiers(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4210,7 +4210,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ResourceEvaluation, aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_resource_evaluations_output_resource_evaluations(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_resource_evaluations_output_resource_evaluations(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4227,7 +4227,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Tag, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_tags_for_resource_output_tags(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4244,7 +4244,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<std::string::String, aws_smithy_http::result::SdkError<crate::error::SelectAggregateResourceConfigError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_select_aggregate_resource_config_output_results(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_select_aggregate_resource_config_output_results(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -4261,7 +4261,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<std::string::String, aws_smithy_http::result::SdkError<crate::error::SelectResourceConfigError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_select_resource_config_output_results(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_select_resource_config_output_results(page).unwrap_or_default().into_iter())
                     }
                 }
 

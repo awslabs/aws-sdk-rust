@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLatestConfiguration {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_latest_configuration_error(response)
+                        crate::protocol_serde::shape_get_latest_configuration::de_get_latest_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_latest_configuration_response(response)
+                        crate::protocol_serde::shape_get_latest_configuration::de_get_latest_configuration_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConfigurationSessio
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::operation_deser::parse_start_configuration_session_error(response)
+                        crate::protocol_serde::shape_start_configuration_session::de_start_configuration_session_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_configuration_session_response(response)
+                        crate::protocol_serde::shape_start_configuration_session::de_start_configuration_session_http_response(response)
                      }
                 }
             }

@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCateg
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_call_analytics_category_error(response)
+                        crate::protocol_serde::shape_create_call_analytics_category::de_create_call_analytics_category_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_call_analytics_category_response(response)
+                        crate::protocol_serde::shape_create_call_analytics_category::de_create_call_analytics_category_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLanguageModel {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_language_model_error(response)
+                        crate::protocol_serde::shape_create_language_model::de_create_language_model_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_language_model_response(response)
+                        crate::protocol_serde::shape_create_language_model::de_create_language_model_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMedicalVocabulary 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_medical_vocabulary_error(response)
+                        crate::protocol_serde::shape_create_medical_vocabulary::de_create_medical_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_medical_vocabulary_response(response)
+                        crate::protocol_serde::shape_create_medical_vocabulary::de_create_medical_vocabulary_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabulary {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_vocabulary_error(response)
+                        crate::protocol_serde::shape_create_vocabulary::de_create_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_vocabulary_response(response)
+                        crate::protocol_serde::shape_create_vocabulary::de_create_vocabulary_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabularyFilter {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_vocabulary_filter_error(response)
+                        crate::protocol_serde::shape_create_vocabulary_filter::de_create_vocabulary_filter_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_vocabulary_filter_response(response)
+                        crate::protocol_serde::shape_create_vocabulary_filter::de_create_vocabulary_filter_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsCateg
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_call_analytics_category_error(response)
+                        crate::protocol_serde::shape_delete_call_analytics_category::de_delete_call_analytics_category_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_call_analytics_category_response(response)
+                        crate::protocol_serde::shape_delete_call_analytics_category::de_delete_call_analytics_category_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_call_analytics_job_error(response)
+                        crate::protocol_serde::shape_delete_call_analytics_job::de_delete_call_analytics_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_call_analytics_job_response(response)
+                        crate::protocol_serde::shape_delete_call_analytics_job::de_delete_call_analytics_job_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLanguageModel {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_language_model_error(response)
+                        crate::protocol_serde::shape_delete_language_model::de_delete_language_model_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_language_model_response(response)
+                        crate::protocol_serde::shape_delete_language_model::de_delete_language_model_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalTranscripti
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_medical_transcription_job_error(response)
+                        crate::protocol_serde::shape_delete_medical_transcription_job::de_delete_medical_transcription_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_medical_transcription_job_response(response)
+                        crate::protocol_serde::shape_delete_medical_transcription_job::de_delete_medical_transcription_job_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalVocabulary 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_medical_vocabulary_error(response)
+                        crate::protocol_serde::shape_delete_medical_vocabulary::de_delete_medical_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_medical_vocabulary_response(response)
+                        crate::protocol_serde::shape_delete_medical_vocabulary::de_delete_medical_vocabulary_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTranscriptionJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_transcription_job_error(response)
+                        crate::protocol_serde::shape_delete_transcription_job::de_delete_transcription_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_transcription_job_response(response)
+                        crate::protocol_serde::shape_delete_transcription_job::de_delete_transcription_job_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabulary {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_vocabulary_error(response)
+                        crate::protocol_serde::shape_delete_vocabulary::de_delete_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_vocabulary_response(response)
+                        crate::protocol_serde::shape_delete_vocabulary::de_delete_vocabulary_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabularyFilter {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_vocabulary_filter_error(response)
+                        crate::protocol_serde::shape_delete_vocabulary_filter::de_delete_vocabulary_filter_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_vocabulary_filter_response(response)
+                        crate::protocol_serde::shape_delete_vocabulary_filter::de_delete_vocabulary_filter_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLanguageModel {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_language_model_error(response)
+                        crate::protocol_serde::shape_describe_language_model::de_describe_language_model_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_language_model_response(response)
+                        crate::protocol_serde::shape_describe_language_model::de_describe_language_model_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsCategory
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_call_analytics_category_error(response)
+                        crate::protocol_serde::shape_get_call_analytics_category::de_get_call_analytics_category_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_call_analytics_category_response(response)
+                        crate::protocol_serde::shape_get_call_analytics_category::de_get_call_analytics_category_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_call_analytics_job_error(response)
+                        crate::protocol_serde::shape_get_call_analytics_job::de_get_call_analytics_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_call_analytics_job_response(response)
+                        crate::protocol_serde::shape_get_call_analytics_job::de_get_call_analytics_job_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalTranscriptionJ
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_medical_transcription_job_error(response)
+                        crate::protocol_serde::shape_get_medical_transcription_job::de_get_medical_transcription_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_medical_transcription_job_response(response)
+                        crate::protocol_serde::shape_get_medical_transcription_job::de_get_medical_transcription_job_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_medical_vocabulary_error(response)
+                        crate::protocol_serde::shape_get_medical_vocabulary::de_get_medical_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_medical_vocabulary_response(response)
+                        crate::protocol_serde::shape_get_medical_vocabulary::de_get_medical_vocabulary_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTranscriptionJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_transcription_job_error(response)
+                        crate::protocol_serde::shape_get_transcription_job::de_get_transcription_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_transcription_job_response(response)
+                        crate::protocol_serde::shape_get_transcription_job::de_get_transcription_job_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVocabulary {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_vocabulary_error(response)
+                        crate::protocol_serde::shape_get_vocabulary::de_get_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_vocabulary_response(response)
+                        crate::protocol_serde::shape_get_vocabulary::de_get_vocabulary_http_response(response)
                      }
                 }
             }
@@ -664,9 +664,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVocabularyFilter {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_vocabulary_filter_error(response)
+                        crate::protocol_serde::shape_get_vocabulary_filter::de_get_vocabulary_filter_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_vocabulary_filter_response(response)
+                        crate::protocol_serde::shape_get_vocabulary_filter::de_get_vocabulary_filter_http_response(response)
                      }
                 }
             }
@@ -696,9 +696,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsCategor
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_call_analytics_categories_error(response)
+                        crate::protocol_serde::shape_list_call_analytics_categories::de_list_call_analytics_categories_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_call_analytics_categories_response(response)
+                        crate::protocol_serde::shape_list_call_analytics_categories::de_list_call_analytics_categories_http_response(response)
                      }
                 }
             }
@@ -728,9 +728,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsJobs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_call_analytics_jobs_error(response)
+                        crate::protocol_serde::shape_list_call_analytics_jobs::de_list_call_analytics_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_call_analytics_jobs_response(response)
+                        crate::protocol_serde::shape_list_call_analytics_jobs::de_list_call_analytics_jobs_http_response(response)
                      }
                 }
             }
@@ -760,9 +760,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLanguageModels {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_language_models_error(response)
+                        crate::protocol_serde::shape_list_language_models::de_list_language_models_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_language_models_response(response)
+                        crate::protocol_serde::shape_list_language_models::de_list_language_models_http_response(response)
                      }
                 }
             }
@@ -792,9 +792,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalTranscription
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_medical_transcription_jobs_error(response)
+                        crate::protocol_serde::shape_list_medical_transcription_jobs::de_list_medical_transcription_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_medical_transcription_jobs_response(response)
+                        crate::protocol_serde::shape_list_medical_transcription_jobs::de_list_medical_transcription_jobs_http_response(response)
                      }
                 }
             }
@@ -824,9 +824,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalVocabularies 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_medical_vocabularies_error(response)
+                        crate::protocol_serde::shape_list_medical_vocabularies::de_list_medical_vocabularies_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_medical_vocabularies_response(response)
+                        crate::protocol_serde::shape_list_medical_vocabularies::de_list_medical_vocabularies_http_response(response)
                      }
                 }
             }
@@ -856,9 +856,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -888,9 +888,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTranscriptionJobs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_transcription_jobs_error(response)
+                        crate::protocol_serde::shape_list_transcription_jobs::de_list_transcription_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_transcription_jobs_response(response)
+                        crate::protocol_serde::shape_list_transcription_jobs::de_list_transcription_jobs_http_response(response)
                      }
                 }
             }
@@ -920,9 +920,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularies {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_vocabularies_error(response)
+                        crate::protocol_serde::shape_list_vocabularies::de_list_vocabularies_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_vocabularies_response(response)
+                        crate::protocol_serde::shape_list_vocabularies::de_list_vocabularies_http_response(response)
                      }
                 }
             }
@@ -952,9 +952,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_vocabulary_filters_error(response)
+                        crate::protocol_serde::shape_list_vocabulary_filters::de_list_vocabulary_filters_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_vocabulary_filters_response(response)
+                        crate::protocol_serde::shape_list_vocabulary_filters::de_list_vocabulary_filters_http_response(response)
                      }
                 }
             }
@@ -984,9 +984,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCallAnalyticsJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_call_analytics_job_error(response)
+                        crate::protocol_serde::shape_start_call_analytics_job::de_start_call_analytics_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_call_analytics_job_response(response)
+                        crate::protocol_serde::shape_start_call_analytics_job::de_start_call_analytics_job_http_response(response)
                      }
                 }
             }
@@ -1016,9 +1016,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMedicalTranscriptio
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_medical_transcription_job_error(response)
+                        crate::protocol_serde::shape_start_medical_transcription_job::de_start_medical_transcription_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_medical_transcription_job_response(response)
+                        crate::protocol_serde::shape_start_medical_transcription_job::de_start_medical_transcription_job_http_response(response)
                      }
                 }
             }
@@ -1048,9 +1048,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTranscriptionJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_transcription_job_error(response)
+                        crate::protocol_serde::shape_start_transcription_job::de_start_transcription_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_transcription_job_response(response)
+                        crate::protocol_serde::shape_start_transcription_job::de_start_transcription_job_http_response(response)
                      }
                 }
             }
@@ -1080,9 +1080,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -1112,9 +1112,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -1144,9 +1144,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCateg
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_call_analytics_category_error(response)
+                        crate::protocol_serde::shape_update_call_analytics_category::de_update_call_analytics_category_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_call_analytics_category_response(response)
+                        crate::protocol_serde::shape_update_call_analytics_category::de_update_call_analytics_category_http_response(response)
                      }
                 }
             }
@@ -1176,9 +1176,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_medical_vocabulary_error(response)
+                        crate::protocol_serde::shape_update_medical_vocabulary::de_update_medical_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_medical_vocabulary_response(response)
+                        crate::protocol_serde::shape_update_medical_vocabulary::de_update_medical_vocabulary_http_response(response)
                      }
                 }
             }
@@ -1208,9 +1208,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabulary {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_vocabulary_error(response)
+                        crate::protocol_serde::shape_update_vocabulary::de_update_vocabulary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_vocabulary_response(response)
+                        crate::protocol_serde::shape_update_vocabulary::de_update_vocabulary_http_response(response)
                      }
                 }
             }
@@ -1240,9 +1240,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabularyFilter {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_vocabulary_filter_error(response)
+                        crate::protocol_serde::shape_update_vocabulary_filter::de_update_vocabulary_filter_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_vocabulary_filter_response(response)
+                        crate::protocol_serde::shape_update_vocabulary_filter::de_update_vocabulary_filter_http_response(response)
                      }
                 }
             }

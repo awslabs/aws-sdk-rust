@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimDevicesByClaimCode 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_claim_devices_by_claim_code_error(response)
+                        crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code_http_error(response)
                      } else {
-                        crate::operation_deser::parse_claim_devices_by_claim_code_response(response)
+                        crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDevice {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_device_error(response)
+                        crate::protocol_serde::shape_describe_device::de_describe_device_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_device_response(response)
+                        crate::protocol_serde::shape_describe_device::de_describe_device_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for FinalizeDeviceClaim {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_finalize_device_claim_error(response)
+                        crate::protocol_serde::shape_finalize_device_claim::de_finalize_device_claim_http_error(response)
                      } else {
-                        crate::operation_deser::parse_finalize_device_claim_response(response)
+                        crate::protocol_serde::shape_finalize_device_claim::de_finalize_device_claim_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceMethods {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_device_methods_error(response)
+                        crate::protocol_serde::shape_get_device_methods::de_get_device_methods_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_device_methods_response(response)
+                        crate::protocol_serde::shape_get_device_methods::de_get_device_methods_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateDeviceClaim {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_initiate_device_claim_error(response)
+                        crate::protocol_serde::shape_initiate_device_claim::de_initiate_device_claim_http_error(response)
                      } else {
-                        crate::operation_deser::parse_initiate_device_claim_response(response)
+                        crate::protocol_serde::shape_initiate_device_claim::de_initiate_device_claim_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeDeviceMethod {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_invoke_device_method_error(response)
+                        crate::protocol_serde::shape_invoke_device_method::de_invoke_device_method_http_error(response)
                      } else {
-                        crate::operation_deser::parse_invoke_device_method_response(response)
+                        crate::protocol_serde::shape_invoke_device_method::de_invoke_device_method_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceEvents {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_device_events_error(response)
+                        crate::protocol_serde::shape_list_device_events::de_list_device_events_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_device_events_response(response)
+                        crate::protocol_serde::shape_list_device_events::de_list_device_events_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_devices_error(response)
+                        crate::protocol_serde::shape_list_devices::de_list_devices_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_devices_response(response)
+                        crate::protocol_serde::shape_list_devices::de_list_devices_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UnclaimDevice {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_unclaim_device_error(response)
+                        crate::protocol_serde::shape_unclaim_device::de_unclaim_device_http_error(response)
                      } else {
-                        crate::operation_deser::parse_unclaim_device_response(response)
+                        crate::protocol_serde::shape_unclaim_device::de_unclaim_device_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDeviceState {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_device_state_error(response)
+                        crate::protocol_serde::shape_update_device_state::de_update_device_state_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_device_state_response(response)
+                        crate::protocol_serde::shape_update_device_state::de_update_device_state_http_response(response)
                      }
                 }
             }

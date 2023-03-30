@@ -91,26 +91,18 @@ pub mod middleware;
 
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
 /// Paginators for the service
 pub mod paginator;
 
-mod http_serde;
-
-mod json_deser;
-
 /// Generated accessors for nested fields
 mod lens;
+
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;
 
 mod json_errors;
-
-mod json_ser;
 
 #[doc(inline)]
 pub use client::Client;

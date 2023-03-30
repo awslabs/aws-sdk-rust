@@ -66,7 +66,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_portfolio_shares_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_describe_portfolio_shares_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -156,7 +156,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_get_provisioned_product_outputs_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_get_provisioned_product_outputs_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -246,7 +246,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_accepted_portfolio_shares_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_accepted_portfolio_shares_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -336,7 +336,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_budgets_for_resource_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_budgets_for_resource_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -426,7 +426,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_constraints_for_portfolio_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_constraints_for_portfolio_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -516,7 +516,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_launch_paths_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_launch_paths_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -606,7 +606,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_organization_portfolio_access_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_organization_portfolio_access_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -696,7 +696,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_portfolio_access_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_portfolio_access_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -786,7 +786,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_portfolios_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_portfolios_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -876,7 +876,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_portfolios_for_product_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_portfolios_for_product_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -966,7 +966,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_principals_for_portfolio_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_principals_for_portfolio_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1056,7 +1056,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_provisioning_artifacts_for_service_action_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_provisioning_artifacts_for_service_action_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1146,7 +1146,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_resources_for_tag_option_output_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_resources_for_tag_option_output_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1236,7 +1236,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_service_actions_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_service_actions_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1326,7 +1326,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_service_actions_for_provisioning_artifact_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_service_actions_for_provisioning_artifact_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1416,7 +1416,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_list_tag_options_output_page_token(resp);
+                                    let new_token = crate::lens::reflens_list_tag_options_output_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1506,7 +1506,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_search_products_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_search_products_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1596,7 +1596,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_search_products_as_admin_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_search_products_as_admin_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1686,7 +1686,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_search_provisioned_products_output_next_page_token(resp);
+                                    let new_token = crate::lens::reflens_search_provisioned_products_output_next_page_token(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                         true

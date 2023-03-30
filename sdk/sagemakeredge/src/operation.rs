@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployments {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_deployments_error(response)
+                        crate::protocol_serde::shape_get_deployments::de_get_deployments_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_deployments_response(response)
+                        crate::protocol_serde::shape_get_deployments::de_get_deployments_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceRegistration {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_device_registration_error(response)
+                        crate::protocol_serde::shape_get_device_registration::de_get_device_registration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_device_registration_response(response)
+                        crate::protocol_serde::shape_get_device_registration::de_get_device_registration_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SendHeartbeat {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_send_heartbeat_error(response)
+                        crate::protocol_serde::shape_send_heartbeat::de_send_heartbeat_http_error(response)
                      } else {
-                        crate::operation_deser::parse_send_heartbeat_response(response)
+                        crate::protocol_serde::shape_send_heartbeat::de_send_heartbeat_http_response(response)
                      }
                 }
             }

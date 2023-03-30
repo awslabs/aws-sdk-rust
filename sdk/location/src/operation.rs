@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrackerConsumer
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_associate_tracker_consumer_error(response)
+                        crate::protocol_serde::shape_associate_tracker_consumer::de_associate_tracker_consumer_http_error(response)
                      } else {
-                        crate::operation_deser::parse_associate_tracker_consumer_response(response)
+                        crate::protocol_serde::shape_associate_tracker_consumer::de_associate_tracker_consumer_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDevicePositio
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_delete_device_position_history_error(response)
+                        crate::protocol_serde::shape_batch_delete_device_position_history::de_batch_delete_device_position_history_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_delete_device_position_history_response(response)
+                        crate::protocol_serde::shape_batch_delete_device_position_history::de_batch_delete_device_position_history_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteGeofence {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_delete_geofence_error(response)
+                        crate::protocol_serde::shape_batch_delete_geofence::de_batch_delete_geofence_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_delete_geofence_response(response)
+                        crate::protocol_serde::shape_batch_delete_geofence::de_batch_delete_geofence_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEvaluateGeofences {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_evaluate_geofences_error(response)
+                        crate::protocol_serde::shape_batch_evaluate_geofences::de_batch_evaluate_geofences_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_evaluate_geofences_response(response)
+                        crate::protocol_serde::shape_batch_evaluate_geofences::de_batch_evaluate_geofences_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetDevicePosition {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_get_device_position_error(response)
+                        crate::protocol_serde::shape_batch_get_device_position::de_batch_get_device_position_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_get_device_position_response(response)
+                        crate::protocol_serde::shape_batch_get_device_position::de_batch_get_device_position_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutGeofence {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_put_geofence_error(response)
+                        crate::protocol_serde::shape_batch_put_geofence::de_batch_put_geofence_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_put_geofence_response(response)
+                        crate::protocol_serde::shape_batch_put_geofence::de_batch_put_geofence_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDevicePositio
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_update_device_position_error(response)
+                        crate::protocol_serde::shape_batch_update_device_position::de_batch_update_device_position_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_update_device_position_response(response)
+                        crate::protocol_serde::shape_batch_update_device_position::de_batch_update_device_position_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRoute {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_calculate_route_error(response)
+                        crate::protocol_serde::shape_calculate_route::de_calculate_route_http_error(response)
                      } else {
-                        crate::operation_deser::parse_calculate_route_response(response)
+                        crate::protocol_serde::shape_calculate_route::de_calculate_route_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRouteMatrix {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_calculate_route_matrix_error(response)
+                        crate::protocol_serde::shape_calculate_route_matrix::de_calculate_route_matrix_http_error(response)
                      } else {
-                        crate::operation_deser::parse_calculate_route_matrix_response(response)
+                        crate::protocol_serde::shape_calculate_route_matrix::de_calculate_route_matrix_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGeofenceCollection
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_geofence_collection_error(response)
+                        crate::protocol_serde::shape_create_geofence_collection::de_create_geofence_collection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_geofence_collection_response(response)
+                        crate::protocol_serde::shape_create_geofence_collection::de_create_geofence_collection_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMap {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_map_error(response)
+                        crate::protocol_serde::shape_create_map::de_create_map_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_map_response(response)
+                        crate::protocol_serde::shape_create_map::de_create_map_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlaceIndex {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_place_index_error(response)
+                        crate::protocol_serde::shape_create_place_index::de_create_place_index_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_place_index_response(response)
+                        crate::protocol_serde::shape_create_place_index::de_create_place_index_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRouteCalculator {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_route_calculator_error(response)
+                        crate::protocol_serde::shape_create_route_calculator::de_create_route_calculator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_route_calculator_response(response)
+                        crate::protocol_serde::shape_create_route_calculator::de_create_route_calculator_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTracker {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_tracker_error(response)
+                        crate::protocol_serde::shape_create_tracker::de_create_tracker_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_tracker_response(response)
+                        crate::protocol_serde::shape_create_tracker::de_create_tracker_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGeofenceCollection
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_geofence_collection_error(response)
+                        crate::protocol_serde::shape_delete_geofence_collection::de_delete_geofence_collection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_geofence_collection_response(response)
+                        crate::protocol_serde::shape_delete_geofence_collection::de_delete_geofence_collection_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMap {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_map_error(response)
+                        crate::protocol_serde::shape_delete_map::de_delete_map_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_map_response(response)
+                        crate::protocol_serde::shape_delete_map::de_delete_map_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlaceIndex {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_place_index_error(response)
+                        crate::protocol_serde::shape_delete_place_index::de_delete_place_index_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_place_index_response(response)
+                        crate::protocol_serde::shape_delete_place_index::de_delete_place_index_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRouteCalculator {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_route_calculator_error(response)
+                        crate::protocol_serde::shape_delete_route_calculator::de_delete_route_calculator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_route_calculator_response(response)
+                        crate::protocol_serde::shape_delete_route_calculator::de_delete_route_calculator_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTracker {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_tracker_error(response)
+                        crate::protocol_serde::shape_delete_tracker::de_delete_tracker_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_tracker_response(response)
+                        crate::protocol_serde::shape_delete_tracker::de_delete_tracker_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGeofenceCollecti
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_geofence_collection_error(response)
+                        crate::protocol_serde::shape_describe_geofence_collection::de_describe_geofence_collection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_geofence_collection_response(response)
+                        crate::protocol_serde::shape_describe_geofence_collection::de_describe_geofence_collection_http_response(response)
                      }
                 }
             }
@@ -664,9 +664,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMap {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_map_error(response)
+                        crate::protocol_serde::shape_describe_map::de_describe_map_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_map_response(response)
+                        crate::protocol_serde::shape_describe_map::de_describe_map_http_response(response)
                      }
                 }
             }
@@ -696,9 +696,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePlaceIndex {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_place_index_error(response)
+                        crate::protocol_serde::shape_describe_place_index::de_describe_place_index_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_place_index_response(response)
+                        crate::protocol_serde::shape_describe_place_index::de_describe_place_index_http_response(response)
                      }
                 }
             }
@@ -728,9 +728,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRouteCalculator 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_route_calculator_error(response)
+                        crate::protocol_serde::shape_describe_route_calculator::de_describe_route_calculator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_route_calculator_response(response)
+                        crate::protocol_serde::shape_describe_route_calculator::de_describe_route_calculator_http_response(response)
                      }
                 }
             }
@@ -760,9 +760,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTracker {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_tracker_error(response)
+                        crate::protocol_serde::shape_describe_tracker::de_describe_tracker_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_tracker_response(response)
+                        crate::protocol_serde::shape_describe_tracker::de_describe_tracker_http_response(response)
                      }
                 }
             }
@@ -792,9 +792,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrackerConsu
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_disassociate_tracker_consumer_error(response)
+                        crate::protocol_serde::shape_disassociate_tracker_consumer::de_disassociate_tracker_consumer_http_error(response)
                      } else {
-                        crate::operation_deser::parse_disassociate_tracker_consumer_response(response)
+                        crate::protocol_serde::shape_disassociate_tracker_consumer::de_disassociate_tracker_consumer_http_response(response)
                      }
                 }
             }
@@ -824,9 +824,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePosition {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_device_position_error(response)
+                        crate::protocol_serde::shape_get_device_position::de_get_device_position_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_device_position_response(response)
+                        crate::protocol_serde::shape_get_device_position::de_get_device_position_http_response(response)
                      }
                 }
             }
@@ -856,9 +856,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePositionHistory
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_device_position_history_error(response)
+                        crate::protocol_serde::shape_get_device_position_history::de_get_device_position_history_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_device_position_history_response(response)
+                        crate::protocol_serde::shape_get_device_position_history::de_get_device_position_history_http_response(response)
                      }
                 }
             }
@@ -888,9 +888,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeofence {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_geofence_error(response)
+                        crate::protocol_serde::shape_get_geofence::de_get_geofence_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_geofence_response(response)
+                        crate::protocol_serde::shape_get_geofence::de_get_geofence_http_response(response)
                      }
                 }
             }
@@ -920,9 +920,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapGlyphs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_map_glyphs_error(response)
+                        crate::protocol_serde::shape_get_map_glyphs::de_get_map_glyphs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_map_glyphs_response(response)
+                        crate::protocol_serde::shape_get_map_glyphs::de_get_map_glyphs_http_response(response)
                      }
                 }
             }
@@ -952,9 +952,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapSprites {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_map_sprites_error(response)
+                        crate::protocol_serde::shape_get_map_sprites::de_get_map_sprites_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_map_sprites_response(response)
+                        crate::protocol_serde::shape_get_map_sprites::de_get_map_sprites_http_response(response)
                      }
                 }
             }
@@ -984,9 +984,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapStyleDescriptor {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_map_style_descriptor_error(response)
+                        crate::protocol_serde::shape_get_map_style_descriptor::de_get_map_style_descriptor_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_map_style_descriptor_response(response)
+                        crate::protocol_serde::shape_get_map_style_descriptor::de_get_map_style_descriptor_http_response(response)
                      }
                 }
             }
@@ -1016,9 +1016,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapTile {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_map_tile_error(response)
+                        crate::protocol_serde::shape_get_map_tile::de_get_map_tile_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_map_tile_response(response)
+                        crate::protocol_serde::shape_get_map_tile::de_get_map_tile_http_response(response)
                      }
                 }
             }
@@ -1048,9 +1048,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlace {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_place_error(response)
+                        crate::protocol_serde::shape_get_place::de_get_place_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_place_response(response)
+                        crate::protocol_serde::shape_get_place::de_get_place_http_response(response)
                      }
                 }
             }
@@ -1080,9 +1080,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevicePositions {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_device_positions_error(response)
+                        crate::protocol_serde::shape_list_device_positions::de_list_device_positions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_device_positions_response(response)
+                        crate::protocol_serde::shape_list_device_positions::de_list_device_positions_http_response(response)
                      }
                 }
             }
@@ -1112,9 +1112,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeofenceCollections 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_geofence_collections_error(response)
+                        crate::protocol_serde::shape_list_geofence_collections::de_list_geofence_collections_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_geofence_collections_response(response)
+                        crate::protocol_serde::shape_list_geofence_collections::de_list_geofence_collections_http_response(response)
                      }
                 }
             }
@@ -1144,9 +1144,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeofences {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_geofences_error(response)
+                        crate::protocol_serde::shape_list_geofences::de_list_geofences_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_geofences_response(response)
+                        crate::protocol_serde::shape_list_geofences::de_list_geofences_http_response(response)
                      }
                 }
             }
@@ -1176,9 +1176,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMaps {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_maps_error(response)
+                        crate::protocol_serde::shape_list_maps::de_list_maps_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_maps_response(response)
+                        crate::protocol_serde::shape_list_maps::de_list_maps_http_response(response)
                      }
                 }
             }
@@ -1208,9 +1208,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlaceIndexes {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_place_indexes_error(response)
+                        crate::protocol_serde::shape_list_place_indexes::de_list_place_indexes_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_place_indexes_response(response)
+                        crate::protocol_serde::shape_list_place_indexes::de_list_place_indexes_http_response(response)
                      }
                 }
             }
@@ -1240,9 +1240,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRouteCalculators {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_route_calculators_error(response)
+                        crate::protocol_serde::shape_list_route_calculators::de_list_route_calculators_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_route_calculators_response(response)
+                        crate::protocol_serde::shape_list_route_calculators::de_list_route_calculators_http_response(response)
                      }
                 }
             }
@@ -1272,9 +1272,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -1304,9 +1304,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrackerConsumers {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tracker_consumers_error(response)
+                        crate::protocol_serde::shape_list_tracker_consumers::de_list_tracker_consumers_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tracker_consumers_response(response)
+                        crate::protocol_serde::shape_list_tracker_consumers::de_list_tracker_consumers_http_response(response)
                      }
                 }
             }
@@ -1336,9 +1336,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrackers {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_trackers_error(response)
+                        crate::protocol_serde::shape_list_trackers::de_list_trackers_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_trackers_response(response)
+                        crate::protocol_serde::shape_list_trackers::de_list_trackers_http_response(response)
                      }
                 }
             }
@@ -1368,9 +1368,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGeofence {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_geofence_error(response)
+                        crate::protocol_serde::shape_put_geofence::de_put_geofence_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_geofence_response(response)
+                        crate::protocol_serde::shape_put_geofence::de_put_geofence_http_response(response)
                      }
                 }
             }
@@ -1400,9 +1400,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosit
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_search_place_index_for_position_error(response)
+                        crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position_http_error(response)
                      } else {
-                        crate::operation_deser::parse_search_place_index_for_position_response(response)
+                        crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position_http_response(response)
                      }
                 }
             }
@@ -1432,9 +1432,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForSugge
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_search_place_index_for_suggestions_error(response)
+                        crate::protocol_serde::shape_search_place_index_for_suggestions::de_search_place_index_for_suggestions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_search_place_index_for_suggestions_response(response)
+                        crate::protocol_serde::shape_search_place_index_for_suggestions::de_search_place_index_for_suggestions_http_response(response)
                      }
                 }
             }
@@ -1464,9 +1464,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForText 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_search_place_index_for_text_error(response)
+                        crate::protocol_serde::shape_search_place_index_for_text::de_search_place_index_for_text_http_error(response)
                      } else {
-                        crate::operation_deser::parse_search_place_index_for_text_response(response)
+                        crate::protocol_serde::shape_search_place_index_for_text::de_search_place_index_for_text_http_response(response)
                      }
                 }
             }
@@ -1496,9 +1496,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -1528,9 +1528,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -1560,9 +1560,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGeofenceCollection
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_geofence_collection_error(response)
+                        crate::protocol_serde::shape_update_geofence_collection::de_update_geofence_collection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_geofence_collection_response(response)
+                        crate::protocol_serde::shape_update_geofence_collection::de_update_geofence_collection_http_response(response)
                      }
                 }
             }
@@ -1592,9 +1592,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMap {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_map_error(response)
+                        crate::protocol_serde::shape_update_map::de_update_map_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_map_response(response)
+                        crate::protocol_serde::shape_update_map::de_update_map_http_response(response)
                      }
                 }
             }
@@ -1624,9 +1624,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePlaceIndex {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_place_index_error(response)
+                        crate::protocol_serde::shape_update_place_index::de_update_place_index_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_place_index_response(response)
+                        crate::protocol_serde::shape_update_place_index::de_update_place_index_http_response(response)
                      }
                 }
             }
@@ -1656,9 +1656,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRouteCalculator {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_route_calculator_error(response)
+                        crate::protocol_serde::shape_update_route_calculator::de_update_route_calculator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_route_calculator_response(response)
+                        crate::protocol_serde::shape_update_route_calculator::de_update_route_calculator_http_response(response)
                      }
                 }
             }
@@ -1688,9 +1688,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTracker {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_tracker_error(response)
+                        crate::protocol_serde::shape_update_tracker::de_update_tracker_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_tracker_response(response)
+                        crate::protocol_serde::shape_update_tracker::de_update_tracker_http_response(response)
                      }
                 }
             }

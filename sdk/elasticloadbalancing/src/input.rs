@@ -37,7 +37,7 @@ impl AddTagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?
+            crate::protocol_serde::shape_add_tags_input::ser_add_tags_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -109,7 +109,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_apply_security_groups_to_load_balancer(&self)?
+            crate::protocol_serde::shape_apply_security_groups_to_load_balancer_input::ser_apply_security_groups_to_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -181,7 +181,7 @@ impl AttachLoadBalancerToSubnetsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_to_subnets(&self)?
+            crate::protocol_serde::shape_attach_load_balancer_to_subnets_input::ser_attach_load_balancer_to_subnets_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -253,7 +253,7 @@ impl ConfigureHealthCheckInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_configure_health_check(&self)?
+            crate::protocol_serde::shape_configure_health_check_input::ser_configure_health_check_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -325,7 +325,7 @@ impl CreateAppCookieStickinessPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_app_cookie_stickiness_policy(&self)?
+            crate::protocol_serde::shape_create_app_cookie_stickiness_policy_input::ser_create_app_cookie_stickiness_policy_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -397,7 +397,7 @@ impl CreateLbCookieStickinessPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_lb_cookie_stickiness_policy(&self)?
+            crate::protocol_serde::shape_create_lb_cookie_stickiness_policy_input::ser_create_lb_cookie_stickiness_policy_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -469,7 +469,7 @@ impl CreateLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?
+            crate::protocol_serde::shape_create_load_balancer_input::ser_create_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -541,7 +541,7 @@ impl CreateLoadBalancerListenersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_listeners(&self)?
+            crate::protocol_serde::shape_create_load_balancer_listeners_input::ser_create_load_balancer_listeners_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -613,7 +613,7 @@ impl CreateLoadBalancerPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_policy(&self)?
+            crate::protocol_serde::shape_create_load_balancer_policy_input::ser_create_load_balancer_policy_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -685,7 +685,7 @@ impl DeleteLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?
+            crate::protocol_serde::shape_delete_load_balancer_input::ser_delete_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -757,7 +757,7 @@ impl DeleteLoadBalancerListenersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_listeners(&self)?
+            crate::protocol_serde::shape_delete_load_balancer_listeners_input::ser_delete_load_balancer_listeners_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -829,7 +829,7 @@ impl DeleteLoadBalancerPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_policy(&self)?
+            crate::protocol_serde::shape_delete_load_balancer_policy_input::ser_delete_load_balancer_policy_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -901,7 +901,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deregister_instances_from_load_balancer(&self)?
+            crate::protocol_serde::shape_deregister_instances_from_load_balancer_input::ser_deregister_instances_from_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -973,7 +973,7 @@ impl DescribeAccountLimitsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(&self)?
+            crate::protocol_serde::shape_describe_account_limits_input::ser_describe_account_limits_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1045,7 +1045,7 @@ impl DescribeInstanceHealthInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_health(&self)?
+            crate::protocol_serde::shape_describe_instance_health_input::ser_describe_instance_health_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1117,7 +1117,7 @@ impl DescribeLoadBalancerAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self)?
+            crate::protocol_serde::shape_describe_load_balancer_attributes_input::ser_describe_load_balancer_attributes_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1189,7 +1189,7 @@ impl DescribeLoadBalancerPoliciesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policies(&self)?
+            crate::protocol_serde::shape_describe_load_balancer_policies_input::ser_describe_load_balancer_policies_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1261,7 +1261,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policy_types(&self)?
+            crate::protocol_serde::shape_describe_load_balancer_policy_types_input::ser_describe_load_balancer_policy_types_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1333,7 +1333,7 @@ impl DescribeLoadBalancersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(&self)?
+            crate::protocol_serde::shape_describe_load_balancers_input::ser_describe_load_balancers_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1405,7 +1405,7 @@ impl DescribeTagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?
+            crate::protocol_serde::shape_describe_tags_input::ser_describe_tags_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1477,7 +1477,7 @@ impl DetachLoadBalancerFromSubnetsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_from_subnets(&self)?
+            crate::protocol_serde::shape_detach_load_balancer_from_subnets_input::ser_detach_load_balancer_from_subnets_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1549,7 +1549,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disable_availability_zones_for_load_balancer(&self)?
+            crate::protocol_serde::shape_disable_availability_zones_for_load_balancer_input::ser_disable_availability_zones_for_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1621,7 +1621,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_enable_availability_zones_for_load_balancer(&self)?
+            crate::protocol_serde::shape_enable_availability_zones_for_load_balancer_input::ser_enable_availability_zones_for_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1693,7 +1693,7 @@ impl ModifyLoadBalancerAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self)?
+            crate::protocol_serde::shape_modify_load_balancer_attributes_input::ser_modify_load_balancer_attributes_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1765,7 +1765,7 @@ impl RegisterInstancesWithLoadBalancerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_instances_with_load_balancer(&self)?
+            crate::protocol_serde::shape_register_instances_with_load_balancer_input::ser_register_instances_with_load_balancer_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1837,7 +1837,7 @@ impl RemoveTagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?
+            crate::protocol_serde::shape_remove_tags_input::ser_remove_tags_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1909,7 +1909,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_listener_ssl_certificate(&self)?
+            crate::protocol_serde::shape_set_load_balancer_listener_ssl_certificate_input::ser_set_load_balancer_listener_ssl_certificate_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1981,7 +1981,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_for_backend_server(&self)?
+            crate::protocol_serde::shape_set_load_balancer_policies_for_backend_server_input::ser_set_load_balancer_policies_for_backend_server_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -2053,7 +2053,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_of_listener(&self)?
+            crate::protocol_serde::shape_set_load_balancer_policies_of_listener_input::ser_set_load_balancer_policies_of_listener_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

@@ -72,7 +72,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_blue_green_deployments_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_blue_green_deployments_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -168,7 +168,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_certificates_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_certificates_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -264,7 +264,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_backtracks_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_cluster_backtracks_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -360,7 +360,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_endpoints_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_cluster_endpoints_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -456,7 +456,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_parameter_groups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_cluster_parameter_groups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -552,7 +552,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_parameters_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_cluster_parameters_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -648,7 +648,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_clusters_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_clusters_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -744,7 +744,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_snapshots_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_cluster_snapshots_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -840,7 +840,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_engine_versions_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_engine_versions_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -936,7 +936,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_instance_automated_backups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_instance_automated_backups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1032,7 +1032,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_instances_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_instances_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1128,7 +1128,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_log_files_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_log_files_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1224,7 +1224,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_parameter_groups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_parameter_groups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1320,7 +1320,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_parameters_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_parameters_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1416,7 +1416,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxies_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_proxies_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1512,7 +1512,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxy_endpoints_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_proxy_endpoints_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1608,7 +1608,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxy_target_groups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_proxy_target_groups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1704,7 +1704,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxy_targets_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_proxy_targets_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1800,7 +1800,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_security_groups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_security_groups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1896,7 +1896,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_snapshots_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_snapshots_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -1992,7 +1992,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_db_subnet_groups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_db_subnet_groups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2088,7 +2088,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_engine_default_parameters_output_engine_defaults_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_engine_default_parameters_output_engine_defaults_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2184,7 +2184,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_events_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_events_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2280,7 +2280,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_event_subscriptions_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_event_subscriptions_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2376,7 +2376,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_export_tasks_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_export_tasks_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2472,7 +2472,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_global_clusters_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_global_clusters_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2568,7 +2568,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_option_group_options_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_option_group_options_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2664,7 +2664,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_option_groups_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_option_groups_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2760,7 +2760,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_orderable_db_instance_options_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_orderable_db_instance_options_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2856,7 +2856,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_pending_maintenance_actions_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_pending_maintenance_actions_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -2952,7 +2952,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_reserved_db_instances_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_reserved_db_instances_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3048,7 +3048,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_reserved_db_instances_offerings_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_reserved_db_instances_offerings_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3144,7 +3144,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_describe_source_regions_output_marker(resp);
+                                    let new_token = crate::lens::reflens_describe_source_regions_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3234,7 +3234,7 @@
                             // If the input member is None or it was an error
                             let done = match resp {
                                 Ok(ref resp) => {
-                                    let new_token = crate::lens::reflens_structure_crate_output_download_db_log_file_portion_output_marker(resp);
+                                    let new_token = crate::lens::reflens_download_db_log_file_portion_output_marker(resp);
                                     let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                     if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                         true
@@ -3270,7 +3270,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::BlueGreenDeployment, aws_smithy_http::result::SdkError<crate::error::DescribeBlueGreenDeploymentsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_blue_green_deployments_output_blue_green_deployments(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_blue_green_deployments_output_blue_green_deployments(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3287,7 +3287,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Certificate, aws_smithy_http::result::SdkError<crate::error::DescribeCertificatesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_certificates_output_certificates(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_certificates_output_certificates(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3304,7 +3304,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbClusterBacktrack, aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterBacktracksError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_backtracks_output_db_cluster_backtracks(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_cluster_backtracks_output_db_cluster_backtracks(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3321,7 +3321,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbClusterEndpoint, aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterEndpointsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_endpoints_output_db_cluster_endpoints(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_cluster_endpoints_output_db_cluster_endpoints(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3338,7 +3338,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbClusterParameterGroup, aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterParameterGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_parameter_groups_output_db_cluster_parameter_groups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_cluster_parameter_groups_output_db_cluster_parameter_groups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3355,7 +3355,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Parameter, aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterParametersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_parameters_output_parameters(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_cluster_parameters_output_parameters(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3372,7 +3372,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbCluster, aws_smithy_http::result::SdkError<crate::error::DescribeDBClustersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_clusters_output_db_clusters(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_clusters_output_db_clusters(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3389,7 +3389,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbClusterSnapshot, aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterSnapshotsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_snapshots_output_db_cluster_snapshots(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_cluster_snapshots_output_db_cluster_snapshots(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3406,7 +3406,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbEngineVersion, aws_smithy_http::result::SdkError<crate::error::DescribeDBEngineVersionsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_engine_versions_output_db_engine_versions(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_engine_versions_output_db_engine_versions(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3423,7 +3423,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbInstanceAutomatedBackup, aws_smithy_http::result::SdkError<crate::error::DescribeDBInstanceAutomatedBackupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_instance_automated_backups_output_db_instance_automated_backups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_instance_automated_backups_output_db_instance_automated_backups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3440,7 +3440,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbInstance, aws_smithy_http::result::SdkError<crate::error::DescribeDBInstancesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_instances_output_db_instances(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_instances_output_db_instances(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3457,7 +3457,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DescribeDbLogFilesDetails, aws_smithy_http::result::SdkError<crate::error::DescribeDBLogFilesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_log_files_output_describe_db_log_files(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_log_files_output_describe_db_log_files(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3474,7 +3474,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbParameterGroup, aws_smithy_http::result::SdkError<crate::error::DescribeDBParameterGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_parameter_groups_output_db_parameter_groups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_parameter_groups_output_db_parameter_groups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3491,7 +3491,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Parameter, aws_smithy_http::result::SdkError<crate::error::DescribeDBParametersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_parameters_output_parameters(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_parameters_output_parameters(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3508,7 +3508,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbProxy, aws_smithy_http::result::SdkError<crate::error::DescribeDBProxiesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_proxies_output_db_proxies(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_proxies_output_db_proxies(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3525,7 +3525,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbProxyEndpoint, aws_smithy_http::result::SdkError<crate::error::DescribeDBProxyEndpointsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_proxy_endpoints_output_db_proxy_endpoints(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_proxy_endpoints_output_db_proxy_endpoints(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3542,7 +3542,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbProxyTargetGroup, aws_smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_proxy_target_groups_output_target_groups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_proxy_target_groups_output_target_groups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3559,7 +3559,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbProxyTarget, aws_smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_proxy_targets_output_targets(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_proxy_targets_output_targets(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3576,7 +3576,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbSecurityGroup, aws_smithy_http::result::SdkError<crate::error::DescribeDBSecurityGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_security_groups_output_db_security_groups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_security_groups_output_db_security_groups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3593,7 +3593,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbSnapshot, aws_smithy_http::result::SdkError<crate::error::DescribeDBSnapshotsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_snapshots_output_db_snapshots(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_snapshots_output_db_snapshots(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3610,7 +3610,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::DbSubnetGroup, aws_smithy_http::result::SdkError<crate::error::DescribeDBSubnetGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_subnet_groups_output_db_subnet_groups(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_subnet_groups_output_db_subnet_groups(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3627,7 +3627,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Parameter, aws_smithy_http::result::SdkError<crate::error::DescribeEngineDefaultParametersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_engine_default_parameters_output_engine_defaults_parameters(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_engine_default_parameters_output_engine_defaults_parameters(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3644,7 +3644,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::Event, aws_smithy_http::result::SdkError<crate::error::DescribeEventsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_events_output_events(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_events_output_events(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3661,7 +3661,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::EventSubscription, aws_smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_event_subscriptions_output_event_subscriptions_list(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_event_subscriptions_output_event_subscriptions_list(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3678,7 +3678,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ExportTask, aws_smithy_http::result::SdkError<crate::error::DescribeExportTasksError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_export_tasks_output_export_tasks(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_export_tasks_output_export_tasks(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3695,7 +3695,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::GlobalCluster, aws_smithy_http::result::SdkError<crate::error::DescribeGlobalClustersError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_global_clusters_output_global_clusters(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_global_clusters_output_global_clusters(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3712,7 +3712,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OptionGroupOption, aws_smithy_http::result::SdkError<crate::error::DescribeOptionGroupOptionsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_option_group_options_output_option_group_options(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_option_group_options_output_option_group_options(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3729,7 +3729,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OptionGroup, aws_smithy_http::result::SdkError<crate::error::DescribeOptionGroupsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_option_groups_output_option_groups_list(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_option_groups_output_option_groups_list(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3746,7 +3746,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::OrderableDbInstanceOption, aws_smithy_http::result::SdkError<crate::error::DescribeOrderableDBInstanceOptionsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_orderable_db_instance_options_output_orderable_db_instance_options(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_orderable_db_instance_options_output_orderable_db_instance_options(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3763,7 +3763,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ResourcePendingMaintenanceActions, aws_smithy_http::result::SdkError<crate::error::DescribePendingMaintenanceActionsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_pending_maintenance_actions_output_pending_maintenance_actions(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_pending_maintenance_actions_output_pending_maintenance_actions(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3780,7 +3780,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ReservedDbInstance, aws_smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_reserved_db_instances_output_reserved_db_instances(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_reserved_db_instances_output_reserved_db_instances(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3797,7 +3797,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::ReservedDbInstancesOffering, aws_smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesOfferingsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_reserved_db_instances_offerings_output_reserved_db_instances_offerings(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_reserved_db_instances_offerings_output_reserved_db_instances_offerings(page).unwrap_or_default().into_iter())
                     }
                 }
 
@@ -3814,7 +3814,7 @@
                     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
                     pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::model::SourceRegion, aws_smithy_http::result::SdkError<crate::error::DescribeSourceRegionsError>>> + Unpin
                      {
-                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_source_regions_output_source_regions(page).unwrap_or_default().into_iter())
+                        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_source_regions_output_source_regions(page).unwrap_or_default().into_iter())
                     }
                 }
 

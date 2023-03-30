@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlertManagerDefini
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_create_alert_manager_definition_error(response)
+                        crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_alert_manager_definition_response(response)
+                        crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoggingConfigurati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_create_logging_configuration_error(response)
+                        crate::protocol_serde::shape_create_logging_configuration::de_create_logging_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_logging_configuration_response(response)
+                        crate::protocol_serde::shape_create_logging_configuration::de_create_logging_configuration_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroupsNamespac
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_create_rule_groups_namespace_error(response)
+                        crate::protocol_serde::shape_create_rule_groups_namespace::de_create_rule_groups_namespace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_rule_groups_namespace_response(response)
+                        crate::protocol_serde::shape_create_rule_groups_namespace::de_create_rule_groups_namespace_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_create_workspace_error(response)
+                        crate::protocol_serde::shape_create_workspace::de_create_workspace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_workspace_response(response)
+                        crate::protocol_serde::shape_create_workspace::de_create_workspace_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlertManagerDefini
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_delete_alert_manager_definition_error(response)
+                        crate::protocol_serde::shape_delete_alert_manager_definition::de_delete_alert_manager_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_alert_manager_definition_response(response)
+                        crate::protocol_serde::shape_delete_alert_manager_definition::de_delete_alert_manager_definition_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_delete_logging_configuration_error(response)
+                        crate::protocol_serde::shape_delete_logging_configuration::de_delete_logging_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_logging_configuration_response(response)
+                        crate::protocol_serde::shape_delete_logging_configuration::de_delete_logging_configuration_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroupsNamespac
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_delete_rule_groups_namespace_error(response)
+                        crate::protocol_serde::shape_delete_rule_groups_namespace::de_delete_rule_groups_namespace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_rule_groups_namespace_response(response)
+                        crate::protocol_serde::shape_delete_rule_groups_namespace::de_delete_rule_groups_namespace_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_delete_workspace_error(response)
+                        crate::protocol_serde::shape_delete_workspace::de_delete_workspace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_workspace_response(response)
+                        crate::protocol_serde::shape_delete_workspace::de_delete_workspace_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlertManagerDefi
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_alert_manager_definition_error(response)
+                        crate::protocol_serde::shape_describe_alert_manager_definition::de_describe_alert_manager_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_alert_manager_definition_response(response)
+                        crate::protocol_serde::shape_describe_alert_manager_definition::de_describe_alert_manager_definition_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfigura
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_logging_configuration_error(response)
+                        crate::protocol_serde::shape_describe_logging_configuration::de_describe_logging_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_logging_configuration_response(response)
+                        crate::protocol_serde::shape_describe_logging_configuration::de_describe_logging_configuration_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupsNamesp
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_rule_groups_namespace_error(response)
+                        crate::protocol_serde::shape_describe_rule_groups_namespace::de_describe_rule_groups_namespace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_rule_groups_namespace_response(response)
+                        crate::protocol_serde::shape_describe_rule_groups_namespace::de_describe_rule_groups_namespace_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspace {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_workspace_error(response)
+                        crate::protocol_serde::shape_describe_workspace::de_describe_workspace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_workspace_response(response)
+                        crate::protocol_serde::shape_describe_workspace::de_describe_workspace_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroupsNamespaces
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_rule_groups_namespaces_error(response)
+                        crate::protocol_serde::shape_list_rule_groups_namespaces::de_list_rule_groups_namespaces_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_rule_groups_namespaces_response(response)
+                        crate::protocol_serde::shape_list_rule_groups_namespaces::de_list_rule_groups_namespaces_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkspaces {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_workspaces_error(response)
+                        crate::protocol_serde::shape_list_workspaces::de_list_workspaces_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_workspaces_response(response)
+                        crate::protocol_serde::shape_list_workspaces::de_list_workspaces_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlertManagerDefinitio
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_put_alert_manager_definition_error(response)
+                        crate::protocol_serde::shape_put_alert_manager_definition::de_put_alert_manager_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_alert_manager_definition_response(response)
+                        crate::protocol_serde::shape_put_alert_manager_definition::de_put_alert_manager_definition_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRuleGroupsNamespace {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_put_rule_groups_namespace_error(response)
+                        crate::protocol_serde::shape_put_rule_groups_namespace::de_put_rule_groups_namespace_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_rule_groups_namespace_response(response)
+                        crate::protocol_serde::shape_put_rule_groups_namespace::de_put_rule_groups_namespace_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_update_logging_configuration_error(response)
+                        crate::protocol_serde::shape_update_logging_configuration::de_update_logging_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_logging_configuration_response(response)
+                        crate::protocol_serde::shape_update_logging_configuration::de_update_logging_configuration_http_response(response)
                      }
                 }
             }
@@ -664,9 +664,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspaceAlias {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
-                        crate::operation_deser::parse_update_workspace_alias_error(response)
+                        crate::protocol_serde::shape_update_workspace_alias::de_update_workspace_alias_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_workspace_alias_response(response)
+                        crate::protocol_serde::shape_update_workspace_alias::de_update_workspace_alias_http_response(response)
                      }
                 }
             }

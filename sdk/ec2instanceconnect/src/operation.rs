@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SendSerialConsoleSSHPubl
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_send_serial_console_ssh_public_key_error(response)
+                        crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_error(response)
                      } else {
-                        crate::operation_deser::parse_send_serial_console_ssh_public_key_response(response)
+                        crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SendSSHPublicKey {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_send_ssh_public_key_error(response)
+                        crate::protocol_serde::shape_send_ssh_public_key::de_send_ssh_public_key_http_error(response)
                      } else {
-                        crate::operation_deser::parse_send_ssh_public_key_response(response)
+                        crate::protocol_serde::shape_send_ssh_public_key::de_send_ssh_public_key_http_response(response)
                      }
                 }
             }

@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoleCredentials {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_role_credentials_error(response)
+                        crate::protocol_serde::shape_get_role_credentials::de_get_role_credentials_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_role_credentials_response(response)
+                        crate::protocol_serde::shape_get_role_credentials::de_get_role_credentials_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountRoles {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_account_roles_error(response)
+                        crate::protocol_serde::shape_list_account_roles::de_list_account_roles_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_account_roles_response(response)
+                        crate::protocol_serde::shape_list_account_roles::de_list_account_roles_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccounts {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_accounts_error(response)
+                        crate::protocol_serde::shape_list_accounts::de_list_accounts_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_accounts_response(response)
+                        crate::protocol_serde::shape_list_accounts::de_list_accounts_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for Logout {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_logout_error(response)
+                        crate::protocol_serde::shape_logout::de_logout_http_error(response)
                      } else {
-                        crate::operation_deser::parse_logout_response(response)
+                        crate::protocol_serde::shape_logout::de_logout_http_response(response)
                      }
                 }
             }

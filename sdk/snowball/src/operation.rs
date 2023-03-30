@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelCluster {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_cancel_cluster_error(response)
+                        crate::protocol_serde::shape_cancel_cluster::de_cancel_cluster_http_error(response)
                      } else {
-                        crate::operation_deser::parse_cancel_cluster_response(response)
+                        crate::protocol_serde::shape_cancel_cluster::de_cancel_cluster_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_cancel_job_error(response)
+                        crate::protocol_serde::shape_cancel_job::de_cancel_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_cancel_job_response(response)
+                        crate::protocol_serde::shape_cancel_job::de_cancel_job_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAddress {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_address_error(response)
+                        crate::protocol_serde::shape_create_address::de_create_address_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_address_response(response)
+                        crate::protocol_serde::shape_create_address::de_create_address_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_cluster_error(response)
+                        crate::protocol_serde::shape_create_cluster::de_create_cluster_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_cluster_response(response)
+                        crate::protocol_serde::shape_create_cluster::de_create_cluster_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_job_error(response)
+                        crate::protocol_serde::shape_create_job::de_create_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_job_response(response)
+                        crate::protocol_serde::shape_create_job::de_create_job_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLongTermPricing {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_long_term_pricing_error(response)
+                        crate::protocol_serde::shape_create_long_term_pricing::de_create_long_term_pricing_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_long_term_pricing_response(response)
+                        crate::protocol_serde::shape_create_long_term_pricing::de_create_long_term_pricing_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReturnShippingLabe
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_return_shipping_label_error(response)
+                        crate::protocol_serde::shape_create_return_shipping_label::de_create_return_shipping_label_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_return_shipping_label_response(response)
+                        crate::protocol_serde::shape_create_return_shipping_label::de_create_return_shipping_label_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddress {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_address_error(response)
+                        crate::protocol_serde::shape_describe_address::de_describe_address_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_address_response(response)
+                        crate::protocol_serde::shape_describe_address::de_describe_address_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddresses {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_addresses_error(response)
+                        crate::protocol_serde::shape_describe_addresses::de_describe_addresses_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_addresses_response(response)
+                        crate::protocol_serde::shape_describe_addresses::de_describe_addresses_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCluster {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_cluster_error(response)
+                        crate::protocol_serde::shape_describe_cluster::de_describe_cluster_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_cluster_response(response)
+                        crate::protocol_serde::shape_describe_cluster::de_describe_cluster_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_job_error(response)
+                        crate::protocol_serde::shape_describe_job::de_describe_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_job_response(response)
+                        crate::protocol_serde::shape_describe_job::de_describe_job_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReturnShippingLa
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_return_shipping_label_error(response)
+                        crate::protocol_serde::shape_describe_return_shipping_label::de_describe_return_shipping_label_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_return_shipping_label_response(response)
+                        crate::protocol_serde::shape_describe_return_shipping_label::de_describe_return_shipping_label_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobManifest {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_job_manifest_error(response)
+                        crate::protocol_serde::shape_get_job_manifest::de_get_job_manifest_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_job_manifest_response(response)
+                        crate::protocol_serde::shape_get_job_manifest::de_get_job_manifest_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobUnlockCode {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_job_unlock_code_error(response)
+                        crate::protocol_serde::shape_get_job_unlock_code::de_get_job_unlock_code_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_job_unlock_code_response(response)
+                        crate::protocol_serde::shape_get_job_unlock_code::de_get_job_unlock_code_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnowballUsage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_snowball_usage_error(response)
+                        crate::protocol_serde::shape_get_snowball_usage::de_get_snowball_usage_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_snowball_usage_response(response)
+                        crate::protocol_serde::shape_get_snowball_usage::de_get_snowball_usage_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSoftwareUpdates {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_software_updates_error(response)
+                        crate::protocol_serde::shape_get_software_updates::de_get_software_updates_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_software_updates_response(response)
+                        crate::protocol_serde::shape_get_software_updates::de_get_software_updates_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusterJobs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_cluster_jobs_error(response)
+                        crate::protocol_serde::shape_list_cluster_jobs::de_list_cluster_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_cluster_jobs_response(response)
+                        crate::protocol_serde::shape_list_cluster_jobs::de_list_cluster_jobs_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_clusters_error(response)
+                        crate::protocol_serde::shape_list_clusters::de_list_clusters_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_clusters_response(response)
+                        crate::protocol_serde::shape_list_clusters::de_list_clusters_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCompatibleImages {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_compatible_images_error(response)
+                        crate::protocol_serde::shape_list_compatible_images::de_list_compatible_images_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_compatible_images_response(response)
+                        crate::protocol_serde::shape_list_compatible_images::de_list_compatible_images_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_jobs_error(response)
+                        crate::protocol_serde::shape_list_jobs::de_list_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_jobs_response(response)
+                        crate::protocol_serde::shape_list_jobs::de_list_jobs_http_response(response)
                      }
                 }
             }
@@ -664,9 +664,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLongTermPricing {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_long_term_pricing_error(response)
+                        crate::protocol_serde::shape_list_long_term_pricing::de_list_long_term_pricing_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_long_term_pricing_response(response)
+                        crate::protocol_serde::shape_list_long_term_pricing::de_list_long_term_pricing_http_response(response)
                      }
                 }
             }
@@ -696,9 +696,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCluster {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_cluster_error(response)
+                        crate::protocol_serde::shape_update_cluster::de_update_cluster_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_cluster_response(response)
+                        crate::protocol_serde::shape_update_cluster::de_update_cluster_http_response(response)
                      }
                 }
             }
@@ -728,9 +728,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_job_error(response)
+                        crate::protocol_serde::shape_update_job::de_update_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_job_response(response)
+                        crate::protocol_serde::shape_update_job::de_update_job_http_response(response)
                      }
                 }
             }
@@ -760,9 +760,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobShipmentState {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_job_shipment_state_error(response)
+                        crate::protocol_serde::shape_update_job_shipment_state::de_update_job_shipment_state_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_job_shipment_state_response(response)
+                        crate::protocol_serde::shape_update_job_shipment_state::de_update_job_shipment_state_http_response(response)
                      }
                 }
             }
@@ -792,9 +792,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLongTermPricing {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_long_term_pricing_error(response)
+                        crate::protocol_serde::shape_update_long_term_pricing::de_update_long_term_pricing_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_long_term_pricing_response(response)
+                        crate::protocol_serde::shape_update_long_term_pricing::de_update_long_term_pricing_http_response(response)
                      }
                 }
             }

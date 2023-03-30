@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPersonalizedRanking {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_personalized_ranking_error(response)
+                        crate::protocol_serde::shape_get_personalized_ranking::de_get_personalized_ranking_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_personalized_ranking_response(response)
+                        crate::protocol_serde::shape_get_personalized_ranking::de_get_personalized_ranking_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendations {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_recommendations_error(response)
+                        crate::protocol_serde::shape_get_recommendations::de_get_recommendations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_recommendations_response(response)
+                        crate::protocol_serde::shape_get_recommendations::de_get_recommendations_http_response(response)
                      }
                 }
             }

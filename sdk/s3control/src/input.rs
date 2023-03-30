@@ -13,8 +13,8 @@ impl CreateAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -38,7 +38,7 @@ impl CreateAccessPointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_access_point(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_access_point::ser_create_access_point_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -48,7 +48,7 @@ impl CreateAccessPointInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_access_point(&self)?
+            crate::protocol_serde::shape_create_access_point::ser_create_access_point_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -121,7 +121,7 @@ impl CreateAccessPointForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_access_point_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_access_point_for_object_lambda::ser_create_access_point_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -131,7 +131,7 @@ impl CreateAccessPointForObjectLambdaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self)?
+            crate::protocol_serde::shape_create_access_point_for_object_lambda::ser_create_access_point_for_object_lambda_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -179,8 +179,8 @@ impl CreateBucketInput {
         .set_endpoint(_config.endpoint_url
         .clone())
         .set_use_arn_region(_config.use_arn_region)
-        .set_outpost_id(self.outpost_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_outpost_id(self.outpost_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -204,7 +204,7 @@ impl CreateBucketInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_bucket(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_bucket::ser_create_bucket_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -214,7 +214,7 @@ impl CreateBucketInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_bucket_input(& self.create_bucket_configuration)?
+            crate::protocol_serde::shape_create_bucket_input::ser_create_bucket_configuration_http_payload(& self.create_bucket_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -296,7 +296,7 @@ impl CreateJobInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_job(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_job::ser_create_job_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -306,7 +306,7 @@ impl CreateJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?
+            crate::protocol_serde::shape_create_job::ser_create_job_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -376,7 +376,7 @@ impl CreateMultiRegionAccessPointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_multi_region_access_point(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_multi_region_access_point::ser_create_multi_region_access_point_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -386,7 +386,7 @@ impl CreateMultiRegionAccessPointInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self)?
+            crate::protocol_serde::shape_create_multi_region_access_point::ser_create_multi_region_access_point_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -447,8 +447,8 @@ impl DeleteAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -472,7 +472,7 @@ impl DeleteAccessPointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_access_point(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_access_point::ser_delete_access_point_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -551,7 +551,7 @@ impl DeleteAccessPointForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_access_point_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_access_point_for_object_lambda::ser_delete_access_point_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -606,8 +606,8 @@ impl DeleteAccessPointPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_access_point_name(self.name.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_access_point_name(self.name.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -631,7 +631,7 @@ impl DeleteAccessPointPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_access_point_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_access_point_policy::ser_delete_access_point_policy_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -710,7 +710,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_access_point_policy_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_access_point_policy_for_object_lambda::ser_delete_access_point_policy_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -765,8 +765,8 @@ impl DeleteBucketInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -790,7 +790,7 @@ impl DeleteBucketInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket::ser_delete_bucket_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -870,7 +870,7 @@ impl DeleteBucketLifecycleConfigurationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_lifecycle_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_lifecycle_configuration::ser_delete_bucket_lifecycle_configuration_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -950,7 +950,7 @@ impl DeleteBucketPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_policy::ser_delete_bucket_policy_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1005,8 +1005,8 @@ impl DeleteBucketTaggingInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -1030,7 +1030,7 @@ impl DeleteBucketTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_tagging::ser_delete_bucket_tagging_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1109,7 +1109,7 @@ impl DeleteJobTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_job_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_job_tagging::ser_delete_job_tagging_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1185,7 +1185,7 @@ impl DeleteMultiRegionAccessPointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_multi_region_access_point(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_multi_region_access_point::ser_delete_multi_region_access_point_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1195,7 +1195,7 @@ impl DeleteMultiRegionAccessPointInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self)?
+            crate::protocol_serde::shape_delete_multi_region_access_point::ser_delete_multi_region_access_point_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1274,7 +1274,7 @@ impl DeletePublicAccessBlockInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_public_access_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_public_access_block::ser_delete_public_access_block_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1353,7 +1353,7 @@ impl DeleteStorageLensConfigurationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_storage_lens_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_storage_lens_configuration::ser_delete_storage_lens_configuration_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1432,7 +1432,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_storage_lens_configuration_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_storage_lens_configuration_tagging::ser_delete_storage_lens_configuration_tagging_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1511,7 +1511,7 @@ impl DescribeJobInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_job(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_job::ser_describe_job_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1590,7 +1590,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_multi_region_access_point_operation(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_multi_region_access_point_operation::ser_describe_multi_region_access_point_operation_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1657,8 +1657,8 @@ impl GetAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_access_point_name(self.name.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_access_point_name(self.name.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -1682,7 +1682,7 @@ impl GetAccessPointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point::ser_get_access_point_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1761,7 +1761,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point_configuration_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point_configuration_for_object_lambda::ser_get_access_point_configuration_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1840,7 +1840,7 @@ impl GetAccessPointForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point_for_object_lambda::ser_get_access_point_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1895,8 +1895,8 @@ impl GetAccessPointPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -1920,7 +1920,7 @@ impl GetAccessPointPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point_policy::ser_get_access_point_policy_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1999,7 +1999,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point_policy_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point_policy_for_object_lambda::ser_get_access_point_policy_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2054,8 +2054,8 @@ impl GetAccessPointPolicyStatusInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -2079,7 +2079,7 @@ impl GetAccessPointPolicyStatusInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point_policy_status(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point_policy_status::ser_get_access_point_policy_status_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2158,7 +2158,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_access_point_policy_status_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_access_point_policy_status_for_object_lambda::ser_get_access_point_policy_status_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2238,7 +2238,7 @@ impl GetBucketInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket::ser_get_bucket_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2293,8 +2293,8 @@ impl GetBucketLifecycleConfigurationInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -2318,7 +2318,7 @@ impl GetBucketLifecycleConfigurationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_lifecycle_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_lifecycle_configuration::ser_get_bucket_lifecycle_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2398,7 +2398,7 @@ impl GetBucketPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_policy::ser_get_bucket_policy_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2453,8 +2453,8 @@ impl GetBucketTaggingInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -2478,7 +2478,7 @@ impl GetBucketTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_tagging::ser_get_bucket_tagging_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2555,7 +2555,7 @@ impl GetBucketVersioningInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_versioning(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_versioning::ser_get_bucket_versioning_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2634,7 +2634,7 @@ impl GetJobTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_job_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_job_tagging::ser_get_job_tagging_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2713,7 +2713,7 @@ impl GetMultiRegionAccessPointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_multi_region_access_point(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_multi_region_access_point::ser_get_multi_region_access_point_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2804,7 +2804,7 @@ impl GetMultiRegionAccessPointPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_multi_region_access_point_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_multi_region_access_point_policy::ser_get_multi_region_access_point_policy_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2895,7 +2895,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_multi_region_access_point_policy_status(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_multi_region_access_point_policy_status::ser_get_multi_region_access_point_policy_status_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2986,7 +2986,7 @@ impl GetMultiRegionAccessPointRoutesInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_multi_region_access_point_routes(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_multi_region_access_point_routes::ser_get_multi_region_access_point_routes_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3071,7 +3071,7 @@ impl GetPublicAccessBlockInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_public_access_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_public_access_block::ser_get_public_access_block_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3150,7 +3150,7 @@ impl GetStorageLensConfigurationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_storage_lens_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_storage_lens_configuration::ser_get_storage_lens_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3229,7 +3229,7 @@ impl GetStorageLensConfigurationTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_storage_lens_configuration_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_storage_lens_configuration_tagging::ser_get_storage_lens_configuration_tagging_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3321,7 +3321,7 @@ impl ListAccessPointsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_access_points(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_access_points::ser_list_access_points_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3407,7 +3407,7 @@ impl ListAccessPointsForObjectLambdaInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_access_points_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_access_points_for_object_lambda::ser_list_access_points_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3502,7 +3502,7 @@ impl ListJobsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_jobs(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_jobs::ser_list_jobs_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3588,7 +3588,7 @@ impl ListMultiRegionAccessPointsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_multi_region_access_points(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_multi_region_access_points::ser_list_multi_region_access_points_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3687,7 +3687,7 @@ impl ListRegionalBucketsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_regional_buckets(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_regional_buckets::ser_list_regional_buckets_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3770,7 +3770,7 @@ impl ListStorageLensConfigurationsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_storage_lens_configurations(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_storage_lens_configurations::ser_list_storage_lens_configurations_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3849,7 +3849,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_access_point_configuration_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_access_point_configuration_for_object_lambda::ser_put_access_point_configuration_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3859,7 +3859,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self)?
+            crate::protocol_serde::shape_put_access_point_configuration_for_object_lambda::ser_put_access_point_configuration_for_object_lambda_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3933,7 +3933,7 @@ impl PutAccessPointPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_access_point_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_access_point_policy::ser_put_access_point_policy_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3943,7 +3943,7 @@ impl PutAccessPointPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy(&self)?
+            crate::protocol_serde::shape_put_access_point_policy::ser_put_access_point_policy_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4016,7 +4016,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_access_point_policy_for_object_lambda(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_access_point_policy_for_object_lambda::ser_put_access_point_policy_for_object_lambda_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4026,7 +4026,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self)?
+            crate::protocol_serde::shape_put_access_point_policy_for_object_lambda::ser_put_access_point_policy_for_object_lambda_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4075,8 +4075,8 @@ impl PutBucketLifecycleConfigurationInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -4100,7 +4100,7 @@ impl PutBucketLifecycleConfigurationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_lifecycle_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_lifecycle_configuration::ser_put_bucket_lifecycle_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4110,7 +4110,7 @@ impl PutBucketLifecycleConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_lifecycle_configuration_input(& self.lifecycle_configuration)?
+            crate::protocol_serde::shape_put_bucket_lifecycle_configuration_input::ser_lifecycle_configuration_http_payload(& self.lifecycle_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4171,8 +4171,8 @@ impl PutBucketPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -4196,7 +4196,7 @@ impl PutBucketPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_policy::ser_put_bucket_policy_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4206,7 +4206,7 @@ impl PutBucketPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_bucket_policy(&self)?
+            crate::protocol_serde::shape_put_bucket_policy::ser_put_bucket_policy_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4267,8 +4267,8 @@ impl PutBucketTaggingInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -4292,7 +4292,7 @@ impl PutBucketTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_tagging::ser_put_bucket_tagging_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4302,7 +4302,7 @@ impl PutBucketTaggingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_tagging_input(& self.tagging)?
+            crate::protocol_serde::shape_put_bucket_tagging_input::ser_tagging_http_payload(& self.tagging)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4385,7 +4385,7 @@ impl PutBucketVersioningInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_versioning(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_versioning::ser_put_bucket_versioning_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4395,7 +4395,7 @@ impl PutBucketVersioningInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_versioning_input(& self.versioning_configuration)?
+            crate::protocol_serde::shape_put_bucket_versioning_input::ser_versioning_configuration_http_payload(& self.versioning_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4480,7 +4480,7 @@ impl PutJobTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_job_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_job_tagging::ser_put_job_tagging_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4490,7 +4490,7 @@ impl PutJobTaggingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_job_tagging(&self)?
+            crate::protocol_serde::shape_put_job_tagging::ser_put_job_tagging_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4560,7 +4560,7 @@ impl PutMultiRegionAccessPointPolicyInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_multi_region_access_point_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_multi_region_access_point_policy::ser_put_multi_region_access_point_policy_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4570,7 +4570,7 @@ impl PutMultiRegionAccessPointPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self)?
+            crate::protocol_serde::shape_put_multi_region_access_point_policy::ser_put_multi_region_access_point_policy_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4649,7 +4649,7 @@ impl PutPublicAccessBlockInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_public_access_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_public_access_block::ser_put_public_access_block_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4659,7 +4659,7 @@ impl PutPublicAccessBlockInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_public_access_block_input(& self.public_access_block_configuration)?
+            crate::protocol_serde::shape_put_public_access_block_input::ser_public_access_block_configuration_http_payload(& self.public_access_block_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4732,7 +4732,7 @@ impl PutStorageLensConfigurationInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_storage_lens_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_storage_lens_configuration::ser_put_storage_lens_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4742,7 +4742,7 @@ impl PutStorageLensConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self)?
+            crate::protocol_serde::shape_put_storage_lens_configuration::ser_put_storage_lens_configuration_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4815,7 +4815,7 @@ impl PutStorageLensConfigurationTaggingInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_storage_lens_configuration_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_storage_lens_configuration_tagging::ser_put_storage_lens_configuration_tagging_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4825,7 +4825,7 @@ impl PutStorageLensConfigurationTaggingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self)?
+            crate::protocol_serde::shape_put_storage_lens_configuration_tagging::ser_put_storage_lens_configuration_tagging_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4898,7 +4898,7 @@ impl SubmitMultiRegionAccessPointRoutesInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_submit_multi_region_access_point_routes(input, builder)?;
+                let builder = crate::protocol_serde::shape_submit_multi_region_access_point_routes::ser_submit_multi_region_access_point_routes_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4908,7 +4908,7 @@ impl SubmitMultiRegionAccessPointRoutesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_submit_multi_region_access_point_routes(&self)?
+            crate::protocol_serde::shape_submit_multi_region_access_point_routes::ser_submit_multi_region_access_point_routes_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -5000,7 +5000,7 @@ impl UpdateJobPriorityInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_job_priority(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_job_priority::ser_update_job_priority_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5092,7 +5092,7 @@ impl UpdateJobStatusInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_job_status(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_job_status::ser_update_job_status_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;

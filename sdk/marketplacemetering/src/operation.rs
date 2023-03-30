@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchMeterUsage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_meter_usage_error(response)
+                        crate::protocol_serde::shape_batch_meter_usage::de_batch_meter_usage_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_meter_usage_response(response)
+                        crate::protocol_serde::shape_batch_meter_usage::de_batch_meter_usage_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for MeterUsage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_meter_usage_error(response)
+                        crate::protocol_serde::shape_meter_usage::de_meter_usage_http_error(response)
                      } else {
-                        crate::operation_deser::parse_meter_usage_response(response)
+                        crate::protocol_serde::shape_meter_usage::de_meter_usage_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterUsage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_register_usage_error(response)
+                        crate::protocol_serde::shape_register_usage::de_register_usage_http_error(response)
                      } else {
-                        crate::operation_deser::parse_register_usage_response(response)
+                        crate::protocol_serde::shape_register_usage::de_register_usage_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveCustomer {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_resolve_customer_error(response)
+                        crate::protocol_serde::shape_resolve_customer::de_resolve_customer_http_error(response)
                      } else {
-                        crate::operation_deser::parse_resolve_customer_response(response)
+                        crate::protocol_serde::shape_resolve_customer::de_resolve_customer_http_response(response)
                      }
                 }
             }

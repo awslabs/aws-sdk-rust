@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDimensionKeys {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_dimension_keys_error(response)
+                        crate::protocol_serde::shape_describe_dimension_keys::de_describe_dimension_keys_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_dimension_keys_response(response)
+                        crate::protocol_serde::shape_describe_dimension_keys::de_describe_dimension_keys_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDimensionKeyDetails {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_dimension_key_details_error(response)
+                        crate::protocol_serde::shape_get_dimension_key_details::de_get_dimension_key_details_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_dimension_key_details_response(response)
+                        crate::protocol_serde::shape_get_dimension_key_details::de_get_dimension_key_details_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetadata {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_resource_metadata_error(response)
+                        crate::protocol_serde::shape_get_resource_metadata::de_get_resource_metadata_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_resource_metadata_response(response)
+                        crate::protocol_serde::shape_get_resource_metadata::de_get_resource_metadata_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetrics {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_resource_metrics_error(response)
+                        crate::protocol_serde::shape_get_resource_metrics::de_get_resource_metrics_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_resource_metrics_response(response)
+                        crate::protocol_serde::shape_get_resource_metrics::de_get_resource_metrics_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceDim
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_available_resource_dimensions_error(response)
+                        crate::protocol_serde::shape_list_available_resource_dimensions::de_list_available_resource_dimensions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_available_resource_dimensions_response(response)
+                        crate::protocol_serde::shape_list_available_resource_dimensions::de_list_available_resource_dimensions_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceMet
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_available_resource_metrics_error(response)
+                        crate::protocol_serde::shape_list_available_resource_metrics::de_list_available_resource_metrics_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_available_resource_metrics_response(response)
+                        crate::protocol_serde::shape_list_available_resource_metrics::de_list_available_resource_metrics_http_response(response)
                      }
                 }
             }

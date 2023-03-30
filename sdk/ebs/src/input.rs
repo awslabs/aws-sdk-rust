@@ -34,7 +34,7 @@ impl CompleteSnapshotInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_complete_snapshot(input, builder)?;
+                let builder = crate::protocol_serde::shape_complete_snapshot::ser_complete_snapshot_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -399,7 +399,7 @@ impl PutSnapshotBlockInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_snapshot_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_snapshot_block::ser_put_snapshot_block_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -409,7 +409,7 @@ impl PutSnapshotBlockInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_snapshot_block_input( self.block_data)?
+            crate::protocol_serde::shape_put_snapshot_block_input::ser_block_data_http_payload( self.block_data)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {
@@ -487,7 +487,7 @@ impl StartSnapshotInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_snapshot(&self)?
+            crate::protocol_serde::shape_start_snapshot::ser_start_snapshot_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

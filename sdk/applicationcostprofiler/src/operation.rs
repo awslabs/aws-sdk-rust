@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_report_definition_error(response)
+                        crate::protocol_serde::shape_delete_report_definition::de_delete_report_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_report_definition_response(response)
+                        crate::protocol_serde::shape_delete_report_definition::de_delete_report_definition_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReportDefinition {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_report_definition_error(response)
+                        crate::protocol_serde::shape_get_report_definition::de_get_report_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_report_definition_response(response)
+                        crate::protocol_serde::shape_get_report_definition::de_get_report_definition_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportApplicationUsage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_import_application_usage_error(response)
+                        crate::protocol_serde::shape_import_application_usage::de_import_application_usage_http_error(response)
                      } else {
-                        crate::operation_deser::parse_import_application_usage_response(response)
+                        crate::protocol_serde::shape_import_application_usage::de_import_application_usage_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportDefinitions {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_report_definitions_error(response)
+                        crate::protocol_serde::shape_list_report_definitions::de_list_report_definitions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_report_definitions_response(response)
+                        crate::protocol_serde::shape_list_report_definitions::de_list_report_definitions_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutReportDefinition {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_report_definition_error(response)
+                        crate::protocol_serde::shape_put_report_definition::de_put_report_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_report_definition_response(response)
+                        crate::protocol_serde::shape_put_report_definition::de_put_report_definition_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReportDefinition {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_report_definition_error(response)
+                        crate::protocol_serde::shape_update_report_definition::de_update_report_definition_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_report_definition_response(response)
+                        crate::protocol_serde::shape_update_report_definition::de_update_report_definition_http_response(response)
                      }
                 }
             }

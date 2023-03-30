@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptGrant {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_accept_grant_error(response)
+                        crate::protocol_serde::shape_accept_grant::de_accept_grant_http_error(response)
                      } else {
-                        crate::operation_deser::parse_accept_grant_response(response)
+                        crate::protocol_serde::shape_accept_grant::de_accept_grant_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckInLicense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_check_in_license_error(response)
+                        crate::protocol_serde::shape_check_in_license::de_check_in_license_http_error(response)
                      } else {
-                        crate::operation_deser::parse_check_in_license_response(response)
+                        crate::protocol_serde::shape_check_in_license::de_check_in_license_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutBorrowLicense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_checkout_borrow_license_error(response)
+                        crate::protocol_serde::shape_checkout_borrow_license::de_checkout_borrow_license_http_error(response)
                      } else {
-                        crate::operation_deser::parse_checkout_borrow_license_response(response)
+                        crate::protocol_serde::shape_checkout_borrow_license::de_checkout_borrow_license_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutLicense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_checkout_license_error(response)
+                        crate::protocol_serde::shape_checkout_license::de_checkout_license_http_error(response)
                      } else {
-                        crate::operation_deser::parse_checkout_license_response(response)
+                        crate::protocol_serde::shape_checkout_license::de_checkout_license_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_grant_error(response)
+                        crate::protocol_serde::shape_create_grant::de_create_grant_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_grant_response(response)
+                        crate::protocol_serde::shape_create_grant::de_create_grant_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrantVersion {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_grant_version_error(response)
+                        crate::protocol_serde::shape_create_grant_version::de_create_grant_version_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_grant_version_response(response)
+                        crate::protocol_serde::shape_create_grant_version::de_create_grant_version_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_license_error(response)
+                        crate::protocol_serde::shape_create_license::de_create_license_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_license_response(response)
+                        crate::protocol_serde::shape_create_license::de_create_license_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConfigurati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_license_configuration_error(response)
+                        crate::protocol_serde::shape_create_license_configuration::de_create_license_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_license_configuration_response(response)
+                        crate::protocol_serde::shape_create_license_configuration::de_create_license_configuration_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConversionT
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_license_conversion_task_for_resource_error(response)
+                        crate::protocol_serde::shape_create_license_conversion_task_for_resource::de_create_license_conversion_task_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_license_conversion_task_for_resource_response(response)
+                        crate::protocol_serde::shape_create_license_conversion_task_for_resource::de_create_license_conversion_task_for_resource_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseManagerRepo
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_license_manager_report_generator_error(response)
+                        crate::protocol_serde::shape_create_license_manager_report_generator::de_create_license_manager_report_generator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_license_manager_report_generator_response(response)
+                        crate::protocol_serde::shape_create_license_manager_report_generator::de_create_license_manager_report_generator_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseVersion {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_license_version_error(response)
+                        crate::protocol_serde::shape_create_license_version::de_create_license_version_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_license_version_response(response)
+                        crate::protocol_serde::shape_create_license_version::de_create_license_version_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_token_error(response)
+                        crate::protocol_serde::shape_create_token::de_create_token_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_token_response(response)
+                        crate::protocol_serde::shape_create_token::de_create_token_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGrant {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_grant_error(response)
+                        crate::protocol_serde::shape_delete_grant::de_delete_grant_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_grant_response(response)
+                        crate::protocol_serde::shape_delete_grant::de_delete_grant_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_license_error(response)
+                        crate::protocol_serde::shape_delete_license::de_delete_license_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_license_response(response)
+                        crate::protocol_serde::shape_delete_license::de_delete_license_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseConfigurati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_license_configuration_error(response)
+                        crate::protocol_serde::shape_delete_license_configuration::de_delete_license_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_license_configuration_response(response)
+                        crate::protocol_serde::shape_delete_license_configuration::de_delete_license_configuration_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseManagerRepo
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_license_manager_report_generator_error(response)
+                        crate::protocol_serde::shape_delete_license_manager_report_generator::de_delete_license_manager_report_generator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_license_manager_report_generator_response(response)
+                        crate::protocol_serde::shape_delete_license_manager_report_generator::de_delete_license_manager_report_generator_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_token_error(response)
+                        crate::protocol_serde::shape_delete_token::de_delete_token_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_token_response(response)
+                        crate::protocol_serde::shape_delete_token::de_delete_token_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ExtendLicenseConsumption
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_extend_license_consumption_error(response)
+                        crate::protocol_serde::shape_extend_license_consumption::de_extend_license_consumption_http_error(response)
                      } else {
-                        crate::operation_deser::parse_extend_license_consumption_response(response)
+                        crate::protocol_serde::shape_extend_license_consumption::de_extend_license_consumption_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessToken {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_token_error(response)
+                        crate::protocol_serde::shape_get_access_token::de_get_access_token_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_token_response(response)
+                        crate::protocol_serde::shape_get_access_token::de_get_access_token_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGrant {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_grant_error(response)
+                        crate::protocol_serde::shape_get_grant::de_get_grant_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_grant_response(response)
+                        crate::protocol_serde::shape_get_grant::de_get_grant_http_response(response)
                      }
                 }
             }
@@ -664,9 +664,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_license_error(response)
+                        crate::protocol_serde::shape_get_license::de_get_license_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_license_response(response)
+                        crate::protocol_serde::shape_get_license::de_get_license_http_response(response)
                      }
                 }
             }
@@ -696,9 +696,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConfiguration 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_license_configuration_error(response)
+                        crate::protocol_serde::shape_get_license_configuration::de_get_license_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_license_configuration_response(response)
+                        crate::protocol_serde::shape_get_license_configuration::de_get_license_configuration_http_response(response)
                      }
                 }
             }
@@ -728,9 +728,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConversionTask
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_license_conversion_task_error(response)
+                        crate::protocol_serde::shape_get_license_conversion_task::de_get_license_conversion_task_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_license_conversion_task_response(response)
+                        crate::protocol_serde::shape_get_license_conversion_task::de_get_license_conversion_task_http_response(response)
                      }
                 }
             }
@@ -760,9 +760,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseManagerReportG
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_license_manager_report_generator_error(response)
+                        crate::protocol_serde::shape_get_license_manager_report_generator::de_get_license_manager_report_generator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_license_manager_report_generator_response(response)
+                        crate::protocol_serde::shape_get_license_manager_report_generator::de_get_license_manager_report_generator_http_response(response)
                      }
                 }
             }
@@ -792,9 +792,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseUsage {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_license_usage_error(response)
+                        crate::protocol_serde::shape_get_license_usage::de_get_license_usage_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_license_usage_response(response)
+                        crate::protocol_serde::shape_get_license_usage::de_get_license_usage_http_response(response)
                      }
                 }
             }
@@ -824,9 +824,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_service_settings_error(response)
+                        crate::protocol_serde::shape_get_service_settings::de_get_service_settings_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_service_settings_response(response)
+                        crate::protocol_serde::shape_get_service_settings::de_get_service_settings_http_response(response)
                      }
                 }
             }
@@ -856,9 +856,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociationsForLicen
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_associations_for_license_configuration_error(response)
+                        crate::protocol_serde::shape_list_associations_for_license_configuration::de_list_associations_for_license_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_associations_for_license_configuration_response(response)
+                        crate::protocol_serde::shape_list_associations_for_license_configuration::de_list_associations_for_license_configuration_http_response(response)
                      }
                 }
             }
@@ -888,9 +888,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributedGrants {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_distributed_grants_error(response)
+                        crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_distributed_grants_response(response)
+                        crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_response(response)
                      }
                 }
             }
@@ -920,9 +920,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFailuresForLicenseCo
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_failures_for_license_configuration_operations_error(response)
+                        crate::protocol_serde::shape_list_failures_for_license_configuration_operations::de_list_failures_for_license_configuration_operations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_failures_for_license_configuration_operations_response(response)
+                        crate::protocol_serde::shape_list_failures_for_license_configuration_operations::de_list_failures_for_license_configuration_operations_http_response(response)
                      }
                 }
             }
@@ -952,9 +952,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConfiguration
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_license_configurations_error(response)
+                        crate::protocol_serde::shape_list_license_configurations::de_list_license_configurations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_license_configurations_response(response)
+                        crate::protocol_serde::shape_list_license_configurations::de_list_license_configurations_http_response(response)
                      }
                 }
             }
@@ -984,9 +984,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConversionTas
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_license_conversion_tasks_error(response)
+                        crate::protocol_serde::shape_list_license_conversion_tasks::de_list_license_conversion_tasks_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_license_conversion_tasks_response(response)
+                        crate::protocol_serde::shape_list_license_conversion_tasks::de_list_license_conversion_tasks_http_response(response)
                      }
                 }
             }
@@ -1016,9 +1016,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseManagerReport
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_license_manager_report_generators_error(response)
+                        crate::protocol_serde::shape_list_license_manager_report_generators::de_list_license_manager_report_generators_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_license_manager_report_generators_response(response)
+                        crate::protocol_serde::shape_list_license_manager_report_generators::de_list_license_manager_report_generators_http_response(response)
                      }
                 }
             }
@@ -1048,9 +1048,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenses {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_licenses_error(response)
+                        crate::protocol_serde::shape_list_licenses::de_list_licenses_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_licenses_response(response)
+                        crate::protocol_serde::shape_list_licenses::de_list_licenses_http_response(response)
                      }
                 }
             }
@@ -1080,9 +1080,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseSpecification
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_license_specifications_for_resource_error(response)
+                        crate::protocol_serde::shape_list_license_specifications_for_resource::de_list_license_specifications_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_license_specifications_for_resource_response(response)
+                        crate::protocol_serde::shape_list_license_specifications_for_resource::de_list_license_specifications_for_resource_http_response(response)
                      }
                 }
             }
@@ -1112,9 +1112,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseVersions {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_license_versions_error(response)
+                        crate::protocol_serde::shape_list_license_versions::de_list_license_versions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_license_versions_response(response)
+                        crate::protocol_serde::shape_list_license_versions::de_list_license_versions_http_response(response)
                      }
                 }
             }
@@ -1144,9 +1144,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrants {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_received_grants_error(response)
+                        crate::protocol_serde::shape_list_received_grants::de_list_received_grants_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_received_grants_response(response)
+                        crate::protocol_serde::shape_list_received_grants::de_list_received_grants_http_response(response)
                      }
                 }
             }
@@ -1176,9 +1176,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrantsForOrg
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_received_grants_for_organization_error(response)
+                        crate::protocol_serde::shape_list_received_grants_for_organization::de_list_received_grants_for_organization_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_received_grants_for_organization_response(response)
+                        crate::protocol_serde::shape_list_received_grants_for_organization::de_list_received_grants_for_organization_http_response(response)
                      }
                 }
             }
@@ -1208,9 +1208,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicenses {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_received_licenses_error(response)
+                        crate::protocol_serde::shape_list_received_licenses::de_list_received_licenses_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_received_licenses_response(response)
+                        crate::protocol_serde::shape_list_received_licenses::de_list_received_licenses_http_response(response)
                      }
                 }
             }
@@ -1240,9 +1240,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicensesForO
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_received_licenses_for_organization_error(response)
+                        crate::protocol_serde::shape_list_received_licenses_for_organization::de_list_received_licenses_for_organization_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_received_licenses_for_organization_response(response)
+                        crate::protocol_serde::shape_list_received_licenses_for_organization::de_list_received_licenses_for_organization_http_response(response)
                      }
                 }
             }
@@ -1272,9 +1272,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceInventory {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_resource_inventory_error(response)
+                        crate::protocol_serde::shape_list_resource_inventory::de_list_resource_inventory_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_resource_inventory_response(response)
+                        crate::protocol_serde::shape_list_resource_inventory::de_list_resource_inventory_http_response(response)
                      }
                 }
             }
@@ -1304,9 +1304,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -1336,9 +1336,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTokens {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tokens_error(response)
+                        crate::protocol_serde::shape_list_tokens::de_list_tokens_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tokens_response(response)
+                        crate::protocol_serde::shape_list_tokens::de_list_tokens_http_response(response)
                      }
                 }
             }
@@ -1368,9 +1368,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageForLicenseConfi
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_usage_for_license_configuration_error(response)
+                        crate::protocol_serde::shape_list_usage_for_license_configuration::de_list_usage_for_license_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_usage_for_license_configuration_response(response)
+                        crate::protocol_serde::shape_list_usage_for_license_configuration::de_list_usage_for_license_configuration_http_response(response)
                      }
                 }
             }
@@ -1400,9 +1400,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectGrant {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_reject_grant_error(response)
+                        crate::protocol_serde::shape_reject_grant::de_reject_grant_http_error(response)
                      } else {
-                        crate::operation_deser::parse_reject_grant_response(response)
+                        crate::protocol_serde::shape_reject_grant::de_reject_grant_http_response(response)
                      }
                 }
             }
@@ -1432,9 +1432,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -1464,9 +1464,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -1496,9 +1496,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseConfigurati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_license_configuration_error(response)
+                        crate::protocol_serde::shape_update_license_configuration::de_update_license_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_license_configuration_response(response)
+                        crate::protocol_serde::shape_update_license_configuration::de_update_license_configuration_http_response(response)
                      }
                 }
             }
@@ -1528,9 +1528,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseManagerRepo
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_license_manager_report_generator_error(response)
+                        crate::protocol_serde::shape_update_license_manager_report_generator::de_update_license_manager_report_generator_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_license_manager_report_generator_response(response)
+                        crate::protocol_serde::shape_update_license_manager_report_generator::de_update_license_manager_report_generator_http_response(response)
                      }
                 }
             }
@@ -1560,9 +1560,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseSpecificati
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_license_specifications_for_resource_error(response)
+                        crate::protocol_serde::shape_update_license_specifications_for_resource::de_update_license_specifications_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_license_specifications_for_resource_response(response)
+                        crate::protocol_serde::shape_update_license_specifications_for_resource::de_update_license_specifications_for_resource_http_response(response)
                      }
                 }
             }
@@ -1592,9 +1592,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceSettings {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_service_settings_error(response)
+                        crate::protocol_serde::shape_update_service_settings::de_update_service_settings_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_service_settings_response(response)
+                        crate::protocol_serde::shape_update_service_settings::de_update_service_settings_http_response(response)
                      }
                 }
             }

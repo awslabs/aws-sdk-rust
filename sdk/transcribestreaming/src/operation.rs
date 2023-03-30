@@ -26,11 +26,11 @@ impl aws_smithy_http::response::ParseHttpResponse for StartCallAnalyticsStreamTr
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_start_call_analytics_stream_transcription(response))
+                    Some(crate::protocol_serde::shape_start_call_analytics_stream_transcription::de_start_call_analytics_stream_transcription_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_start_call_analytics_stream_transcription_error(response)
+                    crate::protocol_serde::shape_start_call_analytics_stream_transcription::de_start_call_analytics_stream_transcription_http_error(response)
                 }
             }
 
@@ -61,11 +61,11 @@ impl aws_smithy_http::response::ParseHttpResponse for StartMedicalStreamTranscri
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_start_medical_stream_transcription(response))
+                    Some(crate::protocol_serde::shape_start_medical_stream_transcription::de_start_medical_stream_transcription_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_start_medical_stream_transcription_error(response)
+                    crate::protocol_serde::shape_start_medical_stream_transcription::de_start_medical_stream_transcription_http_error(response)
                 }
             }
 
@@ -96,11 +96,11 @@ impl aws_smithy_http::response::ParseHttpResponse for StartStreamTranscription {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_start_stream_transcription(response))
+                    Some(crate::protocol_serde::shape_start_stream_transcription::de_start_stream_transcription_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_start_stream_transcription_error(response)
+                    crate::protocol_serde::shape_start_stream_transcription::de_start_stream_transcription_http_error(response)
                 }
             }
 

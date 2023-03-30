@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchedule {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_schedule_error(response)
+                        crate::protocol_serde::shape_create_schedule::de_create_schedule_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_schedule_response(response)
+                        crate::protocol_serde::shape_create_schedule::de_create_schedule_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScheduleGroup {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_schedule_group_error(response)
+                        crate::protocol_serde::shape_create_schedule_group::de_create_schedule_group_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_schedule_group_response(response)
+                        crate::protocol_serde::shape_create_schedule_group::de_create_schedule_group_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_schedule_error(response)
+                        crate::protocol_serde::shape_delete_schedule::de_delete_schedule_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_schedule_response(response)
+                        crate::protocol_serde::shape_delete_schedule::de_delete_schedule_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduleGroup {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_schedule_group_error(response)
+                        crate::protocol_serde::shape_delete_schedule_group::de_delete_schedule_group_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_schedule_group_response(response)
+                        crate::protocol_serde::shape_delete_schedule_group::de_delete_schedule_group_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchedule {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_schedule_error(response)
+                        crate::protocol_serde::shape_get_schedule::de_get_schedule_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_schedule_response(response)
+                        crate::protocol_serde::shape_get_schedule::de_get_schedule_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScheduleGroup {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_schedule_group_error(response)
+                        crate::protocol_serde::shape_get_schedule_group::de_get_schedule_group_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_schedule_group_response(response)
+                        crate::protocol_serde::shape_get_schedule_group::de_get_schedule_group_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScheduleGroups {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_schedule_groups_error(response)
+                        crate::protocol_serde::shape_list_schedule_groups::de_list_schedule_groups_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_schedule_groups_response(response)
+                        crate::protocol_serde::shape_list_schedule_groups::de_list_schedule_groups_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchedules {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_schedules_error(response)
+                        crate::protocol_serde::shape_list_schedules::de_list_schedules_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_schedules_response(response)
+                        crate::protocol_serde::shape_list_schedules::de_list_schedules_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSchedule {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_schedule_error(response)
+                        crate::protocol_serde::shape_update_schedule::de_update_schedule_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_schedule_response(response)
+                        crate::protocol_serde::shape_update_schedule::de_update_schedule_http_response(response)
                      }
                 }
             }

@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelZonalShift {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_cancel_zonal_shift_error(response)
+                        crate::protocol_serde::shape_cancel_zonal_shift::de_cancel_zonal_shift_http_error(response)
                      } else {
-                        crate::operation_deser::parse_cancel_zonal_shift_response(response)
+                        crate::protocol_serde::shape_cancel_zonal_shift::de_cancel_zonal_shift_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_managed_resource_error(response)
+                        crate::protocol_serde::shape_get_managed_resource::de_get_managed_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_managed_resource_response(response)
+                        crate::protocol_serde::shape_get_managed_resource::de_get_managed_resource_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedResources {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_managed_resources_error(response)
+                        crate::protocol_serde::shape_list_managed_resources::de_list_managed_resources_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_managed_resources_response(response)
+                        crate::protocol_serde::shape_list_managed_resources::de_list_managed_resources_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListZonalShifts {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_zonal_shifts_error(response)
+                        crate::protocol_serde::shape_list_zonal_shifts::de_list_zonal_shifts_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_zonal_shifts_response(response)
+                        crate::protocol_serde::shape_list_zonal_shifts::de_list_zonal_shifts_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartZonalShift {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::operation_deser::parse_start_zonal_shift_error(response)
+                        crate::protocol_serde::shape_start_zonal_shift::de_start_zonal_shift_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_zonal_shift_response(response)
+                        crate::protocol_serde::shape_start_zonal_shift::de_start_zonal_shift_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateZonalShift {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_zonal_shift_error(response)
+                        crate::protocol_serde::shape_update_zonal_shift::de_update_zonal_shift_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_zonal_shift_response(response)
+                        crate::protocol_serde::shape_update_zonal_shift::de_update_zonal_shift_http_response(response)
                      }
                 }
             }

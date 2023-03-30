@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSlackChannelConfig
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_slack_channel_configuration_error(response)
+                        crate::protocol_serde::shape_create_slack_channel_configuration::de_create_slack_channel_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_slack_channel_configuration_response(response)
+                        crate::protocol_serde::shape_create_slack_channel_configuration::de_create_slack_channel_configuration_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAlias {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_account_alias_error(response)
+                        crate::protocol_serde::shape_delete_account_alias::de_delete_account_alias_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_account_alias_response(response)
+                        crate::protocol_serde::shape_delete_account_alias::de_delete_account_alias_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSlackChannelConfig
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_slack_channel_configuration_error(response)
+                        crate::protocol_serde::shape_delete_slack_channel_configuration::de_delete_slack_channel_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_slack_channel_configuration_response(response)
+                        crate::protocol_serde::shape_delete_slack_channel_configuration::de_delete_slack_channel_configuration_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSlackWorkspaceConf
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_slack_workspace_configuration_error(response)
+                        crate::protocol_serde::shape_delete_slack_workspace_configuration::de_delete_slack_workspace_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_slack_workspace_configuration_response(response)
+                        crate::protocol_serde::shape_delete_slack_workspace_configuration::de_delete_slack_workspace_configuration_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountAlias {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_account_alias_error(response)
+                        crate::protocol_serde::shape_get_account_alias::de_get_account_alias_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_account_alias_response(response)
+                        crate::protocol_serde::shape_get_account_alias::de_get_account_alias_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackChannelConfigur
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_slack_channel_configurations_error(response)
+                        crate::protocol_serde::shape_list_slack_channel_configurations::de_list_slack_channel_configurations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_slack_channel_configurations_response(response)
+                        crate::protocol_serde::shape_list_slack_channel_configurations::de_list_slack_channel_configurations_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackWorkspaceConfig
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_slack_workspace_configurations_error(response)
+                        crate::protocol_serde::shape_list_slack_workspace_configurations::de_list_slack_workspace_configurations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_slack_workspace_configurations_response(response)
+                        crate::protocol_serde::shape_list_slack_workspace_configurations::de_list_slack_workspace_configurations_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountAlias {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_account_alias_error(response)
+                        crate::protocol_serde::shape_put_account_alias::de_put_account_alias_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_account_alias_response(response)
+                        crate::protocol_serde::shape_put_account_alias::de_put_account_alias_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterSlackWorkspaceFo
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_register_slack_workspace_for_organization_error(response)
+                        crate::protocol_serde::shape_register_slack_workspace_for_organization::de_register_slack_workspace_for_organization_http_error(response)
                      } else {
-                        crate::operation_deser::parse_register_slack_workspace_for_organization_response(response)
+                        crate::protocol_serde::shape_register_slack_workspace_for_organization::de_register_slack_workspace_for_organization_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSlackChannelConfig
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_slack_channel_configuration_error(response)
+                        crate::protocol_serde::shape_update_slack_channel_configuration::de_update_slack_channel_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_slack_channel_configuration_response(response)
+                        crate::protocol_serde::shape_update_slack_channel_configuration::de_update_slack_channel_configuration_http_response(response)
                      }
                 }
             }

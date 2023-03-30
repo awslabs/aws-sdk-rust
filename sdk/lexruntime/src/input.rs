@@ -228,7 +228,7 @@ impl PostContentInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_post_content(input, builder)?;
+                let builder = crate::protocol_serde::shape_post_content::ser_post_content_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -238,7 +238,7 @@ impl PostContentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_post_content_input( self.input_stream)?
+            crate::protocol_serde::shape_post_content_input::ser_input_stream_http_payload( self.input_stream)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {
@@ -331,7 +331,7 @@ impl PostTextInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_post_text(&self)?
+            crate::protocol_serde::shape_post_text::ser_post_text_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -412,7 +412,7 @@ impl PutSessionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_session(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_session::ser_put_session_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -422,7 +422,7 @@ impl PutSessionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_session(&self)?
+            crate::protocol_serde::shape_put_session::ser_put_session_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

@@ -37,7 +37,7 @@ impl CreateAppInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_app_input(& self.create_application_request)?
+            crate::protocol_serde::shape_create_app_input::ser_create_application_request_http_payload(& self.create_application_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -115,7 +115,7 @@ impl CreateCampaignInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_campaign_input(& self.write_campaign_request)?
+            crate::protocol_serde::shape_create_campaign_input::ser_write_campaign_request_http_payload(& self.write_campaign_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -193,7 +193,7 @@ impl CreateEmailTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_email_template_input(& self.email_template_request)?
+            crate::protocol_serde::shape_create_email_template_input::ser_email_template_request_http_payload(& self.email_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -271,7 +271,7 @@ impl CreateExportJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_export_job_input(& self.export_job_request)?
+            crate::protocol_serde::shape_create_export_job_input::ser_export_job_request_http_payload(& self.export_job_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -349,7 +349,7 @@ impl CreateImportJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_import_job_input(& self.import_job_request)?
+            crate::protocol_serde::shape_create_import_job_input::ser_import_job_request_http_payload(& self.import_job_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -427,7 +427,7 @@ impl CreateInAppTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_in_app_template_input(& self.in_app_template_request)?
+            crate::protocol_serde::shape_create_in_app_template_input::ser_in_app_template_request_http_payload(& self.in_app_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -505,7 +505,7 @@ impl CreateJourneyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_journey_input(& self.write_journey_request)?
+            crate::protocol_serde::shape_create_journey_input::ser_write_journey_request_http_payload(& self.write_journey_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -583,7 +583,7 @@ impl CreatePushTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_push_template_input(& self.push_notification_template_request)?
+            crate::protocol_serde::shape_create_push_template_input::ser_push_notification_template_request_http_payload(& self.push_notification_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -655,7 +655,7 @@ impl CreateRecommenderConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_recommender_configuration_input(& self.create_recommender_configuration)?
+            crate::protocol_serde::shape_create_recommender_configuration_input::ser_create_recommender_configuration_http_payload(& self.create_recommender_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -733,7 +733,7 @@ impl CreateSegmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_segment_input(& self.write_segment_request)?
+            crate::protocol_serde::shape_create_segment_input::ser_write_segment_request_http_payload(& self.write_segment_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -811,7 +811,7 @@ impl CreateSmsTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_sms_template_input(& self.sms_template_request)?
+            crate::protocol_serde::shape_create_sms_template_input::ser_sms_template_request_http_payload(& self.sms_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -889,7 +889,7 @@ impl CreateVoiceTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_voice_template_input(& self.voice_template_request)?
+            crate::protocol_serde::shape_create_voice_template_input::ser_voice_template_request_http_payload(& self.voice_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6956,7 +6956,7 @@ impl PhoneNumberValidateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_phone_number_validate_input(& self.number_validate_request)?
+            crate::protocol_serde::shape_phone_number_validate_input::ser_number_validate_request_http_payload(& self.number_validate_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7034,7 +7034,7 @@ impl PutEventsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_events_input(& self.events_request)?
+            crate::protocol_serde::shape_put_events_input::ser_events_request_http_payload(& self.events_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7112,7 +7112,7 @@ impl PutEventStreamInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_event_stream_input(& self.write_event_stream)?
+            crate::protocol_serde::shape_put_event_stream_input::ser_write_event_stream_http_payload(& self.write_event_stream)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7196,7 +7196,7 @@ impl RemoveAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_remove_attributes_input(& self.update_attributes_request)?
+            crate::protocol_serde::shape_remove_attributes_input::ser_update_attributes_request_http_payload(& self.update_attributes_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7274,7 +7274,7 @@ impl SendMessagesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_send_messages_input(& self.message_request)?
+            crate::protocol_serde::shape_send_messages_input::ser_message_request_http_payload(& self.message_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7352,7 +7352,7 @@ impl SendOtpMessageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_send_otp_message_input(& self.send_otp_message_request_parameters)?
+            crate::protocol_serde::shape_send_otp_message_input::ser_send_otp_message_request_parameters_http_payload(& self.send_otp_message_request_parameters)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7430,7 +7430,7 @@ impl SendUsersMessagesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_send_users_messages_input(& self.send_users_message_request)?
+            crate::protocol_serde::shape_send_users_messages_input::ser_send_users_message_request_http_payload(& self.send_users_message_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7508,7 +7508,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_tag_resource_input(& self.tags_model)?
+            crate::protocol_serde::shape_tag_resource_input::ser_tags_model_http_payload(& self.tags_model)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7670,7 +7670,7 @@ impl UpdateAdmChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_adm_channel_input(& self.adm_channel_request)?
+            crate::protocol_serde::shape_update_adm_channel_input::ser_adm_channel_request_http_payload(& self.adm_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7748,7 +7748,7 @@ impl UpdateApnsChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_apns_channel_input(& self.apns_channel_request)?
+            crate::protocol_serde::shape_update_apns_channel_input::ser_apns_channel_request_http_payload(& self.apns_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7826,7 +7826,7 @@ impl UpdateApnsSandboxChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_apns_sandbox_channel_input(& self.apns_sandbox_channel_request)?
+            crate::protocol_serde::shape_update_apns_sandbox_channel_input::ser_apns_sandbox_channel_request_http_payload(& self.apns_sandbox_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7904,7 +7904,7 @@ impl UpdateApnsVoipChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_apns_voip_channel_input(& self.apns_voip_channel_request)?
+            crate::protocol_serde::shape_update_apns_voip_channel_input::ser_apns_voip_channel_request_http_payload(& self.apns_voip_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7982,7 +7982,7 @@ impl UpdateApnsVoipSandboxChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_apns_voip_sandbox_channel_input(& self.apns_voip_sandbox_channel_request)?
+            crate::protocol_serde::shape_update_apns_voip_sandbox_channel_input::ser_apns_voip_sandbox_channel_request_http_payload(& self.apns_voip_sandbox_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8060,7 +8060,7 @@ impl UpdateApplicationSettingsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_application_settings_input(& self.write_application_settings_request)?
+            crate::protocol_serde::shape_update_application_settings_input::ser_write_application_settings_request_http_payload(& self.write_application_settings_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8138,7 +8138,7 @@ impl UpdateBaiduChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_baidu_channel_input(& self.baidu_channel_request)?
+            crate::protocol_serde::shape_update_baidu_channel_input::ser_baidu_channel_request_http_payload(& self.baidu_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8222,7 +8222,7 @@ impl UpdateCampaignInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_campaign_input(& self.write_campaign_request)?
+            crate::protocol_serde::shape_update_campaign_input::ser_write_campaign_request_http_payload(& self.write_campaign_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8300,7 +8300,7 @@ impl UpdateEmailChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_email_channel_input(& self.email_channel_request)?
+            crate::protocol_serde::shape_update_email_channel_input::ser_email_channel_request_http_payload(& self.email_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8391,7 +8391,7 @@ impl UpdateEmailTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_email_template_input(& self.email_template_request)?
+            crate::protocol_serde::shape_update_email_template_input::ser_email_template_request_http_payload(& self.email_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8475,7 +8475,7 @@ impl UpdateEndpointInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_endpoint_input(& self.endpoint_request)?
+            crate::protocol_serde::shape_update_endpoint_input::ser_endpoint_request_http_payload(& self.endpoint_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8553,7 +8553,7 @@ impl UpdateEndpointsBatchInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_endpoints_batch_input(& self.endpoint_batch_request)?
+            crate::protocol_serde::shape_update_endpoints_batch_input::ser_endpoint_batch_request_http_payload(& self.endpoint_batch_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8631,7 +8631,7 @@ impl UpdateGcmChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_gcm_channel_input(& self.gcm_channel_request)?
+            crate::protocol_serde::shape_update_gcm_channel_input::ser_gcm_channel_request_http_payload(& self.gcm_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8722,7 +8722,7 @@ impl UpdateInAppTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_in_app_template_input(& self.in_app_template_request)?
+            crate::protocol_serde::shape_update_in_app_template_input::ser_in_app_template_request_http_payload(& self.in_app_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8806,7 +8806,7 @@ impl UpdateJourneyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_journey_input(& self.write_journey_request)?
+            crate::protocol_serde::shape_update_journey_input::ser_write_journey_request_http_payload(& self.write_journey_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8890,7 +8890,7 @@ impl UpdateJourneyStateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_journey_state_input(& self.journey_state_request)?
+            crate::protocol_serde::shape_update_journey_state_input::ser_journey_state_request_http_payload(& self.journey_state_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8981,7 +8981,7 @@ impl UpdatePushTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_push_template_input(& self.push_notification_template_request)?
+            crate::protocol_serde::shape_update_push_template_input::ser_push_notification_template_request_http_payload(& self.push_notification_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9059,7 +9059,7 @@ impl UpdateRecommenderConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_recommender_configuration_input(& self.update_recommender_configuration)?
+            crate::protocol_serde::shape_update_recommender_configuration_input::ser_update_recommender_configuration_http_payload(& self.update_recommender_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9143,7 +9143,7 @@ impl UpdateSegmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_segment_input(& self.write_segment_request)?
+            crate::protocol_serde::shape_update_segment_input::ser_write_segment_request_http_payload(& self.write_segment_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9221,7 +9221,7 @@ impl UpdateSmsChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_sms_channel_input(& self.sms_channel_request)?
+            crate::protocol_serde::shape_update_sms_channel_input::ser_sms_channel_request_http_payload(& self.sms_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9312,7 +9312,7 @@ impl UpdateSmsTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_sms_template_input(& self.sms_template_request)?
+            crate::protocol_serde::shape_update_sms_template_input::ser_sms_template_request_http_payload(& self.sms_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9396,7 +9396,7 @@ impl UpdateTemplateActiveVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_template_active_version_input(& self.template_active_version_request)?
+            crate::protocol_serde::shape_update_template_active_version_input::ser_template_active_version_request_http_payload(& self.template_active_version_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9474,7 +9474,7 @@ impl UpdateVoiceChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_voice_channel_input(& self.voice_channel_request)?
+            crate::protocol_serde::shape_update_voice_channel_input::ser_voice_channel_request_http_payload(& self.voice_channel_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9565,7 +9565,7 @@ impl UpdateVoiceTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_voice_template_input(& self.voice_template_request)?
+            crate::protocol_serde::shape_update_voice_template_input::ser_voice_template_request_http_payload(& self.voice_template_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -9643,7 +9643,7 @@ impl VerifyOtpMessageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_verify_otp_message_input(& self.verify_otp_message_request_parameters)?
+            crate::protocol_serde::shape_verify_otp_message_input::ser_verify_otp_message_request_parameters_http_payload(& self.verify_otp_message_request_parameters)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

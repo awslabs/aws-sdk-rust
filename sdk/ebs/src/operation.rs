@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteSnapshot {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_complete_snapshot_error(response)
+                        crate::protocol_serde::shape_complete_snapshot::de_complete_snapshot_http_error(response)
                      } else {
-                        crate::operation_deser::parse_complete_snapshot_response(response)
+                        crate::protocol_serde::shape_complete_snapshot::de_complete_snapshot_http_response(response)
                      }
                 }
             }
@@ -147,11 +147,11 @@ impl aws_smithy_http::response::ParseHttpResponse for GetSnapshotBlock {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_get_snapshot_block(response))
+                    Some(crate::protocol_serde::shape_get_snapshot_block::de_get_snapshot_block_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_get_snapshot_block_error(response)
+                    crate::protocol_serde::shape_get_snapshot_block::de_get_snapshot_block_http_error(response)
                 }
             }
 #[allow(unreachable_code, unused_variables)]
@@ -269,9 +269,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangedBlocks {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_changed_blocks_error(response)
+                        crate::protocol_serde::shape_list_changed_blocks::de_list_changed_blocks_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_changed_blocks_response(response)
+                        crate::protocol_serde::shape_list_changed_blocks::de_list_changed_blocks_http_response(response)
                      }
                 }
             }
@@ -390,9 +390,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshotBlocks {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_snapshot_blocks_error(response)
+                        crate::protocol_serde::shape_list_snapshot_blocks::de_list_snapshot_blocks_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_snapshot_blocks_response(response)
+                        crate::protocol_serde::shape_list_snapshot_blocks::de_list_snapshot_blocks_http_response(response)
                      }
                 }
             }
@@ -511,9 +511,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::operation_deser::parse_put_snapshot_block_error(response)
+                        crate::protocol_serde::shape_put_snapshot_block::de_put_snapshot_block_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_snapshot_block_response(response)
+                        crate::protocol_serde::shape_put_snapshot_block::de_put_snapshot_block_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSnapshot {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::operation_deser::parse_start_snapshot_error(response)
+                        crate::protocol_serde::shape_start_snapshot::de_start_snapshot_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_snapshot_response(response)
+                        crate::protocol_serde::shape_start_snapshot::de_start_snapshot_http_response(response)
                      }
                 }
             }

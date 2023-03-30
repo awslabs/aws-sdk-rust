@@ -37,7 +37,7 @@ impl AcceptEulasInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_accept_eulas(input, builder)?;
+                let builder = crate::protocol_serde::shape_accept_eulas::ser_accept_eulas_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -47,7 +47,7 @@ impl AcceptEulasInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_accept_eulas(&self)?
+            crate::protocol_serde::shape_accept_eulas::ser_accept_eulas_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -119,7 +119,7 @@ impl CreateLaunchProfileInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_launch_profile(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_launch_profile::ser_create_launch_profile_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -129,7 +129,7 @@ impl CreateLaunchProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_launch_profile(&self)?
+            crate::protocol_serde::shape_create_launch_profile::ser_create_launch_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -201,7 +201,7 @@ impl CreateStreamingImageInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_streaming_image(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_streaming_image::ser_create_streaming_image_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -211,7 +211,7 @@ impl CreateStreamingImageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_streaming_image(&self)?
+            crate::protocol_serde::shape_create_streaming_image::ser_create_streaming_image_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -283,7 +283,7 @@ impl CreateStreamingSessionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_streaming_session(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_streaming_session::ser_create_streaming_session_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -293,7 +293,7 @@ impl CreateStreamingSessionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_streaming_session(&self)?
+            crate::protocol_serde::shape_create_streaming_session::ser_create_streaming_session_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -371,7 +371,7 @@ impl CreateStreamingSessionStreamInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_streaming_session_stream(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_streaming_session_stream::ser_create_streaming_session_stream_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -381,7 +381,7 @@ impl CreateStreamingSessionStreamInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_streaming_session_stream(&self)?
+            crate::protocol_serde::shape_create_streaming_session_stream::ser_create_streaming_session_stream_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -447,7 +447,7 @@ impl CreateStudioInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_studio(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_studio::ser_create_studio_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -457,7 +457,7 @@ impl CreateStudioInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)?
+            crate::protocol_serde::shape_create_studio::ser_create_studio_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -529,7 +529,7 @@ impl CreateStudioComponentInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_studio_component(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_studio_component::ser_create_studio_component_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -539,7 +539,7 @@ impl CreateStudioComponentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_studio_component(&self)?
+            crate::protocol_serde::shape_create_studio_component::ser_create_studio_component_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -617,7 +617,7 @@ impl DeleteLaunchProfileInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_launch_profile(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_launch_profile::ser_delete_launch_profile_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -707,7 +707,7 @@ impl DeleteLaunchProfileMemberInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_launch_profile_member(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_launch_profile_member::ser_delete_launch_profile_member_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -791,7 +791,7 @@ impl DeleteStreamingImageInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_streaming_image(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_streaming_image::ser_delete_streaming_image_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -875,7 +875,7 @@ impl DeleteStreamingSessionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_streaming_session(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_streaming_session::ser_delete_streaming_session_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -953,7 +953,7 @@ impl DeleteStudioInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_studio(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_studio::ser_delete_studio_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1037,7 +1037,7 @@ impl DeleteStudioComponentInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_studio_component(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_studio_component::ser_delete_studio_component_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1121,7 +1121,7 @@ impl DeleteStudioMemberInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_studio_member(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_studio_member::ser_delete_studio_member_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3180,7 +3180,7 @@ impl PutLaunchProfileMembersInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_launch_profile_members(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_launch_profile_members::ser_put_launch_profile_members_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3190,7 +3190,7 @@ impl PutLaunchProfileMembersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_launch_profile_members(&self)?
+            crate::protocol_serde::shape_put_launch_profile_members::ser_put_launch_profile_members_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3262,7 +3262,7 @@ impl PutStudioMembersInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_studio_members(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_studio_members::ser_put_studio_members_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3272,7 +3272,7 @@ impl PutStudioMembersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_studio_members(&self)?
+            crate::protocol_serde::shape_put_studio_members::ser_put_studio_members_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3350,7 +3350,7 @@ impl StartStreamingSessionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_start_streaming_session(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_streaming_session::ser_start_streaming_session_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3360,7 +3360,7 @@ impl StartStreamingSessionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_streaming_session(&self)?
+            crate::protocol_serde::shape_start_streaming_session::ser_start_streaming_session_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3432,7 +3432,7 @@ impl StartStudioSsoConfigurationRepairInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_start_studio_sso_configuration_repair(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_studio_sso_configuration_repair::ser_start_studio_sso_configuration_repair_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3516,7 +3516,7 @@ impl StopStreamingSessionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_stop_streaming_session(input, builder)?;
+                let builder = crate::protocol_serde::shape_stop_streaming_session::ser_stop_streaming_session_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3526,7 +3526,7 @@ impl StopStreamingSessionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_streaming_session(&self)?
+            crate::protocol_serde::shape_stop_streaming_session::ser_stop_streaming_session_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3604,7 +3604,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3766,7 +3766,7 @@ impl UpdateLaunchProfileInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_launch_profile(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_launch_profile::ser_update_launch_profile_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3776,7 +3776,7 @@ impl UpdateLaunchProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_launch_profile(&self)?
+            crate::protocol_serde::shape_update_launch_profile::ser_update_launch_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3860,7 +3860,7 @@ impl UpdateLaunchProfileMemberInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_launch_profile_member(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_launch_profile_member::ser_update_launch_profile_member_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3870,7 +3870,7 @@ impl UpdateLaunchProfileMemberInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_launch_profile_member(&self)?
+            crate::protocol_serde::shape_update_launch_profile_member::ser_update_launch_profile_member_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -3948,7 +3948,7 @@ impl UpdateStreamingImageInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_streaming_image(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_streaming_image::ser_update_streaming_image_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3958,7 +3958,7 @@ impl UpdateStreamingImageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_streaming_image(&self)?
+            crate::protocol_serde::shape_update_streaming_image::ser_update_streaming_image_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4030,7 +4030,7 @@ impl UpdateStudioInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_studio(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_studio::ser_update_studio_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4040,7 +4040,7 @@ impl UpdateStudioInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)?
+            crate::protocol_serde::shape_update_studio::ser_update_studio_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -4118,7 +4118,7 @@ impl UpdateStudioComponentInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_studio_component(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_studio_component::ser_update_studio_component_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4128,7 +4128,7 @@ impl UpdateStudioComponentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_studio_component(&self)?
+            crate::protocol_serde::shape_update_studio_component::ser_update_studio_component_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);

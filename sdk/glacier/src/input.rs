@@ -238,7 +238,7 @@ impl AddTagsToVaultInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_vault(&self)?
+            crate::protocol_serde::shape_add_tags_to_vault::ser_add_tags_to_vault_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -326,7 +326,7 @@ impl CompleteMultipartUploadInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_complete_multipart_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_complete_multipart_upload::ser_complete_multipart_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1215,7 +1215,7 @@ impl GetJobOutputInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_job_output(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_job_output::ser_get_job_output_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1573,7 +1573,7 @@ impl InitiateJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_initiate_job_input(& self.job_parameters)?
+            crate::protocol_serde::shape_initiate_job_input::ser_job_parameters_http_payload(& self.job_parameters)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1655,7 +1655,7 @@ impl InitiateMultipartUploadInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_initiate_multipart_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_initiate_multipart_upload::ser_initiate_multipart_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1752,7 +1752,7 @@ impl InitiateVaultLockInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_initiate_vault_lock_input(& self.policy)?
+            crate::protocol_serde::shape_initiate_vault_lock_input::ser_policy_http_payload(& self.policy)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -2516,7 +2516,7 @@ impl RemoveTagsFromVaultInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_vault(&self)?
+            crate::protocol_serde::shape_remove_tags_from_vault::ser_remove_tags_from_vault_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -2601,7 +2601,7 @@ impl SetDataRetrievalPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_data_retrieval_policy(&self)?
+            crate::protocol_serde::shape_set_data_retrieval_policy::ser_set_data_retrieval_policy_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -2692,7 +2692,7 @@ impl SetVaultAccessPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_set_vault_access_policy_input(& self.policy)?
+            crate::protocol_serde::shape_set_vault_access_policy_input::ser_policy_http_payload(& self.policy)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -2783,7 +2783,7 @@ impl SetVaultNotificationsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_set_vault_notifications_input(& self.vault_notification_config)?
+            crate::protocol_serde::shape_set_vault_notifications_input::ser_vault_notification_config_http_payload(& self.vault_notification_config)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -2865,7 +2865,7 @@ impl UploadArchiveInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_upload_archive(input, builder)?;
+                let builder = crate::protocol_serde::shape_upload_archive::ser_upload_archive_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2875,7 +2875,7 @@ impl UploadArchiveInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_archive_input( self.body)?
+            crate::protocol_serde::shape_upload_archive_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {
@@ -2967,7 +2967,7 @@ impl UploadMultipartPartInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_upload_multipart_part(input, builder)?;
+                let builder = crate::protocol_serde::shape_upload_multipart_part::ser_upload_multipart_part_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2977,7 +2977,7 @@ impl UploadMultipartPartInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_multipart_part_input( self.body)?
+            crate::protocol_serde::shape_upload_multipart_part_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {

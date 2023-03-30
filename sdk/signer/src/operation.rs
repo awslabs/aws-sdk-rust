@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AddProfilePermission {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_add_profile_permission_error(response)
+                        crate::protocol_serde::shape_add_profile_permission::de_add_profile_permission_http_error(response)
                      } else {
-                        crate::operation_deser::parse_add_profile_permission_response(response)
+                        crate::protocol_serde::shape_add_profile_permission::de_add_profile_permission_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSigningProfile {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_cancel_signing_profile_error(response)
+                        crate::protocol_serde::shape_cancel_signing_profile::de_cancel_signing_profile_http_error(response)
                      } else {
-                        crate::operation_deser::parse_cancel_signing_profile_response(response)
+                        crate::protocol_serde::shape_cancel_signing_profile::de_cancel_signing_profile_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSigningJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_signing_job_error(response)
+                        crate::protocol_serde::shape_describe_signing_job::de_describe_signing_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_signing_job_response(response)
+                        crate::protocol_serde::shape_describe_signing_job::de_describe_signing_job_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningPlatform {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_signing_platform_error(response)
+                        crate::protocol_serde::shape_get_signing_platform::de_get_signing_platform_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_signing_platform_response(response)
+                        crate::protocol_serde::shape_get_signing_platform::de_get_signing_platform_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningProfile {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_signing_profile_error(response)
+                        crate::protocol_serde::shape_get_signing_profile::de_get_signing_profile_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_signing_profile_response(response)
+                        crate::protocol_serde::shape_get_signing_profile::de_get_signing_profile_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfilePermissions {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_profile_permissions_error(response)
+                        crate::protocol_serde::shape_list_profile_permissions::de_list_profile_permissions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_profile_permissions_response(response)
+                        crate::protocol_serde::shape_list_profile_permissions::de_list_profile_permissions_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningJobs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_signing_jobs_error(response)
+                        crate::protocol_serde::shape_list_signing_jobs::de_list_signing_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_signing_jobs_response(response)
+                        crate::protocol_serde::shape_list_signing_jobs::de_list_signing_jobs_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningPlatforms {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_signing_platforms_error(response)
+                        crate::protocol_serde::shape_list_signing_platforms::de_list_signing_platforms_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_signing_platforms_response(response)
+                        crate::protocol_serde::shape_list_signing_platforms::de_list_signing_platforms_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningProfiles {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_signing_profiles_error(response)
+                        crate::protocol_serde::shape_list_signing_profiles::de_list_signing_profiles_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_signing_profiles_response(response)
+                        crate::protocol_serde::shape_list_signing_profiles::de_list_signing_profiles_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSigningProfile {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_signing_profile_error(response)
+                        crate::protocol_serde::shape_put_signing_profile::de_put_signing_profile_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_signing_profile_response(response)
+                        crate::protocol_serde::shape_put_signing_profile::de_put_signing_profile_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveProfilePermission 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_remove_profile_permission_error(response)
+                        crate::protocol_serde::shape_remove_profile_permission::de_remove_profile_permission_http_error(response)
                      } else {
-                        crate::operation_deser::parse_remove_profile_permission_response(response)
+                        crate::protocol_serde::shape_remove_profile_permission::de_remove_profile_permission_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSignature {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_revoke_signature_error(response)
+                        crate::protocol_serde::shape_revoke_signature::de_revoke_signature_http_error(response)
                      } else {
-                        crate::operation_deser::parse_revoke_signature_response(response)
+                        crate::protocol_serde::shape_revoke_signature::de_revoke_signature_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSigningProfile {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_revoke_signing_profile_error(response)
+                        crate::protocol_serde::shape_revoke_signing_profile::de_revoke_signing_profile_http_error(response)
                      } else {
-                        crate::operation_deser::parse_revoke_signing_profile_response(response)
+                        crate::protocol_serde::shape_revoke_signing_profile::de_revoke_signing_profile_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSigningJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_signing_job_error(response)
+                        crate::protocol_serde::shape_start_signing_job::de_start_signing_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_signing_job_response(response)
+                        crate::protocol_serde::shape_start_signing_job::de_start_signing_job_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }

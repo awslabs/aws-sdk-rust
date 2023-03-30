@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_object_error(response)
+                        crate::protocol_serde::shape_delete_object::de_delete_object_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_object_response(response)
+                        crate::protocol_serde::shape_delete_object::de_delete_object_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObject {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_object_error(response)
+                        crate::protocol_serde::shape_describe_object::de_describe_object_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_object_response(response)
+                        crate::protocol_serde::shape_describe_object::de_describe_object_http_response(response)
                      }
                 }
             }
@@ -90,11 +90,11 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_get_object(response))
+                    Some(crate::protocol_serde::shape_get_object::de_get_object_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_get_object_error(response)
+                    crate::protocol_serde::shape_get_object::de_get_object_http_error(response)
                 }
             }
 
@@ -123,9 +123,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListItems {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_items_error(response)
+                        crate::protocol_serde::shape_list_items::de_list_items_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_items_response(response)
+                        crate::protocol_serde::shape_list_items::de_list_items_http_response(response)
                      }
                 }
             }
@@ -155,9 +155,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObject {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_object_error(response)
+                        crate::protocol_serde::shape_put_object::de_put_object_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_object_response(response)
+                        crate::protocol_serde::shape_put_object::de_put_object_http_response(response)
                      }
                 }
             }

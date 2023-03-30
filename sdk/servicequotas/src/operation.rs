@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceQuotaTem
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_associate_service_quota_template_error(response)
+                        crate::protocol_serde::shape_associate_service_quota_template::de_associate_service_quota_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_associate_service_quota_template_response(response)
+                        crate::protocol_serde::shape_associate_service_quota_template::de_associate_service_quota_template_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceQuotaIncrea
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_service_quota_increase_request_from_template_error(response)
+                        crate::protocol_serde::shape_delete_service_quota_increase_request_from_template::de_delete_service_quota_increase_request_from_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_service_quota_increase_request_from_template_response(response)
+                        crate::protocol_serde::shape_delete_service_quota_increase_request_from_template::de_delete_service_quota_increase_request_from_template_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceQuota
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_disassociate_service_quota_template_error(response)
+                        crate::protocol_serde::shape_disassociate_service_quota_template::de_disassociate_service_quota_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_disassociate_service_quota_template_response(response)
+                        crate::protocol_serde::shape_disassociate_service_quota_template::de_disassociate_service_quota_template_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociationForService
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_association_for_service_quota_template_error(response)
+                        crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_association_for_service_quota_template_response(response)
+                        crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAWSDefaultServiceQuot
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_aws_default_service_quota_error(response)
+                        crate::protocol_serde::shape_get_aws_default_service_quota::de_get_aws_default_service_quota_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_aws_default_service_quota_response(response)
+                        crate::protocol_serde::shape_get_aws_default_service_quota::de_get_aws_default_service_quota_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRequestedServiceQuota
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_requested_service_quota_change_error(response)
+                        crate::protocol_serde::shape_get_requested_service_quota_change::de_get_requested_service_quota_change_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_requested_service_quota_change_response(response)
+                        crate::protocol_serde::shape_get_requested_service_quota_change::de_get_requested_service_quota_change_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuota {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_service_quota_error(response)
+                        crate::protocol_serde::shape_get_service_quota::de_get_service_quota_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_service_quota_response(response)
+                        crate::protocol_serde::shape_get_service_quota::de_get_service_quota_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuotaIncreaseR
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_service_quota_increase_request_from_template_error(response)
+                        crate::protocol_serde::shape_get_service_quota_increase_request_from_template::de_get_service_quota_increase_request_from_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_service_quota_increase_request_from_template_response(response)
+                        crate::protocol_serde::shape_get_service_quota_increase_request_from_template::de_get_service_quota_increase_request_from_template_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAWSDefaultServiceQuo
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_aws_default_service_quotas_error(response)
+                        crate::protocol_serde::shape_list_aws_default_service_quotas::de_list_aws_default_service_quotas_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_aws_default_service_quotas_response(response)
+                        crate::protocol_serde::shape_list_aws_default_service_quotas::de_list_aws_default_service_quotas_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRequestedServiceQuot
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_requested_service_quota_change_history_error(response)
+                        crate::protocol_serde::shape_list_requested_service_quota_change_history::de_list_requested_service_quota_change_history_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_requested_service_quota_change_history_response(response)
+                        crate::protocol_serde::shape_list_requested_service_quota_change_history::de_list_requested_service_quota_change_history_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRequestedServiceQuot
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_requested_service_quota_change_history_by_quota_error(response)
+                        crate::protocol_serde::shape_list_requested_service_quota_change_history_by_quota::de_list_requested_service_quota_change_history_by_quota_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_requested_service_quota_change_history_by_quota_response(response)
+                        crate::protocol_serde::shape_list_requested_service_quota_change_history_by_quota::de_list_requested_service_quota_change_history_by_quota_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotaIncrease
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_service_quota_increase_requests_in_template_error(response)
+                        crate::protocol_serde::shape_list_service_quota_increase_requests_in_template::de_list_service_quota_increase_requests_in_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_service_quota_increase_requests_in_template_response(response)
+                        crate::protocol_serde::shape_list_service_quota_increase_requests_in_template::de_list_service_quota_increase_requests_in_template_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotas {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_service_quotas_error(response)
+                        crate::protocol_serde::shape_list_service_quotas::de_list_service_quotas_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_service_quotas_response(response)
+                        crate::protocol_serde::shape_list_service_quotas::de_list_service_quotas_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_services_error(response)
+                        crate::protocol_serde::shape_list_services::de_list_services_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_services_response(response)
+                        crate::protocol_serde::shape_list_services::de_list_services_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutServiceQuotaIncreaseR
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_service_quota_increase_request_into_template_error(response)
+                        crate::protocol_serde::shape_put_service_quota_increase_request_into_template::de_put_service_quota_increase_request_into_template_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_service_quota_increase_request_into_template_response(response)
+                        crate::protocol_serde::shape_put_service_quota_increase_request_into_template::de_put_service_quota_increase_request_into_template_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestServiceQuotaIncre
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_request_service_quota_increase_error(response)
+                        crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase_http_error(response)
                      } else {
-                        crate::operation_deser::parse_request_service_quota_increase_response(response)
+                        crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }

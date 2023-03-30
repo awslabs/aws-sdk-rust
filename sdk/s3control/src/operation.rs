@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPoint {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_access_point_error(response)
+                        crate::protocol_serde::shape_create_access_point::de_create_access_point_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_access_point_response(response)
+                        crate::protocol_serde::shape_create_access_point::de_create_access_point_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPointForObje
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_access_point_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_create_access_point_for_object_lambda::de_create_access_point_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_access_point_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_create_access_point_for_object_lambda::de_create_access_point_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBucket {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_bucket_error(response)
+                        crate::protocol_serde::shape_create_bucket::de_create_bucket_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_bucket_response(response)
+                        crate::protocol_serde::shape_create_bucket::de_create_bucket_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_job_error(response)
+                        crate::protocol_serde::shape_create_job::de_create_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_job_response(response)
+                        crate::protocol_serde::shape_create_job::de_create_job_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiRegionAccessP
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_multi_region_access_point_error(response)
+                        crate::protocol_serde::shape_create_multi_region_access_point::de_create_multi_region_access_point_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_multi_region_access_point_response(response)
+                        crate::protocol_serde::shape_create_multi_region_access_point::de_create_multi_region_access_point_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPoint {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_access_point_error(response)
+                        crate::protocol_serde::shape_delete_access_point::de_delete_access_point_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_access_point_response(response)
+                        crate::protocol_serde::shape_delete_access_point::de_delete_access_point_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointForObje
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_access_point_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_delete_access_point_for_object_lambda::de_delete_access_point_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_access_point_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_delete_access_point_for_object_lambda::de_delete_access_point_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicy 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_access_point_policy_error(response)
+                        crate::protocol_serde::shape_delete_access_point_policy::de_delete_access_point_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_access_point_policy_response(response)
+                        crate::protocol_serde::shape_delete_access_point_policy::de_delete_access_point_policy_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicyF
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_access_point_policy_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_delete_access_point_policy_for_object_lambda::de_delete_access_point_policy_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_access_point_policy_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_delete_access_point_policy_for_object_lambda::de_delete_access_point_policy_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_bucket_error(response)
+                        crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_bucket_response(response)
+                        crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleCon
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_bucket_lifecycle_configuration_error(response)
+                        crate::protocol_serde::shape_delete_bucket_lifecycle_configuration::de_delete_bucket_lifecycle_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_bucket_lifecycle_configuration_response(response)
+                        crate::protocol_serde::shape_delete_bucket_lifecycle_configuration::de_delete_bucket_lifecycle_configuration_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_bucket_policy_error(response)
+                        crate::protocol_serde::shape_delete_bucket_policy::de_delete_bucket_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_bucket_policy_response(response)
+                        crate::protocol_serde::shape_delete_bucket_policy::de_delete_bucket_policy_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
-                        crate::operation_deser::parse_delete_bucket_tagging_error(response)
+                        crate::protocol_serde::shape_delete_bucket_tagging::de_delete_bucket_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_bucket_tagging_response(response)
+                        crate::protocol_serde::shape_delete_bucket_tagging::de_delete_bucket_tagging_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTagging {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_job_tagging_error(response)
+                        crate::protocol_serde::shape_delete_job_tagging::de_delete_job_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_job_tagging_response(response)
+                        crate::protocol_serde::shape_delete_job_tagging::de_delete_job_tagging_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiRegionAccessP
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_multi_region_access_point_error(response)
+                        crate::protocol_serde::shape_delete_multi_region_access_point::de_delete_multi_region_access_point_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_multi_region_access_point_response(response)
+                        crate::protocol_serde::shape_delete_multi_region_access_point::de_delete_multi_region_access_point_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_public_access_block_error(response)
+                        crate::protocol_serde::shape_delete_public_access_block::de_delete_public_access_block_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_public_access_block_response(response)
+                        crate::protocol_serde::shape_delete_public_access_block::de_delete_public_access_block_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_storage_lens_configuration_error(response)
+                        crate::protocol_serde::shape_delete_storage_lens_configuration::de_delete_storage_lens_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_storage_lens_configuration_response(response)
+                        crate::protocol_serde::shape_delete_storage_lens_configuration::de_delete_storage_lens_configuration_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_storage_lens_configuration_tagging_error(response)
+                        crate::protocol_serde::shape_delete_storage_lens_configuration_tagging::de_delete_storage_lens_configuration_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_storage_lens_configuration_tagging_response(response)
+                        crate::protocol_serde::shape_delete_storage_lens_configuration_tagging::de_delete_storage_lens_configuration_tagging_http_response(response)
                      }
                 }
             }
@@ -600,9 +600,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_job_error(response)
+                        crate::protocol_serde::shape_describe_job::de_describe_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_job_response(response)
+                        crate::protocol_serde::shape_describe_job::de_describe_job_http_response(response)
                      }
                 }
             }
@@ -632,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiRegionAcces
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_multi_region_access_point_operation_error(response)
+                        crate::protocol_serde::shape_describe_multi_region_access_point_operation::de_describe_multi_region_access_point_operation_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_multi_region_access_point_operation_response(response)
+                        crate::protocol_serde::shape_describe_multi_region_access_point_operation::de_describe_multi_region_access_point_operation_http_response(response)
                      }
                 }
             }
@@ -664,9 +664,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPoint {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_error(response)
+                        crate::protocol_serde::shape_get_access_point::de_get_access_point_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_response(response)
+                        crate::protocol_serde::shape_get_access_point::de_get_access_point_http_response(response)
                      }
                 }
             }
@@ -696,9 +696,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointConfigurat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_configuration_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_get_access_point_configuration_for_object_lambda::de_get_access_point_configuration_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_configuration_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_get_access_point_configuration_for_object_lambda::de_get_access_point_configuration_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -728,9 +728,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointForObjectL
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_get_access_point_for_object_lambda::de_get_access_point_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_get_access_point_for_object_lambda::de_get_access_point_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -760,9 +760,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicy {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_policy_error(response)
+                        crate::protocol_serde::shape_get_access_point_policy::de_get_access_point_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_policy_response(response)
+                        crate::protocol_serde::shape_get_access_point_policy::de_get_access_point_policy_http_response(response)
                      }
                 }
             }
@@ -792,9 +792,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyForO
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_policy_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_get_access_point_policy_for_object_lambda::de_get_access_point_policy_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_policy_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_get_access_point_policy_for_object_lambda::de_get_access_point_policy_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -824,9 +824,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_policy_status_error(response)
+                        crate::protocol_serde::shape_get_access_point_policy_status::de_get_access_point_policy_status_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_policy_status_response(response)
+                        crate::protocol_serde::shape_get_access_point_policy_status::de_get_access_point_policy_status_http_response(response)
                      }
                 }
             }
@@ -856,9 +856,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_access_point_policy_status_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_get_access_point_policy_status_for_object_lambda::de_get_access_point_policy_status_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_access_point_policy_status_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_get_access_point_policy_status_for_object_lambda::de_get_access_point_policy_status_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -888,9 +888,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucket {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_bucket_error(response)
+                        crate::protocol_serde::shape_get_bucket::de_get_bucket_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_bucket_response(response)
+                        crate::protocol_serde::shape_get_bucket::de_get_bucket_http_response(response)
                      }
                 }
             }
@@ -920,9 +920,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfig
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_bucket_lifecycle_configuration_error(response)
+                        crate::protocol_serde::shape_get_bucket_lifecycle_configuration::de_get_bucket_lifecycle_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_bucket_lifecycle_configuration_response(response)
+                        crate::protocol_serde::shape_get_bucket_lifecycle_configuration::de_get_bucket_lifecycle_configuration_http_response(response)
                      }
                 }
             }
@@ -952,9 +952,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicy {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_bucket_policy_error(response)
+                        crate::protocol_serde::shape_get_bucket_policy::de_get_bucket_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_bucket_policy_response(response)
+                        crate::protocol_serde::shape_get_bucket_policy::de_get_bucket_policy_http_response(response)
                      }
                 }
             }
@@ -984,9 +984,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_bucket_tagging_error(response)
+                        crate::protocol_serde::shape_get_bucket_tagging::de_get_bucket_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_bucket_tagging_response(response)
+                        crate::protocol_serde::shape_get_bucket_tagging::de_get_bucket_tagging_http_response(response)
                      }
                 }
             }
@@ -1016,9 +1016,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_bucket_versioning_error(response)
+                        crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_bucket_versioning_response(response)
+                        crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning_http_response(response)
                      }
                 }
             }
@@ -1048,9 +1048,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobTagging {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_job_tagging_error(response)
+                        crate::protocol_serde::shape_get_job_tagging::de_get_job_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_job_tagging_response(response)
+                        crate::protocol_serde::shape_get_job_tagging::de_get_job_tagging_http_response(response)
                      }
                 }
             }
@@ -1080,9 +1080,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_multi_region_access_point_error(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point::de_get_multi_region_access_point_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_multi_region_access_point_response(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point::de_get_multi_region_access_point_http_response(response)
                      }
                 }
             }
@@ -1112,9 +1112,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_multi_region_access_point_policy_error(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point_policy::de_get_multi_region_access_point_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_multi_region_access_point_policy_response(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point_policy::de_get_multi_region_access_point_policy_http_response(response)
                      }
                 }
             }
@@ -1144,9 +1144,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_multi_region_access_point_policy_status_error(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point_policy_status::de_get_multi_region_access_point_policy_status_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_multi_region_access_point_policy_status_response(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point_policy_status::de_get_multi_region_access_point_policy_status_http_response(response)
                      }
                 }
             }
@@ -1176,9 +1176,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_multi_region_access_point_routes_error(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point_routes::de_get_multi_region_access_point_routes_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_multi_region_access_point_routes_response(response)
+                        crate::protocol_serde::shape_get_multi_region_access_point_routes::de_get_multi_region_access_point_routes_http_response(response)
                      }
                 }
             }
@@ -1208,9 +1208,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_public_access_block_error(response)
+                        crate::protocol_serde::shape_get_public_access_block::de_get_public_access_block_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_public_access_block_response(response)
+                        crate::protocol_serde::shape_get_public_access_block::de_get_public_access_block_http_response(response)
                      }
                 }
             }
@@ -1240,9 +1240,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStorageLensConfigurat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_storage_lens_configuration_error(response)
+                        crate::protocol_serde::shape_get_storage_lens_configuration::de_get_storage_lens_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_storage_lens_configuration_response(response)
+                        crate::protocol_serde::shape_get_storage_lens_configuration::de_get_storage_lens_configuration_http_response(response)
                      }
                 }
             }
@@ -1272,9 +1272,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStorageLensConfigurat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_storage_lens_configuration_tagging_error(response)
+                        crate::protocol_serde::shape_get_storage_lens_configuration_tagging::de_get_storage_lens_configuration_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_storage_lens_configuration_tagging_response(response)
+                        crate::protocol_serde::shape_get_storage_lens_configuration_tagging::de_get_storage_lens_configuration_tagging_http_response(response)
                      }
                 }
             }
@@ -1304,9 +1304,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPoints {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_access_points_error(response)
+                        crate::protocol_serde::shape_list_access_points::de_list_access_points_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_access_points_response(response)
+                        crate::protocol_serde::shape_list_access_points::de_list_access_points_http_response(response)
                      }
                 }
             }
@@ -1336,9 +1336,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPointsForObjec
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_access_points_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_list_access_points_for_object_lambda::de_list_access_points_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_access_points_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_list_access_points_for_object_lambda::de_list_access_points_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -1368,9 +1368,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_jobs_error(response)
+                        crate::protocol_serde::shape_list_jobs::de_list_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_jobs_response(response)
+                        crate::protocol_serde::shape_list_jobs::de_list_jobs_http_response(response)
                      }
                 }
             }
@@ -1400,9 +1400,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiRegionAccessPoi
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_multi_region_access_points_error(response)
+                        crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_multi_region_access_points_response(response)
+                        crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points_http_response(response)
                      }
                 }
             }
@@ -1432,9 +1432,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegionalBuckets {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_regional_buckets_error(response)
+                        crate::protocol_serde::shape_list_regional_buckets::de_list_regional_buckets_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_regional_buckets_response(response)
+                        crate::protocol_serde::shape_list_regional_buckets::de_list_regional_buckets_http_response(response)
                      }
                 }
             }
@@ -1464,9 +1464,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStorageLensConfigura
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_storage_lens_configurations_error(response)
+                        crate::protocol_serde::shape_list_storage_lens_configurations::de_list_storage_lens_configurations_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_storage_lens_configurations_response(response)
+                        crate::protocol_serde::shape_list_storage_lens_configurations::de_list_storage_lens_configurations_http_response(response)
                      }
                 }
             }
@@ -1496,9 +1496,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointConfigurat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_access_point_configuration_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_put_access_point_configuration_for_object_lambda::de_put_access_point_configuration_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_access_point_configuration_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_put_access_point_configuration_for_object_lambda::de_put_access_point_configuration_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -1528,9 +1528,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicy {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_access_point_policy_error(response)
+                        crate::protocol_serde::shape_put_access_point_policy::de_put_access_point_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_access_point_policy_response(response)
+                        crate::protocol_serde::shape_put_access_point_policy::de_put_access_point_policy_http_response(response)
                      }
                 }
             }
@@ -1560,9 +1560,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicyForO
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_access_point_policy_for_object_lambda_error(response)
+                        crate::protocol_serde::shape_put_access_point_policy_for_object_lambda::de_put_access_point_policy_for_object_lambda_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_access_point_policy_for_object_lambda_response(response)
+                        crate::protocol_serde::shape_put_access_point_policy_for_object_lambda::de_put_access_point_policy_for_object_lambda_http_response(response)
                      }
                 }
             }
@@ -1592,9 +1592,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfig
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_bucket_lifecycle_configuration_error(response)
+                        crate::protocol_serde::shape_put_bucket_lifecycle_configuration::de_put_bucket_lifecycle_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_bucket_lifecycle_configuration_response(response)
+                        crate::protocol_serde::shape_put_bucket_lifecycle_configuration::de_put_bucket_lifecycle_configuration_http_response(response)
                      }
                 }
             }
@@ -1624,9 +1624,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_bucket_policy_error(response)
+                        crate::protocol_serde::shape_put_bucket_policy::de_put_bucket_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_bucket_policy_response(response)
+                        crate::protocol_serde::shape_put_bucket_policy::de_put_bucket_policy_http_response(response)
                      }
                 }
             }
@@ -1656,9 +1656,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_bucket_tagging_error(response)
+                        crate::protocol_serde::shape_put_bucket_tagging::de_put_bucket_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_bucket_tagging_response(response)
+                        crate::protocol_serde::shape_put_bucket_tagging::de_put_bucket_tagging_http_response(response)
                      }
                 }
             }
@@ -1688,9 +1688,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_bucket_versioning_error(response)
+                        crate::protocol_serde::shape_put_bucket_versioning::de_put_bucket_versioning_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_bucket_versioning_response(response)
+                        crate::protocol_serde::shape_put_bucket_versioning::de_put_bucket_versioning_http_response(response)
                      }
                 }
             }
@@ -1720,9 +1720,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutJobTagging {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_job_tagging_error(response)
+                        crate::protocol_serde::shape_put_job_tagging::de_put_job_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_job_tagging_response(response)
+                        crate::protocol_serde::shape_put_job_tagging::de_put_job_tagging_http_response(response)
                      }
                 }
             }
@@ -1752,9 +1752,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMultiRegionAccessPoin
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_multi_region_access_point_policy_error(response)
+                        crate::protocol_serde::shape_put_multi_region_access_point_policy::de_put_multi_region_access_point_policy_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_multi_region_access_point_policy_response(response)
+                        crate::protocol_serde::shape_put_multi_region_access_point_policy::de_put_multi_region_access_point_policy_http_response(response)
                      }
                 }
             }
@@ -1784,9 +1784,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_public_access_block_error(response)
+                        crate::protocol_serde::shape_put_public_access_block::de_put_public_access_block_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_public_access_block_response(response)
+                        crate::protocol_serde::shape_put_public_access_block::de_put_public_access_block_http_response(response)
                      }
                 }
             }
@@ -1816,9 +1816,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_storage_lens_configuration_error(response)
+                        crate::protocol_serde::shape_put_storage_lens_configuration::de_put_storage_lens_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_storage_lens_configuration_response(response)
+                        crate::protocol_serde::shape_put_storage_lens_configuration::de_put_storage_lens_configuration_http_response(response)
                      }
                 }
             }
@@ -1848,9 +1848,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_storage_lens_configuration_tagging_error(response)
+                        crate::protocol_serde::shape_put_storage_lens_configuration_tagging::de_put_storage_lens_configuration_tagging_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_storage_lens_configuration_tagging_response(response)
+                        crate::protocol_serde::shape_put_storage_lens_configuration_tagging::de_put_storage_lens_configuration_tagging_http_response(response)
                      }
                 }
             }
@@ -1880,9 +1880,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitMultiRegionAccessP
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_submit_multi_region_access_point_routes_error(response)
+                        crate::protocol_serde::shape_submit_multi_region_access_point_routes::de_submit_multi_region_access_point_routes_http_error(response)
                      } else {
-                        crate::operation_deser::parse_submit_multi_region_access_point_routes_response(response)
+                        crate::protocol_serde::shape_submit_multi_region_access_point_routes::de_submit_multi_region_access_point_routes_http_response(response)
                      }
                 }
             }
@@ -1912,9 +1912,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobPriority {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_job_priority_error(response)
+                        crate::protocol_serde::shape_update_job_priority::de_update_job_priority_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_job_priority_response(response)
+                        crate::protocol_serde::shape_update_job_priority::de_update_job_priority_http_response(response)
                      }
                 }
             }
@@ -1944,9 +1944,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobStatus {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_job_status_error(response)
+                        crate::protocol_serde::shape_update_job_status::de_update_job_status_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_job_status_response(response)
+                        crate::protocol_serde::shape_update_job_status::de_update_job_status_http_response(response)
                      }
                 }
             }

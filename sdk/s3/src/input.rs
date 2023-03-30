@@ -51,7 +51,7 @@ impl AbortMultipartUploadInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_abort_multipart_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_abort_multipart_upload::ser_abort_multipart_upload_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -146,7 +146,7 @@ impl CompleteMultipartUploadInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_complete_multipart_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_complete_multipart_upload::ser_complete_multipart_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -156,7 +156,7 @@ impl CompleteMultipartUploadInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_complete_multipart_upload_input(& self.multipart_upload)?
+            crate::protocol_serde::shape_complete_multipart_upload_input::ser_multipart_upload_http_payload(& self.multipart_upload)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -239,7 +239,7 @@ impl CopyObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_copy_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_copy_object::ser_copy_object_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -317,7 +317,7 @@ impl CreateBucketInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_bucket(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_bucket::ser_create_bucket_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -327,7 +327,7 @@ impl CreateBucketInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_bucket_input(& self.create_bucket_configuration)?
+            crate::protocol_serde::shape_create_bucket_input::ser_create_bucket_configuration_http_payload(& self.create_bucket_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -411,7 +411,7 @@ impl CreateMultipartUploadInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_multipart_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_multipart_upload::ser_create_multipart_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -488,7 +488,7 @@ impl DeleteBucketInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket::ser_delete_bucket_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -577,7 +577,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_analytics_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_analytics_configuration::ser_delete_bucket_analytics_configuration_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -660,7 +660,7 @@ impl DeleteBucketCorsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_cors(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_cors::ser_delete_bucket_cors_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -743,7 +743,7 @@ impl DeleteBucketEncryptionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_encryption(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_encryption::ser_delete_bucket_encryption_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -920,7 +920,7 @@ impl DeleteBucketInventoryConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_inventory_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_inventory_configuration::ser_delete_bucket_inventory_configuration_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1003,7 +1003,7 @@ impl DeleteBucketLifecycleInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_lifecycle(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_lifecycle::ser_delete_bucket_lifecycle_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1092,7 +1092,7 @@ impl DeleteBucketMetricsConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_metrics_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_metrics_configuration::ser_delete_bucket_metrics_configuration_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1175,7 +1175,7 @@ impl DeleteBucketOwnershipControlsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_ownership_controls(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_ownership_controls::ser_delete_bucket_ownership_controls_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1258,7 +1258,7 @@ impl DeleteBucketPolicyInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_policy::ser_delete_bucket_policy_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1341,7 +1341,7 @@ impl DeleteBucketReplicationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_replication(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_replication::ser_delete_bucket_replication_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1424,7 +1424,7 @@ impl DeleteBucketTaggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_tagging::ser_delete_bucket_tagging_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1507,7 +1507,7 @@ impl DeleteBucketWebsiteInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_bucket_website(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_bucket_website::ser_delete_bucket_website_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1601,7 +1601,7 @@ impl DeleteObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_object::ser_delete_object_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1731,7 +1731,7 @@ impl DeleteObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_object::ser_delete_object_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1816,7 +1816,7 @@ impl DeleteObjectsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_objects(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_objects::ser_delete_objects_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1826,7 +1826,7 @@ impl DeleteObjectsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_delete_objects_input(& self.delete)?
+            crate::protocol_serde::shape_delete_objects_input::ser_delete_http_payload(& self.delete)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -1929,7 +1929,7 @@ impl DeleteObjectTaggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_object_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_object_tagging::ser_delete_object_tagging_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2012,7 +2012,7 @@ impl DeletePublicAccessBlockInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_public_access_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_public_access_block::ser_delete_public_access_block_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2095,7 +2095,7 @@ impl GetBucketAccelerateConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_accelerate_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_accelerate_configuration::ser_get_bucket_accelerate_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2178,7 +2178,7 @@ impl GetBucketAclInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_acl(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_acl::ser_get_bucket_acl_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2268,7 +2268,7 @@ impl GetBucketAnalyticsConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_analytics_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_analytics_configuration::ser_get_bucket_analytics_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2351,7 +2351,7 @@ impl GetBucketCorsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_cors(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_cors::ser_get_bucket_cors_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2434,7 +2434,7 @@ impl GetBucketEncryptionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_encryption(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_encryption::ser_get_bucket_encryption_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2613,7 +2613,7 @@ impl GetBucketInventoryConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_inventory_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_inventory_configuration::ser_get_bucket_inventory_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2696,7 +2696,7 @@ impl GetBucketLifecycleConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_lifecycle_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_lifecycle_configuration::ser_get_bucket_lifecycle_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2779,7 +2779,7 @@ impl GetBucketLocationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_location(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_location::ser_get_bucket_location_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2862,7 +2862,7 @@ impl GetBucketLoggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_logging(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_logging::ser_get_bucket_logging_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2952,7 +2952,7 @@ impl GetBucketMetricsConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_metrics_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_metrics_configuration::ser_get_bucket_metrics_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3035,7 +3035,7 @@ impl GetBucketNotificationConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_notification_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_notification_configuration::ser_get_bucket_notification_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3118,7 +3118,7 @@ impl GetBucketOwnershipControlsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_ownership_controls(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_ownership_controls::ser_get_bucket_ownership_controls_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3201,7 +3201,7 @@ impl GetBucketPolicyInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_policy::ser_get_bucket_policy_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3284,7 +3284,7 @@ impl GetBucketPolicyStatusInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_policy_status(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_policy_status::ser_get_bucket_policy_status_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3367,7 +3367,7 @@ impl GetBucketReplicationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_replication(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_replication::ser_get_bucket_replication_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3450,7 +3450,7 @@ impl GetBucketRequestPaymentInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_request_payment(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_request_payment::ser_get_bucket_request_payment_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3533,7 +3533,7 @@ impl GetBucketTaggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_tagging::ser_get_bucket_tagging_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3616,7 +3616,7 @@ impl GetBucketVersioningInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_versioning(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_versioning::ser_get_bucket_versioning_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3699,7 +3699,7 @@ impl GetBucketWebsiteInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_bucket_website(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_bucket_website::ser_get_bucket_website_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3826,7 +3826,7 @@ impl GetObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3996,7 +3996,7 @@ impl GetObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4097,7 +4097,7 @@ impl GetObjectAclInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_acl(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_acl::ser_get_object_acl_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4191,7 +4191,7 @@ impl GetObjectAttributesInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_attributes::ser_get_object_attributes_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4285,7 +4285,7 @@ impl GetObjectLegalHoldInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_legal_hold(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_legal_hold::ser_get_object_legal_hold_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4368,7 +4368,7 @@ impl GetObjectLockConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_lock_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_lock_configuration::ser_get_object_lock_configuration_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4462,7 +4462,7 @@ impl GetObjectRetentionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_retention(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_retention::ser_get_object_retention_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4556,7 +4556,7 @@ impl GetObjectTaggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_tagging::ser_get_object_tagging_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4645,7 +4645,7 @@ impl GetObjectTorrentInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_torrent(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_torrent::ser_get_object_torrent_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4728,7 +4728,7 @@ impl GetPublicAccessBlockInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_public_access_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_public_access_block::ser_get_public_access_block_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4805,7 +4805,7 @@ impl HeadBucketInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_head_bucket(input, builder)?;
+                let builder = crate::protocol_serde::shape_head_bucket::ser_head_bucket_headers(input, builder)?;
                 Ok(builder.method("HEAD").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4901,7 +4901,7 @@ impl HeadObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_head_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_head_object::ser_head_object_headers(input, builder)?;
                 Ok(builder.method("HEAD").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4990,7 +4990,7 @@ impl ListBucketAnalyticsConfigurationsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_bucket_analytics_configurations(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_bucket_analytics_configurations::ser_list_bucket_analytics_configurations_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5167,7 +5167,7 @@ impl ListBucketInventoryConfigurationsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_bucket_inventory_configurations(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_bucket_inventory_configurations::ser_list_bucket_inventory_configurations_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5256,7 +5256,7 @@ impl ListBucketMetricsConfigurationsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_bucket_metrics_configurations(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_bucket_metrics_configurations::ser_list_bucket_metrics_configurations_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5442,7 +5442,7 @@ impl ListMultipartUploadsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_multipart_uploads(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_multipart_uploads::ser_list_multipart_uploads_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5547,7 +5547,7 @@ impl ListObjectsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_objects(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_objects::ser_list_objects_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5661,7 +5661,7 @@ impl ListObjectsV2Input {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_objects_v2(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_objects_v2::ser_list_objects_v2_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5772,7 +5772,7 @@ impl ListObjectVersionsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_object_versions(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_object_versions::ser_list_object_versions_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5875,7 +5875,7 @@ impl ListPartsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_parts(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_parts::ser_list_parts_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5959,7 +5959,7 @@ impl PutBucketAccelerateConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_accelerate_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_accelerate_configuration::ser_put_bucket_accelerate_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5969,7 +5969,7 @@ impl PutBucketAccelerateConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_accelerate_configuration_input(& self.accelerate_configuration)?
+            crate::protocol_serde::shape_put_bucket_accelerate_configuration_input::ser_accelerate_configuration_http_payload(& self.accelerate_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6062,7 +6062,7 @@ impl PutBucketAclInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_acl(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_acl::ser_put_bucket_acl_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6072,7 +6072,7 @@ impl PutBucketAclInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_acl_input(& self.access_control_policy)?
+            crate::protocol_serde::shape_put_bucket_acl_input::ser_access_control_policy_http_payload(& self.access_control_policy)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6170,7 +6170,7 @@ impl PutBucketAnalyticsConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_analytics_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_analytics_configuration::ser_put_bucket_analytics_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6180,7 +6180,7 @@ impl PutBucketAnalyticsConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_analytics_configuration_input(& self.analytics_configuration)?
+            crate::protocol_serde::shape_put_bucket_analytics_configuration_input::ser_analytics_configuration_http_payload(& self.analytics_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6258,7 +6258,7 @@ impl PutBucketCorsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_cors(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_cors::ser_put_bucket_cors_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6268,7 +6268,7 @@ impl PutBucketCorsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_cors_input(& self.cors_configuration)?
+            crate::protocol_serde::shape_put_bucket_cors_input::ser_cors_configuration_http_payload(& self.cors_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6361,7 +6361,7 @@ impl PutBucketEncryptionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_encryption(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_encryption::ser_put_bucket_encryption_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6371,7 +6371,7 @@ impl PutBucketEncryptionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_encryption_input(& self.server_side_encryption_configuration)?
+            crate::protocol_serde::shape_put_bucket_encryption_input::ser_server_side_encryption_configuration_http_payload(& self.server_side_encryption_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6478,7 +6478,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_intelligent_tiering_configuration_input(& self.intelligent_tiering_configuration)?
+            crate::protocol_serde::shape_put_bucket_intelligent_tiering_configuration_input::ser_intelligent_tiering_configuration_http_payload(& self.intelligent_tiering_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6561,7 +6561,7 @@ impl PutBucketInventoryConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_inventory_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_inventory_configuration::ser_put_bucket_inventory_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6571,7 +6571,7 @@ impl PutBucketInventoryConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_inventory_configuration_input(& self.inventory_configuration)?
+            crate::protocol_serde::shape_put_bucket_inventory_configuration_input::ser_inventory_configuration_http_payload(& self.inventory_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6649,7 +6649,7 @@ impl PutBucketLifecycleConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_lifecycle_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_lifecycle_configuration::ser_put_bucket_lifecycle_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6659,7 +6659,7 @@ impl PutBucketLifecycleConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_lifecycle_configuration_input(& self.lifecycle_configuration)?
+            crate::protocol_serde::shape_put_bucket_lifecycle_configuration_input::ser_lifecycle_configuration_http_payload(& self.lifecycle_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6752,7 +6752,7 @@ impl PutBucketLoggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_logging(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_logging::ser_put_bucket_logging_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6762,7 +6762,7 @@ impl PutBucketLoggingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_logging_input(& self.bucket_logging_status)?
+            crate::protocol_serde::shape_put_bucket_logging_input::ser_bucket_logging_status_http_payload(& self.bucket_logging_status)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6860,7 +6860,7 @@ impl PutBucketMetricsConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_metrics_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_metrics_configuration::ser_put_bucket_metrics_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6870,7 +6870,7 @@ impl PutBucketMetricsConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_metrics_configuration_input(& self.metrics_configuration)?
+            crate::protocol_serde::shape_put_bucket_metrics_configuration_input::ser_metrics_configuration_http_payload(& self.metrics_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -6947,7 +6947,7 @@ impl PutBucketNotificationConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_notification_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_notification_configuration::ser_put_bucket_notification_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6957,7 +6957,7 @@ impl PutBucketNotificationConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_notification_configuration_input(& self.notification_configuration)?
+            crate::protocol_serde::shape_put_bucket_notification_configuration_input::ser_notification_configuration_http_payload(& self.notification_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7034,7 +7034,7 @@ impl PutBucketOwnershipControlsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_ownership_controls(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_ownership_controls::ser_put_bucket_ownership_controls_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7044,7 +7044,7 @@ impl PutBucketOwnershipControlsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_ownership_controls_input(& self.ownership_controls)?
+            crate::protocol_serde::shape_put_bucket_ownership_controls_input::ser_ownership_controls_http_payload(& self.ownership_controls)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7136,7 +7136,7 @@ impl PutBucketPolicyInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_policy::ser_put_bucket_policy_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7146,7 +7146,7 @@ impl PutBucketPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_policy_input( self.policy)?
+            crate::protocol_serde::shape_put_bucket_policy_input::ser_policy_http_payload( self.policy)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7239,7 +7239,7 @@ impl PutBucketReplicationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_replication(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_replication::ser_put_bucket_replication_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7249,7 +7249,7 @@ impl PutBucketReplicationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_replication_input(& self.replication_configuration)?
+            crate::protocol_serde::shape_put_bucket_replication_input::ser_replication_configuration_http_payload(& self.replication_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7342,7 +7342,7 @@ impl PutBucketRequestPaymentInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_request_payment(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_request_payment::ser_put_bucket_request_payment_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7352,7 +7352,7 @@ impl PutBucketRequestPaymentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_request_payment_input(& self.request_payment_configuration)?
+            crate::protocol_serde::shape_put_bucket_request_payment_input::ser_request_payment_configuration_http_payload(& self.request_payment_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7445,7 +7445,7 @@ impl PutBucketTaggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_tagging::ser_put_bucket_tagging_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7455,7 +7455,7 @@ impl PutBucketTaggingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_tagging_input(& self.tagging)?
+            crate::protocol_serde::shape_put_bucket_tagging_input::ser_tagging_http_payload(& self.tagging)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7548,7 +7548,7 @@ impl PutBucketVersioningInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_versioning(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_versioning::ser_put_bucket_versioning_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7558,7 +7558,7 @@ impl PutBucketVersioningInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_versioning_input(& self.versioning_configuration)?
+            crate::protocol_serde::shape_put_bucket_versioning_input::ser_versioning_configuration_http_payload(& self.versioning_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7651,7 +7651,7 @@ impl PutBucketWebsiteInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_bucket_website(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_bucket_website::ser_put_bucket_website_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7661,7 +7661,7 @@ impl PutBucketWebsiteInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_bucket_website_input(& self.website_configuration)?
+            crate::protocol_serde::shape_put_bucket_website_input::ser_website_configuration_http_payload(& self.website_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -7760,7 +7760,7 @@ impl PutObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object::ser_put_object_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7769,7 +7769,7 @@ impl PutObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_input( self.body)?
+            crate::protocol_serde::shape_put_object_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         let request = request.body(body).expect("should be valid request");
@@ -7902,7 +7902,7 @@ impl PutObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object::ser_put_object_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7912,7 +7912,7 @@ impl PutObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_input( self.body)?
+            crate::protocol_serde::shape_put_object_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {
@@ -8017,7 +8017,7 @@ impl PutObjectAclInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object_acl(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object_acl::ser_put_object_acl_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8027,7 +8027,7 @@ impl PutObjectAclInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_acl_input(& self.access_control_policy)?
+            crate::protocol_serde::shape_put_object_acl_input::ser_access_control_policy_http_payload(& self.access_control_policy)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8131,7 +8131,7 @@ impl PutObjectLegalHoldInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object_legal_hold(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object_legal_hold::ser_put_object_legal_hold_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8141,7 +8141,7 @@ impl PutObjectLegalHoldInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_legal_hold_input(& self.legal_hold)?
+            crate::protocol_serde::shape_put_object_legal_hold_input::ser_legal_hold_http_payload(& self.legal_hold)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8234,7 +8234,7 @@ impl PutObjectLockConfigurationInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object_lock_configuration(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object_lock_configuration::ser_put_object_lock_configuration_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8244,7 +8244,7 @@ impl PutObjectLockConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_lock_configuration_input(& self.object_lock_configuration)?
+            crate::protocol_serde::shape_put_object_lock_configuration_input::ser_object_lock_configuration_http_payload(& self.object_lock_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8348,7 +8348,7 @@ impl PutObjectRetentionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object_retention(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object_retention::ser_put_object_retention_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8358,7 +8358,7 @@ impl PutObjectRetentionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_retention_input(& self.retention)?
+            crate::protocol_serde::shape_put_object_retention_input::ser_retention_http_payload(& self.retention)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8462,7 +8462,7 @@ impl PutObjectTaggingInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object_tagging(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object_tagging::ser_put_object_tagging_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8472,7 +8472,7 @@ impl PutObjectTaggingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_tagging_input(& self.tagging)?
+            crate::protocol_serde::shape_put_object_tagging_input::ser_tagging_http_payload(& self.tagging)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8565,7 +8565,7 @@ impl PutPublicAccessBlockInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_public_access_block(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_public_access_block::ser_put_public_access_block_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8575,7 +8575,7 @@ impl PutPublicAccessBlockInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_public_access_block_input(& self.public_access_block_configuration)?
+            crate::protocol_serde::shape_put_public_access_block_input::ser_public_access_block_configuration_http_payload(& self.public_access_block_configuration)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8680,7 +8680,7 @@ impl RestoreObjectInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_restore_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_restore_object::ser_restore_object_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8690,7 +8690,7 @@ impl RestoreObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_restore_object_input(& self.restore_request)?
+            crate::protocol_serde::shape_restore_object_input::ser_restore_request_http_payload(& self.restore_request)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8790,7 +8790,7 @@ impl SelectObjectContentInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_select_object_content(input, builder)?;
+                let builder = crate::protocol_serde::shape_select_object_content::ser_select_object_content_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8800,7 +8800,7 @@ impl SelectObjectContentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_select_object_content(&self)?
+            crate::protocol_serde::shape_select_object_content::ser_select_object_content_op_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -8892,7 +8892,7 @@ impl UploadPartInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_upload_part(input, builder)?;
+                let builder = crate::protocol_serde::shape_upload_part::ser_upload_part_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -8901,7 +8901,7 @@ impl UploadPartInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_part_input( self.body)?
+            crate::protocol_serde::shape_upload_part_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         let request = request.body(body).expect("should be valid request");
@@ -9042,7 +9042,7 @@ impl UploadPartInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_upload_part(input, builder)?;
+                let builder = crate::protocol_serde::shape_upload_part::ser_upload_part_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -9052,7 +9052,7 @@ impl UploadPartInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_part_input( self.body)?
+            crate::protocol_serde::shape_upload_part_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {
@@ -9159,7 +9159,7 @@ impl UploadPartCopyInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_upload_part_copy(input, builder)?;
+                let builder = crate::protocol_serde::shape_upload_part_copy::ser_upload_part_copy_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -9242,7 +9242,7 @@ impl WriteGetObjectResponseInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_write_get_object_response(input, builder)?;
+                let builder = crate::protocol_serde::shape_write_get_object_response::ser_write_get_object_response_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -9252,7 +9252,7 @@ impl WriteGetObjectResponseInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_write_get_object_response_input( self.body)?
+            crate::protocol_serde::shape_write_get_object_response_input::ser_body_http_payload( self.body)?
             .into_inner()
         );
         if let Some(content_length) = body.content_length() {

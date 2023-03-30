@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
-                        crate::operation_deser::parse_delete_connection_error(response)
+                        crate::protocol_serde::shape_delete_connection::de_delete_connection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_connection_response(response)
+                        crate::protocol_serde::shape_delete_connection::de_delete_connection_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_connection_error(response)
+                        crate::protocol_serde::shape_get_connection::de_get_connection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_connection_response(response)
+                        crate::protocol_serde::shape_get_connection::de_get_connection_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PostToConnection {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_post_to_connection_error(response)
+                        crate::protocol_serde::shape_post_to_connection::de_post_to_connection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_post_to_connection_response(response)
+                        crate::protocol_serde::shape_post_to_connection::de_post_to_connection_http_response(response)
                      }
                 }
             }

@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeDocument {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_analyze_document_error(response)
+                        crate::protocol_serde::shape_analyze_document::de_analyze_document_http_error(response)
                      } else {
-                        crate::operation_deser::parse_analyze_document_response(response)
+                        crate::protocol_serde::shape_analyze_document::de_analyze_document_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_analyze_expense_error(response)
+                        crate::protocol_serde::shape_analyze_expense::de_analyze_expense_http_error(response)
                      } else {
-                        crate::operation_deser::parse_analyze_expense_response(response)
+                        crate::protocol_serde::shape_analyze_expense::de_analyze_expense_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeID {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_analyze_id_error(response)
+                        crate::protocol_serde::shape_analyze_id::de_analyze_id_http_error(response)
                      } else {
-                        crate::operation_deser::parse_analyze_id_response(response)
+                        crate::protocol_serde::shape_analyze_id::de_analyze_id_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectDocumentText {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_detect_document_text_error(response)
+                        crate::protocol_serde::shape_detect_document_text::de_detect_document_text_http_error(response)
                      } else {
-                        crate::operation_deser::parse_detect_document_text_response(response)
+                        crate::protocol_serde::shape_detect_document_text::de_detect_document_text_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentAnalysis {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_document_analysis_error(response)
+                        crate::protocol_serde::shape_get_document_analysis::de_get_document_analysis_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_document_analysis_response(response)
+                        crate::protocol_serde::shape_get_document_analysis::de_get_document_analysis_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_document_text_detection_error(response)
+                        crate::protocol_serde::shape_get_document_text_detection::de_get_document_text_detection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_document_text_detection_response(response)
+                        crate::protocol_serde::shape_get_document_text_detection::de_get_document_text_detection_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_expense_analysis_error(response)
+                        crate::protocol_serde::shape_get_expense_analysis::de_get_expense_analysis_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_expense_analysis_response(response)
+                        crate::protocol_serde::shape_get_expense_analysis::de_get_expense_analysis_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysis {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_lending_analysis_error(response)
+                        crate::protocol_serde::shape_get_lending_analysis::de_get_lending_analysis_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_lending_analysis_response(response)
+                        crate::protocol_serde::shape_get_lending_analysis::de_get_lending_analysis_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysisSummar
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_lending_analysis_summary_error(response)
+                        crate::protocol_serde::shape_get_lending_analysis_summary::de_get_lending_analysis_summary_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_lending_analysis_summary_response(response)
+                        crate::protocol_serde::shape_get_lending_analysis_summary::de_get_lending_analysis_summary_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentAnalysis {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_document_analysis_error(response)
+                        crate::protocol_serde::shape_start_document_analysis::de_start_document_analysis_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_document_analysis_response(response)
+                        crate::protocol_serde::shape_start_document_analysis::de_start_document_analysis_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetecti
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_document_text_detection_error(response)
+                        crate::protocol_serde::shape_start_document_text_detection::de_start_document_text_detection_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_document_text_detection_response(response)
+                        crate::protocol_serde::shape_start_document_text_detection::de_start_document_text_detection_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExpenseAnalysis {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_expense_analysis_error(response)
+                        crate::protocol_serde::shape_start_expense_analysis::de_start_expense_analysis_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_expense_analysis_response(response)
+                        crate::protocol_serde::shape_start_expense_analysis::de_start_expense_analysis_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLendingAnalysis {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_lending_analysis_error(response)
+                        crate::protocol_serde::shape_start_lending_analysis::de_start_lending_analysis_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_lending_analysis_response(response)
+                        crate::protocol_serde::shape_start_lending_analysis::de_start_lending_analysis_http_response(response)
                      }
                 }
             }

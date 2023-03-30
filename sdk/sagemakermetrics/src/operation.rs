@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutMetrics {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_batch_put_metrics_error(response)
+                        crate::protocol_serde::shape_batch_put_metrics::de_batch_put_metrics_http_error(response)
                      } else {
-                        crate::operation_deser::parse_batch_put_metrics_response(response)
+                        crate::protocol_serde::shape_batch_put_metrics::de_batch_put_metrics_http_response(response)
                      }
                 }
             }

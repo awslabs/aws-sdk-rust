@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParallelData {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_parallel_data_error(response)
+                        crate::protocol_serde::shape_create_parallel_data::de_create_parallel_data_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_parallel_data_response(response)
+                        crate::protocol_serde::shape_create_parallel_data::de_create_parallel_data_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteParallelData {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_parallel_data_error(response)
+                        crate::protocol_serde::shape_delete_parallel_data::de_delete_parallel_data_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_parallel_data_response(response)
+                        crate::protocol_serde::shape_delete_parallel_data::de_delete_parallel_data_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTerminology {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_terminology_error(response)
+                        crate::protocol_serde::shape_delete_terminology::de_delete_terminology_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_terminology_response(response)
+                        crate::protocol_serde::shape_delete_terminology::de_delete_terminology_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTextTranslationJ
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_text_translation_job_error(response)
+                        crate::protocol_serde::shape_describe_text_translation_job::de_describe_text_translation_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_text_translation_job_response(response)
+                        crate::protocol_serde::shape_describe_text_translation_job::de_describe_text_translation_job_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParallelData {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_parallel_data_error(response)
+                        crate::protocol_serde::shape_get_parallel_data::de_get_parallel_data_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_parallel_data_response(response)
+                        crate::protocol_serde::shape_get_parallel_data::de_get_parallel_data_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTerminology {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_terminology_error(response)
+                        crate::protocol_serde::shape_get_terminology::de_get_terminology_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_terminology_response(response)
+                        crate::protocol_serde::shape_get_terminology::de_get_terminology_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportTerminology {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_import_terminology_error(response)
+                        crate::protocol_serde::shape_import_terminology::de_import_terminology_http_error(response)
                      } else {
-                        crate::operation_deser::parse_import_terminology_response(response)
+                        crate::protocol_serde::shape_import_terminology::de_import_terminology_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLanguages {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_languages_error(response)
+                        crate::protocol_serde::shape_list_languages::de_list_languages_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_languages_response(response)
+                        crate::protocol_serde::shape_list_languages::de_list_languages_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListParallelData {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_parallel_data_error(response)
+                        crate::protocol_serde::shape_list_parallel_data::de_list_parallel_data_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_parallel_data_response(response)
+                        crate::protocol_serde::shape_list_parallel_data::de_list_parallel_data_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTerminologies {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_terminologies_error(response)
+                        crate::protocol_serde::shape_list_terminologies::de_list_terminologies_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_terminologies_response(response)
+                        crate::protocol_serde::shape_list_terminologies::de_list_terminologies_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTextTranslationJobs 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_text_translation_jobs_error(response)
+                        crate::protocol_serde::shape_list_text_translation_jobs::de_list_text_translation_jobs_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_text_translation_jobs_response(response)
+                        crate::protocol_serde::shape_list_text_translation_jobs::de_list_text_translation_jobs_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTextTranslationJob 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_text_translation_job_error(response)
+                        crate::protocol_serde::shape_start_text_translation_job::de_start_text_translation_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_text_translation_job_response(response)
+                        crate::protocol_serde::shape_start_text_translation_job::de_start_text_translation_job_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTextTranslationJob {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_stop_text_translation_job_error(response)
+                        crate::protocol_serde::shape_stop_text_translation_job::de_stop_text_translation_job_http_error(response)
                      } else {
-                        crate::operation_deser::parse_stop_text_translation_job_response(response)
+                        crate::protocol_serde::shape_stop_text_translation_job::de_stop_text_translation_job_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -504,9 +504,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TranslateText {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_translate_text_error(response)
+                        crate::protocol_serde::shape_translate_text::de_translate_text_http_error(response)
                      } else {
-                        crate::operation_deser::parse_translate_text_response(response)
+                        crate::protocol_serde::shape_translate_text::de_translate_text_http_response(response)
                      }
                 }
             }
@@ -536,9 +536,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }
@@ -568,9 +568,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateParallelData {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_parallel_data_error(response)
+                        crate::protocol_serde::shape_update_parallel_data::de_update_parallel_data_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_parallel_data_response(response)
+                        crate::protocol_serde::shape_update_parallel_data::de_update_parallel_data_http_response(response)
                      }
                 }
             }

@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobExecution {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_job_execution_error(response)
+                        crate::protocol_serde::shape_describe_job_execution::de_describe_job_execution_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_job_execution_response(response)
+                        crate::protocol_serde::shape_describe_job_execution::de_describe_job_execution_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPendingJobExecutions 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_pending_job_executions_error(response)
+                        crate::protocol_serde::shape_get_pending_job_executions::de_get_pending_job_executions_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_pending_job_executions_response(response)
+                        crate::protocol_serde::shape_get_pending_job_executions::de_get_pending_job_executions_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNextPendingJobExecu
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_next_pending_job_execution_error(response)
+                        crate::protocol_serde::shape_start_next_pending_job_execution::de_start_next_pending_job_execution_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_next_pending_job_execution_response(response)
+                        crate::protocol_serde::shape_start_next_pending_job_execution::de_start_next_pending_job_execution_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobExecution {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_job_execution_error(response)
+                        crate::protocol_serde::shape_update_job_execution::de_update_job_execution_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_job_execution_response(response)
+                        crate::protocol_serde::shape_update_job_execution::de_update_job_execution_http_response(response)
                      }
                 }
             }

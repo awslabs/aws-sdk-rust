@@ -77,17 +77,11 @@ pub mod output;
 /// Data primitives referenced by other data types.
 pub mod types;
 
-mod http_serde;
-
 mod idempotency_token;
 
 pub mod middleware;
 
 mod no_credentials;
-
-mod operation_deser;
-
-mod operation_ser;
 
 /// Paginators for the service
 pub mod paginator;
@@ -95,9 +89,7 @@ pub mod paginator;
 /// Generated accessors for nested fields
 mod lens;
 
-mod xml_deser;
-
-mod xml_ser;
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;

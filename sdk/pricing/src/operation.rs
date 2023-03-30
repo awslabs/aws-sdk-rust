@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServices {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_services_error(response)
+                        crate::protocol_serde::shape_describe_services::de_describe_services_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_services_response(response)
+                        crate::protocol_serde::shape_describe_services::de_describe_services_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttributeValues {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_attribute_values_error(response)
+                        crate::protocol_serde::shape_get_attribute_values::de_get_attribute_values_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_attribute_values_response(response)
+                        crate::protocol_serde::shape_get_attribute_values::de_get_attribute_values_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProducts {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_products_error(response)
+                        crate::protocol_serde::shape_get_products::de_get_products_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_products_response(response)
+                        crate::protocol_serde::shape_get_products::de_get_products_http_response(response)
                      }
                 }
             }

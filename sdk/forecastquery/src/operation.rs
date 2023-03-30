@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryForecast {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_query_forecast_error(response)
+                        crate::protocol_serde::shape_query_forecast::de_query_forecast_http_error(response)
                      } else {
-                        crate::operation_deser::parse_query_forecast_response(response)
+                        crate::protocol_serde::shape_query_forecast::de_query_forecast_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryWhatIfForecast {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_query_what_if_forecast_error(response)
+                        crate::protocol_serde::shape_query_what_if_forecast::de_query_what_if_forecast_http_error(response)
                      } else {
-                        crate::operation_deser::parse_query_what_if_forecast_response(response)
+                        crate::protocol_serde::shape_query_what_if_forecast::de_query_what_if_forecast_http_response(response)
                      }
                 }
             }

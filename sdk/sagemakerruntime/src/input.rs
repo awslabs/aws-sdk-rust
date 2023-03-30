@@ -34,7 +34,7 @@ impl InvokeEndpointInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_invoke_endpoint(input, builder)?;
+                let builder = crate::protocol_serde::shape_invoke_endpoint::ser_invoke_endpoint_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -44,7 +44,7 @@ impl InvokeEndpointInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_invoke_endpoint_input( self.body)?
+            crate::protocol_serde::shape_invoke_endpoint_input::ser_body_http_payload( self.body)?
         );
         if let Some(content_length) = body.content_length() {
                                 request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
@@ -113,7 +113,7 @@ impl InvokeEndpointAsyncInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_invoke_endpoint_async(input, builder)?;
+                let builder = crate::protocol_serde::shape_invoke_endpoint_async::ser_invoke_endpoint_async_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;

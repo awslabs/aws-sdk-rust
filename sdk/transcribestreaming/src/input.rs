@@ -28,7 +28,7 @@ impl StartCallAnalyticsStreamTranscriptionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_start_call_analytics_stream_transcription(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_call_analytics_stream_transcription::ser_start_call_analytics_stream_transcription_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -110,7 +110,7 @@ impl StartMedicalStreamTranscriptionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_start_medical_stream_transcription(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_medical_stream_transcription::ser_start_medical_stream_transcription_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -192,7 +192,7 @@ impl StartStreamTranscriptionInput {
                         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_start_stream_transcription(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_stream_transcription::ser_start_stream_transcription_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;

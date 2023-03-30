@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_add_tags_to_certificate_error(response)
+                        crate::protocol_serde::shape_add_tags_to_certificate::de_add_tags_to_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_add_tags_to_certificate_response(response)
+                        crate::protocol_serde::shape_add_tags_to_certificate::de_add_tags_to_certificate_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_certificate_error(response)
+                        crate::protocol_serde::shape_delete_certificate::de_delete_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_certificate_response(response)
+                        crate::protocol_serde::shape_delete_certificate::de_delete_certificate_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_certificate_error(response)
+                        crate::protocol_serde::shape_describe_certificate::de_describe_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_certificate_response(response)
+                        crate::protocol_serde::shape_describe_certificate::de_describe_certificate_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_export_certificate_error(response)
+                        crate::protocol_serde::shape_export_certificate::de_export_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_export_certificate_response(response)
+                        crate::protocol_serde::shape_export_certificate::de_export_certificate_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountConfiguration 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_account_configuration_error(response)
+                        crate::protocol_serde::shape_get_account_configuration::de_get_account_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_account_configuration_response(response)
+                        crate::protocol_serde::shape_get_account_configuration::de_get_account_configuration_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_certificate_error(response)
+                        crate::protocol_serde::shape_get_certificate::de_get_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_certificate_response(response)
+                        crate::protocol_serde::shape_get_certificate::de_get_certificate_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_import_certificate_error(response)
+                        crate::protocol_serde::shape_import_certificate::de_import_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_import_certificate_response(response)
+                        crate::protocol_serde::shape_import_certificate::de_import_certificate_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCertificates {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_certificates_error(response)
+                        crate::protocol_serde::shape_list_certificates::de_list_certificates_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_certificates_response(response)
+                        crate::protocol_serde::shape_list_certificates::de_list_certificates_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_certificate_error(response)
+                        crate::protocol_serde::shape_list_tags_for_certificate::de_list_tags_for_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_certificate_response(response)
+                        crate::protocol_serde::shape_list_tags_for_certificate::de_list_tags_for_certificate_http_response(response)
                      }
                 }
             }
@@ -312,9 +312,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountConfiguration 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_account_configuration_error(response)
+                        crate::protocol_serde::shape_put_account_configuration::de_put_account_configuration_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_account_configuration_response(response)
+                        crate::protocol_serde::shape_put_account_configuration::de_put_account_configuration_http_response(response)
                      }
                 }
             }
@@ -344,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromCertificat
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_remove_tags_from_certificate_error(response)
+                        crate::protocol_serde::shape_remove_tags_from_certificate::de_remove_tags_from_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_remove_tags_from_certificate_response(response)
+                        crate::protocol_serde::shape_remove_tags_from_certificate::de_remove_tags_from_certificate_http_response(response)
                      }
                 }
             }
@@ -376,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RenewCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_renew_certificate_error(response)
+                        crate::protocol_serde::shape_renew_certificate::de_renew_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_renew_certificate_response(response)
+                        crate::protocol_serde::shape_renew_certificate::de_renew_certificate_http_response(response)
                      }
                 }
             }
@@ -408,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestCertificate {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_request_certificate_error(response)
+                        crate::protocol_serde::shape_request_certificate::de_request_certificate_http_error(response)
                      } else {
-                        crate::operation_deser::parse_request_certificate_response(response)
+                        crate::protocol_serde::shape_request_certificate::de_request_certificate_http_response(response)
                      }
                 }
             }
@@ -440,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendValidationEmail {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_resend_validation_email_error(response)
+                        crate::protocol_serde::shape_resend_validation_email::de_resend_validation_email_http_error(response)
                      } else {
-                        crate::operation_deser::parse_resend_validation_email_response(response)
+                        crate::protocol_serde::shape_resend_validation_email::de_resend_validation_email_http_response(response)
                      }
                 }
             }
@@ -472,9 +472,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCertificateOptions
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_update_certificate_options_error(response)
+                        crate::protocol_serde::shape_update_certificate_options::de_update_certificate_options_http_error(response)
                      } else {
-                        crate::operation_deser::parse_update_certificate_options_response(response)
+                        crate::protocol_serde::shape_update_certificate_options::de_update_certificate_options_http_response(response)
                      }
                 }
             }

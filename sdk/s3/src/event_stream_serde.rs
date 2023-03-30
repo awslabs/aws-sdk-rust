@@ -39,7 +39,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                         let mut builder = crate::model::stats_event::Builder::default();
                         builder = builder.set_details(
                             Some(
-                                crate::xml_deser::deser_member_com_amazonaws_s3_stats_event_details(&message.payload()[..])
+                                crate::protocol_serde::shape_stats_event::de_details(&message.payload()[..])
                                                 .map_err(|err| {
                                                     aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall details: {}", err))
                                                 })?
@@ -51,7 +51,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                         let mut builder = crate::model::progress_event::Builder::default();
                         builder = builder.set_details(
                             Some(
-                                crate::xml_deser::deser_member_com_amazonaws_s3_progress_event_details(&message.payload()[..])
+                                crate::protocol_serde::shape_progress_event::de_details(&message.payload()[..])
                                                 .map_err(|err| {
                                                     aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall details: {}", err))
                                                 })?
@@ -71,7 +71,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                 }
             }
             "exception" =>  {
-                let generic = match crate::xml_deser::parse_event_stream_error_metadata(message.payload()) {
+                let generic = match crate::protocol_serde::parse_event_stream_error_metadata(message.payload()) {
                                         Ok(builder) => builder.build(),
                                         Err(err) => return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::error::SelectObjectContentEventStreamError::unhandled(err))),
                                     };

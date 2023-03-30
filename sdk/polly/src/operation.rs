@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLexicon {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_lexicon_error(response)
+                        crate::protocol_serde::shape_delete_lexicon::de_delete_lexicon_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_lexicon_response(response)
+                        crate::protocol_serde::shape_delete_lexicon::de_delete_lexicon_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVoices {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_voices_error(response)
+                        crate::protocol_serde::shape_describe_voices::de_describe_voices_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_voices_response(response)
+                        crate::protocol_serde::shape_describe_voices::de_describe_voices_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLexicon {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_lexicon_error(response)
+                        crate::protocol_serde::shape_get_lexicon::de_get_lexicon_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_lexicon_response(response)
+                        crate::protocol_serde::shape_get_lexicon::de_get_lexicon_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_get_speech_synthesis_task_error(response)
+                        crate::protocol_serde::shape_get_speech_synthesis_task::de_get_speech_synthesis_task_http_error(response)
                      } else {
-                        crate::operation_deser::parse_get_speech_synthesis_task_response(response)
+                        crate::protocol_serde::shape_get_speech_synthesis_task::de_get_speech_synthesis_task_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLexicons {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_lexicons_error(response)
+                        crate::protocol_serde::shape_list_lexicons::de_list_lexicons_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_lexicons_response(response)
+                        crate::protocol_serde::shape_list_lexicons::de_list_lexicons_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_speech_synthesis_tasks_error(response)
+                        crate::protocol_serde::shape_list_speech_synthesis_tasks::de_list_speech_synthesis_tasks_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_speech_synthesis_tasks_response(response)
+                        crate::protocol_serde::shape_list_speech_synthesis_tasks::de_list_speech_synthesis_tasks_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLexicon {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_put_lexicon_error(response)
+                        crate::protocol_serde::shape_put_lexicon::de_put_lexicon_http_error(response)
                      } else {
-                        crate::operation_deser::parse_put_lexicon_response(response)
+                        crate::protocol_serde::shape_put_lexicon::de_put_lexicon_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_start_speech_synthesis_task_error(response)
+                        crate::protocol_serde::shape_start_speech_synthesis_task::de_start_speech_synthesis_task_http_error(response)
                      } else {
-                        crate::operation_deser::parse_start_speech_synthesis_task_response(response)
+                        crate::protocol_serde::shape_start_speech_synthesis_task::de_start_speech_synthesis_task_http_response(response)
                      }
                 }
             }
@@ -282,11 +282,11 @@ impl aws_smithy_http::response::ParseHttpResponse for SynthesizeSpeech {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::operation_deser::parse_synthesize_speech(response))
+                    Some(crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_http_response(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::operation_deser::parse_synthesize_speech_error(response)
+                    crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_http_error(response)
                 }
             }
 

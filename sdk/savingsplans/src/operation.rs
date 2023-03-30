@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSavingsPlan {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_create_savings_plan_error(response)
+                        crate::protocol_serde::shape_create_savings_plan::de_create_savings_plan_http_error(response)
                      } else {
-                        crate::operation_deser::parse_create_savings_plan_response(response)
+                        crate::protocol_serde::shape_create_savings_plan::de_create_savings_plan_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedSavingsPlan 
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_delete_queued_savings_plan_error(response)
+                        crate::protocol_serde::shape_delete_queued_savings_plan::de_delete_queued_savings_plan_http_error(response)
                      } else {
-                        crate::operation_deser::parse_delete_queued_savings_plan_response(response)
+                        crate::protocol_serde::shape_delete_queued_savings_plan::de_delete_queued_savings_plan_http_response(response)
                      }
                 }
             }
@@ -88,9 +88,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlanRates
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_savings_plan_rates_error(response)
+                        crate::protocol_serde::shape_describe_savings_plan_rates::de_describe_savings_plan_rates_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_savings_plan_rates_response(response)
+                        crate::protocol_serde::shape_describe_savings_plan_rates::de_describe_savings_plan_rates_http_response(response)
                      }
                 }
             }
@@ -120,9 +120,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlans {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_savings_plans_error(response)
+                        crate::protocol_serde::shape_describe_savings_plans::de_describe_savings_plans_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_savings_plans_response(response)
+                        crate::protocol_serde::shape_describe_savings_plans::de_describe_savings_plans_http_response(response)
                      }
                 }
             }
@@ -152,9 +152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlansOffe
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_savings_plans_offering_rates_error(response)
+                        crate::protocol_serde::shape_describe_savings_plans_offering_rates::de_describe_savings_plans_offering_rates_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_savings_plans_offering_rates_response(response)
+                        crate::protocol_serde::shape_describe_savings_plans_offering_rates::de_describe_savings_plans_offering_rates_http_response(response)
                      }
                 }
             }
@@ -184,9 +184,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlansOffe
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_describe_savings_plans_offerings_error(response)
+                        crate::protocol_serde::shape_describe_savings_plans_offerings::de_describe_savings_plans_offerings_http_error(response)
                      } else {
-                        crate::operation_deser::parse_describe_savings_plans_offerings_response(response)
+                        crate::protocol_serde::shape_describe_savings_plans_offerings::de_describe_savings_plans_offerings_http_response(response)
                      }
                 }
             }
@@ -216,9 +216,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_list_tags_for_resource_error(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_list_tags_for_resource_response(response)
+                        crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
                      }
                 }
             }
@@ -248,9 +248,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_tag_resource_error(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_tag_resource_response(response)
+                        crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
                      }
                 }
             }
@@ -280,9 +280,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_untag_resource_error(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
                      } else {
-                        crate::operation_deser::parse_untag_resource_response(response)
+                        crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
                      }
                 }
             }

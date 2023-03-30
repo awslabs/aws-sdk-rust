@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpoint {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::operation_deser::parse_invoke_endpoint_error(response)
+                        crate::protocol_serde::shape_invoke_endpoint::de_invoke_endpoint_http_error(response)
                      } else {
-                        crate::operation_deser::parse_invoke_endpoint_response(response)
+                        crate::protocol_serde::shape_invoke_endpoint::de_invoke_endpoint_http_response(response)
                      }
                 }
             }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpointAsync {
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::operation_deser::parse_invoke_endpoint_async_error(response)
+                        crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async_http_error(response)
                      } else {
-                        crate::operation_deser::parse_invoke_endpoint_async_response(response)
+                        crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async_http_response(response)
                      }
                 }
             }

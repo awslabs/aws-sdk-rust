@@ -111,19 +111,13 @@ pub mod middleware;
 
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
 /// Paginators for the service
 pub mod paginator;
 
 /// Generated accessors for nested fields
 mod lens;
 
-mod query_ser;
-
-mod xml_deser;
+pub(crate) mod protocol_serde;
 
 mod ec2_query_errors;
 
