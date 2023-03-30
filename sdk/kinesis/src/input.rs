@@ -1022,8 +1022,8 @@ impl DescribeStreamConsumerInput {
         .set_endpoint(_config.endpoint_url
         .clone())
         .set_operation_type(Some("control".to_string()))
-        .set_consumer_arn(self.consumer_arn.clone())
-        .set_stream_arn(self.stream_arn.clone()).build()
+        .set_stream_arn(self.stream_arn.clone())
+        .set_consumer_arn(self.consumer_arn.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),

@@ -3288,7 +3288,7 @@ impl AsRef<str> for RenewalStatus {
 /// # let revocationreason = unimplemented!();
 /// match revocationreason {
 ///     RevocationReason::AffiliationChanged => { /* ... */ },
-///     RevocationReason::AACompromise => { /* ... */ },
+///     RevocationReason::AaCompromise => { /* ... */ },
 ///     RevocationReason::CaCompromise => { /* ... */ },
 ///     RevocationReason::CertificateHold => { /* ... */ },
 ///     RevocationReason::CessationOfOperation => { /* ... */ },
@@ -3325,7 +3325,7 @@ pub enum RevocationReason {
     #[allow(missing_docs)] // documentation missing in model
     AffiliationChanged,
     #[allow(missing_docs)] // documentation missing in model
-    AACompromise,
+    AaCompromise,
     #[allow(missing_docs)] // documentation missing in model
     CaCompromise,
     #[allow(missing_docs)] // documentation missing in model
@@ -3349,7 +3349,7 @@ impl std::convert::From<&str> for RevocationReason {
                 fn from(s: &str) -> Self {
                     match s {
                         "AFFILIATION_CHANGED" => RevocationReason::AffiliationChanged,
-"A_A_COMPROMISE" => RevocationReason::AACompromise,
+"A_A_COMPROMISE" => RevocationReason::AaCompromise,
 "CA_COMPROMISE" => RevocationReason::CaCompromise,
 "CERTIFICATE_HOLD" => RevocationReason::CertificateHold,
 "CESSATION_OF_OPERATION" => RevocationReason::CessationOfOperation,
@@ -3374,7 +3374,7 @@ impl RevocationReason {
                 pub fn as_str(&self) -> &str {
                     match self {
     RevocationReason::AffiliationChanged => "AFFILIATION_CHANGED",
-    RevocationReason::AACompromise => "A_A_COMPROMISE",
+    RevocationReason::AaCompromise => "A_A_COMPROMISE",
     RevocationReason::CaCompromise => "CA_COMPROMISE",
     RevocationReason::CertificateHold => "CERTIFICATE_HOLD",
     RevocationReason::CessationOfOperation => "CESSATION_OF_OPERATION",

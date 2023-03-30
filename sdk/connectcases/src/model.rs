@@ -2355,7 +2355,7 @@ impl CaseFilter {
     pub fn is_field(&self) -> bool {
         self.as_field().is_ok()
     }
-    /// Tries to convert the enum instance into [`Not`](crate::model::CaseFilter::Not), extracting the inner [`Box`](std::boxed::Box).
+    /// Tries to convert the enum instance into [`Not`](crate::model::CaseFilter::Not), extracting the inner [`CaseFilter`](crate::model::CaseFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_not(&self) -> std::result::Result<&std::boxed::Box<crate::model::CaseFilter>, &Self> {
         if let CaseFilter::Not(val) = &self { Ok(val) } else { Err(self) }
