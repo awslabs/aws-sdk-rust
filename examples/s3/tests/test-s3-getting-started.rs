@@ -4,7 +4,7 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_s3::{Client, Region};
+use aws_sdk_s3::{config::Region, Client};
 use s3_service::error::Error;
 use uuid::Uuid;
 
@@ -26,7 +26,7 @@ async fn run_s3_operations(
 ) -> Result<(), Error> {
     s3_service::create_bucket(&client, &bucket_name, region.as_ref()).await?;
     s3_service::upload_object(&client, &bucket_name, &file_name, &key).await?;
-    s3_service::download_object(&client, &bucket_name, &key).await;
+    s3_service::download_object(&client, &bucket_name, &key).await?;
     s3_service::copy_object(&client, &bucket_name, &key, &target_key).await?;
     s3_service::list_objects(&client, &bucket_name).await?;
     s3_service::delete_objects(&client, &bucket_name).await?;

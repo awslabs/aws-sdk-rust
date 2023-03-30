@@ -125,7 +125,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS SSO OIDC | [aws-sdk-ssooidc](https://crates.io/crates/aws-sdk-ssooidc) ([docs](https://docs.rs/aws-sdk-ssooidc)) |
 | AWS Savings Plans | [aws-sdk-savingsplans](https://crates.io/crates/aws-sdk-savingsplans) ([docs](https://docs.rs/aws-sdk-savingsplans)) |
 | AWS Secrets Manager | [aws-sdk-secretsmanager](https://crates.io/crates/aws-sdk-secretsmanager) ([docs](https://docs.rs/aws-sdk-secretsmanager)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/secretsmanager)) |
-| AWS Security Token Service | [aws-sdk-sts](https://crates.io/crates/aws-sdk-sts) ([docs](https://docs.rs/aws-sdk-sts)) |
+| AWS Security Token Service | [aws-sdk-sts](https://crates.io/crates/aws-sdk-sts) ([docs](https://docs.rs/aws-sdk-sts)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/sts)) |
 | AWS SecurityHub | [aws-sdk-securityhub](https://crates.io/crates/aws-sdk-securityhub) ([docs](https://docs.rs/aws-sdk-securityhub)) |
 | AWS Server Migration Service | [aws-sdk-sms](https://crates.io/crates/aws-sdk-sms) ([docs](https://docs.rs/aws-sdk-sms)) |
 | AWS Service Catalog | [aws-sdk-servicecatalog](https://crates.io/crates/aws-sdk-servicecatalog) ([docs](https://docs.rs/aws-sdk-servicecatalog)) |
@@ -234,7 +234,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Kinesis | [aws-sdk-kinesis](https://crates.io/crates/aws-sdk-kinesis) ([docs](https://docs.rs/aws-sdk-kinesis)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/kinesis)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalytics](https://crates.io/crates/aws-sdk-kinesisanalytics) ([docs](https://docs.rs/aws-sdk-kinesisanalytics)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalyticsv2](https://crates.io/crates/aws-sdk-kinesisanalyticsv2) ([docs](https://docs.rs/aws-sdk-kinesisanalyticsv2)) |
-| Amazon Kinesis Firehose | [aws-sdk-firehose](https://crates.io/crates/aws-sdk-firehose) ([docs](https://docs.rs/aws-sdk-firehose)) |
+| Amazon Kinesis Firehose | [aws-sdk-firehose](https://crates.io/crates/aws-sdk-firehose) ([docs](https://docs.rs/aws-sdk-firehose)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/firehose)) |
 | Amazon Kinesis Video Signaling Channels | [aws-sdk-kinesisvideosignaling](https://crates.io/crates/aws-sdk-kinesisvideosignaling) ([docs](https://docs.rs/aws-sdk-kinesisvideosignaling)) |
 | Amazon Kinesis Video Streams | [aws-sdk-kinesisvideo](https://crates.io/crates/aws-sdk-kinesisvideo) ([docs](https://docs.rs/aws-sdk-kinesisvideo)) |
 | Amazon Kinesis Video Streams Archived Media | [aws-sdk-kinesisvideoarchivedmedia](https://crates.io/crates/aws-sdk-kinesisvideoarchivedmedia) ([docs](https://docs.rs/aws-sdk-kinesisvideoarchivedmedia)) |
