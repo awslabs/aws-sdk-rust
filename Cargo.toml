@@ -1,4 +1,7 @@
 [workspace]
+exclude = [
+    "tests/no-default-features"
+]
 members = [
     "examples/apigateway",
     "examples/apigatewaymanagement",
