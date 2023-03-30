@@ -1,4 +1,4 @@
-smithy_rs_revision = '48eda404377d89b813d7947d66c44eae41e24577'
+smithy_rs_revision = 'b4a969838a2f5d9f3c4e04094268f9cc214522bc'
 aws_doc_sdk_examples_revision = '97a177aab8c3d2fef97416cb66e4b4d0da840138'
 
 [manual_interventions]
@@ -1057,7 +1057,7 @@ model_hash = '9ec8a92782fbef7e2cf07fc9b5e656aa37b59668baff33acae10f270cfff4193'
 [crates.aws-sdk-kinesis]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = 'd12933d700dcf499a7b674485d4d8ec70d19b4e3630051c86eadfd1a8078047d'
+source_hash = 'ae638a02da3081b73eb1b9c5582b50417a071353fe9f0dd2192722b654d9b30a'
 model_hash = '5eaef8321cea414140d87258e714988d88f3e41d9cdf4b83a1417027cb702cb9'
 
 [crates.aws-sdk-kinesisanalytics]
@@ -1669,7 +1669,7 @@ model_hash = 'fb47cfd49cf2d9250063914599f703ed365b51be373988dc3f2cd64321c9583b'
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = '148fdb8cb4c217c15f70f0ba4017a68c6f55b7f98bc5e8dcdb1b74c018bbce3a'
+source_hash = '3ddaf0a061dcca5cb1204e0ee3c71a730de0cc56103acdf1891d219d5c79955d'
 model_hash = '930bd33c05c393293591ae01cbdb6637fb5062ed3a3ad5e2dadddd8108cc8478'
 
 [crates.aws-sdk-s3outposts]
@@ -2101,17 +2101,17 @@ source_hash = '8eed37fbeae985d6ca035caf776d620d53b869698d576cb9da081e96f6d5e96a'
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = '88d61741ad02c0bc05cdb7aa05d114a3aac347bf6c5c1ec2cdfec3e5c3f67a03'
+source_hash = '16ba8eb9628c272ad76dc08d1541b5129e4644e8ae11573c7cc29af64c9bfafd'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = '1787bf3f9a5ca10c218a19136b278ca15252e9258853dda26f05d8f216f784db'
+source_hash = 'b840504996f68f38c9a6acde8874fde17e1b16f5c6ffe1caa22f3bc635649941'
 
 [crates.aws-smithy-runtime-test]
 category = 'SmithyRuntime'
 version = '0.1.0'
-source_hash = '48e779b3f8b76ad71c827c854adbdd4d7937ed07d019b0a32bff3961109640ff'
+source_hash = 'be01578fda12532009a2f175dd5f64d0df342d41881be9fcd986ddffb892e416'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'

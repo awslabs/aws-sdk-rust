@@ -4,21 +4,22 @@
  */
 
 use aws_sdk_s3::operation::get_object::{GetObjectError, GetObjectOutput};
-use aws_smithy_runtime::{BoxError, ConfigBag, RetryStrategy};
-
-//     retry_classifier: Arc::new(
-//         |res: Result<&SdkSuccess<GetObjectOutput>, &SdkError<GetObjectError>>| -> RetryKind {
-//             let classifier = AwsResponseRetryClassifier::new();
-//             classifier.classify_retry(res)
-//         },
-//     ),
+use aws_smithy_runtime::{BoxError, RetryStrategy};
+use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_runtime_api::runtime_plugin::RuntimePlugin;
 
 #[derive(Debug)]
 pub struct GetObjectRetryStrategy {}
 
 impl GetObjectRetryStrategy {
-    pub fn _new() -> Self {
+    pub fn new() -> Self {
         Self {}
+    }
+}
+
+impl RuntimePlugin for GetObjectRetryStrategy {
+    fn configure(&self, _cfg: &mut ConfigBag) -> Result<(), BoxError> {
+        todo!()
     }
 }
 
@@ -31,3 +32,10 @@ impl RetryStrategy<Result<GetObjectOutput, GetObjectError>> for GetObjectRetrySt
         todo!()
     }
 }
+
+//     retry_classifier: Arc::new(
+//         |res: Result<&SdkSuccess<GetObjectOutput>, &SdkError<GetObjectError>>| -> RetryKind {
+//             let classifier = AwsResponseRetryClassifier::new();
+//             classifier.classify_retry(res)
+//         },
+//     ),

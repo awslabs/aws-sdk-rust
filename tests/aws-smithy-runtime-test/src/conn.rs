@@ -6,15 +6,23 @@
 use aws_smithy_client::conns::Https;
 use aws_smithy_client::hyper_ext::Adapter;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_runtime::{BoxFallibleFut, ConfigBag, Connection};
+use aws_smithy_runtime::{BoxError, BoxFallibleFut, Connection};
+use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_runtime_api::runtime_plugin::RuntimePlugin;
 
 #[derive(Debug)]
 pub struct HyperConnection {
     _adapter: Adapter<Https>,
 }
 
+impl RuntimePlugin for HyperConnection {
+    fn configure(&self, _cfg: &mut ConfigBag) -> Result<(), BoxError> {
+        todo!()
+    }
+}
+
 impl HyperConnection {
-    pub fn _new() -> Self {
+    pub fn new() -> Self {
         Self {
             _adapter: Adapter::builder().build(aws_smithy_client::conns::https()),
         }

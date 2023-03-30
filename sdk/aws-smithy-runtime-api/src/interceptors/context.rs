@@ -11,7 +11,6 @@ pub struct InterceptorContext<ModReq, TxReq, TxRes, ModRes> {
     tx_request: Option<TxReq>,
     modeled_response: Option<ModRes>,
     tx_response: Option<TxRes>,
-    inner_context: Option<Box<InterceptorContext<ModReq, TxReq, TxRes, ModRes>>>,
 }
 
 // TODO(interceptors) we could use types to ensure that people calling methods on interceptor context can't access
@@ -23,13 +22,7 @@ impl<ModReq, TxReq, TxRes, ModRes> InterceptorContext<ModReq, TxReq, TxRes, ModR
             tx_request: None,
             tx_response: None,
             modeled_response: None,
-            inner_context: None,
         }
-    }
-
-    /// If this context contains an inner context, return true, else return false
-    pub fn is_layered(&self) -> bool {
-        self.inner_context.is_some()
     }
 
     /// Retrieve the modeled request for the operation being invoked.
@@ -45,31 +38,17 @@ impl<ModReq, TxReq, TxRes, ModRes> InterceptorContext<ModReq, TxReq, TxRes, ModR
     /// Retrieve the transmittable request for the operation being invoked.
     /// This will only be available once request marshalling has completed.
     pub fn tx_request(&self) -> Result<&TxReq, InterceptorError> {
-        match (
-            &self.tx_request,
-            self.inner_context
-                .as_ref()
-                .and_then(|inner| inner.tx_request.as_ref()),
-        ) {
-            (Some(req), _) => Ok(req),
-            (None, Some(req)) => Ok(req),
-            (None, _) => Err(InterceptorError::invalid_tx_request_access()),
-        }
+        self.tx_request
+            .as_ref()
+            .ok_or_else(InterceptorError::invalid_tx_request_access)
     }
 
     /// Retrieve the transmittable request for the operation being invoked.
     /// This will only be available once request marshalling has completed.
     pub fn tx_request_mut(&mut self) -> Result<&mut TxReq, InterceptorError> {
-        match (
-            &mut self.tx_request,
-            self.inner_context
-                .as_mut()
-                .and_then(|inner| inner.tx_request.as_mut()),
-        ) {
-            (Some(req), _) => Ok(req),
-            (None, Some(req)) => Ok(req),
-            (None, _) => Err(InterceptorError::invalid_tx_request_access()),
-        }
+        self.tx_request
+            .as_mut()
+            .ok_or_else(InterceptorError::invalid_tx_request_access)
     }
 
     /// Retrieve the response to the transmittable request for the operation
@@ -143,33 +122,5 @@ impl<ModReq, TxReq, TxRes, ModRes> InterceptorContext<ModReq, TxReq, TxRes, ModR
             .ok_or_else(InterceptorError::invalid_tx_response_access)?;
 
         Ok((mod_res, tx_res))
-    }
-
-    pub fn reload(self) -> Self {
-        match self.inner_context {
-            Some(inner) => *inner,
-            None => self,
-        }
-    }
-
-    pub fn save(self) -> Self {
-        todo!()
-
-        // Self {
-        //     // These are `None` because we'd need to clone them and there's no point doing that
-        //     // until we need to modify them. Maybe we should use `Cow`s then?
-        //     modeled_request: self.modeled_request.clone(),
-        //     tx_request: None,
-        //     tx_response: None,
-        //     modeled_response: None,
-        //     inner_context: Some(Box::new(self)),
-        // }
-    }
-
-    // This is to help Zelda avoid thinking about how to do the layering of InterceptorContext. Don't
-    // depend on this unless you can come to terms with its eventual removal.
-    pub fn reset(&mut self) {
-        self.tx_response = None;
-        self.modeled_response = None;
     }
 }

@@ -6,6 +6,7 @@
 pub mod context;
 pub mod error;
 
+use crate::config_bag::ConfigBag;
 pub use context::InterceptorContext;
 pub use error::InterceptorError;
 
@@ -40,8 +41,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_before_execution(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -69,8 +72,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_serialization(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -92,8 +97,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_before_serialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -115,8 +122,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_after_serialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -138,8 +147,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_retry_loop(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -166,8 +177,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_before_attempt(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -199,8 +212,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_signing(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
 
         Ok(())
     }
@@ -225,8 +240,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_before_signing(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -250,8 +267,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_after_signing(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -283,8 +302,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_transmit(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -312,8 +333,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_before_transmit(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -341,8 +364,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_after_transmit(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -374,8 +399,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_deserialization(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -402,8 +429,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_before_deserialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -430,8 +459,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_after_deserialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -460,8 +491,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_attempt_completion(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -490,8 +523,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_after_attempt(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -518,8 +553,10 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn modify_before_completion(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 
@@ -544,19 +581,25 @@ pub trait Interceptor<ModReq, TxReq, TxRes, ModRes> {
     fn read_after_execution(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
         let _ctx = context;
+        let _cfg = cfg;
         Ok(())
     }
 }
 
 pub struct Interceptors<ModReq, TxReq, TxRes, ModRes> {
-    inner: Vec<Box<dyn Interceptor<ModReq, TxReq, TxRes, ModRes>>>,
+    client_interceptors: Vec<Box<dyn Interceptor<ModReq, TxReq, TxRes, ModRes>>>,
+    operation_interceptors: Vec<Box<dyn Interceptor<ModReq, TxReq, TxRes, ModRes>>>,
 }
 
 impl<ModReq, TxReq, TxRes, ModRes> Default for Interceptors<ModReq, TxReq, TxRes, ModRes> {
     fn default() -> Self {
-        Self { inner: Vec::new() }
+        Self {
+            client_interceptors: Vec::new(),
+            operation_interceptors: Vec::new(),
+        }
     }
 }
 
@@ -565,21 +608,48 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
         Self::default()
     }
 
-    // pub fn with_interceptor(
-    //     &mut self,
-    //     interceptor: impl Interceptor<ModReq, TxReq, TxRes, ModRes>,
-    // ) -> &mut Self {
-    //     self.inner.push(Box::new(interceptor));
-    //
-    //     self
-    // }
+    pub fn with_client_interceptor(
+        &mut self,
+        interceptor: impl Interceptor<ModReq, TxReq, TxRes, ModRes> + 'static,
+    ) -> &mut Self {
+        self.client_interceptors.push(Box::new(interceptor));
+        self
+    }
 
-    pub fn read_before_execution(
+    pub fn with_operation_interceptor(
+        &mut self,
+        interceptor: impl Interceptor<ModReq, TxReq, TxRes, ModRes> + 'static,
+    ) -> &mut Self {
+        self.operation_interceptors.push(Box::new(interceptor));
+        self
+    }
+
+    fn all_interceptors_mut(
+        &mut self,
+    ) -> impl Iterator<Item = &mut Box<dyn Interceptor<ModReq, TxReq, TxRes, ModRes>>> {
+        self.client_interceptors
+            .iter_mut()
+            .chain(self.operation_interceptors.iter_mut())
+    }
+
+    pub fn client_read_before_execution(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_before_execution(context)?;
+        for interceptor in self.client_interceptors.iter_mut() {
+            interceptor.read_before_execution(context, cfg)?;
+        }
+        Ok(())
+    }
+
+    pub fn operation_read_before_execution(
+        &mut self,
+        context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        for interceptor in self.operation_interceptors.iter_mut() {
+            interceptor.read_before_execution(context, cfg)?;
         }
         Ok(())
     }
@@ -587,9 +657,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_serialization(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_serialization(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_serialization(context, cfg)?;
         }
 
         Ok(())
@@ -598,9 +669,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_before_serialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_before_serialization(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_before_serialization(context, cfg)?;
         }
         Ok(())
     }
@@ -608,9 +680,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_after_serialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_after_serialization(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_after_serialization(context, cfg)?;
         }
         Ok(())
     }
@@ -618,9 +691,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_retry_loop(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_retry_loop(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_retry_loop(context, cfg)?;
         }
 
         Ok(())
@@ -629,9 +703,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_before_attempt(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_before_attempt(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_before_attempt(context, cfg)?;
         }
         Ok(())
     }
@@ -639,9 +714,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_signing(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_signing(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_signing(context, cfg)?;
         }
 
         Ok(())
@@ -650,9 +726,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_before_signing(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_before_signing(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_before_signing(context, cfg)?;
         }
         Ok(())
     }
@@ -660,9 +737,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_after_signing(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_after_signing(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_after_signing(context, cfg)?;
         }
         Ok(())
     }
@@ -670,9 +748,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_transmit(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_transmit(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_transmit(context, cfg)?;
         }
 
         Ok(())
@@ -681,9 +760,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_before_transmit(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_before_transmit(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_before_transmit(context, cfg)?;
         }
         Ok(())
     }
@@ -691,9 +771,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_after_transmit(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_after_transmit(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_after_transmit(context, cfg)?;
         }
         Ok(())
     }
@@ -701,9 +782,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_deserialization(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_deserialization(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_deserialization(context, cfg)?;
         }
 
         Ok(())
@@ -712,9 +794,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_before_deserialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_before_deserialization(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_before_deserialization(context, cfg)?;
         }
         Ok(())
     }
@@ -722,9 +805,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_after_deserialization(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_after_deserialization(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_after_deserialization(context, cfg)?;
         }
         Ok(())
     }
@@ -732,9 +816,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_attempt_completion(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_attempt_completion(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_attempt_completion(context, cfg)?;
         }
 
         Ok(())
@@ -743,9 +828,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_after_attempt(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_after_attempt(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_after_attempt(context, cfg)?;
         }
         Ok(())
     }
@@ -753,9 +839,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn modify_before_completion(
         &mut self,
         context: &mut InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.modify_before_completion(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.modify_before_completion(context, cfg)?;
         }
 
         Ok(())
@@ -764,9 +851,10 @@ impl<ModReq, TxReq, TxRes, ModRes> Interceptors<ModReq, TxReq, TxRes, ModRes> {
     pub fn read_after_execution(
         &mut self,
         context: &InterceptorContext<ModReq, TxReq, TxRes, ModRes>,
+        cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
-        for interceptor in self.inner.iter_mut() {
-            interceptor.read_after_execution(context)?;
+        for interceptor in self.all_interceptors_mut() {
+            interceptor.read_after_execution(context, cfg)?;
         }
         Ok(())
     }
