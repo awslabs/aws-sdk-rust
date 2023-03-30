@@ -4,159 +4,166 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The customer has exceeded the allowed rate of API calls.</p>
-    ApiCallRateForCustomerExceededFault(crate::error::ApiCallRateForCustomerExceededFault),
+    ApiCallRateForCustomerExceededFault(crate::types::error::ApiCallRateForCustomerExceededFault),
     /// <p>The specified Amazon EC2 security group is already authorized for the specified cache security group.</p>
-    AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
+    AuthorizationAlreadyExistsFault(crate::types::error::AuthorizationAlreadyExistsFault),
     /// <p>The specified Amazon EC2 security group is not authorized for the specified cache security group.</p>
-    AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
+    AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
     /// <p>You already have a cluster with the given identifier.</p>
-    CacheClusterAlreadyExistsFault(crate::error::CacheClusterAlreadyExistsFault),
+    CacheClusterAlreadyExistsFault(crate::types::error::CacheClusterAlreadyExistsFault),
     /// <p>The requested cluster ID does not refer to an existing cluster.</p>
-    CacheClusterNotFoundFault(crate::error::CacheClusterNotFoundFault),
+    CacheClusterNotFoundFault(crate::types::error::CacheClusterNotFoundFault),
     /// <p>A cache parameter group with the requested name already exists.</p>
-    CacheParameterGroupAlreadyExistsFault(crate::error::CacheParameterGroupAlreadyExistsFault),
+    CacheParameterGroupAlreadyExistsFault(
+        crate::types::error::CacheParameterGroupAlreadyExistsFault,
+    ),
     /// <p>The requested cache parameter group name does not refer to an existing cache parameter group.</p>
-    CacheParameterGroupNotFoundFault(crate::error::CacheParameterGroupNotFoundFault),
+    CacheParameterGroupNotFoundFault(crate::types::error::CacheParameterGroupNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the maximum number of cache security groups.</p>
-    CacheParameterGroupQuotaExceededFault(crate::error::CacheParameterGroupQuotaExceededFault),
+    CacheParameterGroupQuotaExceededFault(
+        crate::types::error::CacheParameterGroupQuotaExceededFault,
+    ),
     /// <p>A cache security group with the specified name already exists.</p>
-    CacheSecurityGroupAlreadyExistsFault(crate::error::CacheSecurityGroupAlreadyExistsFault),
+    CacheSecurityGroupAlreadyExistsFault(crate::types::error::CacheSecurityGroupAlreadyExistsFault),
     /// <p>The requested cache security group name does not refer to an existing cache security group.</p>
-    CacheSecurityGroupNotFoundFault(crate::error::CacheSecurityGroupNotFoundFault),
+    CacheSecurityGroupNotFoundFault(crate::types::error::CacheSecurityGroupNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache security groups.</p>
-    CacheSecurityGroupQuotaExceededFault(crate::error::CacheSecurityGroupQuotaExceededFault),
+    CacheSecurityGroupQuotaExceededFault(crate::types::error::CacheSecurityGroupQuotaExceededFault),
     /// <p>The requested cache subnet group name is already in use by an existing cache subnet group.</p>
-    CacheSubnetGroupAlreadyExistsFault(crate::error::CacheSubnetGroupAlreadyExistsFault),
+    CacheSubnetGroupAlreadyExistsFault(crate::types::error::CacheSubnetGroupAlreadyExistsFault),
     /// <p>The requested cache subnet group is currently in use.</p>
-    CacheSubnetGroupInUse(crate::error::CacheSubnetGroupInUse),
+    CacheSubnetGroupInUse(crate::types::error::CacheSubnetGroupInUse),
     /// <p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>
-    CacheSubnetGroupNotFoundFault(crate::error::CacheSubnetGroupNotFoundFault),
+    CacheSubnetGroupNotFoundFault(crate::types::error::CacheSubnetGroupNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache subnet groups.</p>
-    CacheSubnetGroupQuotaExceededFault(crate::error::CacheSubnetGroupQuotaExceededFault),
+    CacheSubnetGroupQuotaExceededFault(crate::types::error::CacheSubnetGroupQuotaExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a cache subnet group.</p>
-    CacheSubnetQuotaExceededFault(crate::error::CacheSubnetQuotaExceededFault),
+    CacheSubnetQuotaExceededFault(crate::types::error::CacheSubnetQuotaExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
-    ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
+    ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
     /// <p>The default user assigned to the user group.</p>
-    DefaultUserAssociatedToUserGroupFault(crate::error::DefaultUserAssociatedToUserGroupFault),
+    DefaultUserAssociatedToUserGroupFault(
+        crate::types::error::DefaultUserAssociatedToUserGroupFault,
+    ),
     /// <p>You must add default user to a user group.</p>
-    DefaultUserRequired(crate::error::DefaultUserRequired),
+    DefaultUserRequired(crate::types::error::DefaultUserRequired),
     /// <p>A user with this username already exists.</p>
-    DuplicateUserNameFault(crate::error::DuplicateUserNameFault),
+    DuplicateUserNameFault(crate::types::error::DuplicateUserNameFault),
     /// <p>The Global datastore name already exists.</p>
     GlobalReplicationGroupAlreadyExistsFault(
-        crate::error::GlobalReplicationGroupAlreadyExistsFault,
+        crate::types::error::GlobalReplicationGroupAlreadyExistsFault,
     ),
     /// <p>The Global datastore does not exist</p>
-    GlobalReplicationGroupNotFoundFault(crate::error::GlobalReplicationGroupNotFoundFault),
+    GlobalReplicationGroupNotFoundFault(crate::types::error::GlobalReplicationGroupNotFoundFault),
     /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
-    InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
+    InsufficientCacheClusterCapacityFault(
+        crate::types::error::InsufficientCacheClusterCapacityFault,
+    ),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
-    InvalidArnFault(crate::error::InvalidArnFault),
+    InvalidArnFault(crate::types::error::InvalidArnFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
-    InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
+    InvalidCacheClusterStateFault(crate::types::error::InvalidCacheClusterStateFault),
     /// <p>The current state of the cache parameter group does not allow the requested operation to occur.</p>
-    InvalidCacheParameterGroupStateFault(crate::error::InvalidCacheParameterGroupStateFault),
+    InvalidCacheParameterGroupStateFault(crate::types::error::InvalidCacheParameterGroupStateFault),
     /// <p>The current state of the cache security group does not allow deletion.</p>
-    InvalidCacheSecurityGroupStateFault(crate::error::InvalidCacheSecurityGroupStateFault),
+    InvalidCacheSecurityGroupStateFault(crate::types::error::InvalidCacheSecurityGroupStateFault),
     /// <p>The Global datastore is not available or in primary-only state.</p>
-    InvalidGlobalReplicationGroupStateFault(crate::error::InvalidGlobalReplicationGroupStateFault),
+    InvalidGlobalReplicationGroupStateFault(
+        crate::types::error::InvalidGlobalReplicationGroupStateFault,
+    ),
     /// <p>The KMS key supplied is not valid.</p>
-    InvalidKmsKeyFault(crate::error::InvalidKmsKeyFault),
+    InvalidKmsKeyFault(crate::types::error::InvalidKmsKeyFault),
     /// <p>Two or more incompatible parameters were specified.</p>
-    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
-    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
-    InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
+    InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
     /// <p>The current state of the snapshot does not allow the requested operation to occur.</p>
-    InvalidSnapshotStateFault(crate::error::InvalidSnapshotStateFault),
+    InvalidSnapshotStateFault(crate::types::error::InvalidSnapshotStateFault),
     /// <p>An invalid subnet identifier was specified.</p>
-    InvalidSubnet(crate::error::InvalidSubnet),
+    InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>The user group is not in an active state.</p>
-    InvalidUserGroupStateFault(crate::error::InvalidUserGroupStateFault),
+    InvalidUserGroupStateFault(crate::types::error::InvalidUserGroupStateFault),
     /// <p>The user is not in active state.</p>
-    InvalidUserStateFault(crate::error::InvalidUserStateFault),
+    InvalidUserStateFault(crate::types::error::InvalidUserStateFault),
     /// <p>The VPC network is in an invalid state.</p>
-    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The operation was not performed because no changes were required.</p>
-    NoOperationFault(crate::error::NoOperationFault),
+    NoOperationFault(crate::types::error::NoOperationFault),
     /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
-    NodeGroupNotFoundFault(crate::error::NodeGroupNotFoundFault),
+    NodeGroupNotFoundFault(crate::types::error::NodeGroupNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
-        crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
+        crate::types::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes in a single cluster.</p>
-    NodeQuotaForClusterExceededFault(crate::error::NodeQuotaForClusterExceededFault),
+    NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
-    NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
+    NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified replication group already exists.</p>
-    ReplicationGroupAlreadyExistsFault(crate::error::ReplicationGroupAlreadyExistsFault),
+    ReplicationGroupAlreadyExistsFault(crate::types::error::ReplicationGroupAlreadyExistsFault),
     /// <p>The targeted replication group is not available. </p>
     ReplicationGroupAlreadyUnderMigrationFault(
-        crate::error::ReplicationGroupAlreadyUnderMigrationFault,
+        crate::types::error::ReplicationGroupAlreadyUnderMigrationFault,
     ),
     /// <p>The specified replication group does not exist.</p>
-    ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
+    ReplicationGroupNotFoundFault(crate::types::error::ReplicationGroupNotFoundFault),
     /// <p>The designated replication group is not available for data migration.</p>
-    ReplicationGroupNotUnderMigrationFault(crate::error::ReplicationGroupNotUnderMigrationFault),
+    ReplicationGroupNotUnderMigrationFault(
+        crate::types::error::ReplicationGroupNotUnderMigrationFault,
+    ),
     /// <p>You already have a reservation with the given identifier.</p>
-    ReservedCacheNodeAlreadyExistsFault(crate::error::ReservedCacheNodeAlreadyExistsFault),
+    ReservedCacheNodeAlreadyExistsFault(crate::types::error::ReservedCacheNodeAlreadyExistsFault),
     /// <p>The requested reserved cache node was not found.</p>
-    ReservedCacheNodeNotFoundFault(crate::error::ReservedCacheNodeNotFoundFault),
+    ReservedCacheNodeNotFoundFault(crate::types::error::ReservedCacheNodeNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the user's cache node quota.</p>
-    ReservedCacheNodeQuotaExceededFault(crate::error::ReservedCacheNodeQuotaExceededFault),
+    ReservedCacheNodeQuotaExceededFault(crate::types::error::ReservedCacheNodeQuotaExceededFault),
     /// <p>The requested cache node offering does not exist.</p>
-    ReservedCacheNodesOfferingNotFoundFault(crate::error::ReservedCacheNodesOfferingNotFoundFault),
+    ReservedCacheNodesOfferingNotFoundFault(
+        crate::types::error::ReservedCacheNodesOfferingNotFoundFault,
+    ),
     /// <p>The specified service linked role (SLR) was not found.</p>
-    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
+    ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The service update doesn't exist</p>
-    ServiceUpdateNotFoundFault(crate::error::ServiceUpdateNotFoundFault),
+    ServiceUpdateNotFoundFault(crate::types::error::ServiceUpdateNotFoundFault),
     /// <p>You already have a snapshot with the given name.</p>
-    SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
+    SnapshotAlreadyExistsFault(crate::types::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
     /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
     /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
-    SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
+    SnapshotFeatureNotSupportedFault(crate::types::error::SnapshotFeatureNotSupportedFault),
     /// <p>The requested snapshot name does not refer to an existing snapshot.</p>
-    SnapshotNotFoundFault(crate::error::SnapshotNotFoundFault),
+    SnapshotNotFoundFault(crate::types::error::SnapshotNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the maximum number of snapshots.</p>
-    SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
+    SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),
     /// <p>The requested subnet is being used by another cache subnet group.</p>
-    SubnetInUse(crate::error::SubnetInUse),
+    SubnetInUse(crate::types::error::SubnetInUse),
     /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
-    SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
+    SubnetNotAllowedFault(crate::types::error::SubnetNotAllowedFault),
     /// <p>The requested tag was not found on this resource.</p>
-    TagNotFoundFault(crate::error::TagNotFoundFault),
+    TagNotFoundFault(crate::types::error::TagNotFoundFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
-    TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
+    TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// <p>The <code>TestFailover</code> action is not available.</p>
-    TestFailoverNotAvailableFault(crate::error::TestFailoverNotAvailableFault),
+    TestFailoverNotAvailableFault(crate::types::error::TestFailoverNotAvailableFault),
     /// <p>A user with this ID already exists.</p>
-    UserAlreadyExistsFault(crate::error::UserAlreadyExistsFault),
+    UserAlreadyExistsFault(crate::types::error::UserAlreadyExistsFault),
     /// <p>The user group with this ID already exists.</p>
-    UserGroupAlreadyExistsFault(crate::error::UserGroupAlreadyExistsFault),
+    UserGroupAlreadyExistsFault(crate::types::error::UserGroupAlreadyExistsFault),
     /// <p>The user group was not found or does not exist</p>
-    UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
+    UserGroupNotFoundFault(crate::types::error::UserGroupNotFoundFault),
     /// <p>The number of users exceeds the user group limit.</p>
-    UserGroupQuotaExceededFault(crate::error::UserGroupQuotaExceededFault),
+    UserGroupQuotaExceededFault(crate::types::error::UserGroupQuotaExceededFault),
     /// <p>The user does not exist or could not be found.</p>
-    UserNotFoundFault(crate::error::UserNotFoundFault),
+    UserNotFoundFault(crate::types::error::UserNotFoundFault),
     /// <p>The quota of users has been exceeded.</p>
-    UserQuotaExceededFault(crate::error::UserQuotaExceededFault),
-    ///
+    UserQuotaExceededFault(crate::types::error::UserQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -232,76 +239,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsToResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AddTagsToResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AddTagsToResourceError> for Error {
-    fn from(err: crate::error::AddTagsToResourceError) -> Self {
-        match err.kind {
-            crate::error::AddTagsToResourceErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(inner) => {
-                Error::CacheParameterGroupNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(inner) => {
-                Error::CacheSecurityGroupNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(inner) => {
-                Error::CacheSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::InvalidArnFault(inner) => {
-                Error::InvalidArnFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(inner) => {
-                Error::InvalidReplicationGroupStateFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(inner) => {
-                Error::ReservedCacheNodeNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::SnapshotNotFoundFault(inner) => {
-                Error::SnapshotNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::UserGroupNotFoundFault(inner) => {
-                Error::UserGroupNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::AuthorizeCacheSecurityGroupIngressError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::add_tags_to_resource::AddTagsToResourceError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::AuthorizeCacheSecurityGroupIngressError,
+            crate::operation::add_tags_to_resource::AddTagsToResourceError,
             R,
         >,
     ) -> Self {
@@ -309,541 +259,65 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::AuthorizeCacheSecurityGroupIngressError> for Error {
-    fn from(err: crate::error::AuthorizeCacheSecurityGroupIngressError) -> Self {
-        match err.kind {
-            crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(inner) => Error::AuthorizationAlreadyExistsFault(inner),
-            crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
-            crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchApplyUpdateActionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchApplyUpdateActionError, R>,
-    ) -> Self {
+impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Error {
+    fn from(err: crate::operation::add_tags_to_resource::AddTagsToResourceError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::ReservedCacheNodeNotFoundFault(inner) => Error::ReservedCacheNodeNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::BatchApplyUpdateActionError> for Error {
-    fn from(err: crate::error::BatchApplyUpdateActionError) -> Self {
-        match err.kind {
-            crate::error::BatchApplyUpdateActionErrorKind::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(inner) => {
-                Error::ServiceUpdateNotFoundFault(inner)
-            }
-            crate::error::BatchApplyUpdateActionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchStopUpdateActionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchStopUpdateActionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::BatchStopUpdateActionError> for Error {
-    fn from(err: crate::error::BatchStopUpdateActionError) -> Self {
-        match err.kind {
-            crate::error::BatchStopUpdateActionErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(inner) => {
-                Error::ServiceUpdateNotFoundFault(inner)
-            }
-            crate::error::BatchStopUpdateActionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteMigrationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CompleteMigrationError, R>,
-    ) -> Self {
+impl From<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError> for Error {
+    fn from(err: crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CompleteMigrationError> for Error {
-    fn from(err: crate::error::CompleteMigrationError) -> Self {
-        match err.kind {
-            crate::error::CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(inner) => {
-                Error::InvalidReplicationGroupStateFault(inner)
-            }
-            crate::error::CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(
-                inner,
-            ) => Error::ReplicationGroupNotUnderMigrationFault(inner),
-            crate::error::CompleteMigrationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopySnapshotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CopySnapshotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CopySnapshotError> for Error {
-    fn from(err: crate::error::CopySnapshotError) -> Self {
-        match err.kind {
-            crate::error::CopySnapshotErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::CopySnapshotErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CopySnapshotErrorKind::InvalidSnapshotStateFault(inner) => {
-                Error::InvalidSnapshotStateFault(inner)
-            }
-            crate::error::CopySnapshotErrorKind::SnapshotAlreadyExistsFault(inner) => {
-                Error::SnapshotAlreadyExistsFault(inner)
-            }
-            crate::error::CopySnapshotErrorKind::SnapshotNotFoundFault(inner) => {
-                Error::SnapshotNotFoundFault(inner)
-            }
-            crate::error::CopySnapshotErrorKind::SnapshotQuotaExceededFault(inner) => {
-                Error::SnapshotQuotaExceededFault(inner)
-            }
-            crate::error::CopySnapshotErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::CopySnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCacheClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCacheClusterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateCacheClusterError> for Error {
-    fn from(err: crate::error::CreateCacheClusterError) -> Self {
-        match err.kind {
-            crate::error::CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(inner) => {
-                Error::CacheClusterAlreadyExistsFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(inner) => {
-                Error::CacheParameterGroupNotFoundFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(inner) => {
-                Error::CacheSecurityGroupNotFoundFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(inner) => {
-                Error::CacheSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(
-                inner,
-            ) => Error::ClusterQuotaForCustomerExceededFault(inner),
-            crate::error::CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(
-                inner,
-            ) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::CreateCacheClusterErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::CreateCacheClusterErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(inner) => {
-                Error::InvalidReplicationGroupStateFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(inner) => {
-                Error::InvalidVpcNetworkStateFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(inner) => {
-                Error::NodeQuotaForClusterExceededFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(inner) => {
-                Error::NodeQuotaForCustomerExceededFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::CreateCacheClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCacheParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCacheParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateCacheParameterGroupError> for Error {
-    fn from(err: crate::error::CreateCacheParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(inner) => Error::CacheParameterGroupAlreadyExistsFault(inner),
-            crate::error::CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(inner) => Error::CacheParameterGroupQuotaExceededFault(inner),
-            crate::error::CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
-            crate::error::CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::CreateCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-            crate::error::CreateCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCacheSecurityGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCacheSecurityGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateCacheSecurityGroupError> for Error {
-    fn from(err: crate::error::CreateCacheSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(inner) => Error::CacheSecurityGroupAlreadyExistsFault(inner),
-            crate::error::CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(inner) => Error::CacheSecurityGroupQuotaExceededFault(inner),
-            crate::error::CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-            crate::error::CreateCacheSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCacheSubnetGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCacheSubnetGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateCacheSubnetGroupError> for Error {
-    fn from(err: crate::error::CreateCacheSubnetGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(
-                inner,
-            ) => Error::CacheSubnetGroupAlreadyExistsFault(inner),
-            crate::error::CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(
-                inner,
-            ) => Error::CacheSubnetGroupQuotaExceededFault(inner),
-            crate::error::CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(inner) => {
-                Error::CacheSubnetQuotaExceededFault(inner)
-            }
-            crate::error::CreateCacheSubnetGroupErrorKind::InvalidSubnet(inner) => {
-                Error::InvalidSubnet(inner)
-            }
-            crate::error::CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(inner) => {
-                Error::SubnetNotAllowedFault(inner)
-            }
-            crate::error::CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::CreateCacheSubnetGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGlobalReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGlobalReplicationGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::CreateGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(inner) => Error::GlobalReplicationGroupAlreadyExistsFault(inner),
-            crate::error::CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-            crate::error::CreateGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateReplicationGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateReplicationGroupError> for Error {
-    fn from(err: crate::error::CreateReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::CreateReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(inner) => Error::InvalidUserGroupStateFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(inner) => Error::ReplicationGroupAlreadyExistsFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-            crate::error::CreateReplicationGroupErrorKind::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
-            crate::error::CreateReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSnapshotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSnapshotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateSnapshotError> for Error {
-    fn from(err: crate::error::CreateSnapshotError) -> Self {
-        match err.kind {
-            crate::error::CreateSnapshotErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::InvalidCacheClusterStateFault(inner) => {
-                Error::InvalidCacheClusterStateFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(inner) => {
-                Error::InvalidReplicationGroupStateFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(inner) => {
-                Error::SnapshotAlreadyExistsFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(inner) => {
-                Error::SnapshotFeatureNotSupportedFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::SnapshotQuotaExceededFault(inner) => {
-                Error::SnapshotQuotaExceededFault(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserError> for Error {
-    fn from(err: crate::error::CreateUserError) -> Self {
-        match err.kind {
-            crate::error::CreateUserErrorKind::DuplicateUserNameFault(inner) => {
-                Error::DuplicateUserNameFault(inner)
-            }
-            crate::error::CreateUserErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::CreateUserErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::CreateUserErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::CreateUserErrorKind::UserAlreadyExistsFault(inner) => {
-                Error::UserAlreadyExistsFault(inner)
-            }
-            crate::error::CreateUserErrorKind::UserQuotaExceededFault(inner) => {
-                Error::UserQuotaExceededFault(inner)
-            }
-            crate::error::CreateUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateUserGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserGroupError> for Error {
-    fn from(err: crate::error::CreateUserGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateUserGroupErrorKind::DefaultUserRequired(inner) => {
-                Error::DefaultUserRequired(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::DuplicateUserNameFault(inner) => {
-                Error::DuplicateUserNameFault(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(inner) => {
-                Error::TagQuotaPerResourceExceeded(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(inner) => {
-                Error::UserGroupAlreadyExistsFault(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::UserGroupQuotaExceededFault(inner) => {
-                Error::UserGroupQuotaExceededFault(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::CreateUserGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError::AuthorizationAlreadyExistsFault(inner) => Error::AuthorizationAlreadyExistsFault(inner),
+            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
+            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError,
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
             R,
         >,
     > for Error
@@ -852,7 +326,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError,
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
             R,
         >,
     ) -> Self {
@@ -860,671 +334,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DecreaseReplicaCountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DecreaseReplicaCountError, R>,
-    ) -> Self {
+impl From<crate::operation::batch_apply_update_action::BatchApplyUpdateActionError> for Error {
+    fn from(err: crate::operation::batch_apply_update_action::BatchApplyUpdateActionError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DecreaseReplicaCountError> for Error {
-    fn from(err: crate::error::DecreaseReplicaCountError) -> Self {
-        match err.kind {
-            crate::error::DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DecreaseReplicaCountErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::NoOperationFault(inner) => Error::NoOperationFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-            crate::error::DecreaseReplicaCountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCacheClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCacheClusterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCacheClusterError> for Error {
-    fn from(err: crate::error::DeleteCacheClusterError) -> Self {
-        match err.kind {
-            crate::error::DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(inner) => {
-                Error::InvalidCacheClusterStateFault(inner)
-            }
-            crate::error::DeleteCacheClusterErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DeleteCacheClusterErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(inner) => {
-                Error::SnapshotAlreadyExistsFault(inner)
-            }
-            crate::error::DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(inner) => {
-                Error::SnapshotFeatureNotSupportedFault(inner)
-            }
-            crate::error::DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(inner) => {
-                Error::SnapshotQuotaExceededFault(inner)
-            }
-            crate::error::DeleteCacheClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCacheParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCacheParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCacheParameterGroupError> for Error {
-    fn from(err: crate::error::DeleteCacheParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
-            crate::error::DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCacheSecurityGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCacheSecurityGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCacheSecurityGroupError> for Error {
-    fn from(err: crate::error::DeleteCacheSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
-            crate::error::DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteCacheSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCacheSubnetGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCacheSubnetGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCacheSubnetGroupError> for Error {
-    fn from(err: crate::error::DeleteCacheSubnetGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(inner) => {
-                Error::CacheSubnetGroupInUse(inner)
-            }
-            crate::error::DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(inner) => {
-                Error::CacheSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::DeleteCacheSubnetGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGlobalReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGlobalReplicationGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::DeleteGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteReplicationGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteReplicationGroupError> for Error {
-    fn from(err: crate::error::DeleteReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DeleteReplicationGroupErrorKind::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(
-                inner,
-            ) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(inner) => {
-                Error::SnapshotAlreadyExistsFault(inner)
-            }
-            crate::error::DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(
-                inner,
-            ) => Error::SnapshotFeatureNotSupportedFault(inner),
-            crate::error::DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(inner) => {
-                Error::SnapshotQuotaExceededFault(inner)
-            }
-            crate::error::DeleteReplicationGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSnapshotError> for Error {
-    fn from(err: crate::error::DeleteSnapshotError) -> Self {
-        match err.kind {
-            crate::error::DeleteSnapshotErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::DeleteSnapshotErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DeleteSnapshotErrorKind::InvalidSnapshotStateFault(inner) => {
-                Error::InvalidSnapshotStateFault(inner)
-            }
-            crate::error::DeleteSnapshotErrorKind::SnapshotNotFoundFault(inner) => {
-                Error::SnapshotNotFoundFault(inner)
-            }
-            crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserError> for Error {
-    fn from(err: crate::error::DeleteUserError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(inner) => {
-                Error::DefaultUserAssociatedToUserGroupFault(inner)
-            }
-            crate::error::DeleteUserErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DeleteUserErrorKind::InvalidUserStateFault(inner) => {
-                Error::InvalidUserStateFault(inner)
-            }
-            crate::error::DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::DeleteUserErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::DeleteUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUserGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserGroupError> for Error {
-    fn from(err: crate::error::DeleteUserGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserGroupErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DeleteUserGroupErrorKind::InvalidUserGroupStateFault(inner) => {
-                Error::InvalidUserGroupStateFault(inner)
-            }
-            crate::error::DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::DeleteUserGroupErrorKind::UserGroupNotFoundFault(inner) => {
-                Error::UserGroupNotFoundFault(inner)
-            }
-            crate::error::DeleteUserGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCacheClustersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheClustersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeCacheClustersError> for Error {
-    fn from(err: crate::error::DescribeCacheClustersError) -> Self {
-        match err.kind {
-            crate::error::DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeCacheClustersErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeCacheClustersErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeCacheClustersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCacheEngineVersionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheEngineVersionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeCacheEngineVersionsError> for Error {
-    fn from(err: crate::error::DescribeCacheEngineVersionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeCacheEngineVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCacheParameterGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheParameterGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeCacheParameterGroupsError> for Error {
-    fn from(err: crate::error::DescribeCacheParameterGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeCacheParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCacheParametersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheParametersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeCacheParametersError> for Error {
-    fn from(err: crate::error::DescribeCacheParametersError) -> Self {
-        match err.kind {
-            crate::error::DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::DescribeCacheParametersErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeCacheParametersErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeCacheParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCacheSecurityGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheSecurityGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeCacheSecurityGroupsError> for Error {
-    fn from(err: crate::error::DescribeCacheSecurityGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeCacheSecurityGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCacheSubnetGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheSubnetGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeCacheSubnetGroupsError> for Error {
-    fn from(err: crate::error::DescribeCacheSubnetGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(
-                inner,
-            ) => Error::CacheSubnetGroupNotFoundFault(inner),
-            crate::error::DescribeCacheSubnetGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeEngineDefaultParametersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeEngineDefaultParametersError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEngineDefaultParametersError> for Error {
-    fn from(err: crate::error::DescribeEngineDefaultParametersError) -> Self {
-        match err.kind {
-            crate::error::DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeEngineDefaultParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEventsError> for Error {
-    fn from(err: crate::error::DescribeEventsError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventsErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::DescribeEventsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeGlobalReplicationGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeGlobalReplicationGroupsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeGlobalReplicationGroupsError> for Error {
-    fn from(err: crate::error::DescribeGlobalReplicationGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeGlobalReplicationGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReplicationGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeReplicationGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeReplicationGroupsError> for Error {
-    fn from(err: crate::error::DescribeReplicationGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeReplicationGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::DescribeReplicationGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReservedCacheNodesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeReservedCacheNodesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeReservedCacheNodesError> for Error {
-    fn from(err: crate::error::DescribeReservedCacheNodesError) -> Self {
-        match err.kind {
-            crate::error::DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(inner) => Error::ReservedCacheNodeNotFoundFault(inner),
-            crate::error::DescribeReservedCacheNodesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::ServiceUpdateNotFoundFault(inner) => Error::ServiceUpdateNotFoundFault(inner),
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DescribeReservedCacheNodesOfferingsError,
+            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
             R,
         >,
     > for Error
@@ -1533,7 +366,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeReservedCacheNodesOfferingsError,
+            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
             R,
         >,
     ) -> Self {
@@ -1541,252 +374,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeReservedCacheNodesOfferingsError> for Error {
-    fn from(err: crate::error::DescribeReservedCacheNodesOfferingsError) -> Self {
-        match err.kind {
-            crate::error::DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeReservedCacheNodesOfferingsErrorKind::ReservedCacheNodesOfferingNotFoundFault(inner) => Error::ReservedCacheNodesOfferingNotFoundFault(inner),
-            crate::error::DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeServiceUpdatesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeServiceUpdatesError, R>,
-    ) -> Self {
+impl From<crate::operation::batch_stop_update_action::BatchStopUpdateActionError> for Error {
+    fn from(err: crate::operation::batch_stop_update_action::BatchStopUpdateActionError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeServiceUpdatesError> for Error {
-    fn from(err: crate::error::DescribeServiceUpdatesError) -> Self {
-        match err.kind {
-            crate::error::DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeServiceUpdatesErrorKind::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(inner) => {
-                Error::ServiceUpdateNotFoundFault(inner)
-            }
-            crate::error::DescribeServiceUpdatesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSnapshotsError> for Error {
-    fn from(err: crate::error::DescribeSnapshotsError) -> Self {
-        match err.kind {
-            crate::error::DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeSnapshotsErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeSnapshotsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeSnapshotsErrorKind::SnapshotNotFoundFault(inner) => {
-                Error::SnapshotNotFoundFault(inner)
-            }
-            crate::error::DescribeSnapshotsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUpdateActionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUpdateActionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUpdateActionsError> for Error {
-    fn from(err: crate::error::DescribeUpdateActionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeUpdateActionsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeUpdateActionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUserGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUserGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUserGroupsError> for Error {
-    fn from(err: crate::error::DescribeUserGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeUserGroupsErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::DescribeUserGroupsErrorKind::UserGroupNotFoundFault(inner) => {
-                Error::UserGroupNotFoundFault(inner)
-            }
-            crate::error::DescribeUserGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUsersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeUsersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUsersError> for Error {
-    fn from(err: crate::error::DescribeUsersError) -> Self {
-        match err.kind {
-            crate::error::DescribeUsersErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::DescribeUsersErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::DescribeUsersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::DisassociateGlobalReplicationGroupError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociateGlobalReplicationGroupError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DisassociateGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::DisassociateGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::DisassociateGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DisassociateGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::FailoverGlobalReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::FailoverGlobalReplicationGroupError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::FailoverGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::FailoverGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::FailoverGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            crate::operation::batch_stop_update_action::BatchStopUpdateActionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::batch_stop_update_action::BatchStopUpdateActionError::ServiceUpdateNotFoundFault(inner) => Error::ServiceUpdateNotFoundFault(inner),
+            crate::operation::batch_stop_update_action::BatchStopUpdateActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError,
+            crate::operation::complete_migration::CompleteMigrationError,
             R,
         >,
     > for Error
@@ -1795,7 +406,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError,
+            crate::operation::complete_migration::CompleteMigrationError,
             R,
         >,
     ) -> Self {
@@ -1803,64 +414,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::IncreaseReplicaCountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::IncreaseReplicaCountError, R>,
-    ) -> Self {
+impl From<crate::operation::complete_migration::CompleteMigrationError> for Error {
+    fn from(err: crate::operation::complete_migration::CompleteMigrationError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::IncreaseReplicaCountError> for Error {
-    fn from(err: crate::error::IncreaseReplicaCountError) -> Self {
-        match err.kind {
-            crate::error::IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::NoOperationFault(inner) => Error::NoOperationFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::IncreaseReplicaCountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            crate::operation::complete_migration::CompleteMigrationError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::complete_migration::CompleteMigrationError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::complete_migration::CompleteMigrationError::ReplicationGroupNotUnderMigrationFault(inner) => Error::ReplicationGroupNotUnderMigrationFault(inner),
+            crate::operation::complete_migration::CompleteMigrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListAllowedNodeTypeModificationsError, R>>
+    From<aws_smithy_http::result::SdkError<crate::operation::copy_snapshot::CopySnapshotError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListAllowedNodeTypeModificationsError,
+            crate::operation::copy_snapshot::CopySnapshotError,
             R,
         >,
     ) -> Self {
@@ -1868,272 +451,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListAllowedNodeTypeModificationsError> for Error {
-    fn from(err: crate::error::ListAllowedNodeTypeModificationsError) -> Self {
-        match err.kind {
-            crate::error::ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
-            crate::error::ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::ListAllowedNodeTypeModificationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl From<crate::operation::copy_snapshot::CopySnapshotError> for Error {
+    fn from(err: crate::operation::copy_snapshot::CopySnapshotError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(inner) => {
-                Error::CacheParameterGroupNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(inner) => {
-                Error::CacheSecurityGroupNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(inner) => {
-                Error::CacheSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidArnFault(inner) => {
-                Error::InvalidArnFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(
-                inner,
-            ) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(inner) => {
-                Error::ReservedCacheNodeNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::SnapshotNotFoundFault(inner) => {
-                Error::SnapshotNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::UserGroupNotFoundFault(inner) => {
-                Error::UserGroupNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyCacheClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyCacheClusterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyCacheClusterError> for Error {
-    fn from(err: crate::error::ModifyCacheClusterError) -> Self {
-        match err.kind {
-            crate::error::ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(inner) => {
-                Error::CacheParameterGroupNotFoundFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(inner) => {
-                Error::CacheSecurityGroupNotFoundFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(
-                inner,
-            ) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(inner) => {
-                Error::InvalidCacheClusterStateFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(
-                inner,
-            ) => Error::InvalidCacheSecurityGroupStateFault(inner),
-            crate::error::ModifyCacheClusterErrorKind::InvalidParameterCombinationException(
-                inner,
-            ) => Error::InvalidParameterCombinationException(inner),
-            crate::error::ModifyCacheClusterErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(inner) => {
-                Error::InvalidVpcNetworkStateFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(inner) => {
-                Error::NodeQuotaForClusterExceededFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(inner) => {
-                Error::NodeQuotaForCustomerExceededFault(inner)
-            }
-            crate::error::ModifyCacheClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyCacheParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyCacheParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyCacheParameterGroupError> for Error {
-    fn from(err: crate::error::ModifyCacheParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
-            crate::error::ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ModifyCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyCacheSubnetGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyCacheSubnetGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyCacheSubnetGroupError> for Error {
-    fn from(err: crate::error::ModifyCacheSubnetGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(inner) => {
-                Error::CacheSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(inner) => {
-                Error::CacheSubnetQuotaExceededFault(inner)
-            }
-            crate::error::ModifyCacheSubnetGroupErrorKind::InvalidSubnet(inner) => {
-                Error::InvalidSubnet(inner)
-            }
-            crate::error::ModifyCacheSubnetGroupErrorKind::SubnetInUse(inner) => {
-                Error::SubnetInUse(inner)
-            }
-            crate::error::ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(inner) => {
-                Error::SubnetNotAllowedFault(inner)
-            }
-            crate::error::ModifyCacheSubnetGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyGlobalReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyGlobalReplicationGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::ModifyGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ModifyGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyReplicationGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyReplicationGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyReplicationGroupError> for Error {
-    fn from(err: crate::error::ModifyReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(inner) => Error::InvalidUserGroupStateFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
-            crate::error::ModifyReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            crate::operation::copy_snapshot::CopySnapshotError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::InvalidSnapshotStateFault(inner) => Error::InvalidSnapshotStateFault(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::SnapshotAlreadyExistsFault(inner) => Error::SnapshotAlreadyExistsFault(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::ModifyReplicationGroupShardConfigurationError,
+            crate::operation::create_cache_cluster::CreateCacheClusterError,
             R,
         >,
     > for Error
@@ -2142,7 +488,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ModifyReplicationGroupShardConfigurationError,
+            crate::operation::create_cache_cluster::CreateCacheClusterError,
             R,
         >,
     ) -> Self {
@@ -2150,148 +496,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ModifyReplicationGroupShardConfigurationError> for Error {
-    fn from(err: crate::error::ModifyReplicationGroupShardConfigurationError) -> Self {
-        match err.kind {
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-            crate::error::ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ModifyUserError, R>) -> Self {
+impl From<crate::operation::create_cache_cluster::CreateCacheClusterError> for Error {
+    fn from(err: crate::operation::create_cache_cluster::CreateCacheClusterError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyUserError> for Error {
-    fn from(err: crate::error::ModifyUserError) -> Self {
-        match err.kind {
-            crate::error::ModifyUserErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::ModifyUserErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ModifyUserErrorKind::InvalidUserStateFault(inner) => {
-                Error::InvalidUserStateFault(inner)
-            }
-            crate::error::ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::ModifyUserErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::ModifyUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyUserGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ModifyUserGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyUserGroupError> for Error {
-    fn from(err: crate::error::ModifyUserGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyUserGroupErrorKind::DefaultUserRequired(inner) => {
-                Error::DefaultUserRequired(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::DuplicateUserNameFault(inner) => {
-                Error::DuplicateUserNameFault(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::InvalidUserGroupStateFault(inner) => {
-                Error::InvalidUserGroupStateFault(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::UserGroupNotFoundFault(inner) => {
-                Error::UserGroupNotFoundFault(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::ModifyUserGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::PurchaseReservedCacheNodesOfferingError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PurchaseReservedCacheNodesOfferingError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PurchaseReservedCacheNodesOfferingError> for Error {
-    fn from(err: crate::error::PurchaseReservedCacheNodesOfferingError) -> Self {
-        match err.kind {
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeAlreadyExistsFault(inner) => Error::ReservedCacheNodeAlreadyExistsFault(inner),
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeQuotaExceededFault(inner) => Error::ReservedCacheNodeQuotaExceededFault(inner),
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodesOfferingNotFoundFault(inner) => Error::ReservedCacheNodesOfferingNotFoundFault(inner),
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-            crate::error::PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::CacheClusterAlreadyExistsFault(inner) => Error::CacheClusterAlreadyExistsFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_cache_cluster::CreateCacheClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::RebalanceSlotsInGlobalReplicationGroupError,
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
             R,
         >,
     > for Error
@@ -2300,7 +540,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::RebalanceSlotsInGlobalReplicationGroupError,
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
             R,
         >,
     ) -> Self {
@@ -2308,148 +548,1454 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::RebalanceSlotsInGlobalReplicationGroupError> for Error {
-    fn from(err: crate::error::RebalanceSlotsInGlobalReplicationGroupError) -> Self {
-        match err.kind {
-            crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
-            crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootCacheClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RebootCacheClusterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RebootCacheClusterError> for Error {
-    fn from(err: crate::error::RebootCacheClusterError) -> Self {
-        match err.kind {
-            crate::error::RebootCacheClusterErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(inner) => {
-                Error::InvalidCacheClusterStateFault(inner)
-            }
-            crate::error::RebootCacheClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError, R>>
+impl From<crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError, R>,
+        err: crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RemoveTagsFromResourceError> for Error {
-    fn from(err: crate::error::RemoveTagsFromResourceError) -> Self {
-        match err.kind {
-            crate::error::RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(inner) => {
-                Error::CacheClusterNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(
-                inner,
-            ) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(
-                inner,
-            ) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(inner) => {
-                Error::CacheSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::InvalidArnFault(inner) => {
-                Error::InvalidArnFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(
-                inner,
-            ) => Error::InvalidReplicationGroupStateFault(inner),
-            crate::error::RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(
-                inner,
-            ) => Error::ReservedCacheNodeNotFoundFault(inner),
-            crate::error::RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(inner) => {
-                Error::SnapshotNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::TagNotFoundFault(inner) => {
-                Error::TagNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(inner) => {
-                Error::UserGroupNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::UserNotFoundFault(inner) => {
-                Error::UserNotFoundFault(inner)
-            }
-            crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResetCacheParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ResetCacheParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ResetCacheParameterGroupError> for Error {
-    fn from(err: crate::error::ResetCacheParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
-            crate::error::ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
-            crate::error::ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
-            crate::error::ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::ResetCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ResetCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::CacheParameterGroupAlreadyExistsFault(inner) => Error::CacheParameterGroupAlreadyExistsFault(inner),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::CacheParameterGroupQuotaExceededFault(inner) => Error::CacheParameterGroupQuotaExceededFault(inner),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::RevokeCacheSecurityGroupIngressError, R>>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cache_security_group::CreateCacheSecurityGroupError> for Error {
+    fn from(
+        err: crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::CacheSecurityGroupAlreadyExistsFault(inner) => Error::CacheSecurityGroupAlreadyExistsFault(inner),
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::CacheSecurityGroupQuotaExceededFault(inner) => Error::CacheSecurityGroupQuotaExceededFault(inner),
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError> for Error {
+    fn from(err: crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError) -> Self {
+        match err {
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::CacheSubnetGroupAlreadyExistsFault(inner) => Error::CacheSubnetGroupAlreadyExistsFault(inner),
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::CacheSubnetGroupQuotaExceededFault(inner) => Error::CacheSubnetGroupQuotaExceededFault(inner),
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::CacheSubnetQuotaExceededFault(inner) => Error::CacheSubnetQuotaExceededFault(inner),
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::SubnetNotAllowedFault(inner) => Error::SubnetNotAllowedFault(inner),
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::GlobalReplicationGroupAlreadyExistsFault(inner) => Error::GlobalReplicationGroupAlreadyExistsFault(inner),
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_group::CreateReplicationGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_group::CreateReplicationGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_replication_group::CreateReplicationGroupError> for Error {
+    fn from(err: crate::operation::create_replication_group::CreateReplicationGroupError) -> Self {
+        match err {
+            crate::operation::create_replication_group::CreateReplicationGroupError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InvalidUserGroupStateFault(inner) => Error::InvalidUserGroupStateFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::ReplicationGroupAlreadyExistsFault(inner) => Error::ReplicationGroupAlreadyExistsFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::create_replication_group::CreateReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot::CreateSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot::CreateSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_snapshot::CreateSnapshotError> for Error {
+    fn from(err: crate::operation::create_snapshot::CreateSnapshotError) -> Self {
+        match err {
+            crate::operation::create_snapshot::CreateSnapshotError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::SnapshotAlreadyExistsFault(inner) => Error::SnapshotAlreadyExistsFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::SnapshotFeatureNotSupportedFault(inner) => Error::SnapshotFeatureNotSupportedFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user::CreateUserError> for Error {
+    fn from(err: crate::operation::create_user::CreateUserError) -> Self {
+        match err {
+            crate::operation::create_user::CreateUserError::DuplicateUserNameFault(inner) => Error::DuplicateUserNameFault(inner),
+            crate::operation::create_user::CreateUserError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_user::CreateUserError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_user::CreateUserError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::create_user::CreateUserError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_user::CreateUserError::UserAlreadyExistsFault(inner) => Error::UserAlreadyExistsFault(inner),
+            crate::operation::create_user::CreateUserError::UserQuotaExceededFault(inner) => Error::UserQuotaExceededFault(inner),
+            crate::operation::create_user::CreateUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_user_group::CreateUserGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_user_group::CreateUserGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user_group::CreateUserGroupError> for Error {
+    fn from(err: crate::operation::create_user_group::CreateUserGroupError) -> Self {
+        match err {
+            crate::operation::create_user_group::CreateUserGroupError::DefaultUserRequired(inner) => Error::DefaultUserRequired(inner),
+            crate::operation::create_user_group::CreateUserGroupError::DuplicateUserNameFault(inner) => Error::DuplicateUserNameFault(inner),
+            crate::operation::create_user_group::CreateUserGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_user_group::CreateUserGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::create_user_group::CreateUserGroupError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::create_user_group::CreateUserGroupError::UserGroupAlreadyExistsFault(inner) => Error::UserGroupAlreadyExistsFault(inner),
+            crate::operation::create_user_group::CreateUserGroupError::UserGroupQuotaExceededFault(inner) => Error::UserGroupQuotaExceededFault(inner),
+            crate::operation::create_user_group::CreateUserGroupError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::create_user_group::CreateUserGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError> for Error {
+    fn from(err: crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError) -> Self {
+        match err {
+            crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::decrease_replica_count::DecreaseReplicaCountError> for Error {
+    fn from(err: crate::operation::decrease_replica_count::DecreaseReplicaCountError) -> Self {
+        match err {
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::NoOperationFault(inner) => Error::NoOperationFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cache_cluster::DeleteCacheClusterError> for Error {
+    fn from(err: crate::operation::delete_cache_cluster::DeleteCacheClusterError) -> Self {
+        match err {
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::SnapshotAlreadyExistsFault(inner) => Error::SnapshotAlreadyExistsFault(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::SnapshotFeatureNotSupportedFault(inner) => Error::SnapshotFeatureNotSupportedFault(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError> for Error {
+    fn from(
+        err: crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError> for Error {
+    fn from(err: crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError) -> Self {
+        match err {
+            crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::CacheSubnetGroupInUse(inner) => Error::CacheSubnetGroupInUse(inner),
+            crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_replication_group::DeleteReplicationGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_replication_group::DeleteReplicationGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_replication_group::DeleteReplicationGroupError> for Error {
+    fn from(err: crate::operation::delete_replication_group::DeleteReplicationGroupError) -> Self {
+        match err {
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::SnapshotAlreadyExistsFault(inner) => Error::SnapshotAlreadyExistsFault(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::SnapshotFeatureNotSupportedFault(inner) => Error::SnapshotFeatureNotSupportedFault(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
+            crate::operation::delete_replication_group::DeleteReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot::DeleteSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot::DeleteSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_snapshot::DeleteSnapshotError> for Error {
+    fn from(err: crate::operation::delete_snapshot::DeleteSnapshotError) -> Self {
+        match err {
+            crate::operation::delete_snapshot::DeleteSnapshotError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::InvalidSnapshotStateFault(inner) => Error::InvalidSnapshotStateFault(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user::DeleteUserError> for Error {
+    fn from(err: crate::operation::delete_user::DeleteUserError) -> Self {
+        match err {
+            crate::operation::delete_user::DeleteUserError::DefaultUserAssociatedToUserGroupFault(inner) => Error::DefaultUserAssociatedToUserGroupFault(inner),
+            crate::operation::delete_user::DeleteUserError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_user::DeleteUserError::InvalidUserStateFault(inner) => Error::InvalidUserStateFault(inner),
+            crate::operation::delete_user::DeleteUserError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::delete_user::DeleteUserError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::delete_user::DeleteUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_group::DeleteUserGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_group::DeleteUserGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_group::DeleteUserGroupError> for Error {
+    fn from(err: crate::operation::delete_user_group::DeleteUserGroupError) -> Self {
+        match err {
+            crate::operation::delete_user_group::DeleteUserGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_user_group::DeleteUserGroupError::InvalidUserGroupStateFault(inner) => Error::InvalidUserGroupStateFault(inner),
+            crate::operation::delete_user_group::DeleteUserGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::delete_user_group::DeleteUserGroupError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::delete_user_group::DeleteUserGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_clusters::DescribeCacheClustersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_clusters::DescribeCacheClustersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_clusters::DescribeCacheClustersError> for Error {
+    fn from(err: crate::operation::describe_cache_clusters::DescribeCacheClustersError) -> Self {
+        match err {
+            crate::operation::describe_cache_clusters::DescribeCacheClustersError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::describe_cache_clusters::DescribeCacheClustersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_cache_clusters::DescribeCacheClustersError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_cache_clusters::DescribeCacheClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_parameters::DescribeCacheParametersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_parameters::DescribeCacheParametersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_parameters::DescribeCacheParametersError> for Error {
+    fn from(
+        err: crate::operation::describe_cache_parameters::DescribeCacheParametersError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cache_parameters::DescribeCacheParametersError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::describe_cache_parameters::DescribeCacheParametersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_cache_parameters::DescribeCacheParametersError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_cache_parameters::DescribeCacheParametersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_events::DescribeEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_events::DescribeEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_events::DescribeEventsError> for Error {
+    fn from(err: crate::operation::describe_events::DescribeEventsError) -> Self {
+        match err {
+            crate::operation::describe_events::DescribeEventsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_events::DescribeEventsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_events::DescribeEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_replication_groups::DescribeReplicationGroupsError> for Error {
+    fn from(
+        err: crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError::ReservedCacheNodeNotFoundFault(inner) => Error::ReservedCacheNodeNotFoundFault(inner),
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError> for Error {
+    fn from(err: crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError) -> Self {
+        match err {
+            crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::ReservedCacheNodesOfferingNotFoundFault(inner) => Error::ReservedCacheNodesOfferingNotFoundFault(inner),
+            crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_service_updates::DescribeServiceUpdatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_service_updates::DescribeServiceUpdatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_service_updates::DescribeServiceUpdatesError> for Error {
+    fn from(err: crate::operation::describe_service_updates::DescribeServiceUpdatesError) -> Self {
+        match err {
+            crate::operation::describe_service_updates::DescribeServiceUpdatesError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_service_updates::DescribeServiceUpdatesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_service_updates::DescribeServiceUpdatesError::ServiceUpdateNotFoundFault(inner) => Error::ServiceUpdateNotFoundFault(inner),
+            crate::operation::describe_service_updates::DescribeServiceUpdatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshots::DescribeSnapshotsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshots::DescribeSnapshotsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_snapshots::DescribeSnapshotsError> for Error {
+    fn from(err: crate::operation::describe_snapshots::DescribeSnapshotsError) -> Self {
+        match err {
+            crate::operation::describe_snapshots::DescribeSnapshotsError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::describe_snapshots::DescribeSnapshotsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_snapshots::DescribeSnapshotsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_snapshots::DescribeSnapshotsError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
+            crate::operation::describe_snapshots::DescribeSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_update_actions::DescribeUpdateActionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_update_actions::DescribeUpdateActionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_update_actions::DescribeUpdateActionsError> for Error {
+    fn from(err: crate::operation::describe_update_actions::DescribeUpdateActionsError) -> Self {
+        match err {
+            crate::operation::describe_update_actions::DescribeUpdateActionsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_update_actions::DescribeUpdateActionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_update_actions::DescribeUpdateActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_groups::DescribeUserGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_groups::DescribeUserGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_user_groups::DescribeUserGroupsError> for Error {
+    fn from(err: crate::operation::describe_user_groups::DescribeUserGroupsError) -> Self {
+        match err {
+            crate::operation::describe_user_groups::DescribeUserGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_user_groups::DescribeUserGroupsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::describe_user_groups::DescribeUserGroupsError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::describe_user_groups::DescribeUserGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::RevokeCacheSecurityGroupIngressError,
+            crate::operation::describe_users::DescribeUsersError,
             R,
         >,
     ) -> Self {
@@ -2457,103 +2003,946 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::RevokeCacheSecurityGroupIngressError> for Error {
-    fn from(err: crate::error::RevokeCacheSecurityGroupIngressError) -> Self {
-        match err.kind {
-            crate::error::RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
-            crate::error::RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
-            crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
-            crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::RevokeCacheSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::describe_users::DescribeUsersError> for Error {
+    fn from(err: crate::operation::describe_users::DescribeUsersError) -> Self {
+        match err {
+            crate::operation::describe_users::DescribeUsersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_users::DescribeUsersError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::describe_users::DescribeUsersError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::describe_users::DescribeUsersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMigrationError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError> for Error {
+    fn from(err: crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError) -> Self {
+        match err {
+            crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError> for Error {
+    fn from(err: crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError) -> Self {
+        match err {
+            crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::increase_replica_count::IncreaseReplicaCountError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartMigrationError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::increase_replica_count::IncreaseReplicaCountError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartMigrationError> for Error {
-    fn from(err: crate::error::StartMigrationError) -> Self {
-        match err.kind {
-            crate::error::StartMigrationErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::StartMigrationErrorKind::InvalidReplicationGroupStateFault(inner) => {
-                Error::InvalidReplicationGroupStateFault(inner)
-            }
-            crate::error::StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(
-                inner,
-            ) => Error::ReplicationGroupAlreadyUnderMigrationFault(inner),
-            crate::error::StartMigrationErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
-            }
-            crate::error::StartMigrationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::increase_replica_count::IncreaseReplicaCountError> for Error {
+    fn from(err: crate::operation::increase_replica_count::IncreaseReplicaCountError) -> Self {
+        match err {
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::NoOperationFault(inner) => Error::NoOperationFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::increase_replica_count::IncreaseReplicaCountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestFailoverError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError> for Error {
+    fn from(err: crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError) -> Self {
+        match err {
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TestFailoverError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::TestFailoverError> for Error {
-    fn from(err: crate::error::TestFailoverError) -> Self {
-        match err.kind {
-            crate::error::TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(inner) => {
-                Error::ApiCallRateForCustomerExceededFault(inner)
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ReservedCacheNodeNotFoundFault(inner) => Error::ReservedCacheNodeNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::InvalidCacheClusterStateFault(inner) => {
-                Error::InvalidCacheClusterStateFault(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cache_cluster::ModifyCacheClusterError> for Error {
+    fn from(err: crate::operation::modify_cache_cluster::ModifyCacheClusterError) -> Self {
+        match err {
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::InvalidKmsKeyFault(inner) => {
-                Error::InvalidKmsKeyFault(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError> for Error {
+    fn from(err: crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError) -> Self {
+        match err {
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError::CacheSubnetQuotaExceededFault(inner) => Error::CacheSubnetQuotaExceededFault(inner),
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError::SubnetInUse(inner) => Error::SubnetInUse(inner),
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError::SubnetNotAllowedFault(inner) => Error::SubnetNotAllowedFault(inner),
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_group::ModifyReplicationGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_group::ModifyReplicationGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::InvalidReplicationGroupStateFault(inner) => {
-                Error::InvalidReplicationGroupStateFault(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_replication_group::ModifyReplicationGroupError> for Error {
+    fn from(err: crate::operation::modify_replication_group::ModifyReplicationGroupError) -> Self {
+        match err {
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidUserGroupStateFault(inner) => Error::InvalidUserGroupStateFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError> for Error {
+    fn from(err: crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError) -> Self {
+        match err {
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InsufficientCacheClusterCapacityFault(inner) => Error::InsufficientCacheClusterCapacityFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::NodeGroupNotFoundFault(inner) => {
-                Error::NodeGroupNotFoundFault(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_user::ModifyUserError> for Error {
+    fn from(err: crate::operation::modify_user::ModifyUserError) -> Self {
+        match err {
+            crate::operation::modify_user::ModifyUserError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_user::ModifyUserError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_user::ModifyUserError::InvalidUserStateFault(inner) => Error::InvalidUserStateFault(inner),
+            crate::operation::modify_user::ModifyUserError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::modify_user::ModifyUserError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::modify_user::ModifyUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_user_group::ModifyUserGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_user_group::ModifyUserGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::ReplicationGroupNotFoundFault(inner) => {
-                Error::ReplicationGroupNotFoundFault(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_user_group::ModifyUserGroupError> for Error {
+    fn from(err: crate::operation::modify_user_group::ModifyUserGroupError) -> Self {
+        match err {
+            crate::operation::modify_user_group::ModifyUserGroupError::DefaultUserRequired(inner) => Error::DefaultUserRequired(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::DuplicateUserNameFault(inner) => Error::DuplicateUserNameFault(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::InvalidUserGroupStateFault(inner) => Error::InvalidUserGroupStateFault(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::modify_user_group::ModifyUserGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError> for Error {
+    fn from(err: crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError) -> Self {
+        match err {
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::ReservedCacheNodeAlreadyExistsFault(inner) => Error::ReservedCacheNodeAlreadyExistsFault(inner),
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::ReservedCacheNodeQuotaExceededFault(inner) => Error::ReservedCacheNodeQuotaExceededFault(inner),
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::ReservedCacheNodesOfferingNotFoundFault(inner) => Error::ReservedCacheNodesOfferingNotFoundFault(inner),
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
+            crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError> for Error {
+    fn from(err: crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError) -> Self {
+        match err {
+            crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
+            crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::TestFailoverNotAvailableFault(inner) => {
-                Error::TestFailoverNotAvailableFault(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reboot_cache_cluster::RebootCacheClusterError> for Error {
+    fn from(err: crate::operation::reboot_cache_cluster::RebootCacheClusterError) -> Self {
+        match err {
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::TestFailoverErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError> for Error {
+    fn from(err: crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError) -> Self {
+        match err {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheSubnetGroupNotFoundFault(inner) => Error::CacheSubnetGroupNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReservedCacheNodeNotFoundFault(inner) => Error::ReservedCacheNodeNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::TagNotFoundFault(inner) => Error::TagNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError> for Error {
+    fn from(
+        err: crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError,
+    ) -> Self {
+        match err {
+            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
+            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
+            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
+            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_migration::StartMigrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_migration::StartMigrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_migration::StartMigrationError> for Error {
+    fn from(err: crate::operation::start_migration::StartMigrationError) -> Self {
+        match err {
+            crate::operation::start_migration::StartMigrationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_migration::StartMigrationError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::start_migration::StartMigrationError::ReplicationGroupAlreadyUnderMigrationFault(inner) => Error::ReplicationGroupAlreadyUnderMigrationFault(inner),
+            crate::operation::start_migration::StartMigrationError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::start_migration::StartMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::test_failover::TestFailoverError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::test_failover::TestFailoverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::test_failover::TestFailoverError> for Error {
+    fn from(err: crate::operation::test_failover::TestFailoverError) -> Self {
+        match err {
+            crate::operation::test_failover::TestFailoverError::ApiCallRateForCustomerExceededFault(inner) => Error::ApiCallRateForCustomerExceededFault(inner),
+            crate::operation::test_failover::TestFailoverError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::test_failover::TestFailoverError::InvalidKmsKeyFault(inner) => Error::InvalidKmsKeyFault(inner),
+            crate::operation::test_failover::TestFailoverError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::test_failover::TestFailoverError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::test_failover::TestFailoverError::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
+            crate::operation::test_failover::TestFailoverError::NodeGroupNotFoundFault(inner) => Error::NodeGroupNotFoundFault(inner),
+            crate::operation::test_failover::TestFailoverError::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
+            crate::operation::test_failover::TestFailoverError::TestFailoverNotAvailableFault(inner) => Error::TestFailoverNotAvailableFault(inner),
+            crate::operation::test_failover::TestFailoverError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ApiCallRateForCustomerExceededFault(e) => e.request_id(),
+            Self::AuthorizationAlreadyExistsFault(e) => e.request_id(),
+            Self::AuthorizationNotFoundFault(e) => e.request_id(),
+            Self::CacheClusterAlreadyExistsFault(e) => e.request_id(),
+            Self::CacheClusterNotFoundFault(e) => e.request_id(),
+            Self::CacheParameterGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::CacheParameterGroupNotFoundFault(e) => e.request_id(),
+            Self::CacheParameterGroupQuotaExceededFault(e) => e.request_id(),
+            Self::CacheSecurityGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::CacheSecurityGroupNotFoundFault(e) => e.request_id(),
+            Self::CacheSecurityGroupQuotaExceededFault(e) => e.request_id(),
+            Self::CacheSubnetGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::CacheSubnetGroupInUse(e) => e.request_id(),
+            Self::CacheSubnetGroupNotFoundFault(e) => e.request_id(),
+            Self::CacheSubnetGroupQuotaExceededFault(e) => e.request_id(),
+            Self::CacheSubnetQuotaExceededFault(e) => e.request_id(),
+            Self::ClusterQuotaForCustomerExceededFault(e) => e.request_id(),
+            Self::DefaultUserAssociatedToUserGroupFault(e) => e.request_id(),
+            Self::DefaultUserRequired(e) => e.request_id(),
+            Self::DuplicateUserNameFault(e) => e.request_id(),
+            Self::GlobalReplicationGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::GlobalReplicationGroupNotFoundFault(e) => e.request_id(),
+            Self::InsufficientCacheClusterCapacityFault(e) => e.request_id(),
+            Self::InvalidArnFault(e) => e.request_id(),
+            Self::InvalidCacheClusterStateFault(e) => e.request_id(),
+            Self::InvalidCacheParameterGroupStateFault(e) => e.request_id(),
+            Self::InvalidCacheSecurityGroupStateFault(e) => e.request_id(),
+            Self::InvalidGlobalReplicationGroupStateFault(e) => e.request_id(),
+            Self::InvalidKmsKeyFault(e) => e.request_id(),
+            Self::InvalidParameterCombinationException(e) => e.request_id(),
+            Self::InvalidParameterValueException(e) => e.request_id(),
+            Self::InvalidReplicationGroupStateFault(e) => e.request_id(),
+            Self::InvalidSnapshotStateFault(e) => e.request_id(),
+            Self::InvalidSubnet(e) => e.request_id(),
+            Self::InvalidUserGroupStateFault(e) => e.request_id(),
+            Self::InvalidUserStateFault(e) => e.request_id(),
+            Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
+            Self::NoOperationFault(e) => e.request_id(),
+            Self::NodeGroupNotFoundFault(e) => e.request_id(),
+            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(e) => e.request_id(),
+            Self::NodeQuotaForClusterExceededFault(e) => e.request_id(),
+            Self::NodeQuotaForCustomerExceededFault(e) => e.request_id(),
+            Self::ReplicationGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::ReplicationGroupAlreadyUnderMigrationFault(e) => e.request_id(),
+            Self::ReplicationGroupNotFoundFault(e) => e.request_id(),
+            Self::ReplicationGroupNotUnderMigrationFault(e) => e.request_id(),
+            Self::ReservedCacheNodeAlreadyExistsFault(e) => e.request_id(),
+            Self::ReservedCacheNodeNotFoundFault(e) => e.request_id(),
+            Self::ReservedCacheNodeQuotaExceededFault(e) => e.request_id(),
+            Self::ReservedCacheNodesOfferingNotFoundFault(e) => e.request_id(),
+            Self::ServiceLinkedRoleNotFoundFault(e) => e.request_id(),
+            Self::ServiceUpdateNotFoundFault(e) => e.request_id(),
+            Self::SnapshotAlreadyExistsFault(e) => e.request_id(),
+            Self::SnapshotFeatureNotSupportedFault(e) => e.request_id(),
+            Self::SnapshotNotFoundFault(e) => e.request_id(),
+            Self::SnapshotQuotaExceededFault(e) => e.request_id(),
+            Self::SubnetInUse(e) => e.request_id(),
+            Self::SubnetNotAllowedFault(e) => e.request_id(),
+            Self::TagNotFoundFault(e) => e.request_id(),
+            Self::TagQuotaPerResourceExceeded(e) => e.request_id(),
+            Self::TestFailoverNotAvailableFault(e) => e.request_id(),
+            Self::UserAlreadyExistsFault(e) => e.request_id(),
+            Self::UserGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::UserGroupNotFoundFault(e) => e.request_id(),
+            Self::UserGroupQuotaExceededFault(e) => e.request_id(),
+            Self::UserNotFoundFault(e) => e.request_id(),
+            Self::UserQuotaExceededFault(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

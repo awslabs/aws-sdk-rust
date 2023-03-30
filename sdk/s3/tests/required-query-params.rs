@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_s3::operation::AbortMultipartUpload;
-use aws_sdk_s3::Region;
+use aws_sdk_s3::config::Region;
+use aws_sdk_s3::operation::abort_multipart_upload::AbortMultipartUploadInput;
 use aws_smithy_http::operation::error::BuildError;
 
 #[tokio::test]
@@ -13,7 +13,7 @@ async fn test_error_when_required_query_param_is_unset() {
         .region(Region::new("us-east-1"))
         .build();
 
-    let err = AbortMultipartUpload::builder()
+    let err = AbortMultipartUploadInput::builder()
         .bucket("test-bucket")
         .key("test.txt")
         .build()
@@ -33,7 +33,7 @@ async fn test_error_when_required_query_param_is_set_but_empty() {
     let conf = aws_sdk_s3::Config::builder()
         .region(Region::new("us-east-1"))
         .build();
-    let err = AbortMultipartUpload::builder()
+    let err = AbortMultipartUploadInput::builder()
         .bucket("test-bucket")
         .key("test.txt")
         .upload_id("")

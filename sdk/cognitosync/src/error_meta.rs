@@ -4,40 +4,33 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.
-    AlreadyStreamedException(crate::error::AlreadyStreamedException),
+    AlreadyStreamedException(crate::types::error::AlreadyStreamedException),
     /// <p>Thrown if there are parallel requests to modify a resource.</p>
-    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
-    DuplicateRequestException(crate::error::DuplicateRequestException),
+    DuplicateRequestException(crate::types::error::DuplicateRequestException),
     /// Indicates an internal service error.
-    InternalErrorException(crate::error::InternalErrorException),
+    InternalErrorException(crate::types::error::InternalErrorException),
     #[allow(missing_docs)] // documentation missing in model
-    InvalidConfigurationException(crate::error::InvalidConfigurationException),
+    InvalidConfigurationException(crate::types::error::InvalidConfigurationException),
     /// <p>The AWS Lambda function returned invalid output or an exception.</p>
-    InvalidLambdaFunctionOutputException(crate::error::InvalidLambdaFunctionOutputException),
+    InvalidLambdaFunctionOutputException(crate::types::error::InvalidLambdaFunctionOutputException),
     /// Thrown when a request parameter does not comply with the associated constraints.
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>AWS Lambda throttled your account, please contact AWS Support</p>
-    LambdaThrottledException(crate::error::LambdaThrottledException),
+    LambdaThrottledException(crate::types::error::LambdaThrottledException),
     /// Thrown when the limit on the number of objects or operations has been exceeded.
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// Thrown when a user is not authorized to access the requested resource.
-    NotAuthorizedException(crate::error::NotAuthorizedException),
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
-    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceConflictException(crate::types::error::ResourceConflictException),
     /// Thrown if the resource doesn't exist.
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// Thrown if the request is throttled.
-    TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,664 +52,805 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BulkPublishError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::bulk_publish::BulkPublishError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::BulkPublishError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::bulk_publish::BulkPublishError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::BulkPublishError> for Error {
-    fn from(err: crate::error::BulkPublishError) -> Self {
-        match err.kind {
-            crate::error::BulkPublishErrorKind::AlreadyStreamedException(inner) => {
+impl From<crate::operation::bulk_publish::BulkPublishError> for Error {
+    fn from(err: crate::operation::bulk_publish::BulkPublishError) -> Self {
+        match err {
+            crate::operation::bulk_publish::BulkPublishError::AlreadyStreamedException(inner) => {
                 Error::AlreadyStreamedException(inner)
             }
-            crate::error::BulkPublishErrorKind::DuplicateRequestException(inner) => {
+            crate::operation::bulk_publish::BulkPublishError::DuplicateRequestException(inner) => {
                 Error::DuplicateRequestException(inner)
             }
-            crate::error::BulkPublishErrorKind::InternalErrorException(inner) => {
+            crate::operation::bulk_publish::BulkPublishError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
-            crate::error::BulkPublishErrorKind::InvalidParameterException(inner) => {
+            crate::operation::bulk_publish::BulkPublishError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::BulkPublishErrorKind::NotAuthorizedException(inner) => {
+            crate::operation::bulk_publish::BulkPublishError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::BulkPublishErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::bulk_publish::BulkPublishError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::BulkPublishErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::bulk_publish::BulkPublishError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteDatasetError> for Error {
-    fn from(err: crate::error::DeleteDatasetError) -> Self {
-        match err.kind {
-            crate::error::DeleteDatasetErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::ResourceConflictException(inner) => {
-                Error::ResourceConflictException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDatasetError> for Error {
-    fn from(err: crate::error::DescribeDatasetError) -> Self {
-        match err.kind {
-            crate::error::DescribeDatasetErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeIdentityPoolUsageError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_dataset::DeleteDatasetError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeIdentityPoolUsageError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_dataset::DeleteDatasetError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeIdentityPoolUsageError> for Error {
-    fn from(err: crate::error::DescribeIdentityPoolUsageError) -> Self {
-        match err.kind {
-            crate::error::DescribeIdentityPoolUsageErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeIdentityPoolUsageErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeIdentityPoolUsageErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeIdentityPoolUsageErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeIdentityPoolUsageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeIdentityPoolUsageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeIdentityUsageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeIdentityUsageError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_dataset::DeleteDatasetError> for Error {
+    fn from(err: crate::operation::delete_dataset::DeleteDatasetError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeIdentityUsageError> for Error {
-    fn from(err: crate::error::DescribeIdentityUsageError) -> Self {
-        match err.kind {
-            crate::error::DescribeIdentityUsageErrorKind::InternalErrorException(inner) => {
+            crate::operation::delete_dataset::DeleteDatasetError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
-            crate::error::DescribeIdentityUsageErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeIdentityUsageErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeIdentityUsageErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeIdentityUsageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeIdentityUsageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBulkPublishDetailsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBulkPublishDetailsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBulkPublishDetailsError> for Error {
-    fn from(err: crate::error::GetBulkPublishDetailsError) -> Self {
-        match err.kind {
-            crate::error::GetBulkPublishDetailsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetBulkPublishDetailsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetBulkPublishDetailsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetBulkPublishDetailsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetBulkPublishDetailsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCognitoEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCognitoEventsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCognitoEventsError> for Error {
-    fn from(err: crate::error::GetCognitoEventsError) -> Self {
-        match err.kind {
-            crate::error::GetCognitoEventsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetCognitoEventsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetCognitoEventsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetCognitoEventsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetCognitoEventsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCognitoEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIdentityPoolConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetIdentityPoolConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetIdentityPoolConfigurationError> for Error {
-    fn from(err: crate::error::GetIdentityPoolConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetIdentityPoolConfigurationErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetIdentityPoolConfigurationErrorKind::InvalidParameterException(
+            crate::operation::delete_dataset::DeleteDatasetError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::GetIdentityPoolConfigurationErrorKind::NotAuthorizedException(inner) => {
+            crate::operation::delete_dataset::DeleteDatasetError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::GetIdentityPoolConfigurationErrorKind::ResourceNotFoundException(
+            crate::operation::delete_dataset::DeleteDatasetError::ResourceConflictException(
+                inner,
+            ) => Error::ResourceConflictException(inner),
+            crate::operation::delete_dataset::DeleteDatasetError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::GetIdentityPoolConfigurationErrorKind::TooManyRequestsException(
+            crate::operation::delete_dataset::DeleteDatasetError::TooManyRequestsException(
                 inner,
             ) => Error::TooManyRequestsException(inner),
-            crate::error::GetIdentityPoolConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_dataset::DeleteDatasetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_dataset::DescribeDatasetError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDatasetsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_dataset::DescribeDatasetError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListDatasetsError> for Error {
-    fn from(err: crate::error::ListDatasetsError) -> Self {
-        match err.kind {
-            crate::error::ListDatasetsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListDatasetsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListDatasetsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListDatasetsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListDatasetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::describe_dataset::DescribeDatasetError> for Error {
+    fn from(err: crate::operation::describe_dataset::DescribeDatasetError) -> Self {
+        match err {
+            crate::operation::describe_dataset::DescribeDatasetError::InternalErrorException(
+                inner,
+            ) => Error::InternalErrorException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::NotAuthorizedException(
+                inner,
+            ) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIdentityPoolUsageError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_identity_usage::DescribeIdentityUsageError> for Error {
+    fn from(err: crate::operation::describe_identity_usage::DescribeIdentityUsageError) -> Self {
+        match err {
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError> for Error {
+    fn from(err: crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError) -> Self {
+        match err {
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cognito_events::GetCognitoEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cognito_events::GetCognitoEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_cognito_events::GetCognitoEventsError> for Error {
+    fn from(err: crate::operation::get_cognito_events::GetCognitoEventsError) -> Self {
+        match err {
+            crate::operation::get_cognito_events::GetCognitoEventsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_cognito_events::GetCognitoEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_cognito_events::GetCognitoEventsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_cognito_events::GetCognitoEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_cognito_events::GetCognitoEventsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_cognito_events::GetCognitoEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_datasets::ListDatasetsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListIdentityPoolUsageError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_datasets::ListDatasetsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListIdentityPoolUsageError> for Error {
-    fn from(err: crate::error::ListIdentityPoolUsageError) -> Self {
-        match err.kind {
-            crate::error::ListIdentityPoolUsageErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListIdentityPoolUsageErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListIdentityPoolUsageErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListIdentityPoolUsageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListIdentityPoolUsageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRecordsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRecordsError, R>) -> Self {
+impl From<crate::operation::list_datasets::ListDatasetsError> for Error {
+    fn from(err: crate::operation::list_datasets::ListDatasetsError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListRecordsError> for Error {
-    fn from(err: crate::error::ListRecordsError) -> Self {
-        match err.kind {
-            crate::error::ListRecordsErrorKind::InternalErrorException(inner) => {
+            crate::operation::list_datasets::ListDatasetsError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
-            crate::error::ListRecordsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListRecordsErrorKind::NotAuthorizedException(inner) => {
+            crate::operation::list_datasets::ListDatasetsError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::list_datasets::ListDatasetsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::ListRecordsErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::list_datasets::ListDatasetsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListRecordsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::list_datasets::ListDatasetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterDeviceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RegisterDeviceError> for Error {
-    fn from(err: crate::error::RegisterDeviceError) -> Self {
-        match err.kind {
-            crate::error::RegisterDeviceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::RegisterDeviceErrorKind::InvalidConfigurationException(inner) => {
-                Error::InvalidConfigurationException(inner)
-            }
-            crate::error::RegisterDeviceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RegisterDeviceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::RegisterDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RegisterDeviceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::RegisterDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetCognitoEventsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SetCognitoEventsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::SetCognitoEventsError> for Error {
-    fn from(err: crate::error::SetCognitoEventsError) -> Self {
-        match err.kind {
-            crate::error::SetCognitoEventsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SetCognitoEventsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SetCognitoEventsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SetCognitoEventsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SetCognitoEventsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SetCognitoEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError> for Error {
+    fn from(err: crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError) -> Self {
+        match err {
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetIdentityPoolConfigurationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_records::ListRecordsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SetIdentityPoolConfigurationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::list_records::ListRecordsError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::SetIdentityPoolConfigurationError> for Error {
-    fn from(err: crate::error::SetIdentityPoolConfigurationError) -> Self {
-        match err.kind {
-            crate::error::SetIdentityPoolConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::SetIdentityPoolConfigurationErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::SetIdentityPoolConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::SetIdentityPoolConfigurationErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::SetIdentityPoolConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::SetIdentityPoolConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::SetIdentityPoolConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::list_records::ListRecordsError> for Error {
+    fn from(err: crate::operation::list_records::ListRecordsError) -> Self {
+        match err {
+            crate::operation::list_records::ListRecordsError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_records::ListRecordsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_records::ListRecordsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_records::ListRecordsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_records::ListRecordsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SubscribeToDatasetError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_device::RegisterDeviceError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SubscribeToDatasetError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_device::RegisterDeviceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::SubscribeToDatasetError> for Error {
-    fn from(err: crate::error::SubscribeToDatasetError) -> Self {
-        match err.kind {
-            crate::error::SubscribeToDatasetErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SubscribeToDatasetErrorKind::InvalidConfigurationException(inner) => {
-                Error::InvalidConfigurationException(inner)
-            }
-            crate::error::SubscribeToDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SubscribeToDatasetErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SubscribeToDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SubscribeToDatasetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SubscribeToDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::register_device::RegisterDeviceError> for Error {
+    fn from(err: crate::operation::register_device::RegisterDeviceError) -> Self {
+        match err {
+            crate::operation::register_device::RegisterDeviceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::register_device::RegisterDeviceError::InvalidConfigurationException(inner) => Error::InvalidConfigurationException(inner),
+            crate::operation::register_device::RegisterDeviceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::register_device::RegisterDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::register_device::RegisterDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::register_device::RegisterDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::register_device::RegisterDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UnsubscribeFromDatasetError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_cognito_events::SetCognitoEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_cognito_events::SetCognitoEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_cognito_events::SetCognitoEventsError> for Error {
+    fn from(err: crate::operation::set_cognito_events::SetCognitoEventsError) -> Self {
+        match err {
+            crate::operation::set_cognito_events::SetCognitoEventsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_cognito_events::SetCognitoEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_cognito_events::SetCognitoEventsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_cognito_events::SetCognitoEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_cognito_events::SetCognitoEventsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::set_cognito_events::SetCognitoEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::subscribe_to_dataset::SubscribeToDatasetError> for Error {
+    fn from(err: crate::operation::subscribe_to_dataset::SubscribeToDatasetError) -> Self {
+        match err {
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::InvalidConfigurationException(inner) => Error::InvalidConfigurationException(inner),
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::subscribe_to_dataset::SubscribeToDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError> for Error {
+    fn from(err: crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError) -> Self {
+        match err {
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::InvalidConfigurationException(inner) => Error::InvalidConfigurationException(inner),
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_records::UpdateRecordsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UnsubscribeFromDatasetError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_records::UpdateRecordsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UnsubscribeFromDatasetError> for Error {
-    fn from(err: crate::error::UnsubscribeFromDatasetError) -> Self {
-        match err.kind {
-            crate::error::UnsubscribeFromDatasetErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UnsubscribeFromDatasetErrorKind::InvalidConfigurationException(inner) => {
-                Error::InvalidConfigurationException(inner)
-            }
-            crate::error::UnsubscribeFromDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UnsubscribeFromDatasetErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UnsubscribeFromDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UnsubscribeFromDatasetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UnsubscribeFromDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRecordsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRecordsError, R>) -> Self {
+impl From<crate::operation::update_records::UpdateRecordsError> for Error {
+    fn from(err: crate::operation::update_records::UpdateRecordsError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateRecordsError> for Error {
-    fn from(err: crate::error::UpdateRecordsError) -> Self {
-        match err.kind {
-            crate::error::UpdateRecordsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::InvalidLambdaFunctionOutputException(inner) => {
-                Error::InvalidLambdaFunctionOutputException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::LambdaThrottledException(inner) => {
-                Error::LambdaThrottledException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::ResourceConflictException(inner) => {
-                Error::ResourceConflictException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateRecordsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::update_records::UpdateRecordsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_records::UpdateRecordsError::InvalidLambdaFunctionOutputException(inner) => Error::InvalidLambdaFunctionOutputException(inner),
+            crate::operation::update_records::UpdateRecordsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_records::UpdateRecordsError::LambdaThrottledException(inner) => Error::LambdaThrottledException(inner),
+            crate::operation::update_records::UpdateRecordsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_records::UpdateRecordsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_records::UpdateRecordsError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_records::UpdateRecordsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_records::UpdateRecordsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_records::UpdateRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AlreadyStreamedException(e) => e.request_id(),
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::DuplicateRequestException(e) => e.request_id(),
+            Self::InternalErrorException(e) => e.request_id(),
+            Self::InvalidConfigurationException(e) => e.request_id(),
+            Self::InvalidLambdaFunctionOutputException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::LambdaThrottledException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::NotAuthorizedException(e) => e.request_id(),
+            Self::ResourceConflictException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
-    DecryptionFailure(crate::error::DecryptionFailure),
+    DecryptionFailure(crate::types::error::DecryptionFailure),
     /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
-    EncryptionFailure(crate::error::EncryptionFailure),
+    EncryptionFailure(crate::types::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
-    InternalServiceError(crate::error::InternalServiceError),
+    InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>The <code>NextToken</code> value is invalid.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>The parameter name or value is invalid.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
@@ -20,28 +20,21 @@ pub enum Error {
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource policy has syntax errors.</p>
-    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
     /// <p>The request failed because you did not complete all the prerequisite steps.</p>
-    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
     /// <p>The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy did not prevent broad access to the secret.</p>
-    PublicPolicyException(crate::error::PublicPolicyException),
+    PublicPolicyException(crate::types::error::PublicPolicyException),
     /// <p>A resource with the ID you requested already exists.</p>
-    ResourceExistsException(crate::error::ResourceExistsException),
+    ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,835 +55,1031 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelRotateSecretError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelRotateSecretError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CancelRotateSecretError> for Error {
-    fn from(err: crate::error::CancelRotateSecretError) -> Self {
-        match err.kind {
-            crate::error::CancelRotateSecretErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::CancelRotateSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelRotateSecretErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CancelRotateSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelRotateSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSecretError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSecretError, R>) -> Self {
+impl From<crate::operation::cancel_rotate_secret::CancelRotateSecretError> for Error {
+    fn from(err: crate::operation::cancel_rotate_secret::CancelRotateSecretError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_rotate_secret::CancelRotateSecretError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::CreateSecretError> for Error {
-    fn from(err: crate::error::CreateSecretError) -> Self {
-        match err.kind {
-            crate::error::CreateSecretErrorKind::DecryptionFailure(inner) => {
-                Error::DecryptionFailure(inner)
-            }
-            crate::error::CreateSecretErrorKind::EncryptionFailure(inner) => {
-                Error::EncryptionFailure(inner)
-            }
-            crate::error::CreateSecretErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::CreateSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateSecretErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateSecretErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateSecretErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::CreateSecretErrorKind::PreconditionNotMetException(inner) => {
-                Error::PreconditionNotMetException(inner)
-            }
-            crate::error::CreateSecretErrorKind::ResourceExistsException(inner) => {
-                Error::ResourceExistsException(inner)
-            }
-            crate::error::CreateSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_secret::CreateSecretError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_secret::CreateSecretError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteResourcePolicyError> for Error {
-    fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteResourcePolicyErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSecretError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSecretError, R>) -> Self {
+impl From<crate::operation::create_secret::CreateSecretError> for Error {
+    fn from(err: crate::operation::create_secret::CreateSecretError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::create_secret::CreateSecretError::DecryptionFailure(inner) => Error::DecryptionFailure(inner),
+            crate::operation::create_secret::CreateSecretError::EncryptionFailure(inner) => Error::EncryptionFailure(inner),
+            crate::operation::create_secret::CreateSecretError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::create_secret::CreateSecretError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_secret::CreateSecretError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_secret::CreateSecretError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_secret::CreateSecretError::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::operation::create_secret::CreateSecretError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::create_secret::CreateSecretError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_secret::CreateSecretError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_secret::CreateSecretError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::DeleteSecretError> for Error {
-    fn from(err: crate::error::DeleteSecretError) -> Self {
-        match err.kind {
-            crate::error::DeleteSecretErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::DeleteSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteSecretErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSecretError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeSecretError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSecretError> for Error {
-    fn from(err: crate::error::DescribeSecretError) -> Self {
-        match err.kind {
-            crate::error::DescribeSecretErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::DescribeSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRandomPasswordError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRandomPasswordError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetRandomPasswordError> for Error {
-    fn from(err: crate::error::GetRandomPasswordError) -> Self {
-        match err.kind {
-            crate::error::GetRandomPasswordErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::GetRandomPasswordErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetRandomPasswordErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetRandomPasswordErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourcePolicyError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::GetResourcePolicyError> for Error {
-    fn from(err: crate::error::GetResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::GetResourcePolicyErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::GetResourcePolicyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetResourcePolicyErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSecretValueError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSecretValueError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSecretValueError> for Error {
-    fn from(err: crate::error::GetSecretValueError) -> Self {
-        match err.kind {
-            crate::error::GetSecretValueErrorKind::DecryptionFailure(inner) => {
-                Error::DecryptionFailure(inner)
-            }
-            crate::error::GetSecretValueErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::GetSecretValueErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetSecretValueErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetSecretValueErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetSecretValueErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSecretsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSecretsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListSecretsError> for Error {
-    fn from(err: crate::error::ListSecretsError) -> Self {
-        match err.kind {
-            crate::error::ListSecretsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::ListSecretsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListSecretsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListSecretsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSecretVersionIdsError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_secret::DeleteSecretError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSecretVersionIdsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_secret::DeleteSecretError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListSecretVersionIdsError> for Error {
-    fn from(err: crate::error::ListSecretVersionIdsError) -> Self {
-        match err.kind {
-            crate::error::ListSecretVersionIdsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::ListSecretVersionIdsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListSecretVersionIdsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListSecretVersionIdsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListSecretVersionIdsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_secret::DeleteSecretError> for Error {
+    fn from(err: crate::operation::delete_secret::DeleteSecretError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutResourcePolicyError> for Error {
-    fn from(err: crate::error::PutResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::PutResourcePolicyErrorKind::InternalServiceError(inner) => {
+            crate::operation::delete_secret::DeleteSecretError::InternalServiceError(inner) => {
                 Error::InternalServiceError(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::PublicPolicyException(inner) => {
-                Error::PublicPolicyException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutSecretValueError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutSecretValueError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutSecretValueError> for Error {
-    fn from(err: crate::error::PutSecretValueError) -> Self {
-        match err.kind {
-            crate::error::PutSecretValueErrorKind::DecryptionFailure(inner) => {
-                Error::DecryptionFailure(inner)
-            }
-            crate::error::PutSecretValueErrorKind::EncryptionFailure(inner) => {
-                Error::EncryptionFailure(inner)
-            }
-            crate::error::PutSecretValueErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::PutSecretValueErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::PutSecretValueErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::PutSecretValueErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::PutSecretValueErrorKind::ResourceExistsException(inner) => {
-                Error::ResourceExistsException(inner)
-            }
-            crate::error::PutSecretValueErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::PutSecretValueErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveRegionsFromReplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RemoveRegionsFromReplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RemoveRegionsFromReplicationError> for Error {
-    fn from(err: crate::error::RemoveRegionsFromReplicationError) -> Self {
-        match err.kind {
-            crate::error::RemoveRegionsFromReplicationErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::RemoveRegionsFromReplicationErrorKind::InvalidParameterException(
+            crate::operation::delete_secret::DeleteSecretError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::RemoveRegionsFromReplicationErrorKind::InvalidRequestException(inner) => {
+            crate::operation::delete_secret::DeleteSecretError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::RemoveRegionsFromReplicationErrorKind::ResourceNotFoundException(
+            crate::operation::delete_secret::DeleteSecretError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::RemoveRegionsFromReplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_secret::DeleteSecretError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReplicateSecretToRegionsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_secret::DescribeSecretError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ReplicateSecretToRegionsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_secret::DescribeSecretError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ReplicateSecretToRegionsError> for Error {
-    fn from(err: crate::error::ReplicateSecretToRegionsError) -> Self {
-        match err.kind {
-            crate::error::ReplicateSecretToRegionsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::ReplicateSecretToRegionsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ReplicateSecretToRegionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ReplicateSecretToRegionsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ReplicateSecretToRegionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreSecretError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RestoreSecretError, R>) -> Self {
+impl From<crate::operation::describe_secret::DescribeSecretError> for Error {
+    fn from(err: crate::operation::describe_secret::DescribeSecretError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RestoreSecretError> for Error {
-    fn from(err: crate::error::RestoreSecretError) -> Self {
-        match err.kind {
-            crate::error::RestoreSecretErrorKind::InternalServiceError(inner) => {
+            crate::operation::describe_secret::DescribeSecretError::InternalServiceError(inner) => {
                 Error::InternalServiceError(inner)
             }
-            crate::error::RestoreSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RestoreSecretErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RestoreSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RestoreSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::describe_secret::DescribeSecretError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_secret::DescribeSecretError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_secret::DescribeSecretError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RotateSecretError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RotateSecretError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RotateSecretError> for Error {
-    fn from(err: crate::error::RotateSecretError) -> Self {
-        match err.kind {
-            crate::error::RotateSecretErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::RotateSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RotateSecretErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RotateSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RotateSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopReplicationToReplicaError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_random_password::GetRandomPasswordError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopReplicationToReplicaError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_random_password::GetRandomPasswordError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StopReplicationToReplicaError> for Error {
-    fn from(err: crate::error::StopReplicationToReplicaError) -> Self {
-        match err.kind {
-            crate::error::StopReplicationToReplicaErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::StopReplicationToReplicaErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StopReplicationToReplicaErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopReplicationToReplicaErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopReplicationToReplicaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_random_password::GetRandomPasswordError> for Error {
+    fn from(err: crate::operation::get_random_password::GetRandomPasswordError) -> Self {
+        match err {
+            crate::operation::get_random_password::GetRandomPasswordError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_random_password::GetRandomPasswordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_random_password::GetRandomPasswordError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_random_password::GetRandomPasswordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policy::GetResourcePolicyError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policy::GetResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_secret_value::GetSecretValueError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_secret_value::GetSecretValueError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSecretError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSecretError, R>) -> Self {
+impl From<crate::operation::get_secret_value::GetSecretValueError> for Error {
+    fn from(err: crate::operation::get_secret_value::GetSecretValueError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateSecretError> for Error {
-    fn from(err: crate::error::UpdateSecretError) -> Self {
-        match err.kind {
-            crate::error::UpdateSecretErrorKind::DecryptionFailure(inner) => {
+            crate::operation::get_secret_value::GetSecretValueError::DecryptionFailure(inner) => {
                 Error::DecryptionFailure(inner)
             }
-            crate::error::UpdateSecretErrorKind::EncryptionFailure(inner) => {
+            crate::operation::get_secret_value::GetSecretValueError::InternalServiceError(
+                inner,
+            ) => Error::InternalServiceError(inner),
+            crate::operation::get_secret_value::GetSecretValueError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::get_secret_value::GetSecretValueError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::get_secret_value::GetSecretValueError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_secret_value::GetSecretValueError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_secrets::ListSecretsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_secrets::ListSecretsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_secrets::ListSecretsError> for Error {
+    fn from(err: crate::operation::list_secrets::ListSecretsError) -> Self {
+        match err {
+            crate::operation::list_secrets::ListSecretsError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::list_secrets::ListSecretsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_secrets::ListSecretsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_secrets::ListSecretsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_secret_version_ids::ListSecretVersionIdsError> for Error {
+    fn from(err: crate::operation::list_secret_version_ids::ListSecretVersionIdsError) -> Self {
+        match err {
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_secret_value::PutSecretValueError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_secret_value::PutSecretValueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_secret_value::PutSecretValueError> for Error {
+    fn from(err: crate::operation::put_secret_value::PutSecretValueError) -> Self {
+        match err {
+            crate::operation::put_secret_value::PutSecretValueError::DecryptionFailure(inner) => {
+                Error::DecryptionFailure(inner)
+            }
+            crate::operation::put_secret_value::PutSecretValueError::EncryptionFailure(inner) => {
                 Error::EncryptionFailure(inner)
             }
-            crate::error::UpdateSecretErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::UpdateSecretErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::PreconditionNotMetException(inner) => {
-                Error::PreconditionNotMetException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::ResourceExistsException(inner) => {
-                Error::ResourceExistsException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateSecretErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSecretVersionStageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSecretVersionStageError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateSecretVersionStageError> for Error {
-    fn from(err: crate::error::UpdateSecretVersionStageError) -> Self {
-        match err.kind {
-            crate::error::UpdateSecretVersionStageErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::UpdateSecretVersionStageErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateSecretVersionStageErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateSecretVersionStageErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateSecretVersionStageErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateSecretVersionStageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateResourcePolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ValidateResourcePolicyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ValidateResourcePolicyError> for Error {
-    fn from(err: crate::error::ValidateResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::ValidateResourcePolicyErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::ValidateResourcePolicyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ValidateResourcePolicyErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ValidateResourcePolicyErrorKind::MalformedPolicyDocumentException(
+            crate::operation::put_secret_value::PutSecretValueError::InternalServiceError(
                 inner,
-            ) => Error::MalformedPolicyDocumentException(inner),
-            crate::error::ValidateResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
+            ) => Error::InternalServiceError(inner),
+            crate::operation::put_secret_value::PutSecretValueError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::put_secret_value::PutSecretValueError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::put_secret_value::PutSecretValueError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::put_secret_value::PutSecretValueError::ResourceExistsException(
+                inner,
+            ) => Error::ResourceExistsException(inner),
+            crate::operation::put_secret_value::PutSecretValueError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_secret_value::PutSecretValueError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError> for Error {
+    fn from(
+        err: crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
+    ) -> Self {
+        match err {
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::restore_secret::RestoreSecretError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::restore_secret::RestoreSecretError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::restore_secret::RestoreSecretError> for Error {
+    fn from(err: crate::operation::restore_secret::RestoreSecretError) -> Self {
+        match err {
+            crate::operation::restore_secret::RestoreSecretError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::restore_secret::RestoreSecretError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::restore_secret::RestoreSecretError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::restore_secret::RestoreSecretError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::restore_secret::RestoreSecretError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::rotate_secret::RotateSecretError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::rotate_secret::RotateSecretError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::rotate_secret::RotateSecretError> for Error {
+    fn from(err: crate::operation::rotate_secret::RotateSecretError) -> Self {
+        match err {
+            crate::operation::rotate_secret::RotateSecretError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::rotate_secret::RotateSecretError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::rotate_secret::RotateSecretError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::rotate_secret::RotateSecretError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::rotate_secret::RotateSecretError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_replication_to_replica::StopReplicationToReplicaError> for Error {
+    fn from(
+        err: crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ValidateResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_secret::UpdateSecretError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_secret::UpdateSecretError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_secret::UpdateSecretError> for Error {
+    fn from(err: crate::operation::update_secret::UpdateSecretError) -> Self {
+        match err {
+            crate::operation::update_secret::UpdateSecretError::DecryptionFailure(inner) => Error::DecryptionFailure(inner),
+            crate::operation::update_secret::UpdateSecretError::EncryptionFailure(inner) => Error::EncryptionFailure(inner),
+            crate::operation::update_secret::UpdateSecretError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::update_secret::UpdateSecretError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_secret::UpdateSecretError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_secret::UpdateSecretError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_secret::UpdateSecretError::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::operation::update_secret::UpdateSecretError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::update_secret::UpdateSecretError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::update_secret::UpdateSecretError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_secret::UpdateSecretError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_secret_version_stage::UpdateSecretVersionStageError> for Error {
+    fn from(
+        err: crate::operation::update_secret_version_stage::UpdateSecretVersionStageError,
+    ) -> Self {
+        match err {
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::validate_resource_policy::ValidateResourcePolicyError> for Error {
+    fn from(err: crate::operation::validate_resource_policy::ValidateResourcePolicyError) -> Self {
+        match err {
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::DecryptionFailure(e) => e.request_id(),
+            Self::EncryptionFailure(e) => e.request_id(),
+            Self::InternalServiceError(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::MalformedPolicyDocumentException(e) => e.request_id(),
+            Self::PreconditionNotMetException(e) => e.request_id(),
+            Self::PublicPolicyException(e) => e.request_id(),
+            Self::ResourceExistsException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

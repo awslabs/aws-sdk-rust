@@ -4,38 +4,31 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p></p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the Outposts in this Region. Select a different name and try again.</p>
-    BucketAlreadyExists(crate::error::BucketAlreadyExists),
+    BucketAlreadyExists(crate::types::error::BucketAlreadyExists),
     /// <p>The Outposts bucket you tried to create already exists, and you own it. </p>
-    BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
+    BucketAlreadyOwnedByYou(crate::types::error::BucketAlreadyOwnedByYou),
     /// <p></p>
-    IdempotencyException(crate::error::IdempotencyException),
+    IdempotencyException(crate::types::error::IdempotencyException),
     /// <p></p>
-    InternalServiceException(crate::error::InternalServiceException),
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p></p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p></p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p></p>
-    JobStatusException(crate::error::JobStatusException),
+    JobStatusException(crate::types::error::JobStatusException),
     /// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
-    NoSuchPublicAccessBlockConfiguration(crate::error::NoSuchPublicAccessBlockConfiguration),
+    NoSuchPublicAccessBlockConfiguration(crate::types::error::NoSuchPublicAccessBlockConfiguration),
     /// <p></p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p></p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Amazon S3 throws this exception if you have too many tags in your tag set.</p>
-    TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,39 +49,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccessPointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAccessPointError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateAccessPointError> for Error {
-    fn from(err: crate::error::CreateAccessPointError) -> Self {
-        match err.kind {
-            crate::error::CreateAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateAccessPointForObjectLambdaError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_access_point::CreateAccessPointError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateAccessPointForObjectLambdaError,
+            crate::operation::create_access_point::CreateAccessPointError,
             R,
         >,
     ) -> Self {
@@ -96,180 +69,128 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateAccessPointForObjectLambdaError> for Error {
-    fn from(err: crate::error::CreateAccessPointForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::CreateAccessPointForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::create_access_point::CreateAccessPointError> for Error {
+    fn from(err: crate::operation::create_access_point::CreateAccessPointError) -> Self {
+        match err {
+            crate::operation::create_access_point::CreateAccessPointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBucketError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError> for Error {
+    fn from(err: crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBucketError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_bucket::CreateBucketError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateBucketError> for Error {
-    fn from(err: crate::error::CreateBucketError) -> Self {
-        match err.kind {
-            crate::error::CreateBucketErrorKind::BucketAlreadyExists(inner) => {
+impl From<crate::operation::create_bucket::CreateBucketError> for Error {
+    fn from(err: crate::operation::create_bucket::CreateBucketError) -> Self {
+        match err {
+            crate::operation::create_bucket::CreateBucketError::BucketAlreadyExists(inner) => {
                 Error::BucketAlreadyExists(inner)
             }
-            crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou(inner) => {
+            crate::operation::create_bucket::CreateBucketError::BucketAlreadyOwnedByYou(inner) => {
                 Error::BucketAlreadyOwnedByYou(inner)
             }
-            crate::error::CreateBucketErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_bucket::CreateBucketError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateJobError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateJobError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateJobError> for Error {
-    fn from(err: crate::error::CreateJobError) -> Self {
-        match err.kind {
-            crate::error::CreateJobErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::create_job::CreateJobError> for Error {
+    fn from(err: crate::operation::create_job::CreateJobError) -> Self {
+        match err {
+            crate::operation::create_job::CreateJobError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateJobErrorKind::IdempotencyException(inner) => {
+            crate::operation::create_job::CreateJobError::IdempotencyException(inner) => {
                 Error::IdempotencyException(inner)
             }
-            crate::error::CreateJobErrorKind::InternalServiceException(inner) => {
+            crate::operation::create_job::CreateJobError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::CreateJobErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::create_job::CreateJobError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMultiRegionAccessPointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMultiRegionAccessPointError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateMultiRegionAccessPointError> for Error {
-    fn from(err: crate::error::CreateMultiRegionAccessPointError) -> Self {
-        match err.kind {
-            crate::error::CreateMultiRegionAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAccessPointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAccessPointError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAccessPointError> for Error {
-    fn from(err: crate::error::DeleteAccessPointError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteAccessPointForObjectLambdaError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAccessPointForObjectLambdaError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAccessPointForObjectLambdaError> for Error {
-    fn from(err: crate::error::DeleteAccessPointForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAccessPointPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAccessPointPolicyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAccessPointPolicyError> for Error {
-    fn from(err: crate::error::DeleteAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_job::CreateJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -277,7 +198,7 @@ impl From<crate::error::DeleteAccessPointPolicyError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DeleteAccessPointPolicyForObjectLambdaError,
+            crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError,
             R,
         >,
     > for Error
@@ -286,7 +207,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAccessPointPolicyForObjectLambdaError,
+            crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError,
             R,
         >,
     ) -> Self {
@@ -294,51 +215,41 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteAccessPointPolicyForObjectLambdaError> for Error {
-    fn from(err: crate::error::DeleteAccessPointPolicyForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointPolicyForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
+impl From<crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError>
+    for Error
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBucketError, R>) -> Self {
+    fn from(
+        err: crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteBucketError> for Error {
-    fn from(err: crate::error::DeleteBucketError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::DeleteBucketLifecycleConfigurationError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_point::DeleteAccessPointError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteBucketLifecycleConfigurationError,
+            crate::operation::delete_access_point::DeleteAccessPointError,
             R,
         >,
     ) -> Self {
@@ -346,159 +257,115 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteBucketLifecycleConfigurationError> for Error {
-    fn from(err: crate::error::DeleteBucketLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBucketPolicyError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_access_point::DeleteAccessPointError> for Error {
+    fn from(err: crate::operation::delete_access_point::DeleteAccessPointError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteBucketPolicyError> for Error {
-    fn from(err: crate::error::DeleteBucketPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_access_point::DeleteAccessPointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketTaggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBucketTaggingError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::DeleteBucketTaggingError> for Error {
-    fn from(err: crate::error::DeleteBucketTaggingError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteJobTaggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteJobTaggingError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError> for Error {
+    fn from(err: crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteJobTaggingError> for Error {
-    fn from(err: crate::error::DeleteJobTaggingError) -> Self {
-        match err.kind {
-            crate::error::DeleteJobTaggingErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteJobTaggingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteJobTaggingErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteJobTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMultiRegionAccessPointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMultiRegionAccessPointError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteMultiRegionAccessPointError> for Error {
-    fn from(err: crate::error::DeleteMultiRegionAccessPointError) -> Self {
-        match err.kind {
-            crate::error::DeleteMultiRegionAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePublicAccessBlockError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePublicAccessBlockError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeletePublicAccessBlockError> for Error {
-    fn from(err: crate::error::DeletePublicAccessBlockError) -> Self {
-        match err.kind {
-            crate::error::DeletePublicAccessBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteStorageLensConfigurationError, R>>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError> for Error {
+    fn from(
+        err: crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError> for Error {
+    fn from(err: crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_bucket::DeleteBucketError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteStorageLensConfigurationError,
+            crate::operation::delete_bucket::DeleteBucketError,
             R,
         >,
     ) -> Self {
@@ -506,15 +373,82 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteStorageLensConfigurationError> for Error {
-    fn from(err: crate::error::DeleteStorageLensConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteStorageLensConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::delete_bucket::DeleteBucketError> for Error {
+    fn from(err: crate::operation::delete_bucket::DeleteBucketError) -> Self {
+        match err {
+            crate::operation::delete_bucket::DeleteBucketError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError> for Error {
+    fn from(err: crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_policy::DeleteBucketPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_policy::DeleteBucketPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_bucket_policy::DeleteBucketPolicyError> for Error {
+    fn from(err: crate::operation::delete_bucket_policy::DeleteBucketPolicyError) -> Self {
+        match err {
+            crate::operation::delete_bucket_policy::DeleteBucketPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -522,7 +456,7 @@ impl From<crate::error::DeleteStorageLensConfigurationError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DeleteStorageLensConfigurationTaggingError,
+            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
             R,
         >,
     > for Error
@@ -531,7 +465,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteStorageLensConfigurationTaggingError,
+            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
             R,
         >,
     ) -> Self {
@@ -539,57 +473,261 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteStorageLensConfigurationTaggingError> for Error {
-    fn from(err: crate::error::DeleteStorageLensConfigurationTaggingError) -> Self {
-        match err.kind {
-            crate::error::DeleteStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError> for Error {
+    fn from(err: crate::operation::delete_bucket_tagging::DeleteBucketTaggingError) -> Self {
+        match err {
+            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_job_tagging::DeleteJobTaggingError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_job_tagging::DeleteJobTaggingError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeJobError> for Error {
-    fn from(err: crate::error::DescribeJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeJobErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_job_tagging::DeleteJobTaggingError> for Error {
+    fn from(err: crate::operation::delete_job_tagging::DeleteJobTaggingError) -> Self {
+        match err {
+            crate::operation::delete_job_tagging::DeleteJobTaggingError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_job_tagging::DeleteJobTaggingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_job_tagging::DeleteJobTaggingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_job_tagging::DeleteJobTaggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_public_access_block::DeletePublicAccessBlockError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_public_access_block::DeletePublicAccessBlockError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_public_access_block::DeletePublicAccessBlockError> for Error {
+    fn from(
+        err: crate::operation::delete_public_access_block::DeletePublicAccessBlockError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_public_access_block::DeletePublicAccessBlockError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingError> for Error {
+    fn from(err: crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingError) -> Self {
+        match err {
+            crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_job::DescribeJobError> for Error {
+    fn from(err: crate::operation::describe_job::DescribeJobError) -> Self {
+        match err {
+            crate::operation::describe_job::DescribeJobError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeJobErrorKind::InternalServiceException(inner) => {
+            crate::operation::describe_job::DescribeJobError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::DescribeJobErrorKind::NotFoundException(inner) => {
+            crate::operation::describe_job::DescribeJobError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeJobErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::describe_job::DescribeJobError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::describe_job::DescribeJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError> for Error {
+    fn from(err: crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError) -> Self {
+        match err {
+            crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DescribeMultiRegionAccessPointOperationError,
+            crate::operation::get_access_point::GetAccessPointError,
             R,
         >,
     > for Error
@@ -598,7 +736,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeMultiRegionAccessPointOperationError,
+            crate::operation::get_access_point::GetAccessPointError,
             R,
         >,
     ) -> Self {
@@ -606,45 +744,74 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeMultiRegionAccessPointOperationError> for Error {
-    fn from(err: crate::error::DescribeMultiRegionAccessPointOperationError) -> Self {
-        match err.kind {
-            crate::error::DescribeMultiRegionAccessPointOperationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccessPointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAccessPointError, R>) -> Self {
+impl From<crate::operation::get_access_point::GetAccessPointError> for Error {
+    fn from(err: crate::operation::get_access_point::GetAccessPointError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
+            crate::operation::get_access_point::GetAccessPointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
-impl From<crate::error::GetAccessPointError> for Error {
-    fn from(err: crate::error::GetAccessPointError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError> for Error {
+    fn from(err: crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaError,
+    ) -> Self {
+        match err {
+            crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::GetAccessPointConfigurationForObjectLambdaError,
+            crate::operation::get_access_point_policy::GetAccessPointPolicyError,
             R,
         >,
     > for Error
@@ -653,7 +820,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetAccessPointConfigurationForObjectLambdaError,
+            crate::operation::get_access_point_policy::GetAccessPointPolicyError,
             R,
         >,
     ) -> Self {
@@ -661,491 +828,59 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetAccessPointConfigurationForObjectLambdaError> for Error {
-    fn from(err: crate::error::GetAccessPointConfigurationForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointConfigurationForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccessPointForObjectLambdaError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAccessPointForObjectLambdaError, R>,
-    ) -> Self {
+impl From<crate::operation::get_access_point_policy::GetAccessPointPolicyError> for Error {
+    fn from(err: crate::operation::get_access_point_policy::GetAccessPointPolicyError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAccessPointForObjectLambdaError> for Error {
-    fn from(err: crate::error::GetAccessPointForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccessPointPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAccessPointPolicyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAccessPointPolicyError> for Error {
-    fn from(err: crate::error::GetAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAccessPointPolicyForObjectLambdaError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAccessPointPolicyForObjectLambdaError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAccessPointPolicyForObjectLambdaError> for Error {
-    fn from(err: crate::error::GetAccessPointPolicyForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccessPointPolicyStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAccessPointPolicyStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAccessPointPolicyStatusError> for Error {
-    fn from(err: crate::error::GetAccessPointPolicyStatusError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAccessPointPolicyStatusForObjectLambdaError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAccessPointPolicyStatusForObjectLambdaError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAccessPointPolicyStatusForObjectLambdaError> for Error {
-    fn from(err: crate::error::GetAccessPointPolicyStatusForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyStatusForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBucketError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBucketError> for Error {
-    fn from(err: crate::error::GetBucketError) -> Self {
-        match err.kind {
-            crate::error::GetBucketErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetBucketLifecycleConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetBucketLifecycleConfigurationError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBucketLifecycleConfigurationError> for Error {
-    fn from(err: crate::error::GetBucketLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetBucketLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBucketPolicyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBucketPolicyError> for Error {
-    fn from(err: crate::error::GetBucketPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetBucketPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketTaggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBucketTaggingError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBucketTaggingError> for Error {
-    fn from(err: crate::error::GetBucketTaggingError) -> Self {
-        match err.kind {
-            crate::error::GetBucketTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketVersioningError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBucketVersioningError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBucketVersioningError> for Error {
-    fn from(err: crate::error::GetBucketVersioningError) -> Self {
-        match err.kind {
-            crate::error::GetBucketVersioningErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJobTaggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetJobTaggingError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetJobTaggingError> for Error {
-    fn from(err: crate::error::GetJobTaggingError) -> Self {
-        match err.kind {
-            crate::error::GetJobTaggingErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetJobTaggingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetJobTaggingErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetJobTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMultiRegionAccessPointError> for Error {
-    fn from(err: crate::error::GetMultiRegionAccessPointError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetMultiRegionAccessPointPolicyError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMultiRegionAccessPointPolicyError> for Error {
-    fn from(err: crate::error::GetMultiRegionAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetMultiRegionAccessPointPolicyStatusError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetMultiRegionAccessPointPolicyStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMultiRegionAccessPointPolicyStatusError> for Error {
-    fn from(err: crate::error::GetMultiRegionAccessPointPolicyStatusError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointPolicyStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointRoutesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetMultiRegionAccessPointRoutesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMultiRegionAccessPointRoutesError> for Error {
-    fn from(err: crate::error::GetMultiRegionAccessPointRoutesError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointRoutesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPublicAccessBlockError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPublicAccessBlockError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetPublicAccessBlockError> for Error {
-    fn from(err: crate::error::GetPublicAccessBlockError) -> Self {
-        match err.kind {
-            crate::error::GetPublicAccessBlockErrorKind::NoSuchPublicAccessBlockConfiguration(
+            crate::operation::get_access_point_policy::GetAccessPointPolicyError::Unhandled(
                 inner,
-            ) => Error::NoSuchPublicAccessBlockConfiguration(inner),
-            crate::error::GetPublicAccessBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            ) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStorageLensConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetStorageLensConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::GetStorageLensConfigurationError> for Error {
-    fn from(err: crate::error::GetStorageLensConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetStorageLensConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaError> for Error {
+    fn from(err: crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::GetStorageLensConfigurationTaggingError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetStorageLensConfigurationTaggingError,
+            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
             R,
         >,
     ) -> Self {
@@ -1153,52 +888,118 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetStorageLensConfigurationTaggingError> for Error {
-    fn from(err: crate::error::GetStorageLensConfigurationTaggingError) -> Self {
-        match err.kind {
-            crate::error::GetStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccessPointsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
+impl From<crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError>
+    for Error
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAccessPointsError, R>,
+        err: crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::ListAccessPointsError> for Error {
-    fn from(err: crate::error::ListAccessPointsError) -> Self {
-        match err.kind {
-            crate::error::ListAccessPointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListAccessPointsForObjectLambdaError, R>>
+impl From<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError> for Error {
+    fn from(err: crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bucket::GetBucketError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_bucket::GetBucketError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_bucket::GetBucketError> for Error {
+    fn from(err: crate::operation::get_bucket::GetBucketError) -> Self {
+        match err {
+            crate::operation::get_bucket::GetBucketError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_policy::GetBucketPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListAccessPointsForObjectLambdaError,
+            crate::operation::get_bucket_policy::GetBucketPolicyError,
             R,
         >,
     ) -> Self {
@@ -1206,128 +1007,458 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListAccessPointsForObjectLambdaError> for Error {
-    fn from(err: crate::error::ListAccessPointsForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::ListAccessPointsForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::get_bucket_policy::GetBucketPolicyError> for Error {
+    fn from(err: crate::operation::get_bucket_policy::GetBucketPolicyError) -> Self {
+        match err {
+            crate::operation::get_bucket_policy::GetBucketPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_tagging::GetBucketTaggingError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_tagging::GetBucketTaggingError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListJobsError> for Error {
-    fn from(err: crate::error::ListJobsError) -> Self {
-        match err.kind {
-            crate::error::ListJobsErrorKind::InternalServiceException(inner) => {
+impl From<crate::operation::get_bucket_tagging::GetBucketTaggingError> for Error {
+    fn from(err: crate::operation::get_bucket_tagging::GetBucketTaggingError) -> Self {
+        match err {
+            crate::operation::get_bucket_tagging::GetBucketTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_versioning::GetBucketVersioningError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_versioning::GetBucketVersioningError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_bucket_versioning::GetBucketVersioningError> for Error {
+    fn from(err: crate::operation::get_bucket_versioning::GetBucketVersioningError) -> Self {
+        match err {
+            crate::operation::get_bucket_versioning::GetBucketVersioningError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_job_tagging::GetJobTaggingError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_job_tagging::GetJobTaggingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_job_tagging::GetJobTaggingError> for Error {
+    fn from(err: crate::operation::get_job_tagging::GetJobTaggingError) -> Self {
+        match err {
+            crate::operation::get_job_tagging::GetJobTaggingError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::get_job_tagging::GetJobTaggingError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_job_tagging::GetJobTaggingError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_job_tagging::GetJobTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
+    ) -> Self {
+        match err {
+            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyError> for Error {
+    fn from(err: crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyError) -> Self {
+        match err {
+            crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusError> for Error {
+    fn from(err: crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusError) -> Self {
+        match err {
+            crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError> for Error {
+    fn from(err: crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError) -> Self {
+        match err {
+            crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_public_access_block::GetPublicAccessBlockError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_public_access_block::GetPublicAccessBlockError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_public_access_block::GetPublicAccessBlockError> for Error {
+    fn from(err: crate::operation::get_public_access_block::GetPublicAccessBlockError) -> Self {
+        match err {
+            crate::operation::get_public_access_block::GetPublicAccessBlockError::NoSuchPublicAccessBlockConfiguration(inner) => Error::NoSuchPublicAccessBlockConfiguration(inner),
+            crate::operation::get_public_access_block::GetPublicAccessBlockError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError> for Error {
+    fn from(err: crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError) -> Self {
+        match err {
+            crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_access_points::ListAccessPointsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_access_points::ListAccessPointsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_access_points::ListAccessPointsError> for Error {
+    fn from(err: crate::operation::list_access_points::ListAccessPointsError) -> Self {
+        match err {
+            crate::operation::list_access_points::ListAccessPointsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError> for Error {
+    fn from(err: crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_jobs::ListJobsError> for Error {
+    fn from(err: crate::operation::list_jobs::ListJobsError) -> Self {
+        match err {
+            crate::operation::list_jobs::ListJobsError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::ListJobsErrorKind::InvalidNextTokenException(inner) => {
+            crate::operation::list_jobs::ListJobsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListJobsErrorKind::InvalidRequestException(inner) => {
+            crate::operation::list_jobs::ListJobsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::ListJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMultiRegionAccessPointsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListMultiRegionAccessPointsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListMultiRegionAccessPointsError> for Error {
-    fn from(err: crate::error::ListMultiRegionAccessPointsError) -> Self {
-        match err.kind {
-            crate::error::ListMultiRegionAccessPointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRegionalBucketsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRegionalBucketsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListRegionalBucketsError> for Error {
-    fn from(err: crate::error::ListRegionalBucketsError) -> Self {
-        match err.kind {
-            crate::error::ListRegionalBucketsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStorageLensConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListStorageLensConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListStorageLensConfigurationsError> for Error {
-    fn from(err: crate::error::ListStorageLensConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::ListStorageLensConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::PutAccessPointConfigurationForObjectLambdaError,
+            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
             R,
         >,
     > for Error
@@ -1336,7 +1467,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::PutAccessPointConfigurationForObjectLambdaError,
+            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
             R,
         >,
     ) -> Self {
@@ -1344,48 +1475,32 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutAccessPointConfigurationForObjectLambdaError> for Error {
-    fn from(err: crate::error::PutAccessPointConfigurationForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::PutAccessPointConfigurationForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAccessPointPolicyError, R>>
+impl From<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutAccessPointPolicyError, R>,
+        err: crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutAccessPointPolicyError> for Error {
-    fn from(err: crate::error::PutAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::PutAccessPointPolicyForObjectLambdaError,
+            crate::operation::list_regional_buckets::ListRegionalBucketsError,
             R,
         >,
     > for Error
@@ -1394,7 +1509,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::PutAccessPointPolicyForObjectLambdaError,
+            crate::operation::list_regional_buckets::ListRegionalBucketsError,
             R,
         >,
     ) -> Self {
@@ -1402,28 +1517,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutAccessPointPolicyForObjectLambdaError> for Error {
-    fn from(err: crate::error::PutAccessPointPolicyForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::PutAccessPointPolicyForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::list_regional_buckets::ListRegionalBucketsError> for Error {
+    fn from(err: crate::operation::list_regional_buckets::ListRegionalBucketsError) -> Self {
+        match err {
+            crate::operation::list_regional_buckets::ListRegionalBucketsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::PutBucketLifecycleConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::PutBucketLifecycleConfigurationError,
+            crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError,
             R,
         >,
     ) -> Self {
@@ -1431,212 +1557,335 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutBucketLifecycleConfigurationError> for Error {
-    fn from(err: crate::error::PutBucketLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutBucketLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutBucketPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
+impl From<crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError>
+    for Error
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutBucketPolicyError, R>) -> Self {
+    fn from(
+        err: crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::PutBucketPolicyError> for Error {
-    fn from(err: crate::error::PutBucketPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutBucketPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutBucketTaggingError, R>> for Error
+impl From<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError> for Error {
+    fn from(err: crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutBucketTaggingError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutBucketTaggingError> for Error {
-    fn from(err: crate::error::PutBucketTaggingError) -> Self {
-        match err.kind {
-            crate::error::PutBucketTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::put_access_point_policy::PutAccessPointPolicyError> for Error {
+    fn from(err: crate::operation::put_access_point_policy::PutAccessPointPolicyError) -> Self {
+        match err {
+            crate::operation::put_access_point_policy::PutAccessPointPolicyError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutBucketVersioningError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError> for Error {
+    fn from(err: crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError) -> Self {
+        match err {
+            crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_policy::PutBucketPolicyError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutBucketVersioningError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_policy::PutBucketPolicyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutBucketVersioningError> for Error {
-    fn from(err: crate::error::PutBucketVersioningError) -> Self {
-        match err.kind {
-            crate::error::PutBucketVersioningErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::put_bucket_policy::PutBucketPolicyError> for Error {
+    fn from(err: crate::operation::put_bucket_policy::PutBucketPolicyError) -> Self {
+        match err {
+            crate::operation::put_bucket_policy::PutBucketPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutJobTaggingError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_tagging::PutBucketTaggingError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutJobTaggingError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_tagging::PutBucketTaggingError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutJobTaggingError> for Error {
-    fn from(err: crate::error::PutJobTaggingError) -> Self {
-        match err.kind {
-            crate::error::PutJobTaggingErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+impl From<crate::operation::put_bucket_tagging::PutBucketTaggingError> for Error {
+    fn from(err: crate::operation::put_bucket_tagging::PutBucketTaggingError) -> Self {
+        match err {
+            crate::operation::put_bucket_tagging::PutBucketTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::PutJobTaggingErrorKind::NotFoundException(inner) => {
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_versioning::PutBucketVersioningError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_versioning::PutBucketVersioningError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_bucket_versioning::PutBucketVersioningError> for Error {
+    fn from(err: crate::operation::put_bucket_versioning::PutBucketVersioningError) -> Self {
+        match err {
+            crate::operation::put_bucket_versioning::PutBucketVersioningError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::put_job_tagging::PutJobTaggingError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_job_tagging::PutJobTaggingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_job_tagging::PutJobTaggingError> for Error {
+    fn from(err: crate::operation::put_job_tagging::PutJobTaggingError) -> Self {
+        match err {
+            crate::operation::put_job_tagging::PutJobTaggingError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::put_job_tagging::PutJobTaggingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::PutJobTaggingErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PutJobTaggingErrorKind::TooManyTagsException(inner) => {
+            crate::operation::put_job_tagging::PutJobTaggingError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::put_job_tagging::PutJobTaggingError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::PutJobTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::put_job_tagging::PutJobTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::PutMultiRegionAccessPointPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutMultiRegionAccessPointPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::PutMultiRegionAccessPointPolicyError> for Error {
-    fn from(err: crate::error::PutMultiRegionAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutMultiRegionAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPublicAccessBlockError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutPublicAccessBlockError, R>,
-    ) -> Self {
+impl From<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError> for Error {
+    fn from(err: crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutPublicAccessBlockError> for Error {
-    fn from(err: crate::error::PutPublicAccessBlockError) -> Self {
-        match err.kind {
-            crate::error::PutPublicAccessBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutStorageLensConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutStorageLensConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutStorageLensConfigurationError> for Error {
-    fn from(err: crate::error::PutStorageLensConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutStorageLensConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::PutStorageLensConfigurationTaggingError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_public_access_block::PutPublicAccessBlockError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::PutStorageLensConfigurationTaggingError,
+            crate::operation::put_public_access_block::PutPublicAccessBlockError,
             R,
         >,
     ) -> Self {
@@ -1644,29 +1893,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutStorageLensConfigurationTaggingError> for Error {
-    fn from(err: crate::error::PutStorageLensConfigurationTaggingError) -> Self {
-        match err.kind {
-            crate::error::PutStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::put_public_access_block::PutPublicAccessBlockError> for Error {
+    fn from(err: crate::operation::put_public_access_block::PutPublicAccessBlockError) -> Self {
+        match err {
+            crate::operation::put_public_access_block::PutPublicAccessBlockError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::SubmitMultiRegionAccessPointRoutesError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::SubmitMultiRegionAccessPointRoutesError,
+            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
             R,
         >,
     ) -> Self {
@@ -1674,90 +1933,182 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::SubmitMultiRegionAccessPointRoutesError> for Error {
-    fn from(err: crate::error::SubmitMultiRegionAccessPointRoutesError) -> Self {
-        match err.kind {
-            crate::error::SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateJobPriorityError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingError> for Error {
+    fn from(err: crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingError) -> Self {
+        match err {
+            crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError> for Error {
+    fn from(err: crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError) -> Self {
+        match err {
+            crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_priority::UpdateJobPriorityError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateJobPriorityError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_job_priority::UpdateJobPriorityError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateJobPriorityError> for Error {
-    fn from(err: crate::error::UpdateJobPriorityError) -> Self {
-        match err.kind {
-            crate::error::UpdateJobPriorityErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateJobPriorityErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateJobPriorityErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateJobPriorityErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateJobPriorityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::update_job_priority::UpdateJobPriorityError> for Error {
+    fn from(err: crate::operation::update_job_priority::UpdateJobPriorityError) -> Self {
+        match err {
+            crate::operation::update_job_priority::UpdateJobPriorityError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_job_priority::UpdateJobPriorityError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_job_priority::UpdateJobPriorityError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_job_priority::UpdateJobPriorityError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_job_priority::UpdateJobPriorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateJobStatusError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_status::UpdateJobStatusError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateJobStatusError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_job_status::UpdateJobStatusError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateJobStatusError> for Error {
-    fn from(err: crate::error::UpdateJobStatusError) -> Self {
-        match err.kind {
-            crate::error::UpdateJobStatusErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateJobStatusErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateJobStatusErrorKind::JobStatusException(inner) => {
-                Error::JobStatusException(inner)
-            }
-            crate::error::UpdateJobStatusErrorKind::NotFoundException(inner) => {
+impl From<crate::operation::update_job_status::UpdateJobStatusError> for Error {
+    fn from(err: crate::operation::update_job_status::UpdateJobStatusError) -> Self {
+        match err {
+            crate::operation::update_job_status::UpdateJobStatusError::BadRequestException(
+                inner,
+            ) => Error::BadRequestException(inner),
+            crate::operation::update_job_status::UpdateJobStatusError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::update_job_status::UpdateJobStatusError::JobStatusException(
+                inner,
+            ) => Error::JobStatusException(inner),
+            crate::operation::update_job_status::UpdateJobStatusError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateJobStatusErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateJobStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::update_job_status::UpdateJobStatusError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::update_job_status::UpdateJobStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::BucketAlreadyExists(e) => e.request_id(),
+            Self::BucketAlreadyOwnedByYou(e) => e.request_id(),
+            Self::IdempotencyException(e) => e.request_id(),
+            Self::InternalServiceException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::JobStatusException(e) => e.request_id(),
+            Self::NoSuchPublicAccessBlockConfiguration(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

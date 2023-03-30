@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon QLDB Session. Each operation on Amazon QLDB Session is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_qldbsession::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_qldbsession::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_qldbsession::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_qldbsession::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_qldbsession::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`SendCommand`](crate::operation::send_command) operation has
+/// a [`Client::send_command`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.send_command()
+///     .session_token("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,214 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`SendCommand`](crate::client::fluent_builders::SendCommand) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`session_token(impl Into<String>)`](crate::client::fluent_builders::SendCommand::session_token) / [`set_session_token(Option<String>)`](crate::client::fluent_builders::SendCommand::set_session_token): <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>  <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    ///   - [`start_session(StartSessionRequest)`](crate::client::fluent_builders::SendCommand::start_session) / [`set_start_session(Option<StartSessionRequest>)`](crate::client::fluent_builders::SendCommand::set_start_session): <p>Command to start a new session. A session token is obtained as part of the response.</p>
-    ///   - [`start_transaction(StartTransactionRequest)`](crate::client::fluent_builders::SendCommand::start_transaction) / [`set_start_transaction(Option<StartTransactionRequest>)`](crate::client::fluent_builders::SendCommand::set_start_transaction): <p>Command to start a new transaction.</p>
-    ///   - [`end_session(EndSessionRequest)`](crate::client::fluent_builders::SendCommand::end_session) / [`set_end_session(Option<EndSessionRequest>)`](crate::client::fluent_builders::SendCommand::set_end_session): <p>Command to end the current session.</p>
-    ///   - [`commit_transaction(CommitTransactionRequest)`](crate::client::fluent_builders::SendCommand::commit_transaction) / [`set_commit_transaction(Option<CommitTransactionRequest>)`](crate::client::fluent_builders::SendCommand::set_commit_transaction): <p>Command to commit the specified transaction.</p>
-    ///   - [`abort_transaction(AbortTransactionRequest)`](crate::client::fluent_builders::SendCommand::abort_transaction) / [`set_abort_transaction(Option<AbortTransactionRequest>)`](crate::client::fluent_builders::SendCommand::set_abort_transaction): <p>Command to abort the current transaction.</p>
-    ///   - [`execute_statement(ExecuteStatementRequest)`](crate::client::fluent_builders::SendCommand::execute_statement) / [`set_execute_statement(Option<ExecuteStatementRequest>)`](crate::client::fluent_builders::SendCommand::set_execute_statement): <p>Command to execute a statement in the specified transaction.</p>
-    ///   - [`fetch_page(FetchPageRequest)`](crate::client::fluent_builders::SendCommand::fetch_page) / [`set_fetch_page(Option<FetchPageRequest>)`](crate::client::fluent_builders::SendCommand::set_fetch_page): <p>Command to fetch a page.</p>
-    /// - On success, responds with [`SendCommandOutput`](crate::output::SendCommandOutput) with field(s):
-    ///   - [`start_session(Option<StartSessionResult>)`](crate::output::SendCommandOutput::start_session): <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    ///   - [`start_transaction(Option<StartTransactionResult>)`](crate::output::SendCommandOutput::start_transaction): <p>Contains the details of the started transaction.</p>
-    ///   - [`end_session(Option<EndSessionResult>)`](crate::output::SendCommandOutput::end_session): <p>Contains the details of the ended session.</p>
-    ///   - [`commit_transaction(Option<CommitTransactionResult>)`](crate::output::SendCommandOutput::commit_transaction): <p>Contains the details of the committed transaction.</p>
-    ///   - [`abort_transaction(Option<AbortTransactionResult>)`](crate::output::SendCommandOutput::abort_transaction): <p>Contains the details of the aborted transaction.</p>
-    ///   - [`execute_statement(Option<ExecuteStatementResult>)`](crate::output::SendCommandOutput::execute_statement): <p>Contains the details of the executed statement.</p>
-    ///   - [`fetch_page(Option<FetchPageResult>)`](crate::output::SendCommandOutput::fetch_page): <p>Contains the details of the fetched page.</p>
-    /// - On failure, responds with [`SdkError<SendCommandError>`](crate::error::SendCommandError)
-    pub fn send_command(&self) -> fluent_builders::SendCommand {
-        fluent_builders::SendCommand::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `SendCommand`.
-    ///
-    /// <p>Sends a command to an Amazon QLDB ledger.</p> <note>
-    /// <p>Instead of interacting directly with this API, we recommend using the QLDB driver or the QLDB shell to execute data transactions on a ledger.</p>
-    /// <ul>
-    /// <li> <p>If you are working with an AWS SDK, use the QLDB driver. The driver provides a high-level abstraction layer above this <i>QLDB Session</i> data plane and manages <code>SendCommand</code> API calls for you. For information and a list of supported programming languages, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
-    /// <li> <p>If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB shell. The shell is a command line interface that uses the QLDB driver to interact with a ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the QLDB shell</a>.</p> </li>
-    /// </ul>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendCommand {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::send_command_input::Builder,
-    }
-    impl SendCommand {
-        /// Creates a new `SendCommand`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::SendCommand,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::SendCommandError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::SendCommandOutput,
-            aws_smithy_http::result::SdkError<crate::error::SendCommandError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_token(input.into());
-            self
-        }
-        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-        pub fn set_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_session_token(input);
-            self
-        }
-        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
-        pub fn start_session(mut self, input: crate::model::StartSessionRequest) -> Self {
-            self.inner = self.inner.start_session(input);
-            self
-        }
-        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
-        pub fn set_start_session(
-            mut self,
-            input: std::option::Option<crate::model::StartSessionRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_start_session(input);
-            self
-        }
-        /// <p>Command to start a new transaction.</p>
-        pub fn start_transaction(mut self, input: crate::model::StartTransactionRequest) -> Self {
-            self.inner = self.inner.start_transaction(input);
-            self
-        }
-        /// <p>Command to start a new transaction.</p>
-        pub fn set_start_transaction(
-            mut self,
-            input: std::option::Option<crate::model::StartTransactionRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_start_transaction(input);
-            self
-        }
-        /// <p>Command to end the current session.</p>
-        pub fn end_session(mut self, input: crate::model::EndSessionRequest) -> Self {
-            self.inner = self.inner.end_session(input);
-            self
-        }
-        /// <p>Command to end the current session.</p>
-        pub fn set_end_session(
-            mut self,
-            input: std::option::Option<crate::model::EndSessionRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_end_session(input);
-            self
-        }
-        /// <p>Command to commit the specified transaction.</p>
-        pub fn commit_transaction(mut self, input: crate::model::CommitTransactionRequest) -> Self {
-            self.inner = self.inner.commit_transaction(input);
-            self
-        }
-        /// <p>Command to commit the specified transaction.</p>
-        pub fn set_commit_transaction(
-            mut self,
-            input: std::option::Option<crate::model::CommitTransactionRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_commit_transaction(input);
-            self
-        }
-        /// <p>Command to abort the current transaction.</p>
-        pub fn abort_transaction(mut self, input: crate::model::AbortTransactionRequest) -> Self {
-            self.inner = self.inner.abort_transaction(input);
-            self
-        }
-        /// <p>Command to abort the current transaction.</p>
-        pub fn set_abort_transaction(
-            mut self,
-            input: std::option::Option<crate::model::AbortTransactionRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_abort_transaction(input);
-            self
-        }
-        /// <p>Command to execute a statement in the specified transaction.</p>
-        pub fn execute_statement(mut self, input: crate::model::ExecuteStatementRequest) -> Self {
-            self.inner = self.inner.execute_statement(input);
-            self
-        }
-        /// <p>Command to execute a statement in the specified transaction.</p>
-        pub fn set_execute_statement(
-            mut self,
-            input: std::option::Option<crate::model::ExecuteStatementRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_execute_statement(input);
-            self
-        }
-        /// <p>Command to fetch a page.</p>
-        pub fn fetch_page(mut self, input: crate::model::FetchPageRequest) -> Self {
-            self.inner = self.inner.fetch_page(input);
-            self
-        }
-        /// <p>Command to fetch a page.</p>
-        pub fn set_fetch_page(
-            mut self,
-            input: std::option::Option<crate::model::FetchPageRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_fetch_page(input);
-            self
-        }
     }
 }
 
@@ -372,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -382,3 +211,33 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_qldbsession::Error> {
+/// # let client: aws_sdk_qldbsession::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.send_command()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod send_command;

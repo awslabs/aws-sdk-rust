@@ -4,30 +4,23 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p> An internal server error occurred. Retry your request. </p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
-    InvalidEncodingException(crate::error::InvalidEncodingException),
+    InvalidEncodingException(crate::types::error::InvalidEncodingException),
     /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
-    TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
+    TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
-    ValidationException(crate::error::ValidationException),
-    ///
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,15 +37,47 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>
     for Error
+{
+    fn from(
+        err: crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeEntitiesDetectionV2JobError,
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError,
             R,
         >,
     ) -> Self {
@@ -60,961 +85,1127 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeEntitiesDetectionV2JobError> for Error {
-    fn from(err: crate::error::DescribeEntitiesDetectionV2JobError) -> Self {
-        match err.kind {
-            crate::error::DescribeEntitiesDetectionV2JobErrorKind::InternalServerException(
+impl From<crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError> for Error {
+    fn from(
+        err: crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities::DetectEntitiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities::DetectEntitiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::detect_entities::DetectEntitiesError> for Error {
+    fn from(err: crate::operation::detect_entities::DetectEntitiesError) -> Self {
+        match err {
+            crate::operation::detect_entities::DetectEntitiesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::detect_entities::DetectEntitiesError::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
+            crate::operation::detect_entities::DetectEntitiesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::detect_entities::DetectEntitiesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::detect_entities::DetectEntitiesError::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
+            crate::operation::detect_entities::DetectEntitiesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::detect_entities::DetectEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::detect_entities_v2::DetectEntitiesV2Error> for Error {
+    fn from(err: crate::operation::detect_entities_v2::DetectEntitiesV2Error) -> Self {
+        match err {
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detect_phi::DetectPHIError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::detect_phi::DetectPHIError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::detect_phi::DetectPHIError> for Error {
+    fn from(err: crate::operation::detect_phi::DetectPHIError) -> Self {
+        match err {
+            crate::operation::detect_phi::DetectPHIError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::detect_phi::DetectPHIError::InvalidEncodingException(inner) => {
+                Error::InvalidEncodingException(inner)
+            }
+            crate::operation::detect_phi::DetectPHIError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::detect_phi::DetectPHIError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::detect_phi::DetectPHIError::TextSizeLimitExceededException(inner) => {
+                Error::TextSizeLimitExceededException(inner)
+            }
+            crate::operation::detect_phi::DetectPHIError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::detect_phi::DetectPHIError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::infer_icd10_cm::InferICD10CMError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::infer_icd10_cm::InferICD10CMError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::infer_icd10_cm::InferICD10CMError> for Error {
+    fn from(err: crate::operation::infer_icd10_cm::InferICD10CMError) -> Self {
+        match err {
+            crate::operation::infer_icd10_cm::InferICD10CMError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::infer_icd10_cm::InferICD10CMError::InvalidEncodingException(
                 inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::DescribeEntitiesDetectionV2JobErrorKind::InvalidRequestException(
+            ) => Error::InvalidEncodingException(inner),
+            crate::operation::infer_icd10_cm::InferICD10CMError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::infer_icd10_cm::InferICD10CMError::ServiceUnavailableException(
                 inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::infer_icd10_cm::InferICD10CMError::TextSizeLimitExceededException(
                 inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeEntitiesDetectionV2JobErrorKind::TooManyRequestsException(
+            ) => Error::TextSizeLimitExceededException(inner),
+            crate::operation::infer_icd10_cm::InferICD10CMError::TooManyRequestsException(
                 inner,
             ) => Error::TooManyRequestsException(inner),
-            crate::error::DescribeEntitiesDetectionV2JobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::infer_icd10_cm::InferICD10CMError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::infer_rx_norm::InferRxNormError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::infer_rx_norm::InferRxNormError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeICD10CMInferenceJobError> for Error {
-    fn from(err: crate::error::DescribeICD10CMInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeICD10CMInferenceJobErrorKind::InternalServerException(inner) => {
+impl From<crate::operation::infer_rx_norm::InferRxNormError> for Error {
+    fn from(err: crate::operation::infer_rx_norm::InferRxNormError) -> Self {
+        match err {
+            crate::operation::infer_rx_norm::InferRxNormError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DescribeICD10CMInferenceJobErrorKind::InvalidRequestException(inner) => {
+            crate::operation::infer_rx_norm::InferRxNormError::InvalidEncodingException(inner) => {
+                Error::InvalidEncodingException(inner)
+            }
+            crate::operation::infer_rx_norm::InferRxNormError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::DescribeICD10CMInferenceJobErrorKind::ResourceNotFoundException(
+            crate::operation::infer_rx_norm::InferRxNormError::ServiceUnavailableException(
                 inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeICD10CMInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribePHIDetectionJobError> for Error {
-    fn from(err: crate::error::DescribePHIDetectionJobError) -> Self {
-        match err.kind {
-            crate::error::DescribePHIDetectionJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribePHIDetectionJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribePHIDetectionJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribePHIDetectionJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribePHIDetectionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeRxNormInferenceJobError> for Error {
-    fn from(err: crate::error::DescribeRxNormInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeRxNormInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeRxNormInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeRxNormInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeRxNormInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSNOMEDCTInferenceJobError> for Error {
-    fn from(err: crate::error::DescribeSNOMEDCTInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::infer_rx_norm::InferRxNormError::TextSizeLimitExceededException(
                 inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectEntitiesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectEntitiesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DetectEntitiesError> for Error {
-    fn from(err: crate::error::DetectEntitiesError) -> Self {
-        match err.kind {
-            crate::error::DetectEntitiesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DetectEntitiesErrorKind::InvalidEncodingException(inner) => {
-                Error::InvalidEncodingException(inner)
-            }
-            crate::error::DetectEntitiesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DetectEntitiesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DetectEntitiesErrorKind::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
-            crate::error::DetectEntitiesErrorKind::TooManyRequestsException(inner) => {
+            ) => Error::TextSizeLimitExceededException(inner),
+            crate::operation::infer_rx_norm::InferRxNormError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DetectEntitiesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::infer_rx_norm::InferRxNormError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DetectEntitiesV2Error> for Error {
-    fn from(err: crate::error::DetectEntitiesV2Error) -> Self {
-        match err.kind {
-            crate::error::DetectEntitiesV2ErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DetectEntitiesV2ErrorKind::InvalidEncodingException(inner) => {
-                Error::InvalidEncodingException(inner)
-            }
-            crate::error::DetectEntitiesV2ErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DetectEntitiesV2ErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DetectEntitiesV2ErrorKind::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
-            crate::error::DetectEntitiesV2ErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DetectEntitiesV2ErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectPHIError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectPHIError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DetectPHIError> for Error {
-    fn from(err: crate::error::DetectPHIError) -> Self {
-        match err.kind {
-            crate::error::DetectPHIErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DetectPHIErrorKind::InvalidEncodingException(inner) => {
-                Error::InvalidEncodingException(inner)
-            }
-            crate::error::DetectPHIErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DetectPHIErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DetectPHIErrorKind::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
-            crate::error::DetectPHIErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DetectPHIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InferICD10CMError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InferICD10CMError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::InferICD10CMError> for Error {
-    fn from(err: crate::error::InferICD10CMError) -> Self {
-        match err.kind {
-            crate::error::InferICD10CMErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::InferICD10CMErrorKind::InvalidEncodingException(inner) => {
-                Error::InvalidEncodingException(inner)
-            }
-            crate::error::InferICD10CMErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::InferICD10CMErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::InferICD10CMErrorKind::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
-            crate::error::InferICD10CMErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::InferICD10CMErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InferRxNormError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InferRxNormError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::InferRxNormError> for Error {
-    fn from(err: crate::error::InferRxNormError) -> Self {
-        match err.kind {
-            crate::error::InferRxNormErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::InferRxNormErrorKind::InvalidEncodingException(inner) => {
-                Error::InvalidEncodingException(inner)
-            }
-            crate::error::InferRxNormErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::InferRxNormErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::InferRxNormErrorKind::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
-            crate::error::InferRxNormErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::InferRxNormErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::InferSNOMEDCTError> for Error {
-    fn from(err: crate::error::InferSNOMEDCTError) -> Self {
-        match err.kind {
-            crate::error::InferSNOMEDCTErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::InferSNOMEDCTErrorKind::InvalidEncodingException(inner) => {
-                Error::InvalidEncodingException(inner)
-            }
-            crate::error::InferSNOMEDCTErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::InferSNOMEDCTErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::InferSNOMEDCTErrorKind::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
-            crate::error::InferSNOMEDCTErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::InferSNOMEDCTErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::infer_snomedct::InferSNOMEDCTError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::infer_snomedct::InferSNOMEDCTError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListEntitiesDetectionV2JobsError> for Error {
-    fn from(err: crate::error::ListEntitiesDetectionV2JobsError) -> Self {
-        match err.kind {
-            crate::error::ListEntitiesDetectionV2JobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListEntitiesDetectionV2JobsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListEntitiesDetectionV2JobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListEntitiesDetectionV2JobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListEntitiesDetectionV2JobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::infer_snomedct::InferSNOMEDCTError> for Error {
+    fn from(err: crate::operation::infer_snomedct::InferSNOMEDCTError) -> Self {
+        match err {
+            crate::operation::infer_snomedct::InferSNOMEDCTError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::infer_snomedct::InferSNOMEDCTError::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
+            crate::operation::infer_snomedct::InferSNOMEDCTError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::infer_snomedct::InferSNOMEDCTError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::infer_snomedct::InferSNOMEDCTError::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
+            crate::operation::infer_snomedct::InferSNOMEDCTError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::infer_snomedct::InferSNOMEDCTError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError>
     for Error
+{
+    fn from(
+        err: crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListICD10CMInferenceJobsError> for Error {
-    fn from(err: crate::error::ListICD10CMInferenceJobsError) -> Self {
-        match err.kind {
-            crate::error::ListICD10CMInferenceJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListICD10CMInferenceJobsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListICD10CMInferenceJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListICD10CMInferenceJobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListICD10CMInferenceJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError> for Error {
+    fn from(
+        err: crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError> for Error {
+    fn from(err: crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError) -> Self {
+        match err {
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError> for Error {
+    fn from(
+        err: crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError>
     for Error
+{
+    fn from(
+        err: crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListPHIDetectionJobsError> for Error {
-    fn from(err: crate::error::ListPHIDetectionJobsError) -> Self {
-        match err.kind {
-            crate::error::ListPHIDetectionJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListPHIDetectionJobsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListPHIDetectionJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListPHIDetectionJobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListPHIDetectionJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError, R>>
+impl From<crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError>
     for Error
+{
+    fn from(
+        err: crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListRxNormInferenceJobsError> for Error {
-    fn from(err: crate::error::ListRxNormInferenceJobsError) -> Self {
-        match err.kind {
-            crate::error::ListRxNormInferenceJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListRxNormInferenceJobsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListRxNormInferenceJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListRxNormInferenceJobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListRxNormInferenceJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError> for Error {
+    fn from(
+        err: crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_phi_detection_job::StartPHIDetectionJobError> for Error {
+    fn from(err: crate::operation::start_phi_detection_job::StartPHIDetectionJobError) -> Self {
+        match err {
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError> for Error {
+    fn from(
+        err: crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError>
     for Error
+{
+    fn from(
+        err: crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListSNOMEDCTInferenceJobsError> for Error {
-    fn from(err: crate::error::ListSNOMEDCTInferenceJobsError) -> Self {
-        match err.kind {
-            crate::error::ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListSNOMEDCTInferenceJobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListSNOMEDCTInferenceJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError, R>>
+impl From<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError>
     for Error
+{
+    fn from(
+        err: crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartEntitiesDetectionV2JobError> for Error {
-    fn from(err: crate::error::StartEntitiesDetectionV2JobError) -> Self {
-        match err.kind {
-            crate::error::StartEntitiesDetectionV2JobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartEntitiesDetectionV2JobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::StartEntitiesDetectionV2JobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StartEntitiesDetectionV2JobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError> for Error {
+    fn from(
+        err: crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartICD10CMInferenceJobError> for Error {
-    fn from(err: crate::error::StartICD10CMInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::StartICD10CMInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartICD10CMInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartICD10CMInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartICD10CMInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StartICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError> for Error {
+    fn from(err: crate::operation::stop_phi_detection_job::StopPHIDetectionJobError) -> Self {
+        match err {
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartPHIDetectionJobError> for Error {
-    fn from(err: crate::error::StartPHIDetectionJobError) -> Self {
-        match err.kind {
-            crate::error::StartPHIDetectionJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartPHIDetectionJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartPHIDetectionJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartPHIDetectionJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StartPHIDetectionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError> for Error {
+    fn from(
+        err: crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartRxNormInferenceJobError> for Error {
-    fn from(err: crate::error::StartRxNormInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::StartRxNormInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartRxNormInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartRxNormInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartRxNormInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StartRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl From<crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError> for Error {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError, R>,
+        err: crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartSNOMEDCTInferenceJobError> for Error {
-    fn from(err: crate::error::StartSNOMEDCTInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::StartSNOMEDCTInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StartSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopEntitiesDetectionV2JobError> for Error {
-    fn from(err: crate::error::StopEntitiesDetectionV2JobError) -> Self {
-        match err.kind {
-            crate::error::StopEntitiesDetectionV2JobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopEntitiesDetectionV2JobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopEntitiesDetectionV2JobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopICD10CMInferenceJobError> for Error {
-    fn from(err: crate::error::StopICD10CMInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::StopICD10CMInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopICD10CMInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopICD10CMInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopPHIDetectionJobError> for Error {
-    fn from(err: crate::error::StopPHIDetectionJobError) -> Self {
-        match err.kind {
-            crate::error::StopPHIDetectionJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopPHIDetectionJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopPHIDetectionJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopPHIDetectionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopRxNormInferenceJobError> for Error {
-    fn from(err: crate::error::StopRxNormInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::StopRxNormInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopRxNormInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopRxNormInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopSNOMEDCTInferenceJobError> for Error {
-    fn from(err: crate::error::StopSNOMEDCTInferenceJobError) -> Self {
-        match err.kind {
-            crate::error::StopSNOMEDCTInferenceJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StopSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidEncodingException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::TextSizeLimitExceededException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

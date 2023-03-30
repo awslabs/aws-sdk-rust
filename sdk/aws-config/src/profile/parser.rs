@@ -334,14 +334,14 @@ mod test {
     fn flatten(profile: ProfileSet) -> HashMap<String, HashMap<String, String>> {
         profile
             .profiles
-            .into_iter()
-            .map(|(_name, profile)| {
+            .into_values()
+            .map(|profile| {
                 (
                     profile.name,
                     profile
                         .properties
-                        .into_iter()
-                        .map(|(_, prop)| (prop.key, prop.value))
+                        .into_values()
+                        .map(|prop| (prop.key, prop.value))
                         .collect(),
                 )
             })

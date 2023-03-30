@@ -4,30 +4,23 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The input parameters don't match the service's restrictions.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>The client is permanently forbidden from making the request.</p>
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>The request exceeds the resource limit.</p>
-    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>The service encountered an unexpected error.</p>
-    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The client exceeded its request rate limit.</p>
-    ThrottledClientException(crate::error::ThrottledClientException),
+    ThrottledClientException(crate::types::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
-    UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    UnauthorizedClientException(crate::types::error::UnauthorizedClientException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,61 +37,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateMediaCapturePipelineError> for Error {
-    fn from(err: crate::error::CreateMediaCapturePipelineError) -> Self {
-        match err.kind {
-            crate::error::CreateMediaCapturePipelineErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateMediaConcatenationPipelineError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateMediaConcatenationPipelineError,
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
             R,
         >,
     ) -> Self {
@@ -106,33 +57,102 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateMediaConcatenationPipelineError> for Error {
-    fn from(err: crate::error::CreateMediaConcatenationPipelineError) -> Self {
-        match err.kind {
-            crate::error::CreateMediaConcatenationPipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateMediaConcatenationPipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
+    ) -> Self {
+        match err {
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError> for Error {
+    fn from(err: crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError) -> Self {
+        match err {
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError> for Error {
+    fn from(err: crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError) -> Self {
+        match err {
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateMediaLiveConnectorPipelineError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateMediaLiveConnectorPipelineError,
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
             R,
         >,
     ) -> Self {
@@ -140,426 +160,434 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateMediaLiveConnectorPipelineError> for Error {
-    fn from(err: crate::error::CreateMediaLiveConnectorPipelineError) -> Self {
-        match err.kind {
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateMediaLiveConnectorPipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>>
+impl From<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError>
     for Error
+{
+    fn from(
+        err: crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteMediaCapturePipelineError> for Error {
-    fn from(err: crate::error::DeleteMediaCapturePipelineError) -> Self {
-        match err.kind {
-            crate::error::DeleteMediaCapturePipelineErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_media_pipeline::DeleteMediaPipelineError> for Error {
+    fn from(err: crate::operation::delete_media_pipeline::DeleteMediaPipelineError) -> Self {
+        match err {
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError> for Error {
+    fn from(
+        err: crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
+    ) -> Self {
+        match err {
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_media_pipeline::GetMediaPipelineError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_media_pipeline::GetMediaPipelineError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_media_pipeline::GetMediaPipelineError> for Error {
+    fn from(err: crate::operation::get_media_pipeline::GetMediaPipelineError) -> Self {
+        match err {
+            crate::operation::get_media_pipeline::GetMediaPipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::get_media_pipeline::GetMediaPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_media_pipelines::ListMediaPipelinesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_media_pipelines::ListMediaPipelinesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_media_pipelines::ListMediaPipelinesError> for Error {
+    fn from(err: crate::operation::list_media_pipelines::ListMediaPipelinesError) -> Self {
+        match err {
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_media_pipelines::ListMediaPipelinesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteMediaCapturePipelineErrorKind::NotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ServiceFailureException(inner) => {
                 Error::ServiceFailureException(inner)
             }
-            crate::error::DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(
                 inner,
             ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ThrottledClientException(inner) => {
                 Error::ThrottledClientException(inner)
             }
-            crate::error::DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(
+            crate::operation::tag_resource::TagResourceError::UnauthorizedClientException(
                 inner,
             ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMediaPipelineError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaPipelineError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteMediaPipelineError> for Error {
-    fn from(err: crate::error::DeleteMediaPipelineError) -> Self {
-        match err.kind {
-            crate::error::DeleteMediaPipelineErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteMediaPipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetMediaCapturePipelineError> for Error {
-    fn from(err: crate::error::GetMediaCapturePipelineError) -> Self {
-        match err.kind {
-            crate::error::GetMediaCapturePipelineErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GetMediaCapturePipelineErrorKind::NotFoundException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaPipelineError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMediaPipelineError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMediaPipelineError> for Error {
-    fn from(err: crate::error::GetMediaPipelineError) -> Self {
-        match err.kind {
-            crate::error::GetMediaPipelineErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetMediaPipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListMediaCapturePipelinesError> for Error {
-    fn from(err: crate::error::ListMediaCapturePipelinesError) -> Self {
-        match err.kind {
-            crate::error::ListMediaCapturePipelinesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(
+            crate::operation::untag_resource::UntagResourceError::ServiceFailureException(
                 inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::ListMediaCapturePipelinesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(
+            ) => Error::ServiceFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(
                 inner,
             ) => Error::ServiceUnavailableException(inner),
-            crate::error::ListMediaCapturePipelinesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(
+            crate::operation::untag_resource::UntagResourceError::ThrottledClientException(
+                inner,
+            ) => Error::ThrottledClientException(inner),
+            crate::operation::untag_resource::UntagResourceError::UnauthorizedClientException(
                 inner,
             ) => Error::UnauthorizedClientException(inner),
-            crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMediaPipelinesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListMediaPipelinesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListMediaPipelinesError> for Error {
-    fn from(err: crate::error::ListMediaPipelinesError) -> Self {
-        match err.kind {
-            crate::error::ListMediaPipelinesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListMediaPipelinesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagResourceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ResourceLimitExceededException(e) => e.request_id(),
+            Self::ServiceFailureException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::ThrottledClientException(e) => e.request_id(),
+            Self::UnauthorizedClientException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

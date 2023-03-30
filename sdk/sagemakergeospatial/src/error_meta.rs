@@ -4,28 +4,21 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p></p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p></p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have exceeded the service quota.</p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
-    ValidationException(crate::error::ValidationException),
-    ///
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,790 +34,899 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEarthObservationJobError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEarthObservationJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteEarthObservationJobError> for Error {
-    fn from(err: crate::error::DeleteEarthObservationJobError) -> Self {
-        match err.kind {
-            crate::error::DeleteEarthObservationJobErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::export_earth_observation_job::ExportEarthObservationJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
+    ) -> Self {
+        match err {
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_earth_observation_job::GetEarthObservationJobError> for Error {
+    fn from(err: crate::operation::get_earth_observation_job::GetEarthObservationJobError) -> Self {
+        match err {
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_earth_observation_job::GetEarthObservationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_raster_data_collection::GetRasterDataCollectionError> for Error {
+    fn from(
+        err: crate::operation::get_raster_data_collection::GetRasterDataCollectionError,
+    ) -> Self {
+        match err {
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_tile::GetTileError> for Error {
+    fn from(err: crate::operation::get_tile::GetTileError) -> Self {
+        match err {
+            crate::operation::get_tile::GetTileError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteEarthObservationJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteEarthObservationJobErrorKind::InternalServerException(inner) => {
+            crate::operation::get_tile::GetTileError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteEarthObservationJobErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::get_tile::GetTileError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteEarthObservationJobErrorKind::ThrottlingException(inner) => {
+            crate::operation::get_tile::GetTileError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DeleteEarthObservationJobErrorKind::ValidationException(inner) => {
+            crate::operation::get_tile::GetTileError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteEarthObservationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::get_tile::GetTileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVectorEnrichmentJobError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVectorEnrichmentJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteVectorEnrichmentJobError> for Error {
-    fn from(err: crate::error::DeleteVectorEnrichmentJobError) -> Self {
-        match err.kind {
-            crate::error::DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError> for Error {
+    fn from(err: crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError) -> Self {
+        match err {
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError> for Error {
+    fn from(
+        err: crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError> for Error {
+    fn from(
+        err: crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+    ) -> Self {
+        match err {
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_earth_observation_job::StartEarthObservationJobError> for Error {
+    fn from(
+        err: crate::operation::start_earth_observation_job::StartEarthObservationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError> for Error {
+    fn from(
+        err: crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_earth_observation_job::StopEarthObservationJobError> for Error {
+    fn from(
+        err: crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError> for Error {
+    fn from(
+        err: crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteVectorEnrichmentJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteVectorEnrichmentJobErrorKind::InternalServerException(inner) => {
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteVectorEnrichmentJobErrorKind::ThrottlingException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DeleteVectorEnrichmentJobErrorKind::ValidationException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteVectorEnrichmentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExportEarthObservationJobError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ExportEarthObservationJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ExportEarthObservationJobError> for Error {
-    fn from(err: crate::error::ExportEarthObservationJobError) -> Self {
-        match err.kind {
-            crate::error::ExportEarthObservationJobErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ExportEarthObservationJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::ExportEarthObservationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ExportEarthObservationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(
                 inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ExportEarthObservationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ExportEarthObservationJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ExportEarthObservationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExportVectorEnrichmentJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ExportVectorEnrichmentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ExportVectorEnrichmentJobError> for Error {
-    fn from(err: crate::error::ExportVectorEnrichmentJobError) -> Self {
-        match err.kind {
-            crate::error::ExportVectorEnrichmentJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ExportVectorEnrichmentJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::ExportVectorEnrichmentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(
+            ) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
                 inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ExportVectorEnrichmentJobErrorKind::ThrottlingException(inner) => {
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::ExportVectorEnrichmentJobErrorKind::ValidationException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ExportVectorEnrichmentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEarthObservationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEarthObservationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetEarthObservationJobError> for Error {
-    fn from(err: crate::error::GetEarthObservationJobError) -> Self {
-        match err.kind {
-            crate::error::GetEarthObservationJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEarthObservationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEarthObservationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEarthObservationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetEarthObservationJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetEarthObservationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRasterDataCollectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRasterDataCollectionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetRasterDataCollectionError> for Error {
-    fn from(err: crate::error::GetRasterDataCollectionError) -> Self {
-        match err.kind {
-            crate::error::GetRasterDataCollectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetRasterDataCollectionErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetRasterDataCollectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetRasterDataCollectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetRasterDataCollectionErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetRasterDataCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTileError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetTileError> for Error {
-    fn from(err: crate::error::GetTileError) -> Self {
-        match err.kind {
-            crate::error::GetTileErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetTileErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetTileErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetTileErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetTileErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetTileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVectorEnrichmentJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVectorEnrichmentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetVectorEnrichmentJobError> for Error {
-    fn from(err: crate::error::GetVectorEnrichmentJobError) -> Self {
-        match err.kind {
-            crate::error::GetVectorEnrichmentJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetVectorEnrichmentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetVectorEnrichmentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetVectorEnrichmentJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetVectorEnrichmentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEarthObservationJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListEarthObservationJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListEarthObservationJobsError> for Error {
-    fn from(err: crate::error::ListEarthObservationJobsError) -> Self {
-        match err.kind {
-            crate::error::ListEarthObservationJobsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListEarthObservationJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListEarthObservationJobsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListEarthObservationJobsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListEarthObservationJobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListEarthObservationJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRasterDataCollectionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRasterDataCollectionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListRasterDataCollectionsError> for Error {
-    fn from(err: crate::error::ListRasterDataCollectionsError) -> Self {
-        match err.kind {
-            crate::error::ListRasterDataCollectionsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListRasterDataCollectionsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListRasterDataCollectionsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListRasterDataCollectionsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListRasterDataCollectionsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListRasterDataCollectionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVectorEnrichmentJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVectorEnrichmentJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListVectorEnrichmentJobsError> for Error {
-    fn from(err: crate::error::ListVectorEnrichmentJobsError) -> Self {
-        match err.kind {
-            crate::error::ListVectorEnrichmentJobsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListVectorEnrichmentJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListVectorEnrichmentJobsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListVectorEnrichmentJobsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListVectorEnrichmentJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchRasterDataCollectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SearchRasterDataCollectionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SearchRasterDataCollectionError> for Error {
-    fn from(err: crate::error::SearchRasterDataCollectionError) -> Self {
-        match err.kind {
-            crate::error::SearchRasterDataCollectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::SearchRasterDataCollectionErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::SearchRasterDataCollectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SearchRasterDataCollectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::SearchRasterDataCollectionErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::SearchRasterDataCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartEarthObservationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartEarthObservationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartEarthObservationJobError> for Error {
-    fn from(err: crate::error::StartEarthObservationJobError) -> Self {
-        match err.kind {
-            crate::error::StartEarthObservationJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartEarthObservationJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartEarthObservationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartEarthObservationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartEarthObservationJobErrorKind::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartEarthObservationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartEarthObservationJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartEarthObservationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartVectorEnrichmentJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartVectorEnrichmentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartVectorEnrichmentJobError> for Error {
-    fn from(err: crate::error::StartVectorEnrichmentJobError) -> Self {
-        match err.kind {
-            crate::error::StartVectorEnrichmentJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartVectorEnrichmentJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartVectorEnrichmentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartVectorEnrichmentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartVectorEnrichmentJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartVectorEnrichmentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopEarthObservationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopEarthObservationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopEarthObservationJobError> for Error {
-    fn from(err: crate::error::StopEarthObservationJobError) -> Self {
-        match err.kind {
-            crate::error::StopEarthObservationJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StopEarthObservationJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StopEarthObservationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopEarthObservationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopEarthObservationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StopEarthObservationJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StopEarthObservationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopVectorEnrichmentJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopVectorEnrichmentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopVectorEnrichmentJobError> for Error {
-    fn from(err: crate::error::StopVectorEnrichmentJobError) -> Self {
-        match err.kind {
-            crate::error::StopVectorEnrichmentJobErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StopVectorEnrichmentJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StopVectorEnrichmentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopVectorEnrichmentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StopVectorEnrichmentJobErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StopVectorEnrichmentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::TagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

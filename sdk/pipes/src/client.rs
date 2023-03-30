@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon EventBridge Pipes. Each operation on Amazon EventBridge Pipes is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_pipes::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_pipes::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_pipes::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_pipes::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_pipes::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
+/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.list_tags_for_resource()
+///     .resource_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1262 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CreatePipe`](crate::client::fluent_builders::CreatePipe) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePipe::set_name): <p>The name of the pipe.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePipe::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePipe::set_description): <p>A description of the pipe.</p>
-    ///   - [`desired_state(RequestedPipeState)`](crate::client::fluent_builders::CreatePipe::desired_state) / [`set_desired_state(Option<RequestedPipeState>)`](crate::client::fluent_builders::CreatePipe::set_desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`source(impl Into<String>)`](crate::client::fluent_builders::CreatePipe::source) / [`set_source(Option<String>)`](crate::client::fluent_builders::CreatePipe::set_source): <p>The ARN of the source resource.</p>
-    ///   - [`source_parameters(PipeSourceParameters)`](crate::client::fluent_builders::CreatePipe::source_parameters) / [`set_source_parameters(Option<PipeSourceParameters>)`](crate::client::fluent_builders::CreatePipe::set_source_parameters): <p>The parameters required to set up a source for your pipe.</p>
-    ///   - [`enrichment(impl Into<String>)`](crate::client::fluent_builders::CreatePipe::enrichment) / [`set_enrichment(Option<String>)`](crate::client::fluent_builders::CreatePipe::set_enrichment): <p>The ARN of the enrichment resource.</p>
-    ///   - [`enrichment_parameters(PipeEnrichmentParameters)`](crate::client::fluent_builders::CreatePipe::enrichment_parameters) / [`set_enrichment_parameters(Option<PipeEnrichmentParameters>)`](crate::client::fluent_builders::CreatePipe::set_enrichment_parameters): <p>The parameters required to set up enrichment on your pipe.</p>
-    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::CreatePipe::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::CreatePipe::set_target): <p>The ARN of the target resource.</p>
-    ///   - [`target_parameters(PipeTargetParameters)`](crate::client::fluent_builders::CreatePipe::target_parameters) / [`set_target_parameters(Option<PipeTargetParameters>)`](crate::client::fluent_builders::CreatePipe::set_target_parameters): <p>The parameters required to set up a target for your pipe.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePipe::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreatePipe::set_role_arn): <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePipe::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePipe::set_tags): <p>The list of key-value pairs to associate with the pipe.</p>
-    /// - On success, responds with [`CreatePipeOutput`](crate::output::CreatePipeOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreatePipeOutput::arn): <p>The ARN of the pipe.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreatePipeOutput::name): <p>The name of the pipe.</p>
-    ///   - [`desired_state(Option<RequestedPipeState>)`](crate::output::CreatePipeOutput::desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(Option<PipeState>)`](crate::output::CreatePipeOutput::current_state): <p>The state the pipe is in.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreatePipeOutput::creation_time): <p>The time the pipe was created.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreatePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    /// - On failure, responds with [`SdkError<CreatePipeError>`](crate::error::CreatePipeError)
-    pub fn create_pipe(&self) -> fluent_builders::CreatePipe {
-        fluent_builders::CreatePipe::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePipe`](crate::client::fluent_builders::DeletePipe) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeletePipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeletePipe::set_name): <p>The name of the pipe.</p>
-    /// - On success, responds with [`DeletePipeOutput`](crate::output::DeletePipeOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::DeletePipeOutput::arn): <p>The ARN of the pipe.</p>
-    ///   - [`name(Option<String>)`](crate::output::DeletePipeOutput::name): <p>The name of the pipe.</p>
-    ///   - [`desired_state(Option<RequestedPipeStateDescribeResponse>)`](crate::output::DeletePipeOutput::desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(Option<PipeState>)`](crate::output::DeletePipeOutput::current_state): <p>The state the pipe is in.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DeletePipeOutput::creation_time): <p>The time the pipe was created.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DeletePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    /// - On failure, responds with [`SdkError<DeletePipeError>`](crate::error::DeletePipeError)
-    pub fn delete_pipe(&self) -> fluent_builders::DeletePipe {
-        fluent_builders::DeletePipe::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePipe`](crate::client::fluent_builders::DescribePipe) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribePipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribePipe::set_name): <p>The name of the pipe.</p>
-    /// - On success, responds with [`DescribePipeOutput`](crate::output::DescribePipeOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::DescribePipeOutput::arn): <p>The ARN of the pipe.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribePipeOutput::name): <p>The name of the pipe.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribePipeOutput::description): <p>A description of the pipe.</p>
-    ///   - [`desired_state(Option<RequestedPipeStateDescribeResponse>)`](crate::output::DescribePipeOutput::desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(Option<PipeState>)`](crate::output::DescribePipeOutput::current_state): <p>The state the pipe is in.</p>
-    ///   - [`state_reason(Option<String>)`](crate::output::DescribePipeOutput::state_reason): <p>The reason the pipe is in its current state.</p>
-    ///   - [`source(Option<String>)`](crate::output::DescribePipeOutput::source): <p>The ARN of the source resource.</p>
-    ///   - [`source_parameters(Option<PipeSourceParameters>)`](crate::output::DescribePipeOutput::source_parameters): <p>The parameters required to set up a source for your pipe.</p>
-    ///   - [`enrichment(Option<String>)`](crate::output::DescribePipeOutput::enrichment): <p>The ARN of the enrichment resource.</p>
-    ///   - [`enrichment_parameters(Option<PipeEnrichmentParameters>)`](crate::output::DescribePipeOutput::enrichment_parameters): <p>The parameters required to set up enrichment on your pipe.</p>
-    ///   - [`target(Option<String>)`](crate::output::DescribePipeOutput::target): <p>The ARN of the target resource.</p>
-    ///   - [`target_parameters(Option<PipeTargetParameters>)`](crate::output::DescribePipeOutput::target_parameters): <p>The parameters required to set up a target for your pipe.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribePipeOutput::role_arn): <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePipeOutput::tags): <p>The list of key-value pairs to associate with the pipe.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePipeOutput::creation_time): <p>The time the pipe was created.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    /// - On failure, responds with [`SdkError<DescribePipeError>`](crate::error::DescribePipeError)
-    pub fn describe_pipe(&self) -> fluent_builders::DescribePipe {
-        fluent_builders::DescribePipe::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPipes`](crate::client::fluent_builders::ListPipes) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipes::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPipes::name_prefix) / [`set_name_prefix(Option<String>)`](crate::client::fluent_builders::ListPipes::set_name_prefix): <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-    ///   - [`desired_state(RequestedPipeState)`](crate::client::fluent_builders::ListPipes::desired_state) / [`set_desired_state(Option<RequestedPipeState>)`](crate::client::fluent_builders::ListPipes::set_desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(PipeState)`](crate::client::fluent_builders::ListPipes::current_state) / [`set_current_state(Option<PipeState>)`](crate::client::fluent_builders::ListPipes::set_current_state): <p>The state the pipe is in.</p>
-    ///   - [`source_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPipes::source_prefix) / [`set_source_prefix(Option<String>)`](crate::client::fluent_builders::ListPipes::set_source_prefix): <p>The prefix matching the pipe source.</p>
-    ///   - [`target_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPipes::target_prefix) / [`set_target_prefix(Option<String>)`](crate::client::fluent_builders::ListPipes::set_target_prefix): <p>The prefix matching the pipe target.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipes::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    ///   - [`limit(i32)`](crate::client::fluent_builders::ListPipes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListPipes::set_limit): <p>The maximum number of pipes to include in the response.</p>
-    /// - On success, responds with [`ListPipesOutput`](crate::output::ListPipesOutput) with field(s):
-    ///   - [`pipes(Option<Vec<Pipe>>)`](crate::output::ListPipesOutput::pipes): <p>The pipes returned by the call.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPipesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    /// - On failure, responds with [`SdkError<ListPipesError>`](crate::error::ListPipesError)
-    pub fn list_pipes(&self) -> fluent_builders::ListPipes {
-        fluent_builders::ListPipes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the pipe for which you want to view tags.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of key-value pairs to associate with the pipe.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartPipe`](crate::client::fluent_builders::StartPipe) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartPipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartPipe::set_name): <p>The name of the pipe.</p>
-    /// - On success, responds with [`StartPipeOutput`](crate::output::StartPipeOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::StartPipeOutput::arn): <p>The ARN of the pipe.</p>
-    ///   - [`name(Option<String>)`](crate::output::StartPipeOutput::name): <p>The name of the pipe.</p>
-    ///   - [`desired_state(Option<RequestedPipeState>)`](crate::output::StartPipeOutput::desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(Option<PipeState>)`](crate::output::StartPipeOutput::current_state): <p>The state the pipe is in.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::StartPipeOutput::creation_time): <p>The time the pipe was created.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::StartPipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    /// - On failure, responds with [`SdkError<StartPipeError>`](crate::error::StartPipeError)
-    pub fn start_pipe(&self) -> fluent_builders::StartPipe {
-        fluent_builders::StartPipe::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopPipe`](crate::client::fluent_builders::StopPipe) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopPipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopPipe::set_name): <p>The name of the pipe.</p>
-    /// - On success, responds with [`StopPipeOutput`](crate::output::StopPipeOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::StopPipeOutput::arn): <p>The ARN of the pipe.</p>
-    ///   - [`name(Option<String>)`](crate::output::StopPipeOutput::name): <p>The name of the pipe.</p>
-    ///   - [`desired_state(Option<RequestedPipeState>)`](crate::output::StopPipeOutput::desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(Option<PipeState>)`](crate::output::StopPipeOutput::current_state): <p>The state the pipe is in.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::StopPipeOutput::creation_time): <p>The time the pipe was created.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::StopPipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    /// - On failure, responds with [`SdkError<StopPipeError>`](crate::error::StopPipeError)
-    pub fn stop_pipe(&self) -> fluent_builders::StopPipe {
-        fluent_builders::StopPipe::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the pipe.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs associated with the pipe.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the pipe.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the pipe.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePipe`](crate::client::fluent_builders::UpdatePipe) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdatePipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdatePipe::set_name): <p>The name of the pipe.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePipe::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePipe::set_description): <p>A description of the pipe.</p>
-    ///   - [`desired_state(RequestedPipeState)`](crate::client::fluent_builders::UpdatePipe::desired_state) / [`set_desired_state(Option<RequestedPipeState>)`](crate::client::fluent_builders::UpdatePipe::set_desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`source_parameters(UpdatePipeSourceParameters)`](crate::client::fluent_builders::UpdatePipe::source_parameters) / [`set_source_parameters(Option<UpdatePipeSourceParameters>)`](crate::client::fluent_builders::UpdatePipe::set_source_parameters): <p>The parameters required to set up a source for your pipe.</p>
-    ///   - [`enrichment(impl Into<String>)`](crate::client::fluent_builders::UpdatePipe::enrichment) / [`set_enrichment(Option<String>)`](crate::client::fluent_builders::UpdatePipe::set_enrichment): <p>The ARN of the enrichment resource.</p>
-    ///   - [`enrichment_parameters(PipeEnrichmentParameters)`](crate::client::fluent_builders::UpdatePipe::enrichment_parameters) / [`set_enrichment_parameters(Option<PipeEnrichmentParameters>)`](crate::client::fluent_builders::UpdatePipe::set_enrichment_parameters): <p>The parameters required to set up enrichment on your pipe.</p>
-    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::UpdatePipe::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::UpdatePipe::set_target): <p>The ARN of the target resource.</p>
-    ///   - [`target_parameters(PipeTargetParameters)`](crate::client::fluent_builders::UpdatePipe::target_parameters) / [`set_target_parameters(Option<PipeTargetParameters>)`](crate::client::fluent_builders::UpdatePipe::set_target_parameters): <p>The parameters required to set up a target for your pipe.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePipe::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdatePipe::set_role_arn): <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    /// - On success, responds with [`UpdatePipeOutput`](crate::output::UpdatePipeOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdatePipeOutput::arn): <p>The ARN of the pipe.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdatePipeOutput::name): <p>The name of the pipe.</p>
-    ///   - [`desired_state(Option<RequestedPipeState>)`](crate::output::UpdatePipeOutput::desired_state): <p>The state the pipe should be in.</p>
-    ///   - [`current_state(Option<PipeState>)`](crate::output::UpdatePipeOutput::current_state): <p>The state the pipe is in.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdatePipeOutput::creation_time): <p>The time the pipe was created.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdatePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    /// - On failure, responds with [`SdkError<UpdatePipeError>`](crate::error::UpdatePipeError)
-    pub fn update_pipe(&self) -> fluent_builders::UpdatePipe {
-        fluent_builders::UpdatePipe::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreatePipe`.
-    ///
-    /// <p>Create a pipe. Amazon EventBridge Pipes connect event sources to targets and reduces the need for specialized knowledge and integration code.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreatePipe {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_pipe_input::Builder,
-    }
-    impl CreatePipe {
-        /// Creates a new `CreatePipe`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreatePipe,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreatePipeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreatePipeOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreatePipeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A description of the pipe.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description of the pipe.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The state the pipe should be in.</p>
-        pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
-            self.inner = self.inner.desired_state(input);
-            self
-        }
-        /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.inner = self.inner.set_desired_state(input);
-            self
-        }
-        /// <p>The ARN of the source resource.</p>
-        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(input.into());
-            self
-        }
-        /// <p>The ARN of the source resource.</p>
-        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source(input);
-            self
-        }
-        /// <p>The parameters required to set up a source for your pipe.</p>
-        pub fn source_parameters(mut self, input: crate::model::PipeSourceParameters) -> Self {
-            self.inner = self.inner.source_parameters(input);
-            self
-        }
-        /// <p>The parameters required to set up a source for your pipe.</p>
-        pub fn set_source_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_source_parameters(input);
-            self
-        }
-        /// <p>The ARN of the enrichment resource.</p>
-        pub fn enrichment(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enrichment(input.into());
-            self
-        }
-        /// <p>The ARN of the enrichment resource.</p>
-        pub fn set_enrichment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_enrichment(input);
-            self
-        }
-        /// <p>The parameters required to set up enrichment on your pipe.</p>
-        pub fn enrichment_parameters(
-            mut self,
-            input: crate::model::PipeEnrichmentParameters,
-        ) -> Self {
-            self.inner = self.inner.enrichment_parameters(input);
-            self
-        }
-        /// <p>The parameters required to set up enrichment on your pipe.</p>
-        pub fn set_enrichment_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeEnrichmentParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_enrichment_parameters(input);
-            self
-        }
-        /// <p>The ARN of the target resource.</p>
-        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(input.into());
-            self
-        }
-        /// <p>The ARN of the target resource.</p>
-        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target(input);
-            self
-        }
-        /// <p>The parameters required to set up a target for your pipe.</p>
-        pub fn target_parameters(mut self, input: crate::model::PipeTargetParameters) -> Self {
-            self.inner = self.inner.target_parameters(input);
-            self
-        }
-        /// <p>The parameters required to set up a target for your pipe.</p>
-        pub fn set_target_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_target_parameters(input);
-            self
-        }
-        /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The list of key-value pairs to associate with the pipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The list of key-value pairs to associate with the pipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeletePipe`.
-    ///
-    /// <p>Delete an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeletePipe {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_pipe_input::Builder,
-    }
-    impl DeletePipe {
-        /// Creates a new `DeletePipe`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeletePipe,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeletePipeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeletePipeOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeletePipeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribePipe`.
-    ///
-    /// <p>Get the information about an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribePipe {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_pipe_input::Builder,
-    }
-    impl DescribePipe {
-        /// Creates a new `DescribePipe`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribePipe,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribePipeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribePipeOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribePipeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListPipes`.
-    ///
-    /// <p>Get the pipes associated with this account. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListPipes {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_pipes_input::Builder,
-    }
-    impl ListPipes {
-        /// Creates a new `ListPipes`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListPipes,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListPipesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListPipesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListPipesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListPipesPaginator {
-            crate::paginator::ListPipesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(input.into());
-            self
-        }
-        /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-        pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_prefix(input);
-            self
-        }
-        /// <p>The state the pipe should be in.</p>
-        pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
-            self.inner = self.inner.desired_state(input);
-            self
-        }
-        /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.inner = self.inner.set_desired_state(input);
-            self
-        }
-        /// <p>The state the pipe is in.</p>
-        pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
-            self.inner = self.inner.current_state(input);
-            self
-        }
-        /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.inner = self.inner.set_current_state(input);
-            self
-        }
-        /// <p>The prefix matching the pipe source.</p>
-        pub fn source_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_prefix(input.into());
-            self
-        }
-        /// <p>The prefix matching the pipe source.</p>
-        pub fn set_source_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_source_prefix(input);
-            self
-        }
-        /// <p>The prefix matching the pipe target.</p>
-        pub fn target_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_prefix(input.into());
-            self
-        }
-        /// <p>The prefix matching the pipe target.</p>
-        pub fn set_target_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_target_prefix(input);
-            self
-        }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of pipes to include in the response.</p>
-        pub fn limit(mut self, input: i32) -> Self {
-            self.inner = self.inner.limit(input);
-            self
-        }
-        /// <p>The maximum number of pipes to include in the response.</p>
-        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Displays the tags associated with a pipe.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the pipe for which you want to view tags.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the pipe for which you want to view tags.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartPipe`.
-    ///
-    /// <p>Start an existing pipe.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartPipe {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::start_pipe_input::Builder,
-    }
-    impl StartPipe {
-        /// Creates a new `StartPipe`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::StartPipe,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::StartPipeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::StartPipeOutput,
-            aws_smithy_http::result::SdkError<crate::error::StartPipeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopPipe`.
-    ///
-    /// <p>Stop an existing pipe.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopPipe {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::stop_pipe_input::Builder,
-    }
-    impl StopPipe {
-        /// Creates a new `StopPipe`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::StopPipe,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::StopPipeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::StopPipeOutput,
-            aws_smithy_http::result::SdkError<crate::error::StopPipeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified pipe. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
-    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with a pipe that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the pipe. If you specify a tag key that is already associated with the pipe, the new tag value that you specify replaces the previous value for that tag.</p>
-    /// <p>You can associate as many as 50 tags with a pipe.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the pipe.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the pipe.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The list of key-value pairs associated with the pipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The list of key-value pairs associated with the pipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes one or more tags from the specified pipes.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the pipe.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the pipe.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The list of tag keys to remove from the pipe.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The list of tag keys to remove from the pipe.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdatePipe`.
-    ///
-    /// <p>Update an existing pipe. When you call <code>UpdatePipe</code>, only the fields that are included in the request are changed, the rest are unchanged. The exception to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. The fields in these objects are updated atomically as one and override existing values. This is by design and means that if you don't specify an optional field in one of these Parameters objects, that field will be set to its system-default value after the update.</p>
-    /// <p>For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"> Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdatePipe {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_pipe_input::Builder,
-    }
-    impl UpdatePipe {
-        /// Creates a new `UpdatePipe`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdatePipe,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdatePipeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdatePipeOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdatePipeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the pipe.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A description of the pipe.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description of the pipe.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The state the pipe should be in.</p>
-        pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
-            self.inner = self.inner.desired_state(input);
-            self
-        }
-        /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.inner = self.inner.set_desired_state(input);
-            self
-        }
-        /// <p>The parameters required to set up a source for your pipe.</p>
-        pub fn source_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceParameters,
-        ) -> Self {
-            self.inner = self.inner.source_parameters(input);
-            self
-        }
-        /// <p>The parameters required to set up a source for your pipe.</p>
-        pub fn set_source_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_source_parameters(input);
-            self
-        }
-        /// <p>The ARN of the enrichment resource.</p>
-        pub fn enrichment(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enrichment(input.into());
-            self
-        }
-        /// <p>The ARN of the enrichment resource.</p>
-        pub fn set_enrichment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_enrichment(input);
-            self
-        }
-        /// <p>The parameters required to set up enrichment on your pipe.</p>
-        pub fn enrichment_parameters(
-            mut self,
-            input: crate::model::PipeEnrichmentParameters,
-        ) -> Self {
-            self.inner = self.inner.enrichment_parameters(input);
-            self
-        }
-        /// <p>The parameters required to set up enrichment on your pipe.</p>
-        pub fn set_enrichment_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeEnrichmentParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_enrichment_parameters(input);
-            self
-        }
-        /// <p>The ARN of the target resource.</p>
-        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(input.into());
-            self
-        }
-        /// <p>The ARN of the target resource.</p>
-        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target(input);
-            self
-        }
-        /// <p>The parameters required to set up a target for your pipe.</p>
-        pub fn target_parameters(mut self, input: crate::model::PipeTargetParameters) -> Self {
-            self.inner = self.inner.target_parameters(input);
-            self
-        }
-        /// <p>The parameters required to set up a target for your pipe.</p>
-        pub fn set_target_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_target_parameters(input);
-            self
-        }
-        /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
     }
 }
 
@@ -1420,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1430,3 +211,51 @@ impl Client {
         }
     }
 }
+
+mod create_pipe;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_pipes::Error> {
+/// # let client: aws_sdk_pipes::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.list_tags_for_resource()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_pipe;
+
+mod describe_pipe;
+
+mod list_pipes;
+
+mod list_tags_for_resource;
+
+mod start_pipe;
+
+mod stop_pipe;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_pipe;

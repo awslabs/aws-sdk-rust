@@ -17,7 +17,8 @@ use crate::provider_config::ProviderConfig;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_sdk_sso::middleware::DefaultMiddleware as SsoMiddleware;
-use aws_sdk_sso::model::RoleCredentials;
+use aws_sdk_sso::operation::get_role_credentials::GetRoleCredentialsInput;
+use aws_sdk_sso::types::RoleCredentials;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_json::deserialize::Token;
 use aws_smithy_types::date_time::Format;
@@ -211,7 +212,7 @@ async fn load_sso_credentials(
     let config = aws_sdk_sso::Config::builder()
         .region(sso_config.region.clone())
         .build();
-    let operation = aws_sdk_sso::operation::GetRoleCredentials::builder()
+    let operation = GetRoleCredentialsInput::builder()
         .role_name(&sso_config.role_name)
         .access_token(&*token.access_token)
         .account_id(&sso_config.account_id)

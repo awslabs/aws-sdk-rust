@@ -9,7 +9,7 @@ use std::iter::FromIterator;
 use tokio_stream::StreamExt;
 
 use aws_credential_types::Credentials;
-use aws_sdk_dynamodb::model::AttributeValue;
+use aws_sdk_dynamodb::types::AttributeValue;
 use aws_sdk_dynamodb::{Client, Config};
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_client::test_connection::{capture_request, TestConnection};

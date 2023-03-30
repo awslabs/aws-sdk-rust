@@ -7,7 +7,7 @@ allowed_external_types = [
    "aws_credential_types::provider::ProvideCredentials",
    "aws_credential_types::provider::Result",
    "aws_credential_types::provider::SharedCredentialsProvider",
-   "aws_sdk_sts::model::PolicyDescriptorType",
+   "aws_sdk_sts::types::_policy_descriptor_type::PolicyDescriptorType",
    "aws_smithy_async::rt::sleep::AsyncSleep",
    "aws_smithy_client::bounds::SmithyConnector",
    "aws_smithy_client::erase::DynConnector",
@@ -28,9 +28,6 @@ allowed_external_types = [
    "http::response::Response",
    "http::uri::Uri",
    "tower_service::Service",
-
-   # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if `InvalidUri` should be exposed
-   "http::uri::InvalidUri",
 
    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if the following should be exposed
    "hyper::client::connect::Connection",

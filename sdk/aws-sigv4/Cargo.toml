@@ -5,7 +5,7 @@ harness = false
 
 [package]
 name = "aws-sigv4"
-version = "0.54.1"
+version = "0.55.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
 description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2021"
@@ -34,11 +34,11 @@ sha2 = "0.10"
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
 optional = true
-version = "0.54.1"
+version = "0.55.0"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.54.1"
+version = "0.55.0"
 
 [dependencies.bytes]
 version = "1"
@@ -60,7 +60,7 @@ optional = true
 criterion = "0.4"
 bytes = "1"
 httparse = "1.5"
-pretty_assertions = "1.0"
+pretty_assertions = "1.3"
 proptest = "1"
 
 [dev-dependencies.time]

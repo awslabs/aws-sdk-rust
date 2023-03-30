@@ -103,7 +103,7 @@ mod tests {
     use super::ProfileFileAppNameProvider;
     use crate::provider_config::ProviderConfig;
     use crate::test_case::no_traffic_connector;
-    use aws_sdk_sts::AppName;
+    use aws_sdk_sts::config::AppName;
     use aws_types::os_shim_internal::{Env, Fs};
     use tracing_test::traced_test;
 

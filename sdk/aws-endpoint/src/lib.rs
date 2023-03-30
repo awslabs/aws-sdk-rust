@@ -3,83 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::collections::HashMap;
+#![allow(clippy::derive_partial_eq_without_eq)]
+
 use std::error::Error;
 use std::fmt;
-use std::sync::Arc;
 
-use aws_smithy_http::endpoint::error::ResolveEndpointError;
-use aws_smithy_http::endpoint::ResolveEndpoint;
 use aws_smithy_http::middleware::MapRequest;
 use aws_smithy_http::operation::Request;
 use aws_smithy_types::endpoint::Endpoint as SmithyEndpoint;
 use aws_smithy_types::Document;
 
-pub use aws_types::endpoint::{AwsEndpoint, BoxError, CredentialScope, ResolveAwsEndpoint};
 use aws_types::region::{Region, SigningRegion};
 use aws_types::SigningService;
-
-#[doc(hidden)]
-pub struct Params {
-    region: Option<Region>,
-}
-
-impl Params {
-    pub fn new(region: Option<Region>) -> Self {
-        Self { region }
-    }
-}
-
-#[doc(hidden)]
-pub struct EndpointShim(Arc<dyn ResolveAwsEndpoint>);
-impl EndpointShim {
-    pub fn from_resolver(resolver: impl ResolveAwsEndpoint + 'static) -> Self {
-        Self(Arc::new(resolver))
-    }
-
-    pub fn from_arc(arc: Arc<dyn ResolveAwsEndpoint>) -> Self {
-        Self(arc)
-    }
-}
-
-impl<T> ResolveEndpoint<T> for EndpointShim
-where
-    T: Clone + Into<Params>,
-{
-    fn resolve_endpoint(&self, params: &T) -> Result<SmithyEndpoint, ResolveEndpointError> {
-        let params: Params = params.clone().into();
-        let aws_endpoint = self
-            .0
-            .resolve_endpoint(
-                params
-                    .region
-                    .as_ref()
-                    .ok_or_else(|| ResolveEndpointError::message("no region in params"))?,
-            )
-            .map_err(|err| {
-                ResolveEndpointError::message("failure resolving endpoint").with_source(Some(err))
-            })?;
-        let uri = aws_endpoint.endpoint().uri();
-        let mut auth_scheme =
-            HashMap::from([("name".to_string(), Document::String("sigv4".into()))]);
-        if let Some(region) = aws_endpoint.credential_scope().region() {
-            auth_scheme.insert(
-                "signingRegion".to_string(),
-                region.as_ref().to_string().into(),
-            );
-        }
-        if let Some(service) = aws_endpoint.credential_scope().service() {
-            auth_scheme.insert(
-                "signingName".to_string(),
-                service.as_ref().to_string().into(),
-            );
-        }
-        Ok(SmithyEndpoint::builder()
-            .url(uri.to_string())
-            .property("authSchemes", vec![Document::Object(auth_scheme)])
-            .build())
-    }
-}
 
 /// Middleware Stage to add authentication information from a Smithy endpoint into the property bag
 ///
@@ -93,7 +28,7 @@ pub struct AwsAuthStage;
 #[derive(Debug)]
 enum AwsAuthStageErrorKind {
     NoEndpointResolver,
-    EndpointResolutionError(BoxError),
+    EndpointResolutionError(Box<dyn Error + Send + Sync>),
 }
 
 #[derive(Debug)]
@@ -270,7 +205,7 @@ mod test {
         let mut req = operation::Request::new(req);
         {
             let mut props = req.properties_mut();
-            props.insert(region.clone());
+            props.insert(region);
             props.insert(SigningService::from_static("qldb"));
             props.insert(endpoint);
         };

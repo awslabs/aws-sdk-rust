@@ -2265,7 +2265,7 @@ out })
                 crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector)
             {
                 #[allow(unused_variables)]
-                if let Some(arn_type) = bucket_arn.resource_id().get(0).cloned() {
+                if let Some(arn_type) = bucket_arn.resource_id().first().cloned() {
                     if !((arn_type) == ("")) {
                         if (bucket_arn.service()) == ("s3-object-lambda") {
                             if (arn_type) == ("accesspoint") {

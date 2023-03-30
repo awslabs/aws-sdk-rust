@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on FinSpace User Environment Management service. Each operation on FinSpace User Environment Management service is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_finspace::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_finspace::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_finspace::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_finspace::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_finspace::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateEnvironment`](crate::operation::create_environment) operation has
+/// a [`Client::create_environment`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.create_environment()
+///     .name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,925 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The name of the FinSpace environment to be created.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>The description of the FinSpace environment to be created.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_kms_key_id): <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>Add tags to your FinSpace environment.</p>
-    ///   - [`federation_mode(FederationMode)`](crate::client::fluent_builders::CreateEnvironment::federation_mode) / [`set_federation_mode(Option<FederationMode>)`](crate::client::fluent_builders::CreateEnvironment::set_federation_mode): <p>Authentication mode for the environment.</p>  <ul>   <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>   <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>  </ul>
-    ///   - [`federation_parameters(FederationParameters)`](crate::client::fluent_builders::CreateEnvironment::federation_parameters) / [`set_federation_parameters(Option<FederationParameters>)`](crate::client::fluent_builders::CreateEnvironment::set_federation_parameters): <p>Configuration information when authentication mode is FEDERATED.</p>
-    ///   - [`superuser_parameters(SuperuserParameters)`](crate::client::fluent_builders::CreateEnvironment::superuser_parameters) / [`set_superuser_parameters(Option<SuperuserParameters>)`](crate::client::fluent_builders::CreateEnvironment::set_superuser_parameters): <p>Configuration information for the superuser.</p>
-    ///   - [`data_bundles(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::data_bundles) / [`set_data_bundles(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_data_bundles): <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>  <ul>   <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>   <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>  </ul>
-    /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The unique identifier for FinSpace environment that you created.</p>
-    ///   - [`environment_arn(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-    ///   - [`environment_url(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_url): <p>The sign-in url for the web application of the FinSpace environment you created.</p>
-    /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
-    pub fn create_environment(&self) -> fluent_builders::CreateEnvironment {
-        fluent_builders::CreateEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_environment_id): <p>The identifier for the FinSpace environment.</p>
-    /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
-    pub fn delete_environment(&self) -> fluent_builders::DeleteEnvironment {
-        fluent_builders::DeleteEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_environment_id): <p>The identifier of the FinSpace environment.</p>
-    /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
-    ///   - [`environment(Option<Environment>)`](crate::output::GetEnvironmentOutput::environment): <p>The name of the FinSpace environment.</p>
-    /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
-    pub fn get_environment(&self) -> fluent_builders::GetEnvironment {
-        fluent_builders::GetEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of results to return in this request.</p>
-    /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
-    ///   - [`environments(Option<Vec<Environment>>)`](crate::output::ListEnvironmentsOutput::environments): <p>A list of all of your FinSpace environments.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
-    pub fn list_environments(&self) -> fluent_builders::ListEnvironments {
-        fluent_builders::ListEnvironments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of all tags for a resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags to be assigned to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys (names) of one or more tags to be removed.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_id): <p>The identifier of the FinSpace environment.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_name): <p>The name of the environment.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_description): <p>The description of the environment.</p>
-    ///   - [`federation_mode(FederationMode)`](crate::client::fluent_builders::UpdateEnvironment::federation_mode) / [`set_federation_mode(Option<FederationMode>)`](crate::client::fluent_builders::UpdateEnvironment::set_federation_mode): <p>Authentication mode for the environment.</p>  <ul>   <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>   <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>  </ul>
-    ///   - [`federation_parameters(FederationParameters)`](crate::client::fluent_builders::UpdateEnvironment::federation_parameters) / [`set_federation_parameters(Option<FederationParameters>)`](crate::client::fluent_builders::UpdateEnvironment::set_federation_parameters): <p>Configuration information when authentication mode is FEDERATED.</p>
-    /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
-    ///   - [`environment(Option<Environment>)`](crate::output::UpdateEnvironmentOutput::environment): <p>Returns the FinSpace environment object.</p>
-    /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
-    pub fn update_environment(&self) -> fluent_builders::UpdateEnvironment {
-        fluent_builders::UpdateEnvironment::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateEnvironment`.
-    ///
-    /// <p>Create a new FinSpace environment.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateEnvironment {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_environment_input::Builder,
-    }
-    impl CreateEnvironment {
-        /// Creates a new `CreateEnvironment`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateEnvironment,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateEnvironmentError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateEnvironmentOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateEnvironmentError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the FinSpace environment to be created.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the FinSpace environment to be created.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the FinSpace environment to be created.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the FinSpace environment to be created.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(input.into());
-            self
-        }
-        /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Add tags to your FinSpace environment.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>Add tags to your FinSpace environment.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
-        /// </ul>
-        pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
-            self.inner = self.inner.federation_mode(input);
-            self
-        }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
-        /// </ul>
-        pub fn set_federation_mode(
-            mut self,
-            input: std::option::Option<crate::model::FederationMode>,
-        ) -> Self {
-            self.inner = self.inner.set_federation_mode(input);
-            self
-        }
-        /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn federation_parameters(mut self, input: crate::model::FederationParameters) -> Self {
-            self.inner = self.inner.federation_parameters(input);
-            self
-        }
-        /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn set_federation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::FederationParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_federation_parameters(input);
-            self
-        }
-        /// <p>Configuration information for the superuser.</p>
-        pub fn superuser_parameters(mut self, input: crate::model::SuperuserParameters) -> Self {
-            self.inner = self.inner.superuser_parameters(input);
-            self
-        }
-        /// <p>Configuration information for the superuser.</p>
-        pub fn set_superuser_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SuperuserParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_superuser_parameters(input);
-            self
-        }
-        /// Appends an item to `dataBundles`.
-        ///
-        /// To override the contents of this collection use [`set_data_bundles`](Self::set_data_bundles).
-        ///
-        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
-        /// <ul>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
-        /// </ul>
-        pub fn data_bundles(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_bundles(input.into());
-            self
-        }
-        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
-        /// <ul>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
-        /// </ul>
-        pub fn set_data_bundles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_data_bundles(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteEnvironment`.
-    ///
-    /// <p>Delete an FinSpace environment.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteEnvironment {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_environment_input::Builder,
-    }
-    impl DeleteEnvironment {
-        /// Creates a new `DeleteEnvironment`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteEnvironment,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteEnvironmentError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteEnvironmentOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteEnvironmentError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier for the FinSpace environment.</p>
-        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(input.into());
-            self
-        }
-        /// <p>The identifier for the FinSpace environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_environment_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetEnvironment`.
-    ///
-    /// <p>Returns the FinSpace environment object.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetEnvironment {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_environment_input::Builder,
-    }
-    impl GetEnvironment {
-        /// Creates a new `GetEnvironment`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetEnvironment,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetEnvironmentError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetEnvironmentOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetEnvironmentError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the FinSpace environment.</p>
-        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(input.into());
-            self
-        }
-        /// <p>The identifier of the FinSpace environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_environment_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListEnvironments`.
-    ///
-    /// <p>A list of all of your FinSpace environments.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListEnvironments {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_environments_input::Builder,
-    }
-    impl ListEnvironments {
-        /// Creates a new `ListEnvironments`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListEnvironments,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListEnvironmentsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListEnvironmentsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListEnvironmentsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in this request.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>A list of all tags for a resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Adds metadata tags to a FinSpace resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes metadata tags from a FinSpace resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The tag keys (names) of one or more tags to be removed.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The tag keys (names) of one or more tags to be removed.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateEnvironment`.
-    ///
-    /// <p>Update your FinSpace environment.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateEnvironment {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_environment_input::Builder,
-    }
-    impl UpdateEnvironment {
-        /// Creates a new `UpdateEnvironment`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateEnvironment,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateEnvironmentError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateEnvironmentOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateEnvironmentError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the FinSpace environment.</p>
-        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(input.into());
-            self
-        }
-        /// <p>The identifier of the FinSpace environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_environment_id(input);
-            self
-        }
-        /// <p>The name of the environment.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the environment.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the environment.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the environment.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
-        /// </ul>
-        pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
-            self.inner = self.inner.federation_mode(input);
-            self
-        }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
-        /// </ul>
-        pub fn set_federation_mode(
-            mut self,
-            input: std::option::Option<crate::model::FederationMode>,
-        ) -> Self {
-            self.inner = self.inner.set_federation_mode(input);
-            self
-        }
-        /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn federation_parameters(mut self, input: crate::model::FederationParameters) -> Self {
-            self.inner = self.inner.federation_parameters(input);
-            self
-        }
-        /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn set_federation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::FederationParameters>,
-        ) -> Self {
-            self.inner = self.inner.set_federation_parameters(input);
-            self
-        }
     }
 }
 
@@ -1083,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1093,3 +211,47 @@ impl Client {
         }
     }
 }
+
+mod create_environment;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_finspace::Error> {
+/// # let client: aws_sdk_finspace::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.create_environment()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_environment;
+
+mod get_environment;
+
+mod list_environments;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_environment;

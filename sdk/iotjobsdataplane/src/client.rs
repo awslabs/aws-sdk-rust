@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS IoT Jobs Data Plane. Each operation on AWS IoT Jobs Data Plane is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_iotjobsdataplane::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_iotjobsdataplane::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_iotjobsdataplane::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_iotjobsdataplane::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_iotjobsdataplane::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DescribeJobExecution`](crate::operation::describe_job_execution) operation has
+/// a [`Client::describe_job_execution`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.describe_job_execution()
+///     .job_id("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,524 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`DescribeJobExecution`](crate::client::fluent_builders::DescribeJobExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJobExecution::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJobExecution::set_job_id): <p>The unique identifier assigned to this job when it was created.</p>
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DescribeJobExecution::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DescribeJobExecution::set_thing_name): <p>The thing name associated with the device the job execution is running on.</p>
-    ///   - [`include_job_document(bool)`](crate::client::fluent_builders::DescribeJobExecution::include_job_document) / [`set_include_job_document(Option<bool>)`](crate::client::fluent_builders::DescribeJobExecution::set_include_job_document): <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-    ///   - [`execution_number(i64)`](crate::client::fluent_builders::DescribeJobExecution::execution_number) / [`set_execution_number(Option<i64>)`](crate::client::fluent_builders::DescribeJobExecution::set_execution_number): <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
-    /// - On success, responds with [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput) with field(s):
-    ///   - [`execution(Option<JobExecution>)`](crate::output::DescribeJobExecutionOutput::execution): <p>Contains data about a job execution.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobExecutionError>`](crate::error::DescribeJobExecutionError)
-    pub fn describe_job_execution(&self) -> fluent_builders::DescribeJobExecution {
-        fluent_builders::DescribeJobExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPendingJobExecutions`](crate::client::fluent_builders::GetPendingJobExecutions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::GetPendingJobExecutions::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::GetPendingJobExecutions::set_thing_name): <p>The name of the thing that is executing the job.</p>
-    /// - On success, responds with [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput) with field(s):
-    ///   - [`in_progress_jobs(Option<Vec<JobExecutionSummary>>)`](crate::output::GetPendingJobExecutionsOutput::in_progress_jobs): <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    ///   - [`queued_jobs(Option<Vec<JobExecutionSummary>>)`](crate::output::GetPendingJobExecutionsOutput::queued_jobs): <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    /// - On failure, responds with [`SdkError<GetPendingJobExecutionsError>`](crate::error::GetPendingJobExecutionsError)
-    pub fn get_pending_job_executions(&self) -> fluent_builders::GetPendingJobExecutions {
-        fluent_builders::GetPendingJobExecutions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartNextPendingJobExecution`](crate::client::fluent_builders::StartNextPendingJobExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::StartNextPendingJobExecution::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::StartNextPendingJobExecution::set_thing_name): <p>The name of the thing associated with the device.</p>
-    ///   - [`status_details(HashMap<String, String>)`](crate::client::fluent_builders::StartNextPendingJobExecution::status_details) / [`set_status_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartNextPendingJobExecution::set_status_details): <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    ///   - [`step_timeout_in_minutes(i64)`](crate::client::fluent_builders::StartNextPendingJobExecution::step_timeout_in_minutes) / [`set_step_timeout_in_minutes(Option<i64>)`](crate::client::fluent_builders::StartNextPendingJobExecution::set_step_timeout_in_minutes): <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-    /// - On success, responds with [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput) with field(s):
-    ///   - [`execution(Option<JobExecution>)`](crate::output::StartNextPendingJobExecutionOutput::execution): <p>A JobExecution object.</p>
-    /// - On failure, responds with [`SdkError<StartNextPendingJobExecutionError>`](crate::error::StartNextPendingJobExecutionError)
-    pub fn start_next_pending_job_execution(
-        &self,
-    ) -> fluent_builders::StartNextPendingJobExecution {
-        fluent_builders::StartNextPendingJobExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateJobExecution`](crate::client::fluent_builders::UpdateJobExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJobExecution::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::UpdateJobExecution::set_job_id): <p>The unique identifier assigned to this job when it was created.</p>
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::UpdateJobExecution::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::UpdateJobExecution::set_thing_name): <p>The name of the thing associated with the device.</p>
-    ///   - [`status(JobExecutionStatus)`](crate::client::fluent_builders::UpdateJobExecution::status) / [`set_status(Option<JobExecutionStatus>)`](crate::client::fluent_builders::UpdateJobExecution::set_status): <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
-    ///   - [`status_details(HashMap<String, String>)`](crate::client::fluent_builders::UpdateJobExecution::status_details) / [`set_status_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateJobExecution::set_status_details): <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    ///   - [`step_timeout_in_minutes(i64)`](crate::client::fluent_builders::UpdateJobExecution::step_timeout_in_minutes) / [`set_step_timeout_in_minutes(Option<i64>)`](crate::client::fluent_builders::UpdateJobExecution::set_step_timeout_in_minutes): <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateJobExecution::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateJobExecution::set_expected_version): <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
-    ///   - [`include_job_execution_state(bool)`](crate::client::fluent_builders::UpdateJobExecution::include_job_execution_state) / [`set_include_job_execution_state(Option<bool>)`](crate::client::fluent_builders::UpdateJobExecution::set_include_job_execution_state): <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
-    ///   - [`include_job_document(bool)`](crate::client::fluent_builders::UpdateJobExecution::include_job_document) / [`set_include_job_document(Option<bool>)`](crate::client::fluent_builders::UpdateJobExecution::set_include_job_document): <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-    ///   - [`execution_number(i64)`](crate::client::fluent_builders::UpdateJobExecution::execution_number) / [`set_execution_number(Option<i64>)`](crate::client::fluent_builders::UpdateJobExecution::set_execution_number): <p>Optional. A number that identifies a particular job execution on a particular device.</p>
-    /// - On success, responds with [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput) with field(s):
-    ///   - [`execution_state(Option<JobExecutionState>)`](crate::output::UpdateJobExecutionOutput::execution_state): <p>A JobExecutionState object.</p>
-    ///   - [`job_document(Option<String>)`](crate::output::UpdateJobExecutionOutput::job_document): <p>The contents of the Job Documents.</p>
-    /// - On failure, responds with [`SdkError<UpdateJobExecutionError>`](crate::error::UpdateJobExecutionError)
-    pub fn update_job_execution(&self) -> fluent_builders::UpdateJobExecution {
-        fluent_builders::UpdateJobExecution::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DescribeJobExecution`.
-    ///
-    /// <p>Gets details of a job execution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeJobExecution {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_job_execution_input::Builder,
-    }
-    impl DescribeJobExecution {
-        /// Creates a new `DescribeJobExecution`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeJobExecution,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeJobExecutionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeJobExecutionOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeJobExecutionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier assigned to this job when it was created.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The unique identifier assigned to this job when it was created.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-        /// <p>The thing name associated with the device the job execution is running on.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The thing name associated with the device the job execution is running on.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-        pub fn include_job_document(mut self, input: bool) -> Self {
-            self.inner = self.inner.include_job_document(input);
-            self
-        }
-        /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-        pub fn set_include_job_document(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_job_document(input);
-            self
-        }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
-        pub fn execution_number(mut self, input: i64) -> Self {
-            self.inner = self.inner.execution_number(input);
-            self
-        }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
-        pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_execution_number(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetPendingJobExecutions`.
-    ///
-    /// <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetPendingJobExecutions {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_pending_job_executions_input::Builder,
-    }
-    impl GetPendingJobExecutions {
-        /// Creates a new `GetPendingJobExecutions`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetPendingJobExecutions,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetPendingJobExecutionsOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the thing that is executing the job.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing that is executing the job.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartNextPendingJobExecution`.
-    ///
-    /// <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartNextPendingJobExecution {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::start_next_pending_job_execution_input::Builder,
-    }
-    impl StartNextPendingJobExecution {
-        /// Creates a new `StartNextPendingJobExecution`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::StartNextPendingJobExecution,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::StartNextPendingJobExecutionOutput,
-            aws_smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the thing associated with the device.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing associated with the device.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// Adds a key-value pair to `statusDetails`.
-        ///
-        /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
-        ///
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-        pub fn status_details(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.status_details(k.into(), v.into());
-            self
-        }
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_status_details(input);
-            self
-        }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-        pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
-            self.inner = self.inner.step_timeout_in_minutes(input);
-            self
-        }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-        pub fn set_step_timeout_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_step_timeout_in_minutes(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateJobExecution`.
-    ///
-    /// <p>Updates the status of a job execution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateJobExecution {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_job_execution_input::Builder,
-    }
-    impl UpdateJobExecution {
-        /// Creates a new `UpdateJobExecution`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateJobExecution,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateJobExecutionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateJobExecutionOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateJobExecutionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier assigned to this job when it was created.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The unique identifier assigned to this job when it was created.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-        /// <p>The name of the thing associated with the device.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing associated with the device.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
-        pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
-            self.inner = self.inner.status(input);
-            self
-        }
-        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::JobExecutionStatus>,
-        ) -> Self {
-            self.inner = self.inner.set_status(input);
-            self
-        }
-        /// Adds a key-value pair to `statusDetails`.
-        ///
-        /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
-        ///
-        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-        pub fn status_details(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.status_details(k.into(), v.into());
-            self
-        }
-        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_status_details(input);
-            self
-        }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-        pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
-            self.inner = self.inner.step_timeout_in_minutes(input);
-            self
-        }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-        pub fn set_step_timeout_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_step_timeout_in_minutes(input);
-            self
-        }
-        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
-        pub fn expected_version(mut self, input: i64) -> Self {
-            self.inner = self.inner.expected_version(input);
-            self
-        }
-        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
-        pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_expected_version(input);
-            self
-        }
-        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
-        pub fn include_job_execution_state(mut self, input: bool) -> Self {
-            self.inner = self.inner.include_job_execution_state(input);
-            self
-        }
-        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
-        pub fn set_include_job_execution_state(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_job_execution_state(input);
-            self
-        }
-        /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-        pub fn include_job_document(mut self, input: bool) -> Self {
-            self.inner = self.inner.include_job_document(input);
-            self
-        }
-        /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-        pub fn set_include_job_document(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_job_document(input);
-            self
-        }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>
-        pub fn execution_number(mut self, input: i64) -> Self {
-            self.inner = self.inner.execution_number(input);
-            self
-        }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>
-        pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_execution_number(input);
-            self
-        }
     }
 }
 
@@ -682,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -692,3 +211,39 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_iotjobsdataplane::Error> {
+/// # let client: aws_sdk_iotjobsdataplane::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.describe_job_execution()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod describe_job_execution;
+
+mod get_pending_job_executions;
+
+mod start_next_pending_job_execution;
+
+mod update_job_execution;

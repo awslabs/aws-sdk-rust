@@ -5,11 +5,12 @@
 
 use aws_config::retry::RetryConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_sdk_s3::model::{
+use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::types::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization,
 };
-use aws_sdk_s3::{Client, Config, Credentials, Region};
+use aws_sdk_s3::{Client, Config};
 use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_client::never::NeverConnector;

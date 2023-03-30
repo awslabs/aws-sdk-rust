@@ -917,7 +917,7 @@ pub(crate) mod test {
                 imds_request("http://169.254.169.254/latest/metadata", TOKEN_A),
                 http::Response::builder()
                     .status(200)
-                    .body(SdkBody::from(vec![0xA0 as u8, 0xA1 as u8]))
+                    .body(SdkBody::from(vec![0xA0, 0xA1]))
                     .unwrap(),
             ),
         ]);

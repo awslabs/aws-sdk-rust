@@ -29,7 +29,7 @@ impl<In, T, U, E> Clone for ArcCloneLayer<In, T, U, E> {
 
 impl<In, T, U, E> ArcCloneLayer<In, T, U, E> {
     /// Create a new [`BoxLayer`].
-    pub fn new<L>(inner_layer: L) -> Self
+    pub(crate) fn new<L>(inner_layer: L) -> Self
     where
         L: Layer<In> + Send + Sync + 'static,
         L::Service: Service<T, Response = U, Error = E> + Clone + Send + Sync + 'static,

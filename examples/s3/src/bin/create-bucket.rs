@@ -3,9 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#![allow(clippy::result_large_err)]
+
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_s3::model::{BucketLocationConstraint, CreateBucketConfiguration};
-use aws_sdk_s3::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_s3::error::SdkError;
+use aws_sdk_s3::operation::create_bucket::{CreateBucketError, CreateBucketOutput};
+use aws_sdk_s3::types::{BucketLocationConstraint, CreateBucketConfiguration};
+use aws_sdk_s3::{config::Region, meta::PKG_VERSION, Client, Error};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -25,7 +29,11 @@ struct Opt {
 
 // Creates a bucket.
 // snippet-start:[s3.rust.create-bucket]
-async fn make_bucket(client: &Client, bucket: &str, region: &str) -> Result<(), Error> {
+async fn make_bucket(
+    client: &Client,
+    bucket: &str,
+    region: &str,
+) -> Result<CreateBucketOutput, SdkError<CreateBucketError>> {
     let constraint = BucketLocationConstraint::from(region);
     let cfg = CreateBucketConfiguration::builder()
         .location_constraint(constraint)
@@ -36,12 +44,32 @@ async fn make_bucket(client: &Client, bucket: &str, region: &str) -> Result<(), 
         .create_bucket_configuration(cfg)
         .bucket(bucket)
         .send()
-        .await?;
-    println!("Created bucket.");
-
-    Ok(())
+        .await
 }
 // snippet-end:[s3.rust.create-bucket]
+
+#[cfg(test)]
+mod test_make_bucket {
+    use sdk_examples_test_utils::single_shot_client;
+
+    use crate::make_bucket;
+
+    #[tokio::test]
+    async fn test_make_bucket() {
+        let client = single_shot_client! {
+            sdk: aws_sdk_s3,
+            status: 200,
+            headers: vec![("Location", "/test_bucket")],
+            response: r#""#
+        };
+
+        let res = make_bucket(&client, "bucket", "region").await;
+
+        assert!(res.is_ok(), "{res:?}");
+
+        assert_eq!(res.unwrap().location(), Some("/test_bucket"))
+    }
+}
 
 /// Creates an Amazon S3 bucket in the Region.
 /// # Arguments
@@ -83,5 +111,8 @@ async fn main() -> Result<(), Error> {
     let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    make_bucket(&client, &bucket, r_str).await
+    make_bucket(&client, &bucket, r_str).await?;
+    println!("Created bucket.");
+
+    Ok(())
 }

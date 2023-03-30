@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Migration Hub Config. Each operation on AWS Migration Hub Config is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_migrationhubconfig::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_migrationhubconfig::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_migrationhubconfig::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_migrationhubconfig::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_migrationhubconfig::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateHomeRegionControl`](crate::operation::create_home_region_control) operation has
+/// a [`Client::create_home_region_control`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.create_home_region_control()
+///     .home_region("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,329 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CreateHomeRegionControl`](crate::client::fluent_builders::CreateHomeRegionControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::CreateHomeRegionControl::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::CreateHomeRegionControl::set_home_region): <p>The name of the home region of the calling account.</p>
-    ///   - [`target(Target)`](crate::client::fluent_builders::CreateHomeRegionControl::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::CreateHomeRegionControl::set_target): <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
-    ///   - [`dry_run(bool)`](crate::client::fluent_builders::CreateHomeRegionControl::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::CreateHomeRegionControl::set_dry_run): <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
-    /// - On success, responds with [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput) with field(s):
-    ///   - [`home_region_control(Option<HomeRegionControl>)`](crate::output::CreateHomeRegionControlOutput::home_region_control): <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateHomeRegionControlError>`](crate::error::CreateHomeRegionControlError)
-    pub fn create_home_region_control(&self) -> fluent_builders::CreateHomeRegionControl {
-        fluent_builders::CreateHomeRegionControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeHomeRegionControls`](crate::client::fluent_builders::DescribeHomeRegionControls) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeHomeRegionControls::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`control_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::control_id) / [`set_control_id(Option<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_control_id): <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
-    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_home_region): <p>The name of the home region you'd like to view.</p>
-    ///   - [`target(Target)`](crate::client::fluent_builders::DescribeHomeRegionControls::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_target): <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeHomeRegionControls::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_max_results): <p>The maximum number of filtering results to display per page. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_next_token): <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    /// - On success, responds with [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput) with field(s):
-    ///   - [`home_region_controls(Option<Vec<HomeRegionControl>>)`](crate::output::DescribeHomeRegionControlsOutput::home_region_controls): <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeHomeRegionControlsOutput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeHomeRegionControlsError>`](crate::error::DescribeHomeRegionControlsError)
-    pub fn describe_home_region_controls(&self) -> fluent_builders::DescribeHomeRegionControls {
-        fluent_builders::DescribeHomeRegionControls::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetHomeRegion`](crate::client::fluent_builders::GetHomeRegion) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetHomeRegion::send) it.
-
-    /// - On success, responds with [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput) with field(s):
-    ///   - [`home_region(Option<String>)`](crate::output::GetHomeRegionOutput::home_region): <p>The name of the home region of the calling account.</p>
-    /// - On failure, responds with [`SdkError<GetHomeRegionError>`](crate::error::GetHomeRegionError)
-    pub fn get_home_region(&self) -> fluent_builders::GetHomeRegion {
-        fluent_builders::GetHomeRegion::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateHomeRegionControl`.
-    ///
-    /// <p>This API sets up the home region for the calling account only.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateHomeRegionControl {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_home_region_control_input::Builder,
-    }
-    impl CreateHomeRegionControl {
-        /// Creates a new `CreateHomeRegionControl`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateHomeRegionControl,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateHomeRegionControlOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the home region of the calling account.</p>
-        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(input.into());
-            self
-        }
-        /// <p>The name of the home region of the calling account.</p>
-        pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_home_region(input);
-            self
-        }
-        /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
-        pub fn target(mut self, input: crate::model::Target) -> Self {
-            self.inner = self.inner.target(input);
-            self
-        }
-        /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
-        pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
-            self.inner = self.inner.set_target(input);
-            self
-        }
-        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, input: bool) -> Self {
-            self.inner = self.inner.dry_run(input);
-            self
-        }
-        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
-        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_dry_run(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeHomeRegionControls`.
-    ///
-    /// <p>This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code> fields.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeHomeRegionControls {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_home_region_controls_input::Builder,
-    }
-    impl DescribeHomeRegionControls {
-        /// Creates a new `DescribeHomeRegionControls`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeHomeRegionControls,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeHomeRegionControlsOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeHomeRegionControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::DescribeHomeRegionControlsPaginator {
-            crate::paginator::DescribeHomeRegionControlsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
-        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(input.into());
-            self
-        }
-        /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
-        pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_id(input);
-            self
-        }
-        /// <p>The name of the home region you'd like to view.</p>
-        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(input.into());
-            self
-        }
-        /// <p>The name of the home region you'd like to view.</p>
-        pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_home_region(input);
-            self
-        }
-        /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
-        pub fn target(mut self, input: crate::model::Target) -> Self {
-            self.inner = self.inner.target(input);
-            self
-        }
-        /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
-        pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
-            self.inner = self.inner.set_target(input);
-            self
-        }
-        /// <p>The maximum number of filtering results to display per page. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of filtering results to display per page. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetHomeRegion`.
-    ///
-    /// <p>Returns the calling account’s home region, if configured. This API is used by other AWS services to determine the regional endpoint for calling AWS Application Discovery Service and Migration Hub. You must call <code>GetHomeRegion</code> at least once before you call any other AWS Application Discovery Service and AWS Migration Hub APIs, to obtain the account's Migration Hub home region.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetHomeRegion {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_home_region_input::Builder,
-    }
-    impl GetHomeRegion {
-        /// Creates a new `GetHomeRegion`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetHomeRegion,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetHomeRegionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetHomeRegionOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetHomeRegionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
     }
 }
 
@@ -487,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -497,3 +211,37 @@ impl Client {
         }
     }
 }
+
+mod create_home_region_control;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_migrationhubconfig::Error> {
+/// # let client: aws_sdk_migrationhubconfig::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.create_home_region_control()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod describe_home_region_controls;
+
+mod get_home_region;

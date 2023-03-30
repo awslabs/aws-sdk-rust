@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Cloud Control API. Each operation on AWS Cloud Control API is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_cloudcontrol::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_cloudcontrol::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_cloudcontrol::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_cloudcontrol::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_cloudcontrol::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CancelResourceRequest`](crate::operation::cancel_resource_request) operation has
+/// a [`Client::cancel_resource_request`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.cancel_resource_request()
+///     .request_token("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1076 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CancelResourceRequest`](crate::client::fluent_builders::CancelResourceRequest) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`request_token(impl Into<String>)`](crate::client::fluent_builders::CancelResourceRequest::request_token) / [`set_request_token(Option<String>)`](crate::client::fluent_builders::CancelResourceRequest::set_request_token): <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    /// - On success, responds with [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput) with field(s):
-    ///   - [`progress_event(Option<ProgressEvent>)`](crate::output::CancelResourceRequestOutput::progress_event): <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// - On failure, responds with [`SdkError<CancelResourceRequestError>`](crate::error::CancelResourceRequestError)
-    pub fn cancel_resource_request(&self) -> fluent_builders::CancelResourceRequest {
-        fluent_builders::CancelResourceRequest::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateResource`](crate::client::fluent_builders::CreateResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::CreateResource::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::CreateResource::set_type_name): <p>The name of the resource type.</p>
-    ///   - [`type_version_id(impl Into<String>)`](crate::client::fluent_builders::CreateResource::type_version_id) / [`set_type_version_id(Option<String>)`](crate::client::fluent_builders::CreateResource::set_type_version_id): <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateResource::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>  <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateResource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateResource::set_client_token): <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>  <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>  <p>If you do not specify a client token, one is generated for inclusion in the request.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`desired_state(impl Into<String>)`](crate::client::fluent_builders::CreateResource::desired_state) / [`set_desired_state(Option<String>)`](crate::client::fluent_builders::CreateResource::set_desired_state): <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>   <p>Cloud Control API currently supports JSON as a structured data format.</p>  </note>  <p>Specify the desired state as one of the following:</p>  <ul>   <li> <p>A JSON blob</p> </li>   <li> <p>A local path containing the desired state in JSON data format</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>  <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
-    /// - On success, responds with [`CreateResourceOutput`](crate::output::CreateResourceOutput) with field(s):
-    ///   - [`progress_event(Option<ProgressEvent>)`](crate::output::CreateResourceOutput::progress_event): <p>Represents the current status of the resource creation request.</p>  <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateResourceError>`](crate::error::CreateResourceError)
-    pub fn create_resource(&self) -> fluent_builders::CreateResource {
-        fluent_builders::CreateResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteResource`](crate::client::fluent_builders::DeleteResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResource::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::DeleteResource::set_type_name): <p>The name of the resource type.</p>
-    ///   - [`type_version_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResource::type_version_id) / [`set_type_version_id(Option<String>)`](crate::client::fluent_builders::DeleteResource::set_type_version_id): <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::DeleteResource::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>  <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteResource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteResource::set_client_token): <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>  <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>  <p>If you do not specify a client token, one is generated for inclusion in the request.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteResource::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteResource::set_identifier): <p>The identifier for the resource.</p>  <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>  <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// - On success, responds with [`DeleteResourceOutput`](crate::output::DeleteResourceOutput) with field(s):
-    ///   - [`progress_event(Option<ProgressEvent>)`](crate::output::DeleteResourceOutput::progress_event): <p>Represents the current status of the resource deletion request.</p>  <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
-    /// - On failure, responds with [`SdkError<DeleteResourceError>`](crate::error::DeleteResourceError)
-    pub fn delete_resource(&self) -> fluent_builders::DeleteResource {
-        fluent_builders::DeleteResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResource`](crate::client::fluent_builders::GetResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::GetResource::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::GetResource::set_type_name): <p>The name of the resource type.</p>
-    ///   - [`type_version_id(impl Into<String>)`](crate::client::fluent_builders::GetResource::type_version_id) / [`set_type_version_id(Option<String>)`](crate::client::fluent_builders::GetResource::set_type_version_id): <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::GetResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::GetResource::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>  <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResource::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResource::set_identifier): <p>The identifier for the resource.</p>  <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>  <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// - On success, responds with [`GetResourceOutput`](crate::output::GetResourceOutput) with field(s):
-    ///   - [`type_name(Option<String>)`](crate::output::GetResourceOutput::type_name): <p>The name of the resource type.</p>
-    ///   - [`resource_description(Option<ResourceDescription>)`](crate::output::GetResourceOutput::resource_description): <p>Represents information about a provisioned resource.</p>
-    /// - On failure, responds with [`SdkError<GetResourceError>`](crate::error::GetResourceError)
-    pub fn get_resource(&self) -> fluent_builders::GetResource {
-        fluent_builders::GetResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResourceRequestStatus`](crate::client::fluent_builders::GetResourceRequestStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`request_token(impl Into<String>)`](crate::client::fluent_builders::GetResourceRequestStatus::request_token) / [`set_request_token(Option<String>)`](crate::client::fluent_builders::GetResourceRequestStatus::set_request_token): <p>A unique token used to track the progress of the resource operation request.</p>  <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    /// - On success, responds with [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput) with field(s):
-    ///   - [`progress_event(Option<ProgressEvent>)`](crate::output::GetResourceRequestStatusOutput::progress_event): <p>Represents the current status of the resource operation request.</p>
-    /// - On failure, responds with [`SdkError<GetResourceRequestStatusError>`](crate::error::GetResourceRequestStatusError)
-    pub fn get_resource_request_status(&self) -> fluent_builders::GetResourceRequestStatus {
-        fluent_builders::GetResourceRequestStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListResourceRequests`](crate::client::fluent_builders::ListResourceRequests) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceRequests::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceRequests::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResourceRequests::set_max_results): <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>  <p>The default is <code>20</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceRequests::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceRequests::set_next_token): <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    ///   - [`resource_request_status_filter(ResourceRequestStatusFilter)`](crate::client::fluent_builders::ListResourceRequests::resource_request_status_filter) / [`set_resource_request_status_filter(Option<ResourceRequestStatusFilter>)`](crate::client::fluent_builders::ListResourceRequests::set_resource_request_status_filter): <p>The filter criteria to apply to the requests returned.</p>
-    /// - On success, responds with [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput) with field(s):
-    ///   - [`resource_request_status_summaries(Option<Vec<ProgressEvent>>)`](crate::output::ListResourceRequestsOutput::resource_request_status_summaries): <p>The requests that match the specified filter criteria.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListResourceRequestsOutput::next_token): <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
-    /// - On failure, responds with [`SdkError<ListResourceRequestsError>`](crate::error::ListResourceRequestsError)
-    pub fn list_resource_requests(&self) -> fluent_builders::ListResourceRequests {
-        fluent_builders::ListResourceRequests::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListResources`](crate::client::fluent_builders::ListResources) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::ListResources::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::ListResources::set_type_name): <p>The name of the resource type.</p>
-    ///   - [`type_version_id(impl Into<String>)`](crate::client::fluent_builders::ListResources::type_version_id) / [`set_type_version_id(Option<String>)`](crate::client::fluent_builders::ListResources::set_type_version_id): <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::ListResources::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::ListResources::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>  <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResources::set_next_token): <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResources::set_max_results): <p>Reserved.</p>
-    ///   - [`resource_model(impl Into<String>)`](crate::client::fluent_builders::ListResources::resource_model) / [`set_resource_model(Option<String>)`](crate::client::fluent_builders::ListResources::set_resource_model): <p>The resource model to use to select the resources to return.</p>
-    /// - On success, responds with [`ListResourcesOutput`](crate::output::ListResourcesOutput) with field(s):
-    ///   - [`type_name(Option<String>)`](crate::output::ListResourcesOutput::type_name): <p>The name of the resource type.</p>
-    ///   - [`resource_descriptions(Option<Vec<ResourceDescription>>)`](crate::output::ListResourcesOutput::resource_descriptions): <p>Information about the specified resources, including primary identifier and resource model.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListResourcesOutput::next_token): <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
-    /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::error::ListResourcesError)
-    pub fn list_resources(&self) -> fluent_builders::ListResources {
-        fluent_builders::ListResources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateResource`](crate::client::fluent_builders::UpdateResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_type_name): <p>The name of the resource type.</p>
-    ///   - [`type_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::type_version_id) / [`set_type_version_id(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_type_version_id): <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>  <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_client_token): <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>  <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>  <p>If you do not specify a client token, one is generated for inclusion in the request.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_identifier): <p>The identifier for the resource.</p>  <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>  <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    ///   - [`patch_document(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::patch_document) / [`set_patch_document(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_patch_document): <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// - On success, responds with [`UpdateResourceOutput`](crate::output::UpdateResourceOutput) with field(s):
-    ///   - [`progress_event(Option<ProgressEvent>)`](crate::output::UpdateResourceOutput::progress_event): <p>Represents the current status of the resource update request.</p>  <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
-    /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::error::UpdateResourceError)
-    pub fn update_resource(&self) -> fluent_builders::UpdateResource {
-        fluent_builders::UpdateResource::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CancelResourceRequest`.
-    ///
-    /// <p>Cancels the specified resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel">Canceling resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// <p>Only resource operations requests with a status of <code>PENDING</code> or <code>IN_PROGRESS</code> can be canceled.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CancelResourceRequest {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::cancel_resource_request_input::Builder,
-    }
-    impl CancelResourceRequest {
-        /// Creates a new `CancelResourceRequest`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CancelResourceRequest,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CancelResourceRequestError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CancelResourceRequestOutput,
-            aws_smithy_http::result::SdkError<crate::error::CancelResourceRequestError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-        pub fn request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_token(input.into());
-            self
-        }
-        /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-        pub fn set_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_request_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateResource`.
-    ///
-    /// <p>Creates the specified resource. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html">Creating a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> type returned by <code>CreateResource</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_resource_input::Builder,
-    }
-    impl CreateResource {
-        /// Creates a new `CreateResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(input.into());
-            self
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(input);
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(input.into());
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn set_type_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_type_version_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
-        /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
-        /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
-        /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
-        /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
-        /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
-        /// </note>
-        /// <p>Specify the desired state as one of the following:</p>
-        /// <ul>
-        /// <li> <p>A JSON blob</p> </li>
-        /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
-        /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
-        pub fn desired_state(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.desired_state(input.into());
-            self
-        }
-        /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
-        /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
-        /// </note>
-        /// <p>Specify the desired state as one of the following:</p>
-        /// <ul>
-        /// <li> <p>A JSON blob</p> </li>
-        /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
-        /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_desired_state(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteResource`.
-    ///
-    /// <p>Deletes the specified resource. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-delete.html">Deleting a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_resource_input::Builder,
-    }
-    impl DeleteResource {
-        /// Creates a new `DeleteResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(input.into());
-            self
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(input);
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(input.into());
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn set_type_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_type_version_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
-        /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
-        /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
-        /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
-        /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The identifier for the resource.</p>
-        /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
-        /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>The identifier for the resource.</p>
-        /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
-        /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetResource`.
-    ///
-    /// <p>Returns information about the current state of the specified resource. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-read.html">Reading a resource's current state</a>.</p>
-    /// <p>You can use this action to return information about an existing resource in your account and Amazon Web Services Region, whether those resources were provisioned using Cloud Control API.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_resource_input::Builder,
-    }
-    impl GetResource {
-        /// Creates a new `GetResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(input.into());
-            self
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(input);
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(input.into());
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn set_type_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_type_version_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// <p>The identifier for the resource.</p>
-        /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
-        /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>The identifier for the resource.</p>
-        /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
-        /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetResourceRequestStatus`.
-    ///
-    /// <p>Returns the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-track">Tracking the progress of resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetResourceRequestStatus {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_resource_request_status_input::Builder,
-    }
-    impl GetResourceRequestStatus {
-        /// Creates a new `GetResourceRequestStatus`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetResourceRequestStatus,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceRequestStatusError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetResourceRequestStatusOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceRequestStatusError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A unique token used to track the progress of the resource operation request.</p>
-        /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-        pub fn request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_token(input.into());
-            self
-        }
-        /// <p>A unique token used to track the progress of the resource operation request.</p>
-        /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-        pub fn set_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_request_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListResourceRequests`.
-    ///
-    /// <p>Returns existing resource operation requests. This includes requests of all status types. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing active resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <note>
-    /// <p>Resource operation requests expire after 7 days.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListResourceRequests {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_resource_requests_input::Builder,
-    }
-    impl ListResourceRequests {
-        /// Creates a new `ListResourceRequests`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListResourceRequests,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListResourceRequestsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListResourceRequestsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListResourceRequestsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceRequestsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListResourceRequestsPaginator {
-            crate::paginator::ListResourceRequestsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        /// <p>The default is <code>20</code>.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        /// <p>The default is <code>20</code>.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The filter criteria to apply to the requests returned.</p>
-        pub fn resource_request_status_filter(
-            mut self,
-            input: crate::model::ResourceRequestStatusFilter,
-        ) -> Self {
-            self.inner = self.inner.resource_request_status_filter(input);
-            self
-        }
-        /// <p>The filter criteria to apply to the requests returned.</p>
-        pub fn set_resource_request_status_filter(
-            mut self,
-            input: std::option::Option<crate::model::ResourceRequestStatusFilter>,
-        ) -> Self {
-            self.inner = self.inner.set_resource_request_status_filter(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListResources`.
-    ///
-    /// <p>Returns information about the specified resources. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// <p>You can use this action to return information about existing resources in your account and Amazon Web Services Region, whether those resources were provisioned using Cloud Control API.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListResources {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_resources_input::Builder,
-    }
-    impl ListResources {
-        /// Creates a new `ListResources`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListResources,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListResourcesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListResourcesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListResourcesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListResourcesPaginator {
-            crate::paginator::ListResourcesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(input.into());
-            self
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(input);
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(input.into());
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn set_type_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_type_version_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>Reserved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Reserved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The resource model to use to select the resources to return.</p>
-        pub fn resource_model(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_model(input.into());
-            self
-        }
-        /// <p>The resource model to use to select the resources to return.</p>
-        pub fn set_resource_model(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_resource_model(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateResource`.
-    ///
-    /// <p>Updates the specified property values in the resource.</p>
-    /// <p>You specify your resource property updates as a list of patch operations contained in a JSON patch document that adheres to the <a href="https://datatracker.ietf.org/doc/html/rfc6902"> <i>RFC 6902 - JavaScript Object Notation (JSON) Patch</i> </a> standard.</p>
-    /// <p>For details on how Cloud Control API performs resource update operations, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html">Updating a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    /// <p>After you have initiated a resource update request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>UpdateResource</code>.</p>
-    /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_resource_input::Builder,
-    }
-    impl UpdateResource {
-        /// Creates a new `UpdateResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(input.into());
-            self
-        }
-        /// <p>The name of the resource type.</p>
-        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(input);
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(input.into());
-            self
-        }
-        /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn set_type_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_type_version_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
-        /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
-        /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
-        /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
-        /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
-        /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The identifier for the resource.</p>
-        /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
-        /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>The identifier for the resource.</p>
-        /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
-        /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn patch_document(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_document(input.into());
-            self
-        }
-        /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn set_patch_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_patch_document(input);
-            self
-        }
     }
 }
 
@@ -1234,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1244,3 +211,47 @@ impl Client {
         }
     }
 }
+
+mod cancel_resource_request;
+
+mod create_resource;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_cloudcontrol::Error> {
+/// # let client: aws_sdk_cloudcontrol::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.cancel_resource_request()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_resource;
+
+mod get_resource;
+
+mod get_resource_request_status;
+
+mod list_resource_requests;
+
+mod list_resources;
+
+mod update_resource;

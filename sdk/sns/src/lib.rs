@@ -4,35 +4,93 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
-#![allow(clippy::blacklisted_name)]
+#![allow(clippy::disallowed_names)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
+#![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <fullname>Amazon Simple Notification Service</fullname>
-//! <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you
-//! to build distributed web-enabled applications. Applications can use Amazon SNS to easily push
-//! real-time notification messages to interested subscribers over multiple delivery
-//! protocols. For more information about this product see the <a href="http://aws.amazon.com/sns/">Amazon SNS product page</a>. For detailed information about Amazon SNS features
-//! and their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a>. </p>
-//! <p>For information on the permissions you need to use this API, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-authentication-and-access-control.html">Identity and access management in Amazon SNS</a> in the <i>Amazon SNS Developer
-//! Guide.</i>
-//! </p>
-//! <p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming
-//! language. The SDKs contain functionality that automatically takes care of tasks such as:
-//! cryptographically signing your service requests, retrying requests, and handling error
-//! responses. For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. </p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//!
+//! Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see the [Amazon SNS product page](http://aws.amazon.com/sns/). For detailed information about Amazon SNS features and their associated API calls, see the [Amazon SNS Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/).
+//!
+//! For information on the permissions you need to use this API, see [Identity and access management in Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/sns-authentication-and-access-control.html) in the _Amazon SNS Developer Guide._
+//!
+//! We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to [Tools for Amazon Web Services](http://aws.amazon.com/tools/).
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-sns` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.55.0"
+//! aws-sdk-sns = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_sns as sns;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), sns::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = sns::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-sns/latest/aws_sdk_sns/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!
-//! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
-//! by the service.
+//! The entry point for most customers will be [`Client`], which exposes one method for each API
+//! offered by Amazon Simple Notification Service. The return value of each of these methods is a "fluent builder",
+//! where the different inputs for that API are added by builder-style function call chaining,
+//! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
+//! either a successful output or a [`SdkError`](crate::error::SdkError).
 //!
-//! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
+//! Some of these API inputs may be structs or enums to provide more complex structured information.
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
+//! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
 //!
-//! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
-//! error encompassing all possible errors that can be returned by the service.
+//! All types required to configure a client via the [`Config`](crate::Config) struct live
+//! in [`config`](crate::config).
+//!
+//! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
+//! is the input, output, and error type for that API, as well as builders to construct each of those.
+//!
+//! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
+//! client can return. Any other error type can be converted to this `Error` type via the
+//! [`From`](std::convert::From) trait.
 //!
 //! The other modules within this crate are not required for normal usage.
 //!
@@ -45,65 +103,109 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-/// Client and fluent builders for calling the service.
+/// Client for calling Amazon Simple Notification Service.
+/// ## Constructing a `Client`
+///
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_sns::Client::new(&config);
+/// # }
+/// ```
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_sns::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`AddPermission`](crate::operation::add_permission) operation has
+/// a [`Client::add_permission`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.add_permission()
+///     .topic_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
-/// Configuration for the service.
+/// Configuration for Amazon Simple Notification Service.
 pub mod config;
 
-/// Endpoint resolution functionality
+/// Endpoint resolution functionality.
 pub mod endpoint;
 
-/// All error types that operations can return. Documentation on these types is copied from the model.
+/// Common errors and error handling utilities.
 pub mod error;
 
 mod error_meta;
 
-/// Input structures for operations. Documentation on these types is copied from the model.
-pub mod input;
-
-/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
-pub mod model;
+/// Information about this crate.
+pub mod meta;
 
 /// All operations that this crate can perform.
 pub mod operation;
 
-/// Output structures for operations. Documentation on these types is copied from the model.
-pub mod output;
+/// Primitives such as `Blob` or `DateTime` used by other types.
+pub mod primitives;
 
-/// Data primitives referenced by other data types.
+/// Data structures used by operation inputs/outputs.
 pub mod types;
 
+///
 pub mod middleware;
 
+///
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
-/// Paginators for the service
-pub mod paginator;
-
-/// Generated accessors for nested fields
 mod lens;
 
-mod query_ser;
+pub(crate) mod protocol_serde;
 
-mod xml_deser;
-
-/// Endpoints standard library functions
 mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
 
-/// Crate version number.
-pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use aws_smithy_http::endpoint::Endpoint;
-static API_METADATA: aws_http::user_agent::ApiMetadata =
-    aws_http::user_agent::ApiMetadata::new("sns", PKG_VERSION);
-pub use aws_credential_types::Credentials;
-pub use aws_types::app_name::AppName;
-pub use aws_types::region::Region;
 #[doc(inline)]
 pub use client::Client;

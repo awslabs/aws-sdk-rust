@@ -4,30 +4,23 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Provides information about an API request or response.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>Provides information about an API request or response.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Provides information about an API request or response.</p>
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>Provides information about an API request or response.</p>
-    InternalServerErrorException(crate::error::InternalServerErrorException),
+    InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// <p>Provides information about an API request or response.</p>
-    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    MethodNotAllowedException(crate::types::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>Provides information about an API request or response.</p>
-    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    PayloadTooLargeException(crate::types::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,2875 +37,72 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateAppError> for Error {
-    fn from(err: crate::error::CreateAppError) -> Self {
-        match err.kind {
-            crate::error::CreateAppErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateAppErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAppErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateAppErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateAppErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateAppErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::CreateAppErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCampaignError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCampaignError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateCampaignError> for Error {
-    fn from(err: crate::error::CreateCampaignError) -> Self {
-        match err.kind {
-            crate::error::CreateCampaignErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateCampaignErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEmailTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateEmailTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateEmailTemplateError> for Error {
-    fn from(err: crate::error::CreateEmailTemplateError) -> Self {
-        match err.kind {
-            crate::error::CreateEmailTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateEmailTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateEmailTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateEmailTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateEmailTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateEmailTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateExportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateExportJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateExportJobError> for Error {
-    fn from(err: crate::error::CreateExportJobError) -> Self {
-        match err.kind {
-            crate::error::CreateExportJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateExportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateImportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateImportJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateImportJobError> for Error {
-    fn from(err: crate::error::CreateImportJobError) -> Self {
-        match err.kind {
-            crate::error::CreateImportJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInAppTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateInAppTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateInAppTemplateError> for Error {
-    fn from(err: crate::error::CreateInAppTemplateError) -> Self {
-        match err.kind {
-            crate::error::CreateInAppTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateInAppTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateInAppTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateInAppTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateInAppTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateJourneyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateJourneyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateJourneyError> for Error {
-    fn from(err: crate::error::CreateJourneyError) -> Self {
-        match err.kind {
-            crate::error::CreateJourneyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateJourneyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePushTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePushTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreatePushTemplateError> for Error {
-    fn from(err: crate::error::CreatePushTemplateError) -> Self {
-        match err.kind {
-            crate::error::CreatePushTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreatePushTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreatePushTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreatePushTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreatePushTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreatePushTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateRecommenderConfigurationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateRecommenderConfigurationError,
-            R,
-        >,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateRecommenderConfigurationError> for Error {
-    fn from(err: crate::error::CreateRecommenderConfigurationError) -> Self {
-        match err.kind {
-            crate::error::CreateRecommenderConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateRecommenderConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateRecommenderConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::CreateRecommenderConfigurationErrorKind::MethodNotAllowedException(
-                inner,
-            ) => Error::MethodNotAllowedException(inner),
-            crate::error::CreateRecommenderConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateRecommenderConfigurationErrorKind::PayloadTooLargeException(
-                inner,
-            ) => Error::PayloadTooLargeException(inner),
-            crate::error::CreateRecommenderConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::CreateRecommenderConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSegmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSegmentError, R>) -> Self {
+impl From<crate::operation::create_app::CreateAppError> for Error {
+    fn from(err: crate::operation::create_app::CreateAppError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateSegmentError> for Error {
-    fn from(err: crate::error::CreateSegmentError) -> Self {
-        match err.kind {
-            crate::error::CreateSegmentErrorKind::BadRequestException(inner) => {
+            crate::operation::create_app::CreateAppError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateSegmentErrorKind::ForbiddenException(inner) => {
+            crate::operation::create_app::CreateAppError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateSegmentErrorKind::InternalServerErrorException(inner) => {
+            crate::operation::create_app::CreateAppError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateSegmentErrorKind::MethodNotAllowedException(inner) => {
+            crate::operation::create_app::CreateAppError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::CreateSegmentErrorKind::NotFoundException(inner) => {
+            crate::operation::create_app::CreateAppError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateSegmentErrorKind::PayloadTooLargeException(inner) => {
+            crate::operation::create_app::CreateAppError::PayloadTooLargeException(inner) => {
                 Error::PayloadTooLargeException(inner)
             }
-            crate::error::CreateSegmentErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::create_app::CreateAppError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateSegmentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSmsTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSmsTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateSmsTemplateError> for Error {
-    fn from(err: crate::error::CreateSmsTemplateError) -> Self {
-        match err.kind {
-            crate::error::CreateSmsTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateSmsTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateSmsTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateSmsTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateSmsTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateSmsTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVoiceTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVoiceTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateVoiceTemplateError> for Error {
-    fn from(err: crate::error::CreateVoiceTemplateError) -> Self {
-        match err.kind {
-            crate::error::CreateVoiceTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVoiceTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateVoiceTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateVoiceTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::CreateVoiceTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateVoiceTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAdmChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAdmChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAdmChannelError> for Error {
-    fn from(err: crate::error::DeleteAdmChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteAdmChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteAdmChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApnsChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteApnsChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteApnsChannelError> for Error {
-    fn from(err: crate::error::DeleteApnsChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteApnsChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteApnsChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApnsSandboxChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteApnsSandboxChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteApnsSandboxChannelError> for Error {
-    fn from(err: crate::error::DeleteApnsSandboxChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteApnsSandboxChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteApnsSandboxChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteApnsSandboxChannelErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DeleteApnsSandboxChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteApnsSandboxChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteApnsSandboxChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteApnsSandboxChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteApnsSandboxChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApnsVoipChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteApnsVoipChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteApnsVoipChannelError> for Error {
-    fn from(err: crate::error::DeleteApnsVoipChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteApnsVoipChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteApnsVoipChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApnsVoipSandboxChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteApnsVoipSandboxChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteApnsVoipSandboxChannelError> for Error {
-    fn from(err: crate::error::DeleteApnsVoipSandboxChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::MethodNotAllowedException(
-                inner,
-            ) => Error::MethodNotAllowedException(inner),
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::PayloadTooLargeException(
-                inner,
-            ) => Error::PayloadTooLargeException(inner),
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DeleteApnsVoipSandboxChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAppError> for Error {
-    fn from(err: crate::error::DeleteAppError) -> Self {
-        match err.kind {
-            crate::error::DeleteAppErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAppErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAppErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteAppErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteAppErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAppErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteAppErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBaiduChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBaiduChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteBaiduChannelError> for Error {
-    fn from(err: crate::error::DeleteBaiduChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteBaiduChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteBaiduChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCampaignError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCampaignError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCampaignError> for Error {
-    fn from(err: crate::error::DeleteCampaignError) -> Self {
-        match err.kind {
-            crate::error::DeleteCampaignErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteCampaignErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEmailChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEmailChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteEmailChannelError> for Error {
-    fn from(err: crate::error::DeleteEmailChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteEmailChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteEmailChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEmailTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEmailTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteEmailTemplateError> for Error {
-    fn from(err: crate::error::DeleteEmailTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeleteEmailTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteEmailTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteEndpointError> for Error {
-    fn from(err: crate::error::DeleteEndpointError) -> Self {
-        match err.kind {
-            crate::error::DeleteEndpointErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEventStreamError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEventStreamError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteEventStreamError> for Error {
-    fn from(err: crate::error::DeleteEventStreamError) -> Self {
-        match err.kind {
-            crate::error::DeleteEventStreamErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteEventStreamErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGcmChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGcmChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteGcmChannelError> for Error {
-    fn from(err: crate::error::DeleteGcmChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteGcmChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteGcmChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInAppTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteInAppTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteInAppTemplateError> for Error {
-    fn from(err: crate::error::DeleteInAppTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeleteInAppTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteInAppTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteJourneyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteJourneyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteJourneyError> for Error {
-    fn from(err: crate::error::DeleteJourneyError) -> Self {
-        match err.kind {
-            crate::error::DeleteJourneyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteJourneyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePushTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePushTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeletePushTemplateError> for Error {
-    fn from(err: crate::error::DeletePushTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeletePushTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeletePushTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteRecommenderConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteRecommenderConfigurationError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteRecommenderConfigurationError> for Error {
-    fn from(err: crate::error::DeleteRecommenderConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteRecommenderConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteRecommenderConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteRecommenderConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DeleteRecommenderConfigurationErrorKind::MethodNotAllowedException(
-                inner,
-            ) => Error::MethodNotAllowedException(inner),
-            crate::error::DeleteRecommenderConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteRecommenderConfigurationErrorKind::PayloadTooLargeException(
-                inner,
-            ) => Error::PayloadTooLargeException(inner),
-            crate::error::DeleteRecommenderConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DeleteRecommenderConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSegmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSegmentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSegmentError> for Error {
-    fn from(err: crate::error::DeleteSegmentError) -> Self {
-        match err.kind {
-            crate::error::DeleteSegmentErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteSegmentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSmsChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSmsChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSmsChannelError> for Error {
-    fn from(err: crate::error::DeleteSmsChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteSmsChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteSmsChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSmsTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSmsTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSmsTemplateError> for Error {
-    fn from(err: crate::error::DeleteSmsTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeleteSmsTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteSmsTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserEndpointsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUserEndpointsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserEndpointsError> for Error {
-    fn from(err: crate::error::DeleteUserEndpointsError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserEndpointsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteUserEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteVoiceChannelError> for Error {
-    fn from(err: crate::error::DeleteVoiceChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteVoiceChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteVoiceChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteVoiceTemplateError> for Error {
-    fn from(err: crate::error::DeleteVoiceTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeleteVoiceTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteVoiceTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAdmChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAdmChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAdmChannelError> for Error {
-    fn from(err: crate::error::GetAdmChannelError) -> Self {
-        match err.kind {
-            crate::error::GetAdmChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetAdmChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApnsChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetApnsChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetApnsChannelError> for Error {
-    fn from(err: crate::error::GetApnsChannelError) -> Self {
-        match err.kind {
-            crate::error::GetApnsChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetApnsChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApnsSandboxChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetApnsSandboxChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetApnsSandboxChannelError> for Error {
-    fn from(err: crate::error::GetApnsSandboxChannelError) -> Self {
-        match err.kind {
-            crate::error::GetApnsSandboxChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetApnsSandboxChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApnsVoipChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetApnsVoipChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetApnsVoipChannelError> for Error {
-    fn from(err: crate::error::GetApnsVoipChannelError) -> Self {
-        match err.kind {
-            crate::error::GetApnsVoipChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetApnsVoipChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApnsVoipSandboxChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetApnsVoipSandboxChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetApnsVoipSandboxChannelError> for Error {
-    fn from(err: crate::error::GetApnsVoipSandboxChannelError) -> Self {
-        match err.kind {
-            crate::error::GetApnsVoipSandboxChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetApnsVoipSandboxChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetApnsVoipSandboxChannelErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::GetApnsVoipSandboxChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetApnsVoipSandboxChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetApnsVoipSandboxChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetApnsVoipSandboxChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetApnsVoipSandboxChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAppError> for Error {
-    fn from(err: crate::error::GetAppError) -> Self {
-        match err.kind {
-            crate::error::GetAppErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAppErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAppErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetAppErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetAppErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAppErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetAppErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApplicationDateRangeKpiError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetApplicationDateRangeKpiError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetApplicationDateRangeKpiError> for Error {
-    fn from(err: crate::error::GetApplicationDateRangeKpiError) -> Self {
-        match err.kind {
-            crate::error::GetApplicationDateRangeKpiErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetApplicationDateRangeKpiErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetApplicationDateRangeKpiErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::GetApplicationDateRangeKpiErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetApplicationDateRangeKpiErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetApplicationDateRangeKpiErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetApplicationDateRangeKpiErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetApplicationDateRangeKpiErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApplicationSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetApplicationSettingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetApplicationSettingsError> for Error {
-    fn from(err: crate::error::GetApplicationSettingsError) -> Self {
-        match err.kind {
-            crate::error::GetApplicationSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetApplicationSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAppsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAppsError> for Error {
-    fn from(err: crate::error::GetAppsError) -> Self {
-        match err.kind {
-            crate::error::GetAppsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAppsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAppsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetAppsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetAppsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAppsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetAppsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetAppsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBaiduChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBaiduChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBaiduChannelError> for Error {
-    fn from(err: crate::error::GetBaiduChannelError) -> Self {
-        match err.kind {
-            crate::error::GetBaiduChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetBaiduChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCampaignError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCampaignError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCampaignError> for Error {
-    fn from(err: crate::error::GetCampaignError) -> Self {
-        match err.kind {
-            crate::error::GetCampaignErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCampaignErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetCampaignErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetCampaignErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetCampaignErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCampaignErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetCampaignErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCampaignErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCampaignActivitiesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCampaignActivitiesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCampaignActivitiesError> for Error {
-    fn from(err: crate::error::GetCampaignActivitiesError) -> Self {
-        match err.kind {
-            crate::error::GetCampaignActivitiesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCampaignActivitiesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCampaignDateRangeKpiError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCampaignDateRangeKpiError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCampaignDateRangeKpiError> for Error {
-    fn from(err: crate::error::GetCampaignDateRangeKpiError) -> Self {
-        match err.kind {
-            crate::error::GetCampaignDateRangeKpiErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCampaignDateRangeKpiErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCampaignsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCampaignsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCampaignsError> for Error {
-    fn from(err: crate::error::GetCampaignsError) -> Self {
-        match err.kind {
-            crate::error::GetCampaignsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCampaignsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCampaignVersionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCampaignVersionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCampaignVersionError> for Error {
-    fn from(err: crate::error::GetCampaignVersionError) -> Self {
-        match err.kind {
-            crate::error::GetCampaignVersionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCampaignVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCampaignVersionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCampaignVersionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCampaignVersionsError> for Error {
-    fn from(err: crate::error::GetCampaignVersionsError) -> Self {
-        match err.kind {
-            crate::error::GetCampaignVersionsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCampaignVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChannelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChannelsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetChannelsError> for Error {
-    fn from(err: crate::error::GetChannelsError) -> Self {
-        match err.kind {
-            crate::error::GetChannelsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetChannelsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetChannelsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetChannelsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetChannelsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetChannelsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetChannelsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetChannelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEmailChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEmailChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetEmailChannelError> for Error {
-    fn from(err: crate::error::GetEmailChannelError) -> Self {
-        match err.kind {
-            crate::error::GetEmailChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetEmailChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEmailTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEmailTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetEmailTemplateError> for Error {
-    fn from(err: crate::error::GetEmailTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetEmailTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetEmailTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetEndpointError> for Error {
-    fn from(err: crate::error::GetEndpointError) -> Self {
-        match err.kind {
-            crate::error::GetEndpointErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetEndpointErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetEndpointErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetEndpointErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetEndpointErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetEndpointErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetEndpointErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventStreamError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEventStreamError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetEventStreamError> for Error {
-    fn from(err: crate::error::GetEventStreamError) -> Self {
-        match err.kind {
-            crate::error::GetEventStreamErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetEventStreamErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetExportJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetExportJobError> for Error {
-    fn from(err: crate::error::GetExportJobError) -> Self {
-        match err.kind {
-            crate::error::GetExportJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetExportJobErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetExportJobErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetExportJobErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetExportJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetExportJobErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetExportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetExportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExportJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetExportJobsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetExportJobsError> for Error {
-    fn from(err: crate::error::GetExportJobsError) -> Self {
-        match err.kind {
-            crate::error::GetExportJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetExportJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGcmChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetGcmChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetGcmChannelError> for Error {
-    fn from(err: crate::error::GetGcmChannelError) -> Self {
-        match err.kind {
-            crate::error::GetGcmChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetGcmChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImportJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetImportJobError> for Error {
-    fn from(err: crate::error::GetImportJobError) -> Self {
-        match err.kind {
-            crate::error::GetImportJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetImportJobErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetImportJobErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetImportJobErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetImportJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetImportJobErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetImportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImportJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImportJobsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetImportJobsError> for Error {
-    fn from(err: crate::error::GetImportJobsError) -> Self {
-        match err.kind {
-            crate::error::GetImportJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetImportJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInAppMessagesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetInAppMessagesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetInAppMessagesError> for Error {
-    fn from(err: crate::error::GetInAppMessagesError) -> Self {
-        match err.kind {
-            crate::error::GetInAppMessagesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetInAppMessagesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInAppTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetInAppTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetInAppTemplateError> for Error {
-    fn from(err: crate::error::GetInAppTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetInAppTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetInAppTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJourneyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetJourneyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetJourneyError> for Error {
-    fn from(err: crate::error::GetJourneyError) -> Self {
-        match err.kind {
-            crate::error::GetJourneyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetJourneyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetJourneyErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetJourneyErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetJourneyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetJourneyErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetJourneyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetJourneyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJourneyDateRangeKpiError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetJourneyDateRangeKpiError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetJourneyDateRangeKpiError> for Error {
-    fn from(err: crate::error::GetJourneyDateRangeKpiError) -> Self {
-        match err.kind {
-            crate::error::GetJourneyDateRangeKpiErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetJourneyDateRangeKpiErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_app::CreateAppError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::GetJourneyExecutionActivityMetricsError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_campaign::CreateCampaignError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetJourneyExecutionActivityMetricsError,
+            crate::operation::create_campaign::CreateCampaignError,
             R,
         >,
     ) -> Self {
@@ -2920,1969 +110,216 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetJourneyExecutionActivityMetricsError> for Error {
-    fn from(err: crate::error::GetJourneyExecutionActivityMetricsError) -> Self {
-        match err.kind {
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetJourneyExecutionActivityMetricsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJourneyExecutionMetricsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetJourneyExecutionMetricsError, R>,
-    ) -> Self {
+impl From<crate::operation::create_campaign::CreateCampaignError> for Error {
+    fn from(err: crate::operation::create_campaign::CreateCampaignError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetJourneyExecutionMetricsError> for Error {
-    fn from(err: crate::error::GetJourneyExecutionMetricsError) -> Self {
-        match err.kind {
-            crate::error::GetJourneyExecutionMetricsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetJourneyExecutionMetricsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetJourneyExecutionMetricsErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::GetJourneyExecutionMetricsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetJourneyExecutionMetricsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetJourneyExecutionMetricsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetJourneyExecutionMetricsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetJourneyExecutionMetricsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPushTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPushTemplateError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetPushTemplateError> for Error {
-    fn from(err: crate::error::GetPushTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetPushTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetPushTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommenderConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRecommenderConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetRecommenderConfigurationError> for Error {
-    fn from(err: crate::error::GetRecommenderConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetRecommenderConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetRecommenderConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetRecommenderConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::GetRecommenderConfigurationErrorKind::MethodNotAllowedException(
-                inner,
-            ) => Error::MethodNotAllowedException(inner),
-            crate::error::GetRecommenderConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetRecommenderConfigurationErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetRecommenderConfigurationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetRecommenderConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommenderConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRecommenderConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetRecommenderConfigurationsError> for Error {
-    fn from(err: crate::error::GetRecommenderConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::GetRecommenderConfigurationsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetRecommenderConfigurationsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetRecommenderConfigurationsErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::GetRecommenderConfigurationsErrorKind::MethodNotAllowedException(
-                inner,
-            ) => Error::MethodNotAllowedException(inner),
-            crate::error::GetRecommenderConfigurationsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetRecommenderConfigurationsErrorKind::PayloadTooLargeException(
-                inner,
-            ) => Error::PayloadTooLargeException(inner),
-            crate::error::GetRecommenderConfigurationsErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::GetRecommenderConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSegmentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSegmentError> for Error {
-    fn from(err: crate::error::GetSegmentError) -> Self {
-        match err.kind {
-            crate::error::GetSegmentErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSegmentErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSegmentErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSegmentErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSegmentErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSegmentErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSegmentErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSegmentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentExportJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSegmentExportJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSegmentExportJobsError> for Error {
-    fn from(err: crate::error::GetSegmentExportJobsError) -> Self {
-        match err.kind {
-            crate::error::GetSegmentExportJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSegmentExportJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentImportJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSegmentImportJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSegmentImportJobsError> for Error {
-    fn from(err: crate::error::GetSegmentImportJobsError) -> Self {
-        match err.kind {
-            crate::error::GetSegmentImportJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSegmentImportJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSegmentsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSegmentsError> for Error {
-    fn from(err: crate::error::GetSegmentsError) -> Self {
-        match err.kind {
-            crate::error::GetSegmentsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSegmentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentVersionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSegmentVersionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSegmentVersionError> for Error {
-    fn from(err: crate::error::GetSegmentVersionError) -> Self {
-        match err.kind {
-            crate::error::GetSegmentVersionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSegmentVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentVersionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSegmentVersionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSegmentVersionsError> for Error {
-    fn from(err: crate::error::GetSegmentVersionsError) -> Self {
-        match err.kind {
-            crate::error::GetSegmentVersionsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSegmentVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSmsChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSmsChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSmsChannelError> for Error {
-    fn from(err: crate::error::GetSmsChannelError) -> Self {
-        match err.kind {
-            crate::error::GetSmsChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSmsChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSmsTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSmsTemplateError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSmsTemplateError> for Error {
-    fn from(err: crate::error::GetSmsTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetSmsTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetSmsTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserEndpointsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetUserEndpointsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetUserEndpointsError> for Error {
-    fn from(err: crate::error::GetUserEndpointsError) -> Self {
-        match err.kind {
-            crate::error::GetUserEndpointsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetUserEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceChannelError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetVoiceChannelError> for Error {
-    fn from(err: crate::error::GetVoiceChannelError) -> Self {
-        match err.kind {
-            crate::error::GetVoiceChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetVoiceChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVoiceTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetVoiceTemplateError> for Error {
-    fn from(err: crate::error::GetVoiceTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetVoiceTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetVoiceTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJourneysError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListJourneysError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListJourneysError> for Error {
-    fn from(err: crate::error::ListJourneysError) -> Self {
-        match err.kind {
-            crate::error::ListJourneysErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListJourneysErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListJourneysErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListJourneysErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::ListJourneysErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListJourneysErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::ListJourneysErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListJourneysErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTemplatesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTemplatesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTemplatesError> for Error {
-    fn from(err: crate::error::ListTemplatesError) -> Self {
-        match err.kind {
-            crate::error::ListTemplatesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTemplatesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListTemplatesErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListTemplatesErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::ListTemplatesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListTemplatesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTemplateVersionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTemplateVersionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTemplateVersionsError> for Error {
-    fn from(err: crate::error::ListTemplateVersionsError) -> Self {
-        match err.kind {
-            crate::error::ListTemplateVersionsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListTemplateVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PhoneNumberValidateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PhoneNumberValidateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PhoneNumberValidateError> for Error {
-    fn from(err: crate::error::PhoneNumberValidateError) -> Self {
-        match err.kind {
-            crate::error::PhoneNumberValidateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PhoneNumberValidateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutEventsError> for Error {
-    fn from(err: crate::error::PutEventsError) -> Self {
-        match err.kind {
-            crate::error::PutEventsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutEventsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutEventsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::PutEventsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::PutEventsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutEventsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::PutEventsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PutEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventStreamError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEventStreamError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutEventStreamError> for Error {
-    fn from(err: crate::error::PutEventStreamError) -> Self {
-        match err.kind {
-            crate::error::PutEventStreamErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PutEventStreamErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveAttributesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RemoveAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RemoveAttributesError> for Error {
-    fn from(err: crate::error::RemoveAttributesError) -> Self {
-        match err.kind {
-            crate::error::RemoveAttributesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::RemoveAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessagesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendMessagesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SendMessagesError> for Error {
-    fn from(err: crate::error::SendMessagesError) -> Self {
-        match err.kind {
-            crate::error::SendMessagesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::SendMessagesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SendMessagesErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::SendMessagesErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::SendMessagesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SendMessagesErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::SendMessagesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SendMessagesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendOTPMessageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendOTPMessageError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SendOTPMessageError> for Error {
-    fn from(err: crate::error::SendOTPMessageError) -> Self {
-        match err.kind {
-            crate::error::SendOTPMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SendOTPMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendUsersMessagesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SendUsersMessagesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SendUsersMessagesError> for Error {
-    fn from(err: crate::error::SendUsersMessagesError) -> Self {
-        match err.kind {
-            crate::error::SendUsersMessagesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SendUsersMessagesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAdmChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAdmChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateAdmChannelError> for Error {
-    fn from(err: crate::error::UpdateAdmChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateAdmChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateAdmChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApnsChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateApnsChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateApnsChannelError> for Error {
-    fn from(err: crate::error::UpdateApnsChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateApnsChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateApnsChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApnsSandboxChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateApnsSandboxChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateApnsSandboxChannelError> for Error {
-    fn from(err: crate::error::UpdateApnsSandboxChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateApnsSandboxChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateApnsSandboxChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateApnsSandboxChannelErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::UpdateApnsSandboxChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateApnsSandboxChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateApnsSandboxChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateApnsSandboxChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateApnsSandboxChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApnsVoipChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateApnsVoipChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateApnsVoipChannelError> for Error {
-    fn from(err: crate::error::UpdateApnsVoipChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateApnsVoipChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateApnsVoipChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApnsVoipSandboxChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateApnsVoipSandboxChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateApnsVoipSandboxChannelError> for Error {
-    fn from(err: crate::error::UpdateApnsVoipSandboxChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::MethodNotAllowedException(
-                inner,
-            ) => Error::MethodNotAllowedException(inner),
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::PayloadTooLargeException(
-                inner,
-            ) => Error::PayloadTooLargeException(inner),
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::UpdateApnsVoipSandboxChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApplicationSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateApplicationSettingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateApplicationSettingsError> for Error {
-    fn from(err: crate::error::UpdateApplicationSettingsError) -> Self {
-        match err.kind {
-            crate::error::UpdateApplicationSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateApplicationSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateApplicationSettingsErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::UpdateApplicationSettingsErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateApplicationSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateApplicationSettingsErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateApplicationSettingsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateApplicationSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBaiduChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateBaiduChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateBaiduChannelError> for Error {
-    fn from(err: crate::error::UpdateBaiduChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateBaiduChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateBaiduChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCampaignError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateCampaignError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateCampaignError> for Error {
-    fn from(err: crate::error::UpdateCampaignError) -> Self {
-        match err.kind {
-            crate::error::UpdateCampaignErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateCampaignErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEmailChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateEmailChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateEmailChannelError> for Error {
-    fn from(err: crate::error::UpdateEmailChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateEmailChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateEmailChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEmailTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateEmailTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateEmailTemplateError> for Error {
-    fn from(err: crate::error::UpdateEmailTemplateError) -> Self {
-        match err.kind {
-            crate::error::UpdateEmailTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateEmailTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateEndpointError> for Error {
-    fn from(err: crate::error::UpdateEndpointError) -> Self {
-        match err.kind {
-            crate::error::UpdateEndpointErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEndpointsBatchError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateEndpointsBatchError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateEndpointsBatchError> for Error {
-    fn from(err: crate::error::UpdateEndpointsBatchError) -> Self {
-        match err.kind {
-            crate::error::UpdateEndpointsBatchErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateEndpointsBatchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGcmChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGcmChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateGcmChannelError> for Error {
-    fn from(err: crate::error::UpdateGcmChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateGcmChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateGcmChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateInAppTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateInAppTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateInAppTemplateError> for Error {
-    fn from(err: crate::error::UpdateInAppTemplateError) -> Self {
-        match err.kind {
-            crate::error::UpdateInAppTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateInAppTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateJourneyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateJourneyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateJourneyError> for Error {
-    fn from(err: crate::error::UpdateJourneyError) -> Self {
-        match err.kind {
-            crate::error::UpdateJourneyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateJourneyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateJourneyStateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateJourneyStateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateJourneyStateError> for Error {
-    fn from(err: crate::error::UpdateJourneyStateError) -> Self {
-        match err.kind {
-            crate::error::UpdateJourneyStateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateJourneyStateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePushTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePushTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdatePushTemplateError> for Error {
-    fn from(err: crate::error::UpdatePushTemplateError) -> Self {
-        match err.kind {
-            crate::error::UpdatePushTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdatePushTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::create_campaign::CreateCampaignError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_campaign::CreateCampaignError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_campaign::CreateCampaignError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_campaign::CreateCampaignError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_campaign::CreateCampaignError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_campaign::CreateCampaignError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::create_campaign::CreateCampaignError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_campaign::CreateCampaignError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateRecommenderConfigurationError, R>>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_email_template::CreateEmailTemplateError> for Error {
+    fn from(err: crate::operation::create_email_template::CreateEmailTemplateError) -> Self {
+        match err {
+            crate::operation::create_email_template::CreateEmailTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_email_template::CreateEmailTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_email_template::CreateEmailTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_email_template::CreateEmailTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_email_template::CreateEmailTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_email_template::CreateEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_export_job::CreateExportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_export_job::CreateExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_export_job::CreateExportJobError> for Error {
+    fn from(err: crate::operation::create_export_job::CreateExportJobError) -> Self {
+        match err {
+            crate::operation::create_export_job::CreateExportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_export_job::CreateExportJobError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_export_job::CreateExportJobError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_export_job::CreateExportJobError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_export_job::CreateExportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_export_job::CreateExportJobError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::create_export_job::CreateExportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_export_job::CreateExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_import_job::CreateImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_import_job::CreateImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_import_job::CreateImportJobError> for Error {
+    fn from(err: crate::operation::create_import_job::CreateImportJobError) -> Self {
+        match err {
+            crate::operation::create_import_job::CreateImportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_import_job::CreateImportJobError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_import_job::CreateImportJobError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_import_job::CreateImportJobError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_import_job::CreateImportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_import_job::CreateImportJobError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::create_import_job::CreateImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_import_job::CreateImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_in_app_template::CreateInAppTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_in_app_template::CreateInAppTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_in_app_template::CreateInAppTemplateError> for Error {
+    fn from(err: crate::operation::create_in_app_template::CreateInAppTemplateError) -> Self {
+        match err {
+            crate::operation::create_in_app_template::CreateInAppTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_in_app_template::CreateInAppTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_in_app_template::CreateInAppTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_in_app_template::CreateInAppTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_in_app_template::CreateInAppTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_in_app_template::CreateInAppTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_journey::CreateJourneyError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateRecommenderConfigurationError,
+            crate::operation::create_journey::CreateJourneyError,
             R,
         >,
     ) -> Self {
@@ -4890,352 +327,5372 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateRecommenderConfigurationError> for Error {
-    fn from(err: crate::error::UpdateRecommenderConfigurationError) -> Self {
-        match err.kind {
-            crate::error::UpdateRecommenderConfigurationErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::create_journey::CreateJourneyError> for Error {
+    fn from(err: crate::operation::create_journey::CreateJourneyError) -> Self {
+        match err {
+            crate::operation::create_journey::CreateJourneyError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateRecommenderConfigurationErrorKind::ForbiddenException(inner) => {
+            crate::operation::create_journey::CreateJourneyError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateRecommenderConfigurationErrorKind::InternalServerErrorException(
+            crate::operation::create_journey::CreateJourneyError::InternalServerErrorException(
                 inner,
             ) => Error::InternalServerErrorException(inner),
-            crate::error::UpdateRecommenderConfigurationErrorKind::MethodNotAllowedException(
+            crate::operation::create_journey::CreateJourneyError::MethodNotAllowedException(
                 inner,
             ) => Error::MethodNotAllowedException(inner),
-            crate::error::UpdateRecommenderConfigurationErrorKind::NotFoundException(inner) => {
+            crate::operation::create_journey::CreateJourneyError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateRecommenderConfigurationErrorKind::PayloadTooLargeException(
+            crate::operation::create_journey::CreateJourneyError::PayloadTooLargeException(
                 inner,
             ) => Error::PayloadTooLargeException(inner),
-            crate::error::UpdateRecommenderConfigurationErrorKind::TooManyRequestsException(
+            crate::operation::create_journey::CreateJourneyError::TooManyRequestsException(
                 inner,
             ) => Error::TooManyRequestsException(inner),
-            crate::error::UpdateRecommenderConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_journey::CreateJourneyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSegmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSegmentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateSegmentError> for Error {
-    fn from(err: crate::error::UpdateSegmentError) -> Self {
-        match err.kind {
-            crate::error::UpdateSegmentErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateSegmentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSmsChannelError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_push_template::CreatePushTemplateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSmsChannelError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_push_template::CreatePushTemplateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateSmsChannelError> for Error {
-    fn from(err: crate::error::UpdateSmsChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateSmsChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateSmsChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_push_template::CreatePushTemplateError> for Error {
+    fn from(err: crate::operation::create_push_template::CreatePushTemplateError) -> Self {
+        match err {
+            crate::operation::create_push_template::CreatePushTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_push_template::CreatePushTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_push_template::CreatePushTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_push_template::CreatePushTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_push_template::CreatePushTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_push_template::CreatePushTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSmsTemplateError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSmsTemplateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateSmsTemplateError> for Error {
-    fn from(err: crate::error::UpdateSmsTemplateError) -> Self {
-        match err.kind {
-            crate::error::UpdateSmsTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateSmsTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTemplateActiveVersionError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_segment::CreateSegmentError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateTemplateActiveVersionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_segment::CreateSegmentError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateTemplateActiveVersionError> for Error {
-    fn from(err: crate::error::UpdateTemplateActiveVersionError) -> Self {
-        match err.kind {
-            crate::error::UpdateTemplateActiveVersionErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::create_segment::CreateSegmentError> for Error {
+    fn from(err: crate::operation::create_segment::CreateSegmentError) -> Self {
+        match err {
+            crate::operation::create_segment::CreateSegmentError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateTemplateActiveVersionErrorKind::ForbiddenException(inner) => {
+            crate::operation::create_segment::CreateSegmentError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateTemplateActiveVersionErrorKind::InternalServerErrorException(
+            crate::operation::create_segment::CreateSegmentError::InternalServerErrorException(
                 inner,
             ) => Error::InternalServerErrorException(inner),
-            crate::error::UpdateTemplateActiveVersionErrorKind::MethodNotAllowedException(
+            crate::operation::create_segment::CreateSegmentError::MethodNotAllowedException(
                 inner,
             ) => Error::MethodNotAllowedException(inner),
-            crate::error::UpdateTemplateActiveVersionErrorKind::NotFoundException(inner) => {
+            crate::operation::create_segment::CreateSegmentError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateTemplateActiveVersionErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateTemplateActiveVersionErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateTemplateActiveVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_segment::CreateSegmentError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::create_segment::CreateSegmentError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::create_segment::CreateSegmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVoiceChannelError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_sms_template::CreateSmsTemplateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVoiceChannelError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_sms_template::CreateSmsTemplateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateVoiceChannelError> for Error {
-    fn from(err: crate::error::UpdateVoiceChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateVoiceChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateVoiceChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_sms_template::CreateSmsTemplateError> for Error {
+    fn from(err: crate::operation::create_sms_template::CreateSmsTemplateError) -> Self {
+        match err {
+            crate::operation::create_sms_template::CreateSmsTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_sms_template::CreateSmsTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_sms_template::CreateSmsTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_sms_template::CreateSmsTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_sms_template::CreateSmsTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_sms_template::CreateSmsTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVoiceTemplateError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_voice_template::CreateVoiceTemplateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVoiceTemplateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_voice_template::CreateVoiceTemplateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateVoiceTemplateError> for Error {
-    fn from(err: crate::error::UpdateVoiceTemplateError) -> Self {
-        match err.kind {
-            crate::error::UpdateVoiceTemplateErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::MethodNotAllowedException(inner) => {
-                Error::MethodNotAllowedException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateVoiceTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_voice_template::CreateVoiceTemplateError> for Error {
+    fn from(err: crate::operation::create_voice_template::CreateVoiceTemplateError) -> Self {
+        match err {
+            crate::operation::create_voice_template::CreateVoiceTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_voice_template::CreateVoiceTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_voice_template::CreateVoiceTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_voice_template::CreateVoiceTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::create_voice_template::CreateVoiceTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_voice_template::CreateVoiceTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::VerifyOTPMessageError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_adm_channel::DeleteAdmChannelError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::VerifyOTPMessageError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_adm_channel::DeleteAdmChannelError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::VerifyOTPMessageError> for Error {
-    fn from(err: crate::error::VerifyOTPMessageError) -> Self {
-        match err.kind {
-            crate::error::VerifyOTPMessageErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_adm_channel::DeleteAdmChannelError> for Error {
+    fn from(err: crate::operation::delete_adm_channel::DeleteAdmChannelError) -> Self {
+        match err {
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_adm_channel::DeleteAdmChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_channel::DeleteApnsChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_channel::DeleteApnsChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_apns_channel::DeleteApnsChannelError> for Error {
+    fn from(err: crate::operation::delete_apns_channel::DeleteApnsChannelError) -> Self {
+        match err {
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_apns_channel::DeleteApnsChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError> for Error {
+    fn from(
+        err: crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError> for Error {
+    fn from(err: crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError) -> Self {
+        match err {
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_app::DeleteAppError> for Error {
+    fn from(err: crate::operation::delete_app::DeleteAppError) -> Self {
+        match err {
+            crate::operation::delete_app::DeleteAppError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::ForbiddenException(inner) => {
+            crate::operation::delete_app::DeleteAppError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::InternalServerErrorException(inner) => {
+            crate::operation::delete_app::DeleteAppError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::MethodNotAllowedException(inner) => {
+            crate::operation::delete_app::DeleteAppError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_app::DeleteAppError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::PayloadTooLargeException(inner) => {
+            crate::operation::delete_app::DeleteAppError::PayloadTooLargeException(inner) => {
                 Error::PayloadTooLargeException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::delete_app::DeleteAppError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::VerifyOTPMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_app::DeleteAppError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_baidu_channel::DeleteBaiduChannelError> for Error {
+    fn from(err: crate::operation::delete_baidu_channel::DeleteBaiduChannelError) -> Self {
+        match err {
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_campaign::DeleteCampaignError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_campaign::DeleteCampaignError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_campaign::DeleteCampaignError> for Error {
+    fn from(err: crate::operation::delete_campaign::DeleteCampaignError) -> Self {
+        match err {
+            crate::operation::delete_campaign::DeleteCampaignError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_campaign::DeleteCampaignError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_channel::DeleteEmailChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_channel::DeleteEmailChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_email_channel::DeleteEmailChannelError> for Error {
+    fn from(err: crate::operation::delete_email_channel::DeleteEmailChannelError) -> Self {
+        match err {
+            crate::operation::delete_email_channel::DeleteEmailChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_email_channel::DeleteEmailChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_template::DeleteEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_template::DeleteEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_email_template::DeleteEmailTemplateError> for Error {
+    fn from(err: crate::operation::delete_email_template::DeleteEmailTemplateError) -> Self {
+        match err {
+            crate::operation::delete_email_template::DeleteEmailTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_email_template::DeleteEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_endpoint::DeleteEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_endpoint::DeleteEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_endpoint::DeleteEndpointError> for Error {
+    fn from(err: crate::operation::delete_endpoint::DeleteEndpointError) -> Self {
+        match err {
+            crate::operation::delete_endpoint::DeleteEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_stream::DeleteEventStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_stream::DeleteEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_event_stream::DeleteEventStreamError> for Error {
+    fn from(err: crate::operation::delete_event_stream::DeleteEventStreamError) -> Self {
+        match err {
+            crate::operation::delete_event_stream::DeleteEventStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_gcm_channel::DeleteGcmChannelError> for Error {
+    fn from(err: crate::operation::delete_gcm_channel::DeleteGcmChannelError) -> Self {
+        match err {
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_gcm_channel::DeleteGcmChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_in_app_template::DeleteInAppTemplateError> for Error {
+    fn from(err: crate::operation::delete_in_app_template::DeleteInAppTemplateError) -> Self {
+        match err {
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_journey::DeleteJourneyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_journey::DeleteJourneyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_journey::DeleteJourneyError> for Error {
+    fn from(err: crate::operation::delete_journey::DeleteJourneyError) -> Self {
+        match err {
+            crate::operation::delete_journey::DeleteJourneyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_journey::DeleteJourneyError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_journey::DeleteJourneyError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_journey::DeleteJourneyError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_journey::DeleteJourneyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_journey::DeleteJourneyError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_journey::DeleteJourneyError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_journey::DeleteJourneyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_push_template::DeletePushTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_push_template::DeletePushTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_push_template::DeletePushTemplateError> for Error {
+    fn from(err: crate::operation::delete_push_template::DeletePushTemplateError) -> Self {
+        match err {
+            crate::operation::delete_push_template::DeletePushTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_push_template::DeletePushTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_segment::DeleteSegmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_segment::DeleteSegmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_segment::DeleteSegmentError> for Error {
+    fn from(err: crate::operation::delete_segment::DeleteSegmentError) -> Self {
+        match err {
+            crate::operation::delete_segment::DeleteSegmentError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_segment::DeleteSegmentError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_segment::DeleteSegmentError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_segment::DeleteSegmentError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_segment::DeleteSegmentError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_segment::DeleteSegmentError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_segment::DeleteSegmentError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_segment::DeleteSegmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_sms_channel::DeleteSmsChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_sms_channel::DeleteSmsChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_sms_channel::DeleteSmsChannelError> for Error {
+    fn from(err: crate::operation::delete_sms_channel::DeleteSmsChannelError) -> Self {
+        match err {
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_sms_channel::DeleteSmsChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_sms_template::DeleteSmsTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_sms_template::DeleteSmsTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_sms_template::DeleteSmsTemplateError> for Error {
+    fn from(err: crate::operation::delete_sms_template::DeleteSmsTemplateError) -> Self {
+        match err {
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_sms_template::DeleteSmsTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_endpoints::DeleteUserEndpointsError> for Error {
+    fn from(err: crate::operation::delete_user_endpoints::DeleteUserEndpointsError) -> Self {
+        match err {
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_voice_channel::DeleteVoiceChannelError> for Error {
+    fn from(err: crate::operation::delete_voice_channel::DeleteVoiceChannelError) -> Self {
+        match err {
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_voice_channel::DeleteVoiceChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_voice_template::DeleteVoiceTemplateError> for Error {
+    fn from(err: crate::operation::delete_voice_template::DeleteVoiceTemplateError) -> Self {
+        match err {
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_adm_channel::GetAdmChannelError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_adm_channel::GetAdmChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_adm_channel::GetAdmChannelError> for Error {
+    fn from(err: crate::operation::get_adm_channel::GetAdmChannelError) -> Self {
+        match err {
+            crate::operation::get_adm_channel::GetAdmChannelError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_adm_channel::GetAdmChannelError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_adm_channel::GetAdmChannelError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_adm_channel::GetAdmChannelError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_adm_channel::GetAdmChannelError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_adm_channel::GetAdmChannelError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_adm_channel::GetAdmChannelError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_adm_channel::GetAdmChannelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_channel::GetApnsChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_channel::GetApnsChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_apns_channel::GetApnsChannelError> for Error {
+    fn from(err: crate::operation::get_apns_channel::GetApnsChannelError) -> Self {
+        match err {
+            crate::operation::get_apns_channel::GetApnsChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_apns_channel::GetApnsChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError> for Error {
+    fn from(err: crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError) -> Self {
+        match err {
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_apns_voip_channel::GetApnsVoipChannelError> for Error {
+    fn from(err: crate::operation::get_apns_voip_channel::GetApnsVoipChannelError) -> Self {
+        match err {
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app::GetAppError> for Error {
+    fn from(err: crate::operation::get_app::GetAppError) -> Self {
+        match err {
+            crate::operation::get_app::GetAppError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_app::GetAppError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_app::GetAppError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_app::GetAppError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_app::GetAppError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_app::GetAppError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_app::GetAppError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_app::GetAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError,
+    ) -> Self {
+        match err {
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_application_settings::GetApplicationSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_application_settings::GetApplicationSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_application_settings::GetApplicationSettingsError> for Error {
+    fn from(err: crate::operation::get_application_settings::GetApplicationSettingsError) -> Self {
+        match err {
+            crate::operation::get_application_settings::GetApplicationSettingsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_application_settings::GetApplicationSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_apps::GetAppsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_apps::GetAppsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_apps::GetAppsError> for Error {
+    fn from(err: crate::operation::get_apps::GetAppsError) -> Self {
+        match err {
+            crate::operation::get_apps::GetAppsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_apps::GetAppsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_baidu_channel::GetBaiduChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_baidu_channel::GetBaiduChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_baidu_channel::GetBaiduChannelError> for Error {
+    fn from(err: crate::operation::get_baidu_channel::GetBaiduChannelError) -> Self {
+        match err {
+            crate::operation::get_baidu_channel::GetBaiduChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_baidu_channel::GetBaiduChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_campaign::GetCampaignError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_campaign::GetCampaignError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_campaign::GetCampaignError> for Error {
+    fn from(err: crate::operation::get_campaign::GetCampaignError) -> Self {
+        match err {
+            crate::operation::get_campaign::GetCampaignError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_campaign::GetCampaignError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_campaign::GetCampaignError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_campaign::GetCampaignError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_campaign::GetCampaignError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_campaign::GetCampaignError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_campaign::GetCampaignError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_campaign::GetCampaignError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_campaign_activities::GetCampaignActivitiesError> for Error {
+    fn from(err: crate::operation::get_campaign_activities::GetCampaignActivitiesError) -> Self {
+        match err {
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError> for Error {
+    fn from(
+        err: crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
+    ) -> Self {
+        match err {
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_campaigns::GetCampaignsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_campaigns::GetCampaignsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_campaigns::GetCampaignsError> for Error {
+    fn from(err: crate::operation::get_campaigns::GetCampaignsError) -> Self {
+        match err {
+            crate::operation::get_campaigns::GetCampaignsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_campaigns::GetCampaignsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_campaigns::GetCampaignsError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_campaigns::GetCampaignsError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_campaigns::GetCampaignsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_campaigns::GetCampaignsError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_campaigns::GetCampaignsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_campaigns::GetCampaignsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_version::GetCampaignVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_version::GetCampaignVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_campaign_version::GetCampaignVersionError> for Error {
+    fn from(err: crate::operation::get_campaign_version::GetCampaignVersionError) -> Self {
+        match err {
+            crate::operation::get_campaign_version::GetCampaignVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_campaign_version::GetCampaignVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_versions::GetCampaignVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_versions::GetCampaignVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_campaign_versions::GetCampaignVersionsError> for Error {
+    fn from(err: crate::operation::get_campaign_versions::GetCampaignVersionsError) -> Self {
+        match err {
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_campaign_versions::GetCampaignVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_channels::GetChannelsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_channels::GetChannelsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_channels::GetChannelsError> for Error {
+    fn from(err: crate::operation::get_channels::GetChannelsError) -> Self {
+        match err {
+            crate::operation::get_channels::GetChannelsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_channels::GetChannelsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_channels::GetChannelsError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_channels::GetChannelsError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_channels::GetChannelsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_channels::GetChannelsError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_channels::GetChannelsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_channels::GetChannelsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_email_channel::GetEmailChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_email_channel::GetEmailChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_email_channel::GetEmailChannelError> for Error {
+    fn from(err: crate::operation::get_email_channel::GetEmailChannelError) -> Self {
+        match err {
+            crate::operation::get_email_channel::GetEmailChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_email_channel::GetEmailChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_email_template::GetEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_email_template::GetEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_email_template::GetEmailTemplateError> for Error {
+    fn from(err: crate::operation::get_email_template::GetEmailTemplateError) -> Self {
+        match err {
+            crate::operation::get_email_template::GetEmailTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_email_template::GetEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_endpoint::GetEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_endpoint::GetEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_endpoint::GetEndpointError> for Error {
+    fn from(err: crate::operation::get_endpoint::GetEndpointError) -> Self {
+        match err {
+            crate::operation::get_endpoint::GetEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_endpoint::GetEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_endpoint::GetEndpointError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_endpoint::GetEndpointError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_endpoint::GetEndpointError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_endpoint::GetEndpointError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_endpoint::GetEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_endpoint::GetEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_event_stream::GetEventStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_event_stream::GetEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_event_stream::GetEventStreamError> for Error {
+    fn from(err: crate::operation::get_event_stream::GetEventStreamError) -> Self {
+        match err {
+            crate::operation::get_event_stream::GetEventStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_export_job::GetExportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_export_job::GetExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_export_job::GetExportJobError> for Error {
+    fn from(err: crate::operation::get_export_job::GetExportJobError) -> Self {
+        match err {
+            crate::operation::get_export_job::GetExportJobError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_export_job::GetExportJobError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_export_job::GetExportJobError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_export_job::GetExportJobError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_export_job::GetExportJobError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_export_job::GetExportJobError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_export_job::GetExportJobError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_export_job::GetExportJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_export_jobs::GetExportJobsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_export_jobs::GetExportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_export_jobs::GetExportJobsError> for Error {
+    fn from(err: crate::operation::get_export_jobs::GetExportJobsError) -> Self {
+        match err {
+            crate::operation::get_export_jobs::GetExportJobsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_export_jobs::GetExportJobsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_export_jobs::GetExportJobsError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_export_jobs::GetExportJobsError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_export_jobs::GetExportJobsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_export_jobs::GetExportJobsError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_export_jobs::GetExportJobsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_export_jobs::GetExportJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_gcm_channel::GetGcmChannelError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_gcm_channel::GetGcmChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_gcm_channel::GetGcmChannelError> for Error {
+    fn from(err: crate::operation::get_gcm_channel::GetGcmChannelError) -> Self {
+        match err {
+            crate::operation::get_gcm_channel::GetGcmChannelError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_gcm_channel::GetGcmChannelError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_gcm_channel::GetGcmChannelError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_gcm_channel::GetGcmChannelError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_gcm_channel::GetGcmChannelError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_gcm_channel::GetGcmChannelError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_gcm_channel::GetGcmChannelError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_gcm_channel::GetGcmChannelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_import_job::GetImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_import_job::GetImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_import_job::GetImportJobError> for Error {
+    fn from(err: crate::operation::get_import_job::GetImportJobError) -> Self {
+        match err {
+            crate::operation::get_import_job::GetImportJobError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_import_job::GetImportJobError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_import_job::GetImportJobError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_import_job::GetImportJobError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_import_job::GetImportJobError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_import_job::GetImportJobError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_import_job::GetImportJobError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_import_job::GetImportJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_import_jobs::GetImportJobsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_import_jobs::GetImportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_import_jobs::GetImportJobsError> for Error {
+    fn from(err: crate::operation::get_import_jobs::GetImportJobsError) -> Self {
+        match err {
+            crate::operation::get_import_jobs::GetImportJobsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_import_jobs::GetImportJobsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_import_jobs::GetImportJobsError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_import_jobs::GetImportJobsError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_import_jobs::GetImportJobsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_import_jobs::GetImportJobsError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_import_jobs::GetImportJobsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_import_jobs::GetImportJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_in_app_messages::GetInAppMessagesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_in_app_messages::GetInAppMessagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_in_app_messages::GetInAppMessagesError> for Error {
+    fn from(err: crate::operation::get_in_app_messages::GetInAppMessagesError) -> Self {
+        match err {
+            crate::operation::get_in_app_messages::GetInAppMessagesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_in_app_messages::GetInAppMessagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_in_app_template::GetInAppTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_in_app_template::GetInAppTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_in_app_template::GetInAppTemplateError> for Error {
+    fn from(err: crate::operation::get_in_app_template::GetInAppTemplateError) -> Self {
+        match err {
+            crate::operation::get_in_app_template::GetInAppTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_in_app_template::GetInAppTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_journey::GetJourneyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_journey::GetJourneyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_journey::GetJourneyError> for Error {
+    fn from(err: crate::operation::get_journey::GetJourneyError) -> Self {
+        match err {
+            crate::operation::get_journey::GetJourneyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_journey::GetJourneyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError> for Error {
+    fn from(
+        err: crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
+    ) -> Self {
+        match err {
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError> for Error {
+    fn from(err: crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError) -> Self {
+        match err {
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_push_template::GetPushTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_push_template::GetPushTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_push_template::GetPushTemplateError> for Error {
+    fn from(err: crate::operation::get_push_template::GetPushTemplateError) -> Self {
+        match err {
+            crate::operation::get_push_template::GetPushTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_push_template::GetPushTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_recommender_configuration::GetRecommenderConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_recommender_configuration::GetRecommenderConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_segment::GetSegmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_segment::GetSegmentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_segment::GetSegmentError> for Error {
+    fn from(err: crate::operation::get_segment::GetSegmentError) -> Self {
+        match err {
+            crate::operation::get_segment::GetSegmentError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_segment::GetSegmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_segment_export_jobs::GetSegmentExportJobsError> for Error {
+    fn from(err: crate::operation::get_segment_export_jobs::GetSegmentExportJobsError) -> Self {
+        match err {
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_segment_export_jobs::GetSegmentExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_segment_import_jobs::GetSegmentImportJobsError> for Error {
+    fn from(err: crate::operation::get_segment_import_jobs::GetSegmentImportJobsError) -> Self {
+        match err {
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_segment_import_jobs::GetSegmentImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_segments::GetSegmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_segments::GetSegmentsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_segments::GetSegmentsError> for Error {
+    fn from(err: crate::operation::get_segments::GetSegmentsError) -> Self {
+        match err {
+            crate::operation::get_segments::GetSegmentsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_segments::GetSegmentsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_segments::GetSegmentsError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_segments::GetSegmentsError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_segments::GetSegmentsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_segments::GetSegmentsError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::get_segments::GetSegmentsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_segments::GetSegmentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_version::GetSegmentVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_version::GetSegmentVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_segment_version::GetSegmentVersionError> for Error {
+    fn from(err: crate::operation::get_segment_version::GetSegmentVersionError) -> Self {
+        match err {
+            crate::operation::get_segment_version::GetSegmentVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_segment_version::GetSegmentVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_versions::GetSegmentVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_versions::GetSegmentVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_segment_versions::GetSegmentVersionsError> for Error {
+    fn from(err: crate::operation::get_segment_versions::GetSegmentVersionsError) -> Self {
+        match err {
+            crate::operation::get_segment_versions::GetSegmentVersionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_segment_versions::GetSegmentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_sms_channel::GetSmsChannelError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_sms_channel::GetSmsChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_sms_channel::GetSmsChannelError> for Error {
+    fn from(err: crate::operation::get_sms_channel::GetSmsChannelError) -> Self {
+        match err {
+            crate::operation::get_sms_channel::GetSmsChannelError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_sms_channel::GetSmsChannelError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_sms_channel::GetSmsChannelError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_sms_channel::GetSmsChannelError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_sms_channel::GetSmsChannelError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_sms_channel::GetSmsChannelError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_sms_channel::GetSmsChannelError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_sms_channel::GetSmsChannelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_sms_template::GetSmsTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_sms_template::GetSmsTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_sms_template::GetSmsTemplateError> for Error {
+    fn from(err: crate::operation::get_sms_template::GetSmsTemplateError) -> Self {
+        match err {
+            crate::operation::get_sms_template::GetSmsTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_sms_template::GetSmsTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_user_endpoints::GetUserEndpointsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_user_endpoints::GetUserEndpointsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_user_endpoints::GetUserEndpointsError> for Error {
+    fn from(err: crate::operation::get_user_endpoints::GetUserEndpointsError) -> Self {
+        match err {
+            crate::operation::get_user_endpoints::GetUserEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_user_endpoints::GetUserEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_channel::GetVoiceChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_channel::GetVoiceChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_voice_channel::GetVoiceChannelError> for Error {
+    fn from(err: crate::operation::get_voice_channel::GetVoiceChannelError) -> Self {
+        match err {
+            crate::operation::get_voice_channel::GetVoiceChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_voice_channel::GetVoiceChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_template::GetVoiceTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_template::GetVoiceTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_voice_template::GetVoiceTemplateError> for Error {
+    fn from(err: crate::operation::get_voice_template::GetVoiceTemplateError) -> Self {
+        match err {
+            crate::operation::get_voice_template::GetVoiceTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_voice_template::GetVoiceTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_journeys::ListJourneysError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_journeys::ListJourneysError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_journeys::ListJourneysError> for Error {
+    fn from(err: crate::operation::list_journeys::ListJourneysError) -> Self {
+        match err {
+            crate::operation::list_journeys::ListJourneysError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_journeys::ListJourneysError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_journeys::ListJourneysError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::list_journeys::ListJourneysError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::list_journeys::ListJourneysError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_journeys::ListJourneysError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::list_journeys::ListJourneysError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_journeys::ListJourneysError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_templates::ListTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_templates::ListTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_templates::ListTemplatesError> for Error {
+    fn from(err: crate::operation::list_templates::ListTemplatesError) -> Self {
+        match err {
+            crate::operation::list_templates::ListTemplatesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_templates::ListTemplatesError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_templates::ListTemplatesError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::list_templates::ListTemplatesError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::list_templates::ListTemplatesError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_templates::ListTemplatesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_template_versions::ListTemplateVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_template_versions::ListTemplateVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_template_versions::ListTemplateVersionsError> for Error {
+    fn from(err: crate::operation::list_template_versions::ListTemplateVersionsError) -> Self {
+        match err {
+            crate::operation::list_template_versions::ListTemplateVersionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_template_versions::ListTemplateVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::phone_number_validate::PhoneNumberValidateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::phone_number_validate::PhoneNumberValidateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::phone_number_validate::PhoneNumberValidateError> for Error {
+    fn from(err: crate::operation::phone_number_validate::PhoneNumberValidateError) -> Self {
+        match err {
+            crate::operation::phone_number_validate::PhoneNumberValidateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::phone_number_validate::PhoneNumberValidateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_events::PutEventsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_events::PutEventsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_events::PutEventsError> for Error {
+    fn from(err: crate::operation::put_events::PutEventsError) -> Self {
+        match err {
+            crate::operation::put_events::PutEventsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_events::PutEventsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_events::PutEventsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::put_events::PutEventsError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::put_events::PutEventsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_events::PutEventsError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::put_events::PutEventsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_events::PutEventsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_event_stream::PutEventStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_event_stream::PutEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_event_stream::PutEventStreamError> for Error {
+    fn from(err: crate::operation::put_event_stream::PutEventStreamError) -> Self {
+        match err {
+            crate::operation::put_event_stream::PutEventStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_event_stream::PutEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_attributes::RemoveAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::remove_attributes::RemoveAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_attributes::RemoveAttributesError> for Error {
+    fn from(err: crate::operation::remove_attributes::RemoveAttributesError) -> Self {
+        match err {
+            crate::operation::remove_attributes::RemoveAttributesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::remove_attributes::RemoveAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::send_messages::SendMessagesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_messages::SendMessagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::send_messages::SendMessagesError> for Error {
+    fn from(err: crate::operation::send_messages::SendMessagesError) -> Self {
+        match err {
+            crate::operation::send_messages::SendMessagesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::send_messages::SendMessagesError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::send_messages::SendMessagesError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::send_messages::SendMessagesError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::send_messages::SendMessagesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::send_messages::SendMessagesError::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::operation::send_messages::SendMessagesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::send_messages::SendMessagesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_otp_message::SendOTPMessageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_otp_message::SendOTPMessageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::send_otp_message::SendOTPMessageError> for Error {
+    fn from(err: crate::operation::send_otp_message::SendOTPMessageError) -> Self {
+        match err {
+            crate::operation::send_otp_message::SendOTPMessageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::send_otp_message::SendOTPMessageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_users_messages::SendUsersMessagesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_users_messages::SendUsersMessagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::send_users_messages::SendUsersMessagesError> for Error {
+    fn from(err: crate::operation::send_users_messages::SendUsersMessagesError) -> Self {
+        match err {
+            crate::operation::send_users_messages::SendUsersMessagesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::send_users_messages::SendUsersMessagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_adm_channel::UpdateAdmChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_adm_channel::UpdateAdmChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_adm_channel::UpdateAdmChannelError> for Error {
+    fn from(err: crate::operation::update_adm_channel::UpdateAdmChannelError) -> Self {
+        match err {
+            crate::operation::update_adm_channel::UpdateAdmChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_adm_channel::UpdateAdmChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_channel::UpdateApnsChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_channel::UpdateApnsChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_apns_channel::UpdateApnsChannelError> for Error {
+    fn from(err: crate::operation::update_apns_channel::UpdateApnsChannelError) -> Self {
+        match err {
+            crate::operation::update_apns_channel::UpdateApnsChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_apns_channel::UpdateApnsChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError> for Error {
+    fn from(
+        err: crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError> for Error {
+    fn from(err: crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError) -> Self {
+        match err {
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_application_settings::UpdateApplicationSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_application_settings::UpdateApplicationSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_application_settings::UpdateApplicationSettingsError> for Error {
+    fn from(
+        err: crate::operation::update_application_settings::UpdateApplicationSettingsError,
+    ) -> Self {
+        match err {
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_baidu_channel::UpdateBaiduChannelError> for Error {
+    fn from(err: crate::operation::update_baidu_channel::UpdateBaiduChannelError) -> Self {
+        match err {
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_campaign::UpdateCampaignError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_campaign::UpdateCampaignError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_campaign::UpdateCampaignError> for Error {
+    fn from(err: crate::operation::update_campaign::UpdateCampaignError) -> Self {
+        match err {
+            crate::operation::update_campaign::UpdateCampaignError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_campaign::UpdateCampaignError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_email_channel::UpdateEmailChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_email_channel::UpdateEmailChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_email_channel::UpdateEmailChannelError> for Error {
+    fn from(err: crate::operation::update_email_channel::UpdateEmailChannelError) -> Self {
+        match err {
+            crate::operation::update_email_channel::UpdateEmailChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_email_channel::UpdateEmailChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_email_template::UpdateEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_email_template::UpdateEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_email_template::UpdateEmailTemplateError> for Error {
+    fn from(err: crate::operation::update_email_template::UpdateEmailTemplateError) -> Self {
+        match err {
+            crate::operation::update_email_template::UpdateEmailTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_email_template::UpdateEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint::UpdateEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint::UpdateEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_endpoint::UpdateEndpointError> for Error {
+    fn from(err: crate::operation::update_endpoint::UpdateEndpointError) -> Self {
+        match err {
+            crate::operation::update_endpoint::UpdateEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_endpoint::UpdateEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_endpoints_batch::UpdateEndpointsBatchError> for Error {
+    fn from(err: crate::operation::update_endpoints_batch::UpdateEndpointsBatchError) -> Self {
+        match err {
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_gcm_channel::UpdateGcmChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_gcm_channel::UpdateGcmChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_gcm_channel::UpdateGcmChannelError> for Error {
+    fn from(err: crate::operation::update_gcm_channel::UpdateGcmChannelError) -> Self {
+        match err {
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_gcm_channel::UpdateGcmChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_in_app_template::UpdateInAppTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_in_app_template::UpdateInAppTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_in_app_template::UpdateInAppTemplateError> for Error {
+    fn from(err: crate::operation::update_in_app_template::UpdateInAppTemplateError) -> Self {
+        match err {
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_in_app_template::UpdateInAppTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_journey::UpdateJourneyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_journey::UpdateJourneyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_journey::UpdateJourneyError> for Error {
+    fn from(err: crate::operation::update_journey::UpdateJourneyError) -> Self {
+        match err {
+            crate::operation::update_journey::UpdateJourneyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_journey::UpdateJourneyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_journey::UpdateJourneyError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_journey::UpdateJourneyError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::update_journey::UpdateJourneyError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_journey::UpdateJourneyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_journey::UpdateJourneyError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_journey::UpdateJourneyError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::update_journey::UpdateJourneyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_journey_state::UpdateJourneyStateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_journey_state::UpdateJourneyStateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_journey_state::UpdateJourneyStateError> for Error {
+    fn from(err: crate::operation::update_journey_state::UpdateJourneyStateError) -> Self {
+        match err {
+            crate::operation::update_journey_state::UpdateJourneyStateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_journey_state::UpdateJourneyStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_push_template::UpdatePushTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_push_template::UpdatePushTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_push_template::UpdatePushTemplateError> for Error {
+    fn from(err: crate::operation::update_push_template::UpdatePushTemplateError) -> Self {
+        match err {
+            crate::operation::update_push_template::UpdatePushTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_push_template::UpdatePushTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_segment::UpdateSegmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_segment::UpdateSegmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_segment::UpdateSegmentError> for Error {
+    fn from(err: crate::operation::update_segment::UpdateSegmentError) -> Self {
+        match err {
+            crate::operation::update_segment::UpdateSegmentError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_segment::UpdateSegmentError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_segment::UpdateSegmentError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::update_segment::UpdateSegmentError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_segment::UpdateSegmentError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_segment::UpdateSegmentError::PayloadTooLargeException(
+                inner,
+            ) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_segment::UpdateSegmentError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::update_segment::UpdateSegmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_sms_channel::UpdateSmsChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_sms_channel::UpdateSmsChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_sms_channel::UpdateSmsChannelError> for Error {
+    fn from(err: crate::operation::update_sms_channel::UpdateSmsChannelError) -> Self {
+        match err {
+            crate::operation::update_sms_channel::UpdateSmsChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_sms_channel::UpdateSmsChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_sms_template::UpdateSmsTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_sms_template::UpdateSmsTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_sms_template::UpdateSmsTemplateError> for Error {
+    fn from(err: crate::operation::update_sms_template::UpdateSmsTemplateError) -> Self {
+        match err {
+            crate::operation::update_sms_template::UpdateSmsTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_sms_template::UpdateSmsTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
+    ) -> Self {
+        match err {
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_channel::UpdateVoiceChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_channel::UpdateVoiceChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_voice_channel::UpdateVoiceChannelError> for Error {
+    fn from(err: crate::operation::update_voice_channel::UpdateVoiceChannelError) -> Self {
+        match err {
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_voice_channel::UpdateVoiceChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_template::UpdateVoiceTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_template::UpdateVoiceTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_voice_template::UpdateVoiceTemplateError> for Error {
+    fn from(err: crate::operation::update_voice_template::UpdateVoiceTemplateError) -> Self {
+        match err {
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_voice_template::UpdateVoiceTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::verify_otp_message::VerifyOTPMessageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::verify_otp_message::VerifyOTPMessageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::verify_otp_message::VerifyOTPMessageError> for Error {
+    fn from(err: crate::operation::verify_otp_message::VerifyOTPMessageError) -> Self {
+        match err {
+            crate::operation::verify_otp_message::VerifyOTPMessageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::verify_otp_message::VerifyOTPMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::InternalServerErrorException(e) => e.request_id(),
+            Self::MethodNotAllowedException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::PayloadTooLargeException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

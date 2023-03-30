@@ -4,20 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>An exception occurred with the service.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The provided input is not valid. Try your request again.</p>
-    ValidationException(crate::error::ValidationException),
-    ///
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29,48 +22,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetServiceSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetServiceSettingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetServiceSettingsError> for Error {
-    fn from(err: crate::error::GetServiceSettingsError) -> Self {
-        match err.kind {
-            crate::error::GetServiceSettingsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetServiceSettingsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetServiceSettingsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetServiceSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionInstancesError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_service_settings::GetServiceSettingsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListLinuxSubscriptionInstancesError,
+            crate::operation::get_service_settings::GetServiceSettingsError,
             R,
         >,
     ) -> Self {
@@ -78,94 +42,144 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListLinuxSubscriptionInstancesError> for Error {
-    fn from(err: crate::error::ListLinuxSubscriptionInstancesError) -> Self {
-        match err.kind {
-            crate::error::ListLinuxSubscriptionInstancesErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::ListLinuxSubscriptionInstancesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListLinuxSubscriptionInstancesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListLinuxSubscriptionInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_service_settings::GetServiceSettingsError> for Error {
+    fn from(err: crate::operation::get_service_settings::GetServiceSettingsError) -> Self {
+        match err {
+            crate::operation::get_service_settings::GetServiceSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_service_settings::GetServiceSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_service_settings::GetServiceSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_service_settings::GetServiceSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionsError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError>
     for Error
+{
+    fn from(
+        err: crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListLinuxSubscriptionsError> for Error {
-    fn from(err: crate::error::ListLinuxSubscriptionsError) -> Self {
-        match err.kind {
-            crate::error::ListLinuxSubscriptionsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListLinuxSubscriptionsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListLinuxSubscriptionsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListLinuxSubscriptionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError> for Error {
+    fn from(err: crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError) -> Self {
+        match err {
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateServiceSettingsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_service_settings::UpdateServiceSettingsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateServiceSettingsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_service_settings::UpdateServiceSettingsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateServiceSettingsError> for Error {
-    fn from(err: crate::error::UpdateServiceSettingsError) -> Self {
-        match err.kind {
-            crate::error::UpdateServiceSettingsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateServiceSettingsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UpdateServiceSettingsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateServiceSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::update_service_settings::UpdateServiceSettingsError> for Error {
+    fn from(err: crate::operation::update_service_settings::UpdateServiceSettingsError) -> Self {
+        match err {
+            crate::operation::update_service_settings::UpdateServiceSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_service_settings::UpdateServiceSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_service_settings::UpdateServiceSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_service_settings::UpdateServiceSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

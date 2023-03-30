@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "0.54.1"
+version = "0.55.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Types for smithy-rs codegen."
 edition = "2021"
@@ -12,7 +12,7 @@ itoa = "1.0.0"
 num-integer = "0.1.44"
 ryu = "1.0.5"
 time = { version = "0.3.4", features = ["parsing"] }
-base64-simd = "0.7"
+base64-simd = "0.8"
 
 [dev-dependencies]
 base64 = "0.13.0"

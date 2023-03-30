@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Sagemaker Edge Manager. Each operation on Amazon Sagemaker Edge Manager is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_sagemakeredge::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_sagemakeredge::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_sagemakeredge::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_sagemakeredge::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_sagemakeredge::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`GetDeployments`](crate::operation::get_deployments) operation has
+/// a [`Client::get_deployments`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.get_deployments()
+///     .device_name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,372 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`GetDeployments`](crate::client::fluent_builders::GetDeployments) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_device_name): <p>The unique name of the device you want to get the configuration of active deployments from.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    /// - On success, responds with [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput) with field(s):
-    ///   - [`deployments(Option<Vec<EdgeDeployment>>)`](crate::output::GetDeploymentsOutput::deployments): <p>Returns a list of the configurations of the active deployments on the device.</p>
-    /// - On failure, responds with [`SdkError<GetDeploymentsError>`](crate::error::GetDeploymentsError)
-    pub fn get_deployments(&self) -> fluent_builders::GetDeployments {
-        fluent_builders::GetDeployments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDeviceRegistration`](crate::client::fluent_builders::GetDeviceRegistration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceRegistration::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::GetDeviceRegistration::set_device_name): <p>The unique name of the device you want to get the registration status from.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceRegistration::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeviceRegistration::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    /// - On success, responds with [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput) with field(s):
-    ///   - [`device_registration(Option<String>)`](crate::output::GetDeviceRegistrationOutput::device_registration): <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    ///   - [`cache_ttl(Option<String>)`](crate::output::GetDeviceRegistrationOutput::cache_ttl): <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
-    /// - On failure, responds with [`SdkError<GetDeviceRegistrationError>`](crate::error::GetDeviceRegistrationError)
-    pub fn get_device_registration(&self) -> fluent_builders::GetDeviceRegistration {
-        fluent_builders::GetDeviceRegistration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendHeartbeat`](crate::client::fluent_builders::SendHeartbeat) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`agent_metrics(Vec<EdgeMetric>)`](crate::client::fluent_builders::SendHeartbeat::agent_metrics) / [`set_agent_metrics(Option<Vec<EdgeMetric>>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_metrics): <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    ///   - [`models(Vec<Model>)`](crate::client::fluent_builders::SendHeartbeat::models) / [`set_models(Option<Vec<Model>>)`](crate::client::fluent_builders::SendHeartbeat::set_models): <p>Returns a list of models deployed on the the device.</p>
-    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_version): <p>Returns the version of the agent.</p>
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_name): <p>The unique name of the device.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    ///   - [`deployment_result(DeploymentResult)`](crate::client::fluent_builders::SendHeartbeat::deployment_result) / [`set_deployment_result(Option<DeploymentResult>)`](crate::client::fluent_builders::SendHeartbeat::set_deployment_result): <p>Returns the result of a deployment on the device.</p>
-    /// - On success, responds with [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
-
-    /// - On failure, responds with [`SdkError<SendHeartbeatError>`](crate::error::SendHeartbeatError)
-    pub fn send_heartbeat(&self) -> fluent_builders::SendHeartbeat {
-        fluent_builders::SendHeartbeat::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `GetDeployments`.
-    ///
-    /// <p>Use to get the active deployments from a device.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDeployments {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_deployments_input::Builder,
-    }
-    impl GetDeployments {
-        /// Creates a new `GetDeployments`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetDeployments,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetDeploymentsOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
-        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(input.into());
-            self
-        }
-        /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
-        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(input);
-            self
-        }
-        /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(input.into());
-            self
-        }
-        /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn set_device_fleet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDeviceRegistration`.
-    ///
-    /// <p>Use to check if a device is registered with SageMaker Edge Manager.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDeviceRegistration {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_device_registration_input::Builder,
-    }
-    impl GetDeviceRegistration {
-        /// Creates a new `GetDeviceRegistration`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetDeviceRegistration,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetDeviceRegistrationOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique name of the device you want to get the registration status from.</p>
-        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(input.into());
-            self
-        }
-        /// <p>The unique name of the device you want to get the registration status from.</p>
-        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(input);
-            self
-        }
-        /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(input.into());
-            self
-        }
-        /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn set_device_fleet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SendHeartbeat`.
-    ///
-    /// <p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendHeartbeat {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::send_heartbeat_input::Builder,
-    }
-    impl SendHeartbeat {
-        /// Creates a new `SendHeartbeat`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::SendHeartbeat,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::SendHeartbeatError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::SendHeartbeatOutput,
-            aws_smithy_http::result::SdkError<crate::error::SendHeartbeatError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `AgentMetrics`.
-        ///
-        /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
-        ///
-        /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn agent_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
-            self.inner = self.inner.agent_metrics(input);
-            self
-        }
-        /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn set_agent_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
-        ) -> Self {
-            self.inner = self.inner.set_agent_metrics(input);
-            self
-        }
-        /// Appends an item to `Models`.
-        ///
-        /// To override the contents of this collection use [`set_models`](Self::set_models).
-        ///
-        /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn models(mut self, input: crate::model::Model) -> Self {
-            self.inner = self.inner.models(input);
-            self
-        }
-        /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn set_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Model>>,
-        ) -> Self {
-            self.inner = self.inner.set_models(input);
-            self
-        }
-        /// <p>Returns the version of the agent.</p>
-        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(input.into());
-            self
-        }
-        /// <p>Returns the version of the agent.</p>
-        pub fn set_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_agent_version(input);
-            self
-        }
-        /// <p>The unique name of the device.</p>
-        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(input.into());
-            self
-        }
-        /// <p>The unique name of the device.</p>
-        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(input);
-            self
-        }
-        /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(input.into());
-            self
-        }
-        /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn set_device_fleet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(input);
-            self
-        }
-        /// <p>Returns the result of a deployment on the device.</p>
-        pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
-            self.inner = self.inner.deployment_result(input);
-            self
-        }
-        /// <p>Returns the result of a deployment on the device.</p>
-        pub fn set_deployment_result(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentResult>,
-        ) -> Self {
-            self.inner = self.inner.set_deployment_result(input);
-            self
-        }
     }
 }
 
@@ -530,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -540,3 +211,37 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_sagemakeredge::Error> {
+/// # let client: aws_sdk_sagemakeredge::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.get_deployments()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod get_deployments;
+
+mod get_device_registration;
+
+mod send_heartbeat;

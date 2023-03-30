@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Performance Insights. Each operation on AWS Performance Insights is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_pi::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_pi::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_pi::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_pi::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_pi::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DescribeDimensionKeys`](crate::operation::describe_dimension_keys) operation has
+/// a [`Client::describe_dimension_keys`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.describe_dimension_keys()
+///     .service_type("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1103 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`DescribeDimensionKeys`](crate::client::fluent_builders::DescribeDimensionKeys) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDimensionKeys::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::DescribeDimensionKeys::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_service_type): <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>  <ul>   <li> <p> <code>RDS</code> </p> </li>   <li> <p> <code>DOCDB</code> </p> </li>  </ul>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_identifier): <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>  <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeDimensionKeys::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_start_time): <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>  <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeDimensionKeys::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_end_time): <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>  <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    ///   - [`metric(impl Into<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::metric) / [`set_metric(Option<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_metric): <p>The name of a Performance Insights metric to be measured.</p>  <p>Valid values for <code>Metric</code> are:</p>  <ul>   <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine. </p> </li>   <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>  </ul>  <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    ///   - [`period_in_seconds(i32)`](crate::client::fluent_builders::DescribeDimensionKeys::period_in_seconds) / [`set_period_in_seconds(Option<i32>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_period_in_seconds): <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>  <ul>   <li> <p> <code>1</code> (one second)</p> </li>   <li> <p> <code>60</code> (one minute)</p> </li>   <li> <p> <code>300</code> (five minutes)</p> </li>   <li> <p> <code>3600</code> (one hour)</p> </li>   <li> <p> <code>86400</code> (twenty-four hours)</p> </li>  </ul>  <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
-    ///   - [`group_by(DimensionGroup)`](crate::client::fluent_builders::DescribeDimensionKeys::group_by) / [`set_group_by(Option<DimensionGroup>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_group_by): <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
-    ///   - [`additional_metrics(Vec<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::additional_metrics) / [`set_additional_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_additional_metrics): <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-    ///   - [`partition_by(DimensionGroup)`](crate::client::fluent_builders::DescribeDimensionKeys::partition_by) / [`set_partition_by(Option<DimensionGroup>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_partition_by): <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
-    ///   - [`filter(HashMap<String, String>)`](crate::client::fluent_builders::DescribeDimensionKeys::filter) / [`set_filter(Option<HashMap<String, String>>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_filter): <p>One or more filters to apply in the request. Restrictions:</p>  <ul>   <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>   <li> <p>A single filter for any other dimension in this dimension group.</p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDimensionKeys::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_max_results): <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDimensionKeys::set_next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput) with field(s):
-    ///   - [`aligned_start_time(Option<DateTime>)`](crate::output::DescribeDimensionKeysOutput::aligned_start_time): <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
-    ///   - [`aligned_end_time(Option<DateTime>)`](crate::output::DescribeDimensionKeysOutput::aligned_end_time): <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
-    ///   - [`partition_keys(Option<Vec<ResponsePartitionKey>>)`](crate::output::DescribeDimensionKeysOutput::partition_keys): <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
-    ///   - [`keys(Option<Vec<DimensionKeyDescription>>)`](crate::output::DescribeDimensionKeysOutput::keys): <p>The dimension keys that were requested.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeDimensionKeysOutput::next_token): <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
-    /// - On failure, responds with [`SdkError<DescribeDimensionKeysError>`](crate::error::DescribeDimensionKeysError)
-    pub fn describe_dimension_keys(&self) -> fluent_builders::DescribeDimensionKeys {
-        fluent_builders::DescribeDimensionKeys::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDimensionKeyDetails`](crate::client::fluent_builders::GetDimensionKeyDetails) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::GetDimensionKeyDetails::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::GetDimensionKeyDetails::set_service_type): <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::set_identifier): <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::set_group): <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>  <ul>   <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>   <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>  </ul>
-    ///   - [`group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::group_identifier) / [`set_group_identifier(Option<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::set_group_identifier): <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>  <ul>   <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>   <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>  </ul>
-    ///   - [`requested_dimensions(Vec<String>)`](crate::client::fluent_builders::GetDimensionKeyDetails::requested_dimensions) / [`set_requested_dimensions(Option<Vec<String>>)`](crate::client::fluent_builders::GetDimensionKeyDetails::set_requested_dimensions): <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>  <ul>   <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>   <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>  </ul>
-    /// - On success, responds with [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput) with field(s):
-    ///   - [`dimensions(Option<Vec<DimensionKeyDetail>>)`](crate::output::GetDimensionKeyDetailsOutput::dimensions): <p>The details for the requested dimensions.</p>
-    /// - On failure, responds with [`SdkError<GetDimensionKeyDetailsError>`](crate::error::GetDimensionKeyDetailsError)
-    pub fn get_dimension_key_details(&self) -> fluent_builders::GetDimensionKeyDetails {
-        fluent_builders::GetDimensionKeyDetails::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResourceMetadata`](crate::client::fluent_builders::GetResourceMetadata) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::GetResourceMetadata::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::GetResourceMetadata::set_service_type): <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceMetadata::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceMetadata::set_identifier): <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    /// - On success, responds with [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput) with field(s):
-    ///   - [`identifier(Option<String>)`](crate::output::GetResourceMetadataOutput::identifier): <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    ///   - [`features(Option<HashMap<String, FeatureMetadata>>)`](crate::output::GetResourceMetadataOutput::features): <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    /// - On failure, responds with [`SdkError<GetResourceMetadataError>`](crate::error::GetResourceMetadataError)
-    pub fn get_resource_metadata(&self) -> fluent_builders::GetResourceMetadata {
-        fluent_builders::GetResourceMetadata::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResourceMetrics`](crate::client::fluent_builders::GetResourceMetrics) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourceMetrics::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::GetResourceMetrics::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::GetResourceMetrics::set_service_type): <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>  <ul>   <li> <p> <code>RDS</code> </p> </li>   <li> <p> <code>DOCDB</code> </p> </li>  </ul>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceMetrics::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceMetrics::set_identifier): <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>  <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-    ///   - [`metric_queries(Vec<MetricQuery>)`](crate::client::fluent_builders::GetResourceMetrics::metric_queries) / [`set_metric_queries(Option<Vec<MetricQuery>>)`](crate::client::fluent_builders::GetResourceMetrics::set_metric_queries): <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetResourceMetrics::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetResourceMetrics::set_start_time): <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>  <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetResourceMetrics::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetResourceMetrics::set_end_time): <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>  <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    ///   - [`period_in_seconds(i32)`](crate::client::fluent_builders::GetResourceMetrics::period_in_seconds) / [`set_period_in_seconds(Option<i32>)`](crate::client::fluent_builders::GetResourceMetrics::set_period_in_seconds): <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>  <ul>   <li> <p> <code>1</code> (one second)</p> </li>   <li> <p> <code>60</code> (one minute)</p> </li>   <li> <p> <code>300</code> (five minutes)</p> </li>   <li> <p> <code>3600</code> (one hour)</p> </li>   <li> <p> <code>86400</code> (twenty-four hours)</p> </li>  </ul>  <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetResourceMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetResourceMetrics::set_max_results): <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourceMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourceMetrics::set_next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput) with field(s):
-    ///   - [`aligned_start_time(Option<DateTime>)`](crate::output::GetResourceMetricsOutput::aligned_start_time): <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
-    ///   - [`aligned_end_time(Option<DateTime>)`](crate::output::GetResourceMetricsOutput::aligned_end_time): <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
-    ///   - [`identifier(Option<String>)`](crate::output::GetResourceMetricsOutput::identifier): <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
-    ///   - [`metric_list(Option<Vec<MetricKeyDataPoints>>)`](crate::output::GetResourceMetricsOutput::metric_list): <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetResourceMetricsOutput::next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On failure, responds with [`SdkError<GetResourceMetricsError>`](crate::error::GetResourceMetricsError)
-    pub fn get_resource_metrics(&self) -> fluent_builders::GetResourceMetrics {
-        fluent_builders::GetResourceMetrics::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAvailableResourceDimensions`](crate::client::fluent_builders::ListAvailableResourceDimensions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAvailableResourceDimensions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::ListAvailableResourceDimensions::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::set_service_type): <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::set_identifier): <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-    ///   - [`metrics(Vec<String>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::metrics) / [`set_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::set_metrics): <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAvailableResourceDimensions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::set_max_results): <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAvailableResourceDimensions::set_next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput) with field(s):
-    ///   - [`metric_dimensions(Option<Vec<MetricDimensionGroups>>)`](crate::output::ListAvailableResourceDimensionsOutput::metric_dimensions): <p>The dimension information returned for requested metric types.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAvailableResourceDimensionsOutput::next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On failure, responds with [`SdkError<ListAvailableResourceDimensionsError>`](crate::error::ListAvailableResourceDimensionsError)
-    pub fn list_available_resource_dimensions(
-        &self,
-    ) -> fluent_builders::ListAvailableResourceDimensions {
-        fluent_builders::ListAvailableResourceDimensions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAvailableResourceMetrics`](crate::client::fluent_builders::ListAvailableResourceMetrics) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAvailableResourceMetrics::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::ListAvailableResourceMetrics::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::set_service_type): <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::set_identifier): <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-    ///   - [`metric_types(Vec<String>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::metric_types) / [`set_metric_types(Option<Vec<String>>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::set_metric_types): <p>The types of metrics to return in the response. Valid values in the array include the following:</p>  <ul>   <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>   <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>   <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>   <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>  </ul>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::set_next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAvailableResourceMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAvailableResourceMetrics::set_max_results): <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
-    /// - On success, responds with [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput) with field(s):
-    ///   - [`metrics(Option<Vec<ResponseResourceMetric>>)`](crate::output::ListAvailableResourceMetricsOutput::metrics): <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAvailableResourceMetricsOutput::next_token): <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
-    /// - On failure, responds with [`SdkError<ListAvailableResourceMetricsError>`](crate::error::ListAvailableResourceMetricsError)
-    pub fn list_available_resource_metrics(&self) -> fluent_builders::ListAvailableResourceMetrics {
-        fluent_builders::ListAvailableResourceMetrics::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DescribeDimensionKeys`.
-    ///
-    /// <p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric. </p> <note>
-    /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeDimensionKeys {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_dimension_keys_input::Builder,
-    }
-    impl DescribeDimensionKeys {
-        /// Creates a new `DescribeDimensionKeys`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeDimensionKeys,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeDimensionKeysOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDimensionKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::DescribeDimensionKeysPaginator {
-            crate::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>RDS</code> </p> </li>
-        /// <li> <p> <code>DOCDB</code> </p> </li>
-        /// </ul>
-        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(input);
-            self
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>RDS</code> </p> </li>
-        /// <li> <p> <code>DOCDB</code> </p> </li>
-        /// </ul>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceType>,
-        ) -> Self {
-            self.inner = self.inner.set_service_type(input);
-            self
-        }
-        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
-        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
-        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(input);
-            self
-        }
-        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
-        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_start_time(input);
-            self
-        }
-        /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
-        /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(input);
-            self
-        }
-        /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
-        /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_end_time(input);
-            self
-        }
-        /// <p>The name of a Performance Insights metric to be measured.</p>
-        /// <p>Valid values for <code>Metric</code> are:</p>
-        /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine. </p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
-        /// </ul>
-        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-        pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric(input.into());
-            self
-        }
-        /// <p>The name of a Performance Insights metric to be measured.</p>
-        /// <p>Valid values for <code>Metric</code> are:</p>
-        /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine. </p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
-        /// </ul>
-        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-        pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric(input);
-            self
-        }
-        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>1</code> (one second)</p> </li>
-        /// <li> <p> <code>60</code> (one minute)</p> </li>
-        /// <li> <p> <code>300</code> (five minutes)</p> </li>
-        /// <li> <p> <code>3600</code> (one hour)</p> </li>
-        /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
-        /// </ul>
-        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
-        pub fn period_in_seconds(mut self, input: i32) -> Self {
-            self.inner = self.inner.period_in_seconds(input);
-            self
-        }
-        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>1</code> (one second)</p> </li>
-        /// <li> <p> <code>60</code> (one minute)</p> </li>
-        /// <li> <p> <code>300</code> (five minutes)</p> </li>
-        /// <li> <p> <code>3600</code> (one hour)</p> </li>
-        /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
-        /// </ul>
-        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
-        pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_period_in_seconds(input);
-            self
-        }
-        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
-        pub fn group_by(mut self, input: crate::model::DimensionGroup) -> Self {
-            self.inner = self.inner.group_by(input);
-            self
-        }
-        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
-        pub fn set_group_by(
-            mut self,
-            input: std::option::Option<crate::model::DimensionGroup>,
-        ) -> Self {
-            self.inner = self.inner.set_group_by(input);
-            self
-        }
-        /// Appends an item to `AdditionalMetrics`.
-        ///
-        /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
-        ///
-        /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-        pub fn additional_metrics(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_metrics(input.into());
-            self
-        }
-        /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-        pub fn set_additional_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_additional_metrics(input);
-            self
-        }
-        /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
-        pub fn partition_by(mut self, input: crate::model::DimensionGroup) -> Self {
-            self.inner = self.inner.partition_by(input);
-            self
-        }
-        /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
-        pub fn set_partition_by(
-            mut self,
-            input: std::option::Option<crate::model::DimensionGroup>,
-        ) -> Self {
-            self.inner = self.inner.set_partition_by(input);
-            self
-        }
-        /// Adds a key-value pair to `Filter`.
-        ///
-        /// To override the contents of this collection use [`set_filter`](Self::set_filter).
-        ///
-        /// <p>One or more filters to apply in the request. Restrictions:</p>
-        /// <ul>
-        /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
-        /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
-        /// </ul>
-        pub fn filter(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.filter(k.into(), v.into());
-            self
-        }
-        /// <p>One or more filters to apply in the request. Restrictions:</p>
-        /// <ul>
-        /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
-        /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
-        /// </ul>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDimensionKeyDetails`.
-    ///
-    /// <p>Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDimensionKeyDetails {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_dimension_key_details_input::Builder,
-    }
-    impl GetDimensionKeyDetails {
-        /// Creates a new `GetDimensionKeyDetails`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetDimensionKeyDetails,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetDimensionKeyDetailsOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
-        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(input);
-            self
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceType>,
-        ) -> Self {
-            self.inner = self.inner.set_service_type(input);
-            self
-        }
-        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
-        /// <ul>
-        /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
-        /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
-        /// </ul>
-        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(input.into());
-            self
-        }
-        /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
-        /// <ul>
-        /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
-        /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
-        /// </ul>
-        pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group(input);
-            self
-        }
-        /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
-        /// <ul>
-        /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
-        /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
-        /// </ul>
-        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_identifier(input.into());
-            self
-        }
-        /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
-        /// <ul>
-        /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
-        /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
-        /// </ul>
-        pub fn set_group_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_group_identifier(input);
-            self
-        }
-        /// Appends an item to `RequestedDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_requested_dimensions`](Self::set_requested_dimensions).
-        ///
-        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
-        /// <ul>
-        /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
-        /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
-        /// </ul>
-        pub fn requested_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requested_dimensions(input.into());
-            self
-        }
-        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
-        /// <ul>
-        /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
-        /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
-        /// </ul>
-        pub fn set_requested_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_requested_dimensions(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetResourceMetadata`.
-    ///
-    /// <p>Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetResourceMetadata {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_resource_metadata_input::Builder,
-    }
-    impl GetResourceMetadata {
-        /// Creates a new `GetResourceMetadata`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetResourceMetadata,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceMetadataError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetResourceMetadataOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceMetadataError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(input);
-            self
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceType>,
-        ) -> Self {
-            self.inner = self.inner.set_service_type(input);
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetResourceMetrics`.
-    ///
-    /// <p>Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.</p> <note>
-    /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetResourceMetrics {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_resource_metrics_input::Builder,
-    }
-    impl GetResourceMetrics {
-        /// Creates a new `GetResourceMetrics`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetResourceMetrics,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceMetricsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetResourceMetricsOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetResourceMetricsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::GetResourceMetricsPaginator {
-            crate::paginator::GetResourceMetricsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>RDS</code> </p> </li>
-        /// <li> <p> <code>DOCDB</code> </p> </li>
-        /// </ul>
-        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(input);
-            self
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>RDS</code> </p> </li>
-        /// <li> <p> <code>DOCDB</code> </p> </li>
-        /// </ul>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceType>,
-        ) -> Self {
-            self.inner = self.inner.set_service_type(input);
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
-        /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
-        /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// Appends an item to `MetricQueries`.
-        ///
-        /// To override the contents of this collection use [`set_metric_queries`](Self::set_metric_queries).
-        ///
-        /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-        pub fn metric_queries(mut self, input: crate::model::MetricQuery) -> Self {
-            self.inner = self.inner.metric_queries(input);
-            self
-        }
-        /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-        pub fn set_metric_queries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricQuery>>,
-        ) -> Self {
-            self.inner = self.inner.set_metric_queries(input);
-            self
-        }
-        /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
-        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(input);
-            self
-        }
-        /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
-        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_start_time(input);
-            self
-        }
-        /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
-        /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(input);
-            self
-        }
-        /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
-        /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_end_time(input);
-            self
-        }
-        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
-        /// <ul>
-        /// <li> <p> <code>1</code> (one second)</p> </li>
-        /// <li> <p> <code>60</code> (one minute)</p> </li>
-        /// <li> <p> <code>300</code> (five minutes)</p> </li>
-        /// <li> <p> <code>3600</code> (one hour)</p> </li>
-        /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
-        /// </ul>
-        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
-        pub fn period_in_seconds(mut self, input: i32) -> Self {
-            self.inner = self.inner.period_in_seconds(input);
-            self
-        }
-        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
-        /// <ul>
-        /// <li> <p> <code>1</code> (one second)</p> </li>
-        /// <li> <p> <code>60</code> (one minute)</p> </li>
-        /// <li> <p> <code>300</code> (five minutes)</p> </li>
-        /// <li> <p> <code>3600</code> (one hour)</p> </li>
-        /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
-        /// </ul>
-        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
-        pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_period_in_seconds(input);
-            self
-        }
-        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAvailableResourceDimensions`.
-    ///
-    /// <p>Retrieve the dimensions that can be queried for each specified metric type on a specified DB instance.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAvailableResourceDimensions {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_available_resource_dimensions_input::Builder,
-    }
-    impl ListAvailableResourceDimensions {
-        /// Creates a new `ListAvailableResourceDimensions`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListAvailableResourceDimensions,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceDimensionsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListAvailableResourceDimensionsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceDimensionsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailableResourceDimensionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListAvailableResourceDimensionsPaginator {
-            crate::paginator::ListAvailableResourceDimensionsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(input);
-            self
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceType>,
-        ) -> Self {
-            self.inner = self.inner.set_service_type(input);
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// Appends an item to `Metrics`.
-        ///
-        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
-        ///
-        /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(input.into());
-            self
-        }
-        /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-        pub fn set_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_metrics(input);
-            self
-        }
-        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAvailableResourceMetrics`.
-    ///
-    /// <p>Retrieve metrics of the specified types that can be queried for a specified DB instance. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAvailableResourceMetrics {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_available_resource_metrics_input::Builder,
-    }
-    impl ListAvailableResourceMetrics {
-        /// Creates a new `ListAvailableResourceMetrics`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListAvailableResourceMetrics,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceMetricsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListAvailableResourceMetricsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceMetricsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailableResourceMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListAvailableResourceMetricsPaginator {
-            crate::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(input);
-            self
-        }
-        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceType>,
-        ) -> Self {
-            self.inner = self.inner.set_service_type(input);
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// Appends an item to `MetricTypes`.
-        ///
-        /// To override the contents of this collection use [`set_metric_types`](Self::set_metric_types).
-        ///
-        /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>
-        /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>
-        /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
-        /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
-        /// </ul>
-        pub fn metric_types(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_types(input.into());
-            self
-        }
-        /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>
-        /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>
-        /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
-        /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
-        /// </ul>
-        pub fn set_metric_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_metric_types(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
     }
 }
 
@@ -1261,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1271,3 +211,43 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_pi::Error> {
+/// # let client: aws_sdk_pi::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.describe_dimension_keys()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod describe_dimension_keys;
+
+mod get_dimension_key_details;
+
+mod get_resource_metadata;
+
+mod get_resource_metrics;
+
+mod list_available_resource_dimensions;
+
+mod list_available_resource_metrics;

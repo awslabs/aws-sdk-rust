@@ -4,40 +4,33 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
-    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The next token is not valid.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>The service role is not valid.</p>
-    InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
+    InvalidServiceRoleException(crate::types::error::InvalidServiceRoleException),
     /// <p>A resource limit has been exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account. AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
-    ProjectAlreadyExistsException(crate::error::ProjectAlreadyExistsException),
+    ProjectAlreadyExistsException(crate::types::error::ProjectAlreadyExistsException),
     /// <p>Project configuration information is required but not specified.</p>
-    ProjectConfigurationException(crate::error::ProjectConfigurationException),
+    ProjectConfigurationException(crate::types::error::ProjectConfigurationException),
     /// <p>The project creation request was valid, but a nonspecific exception or error occurred during project creation. The project could not be created in AWS CodeStar.</p>
-    ProjectCreationFailedException(crate::error::ProjectCreationFailedException),
+    ProjectCreationFailedException(crate::types::error::ProjectCreationFailedException),
     /// <p>The specified AWS CodeStar project was not found.</p>
-    ProjectNotFoundException(crate::error::ProjectNotFoundException),
+    ProjectNotFoundException(crate::types::error::ProjectNotFoundException),
     /// <p>The team member is already associated with a role in this project.</p>
-    TeamMemberAlreadyAssociatedException(crate::error::TeamMemberAlreadyAssociatedException),
+    TeamMemberAlreadyAssociatedException(crate::types::error::TeamMemberAlreadyAssociatedException),
     /// <p>The specified team member was not found.</p>
-    TeamMemberNotFoundException(crate::error::TeamMemberNotFoundException),
+    TeamMemberNotFoundException(crate::types::error::TeamMemberNotFoundException),
     /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account. </p>
-    UserProfileAlreadyExistsException(crate::error::UserProfileAlreadyExistsException),
+    UserProfileAlreadyExistsException(crate::types::error::UserProfileAlreadyExistsException),
     /// <p>The user profile was not found.</p>
-    UserProfileNotFoundException(crate::error::UserProfileNotFoundException),
+    UserProfileNotFoundException(crate::types::error::UserProfileNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
-    ValidationException(crate::error::ValidationException),
-    ///
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,608 +52,783 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateTeamMemberError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::associate_team_member::AssociateTeamMemberError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssociateTeamMemberError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::associate_team_member::AssociateTeamMemberError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::AssociateTeamMemberError> for Error {
-    fn from(err: crate::error::AssociateTeamMemberError) -> Self {
-        match err.kind {
-            crate::error::AssociateTeamMemberErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::AssociateTeamMemberErrorKind::InvalidServiceRoleException(inner) => {
-                Error::InvalidServiceRoleException(inner)
-            }
-            crate::error::AssociateTeamMemberErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::AssociateTeamMemberErrorKind::ProjectConfigurationException(inner) => {
-                Error::ProjectConfigurationException(inner)
-            }
-            crate::error::AssociateTeamMemberErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::AssociateTeamMemberErrorKind::TeamMemberAlreadyAssociatedException(
-                inner,
-            ) => Error::TeamMemberAlreadyAssociatedException(inner),
-            crate::error::AssociateTeamMemberErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::AssociateTeamMemberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>) -> Self {
+impl From<crate::operation::associate_team_member::AssociateTeamMemberError> for Error {
+    fn from(err: crate::operation::associate_team_member::AssociateTeamMemberError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::associate_team_member::AssociateTeamMemberError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::ProjectConfigurationException(inner) => Error::ProjectConfigurationException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::ProjectNotFoundException(inner) => Error::ProjectNotFoundException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::TeamMemberAlreadyAssociatedException(inner) => Error::TeamMemberAlreadyAssociatedException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_team_member::AssociateTeamMemberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::CreateProjectError> for Error {
-    fn from(err: crate::error::CreateProjectError) -> Self {
-        match err.kind {
-            crate::error::CreateProjectErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::CreateProjectErrorKind::InvalidServiceRoleException(inner) => {
-                Error::InvalidServiceRoleException(inner)
-            }
-            crate::error::CreateProjectErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ProjectAlreadyExistsException(inner) => {
-                Error::ProjectAlreadyExistsException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ProjectConfigurationException(inner) => {
-                Error::ProjectConfigurationException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ProjectCreationFailedException(inner) => {
-                Error::ProjectCreationFailedException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserProfileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateUserProfileError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserProfileError> for Error {
-    fn from(err: crate::error::CreateUserProfileError) -> Self {
-        match err.kind {
-            crate::error::CreateUserProfileErrorKind::UserProfileAlreadyExistsException(inner) => {
-                Error::UserProfileAlreadyExistsException(inner)
-            }
-            crate::error::CreateUserProfileErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateUserProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteProjectError> for Error {
-    fn from(err: crate::error::DeleteProjectError) -> Self {
-        match err.kind {
-            crate::error::DeleteProjectErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::InvalidServiceRoleException(inner) => {
-                Error::InvalidServiceRoleException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserProfileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUserProfileError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserProfileError> for Error {
-    fn from(err: crate::error::DeleteUserProfileError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserProfileErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteUserProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeProjectError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeProjectError> for Error {
-    fn from(err: crate::error::DescribeProjectError) -> Self {
-        match err.kind {
-            crate::error::DescribeProjectErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DescribeProjectErrorKind::InvalidServiceRoleException(inner) => {
-                Error::InvalidServiceRoleException(inner)
-            }
-            crate::error::DescribeProjectErrorKind::ProjectConfigurationException(inner) => {
-                Error::ProjectConfigurationException(inner)
-            }
-            crate::error::DescribeProjectErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::DescribeProjectErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUserProfileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUserProfileError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUserProfileError> for Error {
-    fn from(err: crate::error::DescribeUserProfileError) -> Self {
-        match err.kind {
-            crate::error::DescribeUserProfileErrorKind::UserProfileNotFoundException(inner) => {
-                Error::UserProfileNotFoundException(inner)
-            }
-            crate::error::DescribeUserProfileErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeUserProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateTeamMemberError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisassociateTeamMemberError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_project::CreateProjectError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DisassociateTeamMemberError> for Error {
-    fn from(err: crate::error::DisassociateTeamMemberError) -> Self {
-        match err.kind {
-            crate::error::DisassociateTeamMemberErrorKind::ConcurrentModificationException(
+impl From<crate::operation::create_project::CreateProjectError> for Error {
+    fn from(err: crate::operation::create_project::CreateProjectError) -> Self {
+        match err {
+            crate::operation::create_project::CreateProjectError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_project::CreateProjectError::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
+            crate::operation::create_project::CreateProjectError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_project::CreateProjectError::ProjectAlreadyExistsException(inner) => Error::ProjectAlreadyExistsException(inner),
+            crate::operation::create_project::CreateProjectError::ProjectConfigurationException(inner) => Error::ProjectConfigurationException(inner),
+            crate::operation::create_project::CreateProjectError::ProjectCreationFailedException(inner) => Error::ProjectCreationFailedException(inner),
+            crate::operation::create_project::CreateProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_project::CreateProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_user_profile::CreateUserProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_user_profile::CreateUserProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user_profile::CreateUserProfileError> for Error {
+    fn from(err: crate::operation::create_user_profile::CreateUserProfileError) -> Self {
+        match err {
+            crate::operation::create_user_profile::CreateUserProfileError::UserProfileAlreadyExistsException(inner) => Error::UserProfileAlreadyExistsException(inner),
+            crate::operation::create_user_profile::CreateUserProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_user_profile::CreateUserProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_project::DeleteProjectError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_project::DeleteProjectError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_project::DeleteProjectError> for Error {
+    fn from(err: crate::operation::delete_project::DeleteProjectError) -> Self {
+        match err {
+            crate::operation::delete_project::DeleteProjectError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_project::DeleteProjectError::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
+            crate::operation::delete_project::DeleteProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_project::DeleteProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_profile::DeleteUserProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_profile::DeleteUserProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_profile::DeleteUserProfileError> for Error {
+    fn from(err: crate::operation::delete_user_profile::DeleteUserProfileError) -> Self {
+        match err {
+            crate::operation::delete_user_profile::DeleteUserProfileError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::delete_user_profile::DeleteUserProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_project::DescribeProjectError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_project::DescribeProjectError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_project::DescribeProjectError> for Error {
+    fn from(err: crate::operation::describe_project::DescribeProjectError) -> Self {
+        match err {
+            crate::operation::describe_project::DescribeProjectError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::describe_project::DescribeProjectError::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
+            crate::operation::describe_project::DescribeProjectError::ProjectConfigurationException(inner) => Error::ProjectConfigurationException(inner),
+            crate::operation::describe_project::DescribeProjectError::ProjectNotFoundException(inner) => Error::ProjectNotFoundException(inner),
+            crate::operation::describe_project::DescribeProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_project::DescribeProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_profile::DescribeUserProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_profile::DescribeUserProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_user_profile::DescribeUserProfileError> for Error {
+    fn from(err: crate::operation::describe_user_profile::DescribeUserProfileError) -> Self {
+        match err {
+            crate::operation::describe_user_profile::DescribeUserProfileError::UserProfileNotFoundException(inner) => Error::UserProfileNotFoundException(inner),
+            crate::operation::describe_user_profile::DescribeUserProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_user_profile::DescribeUserProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_team_member::DisassociateTeamMemberError> for Error {
+    fn from(err: crate::operation::disassociate_team_member::DisassociateTeamMemberError) -> Self {
+        match err {
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError::ProjectNotFoundException(inner) => Error::ProjectNotFoundException(inner),
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_projects::ListProjectsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_projects::ListProjectsError> for Error {
+    fn from(err: crate::operation::list_projects::ListProjectsError) -> Self {
+        match err {
+            crate::operation::list_projects::ListProjectsError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_projects::ListProjectsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_projects::ListProjectsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_resources::ListResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_resources::ListResourcesError> for Error {
+    fn from(err: crate::operation::list_resources::ListResourcesError) -> Self {
+        match err {
+            crate::operation::list_resources::ListResourcesError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resources::ListResourcesError::ProjectNotFoundException(
+                inner,
+            ) => Error::ProjectNotFoundException(inner),
+            crate::operation::list_resources::ListResourcesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_resources::ListResourcesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_project::ListTagsForProjectError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_project::ListTagsForProjectError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_project::ListTagsForProjectError> for Error {
+    fn from(err: crate::operation::list_tags_for_project::ListTagsForProjectError) -> Self {
+        match err {
+            crate::operation::list_tags_for_project::ListTagsForProjectError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_tags_for_project::ListTagsForProjectError::ProjectNotFoundException(inner) => Error::ProjectNotFoundException(inner),
+            crate::operation::list_tags_for_project::ListTagsForProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_project::ListTagsForProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_team_members::ListTeamMembersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_team_members::ListTeamMembersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_team_members::ListTeamMembersError> for Error {
+    fn from(err: crate::operation::list_team_members::ListTeamMembersError) -> Self {
+        match err {
+            crate::operation::list_team_members::ListTeamMembersError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_team_members::ListTeamMembersError::ProjectNotFoundException(inner) => Error::ProjectNotFoundException(inner),
+            crate::operation::list_team_members::ListTeamMembersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_team_members::ListTeamMembersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_user_profiles::ListUserProfilesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_user_profiles::ListUserProfilesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_user_profiles::ListUserProfilesError> for Error {
+    fn from(err: crate::operation::list_user_profiles::ListUserProfilesError) -> Self {
+        match err {
+            crate::operation::list_user_profiles::ListUserProfilesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_user_profiles::ListUserProfilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_user_profiles::ListUserProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_project::TagProjectError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_project::TagProjectError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_project::TagProjectError> for Error {
+    fn from(err: crate::operation::tag_project::TagProjectError) -> Self {
+        match err {
+            crate::operation::tag_project::TagProjectError::ConcurrentModificationException(
                 inner,
             ) => Error::ConcurrentModificationException(inner),
-            crate::error::DisassociateTeamMemberErrorKind::InvalidServiceRoleException(inner) => {
-                Error::InvalidServiceRoleException(inner)
-            }
-            crate::error::DisassociateTeamMemberErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::DisassociateTeamMemberErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DisassociateTeamMemberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProjectsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProjectsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListProjectsError> for Error {
-    fn from(err: crate::error::ListProjectsError) -> Self {
-        match err.kind {
-            crate::error::ListProjectsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListProjectsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListProjectsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListResourcesError> for Error {
-    fn from(err: crate::error::ListResourcesError) -> Self {
-        match err.kind {
-            crate::error::ListResourcesErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListResourcesErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::ListResourcesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForProjectError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForProjectError> for Error {
-    fn from(err: crate::error::ListTagsForProjectError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForProjectErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListTagsForProjectErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::ListTagsForProjectErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTeamMembersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTeamMembersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTeamMembersError> for Error {
-    fn from(err: crate::error::ListTeamMembersError) -> Self {
-        match err.kind {
-            crate::error::ListTeamMembersErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListTeamMembersErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::ListTeamMembersErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTeamMembersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUserProfilesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListUserProfilesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListUserProfilesError> for Error {
-    fn from(err: crate::error::ListUserProfilesError) -> Self {
-        match err.kind {
-            crate::error::ListUserProfilesErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListUserProfilesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListUserProfilesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagProjectError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagProjectError> for Error {
-    fn from(err: crate::error::TagProjectError) -> Self {
-        match err.kind {
-            crate::error::TagProjectErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::TagProjectErrorKind::LimitExceededException(inner) => {
+            crate::operation::tag_project::TagProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::TagProjectErrorKind::ProjectNotFoundException(inner) => {
+            crate::operation::tag_project::TagProjectError::ProjectNotFoundException(inner) => {
                 Error::ProjectNotFoundException(inner)
             }
-            crate::error::TagProjectErrorKind::ValidationException(inner) => {
+            crate::operation::tag_project::TagProjectError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::TagProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_project::TagProjectError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagProjectError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagProjectError> for Error {
-    fn from(err: crate::error::UntagProjectError) -> Self {
-        match err.kind {
-            crate::error::UntagProjectErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UntagProjectErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UntagProjectErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::UntagProjectErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateProjectError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateProjectError> for Error {
-    fn from(err: crate::error::UpdateProjectError) -> Self {
-        match err.kind {
-            crate::error::UpdateProjectErrorKind::ProjectNotFoundException(inner) => {
-                Error::ProjectNotFoundException(inner)
-            }
-            crate::error::UpdateProjectErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTeamMemberError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_project::UntagProjectError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateTeamMemberError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_project::UntagProjectError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateTeamMemberError> for Error {
-    fn from(err: crate::error::UpdateTeamMemberError) -> Self {
-        match err.kind {
-            crate::error::UpdateTeamMemberErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UpdateTeamMemberErrorKind::InvalidServiceRoleException(inner) => {
-                Error::InvalidServiceRoleException(inner)
-            }
-            crate::error::UpdateTeamMemberErrorKind::LimitExceededException(inner) => {
+impl From<crate::operation::untag_project::UntagProjectError> for Error {
+    fn from(err: crate::operation::untag_project::UntagProjectError) -> Self {
+        match err {
+            crate::operation::untag_project::UntagProjectError::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::operation::untag_project::UntagProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateTeamMemberErrorKind::ProjectConfigurationException(inner) => {
-                Error::ProjectConfigurationException(inner)
-            }
-            crate::error::UpdateTeamMemberErrorKind::ProjectNotFoundException(inner) => {
+            crate::operation::untag_project::UntagProjectError::ProjectNotFoundException(inner) => {
                 Error::ProjectNotFoundException(inner)
             }
-            crate::error::UpdateTeamMemberErrorKind::TeamMemberNotFoundException(inner) => {
-                Error::TeamMemberNotFoundException(inner)
-            }
-            crate::error::UpdateTeamMemberErrorKind::ValidationException(inner) => {
+            crate::operation::untag_project::UntagProjectError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UpdateTeamMemberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::untag_project::UntagProjectError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserProfileError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateUserProfileError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_project::UpdateProjectError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateUserProfileError> for Error {
-    fn from(err: crate::error::UpdateUserProfileError) -> Self {
-        match err.kind {
-            crate::error::UpdateUserProfileErrorKind::UserProfileNotFoundException(inner) => {
-                Error::UserProfileNotFoundException(inner)
-            }
-            crate::error::UpdateUserProfileErrorKind::ValidationException(inner) => {
+impl From<crate::operation::update_project::UpdateProjectError> for Error {
+    fn from(err: crate::operation::update_project::UpdateProjectError) -> Self {
+        match err {
+            crate::operation::update_project::UpdateProjectError::ProjectNotFoundException(
+                inner,
+            ) => Error::ProjectNotFoundException(inner),
+            crate::operation::update_project::UpdateProjectError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UpdateUserProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::update_project::UpdateProjectError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_team_member::UpdateTeamMemberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_team_member::UpdateTeamMemberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_team_member::UpdateTeamMemberError> for Error {
+    fn from(err: crate::operation::update_team_member::UpdateTeamMemberError) -> Self {
+        match err {
+            crate::operation::update_team_member::UpdateTeamMemberError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::ProjectConfigurationException(inner) => Error::ProjectConfigurationException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::ProjectNotFoundException(inner) => Error::ProjectNotFoundException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::TeamMemberNotFoundException(inner) => Error::TeamMemberNotFoundException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_team_member::UpdateTeamMemberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_profile::UpdateUserProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_user_profile::UpdateUserProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_user_profile::UpdateUserProfileError> for Error {
+    fn from(err: crate::operation::update_user_profile::UpdateUserProfileError) -> Self {
+        match err {
+            crate::operation::update_user_profile::UpdateUserProfileError::UserProfileNotFoundException(inner) => Error::UserProfileNotFoundException(inner),
+            crate::operation::update_user_profile::UpdateUserProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_user_profile::UpdateUserProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidServiceRoleException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ProjectAlreadyExistsException(e) => e.request_id(),
+            Self::ProjectConfigurationException(e) => e.request_id(),
+            Self::ProjectCreationFailedException(e) => e.request_id(),
+            Self::ProjectNotFoundException(e) => e.request_id(),
+            Self::TeamMemberAlreadyAssociatedException(e) => e.request_id(),
+            Self::TeamMemberNotFoundException(e) => e.request_id(),
+            Self::UserProfileAlreadyExistsException(e) => e.request_id(),
+            Self::UserProfileNotFoundException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

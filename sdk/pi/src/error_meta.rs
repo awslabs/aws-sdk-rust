@@ -4,20 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The request failed due to an unknown error.</p>
-    InternalServiceError(crate::error::InternalServiceError),
+    InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>One of the arguments provided is invalid for this request.</p>
-    InvalidArgumentException(crate::error::InvalidArgumentException),
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
-    NotAuthorizedException(crate::error::NotAuthorizedException),
-    ///
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29,149 +22,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDimensionKeysError> for Error {
-    fn from(err: crate::error::DescribeDimensionKeysError) -> Self {
-        match err.kind {
-            crate::error::DescribeDimensionKeysErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::DescribeDimensionKeysErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::DescribeDimensionKeysErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeDimensionKeysErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetDimensionKeyDetailsError> for Error {
-    fn from(err: crate::error::GetDimensionKeyDetailsError) -> Self {
-        match err.kind {
-            crate::error::GetDimensionKeyDetailsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::GetDimensionKeyDetailsErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetDimensionKeyDetailsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetDimensionKeyDetailsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceMetadataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceMetadataError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetResourceMetadataError> for Error {
-    fn from(err: crate::error::GetResourceMetadataError) -> Self {
-        match err.kind {
-            crate::error::GetResourceMetadataErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::GetResourceMetadataErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetResourceMetadataErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetResourceMetadataErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceMetricsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceMetricsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetResourceMetricsError> for Error {
-    fn from(err: crate::error::GetResourceMetricsError) -> Self {
-        match err.kind {
-            crate::error::GetResourceMetricsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::GetResourceMetricsErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetResourceMetricsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetResourceMetricsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceDimensionsError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListAvailableResourceDimensionsError,
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
             R,
         >,
     ) -> Self {
@@ -179,60 +42,231 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListAvailableResourceDimensionsError> for Error {
-    fn from(err: crate::error::ListAvailableResourceDimensionsError) -> Self {
-        match err.kind {
-            crate::error::ListAvailableResourceDimensionsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::error::ListAvailableResourceDimensionsErrorKind::InvalidArgumentException(
-                inner,
-            ) => Error::InvalidArgumentException(inner),
-            crate::error::ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(
-                inner,
-            ) => Error::NotAuthorizedException(inner),
-            crate::error::ListAvailableResourceDimensionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::describe_dimension_keys::DescribeDimensionKeysError> for Error {
+    fn from(err: crate::operation::describe_dimension_keys::DescribeDimensionKeysError) -> Self {
+        match err {
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceMetricsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceMetricsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListAvailableResourceMetricsError> for Error {
-    fn from(err: crate::error::ListAvailableResourceMetricsError) -> Self {
-        match err.kind {
-            crate::error::ListAvailableResourceMetricsErrorKind::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
+impl From<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError> for Error {
+    fn from(err: crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError) -> Self {
+        match err {
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_metadata::GetResourceMetadataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_metadata::GetResourceMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::ListAvailableResourceMetricsErrorKind::InvalidArgumentException(
-                inner,
-            ) => Error::InvalidArgumentException(inner),
-            crate::error::ListAvailableResourceMetricsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_metadata::GetResourceMetadataError> for Error {
+    fn from(err: crate::operation::get_resource_metadata::GetResourceMetadataError) -> Self {
+        match err {
+            crate::operation::get_resource_metadata::GetResourceMetadataError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_resource_metadata::GetResourceMetadataError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_resource_metadata::GetResourceMetadataError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_resource_metadata::GetResourceMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_metrics::GetResourceMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_metrics::GetResourceMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::ListAvailableResourceMetricsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_metrics::GetResourceMetricsError> for Error {
+    fn from(err: crate::operation::get_resource_metrics::GetResourceMetricsError) -> Self {
+        match err {
+            crate::operation::get_resource_metrics::GetResourceMetricsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_resource_metrics::GetResourceMetricsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_resource_metrics::GetResourceMetricsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_resource_metrics::GetResourceMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InternalServiceError(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::NotAuthorizedException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -4,20 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Provide a valid value for the field or parameter.</p>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
-    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29,91 +22,127 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_events::PutEventsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_events::PutEventsError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutEventsError> for Error {
-    fn from(err: crate::error::PutEventsError) -> Self {
-        match err.kind {
-            crate::error::PutEventsErrorKind::InvalidInputException(inner) => {
+impl From<crate::operation::put_events::PutEventsError> for Error {
+    fn from(err: crate::operation::put_events::PutEventsError) -> Self {
+        match err {
+            crate::operation::put_events::PutEventsError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::PutEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::put_events::PutEventsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutItemsError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_items::PutItemsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutItemsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_items::PutItemsError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutItemsError> for Error {
-    fn from(err: crate::error::PutItemsError) -> Self {
-        match err.kind {
-            crate::error::PutItemsErrorKind::InvalidInputException(inner) => {
+impl From<crate::operation::put_items::PutItemsError> for Error {
+    fn from(err: crate::operation::put_items::PutItemsError) -> Self {
+        match err {
+            crate::operation::put_items::PutItemsError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::PutItemsErrorKind::ResourceInUseException(inner) => {
+            crate::operation::put_items::PutItemsError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::PutItemsErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::put_items::PutItemsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::PutItemsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::put_items::PutItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutUsersError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_users::PutUsersError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutUsersError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_users::PutUsersError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutUsersError> for Error {
-    fn from(err: crate::error::PutUsersError) -> Self {
-        match err.kind {
-            crate::error::PutUsersErrorKind::InvalidInputException(inner) => {
+impl From<crate::operation::put_users::PutUsersError> for Error {
+    fn from(err: crate::operation::put_users::PutUsersError) -> Self {
+        match err {
+            crate::operation::put_users::PutUsersError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::PutUsersErrorKind::ResourceInUseException(inner) => {
+            crate::operation::put_users::PutUsersError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::PutUsersErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::put_users::PutUsersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::PutUsersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::put_users::PutUsersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InvalidInputException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

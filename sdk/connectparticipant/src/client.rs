@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Connect Participant Service. Each operation on Amazon Connect Participant Service is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_connectparticipant::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_connectparticipant::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_connectparticipant::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_connectparticipant::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_connectparticipant::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CompleteAttachmentUpload`](crate::operation::complete_attachment_upload) operation has
+/// a [`Client::complete_attachment_upload`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.complete_attachment_upload()
+///     .client_token("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1042 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CompleteAttachmentUpload`](crate::client::fluent_builders::CompleteAttachmentUpload) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`attachment_ids(Vec<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::attachment_ids) / [`set_attachment_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_attachment_ids): <p>A list of unique identifiers for the attachments.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
-    /// - On success, responds with [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput)
-
-    /// - On failure, responds with [`SdkError<CompleteAttachmentUploadError>`](crate::error::CompleteAttachmentUploadError)
-    pub fn complete_attachment_upload(&self) -> fluent_builders::CompleteAttachmentUpload {
-        fluent_builders::CompleteAttachmentUpload::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateParticipantConnection`](crate::client::fluent_builders::CreateParticipantConnection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(Vec<ConnectionType>)`](crate::client::fluent_builders::CreateParticipantConnection::type) / [`set_type(Option<Vec<ConnectionType>>)`](crate::client::fluent_builders::CreateParticipantConnection::set_type): <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
-    ///   - [`participant_token(impl Into<String>)`](crate::client::fluent_builders::CreateParticipantConnection::participant_token) / [`set_participant_token(Option<String>)`](crate::client::fluent_builders::CreateParticipantConnection::set_participant_token): <p>This is a header parameter.</p>  <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-    ///   - [`connect_participant(bool)`](crate::client::fluent_builders::CreateParticipantConnection::connect_participant) / [`set_connect_participant(Option<bool>)`](crate::client::fluent_builders::CreateParticipantConnection::set_connect_participant): <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
-    /// - On success, responds with [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput) with field(s):
-    ///   - [`websocket(Option<Websocket>)`](crate::output::CreateParticipantConnectionOutput::websocket): <p>Creates the participant's websocket connection.</p>
-    ///   - [`connection_credentials(Option<ConnectionCredentials>)`](crate::output::CreateParticipantConnectionOutput::connection_credentials): <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
-    /// - On failure, responds with [`SdkError<CreateParticipantConnectionError>`](crate::error::CreateParticipantConnectionError)
-    pub fn create_participant_connection(&self) -> fluent_builders::CreateParticipantConnection {
-        fluent_builders::CreateParticipantConnection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisconnectParticipant`](crate::client::fluent_builders::DisconnectParticipant) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
-    /// - On success, responds with [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput)
-
-    /// - On failure, responds with [`SdkError<DisconnectParticipantError>`](crate::error::DisconnectParticipantError)
-    pub fn disconnect_participant(&self) -> fluent_builders::DisconnectParticipant {
-        fluent_builders::DisconnectParticipant::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAttachment`](crate::client::fluent_builders::GetAttachment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`attachment_id(impl Into<String>)`](crate::client::fluent_builders::GetAttachment::attachment_id) / [`set_attachment_id(Option<String>)`](crate::client::fluent_builders::GetAttachment::set_attachment_id): <p>A unique identifier for the attachment.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::GetAttachment::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::GetAttachment::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
-    /// - On success, responds with [`GetAttachmentOutput`](crate::output::GetAttachmentOutput) with field(s):
-    ///   - [`url(Option<String>)`](crate::output::GetAttachmentOutput::url): <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
-    ///   - [`url_expiry(Option<String>)`](crate::output::GetAttachmentOutput::url_expiry): <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    /// - On failure, responds with [`SdkError<GetAttachmentError>`](crate::error::GetAttachmentError)
-    pub fn get_attachment(&self) -> fluent_builders::GetAttachment {
-        fluent_builders::GetAttachment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetTranscript`](crate::client::fluent_builders::GetTranscript) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTranscript::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::GetTranscript::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::GetTranscript::set_contact_id): <p>The contactId from the current contact chain for which transcript is needed.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetTranscript::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetTranscript::set_max_results): <p>The maximum number of results to return in the page. Default: 10. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTranscript::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTranscript::set_next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    ///   - [`scan_direction(ScanDirection)`](crate::client::fluent_builders::GetTranscript::scan_direction) / [`set_scan_direction(Option<ScanDirection>)`](crate::client::fluent_builders::GetTranscript::set_scan_direction): <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
-    ///   - [`sort_order(SortKey)`](crate::client::fluent_builders::GetTranscript::sort_order) / [`set_sort_order(Option<SortKey>)`](crate::client::fluent_builders::GetTranscript::set_sort_order): <p>The sort order for the records. Default: DESCENDING.</p>
-    ///   - [`start_position(StartPosition)`](crate::client::fluent_builders::GetTranscript::start_position) / [`set_start_position(Option<StartPosition>)`](crate::client::fluent_builders::GetTranscript::set_start_position): <p>A filtering option for where to start.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::GetTranscript::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::GetTranscript::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
-    /// - On success, responds with [`GetTranscriptOutput`](crate::output::GetTranscriptOutput) with field(s):
-    ///   - [`initial_contact_id(Option<String>)`](crate::output::GetTranscriptOutput::initial_contact_id): <p>The initial contact ID for the contact. </p>
-    ///   - [`transcript(Option<Vec<Item>>)`](crate::output::GetTranscriptOutput::transcript): <p>The list of messages in the session.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetTranscriptOutput::next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<GetTranscriptError>`](crate::error::GetTranscriptError)
-    pub fn get_transcript(&self) -> fluent_builders::GetTranscript {
-        fluent_builders::GetTranscript::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendEvent`](crate::client::fluent_builders::SendEvent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content_type): <p>The content type of the request. Supported types are:</p>  <ul>   <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>  </ul>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content): <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>  <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
-    /// - On success, responds with [`SendEventOutput`](crate::output::SendEventOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::SendEventOutput::id): <p>The ID of the response.</p>
-    ///   - [`absolute_time(Option<String>)`](crate::output::SendEventOutput::absolute_time): <p>The time when the event was sent.</p>  <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    /// - On failure, responds with [`SdkError<SendEventError>`](crate::error::SendEventError)
-    pub fn send_event(&self) -> fluent_builders::SendEvent {
-        fluent_builders::SendEvent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendMessage`](crate::client::fluent_builders::SendMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content_type): <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content): <p>The content of the message. </p>  <ul>   <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>   <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>  </ul>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_connection_token): <p>The authentication token associated with the connection.</p>
-    /// - On success, responds with [`SendMessageOutput`](crate::output::SendMessageOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::SendMessageOutput::id): <p>The ID of the message.</p>
-    ///   - [`absolute_time(Option<String>)`](crate::output::SendMessageOutput::absolute_time): <p>The time when the message was sent.</p>  <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    /// - On failure, responds with [`SdkError<SendMessageError>`](crate::error::SendMessageError)
-    pub fn send_message(&self) -> fluent_builders::SendMessage {
-        fluent_builders::SendMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartAttachmentUpload`](crate::client::fluent_builders::StartAttachmentUpload) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_content_type): <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    ///   - [`attachment_size_in_bytes(i64)`](crate::client::fluent_builders::StartAttachmentUpload::attachment_size_in_bytes) / [`set_attachment_size_in_bytes(i64)`](crate::client::fluent_builders::StartAttachmentUpload::set_attachment_size_in_bytes): <p>The size of the attachment in bytes.</p>
-    ///   - [`attachment_name(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::attachment_name) / [`set_attachment_name(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_attachment_name): <p>A case-sensitive name of the attachment being uploaded.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
-    /// - On success, responds with [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput) with field(s):
-    ///   - [`attachment_id(Option<String>)`](crate::output::StartAttachmentUploadOutput::attachment_id): <p>A unique identifier for the attachment.</p>
-    ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::output::StartAttachmentUploadOutput::upload_metadata): <p>Fields to be used while uploading the attachment.</p>
-    /// - On failure, responds with [`SdkError<StartAttachmentUploadError>`](crate::error::StartAttachmentUploadError)
-    pub fn start_attachment_upload(&self) -> fluent_builders::StartAttachmentUpload {
-        fluent_builders::StartAttachmentUpload::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
-    ///
-    /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CompleteAttachmentUpload {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::complete_attachment_upload_input::Builder,
-    }
-    impl CompleteAttachmentUpload {
-        /// Creates a new `CompleteAttachmentUpload`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CompleteAttachmentUpload,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CompleteAttachmentUploadError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CompleteAttachmentUploadOutput,
-            aws_smithy_http::result::SdkError<crate::error::CompleteAttachmentUploadError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `AttachmentIds`.
-        ///
-        /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
-        ///
-        /// <p>A list of unique identifiers for the attachments.</p>
-        pub fn attachment_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_ids(input.into());
-            self
-        }
-        /// <p>A list of unique identifiers for the attachments.</p>
-        pub fn set_attachment_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_attachment_ids(input);
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateParticipantConnection`.
-    ///
-    /// <p>Creates the participant's connection. </p> <note>
-    /// <p> <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.</p>
-    /// </note>
-    /// <p>The participant token is valid for the lifetime of the participant – until they are part of a contact.</p>
-    /// <p>The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s. Clients must manually connect to the returned websocket URL and subscribe to the desired topic. </p>
-    /// <p>For chat, you need to publish the following on the established websocket connection:</p>
-    /// <p> <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> </p>
-    /// <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry parameter, clients need to call this API again to obtain a new websocket URL and perform the same steps as before.</p>
-    /// <p> <b>Message streaming support</b>: This API can also be used together with the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API to create a participant connection for chat contacts that are not using a websocket. For more information about message streaming, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    /// <p> <b>Feature specifications</b>: For information about feature specifications, such as the allowed number of open websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateParticipantConnection {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_participant_connection_input::Builder,
-    }
-    impl CreateParticipantConnection {
-        /// Creates a new `CreateParticipantConnection`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateParticipantConnection,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateParticipantConnectionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateParticipantConnectionOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateParticipantConnectionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `Type`.
-        ///
-        /// To override the contents of this collection use [`set_type`](Self::set_type).
-        ///
-        /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
-        pub fn r#type(mut self, input: crate::model::ConnectionType) -> Self {
-            self.inner = self.inner.r#type(input);
-            self
-        }
-        /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
-        ) -> Self {
-            self.inner = self.inner.set_type(input);
-            self
-        }
-        /// <p>This is a header parameter.</p>
-        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-        pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.participant_token(input.into());
-            self
-        }
-        /// <p>This is a header parameter.</p>
-        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-        pub fn set_participant_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_participant_token(input);
-            self
-        }
-        /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
-        pub fn connect_participant(mut self, input: bool) -> Self {
-            self.inner = self.inner.connect_participant(input);
-            self
-        }
-        /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
-        pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_connect_participant(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisconnectParticipant`.
-    ///
-    /// <p>Disconnects a participant. </p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisconnectParticipant {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::disconnect_participant_input::Builder,
-    }
-    impl DisconnectParticipant {
-        /// Creates a new `DisconnectParticipant`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DisconnectParticipant,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DisconnectParticipantError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DisconnectParticipantOutput,
-            aws_smithy_http::result::SdkError<crate::error::DisconnectParticipantError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetAttachment`.
-    ///
-    /// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAttachment {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_attachment_input::Builder,
-    }
-    impl GetAttachment {
-        /// Creates a new `GetAttachment`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetAttachment,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetAttachmentError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetAttachmentOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetAttachmentError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A unique identifier for the attachment.</p>
-        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_id(input.into());
-            self
-        }
-        /// <p>A unique identifier for the attachment.</p>
-        pub fn set_attachment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_attachment_id(input);
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetTranscript`.
-    ///
-    /// <p>Retrieves a transcript of the session, including details about any attachments. For information about accessing past chat contact transcripts for a persistent chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>. </p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetTranscript {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_transcript_input::Builder,
-    }
-    impl GetTranscript {
-        /// Creates a new `GetTranscript`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetTranscript,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetTranscriptError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetTranscriptOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetTranscriptError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetTranscriptPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::GetTranscriptPaginator {
-            crate::paginator::GetTranscriptPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(input.into());
-            self
-        }
-        /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_id(input);
-            self
-        }
-        /// <p>The maximum number of results to return in the page. Default: 10. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in the page. Default: 10. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
-        pub fn scan_direction(mut self, input: crate::model::ScanDirection) -> Self {
-            self.inner = self.inner.scan_direction(input);
-            self
-        }
-        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
-        pub fn set_scan_direction(
-            mut self,
-            input: std::option::Option<crate::model::ScanDirection>,
-        ) -> Self {
-            self.inner = self.inner.set_scan_direction(input);
-            self
-        }
-        /// <p>The sort order for the records. Default: DESCENDING.</p>
-        pub fn sort_order(mut self, input: crate::model::SortKey) -> Self {
-            self.inner = self.inner.sort_order(input);
-            self
-        }
-        /// <p>The sort order for the records. Default: DESCENDING.</p>
-        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortKey>) -> Self {
-            self.inner = self.inner.set_sort_order(input);
-            self
-        }
-        /// <p>A filtering option for where to start.</p>
-        pub fn start_position(mut self, input: crate::model::StartPosition) -> Self {
-            self.inner = self.inner.start_position(input);
-            self
-        }
-        /// <p>A filtering option for where to start.</p>
-        pub fn set_start_position(
-            mut self,
-            input: std::option::Option<crate::model::StartPosition>,
-        ) -> Self {
-            self.inner = self.inner.set_start_position(input);
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SendEvent`.
-    ///
-    /// <p>Sends an event. </p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendEvent {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::send_event_input::Builder,
-    }
-    impl SendEvent {
-        /// Creates a new `SendEvent`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::SendEvent,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::SendEventError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::SendEventOutput,
-            aws_smithy_http::result::SdkError<crate::error::SendEventError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The content type of the request. Supported types are:</p>
-        /// <ul>
-        /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-        /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-        /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-        /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
-        /// </ul>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(input.into());
-            self
-        }
-        /// <p>The content type of the request. Supported types are:</p>
-        /// <ul>
-        /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-        /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-        /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-        /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
-        /// </ul>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(input);
-            self
-        }
-        /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
-        /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
-        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(input.into());
-            self
-        }
-        /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
-        /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
-        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content(input);
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SendMessage`.
-    ///
-    /// <p>Sends a message.</p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendMessage {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::send_message_input::Builder,
-    }
-    impl SendMessage {
-        /// Creates a new `SendMessage`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::SendMessage,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::SendMessageError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::SendMessageOutput,
-            aws_smithy_http::result::SdkError<crate::error::SendMessageError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(input.into());
-            self
-        }
-        /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(input);
-            self
-        }
-        /// <p>The content of the message. </p>
-        /// <ul>
-        /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-        /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-        /// </ul>
-        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(input.into());
-            self
-        }
-        /// <p>The content of the message. </p>
-        /// <ul>
-        /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-        /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-        /// </ul>
-        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content(input);
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The authentication token associated with the connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartAttachmentUpload`.
-    ///
-    /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.</p> <note>
-    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
-    /// </note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartAttachmentUpload {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::start_attachment_upload_input::Builder,
-    }
-    impl StartAttachmentUpload {
-        /// Creates a new `StartAttachmentUpload`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::StartAttachmentUpload,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::StartAttachmentUploadError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::StartAttachmentUploadOutput,
-            aws_smithy_http::result::SdkError<crate::error::StartAttachmentUploadError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(input.into());
-            self
-        }
-        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(input);
-            self
-        }
-        /// <p>The size of the attachment in bytes.</p>
-        pub fn attachment_size_in_bytes(mut self, input: i64) -> Self {
-            self.inner = self.inner.attachment_size_in_bytes(input);
-            self
-        }
-        /// <p>The size of the attachment in bytes.</p>
-        pub fn set_attachment_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_attachment_size_in_bytes(input);
-            self
-        }
-        /// <p>A case-sensitive name of the attachment being uploaded.</p>
-        pub fn attachment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_name(input.into());
-            self
-        }
-        /// <p>A case-sensitive name of the attachment being uploaded.</p>
-        pub fn set_attachment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_attachment_name(input);
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(input.into());
-            self
-        }
-        /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn set_connection_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_connection_token(input);
-            self
-        }
     }
 }
 
@@ -1200,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1210,3 +211,47 @@ impl Client {
         }
     }
 }
+
+mod complete_attachment_upload;
+
+mod create_participant_connection;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_connectparticipant::Error> {
+/// # let client: aws_sdk_connectparticipant::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.complete_attachment_upload()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod disconnect_participant;
+
+mod get_attachment;
+
+mod get_transcript;
+
+mod send_event;
+
+mod send_message;
+
+mod start_attachment_upload;

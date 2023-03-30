@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Kendra Intelligent Ranking. Each operation on Amazon Kendra Intelligent Ranking is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_kendraranking::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_kendraranking::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_kendraranking::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_kendraranking::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_kendraranking::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateRescoreExecutionPlan`](crate::operation::create_rescore_execution_plan) operation has
+/// a [`Client::create_rescore_execution_plan`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.create_rescore_execution_plan()
+///     .name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,951 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CreateRescoreExecutionPlan`](crate::client::fluent_builders::CreateRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_name): <p>A name for the rescore execution plan.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_description): <p>A description for the rescore execution plan.</p>
-    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_capacity_units): <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_tags): <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_client_token): <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
-    /// - On success, responds with [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateRescoreExecutionPlanOutput::id): <p>The identifier of the rescore execution plan.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateRescoreExecutionPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    /// - On failure, responds with [`SdkError<CreateRescoreExecutionPlanError>`](crate::error::CreateRescoreExecutionPlanError)
-    pub fn create_rescore_execution_plan(&self) -> fluent_builders::CreateRescoreExecutionPlan {
-        fluent_builders::CreateRescoreExecutionPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRescoreExecutionPlan`](crate::client::fluent_builders::DeleteRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteRescoreExecutionPlan::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteRescoreExecutionPlan::set_id): <p>The identifier of the rescore execution plan that you want to delete.</p>
-    /// - On success, responds with [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRescoreExecutionPlanError>`](crate::error::DeleteRescoreExecutionPlanError)
-    pub fn delete_rescore_execution_plan(&self) -> fluent_builders::DeleteRescoreExecutionPlan {
-        fluent_builders::DeleteRescoreExecutionPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRescoreExecutionPlan`](crate::client::fluent_builders::DescribeRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeRescoreExecutionPlan::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeRescoreExecutionPlan::set_id): <p>The identifier of the rescore execution plan that you want to get information on.</p>
-    /// - On success, responds with [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::id): <p>The identifier of the rescore execution plan.</p>
-    ///   - [`arn(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::name): <p>The name for the rescore execution plan.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::description): <p>The description for the rescore execution plan.</p>
-    ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeRescoreExecutionPlanOutput::capacity_units): <p>The capacity units set for the rescore execution plan. A capacity of zero indicates that the rescore execution plan is using the default capacity. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeRescoreExecutionPlanOutput::created_at): <p>The Unix timestamp of when the rescore execution plan was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeRescoreExecutionPlanOutput::updated_at): <p>The Unix timestamp of when the rescore execution plan was last updated.</p>
-    ///   - [`status(Option<RescoreExecutionPlanStatus>)`](crate::output::DescribeRescoreExecutionPlanOutput::status): <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    /// - On failure, responds with [`SdkError<DescribeRescoreExecutionPlanError>`](crate::error::DescribeRescoreExecutionPlanError)
-    pub fn describe_rescore_execution_plan(&self) -> fluent_builders::DescribeRescoreExecutionPlan {
-        fluent_builders::DescribeRescoreExecutionPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRescoreExecutionPlans`](crate::client::fluent_builders::ListRescoreExecutionPlans) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRescoreExecutionPlans::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRescoreExecutionPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRescoreExecutionPlans::set_next_token): <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRescoreExecutionPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRescoreExecutionPlans::set_max_results): <p>The maximum number of rescore execution plans to return.</p>
-    /// - On success, responds with [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<RescoreExecutionPlanSummary>>)`](crate::output::ListRescoreExecutionPlansOutput::summary_items): <p>An array of summary information for one or more rescore execution plans.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRescoreExecutionPlansOutput::next_token): <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
-    /// - On failure, responds with [`SdkError<ListRescoreExecutionPlansError>`](crate::error::ListRescoreExecutionPlansError)
-    pub fn list_rescore_execution_plans(&self) -> fluent_builders::ListRescoreExecutionPlans {
-        fluent_builders::ListRescoreExecutionPlans::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags associated with the rescore execution plan.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`Rescore`](crate::client::fluent_builders::Rescore) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`rescore_execution_plan_id(impl Into<String>)`](crate::client::fluent_builders::Rescore::rescore_execution_plan_id) / [`set_rescore_execution_plan_id(Option<String>)`](crate::client::fluent_builders::Rescore::set_rescore_execution_plan_id): <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    ///   - [`search_query(impl Into<String>)`](crate::client::fluent_builders::Rescore::search_query) / [`set_search_query(Option<String>)`](crate::client::fluent_builders::Rescore::set_search_query): <p>The input query from the search service.</p>
-    ///   - [`documents(Vec<Document>)`](crate::client::fluent_builders::Rescore::documents) / [`set_documents(Option<Vec<Document>>)`](crate::client::fluent_builders::Rescore::set_documents): <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    /// - On success, responds with [`RescoreOutput`](crate::output::RescoreOutput) with field(s):
-    ///   - [`rescore_id(Option<String>)`](crate::output::RescoreOutput::rescore_id): <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
-    ///   - [`result_items(Option<Vec<RescoreResultItem>>)`](crate::output::RescoreOutput::result_items): <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    /// - On failure, responds with [`SdkError<RescoreError>`](crate::error::RescoreError)
-    pub fn rescore(&self) -> fluent_builders::Rescore {
-        fluent_builders::Rescore::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan to tag.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tag keys to add to a rescore execution plan. If a tag already exists, the existing value is replaced with the new value.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys to remove from the rescore execution plan. If a tag key does not exist on the resource, it is ignored.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRescoreExecutionPlan`](crate::client::fluent_builders::UpdateRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_id): <p>The identifier of the rescore execution plan that you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_name): <p>A new name for the rescore execution plan.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_description): <p>A new description for the rescore execution plan.</p>
-    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_capacity_units): <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    /// - On success, responds with [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateRescoreExecutionPlanError>`](crate::error::UpdateRescoreExecutionPlanError)
-    pub fn update_rescore_execution_plan(&self) -> fluent_builders::UpdateRescoreExecutionPlan {
-        fluent_builders::UpdateRescoreExecutionPlan::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateRescoreExecutionPlan`.
-    ///
-    /// <p>Creates a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. You set the number of capacity units that you require for Amazon Kendra Intelligent Ranking to rescore or re-rank a search service's results.</p>
-    /// <p>For an example of using the <code>CreateRescoreExecutionPlan</code> API, including using the Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-service-rerank.html">Semantically ranking a search service's results</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateRescoreExecutionPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_rescore_execution_plan_input::Builder,
-    }
-    impl CreateRescoreExecutionPlan {
-        /// Creates a new `CreateRescoreExecutionPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateRescoreExecutionPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateRescoreExecutionPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateRescoreExecutionPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateRescoreExecutionPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A name for the rescore execution plan.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>A name for the rescore execution plan.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A description for the rescore execution plan.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description for the rescore execution plan.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-        pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
-            self.inner = self.inner.capacity_units(input);
-            self
-        }
-        /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-        pub fn set_capacity_units(
-            mut self,
-            input: std::option::Option<crate::model::CapacityUnitsConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.set_capacity_units(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRescoreExecutionPlan`.
-    ///
-    /// <p>Deletes a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRescoreExecutionPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_rescore_execution_plan_input::Builder,
-    }
-    impl DeleteRescoreExecutionPlan {
-        /// Creates a new `DeleteRescoreExecutionPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteRescoreExecutionPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteRescoreExecutionPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteRescoreExecutionPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteRescoreExecutionPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the rescore execution plan that you want to delete.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the rescore execution plan that you want to delete.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRescoreExecutionPlan`.
-    ///
-    /// <p>Gets information about a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRescoreExecutionPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_rescore_execution_plan_input::Builder,
-    }
-    impl DescribeRescoreExecutionPlan {
-        /// Creates a new `DescribeRescoreExecutionPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeRescoreExecutionPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeRescoreExecutionPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeRescoreExecutionPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeRescoreExecutionPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRescoreExecutionPlans`.
-    ///
-    /// <p>Lists your rescore execution plans. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRescoreExecutionPlans {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_rescore_execution_plans_input::Builder,
-    }
-    impl ListRescoreExecutionPlans {
-        /// Creates a new `ListRescoreExecutionPlans`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListRescoreExecutionPlans,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListRescoreExecutionPlansError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListRescoreExecutionPlansOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListRescoreExecutionPlansError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRescoreExecutionPlansPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListRescoreExecutionPlansPaginator {
-            crate::paginator::ListRescoreExecutionPlansPaginator::new(self.handle, self.inner)
-        }
-        /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of rescore execution plans to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of rescore execution plans to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Gets a list of tags associated with a specified resource. A rescore execution plan is an example of a resource that can have tags associated with it.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `Rescore`.
-    ///
-    /// <p>Rescores or re-ranks search results from a search service such as OpenSearch (self managed). You use the semantic search capabilities of Amazon Kendra Intelligent Ranking to improve the search service's results.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct Rescore {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::rescore_input::Builder,
-    }
-    impl Rescore {
-        /// Creates a new `Rescore`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::Rescore,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::RescoreError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::RescoreOutput,
-            aws_smithy_http::result::SdkError<crate::error::RescoreError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-        pub fn rescore_execution_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rescore_execution_plan_id(input.into());
-            self
-        }
-        /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-        pub fn set_rescore_execution_plan_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_rescore_execution_plan_id(input);
-            self
-        }
-        /// <p>The input query from the search service.</p>
-        pub fn search_query(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_query(input.into());
-            self
-        }
-        /// <p>The input query from the search service.</p>
-        pub fn set_search_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_search_query(input);
-            self
-        }
-        /// Appends an item to `Documents`.
-        ///
-        /// To override the contents of this collection use [`set_documents`](Self::set_documents).
-        ///
-        /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-        pub fn documents(mut self, input: crate::model::Document) -> Self {
-            self.inner = self.inner.documents(input);
-            self
-        }
-        /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-        pub fn set_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Document>>,
-        ) -> Self {
-            self.inner = self.inner.set_documents(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Adds a specified tag to a specified rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. If the tag already exists, the existing value is replaced with the new value.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the rescore execution plan to tag.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the rescore execution plan to tag.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of tag keys to add to a rescore execution plan. If a tag already exists, the existing value is replaced with the new value.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>A list of tag keys to add to a rescore execution plan. If a tag already exists, the existing value is replaced with the new value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes a tag from a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> operation.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>A list of tag keys to remove from the rescore execution plan. If a tag key does not exist on the resource, it is ignored.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>A list of tag keys to remove from the rescore execution plan. If a tag key does not exist on the resource, it is ignored.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateRescoreExecutionPlan`.
-    ///
-    /// <p>Updates a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. You can update the number of capacity units you require for Amazon Kendra Intelligent Ranking to rescore or re-rank a search service's results.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateRescoreExecutionPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_rescore_execution_plan_input::Builder,
-    }
-    impl UpdateRescoreExecutionPlan {
-        /// Creates a new `UpdateRescoreExecutionPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateRescoreExecutionPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateRescoreExecutionPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateRescoreExecutionPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateRescoreExecutionPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the rescore execution plan that you want to update.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the rescore execution plan that you want to update.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>A new name for the rescore execution plan.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>A new name for the rescore execution plan.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A new description for the rescore execution plan.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A new description for the rescore execution plan.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-        pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
-            self.inner = self.inner.capacity_units(input);
-            self
-        }
-        /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-        pub fn set_capacity_units(
-            mut self,
-            input: std::option::Option<crate::model::CapacityUnitsConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.set_capacity_units(input);
-            self
-        }
     }
 }
 
@@ -1109,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1119,3 +211,49 @@ impl Client {
         }
     }
 }
+
+mod create_rescore_execution_plan;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_kendraranking::Error> {
+/// # let client: aws_sdk_kendraranking::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.create_rescore_execution_plan()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_rescore_execution_plan;
+
+mod describe_rescore_execution_plan;
+
+mod list_rescore_execution_plans;
+
+mod list_tags_for_resource;
+
+mod rescore;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_rescore_execution_plan;

@@ -193,7 +193,7 @@ pub(crate) mod http_date {
         let mut out = String::with_capacity(32);
         fn push_digit(out: &mut String, digit: u8) {
             debug_assert!(digit < 10);
-            out.push((b'0' + digit as u8) as char);
+            out.push((b'0' + digit) as char);
         }
 
         out.push_str(weekday);
@@ -399,13 +399,23 @@ pub(crate) mod rfc3339 {
     use time::format_description::well_known::Rfc3339;
     use time::OffsetDateTime;
 
+    #[derive(Debug, PartialEq)]
+    pub(crate) enum AllowOffsets {
+        OffsetsAllowed,
+        OffsetsForbidden,
+    }
+
     // OK: 1985-04-12T23:20:50.52Z
     // OK: 1985-04-12T23:20:50Z
     //
     // Timezones not supported:
     // Not OK: 1985-04-12T23:20:50-02:00
-    pub(crate) fn parse(s: &str) -> Result<DateTime, DateTimeParseError> {
-        if !matches!(s.chars().last(), Some('Z')) {
+    pub(crate) fn parse(
+        s: &str,
+        allow_offsets: AllowOffsets,
+    ) -> Result<DateTime, DateTimeParseError> {
+        if allow_offsets == AllowOffsets::OffsetsForbidden && !matches!(s.chars().last(), Some('Z'))
+        {
             return Err(DateTimeParseErrorKind::Invalid(
                 "Smithy does not support timezone offsets in RFC-3339 date times".into(),
             )
@@ -419,10 +429,13 @@ pub(crate) mod rfc3339 {
     }
 
     /// Read 1 RFC-3339 date from &str and return the remaining str
-    pub(crate) fn read(s: &str) -> Result<(DateTime, &str), DateTimeParseError> {
+    pub(crate) fn read(
+        s: &str,
+        allow_offests: AllowOffsets,
+    ) -> Result<(DateTime, &str), DateTimeParseError> {
         let delim = s.find('Z').map(|idx| idx + 1).unwrap_or_else(|| s.len());
         let (head, rest) = s.split_at(delim);
-        Ok((parse(head)?, rest))
+        Ok((parse(head, allow_offests)?, rest))
     }
 
     /// Format a [DateTime] in the RFC-3339 date format
@@ -491,6 +504,7 @@ pub(crate) mod rfc3339 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::date_time::format::rfc3339::AllowOffsets;
     use crate::DateTime;
     use lazy_static::lazy_static;
     use proptest::prelude::*;
@@ -634,7 +648,9 @@ mod tests {
 
     #[test]
     fn parse_date_time() {
-        parse_test(&TEST_CASES.parse_date_time, rfc3339::parse);
+        parse_test(&TEST_CASES.parse_date_time, |date| {
+            rfc3339::parse(date, AllowOffsets::OffsetsForbidden)
+        });
     }
 
     #[test]
@@ -655,8 +671,10 @@ mod tests {
     #[test]
     fn read_rfc3339_date_comma_split() {
         let date = "1985-04-12T23:20:50Z,1985-04-12T23:20:51Z";
-        let (e1, date) = rfc3339::read(date).expect("should succeed");
-        let (e2, date2) = rfc3339::read(&date[1..]).expect("should succeed");
+        let (e1, date) =
+            rfc3339::read(date, AllowOffsets::OffsetsForbidden).expect("should succeed");
+        let (e2, date2) =
+            rfc3339::read(&date[1..], AllowOffsets::OffsetsForbidden).expect("should succeed");
         assert_eq!(date2, "");
         assert_eq!(date, ",1985-04-12T23:20:51Z");
         let expected = DateTime::from_secs_and_nanos(482196050, 0);
@@ -666,8 +684,14 @@ mod tests {
     }
 
     #[test]
+    fn parse_rfc3339_with_timezone() {
+        let dt = rfc3339::parse("1985-04-12T21:20:51-02:00", AllowOffsets::OffsetsAllowed);
+        assert_eq!(dt.unwrap(), DateTime::from_secs_and_nanos(482196051, 0));
+    }
+
+    #[test]
     fn parse_rfc3339_timezone_forbidden() {
-        let dt = rfc3339::parse("1985-04-12T23:20:50-02:00");
+        let dt = rfc3339::parse("1985-04-12T23:20:50-02:00", AllowOffsets::OffsetsForbidden);
         assert!(matches!(
             dt.unwrap_err(),
             DateTimeParseError {

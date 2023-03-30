@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Route53 Recovery Cluster. Each operation on Route53 Recovery Cluster is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_route53recoverycluster::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_route53recoverycluster::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_route53recoverycluster::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_route53recoverycluster::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_route53recoverycluster::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`GetRoutingControlState`](crate::operation::get_routing_control_state) operation has
+/// a [`Client::get_routing_control_state`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.get_routing_control_state()
+///     .routing_control_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,485 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`GetRoutingControlState`](crate::client::fluent_builders::GetRoutingControlState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::GetRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::GetRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    /// - On success, responds with [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput) with field(s):
-    ///   - [`routing_control_arn(Option<String>)`](crate::output::GetRoutingControlStateOutput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the response.</p>
-    ///   - [`routing_control_state(Option<RoutingControlState>)`](crate::output::GetRoutingControlStateOutput::routing_control_state): <p>The state of the routing control.</p>
-    ///   - [`routing_control_name(Option<String>)`](crate::output::GetRoutingControlStateOutput::routing_control_name): <p>The routing control name.</p>
-    /// - On failure, responds with [`SdkError<GetRoutingControlStateError>`](crate::error::GetRoutingControlStateError)
-    pub fn get_routing_control_state(&self) -> fluent_builders::GetRoutingControlState {
-        fluent_builders::GetRoutingControlState::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRoutingControls`](crate::client::fluent_builders::ListRoutingControls) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutingControls::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`control_panel_arn(impl Into<String>)`](crate::client::fluent_builders::ListRoutingControls::control_panel_arn) / [`set_control_panel_arn(Option<String>)`](crate::client::fluent_builders::ListRoutingControls::set_control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutingControls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutingControls::set_next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingControls::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingControls::set_max_results): <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
-    /// - On success, responds with [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput) with field(s):
-    ///   - [`routing_controls(Option<Vec<RoutingControl>>)`](crate::output::ListRoutingControlsOutput::routing_controls): <p>The list of routing controls.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRoutingControlsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::error::ListRoutingControlsError)
-    pub fn list_routing_controls(&self) -> fluent_builders::ListRoutingControls {
-        fluent_builders::ListRoutingControls::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoutingControlState`](crate::client::fluent_builders::UpdateRoutingControlState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    ///   - [`routing_control_state(RoutingControlState)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_state) / [`set_routing_control_state(Option<RoutingControlState>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_state): <p>The state of the routing control. You can set the value to be On or Off.</p>
-    ///   - [`safety_rules_to_override(Vec<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_safety_rules_to_override): <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// - On success, responds with [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateRoutingControlStateError>`](crate::error::UpdateRoutingControlStateError)
-    pub fn update_routing_control_state(&self) -> fluent_builders::UpdateRoutingControlState {
-        fluent_builders::UpdateRoutingControlState::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoutingControlStates`](crate::client::fluent_builders::UpdateRoutingControlStates) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`update_routing_control_state_entries(Vec<UpdateRoutingControlStateEntry>)`](crate::client::fluent_builders::UpdateRoutingControlStates::update_routing_control_state_entries) / [`set_update_routing_control_state_entries(Option<Vec<UpdateRoutingControlStateEntry>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_update_routing_control_state_entries): <p>A set of routing control entries that you want to update.</p>
-    ///   - [`safety_rules_to_override(Vec<String>)`](crate::client::fluent_builders::UpdateRoutingControlStates::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_safety_rules_to_override): <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// - On success, responds with [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateRoutingControlStatesError>`](crate::error::UpdateRoutingControlStatesError)
-    pub fn update_routing_control_states(&self) -> fluent_builders::UpdateRoutingControlStates {
-        fluent_builders::UpdateRoutingControlStates::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `GetRoutingControlState`.
-    ///
-    /// <p>Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
-    /// <p>Before you can create a routing control, you must first create a cluster, and then host the control in a control panel on the cluster. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.create.html"> Create routing control structures</a> in the Amazon Route 53 Application Recovery Controller Developer Guide. You access one of the endpoints for the cluster to get or update the routing control state to redirect traffic for your application. </p>
-    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Route 53 ARC.</i> </p>
-    /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// <p>Learn more about working with routing controls in the following topics in the Amazon Route 53 Application Recovery Controller Developer Guide:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls in Route 53 ARC</a> </p> </li>
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRoutingControlState {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_routing_control_state_input::Builder,
-    }
-    impl GetRoutingControlState {
-        /// Creates a new `GetRoutingControlState`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetRoutingControlState,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetRoutingControlStateError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetRoutingControlStateOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetRoutingControlStateError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-        pub fn set_routing_control_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_routing_control_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRoutingControls`.
-    ///
-    /// <p>List routing control names and Amazon Resource Names (ARNs), as well as the routing control state for each routing control, along with the control panel name and control panel ARN for the routing controls. If you specify a control panel ARN, this call lists the routing controls in the control panel. Otherwise, it lists all the routing controls in the cluster.</p>
-    /// <p>A routing control is a simple on/off switch in Route 53 ARC that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow.</p>
-    /// <p>Before you can create a routing control, you must first create a cluster, and then host the control in a control panel on the cluster. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.create.html"> Create routing control structures</a> in the Amazon Route 53 Application Recovery Controller Developer Guide. You access one of the endpoints for the cluster to get or update the routing control state to redirect traffic for your application. </p>
-    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to use this API operation to list routing controls in Route 53 ARC.</i> </p>
-    /// <p>Learn more about working with routing controls in the following topics in the Amazon Route 53 Application Recovery Controller Developer Guide:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls in Route 53 ARC</a> </p> </li>
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRoutingControls {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_routing_controls_input::Builder,
-    }
-    impl ListRoutingControls {
-        /// Creates a new `ListRoutingControls`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListRoutingControls,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListRoutingControlsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListRoutingControlsPaginator {
-            crate::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-        pub fn set_control_panel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateRoutingControlState`.
-    ///
-    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off. When the state is On, traffic flows to a cell. When the state is Off, traffic does not flow.</p>
-    /// <p>With Route 53 ARC, you can add safety rules for routing controls, which are safeguards for routing control state updates that help prevent unexpected outcomes, like fail open traffic routing. However, there are scenarios when you might want to bypass the routing control safeguards that are enforced with safety rules that you've configured. For example, you might want to fail over quickly for disaster recovery, and one or more safety rules might be unexpectedly preventing you from updating a routing control state to reroute traffic. In a "break glass" scenario like this, you can override one or more safety rules to change a routing control state and fail over your application.</p>
-    /// <p>The <code>SafetyRulesToOverride</code> property enables you override one or more safety rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Route 53 ARC.</i> </p>
-    /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a> </p> </li>
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateRoutingControlState {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_routing_control_state_input::Builder,
-    }
-    impl UpdateRoutingControlState {
-        /// Creates a new `UpdateRoutingControlState`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateRoutingControlState,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateRoutingControlStateOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-        pub fn set_routing_control_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_routing_control_arn(input);
-            self
-        }
-        /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-        pub fn routing_control_state(mut self, input: crate::model::RoutingControlState) -> Self {
-            self.inner = self.inner.routing_control_state(input);
-            self
-        }
-        /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-        pub fn set_routing_control_state(
-            mut self,
-            input: std::option::Option<crate::model::RoutingControlState>,
-        ) -> Self {
-            self.inner = self.inner.set_routing_control_state(input);
-            self
-        }
-        /// Appends an item to `SafetyRulesToOverride`.
-        ///
-        /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
-        ///
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-        pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rules_to_override(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-        pub fn set_safety_rules_to_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_safety_rules_to_override(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateRoutingControlStates`.
-    ///
-    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off. When the state is On, traffic flows to a cell. When it's Off, traffic does not flow.</p>
-    /// <p>With Route 53 ARC, you can add safety rules for routing controls, which are safeguards for routing control state updates that help prevent unexpected outcomes, like fail open traffic routing. However, there are scenarios when you might want to bypass the routing control safeguards that are enforced with safety rules that you've configured. For example, you might want to fail over quickly for disaster recovery, and one or more safety rules might be unexpectedly preventing you from updating a routing control state to reroute traffic. In a "break glass" scenario like this, you can override one or more safety rules to change a routing control state and fail over your application.</p>
-    /// <p>The <code>SafetyRulesToOverride</code> property enables you override one or more safety rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Route 53 ARC.</i> </p>
-    /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a> </p> </li>
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateRoutingControlStates {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_routing_control_states_input::Builder,
-    }
-    impl UpdateRoutingControlStates {
-        /// Creates a new `UpdateRoutingControlStates`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateRoutingControlStates,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateRoutingControlStatesOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `UpdateRoutingControlStateEntries`.
-        ///
-        /// To override the contents of this collection use [`set_update_routing_control_state_entries`](Self::set_update_routing_control_state_entries).
-        ///
-        /// <p>A set of routing control entries that you want to update.</p>
-        pub fn update_routing_control_state_entries(
-            mut self,
-            input: crate::model::UpdateRoutingControlStateEntry,
-        ) -> Self {
-            self.inner = self.inner.update_routing_control_state_entries(input);
-            self
-        }
-        /// <p>A set of routing control entries that you want to update.</p>
-        pub fn set_update_routing_control_state_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
-        ) -> Self {
-            self.inner = self.inner.set_update_routing_control_state_entries(input);
-            self
-        }
-        /// Appends an item to `SafetyRulesToOverride`.
-        ///
-        /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
-        ///
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-        pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rules_to_override(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-        pub fn set_safety_rules_to_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_safety_rules_to_override(input);
-            self
-        }
     }
 }
 
@@ -643,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -653,3 +211,39 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_route53recoverycluster::Error> {
+/// # let client: aws_sdk_route53recoverycluster::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.get_routing_control_state()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod get_routing_control_state;
+
+mod list_routing_controls;
+
+mod update_routing_control_state;
+
+mod update_routing_control_states;

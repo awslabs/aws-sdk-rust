@@ -4,22 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The caller is not authorized to invoke this operation.</p>
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>The connection with the provided id no longer exists.</p>
-    GoneException(crate::error::GoneException),
+    GoneException(crate::types::error::GoneException),
     /// <p>The client is sending more than the allowed number of requests per unit of time or the WebSocket client side buffer is full.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The data has exceeded the maximum size allowed.</p>
-    PayloadTooLargeException(crate::error::PayloadTooLargeException),
-    ///
+    PayloadTooLargeException(crate::types::error::PayloadTooLargeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32,104 +25,151 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_connection::DeleteConnectionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_connection::DeleteConnectionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteConnectionError> for Error {
-    fn from(err: crate::error::DeleteConnectionError) -> Self {
-        match err.kind {
-            crate::error::DeleteConnectionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteConnectionErrorKind::GoneException(inner) => {
-                Error::GoneException(inner)
-            }
-            crate::error::DeleteConnectionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetConnectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetConnectionError, R>) -> Self {
+impl From<crate::operation::delete_connection::DeleteConnectionError> for Error {
+    fn from(err: crate::operation::delete_connection::DeleteConnectionError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetConnectionError> for Error {
-    fn from(err: crate::error::GetConnectionError) -> Self {
-        match err.kind {
-            crate::error::GetConnectionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetConnectionErrorKind::GoneException(inner) => {
+            crate::operation::delete_connection::DeleteConnectionError::ForbiddenException(
+                inner,
+            ) => Error::ForbiddenException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::GoneException(inner) => {
                 Error::GoneException(inner)
             }
-            crate::error::GetConnectionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetConnectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_connection::DeleteConnectionError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PostToConnectionError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_connection::GetConnectionError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PostToConnectionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_connection::GetConnectionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PostToConnectionError> for Error {
-    fn from(err: crate::error::PostToConnectionError) -> Self {
-        match err.kind {
-            crate::error::PostToConnectionErrorKind::ForbiddenException(inner) => {
+impl From<crate::operation::get_connection::GetConnectionError> for Error {
+    fn from(err: crate::operation::get_connection::GetConnectionError) -> Self {
+        match err {
+            crate::operation::get_connection::GetConnectionError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::PostToConnectionErrorKind::GoneException(inner) => {
+            crate::operation::get_connection::GetConnectionError::GoneException(inner) => {
                 Error::GoneException(inner)
             }
-            crate::error::PostToConnectionErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_connection::GetConnectionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::PostToConnectionErrorKind::PayloadTooLargeException(inner) => {
-                Error::PayloadTooLargeException(inner)
+            crate::operation::get_connection::GetConnectionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::PostToConnectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::post_to_connection::PostToConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::post_to_connection::PostToConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::post_to_connection::PostToConnectionError> for Error {
+    fn from(err: crate::operation::post_to_connection::PostToConnectionError) -> Self {
+        match err {
+            crate::operation::post_to_connection::PostToConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::post_to_connection::PostToConnectionError::GoneException(inner) => Error::GoneException(inner),
+            crate::operation::post_to_connection::PostToConnectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::post_to_connection::PostToConnectionError::PayloadTooLargeException(inner) => Error::PayloadTooLargeException(inner),
+            crate::operation::post_to_connection::PostToConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::GoneException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::PayloadTooLargeException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

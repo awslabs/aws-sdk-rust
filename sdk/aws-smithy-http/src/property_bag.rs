@@ -3,14 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// This code is functionally equivalent to `Extensions` in the `http` crate. Examples
-// have been updated to be more relevant for smithy use, the interface has been made public,
-// and the doc comments have been updated to reflect how the property bag is used in the SDK.
-// Additionally, optimizations around the HTTP use case have been removed in favor or simpler code.
+//! A typemap used to store configuration for smithy operations.
+//!
+//! This code is functionally equivalent to `Extensions` in the `http` crate. Examples
+//! have been updated to be more relevant for smithy use, the interface has been made public,
+//! and the doc comments have been updated to reflect how the property bag is used in the SDK.
+//! Additionally, optimizations around the HTTP use case have been removed in favor or simpler code.
 
 use std::any::{Any, TypeId};
 use std::collections::HashMap;
 use std::fmt;
+use std::fmt::Debug;
 use std::hash::{BuildHasherDefault, Hasher};
 use std::ops::{Deref, DerefMut};
 use std::sync::{Arc, Mutex};

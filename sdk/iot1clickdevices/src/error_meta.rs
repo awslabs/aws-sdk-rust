@@ -4,28 +4,21 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     #[allow(missing_docs)] // documentation missing in model
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     #[allow(missing_docs)] // documentation missing in model
-    InternalFailureException(crate::error::InternalFailureException),
+    InternalFailureException(crate::types::error::InternalFailureException),
     #[allow(missing_docs)] // documentation missing in model
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
-    PreconditionFailedException(crate::error::PreconditionFailedException),
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     #[allow(missing_docs)] // documentation missing in model
-    RangeNotSatisfiableException(crate::error::RangeNotSatisfiableException),
+    RangeNotSatisfiableException(crate::types::error::RangeNotSatisfiableException),
     #[allow(missing_docs)] // documentation missing in model
-    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceConflictException(crate::types::error::ResourceConflictException),
     #[allow(missing_docs)] // documentation missing in model
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,442 +34,575 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ClaimDevicesByClaimCodeError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError> for Error {
+    fn from(
+        err: crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+    ) -> Self {
+        match err {
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_device::DescribeDeviceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_device::DescribeDeviceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_device::DescribeDeviceError> for Error {
+    fn from(err: crate::operation::describe_device::DescribeDeviceError) -> Self {
+        match err {
+            crate::operation::describe_device::DescribeDeviceError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::describe_device::DescribeDeviceError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_device::DescribeDeviceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_device::DescribeDeviceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::finalize_device_claim::FinalizeDeviceClaimError> for Error {
+    fn from(err: crate::operation::finalize_device_claim::FinalizeDeviceClaimError) -> Self {
+        match err {
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_device_methods::GetDeviceMethodsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_device_methods::GetDeviceMethodsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_device_methods::GetDeviceMethodsError> for Error {
+    fn from(err: crate::operation::get_device_methods::GetDeviceMethodsError) -> Self {
+        match err {
+            crate::operation::get_device_methods::GetDeviceMethodsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_device_methods::GetDeviceMethodsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_device_methods::GetDeviceMethodsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_device_methods::GetDeviceMethodsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::initiate_device_claim::InitiateDeviceClaimError> for Error {
+    fn from(err: crate::operation::initiate_device_claim::InitiateDeviceClaimError) -> Self {
+        match err {
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_device_method::InvokeDeviceMethodError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::invoke_device_method::InvokeDeviceMethodError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::invoke_device_method::InvokeDeviceMethodError> for Error {
+    fn from(err: crate::operation::invoke_device_method::InvokeDeviceMethodError) -> Self {
+        match err {
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::RangeNotSatisfiableException(inner) => Error::RangeNotSatisfiableException(inner),
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_device_method::InvokeDeviceMethodError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_device_events::ListDeviceEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_device_events::ListDeviceEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_device_events::ListDeviceEventsError> for Error {
+    fn from(err: crate::operation::list_device_events::ListDeviceEventsError) -> Self {
+        match err {
+            crate::operation::list_device_events::ListDeviceEventsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_device_events::ListDeviceEventsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_device_events::ListDeviceEventsError::RangeNotSatisfiableException(inner) => Error::RangeNotSatisfiableException(inner),
+            crate::operation::list_device_events::ListDeviceEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_device_events::ListDeviceEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ClaimDevicesByClaimCodeError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ClaimDevicesByClaimCodeError> for Error {
-    fn from(err: crate::error::ClaimDevicesByClaimCodeError) -> Self {
-        match err.kind {
-            crate::error::ClaimDevicesByClaimCodeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ClaimDevicesByClaimCodeErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ClaimDevicesByClaimCodeErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ClaimDevicesByClaimCodeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDeviceError, R>) -> Self {
+impl From<crate::operation::list_devices::ListDevicesError> for Error {
+    fn from(err: crate::operation::list_devices::ListDevicesError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDeviceError> for Error {
-    fn from(err: crate::error::DescribeDeviceError) -> Self {
-        match err.kind {
-            crate::error::DescribeDeviceErrorKind::InternalFailureException(inner) => {
+            crate::operation::list_devices::ListDevicesError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::DescribeDeviceErrorKind::InvalidRequestException(inner) => {
+            crate::operation::list_devices::ListDevicesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::DescribeDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::list_devices::ListDevicesError::RangeNotSatisfiableException(
+                inner,
+            ) => Error::RangeNotSatisfiableException(inner),
+            crate::operation::list_devices::ListDevicesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::FinalizeDeviceClaimError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::FinalizeDeviceClaimError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::FinalizeDeviceClaimError> for Error {
-    fn from(err: crate::error::FinalizeDeviceClaimError) -> Self {
-        match err.kind {
-            crate::error::FinalizeDeviceClaimErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::FinalizeDeviceClaimErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::FinalizeDeviceClaimErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::error::FinalizeDeviceClaimErrorKind::ResourceConflictException(inner) => {
-                Error::ResourceConflictException(inner)
-            }
-            crate::error::FinalizeDeviceClaimErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::FinalizeDeviceClaimErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDeviceMethodsError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDeviceMethodsError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetDeviceMethodsError> for Error {
-    fn from(err: crate::error::GetDeviceMethodsError) -> Self {
-        match err.kind {
-            crate::error::GetDeviceMethodsErrorKind::InternalFailureException(inner) => {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetDeviceMethodsErrorKind::InvalidRequestException(inner) => {
+            crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetDeviceMethodsErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetDeviceMethodsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateDeviceClaimError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::unclaim_device::UnclaimDeviceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::InitiateDeviceClaimError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::unclaim_device::UnclaimDeviceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::InitiateDeviceClaimError> for Error {
-    fn from(err: crate::error::InitiateDeviceClaimError) -> Self {
-        match err.kind {
-            crate::error::InitiateDeviceClaimErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::InitiateDeviceClaimErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::InitiateDeviceClaimErrorKind::ResourceConflictException(inner) => {
-                Error::ResourceConflictException(inner)
-            }
-            crate::error::InitiateDeviceClaimErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::InitiateDeviceClaimErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::unclaim_device::UnclaimDeviceError> for Error {
+    fn from(err: crate::operation::unclaim_device::UnclaimDeviceError) -> Self {
+        match err {
+            crate::operation::unclaim_device::UnclaimDeviceError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::unclaim_device::UnclaimDeviceError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::unclaim_device::UnclaimDeviceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::unclaim_device::UnclaimDeviceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InvokeDeviceMethodError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::InvokeDeviceMethodError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::InvokeDeviceMethodError> for Error {
-    fn from(err: crate::error::InvokeDeviceMethodError) -> Self {
-        match err.kind {
-            crate::error::InvokeDeviceMethodErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::InvokeDeviceMethodErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::InvokeDeviceMethodErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::error::InvokeDeviceMethodErrorKind::RangeNotSatisfiableException(inner) => {
-                Error::RangeNotSatisfiableException(inner)
-            }
-            crate::error::InvokeDeviceMethodErrorKind::ResourceConflictException(inner) => {
-                Error::ResourceConflictException(inner)
-            }
-            crate::error::InvokeDeviceMethodErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::InvokeDeviceMethodErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDeviceEventsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_device_state::UpdateDeviceStateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDeviceEventsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_device_state::UpdateDeviceStateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListDeviceEventsError> for Error {
-    fn from(err: crate::error::ListDeviceEventsError) -> Self {
-        match err.kind {
-            crate::error::ListDeviceEventsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListDeviceEventsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListDeviceEventsErrorKind::RangeNotSatisfiableException(inner) => {
-                Error::RangeNotSatisfiableException(inner)
-            }
-            crate::error::ListDeviceEventsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListDeviceEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDevicesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDevicesError, R>) -> Self {
+impl From<crate::operation::update_device_state::UpdateDeviceStateError> for Error {
+    fn from(err: crate::operation::update_device_state::UpdateDeviceStateError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListDevicesError> for Error {
-    fn from(err: crate::error::ListDevicesError) -> Self {
-        match err.kind {
-            crate::error::ListDevicesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListDevicesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListDevicesErrorKind::RangeNotSatisfiableException(inner) => {
-                Error::RangeNotSatisfiableException(inner)
-            }
-            crate::error::ListDevicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UnclaimDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UnclaimDeviceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UnclaimDeviceError> for Error {
-    fn from(err: crate::error::UnclaimDeviceError) -> Self {
-        match err.kind {
-            crate::error::UnclaimDeviceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UnclaimDeviceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UnclaimDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UnclaimDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDeviceStateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateDeviceStateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateDeviceStateError> for Error {
-    fn from(err: crate::error::UpdateDeviceStateError) -> Self {
-        match err.kind {
-            crate::error::UpdateDeviceStateErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UpdateDeviceStateErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateDeviceStateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateDeviceStateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::update_device_state::UpdateDeviceStateError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_device_state::UpdateDeviceStateError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_device_state::UpdateDeviceStateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_device_state::UpdateDeviceStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::InternalFailureException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::PreconditionFailedException(e) => e.request_id(),
+            Self::RangeNotSatisfiableException(e) => e.request_id(),
+            Self::ResourceConflictException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

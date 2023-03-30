@@ -25,7 +25,7 @@ struct RequestTimeoutError {
 }
 
 impl RequestTimeoutError {
-    pub fn new(kind: &'static str, duration: Duration) -> Self {
+    fn new(kind: &'static str, duration: Duration) -> Self {
         Self { kind, duration }
     }
 }
@@ -59,7 +59,7 @@ pub(crate) struct ClientTimeoutParams {
 }
 
 impl ClientTimeoutParams {
-    pub fn new(
+    pub(crate) fn new(
         timeout_config: &OperationTimeoutConfig,
         async_sleep: Option<Arc<dyn AsyncSleep>>,
     ) -> Self {
@@ -208,7 +208,7 @@ where
     InnerService: tower::Service<Operation<H, R>, Error = SdkError<E>>,
 {
     type Response = InnerService::Response;
-    type Error = aws_smithy_http::result::SdkError<E>;
+    type Error = SdkError<E>;
     type Future = TimeoutServiceFuture<InnerService::Future>;
 
     fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {

@@ -4,34 +4,27 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The automation execution did not end successfully.</p>
-    AutomationExecutionException(crate::error::AutomationExecutionException),
+    AutomationExecutionException(crate::types::error::AutomationExecutionException),
     /// <p>The automation execution timed out.</p>
-    AutomationExecutionTimeoutException(crate::error::AutomationExecutionTimeoutException),
+    AutomationExecutionTimeoutException(crate::types::error::AutomationExecutionTimeoutException),
     /// <p>There were unexpected errors from the server.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request timed out.</p>
-    RequestTimeoutException(crate::error::RequestTimeoutException),
+    RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p> The request caused service quota to be breached. </p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
-    ValidationException(crate::error::ValidationException),
-    ///
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50,692 +43,762 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::BatchCreateTableRowsError> for Error {
-    fn from(err: crate::error::BatchCreateTableRowsError) -> Self {
-        match err.kind {
-            crate::error::BatchCreateTableRowsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::BatchCreateTableRowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::batch_create_table_rows::BatchCreateTableRowsError> for Error {
+    fn from(err: crate::operation::batch_create_table_rows::BatchCreateTableRowsError) -> Self {
+        match err {
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::BatchDeleteTableRowsError> for Error {
-    fn from(err: crate::error::BatchDeleteTableRowsError) -> Self {
-        match err.kind {
-            crate::error::BatchDeleteTableRowsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::BatchDeleteTableRowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError> for Error {
+    fn from(err: crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError) -> Self {
+        match err {
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::BatchUpdateTableRowsError> for Error {
-    fn from(err: crate::error::BatchUpdateTableRowsError) -> Self {
-        match err.kind {
-            crate::error::BatchUpdateTableRowsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::BatchUpdateTableRowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::batch_update_table_rows::BatchUpdateTableRowsError> for Error {
+    fn from(err: crate::operation::batch_update_table_rows::BatchUpdateTableRowsError) -> Self {
+        match err {
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::BatchUpsertTableRowsError> for Error {
-    fn from(err: crate::error::BatchUpsertTableRowsError) -> Self {
-        match err.kind {
-            crate::error::BatchUpsertTableRowsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::BatchUpsertTableRowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError> for Error {
+    fn from(err: crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError) -> Self {
+        match err {
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTableDataImportJobError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeTableDataImportJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeTableDataImportJobError> for Error {
-    fn from(err: crate::error::DescribeTableDataImportJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeTableDataImportJobErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_screen_data::GetScreenDataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_screen_data::GetScreenDataError> for Error {
+    fn from(err: crate::operation::get_screen_data::GetScreenDataError) -> Self {
+        match err {
+            crate::operation::get_screen_data::GetScreenDataError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DescribeTableDataImportJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeTableDataImportJobErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::DescribeTableDataImportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeTableDataImportJobErrorKind::ServiceUnavailableException(
+            crate::operation::get_screen_data::GetScreenDataError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_screen_data::GetScreenDataError::RequestTimeoutException(
+                inner,
+            ) => Error::RequestTimeoutException(inner),
+            crate::operation::get_screen_data::GetScreenDataError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_screen_data::GetScreenDataError::ServiceUnavailableException(
                 inner,
             ) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeTableDataImportJobErrorKind::ThrottlingException(inner) => {
+            crate::operation::get_screen_data::GetScreenDataError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DescribeTableDataImportJobErrorKind::ValidationException(inner) => {
+            crate::operation::get_screen_data::GetScreenDataError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DescribeTableDataImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_screen_data::GetScreenDataError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetScreenDataError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetScreenDataError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetScreenDataError> for Error {
-    fn from(err: crate::error::GetScreenDataError) -> Self {
-        match err.kind {
-            crate::error::GetScreenDataErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::invoke_screen_automation::InvokeScreenAutomationError> for Error {
+    fn from(err: crate::operation::invoke_screen_automation::InvokeScreenAutomationError) -> Self {
+        match err {
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::AutomationExecutionException(inner) => Error::AutomationExecutionException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::AutomationExecutionTimeoutException(inner) => Error::AutomationExecutionTimeoutException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_table_columns::ListTableColumnsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_table_columns::ListTableColumnsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_table_columns::ListTableColumnsError> for Error {
+    fn from(err: crate::operation::list_table_columns::ListTableColumnsError) -> Self {
+        match err {
+            crate::operation::list_table_columns::ListTableColumnsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_table_columns::ListTableColumnsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::list_table_rows::ListTableRowsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_table_rows::ListTableRowsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_table_rows::ListTableRowsError> for Error {
+    fn from(err: crate::operation::list_table_rows::ListTableRowsError) -> Self {
+        match err {
+            crate::operation::list_table_rows::ListTableRowsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetScreenDataErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetScreenDataErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::GetScreenDataErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetScreenDataErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetScreenDataErrorKind::ThrottlingException(inner) => {
+            crate::operation::list_table_rows::ListTableRowsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_table_rows::ListTableRowsError::RequestTimeoutException(
+                inner,
+            ) => Error::RequestTimeoutException(inner),
+            crate::operation::list_table_rows::ListTableRowsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_table_rows::ListTableRowsError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_table_rows::ListTableRowsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::GetScreenDataErrorKind::ValidationException(inner) => {
+            crate::operation::list_table_rows::ListTableRowsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetScreenDataErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::list_table_rows::ListTableRowsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InvokeScreenAutomationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tables::ListTablesError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::InvokeScreenAutomationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::list_tables::ListTablesError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::InvokeScreenAutomationError> for Error {
-    fn from(err: crate::error::InvokeScreenAutomationError) -> Self {
-        match err.kind {
-            crate::error::InvokeScreenAutomationErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::list_tables::ListTablesError> for Error {
+    fn from(err: crate::operation::list_tables::ListTablesError) -> Self {
+        match err {
+            crate::operation::list_tables::ListTablesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::AutomationExecutionException(inner) => {
-                Error::AutomationExecutionException(inner)
-            }
-            crate::error::InvokeScreenAutomationErrorKind::AutomationExecutionTimeoutException(
-                inner,
-            ) => Error::AutomationExecutionTimeoutException(inner),
-            crate::error::InvokeScreenAutomationErrorKind::InternalServerException(inner) => {
+            crate::operation::list_tables::ListTablesError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::RequestTimeoutException(inner) => {
+            crate::operation::list_tables::ListTablesError::RequestTimeoutException(inner) => {
                 Error::RequestTimeoutException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::list_tables::ListTablesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::InvokeScreenAutomationErrorKind::ServiceUnavailableException(inner) => {
+            crate::operation::list_tables::ListTablesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::ThrottlingException(inner) => {
+            crate::operation::list_tables::ListTablesError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::ValidationException(inner) => {
+            crate::operation::list_tables::ListTablesError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::InvokeScreenAutomationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::list_tables::ListTablesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTableColumnsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTableColumnsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListTableColumnsError> for Error {
-    fn from(err: crate::error::ListTableColumnsError) -> Self {
-        match err.kind {
-            crate::error::ListTableColumnsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTableColumnsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTableRowsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTableRowsError, R>) -> Self {
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::ListTableRowsError> for Error {
-    fn from(err: crate::error::ListTableRowsError) -> Self {
-        match err.kind {
-            crate::error::ListTableRowsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTableRowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTablesError> for Error {
-    fn from(err: crate::error::ListTablesError) -> Self {
-        match err.kind {
-            crate::error::ListTablesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTablesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTablesErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::ListTablesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTablesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTablesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTablesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTablesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::query_table_rows::QueryTableRowsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::query_table_rows::QueryTableRowsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::query_table_rows::QueryTableRowsError> for Error {
+    fn from(err: crate::operation::query_table_rows::QueryTableRowsError) -> Self {
+        match err {
+            crate::operation::query_table_rows::QueryTableRowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::query_table_rows::QueryTableRowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryTableRowsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::QueryTableRowsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::QueryTableRowsError> for Error {
-    fn from(err: crate::error::QueryTableRowsError) -> Self {
-        match err.kind {
-            crate::error::QueryTableRowsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::QueryTableRowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::start_table_data_import_job::StartTableDataImportJobError> for Error {
+    fn from(
+        err: crate::operation::start_table_data_import_job::StartTableDataImportJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTableDataImportJobError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartTableDataImportJobError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartTableDataImportJobError> for Error {
-    fn from(err: crate::error::StartTableDataImportJobError) -> Self {
-        match err.kind {
-            crate::error::StartTableDataImportJobErrorKind::AccessDeniedException(inner) => {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::StartTableDataImportJobErrorKind::InternalServerException(inner) => {
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::StartTableDataImportJobErrorKind::RequestTimeoutException(inner) => {
+            crate::operation::tag_resource::TagResourceError::RequestTimeoutException(inner) => {
                 Error::RequestTimeoutException(inner)
             }
-            crate::error::StartTableDataImportJobErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::StartTableDataImportJobErrorKind::ServiceQuotaExceededException(
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(
                 inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartTableDataImportJobErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::StartTableDataImportJobErrorKind::ThrottlingException(inner) => {
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::StartTableDataImportJobErrorKind::ValidationException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::StartTableDataImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::TagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceErrorKind::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::RequestTimeoutException(
+                inner,
+            ) => Error::RequestTimeoutException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::AutomationExecutionException(e) => e.request_id(),
+            Self::AutomationExecutionTimeoutException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::RequestTimeoutException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

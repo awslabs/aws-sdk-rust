@@ -64,8 +64,9 @@
 use crate::provider_config::ProviderConfig;
 use crate::sts;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
+use aws_sdk_sts::config::Region;
 use aws_sdk_sts::middleware::DefaultMiddleware;
-use aws_sdk_sts::Region;
+use aws_sdk_sts::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::{Env, Fs};
@@ -236,7 +237,7 @@ async fn load_credentials(
         .region(region.clone())
         .build();
 
-    let operation = aws_sdk_sts::operation::AssumeRoleWithWebIdentity::builder()
+    let operation = AssumeRoleWithWebIdentityInput::builder()
         .role_arn(role_arn)
         .role_session_name(session_name)
         .web_identity_token(token)
@@ -260,7 +261,7 @@ mod test {
         Builder, ENV_VAR_ROLE_ARN, ENV_VAR_SESSION_NAME, ENV_VAR_TOKEN_FILE,
     };
     use aws_credential_types::provider::error::CredentialsError;
-    use aws_sdk_sts::Region;
+    use aws_sdk_sts::config::Region;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_types::error::display::DisplayErrorContext;
     use aws_types::os_shim_internal::{Env, Fs};

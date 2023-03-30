@@ -4,10 +4,14 @@
  */
 
 use aws_sdk_s3 as s3;
-use aws_sdk_s3::presigning::request::PresignedRequest;
 use http::header::{CONTENT_LENGTH, CONTENT_TYPE};
 use http::{HeaderMap, HeaderValue};
-use s3::presigning::config::PresigningConfig;
+use s3::config::{Credentials, Region};
+use s3::operation::get_object::GetObjectInput;
+use s3::operation::head_object::HeadObjectInput;
+use s3::operation::put_object::PutObjectInput;
+use s3::operation::upload_part::UploadPartInput;
+use s3::presigning::{PresignedRequest, PresigningConfig};
 use std::error::Error;
 use std::time::{Duration, SystemTime};
 
@@ -15,10 +19,10 @@ use std::time::{Duration, SystemTime};
 /// Assumes that that input has a `presigned` method on it.
 macro_rules! presign_input {
     ($input:expr) => {{
-        let creds = s3::Credentials::for_tests();
+        let creds = Credentials::for_tests();
         let config = s3::Config::builder()
             .credentials_provider(creds)
-            .region(s3::Region::new("us-east-1"))
+            .region(Region::new("us-east-1"))
             .build();
 
         let req: PresignedRequest = $input
@@ -37,7 +41,7 @@ macro_rules! presign_input {
 
 #[tokio::test]
 async fn test_presigning() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(s3::input::GetObjectInput::builder()
+    let presigned = presign_input!(GetObjectInput::builder()
         .bucket("test-bucket")
         .key("test-key")
         .build()?);
@@ -74,7 +78,7 @@ async fn test_presigning() -> Result<(), Box<dyn Error>> {
 
 #[tokio::test]
 async fn test_presigning_with_payload_headers() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(s3::input::PutObjectInput::builder()
+    let presigned = presign_input!(PutObjectInput::builder()
         .bucket("test-bucket")
         .key("test-key")
         .content_length(12345)
@@ -117,7 +121,7 @@ async fn test_presigning_with_payload_headers() -> Result<(), Box<dyn Error>> {
 
 #[tokio::test]
 async fn test_presigned_upload_part() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(s3::input::UploadPartInput::builder()
+    let presigned = presign_input!(UploadPartInput::builder()
         .content_length(12345)
         .bucket("bucket")
         .key("key")
@@ -127,6 +131,33 @@ async fn test_presigned_upload_part() -> Result<(), Box<dyn Error>> {
     assert_eq!(
         presigned.uri().to_string(),
         "https://bucket.s3.us-east-1.amazonaws.com/key?x-id=UploadPart&partNumber=0&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost&X-Amz-Signature=a702867244f0bd1fb4d161e2a062520dcbefae3b9992d2e5366bcd61a60c6ddd&X-Amz-Security-Token=notarealsessiontoken",
+    );
+    Ok(())
+}
+
+#[tokio::test]
+async fn test_presigning_object_lambda() -> Result<(), Box<dyn Error>> {
+    let presigned = presign_input!(GetObjectInput::builder()
+        .bucket("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my-banner-ap-name")
+        .key("test2.txt")
+        .build()
+        .unwrap());
+    // since the URI is `my-banner-api-name...` we know EP2 is working properly for presigning
+    assert_eq!(presigned.uri().to_string(), "https://my-banner-ap-name-123456789012.s3-object-lambda.us-west-2.amazonaws.com/test2.txt?x-id=GetObject&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-west-2%2Fs3-object-lambda%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=027976453050b6f9cca7af80a59c05ee572b462e0fc1ef564c59412b903fcdf2&X-Amz-Security-Token=notarealsessiontoken");
+    Ok(())
+}
+
+#[tokio::test]
+async fn test_presigned_head_object() -> Result<(), Box<dyn Error>> {
+    let presigned = presign_input!(HeadObjectInput::builder()
+        .bucket("bucket")
+        .key("key")
+        .build()?);
+
+    assert_eq!("HEAD", presigned.method().as_str());
+    assert_eq!(
+        presigned.uri().to_string(),
+        "https://bucket.s3.us-east-1.amazonaws.com/key?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=6b97012e70d5ee3528b5591e0e90c0f45e0fa303506f854eff50ff922751a193&X-Amz-Security-Token=notarealsessiontoken",
     );
     Ok(())
 }

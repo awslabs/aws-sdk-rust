@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS License Manager Linux Subscriptions. Each operation on AWS License Manager Linux Subscriptions is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_licensemanagerlinuxsubscriptions::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_licensemanagerlinuxsubscriptions::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_licensemanagerlinuxsubscriptions::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_licensemanagerlinuxsubscriptions::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_licensemanagerlinuxsubscriptions::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`ListLinuxSubscriptionInstances`](crate::operation::list_linux_subscription_instances) operation has
+/// a [`Client::list_linux_subscription_instances`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.list_linux_subscription_instances()
+///     .next_token("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,510 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`GetServiceSettings`](crate::client::fluent_builders::GetServiceSettings) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetServiceSettings::send) it.
-
-    /// - On success, responds with [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput) with field(s):
-    ///   - [`linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::output::GetServiceSettingsOutput::linux_subscriptions_discovery): <p>Lists if discovery has been enabled for Linux subscriptions.</p>
-    ///   - [`linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::output::GetServiceSettingsOutput::linux_subscriptions_discovery_settings): <p>Lists the settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    ///   - [`status(Option<Status>)`](crate::output::GetServiceSettingsOutput::status): <p>Indicates the status of Linux subscriptions settings being applied.</p>
-    ///   - [`status_message(Option<HashMap<String, String>>)`](crate::output::GetServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
-    ///   - [`home_regions(Option<Vec<String>>)`](crate::output::GetServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
-    /// - On failure, responds with [`SdkError<GetServiceSettingsError>`](crate::error::GetServiceSettingsError)
-    pub fn get_service_settings(&self) -> fluent_builders::GetServiceSettings {
-        fluent_builders::GetServiceSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLinuxSubscriptionInstances`](crate::client::fluent_builders::ListLinuxSubscriptionInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>  <p>The valid names for this filter are:</p>  <ul>   <li> <p> <code>AmiID</code> </p> </li>   <li> <p> <code>InstanceID</code> </p> </li>   <li> <p> <code>AccountID</code> </p> </li>   <li> <p> <code>Status</code> </p> </li>   <li> <p> <code>Region</code> </p> </li>   <li> <p> <code>UsageOperation</code> </p> </li>   <li> <p> <code>ProductCode</code> </p> </li>   <li> <p> <code>InstanceType</code> </p> </li>  </ul>  <p>The valid Operators for this filter are:</p>  <ul>   <li> <p> <code>contains</code> </p> </li>   <li> <p> <code>equals</code> </p> </li>   <li> <p> <code>Notequal</code> </p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput) with field(s):
-    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::ListLinuxSubscriptionInstancesOutput::instances): <p>An array that contains instance objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLinuxSubscriptionInstancesOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLinuxSubscriptionInstancesError>`](crate::error::ListLinuxSubscriptionInstancesError)
-    pub fn list_linux_subscription_instances(
-        &self,
-    ) -> fluent_builders::ListLinuxSubscriptionInstances {
-        fluent_builders::ListLinuxSubscriptionInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLinuxSubscriptions`](crate::client::fluent_builders::ListLinuxSubscriptions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLinuxSubscriptions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLinuxSubscriptions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLinuxSubscriptions::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>  <p>The valid names for this filter are:</p>  <ul>   <li> <p> <code>Subscription</code> </p> </li>  </ul>  <p>The valid Operators for this filter are:</p>  <ul>   <li> <p> <code>contains</code> </p> </li>   <li> <p> <code>equals</code> </p> </li>   <li> <p> <code>Notequal</code> </p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLinuxSubscriptions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLinuxSubscriptions::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLinuxSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLinuxSubscriptions::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput) with field(s):
-    ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::output::ListLinuxSubscriptionsOutput::subscriptions): <p>An array that contains subscription objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLinuxSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLinuxSubscriptionsError>`](crate::error::ListLinuxSubscriptionsError)
-    pub fn list_linux_subscriptions(&self) -> fluent_builders::ListLinuxSubscriptions {
-        fluent_builders::ListLinuxSubscriptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateServiceSettings`](crate::client::fluent_builders::UpdateServiceSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`linux_subscriptions_discovery(LinuxSubscriptionsDiscovery)`](crate::client::fluent_builders::UpdateServiceSettings::linux_subscriptions_discovery) / [`set_linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::client::fluent_builders::UpdateServiceSettings::set_linux_subscriptions_discovery): <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    ///   - [`linux_subscriptions_discovery_settings(LinuxSubscriptionsDiscoverySettings)`](crate::client::fluent_builders::UpdateServiceSettings::linux_subscriptions_discovery_settings) / [`set_linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::client::fluent_builders::UpdateServiceSettings::set_linux_subscriptions_discovery_settings): <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    ///   - [`allow_update(bool)`](crate::client::fluent_builders::UpdateServiceSettings::allow_update) / [`set_allow_update(Option<bool>)`](crate::client::fluent_builders::UpdateServiceSettings::set_allow_update): <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
-    /// - On success, responds with [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput) with field(s):
-    ///   - [`linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::output::UpdateServiceSettingsOutput::linux_subscriptions_discovery): <p>Lists if discovery has been enabled for Linux subscriptions.</p>
-    ///   - [`linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::output::UpdateServiceSettingsOutput::linux_subscriptions_discovery_settings): <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    ///   - [`status(Option<Status>)`](crate::output::UpdateServiceSettingsOutput::status): <p>Indicates the status of Linux subscriptions settings being applied.</p>
-    ///   - [`status_message(Option<HashMap<String, String>>)`](crate::output::UpdateServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
-    ///   - [`home_regions(Option<Vec<String>>)`](crate::output::UpdateServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
-    /// - On failure, responds with [`SdkError<UpdateServiceSettingsError>`](crate::error::UpdateServiceSettingsError)
-    pub fn update_service_settings(&self) -> fluent_builders::UpdateServiceSettings {
-        fluent_builders::UpdateServiceSettings::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `GetServiceSettings`.
-    ///
-    /// <p>Lists the Linux subscriptions service settings.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetServiceSettings {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_service_settings_input::Builder,
-    }
-    impl GetServiceSettings {
-        /// Creates a new `GetServiceSettings`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetServiceSettings,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetServiceSettingsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetServiceSettingsOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetServiceSettingsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-    }
-    /// Fluent builder constructing a request to `ListLinuxSubscriptionInstances`.
-    ///
-    /// <p>Lists the running Amazon EC2 instances that were discovered with commercial Linux subscriptions.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListLinuxSubscriptionInstances {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_linux_subscription_instances_input::Builder,
-    }
-    impl ListLinuxSubscriptionInstances {
-        /// Creates a new `ListLinuxSubscriptionInstances`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListLinuxSubscriptionInstances,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionInstancesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListLinuxSubscriptionInstancesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionInstancesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListLinuxSubscriptionInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListLinuxSubscriptionInstancesPaginator {
-            crate::paginator::ListLinuxSubscriptionInstancesPaginator::new(self.handle, self.inner)
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-        /// <p>The valid names for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>AmiID</code> </p> </li>
-        /// <li> <p> <code>InstanceID</code> </p> </li>
-        /// <li> <p> <code>AccountID</code> </p> </li>
-        /// <li> <p> <code>Status</code> </p> </li>
-        /// <li> <p> <code>Region</code> </p> </li>
-        /// <li> <p> <code>UsageOperation</code> </p> </li>
-        /// <li> <p> <code>ProductCode</code> </p> </li>
-        /// <li> <p> <code>InstanceType</code> </p> </li>
-        /// </ul>
-        /// <p>The valid Operators for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>contains</code> </p> </li>
-        /// <li> <p> <code>equals</code> </p> </li>
-        /// <li> <p> <code>Notequal</code> </p> </li>
-        /// </ul>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-        /// <p>The valid names for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>AmiID</code> </p> </li>
-        /// <li> <p> <code>InstanceID</code> </p> </li>
-        /// <li> <p> <code>AccountID</code> </p> </li>
-        /// <li> <p> <code>Status</code> </p> </li>
-        /// <li> <p> <code>Region</code> </p> </li>
-        /// <li> <p> <code>UsageOperation</code> </p> </li>
-        /// <li> <p> <code>ProductCode</code> </p> </li>
-        /// <li> <p> <code>InstanceType</code> </p> </li>
-        /// </ul>
-        /// <p>The valid Operators for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>contains</code> </p> </li>
-        /// <li> <p> <code>equals</code> </p> </li>
-        /// <li> <p> <code>Notequal</code> </p> </li>
-        /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of results to return in a single call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Token for the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListLinuxSubscriptions`.
-    ///
-    /// <p>Lists the Linux subscriptions that have been discovered. If you have linked your organization, the returned results will include data aggregated across your accounts in Organizations.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListLinuxSubscriptions {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_linux_subscriptions_input::Builder,
-    }
-    impl ListLinuxSubscriptions {
-        /// Creates a new `ListLinuxSubscriptions`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListLinuxSubscriptions,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListLinuxSubscriptionsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListLinuxSubscriptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListLinuxSubscriptionsPaginator {
-            crate::paginator::ListLinuxSubscriptionsPaginator::new(self.handle, self.inner)
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>
-        /// <p>The valid names for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>Subscription</code> </p> </li>
-        /// </ul>
-        /// <p>The valid Operators for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>contains</code> </p> </li>
-        /// <li> <p> <code>equals</code> </p> </li>
-        /// <li> <p> <code>Notequal</code> </p> </li>
-        /// </ul>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>
-        /// <p>The valid names for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>Subscription</code> </p> </li>
-        /// </ul>
-        /// <p>The valid Operators for this filter are:</p>
-        /// <ul>
-        /// <li> <p> <code>contains</code> </p> </li>
-        /// <li> <p> <code>equals</code> </p> </li>
-        /// <li> <p> <code>Notequal</code> </p> </li>
-        /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of results to return in a single call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Token for the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateServiceSettings`.
-    ///
-    /// <p>Updates the service settings for Linux subscriptions.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateServiceSettings {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_service_settings_input::Builder,
-    }
-    impl UpdateServiceSettings {
-        /// Creates a new `UpdateServiceSettings`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateServiceSettings,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateServiceSettingsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateServiceSettingsOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateServiceSettingsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-        pub fn linux_subscriptions_discovery(
-            mut self,
-            input: crate::model::LinuxSubscriptionsDiscovery,
-        ) -> Self {
-            self.inner = self.inner.linux_subscriptions_discovery(input);
-            self
-        }
-        /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-        pub fn set_linux_subscriptions_discovery(
-            mut self,
-            input: std::option::Option<crate::model::LinuxSubscriptionsDiscovery>,
-        ) -> Self {
-            self.inner = self.inner.set_linux_subscriptions_discovery(input);
-            self
-        }
-        /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-        pub fn linux_subscriptions_discovery_settings(
-            mut self,
-            input: crate::model::LinuxSubscriptionsDiscoverySettings,
-        ) -> Self {
-            self.inner = self.inner.linux_subscriptions_discovery_settings(input);
-            self
-        }
-        /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-        pub fn set_linux_subscriptions_discovery_settings(
-            mut self,
-            input: std::option::Option<crate::model::LinuxSubscriptionsDiscoverySettings>,
-        ) -> Self {
-            self.inner = self.inner.set_linux_subscriptions_discovery_settings(input);
-            self
-        }
-        /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
-        pub fn allow_update(mut self, input: bool) -> Self {
-            self.inner = self.inner.allow_update(input);
-            self
-        }
-        /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
-        pub fn set_allow_update(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_allow_update(input);
-            self
-        }
     }
 }
 
@@ -668,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -678,3 +211,39 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_licensemanagerlinuxsubscriptions::Error> {
+/// # let client: aws_sdk_licensemanagerlinuxsubscriptions::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.get_service_settings()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod get_service_settings;
+
+mod list_linux_subscription_instances;
+
+mod list_linux_subscriptions;
+
+mod update_service_settings;

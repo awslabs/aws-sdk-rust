@@ -4,32 +4,25 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The failure percentage threshold percentage was met.</p>
-    ConcurrentDeploymentException(crate::error::ConcurrentDeploymentException),
+    ConcurrentDeploymentException(crate::types::error::ConcurrentDeploymentException),
     /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
-    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
-    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>The specified resource does not exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request has failed due to a temporary failure of the server.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
-    ThrottlingException(crate::error::ThrottlingException),
-    ///
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,485 +40,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteWorldsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDeleteWorldsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::BatchDeleteWorldsError> for Error {
-    fn from(err: crate::error::BatchDeleteWorldsError) -> Self {
-        match err.kind {
-            crate::error::BatchDeleteWorldsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::BatchDeleteWorldsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::BatchDeleteWorldsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchDeleteWorldsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDescribeSimulationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDescribeSimulationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::BatchDescribeSimulationJobError> for Error {
-    fn from(err: crate::error::BatchDescribeSimulationJobError) -> Self {
-        match err.kind {
-            crate::error::BatchDescribeSimulationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::BatchDescribeSimulationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::BatchDescribeSimulationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::BatchDescribeSimulationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchDescribeSimulationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelDeploymentJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelDeploymentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CancelDeploymentJobError> for Error {
-    fn from(err: crate::error::CancelDeploymentJobError) -> Self {
-        match err.kind {
-            crate::error::CancelDeploymentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelDeploymentJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelDeploymentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelDeploymentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CancelDeploymentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelSimulationJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelSimulationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CancelSimulationJobError> for Error {
-    fn from(err: crate::error::CancelSimulationJobError) -> Self {
-        match err.kind {
-            crate::error::CancelSimulationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelSimulationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelSimulationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelSimulationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CancelSimulationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelSimulationJobBatchError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelSimulationJobBatchError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CancelSimulationJobBatchError> for Error {
-    fn from(err: crate::error::CancelSimulationJobBatchError) -> Self {
-        match err.kind {
-            crate::error::CancelSimulationJobBatchErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelSimulationJobBatchErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelSimulationJobBatchErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelSimulationJobBatchErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CancelSimulationJobBatchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelWorldExportJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelWorldExportJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CancelWorldExportJobError> for Error {
-    fn from(err: crate::error::CancelWorldExportJobError) -> Self {
-        match err.kind {
-            crate::error::CancelWorldExportJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelWorldExportJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelWorldExportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelWorldExportJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CancelWorldExportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelWorldGenerationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelWorldGenerationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CancelWorldGenerationJobError> for Error {
-    fn from(err: crate::error::CancelWorldGenerationJobError) -> Self {
-        match err.kind {
-            crate::error::CancelWorldGenerationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelWorldGenerationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelWorldGenerationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelWorldGenerationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CancelWorldGenerationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDeploymentJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateDeploymentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateDeploymentJobError> for Error {
-    fn from(err: crate::error::CreateDeploymentJobError) -> Self {
-        match err.kind {
-            crate::error::CreateDeploymentJobErrorKind::ConcurrentDeploymentException(inner) => {
-                Error::ConcurrentDeploymentException(inner)
-            }
-            crate::error::CreateDeploymentJobErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateDeploymentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateDeploymentJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateDeploymentJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateDeploymentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateDeploymentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateDeploymentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateFleetError> for Error {
-    fn from(err: crate::error::CreateFleetError) -> Self {
-        match err.kind {
-            crate::error::CreateFleetErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateFleetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateFleetErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateFleetErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateFleetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRobotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRobotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateRobotError> for Error {
-    fn from(err: crate::error::CreateRobotError) -> Self {
-        match err.kind {
-            crate::error::CreateRobotErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateRobotErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateRobotErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateRobotErrorKind::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::error::CreateRobotErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateRobotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRobotApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRobotApplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateRobotApplicationError> for Error {
-    fn from(err: crate::error::CreateRobotApplicationError) -> Self {
-        match err.kind {
-            crate::error::CreateRobotApplicationErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateRobotApplicationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateRobotApplicationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateRobotApplicationErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateRobotApplicationErrorKind::ResourceAlreadyExistsException(
-                inner,
-            ) => Error::ResourceAlreadyExistsException(inner),
-            crate::error::CreateRobotApplicationErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateRobotApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRobotApplicationVersionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRobotApplicationVersionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateRobotApplicationVersionError> for Error {
-    fn from(err: crate::error::CreateRobotApplicationVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateRobotApplicationVersionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateRobotApplicationVersionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateRobotApplicationVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateRobotApplicationVersionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateRobotApplicationVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateRobotApplicationVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSimulationApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSimulationApplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateSimulationApplicationError> for Error {
-    fn from(err: crate::error::CreateSimulationApplicationError) -> Self {
-        match err.kind {
-            crate::error::CreateSimulationApplicationErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateSimulationApplicationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateSimulationApplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateSimulationApplicationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateSimulationApplicationErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
-            crate::error::CreateSimulationApplicationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateSimulationApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::CreateSimulationApplicationVersionError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateSimulationApplicationVersionError,
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
             R,
         >,
     ) -> Self {
@@ -533,1549 +60,2493 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateSimulationApplicationVersionError> for Error {
-    fn from(err: crate::error::CreateSimulationApplicationVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateSimulationApplicationVersionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateSimulationApplicationVersionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateSimulationApplicationVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateSimulationApplicationVersionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateSimulationApplicationVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateSimulationApplicationVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::batch_delete_worlds::BatchDeleteWorldsError> for Error {
+    fn from(err: crate::operation::batch_delete_worlds::BatchDeleteWorldsError) -> Self {
+        match err {
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSimulationJobError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSimulationJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateSimulationJobError> for Error {
-    fn from(err: crate::error::CreateSimulationJobError) -> Self {
-        match err.kind {
-            crate::error::CreateSimulationJobErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateSimulationJobErrorKind::InternalServerException(inner) => {
+impl From<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_deployment_job::CancelDeploymentJobError> for Error {
+    fn from(err: crate::operation::cancel_deployment_job::CancelDeploymentJobError) -> Self {
+        match err {
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_deployment_job::CancelDeploymentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_simulation_job::CancelSimulationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_simulation_job::CancelSimulationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_simulation_job::CancelSimulationJobError> for Error {
+    fn from(err: crate::operation::cancel_simulation_job::CancelSimulationJobError) -> Self {
+        match err {
+            crate::operation::cancel_simulation_job::CancelSimulationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_simulation_job::CancelSimulationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_simulation_job::CancelSimulationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_simulation_job::CancelSimulationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_simulation_job::CancelSimulationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError> for Error {
+    fn from(
+        err: crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
+    ) -> Self {
+        match err {
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_world_export_job::CancelWorldExportJobError> for Error {
+    fn from(err: crate::operation::cancel_world_export_job::CancelWorldExportJobError) -> Self {
+        match err {
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError> for Error {
+    fn from(
+        err: crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment_job::CreateDeploymentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment_job::CreateDeploymentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_deployment_job::CreateDeploymentJobError> for Error {
+    fn from(err: crate::operation::create_deployment_job::CreateDeploymentJobError) -> Self {
+        match err {
+            crate::operation::create_deployment_job::CreateDeploymentJobError::ConcurrentDeploymentException(inner) => Error::ConcurrentDeploymentException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_deployment_job::CreateDeploymentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_fleet::CreateFleetError> for Error {
+    fn from(err: crate::operation::create_fleet::CreateFleetError) -> Self {
+        match err {
+            crate::operation::create_fleet::CreateFleetError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateSimulationJobErrorKind::InvalidParameterException(inner) => {
+            crate::operation::create_fleet::CreateFleetError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::CreateSimulationJobErrorKind::LimitExceededException(inner) => {
+            crate::operation::create_fleet::CreateFleetError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateSimulationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateSimulationJobErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateSimulationJobErrorKind::ThrottlingException(inner) => {
+            crate::operation::create_fleet::CreateFleetError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::CreateSimulationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_fleet::CreateFleetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWorldExportJobError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_robot::CreateRobotError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateWorldExportJobError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_robot::CreateRobotError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateWorldExportJobError> for Error {
-    fn from(err: crate::error::CreateWorldExportJobError) -> Self {
-        match err.kind {
-            crate::error::CreateWorldExportJobErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateWorldExportJobErrorKind::InternalServerException(inner) => {
+impl From<crate::operation::create_robot::CreateRobotError> for Error {
+    fn from(err: crate::operation::create_robot::CreateRobotError) -> Self {
+        match err {
+            crate::operation::create_robot::CreateRobotError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateWorldExportJobErrorKind::InvalidParameterException(inner) => {
+            crate::operation::create_robot::CreateRobotError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::CreateWorldExportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateWorldExportJobErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateWorldExportJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateWorldExportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWorldGenerationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateWorldGenerationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateWorldGenerationJobError> for Error {
-    fn from(err: crate::error::CreateWorldGenerationJobError) -> Self {
-        match err.kind {
-            crate::error::CreateWorldGenerationJobErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateWorldGenerationJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWorldTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateWorldTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateWorldTemplateError> for Error {
-    fn from(err: crate::error::CreateWorldTemplateError) -> Self {
-        match err.kind {
-            crate::error::CreateWorldTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateWorldTemplateErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateWorldTemplateErrorKind::LimitExceededException(inner) => {
+            crate::operation::create_robot::CreateRobotError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateWorldTemplateErrorKind::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::error::CreateWorldTemplateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateWorldTemplateErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateWorldTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteFleetError> for Error {
-    fn from(err: crate::error::DeleteFleetError) -> Self {
-        match err.kind {
-            crate::error::DeleteFleetErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRobotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRobotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteRobotError> for Error {
-    fn from(err: crate::error::DeleteRobotError) -> Self {
-        match err.kind {
-            crate::error::DeleteRobotErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteRobotErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteRobotErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteRobotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRobotApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRobotApplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteRobotApplicationError> for Error {
-    fn from(err: crate::error::DeleteRobotApplicationError) -> Self {
-        match err.kind {
-            crate::error::DeleteRobotApplicationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteRobotApplicationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteRobotApplicationErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteRobotApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSimulationApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSimulationApplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSimulationApplicationError> for Error {
-    fn from(err: crate::error::DeleteSimulationApplicationError) -> Self {
-        match err.kind {
-            crate::error::DeleteSimulationApplicationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteSimulationApplicationErrorKind::InvalidParameterException(
+            crate::operation::create_robot::CreateRobotError::ResourceAlreadyExistsException(
                 inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::error::DeleteSimulationApplicationErrorKind::ThrottlingException(inner) => {
+            ) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_robot::CreateRobotError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DeleteSimulationApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_robot::CreateRobotError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWorldTemplateError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_robot_application::CreateRobotApplicationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteWorldTemplateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_robot_application::CreateRobotApplicationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteWorldTemplateError> for Error {
-    fn from(err: crate::error::DeleteWorldTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeleteWorldTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteWorldTemplateErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteWorldTemplateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteWorldTemplateErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteWorldTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_robot_application::CreateRobotApplicationError> for Error {
+    fn from(err: crate::operation::create_robot_application::CreateRobotApplicationError) -> Self {
+        match err {
+            crate::operation::create_robot_application::CreateRobotApplicationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_robot_application::CreateRobotApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_robot_application::CreateRobotApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_robot_application::CreateRobotApplicationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_robot_application::CreateRobotApplicationError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_robot_application::CreateRobotApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_robot_application::CreateRobotApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterRobotError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterRobotError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeregisterRobotError> for Error {
-    fn from(err: crate::error::DeregisterRobotError) -> Self {
-        match err.kind {
-            crate::error::DeregisterRobotErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeregisterRobotErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeregisterRobotErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeregisterRobotErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeregisterRobotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_robot_application_version::CreateRobotApplicationVersionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
+    ) -> Self {
+        match err {
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_robot_application_version::CreateRobotApplicationVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDeploymentJobError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_simulation_application::CreateSimulationApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_simulation_application::CreateSimulationApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_simulation_application::CreateSimulationApplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_simulation_application::CreateSimulationApplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_simulation_application::CreateSimulationApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError> for Error {
+    fn from(err: crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError) -> Self {
+        match err {
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_simulation_job::CreateSimulationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_simulation_job::CreateSimulationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_simulation_job::CreateSimulationJobError> for Error {
+    fn from(err: crate::operation::create_simulation_job::CreateSimulationJobError) -> Self {
+        match err {
+            crate::operation::create_simulation_job::CreateSimulationJobError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_simulation_job::CreateSimulationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_world_export_job::CreateWorldExportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_world_export_job::CreateWorldExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_world_export_job::CreateWorldExportJobError> for Error {
+    fn from(err: crate::operation::create_world_export_job::CreateWorldExportJobError) -> Self {
+        match err {
+            crate::operation::create_world_export_job::CreateWorldExportJobError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_world_export_job::CreateWorldExportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_world_export_job::CreateWorldExportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_world_export_job::CreateWorldExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_world_export_job::CreateWorldExportJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_world_export_job::CreateWorldExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_world_export_job::CreateWorldExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_world_generation_job::CreateWorldGenerationJobError> for Error {
+    fn from(
+        err: crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_world_template::CreateWorldTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_world_template::CreateWorldTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_world_template::CreateWorldTemplateError> for Error {
+    fn from(err: crate::operation::create_world_template::CreateWorldTemplateError) -> Self {
+        match err {
+            crate::operation::create_world_template::CreateWorldTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_world_template::CreateWorldTemplateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_world_template::CreateWorldTemplateError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_world_template::CreateWorldTemplateError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_world_template::CreateWorldTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_world_template::CreateWorldTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_world_template::CreateWorldTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_fleet::DeleteFleetError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDeploymentJobError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_fleet::DeleteFleetError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeDeploymentJobError> for Error {
-    fn from(err: crate::error::DescribeDeploymentJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeDeploymentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeDeploymentJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeDeploymentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeDeploymentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeDeploymentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetError, R>) -> Self {
+impl From<crate::operation::delete_fleet::DeleteFleetError> for Error {
+    fn from(err: crate::operation::delete_fleet::DeleteFleetError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetError> for Error {
-    fn from(err: crate::error::DescribeFleetError) -> Self {
-        match err.kind {
-            crate::error::DescribeFleetErrorKind::InternalServerException(inner) => {
+            crate::operation::delete_fleet::DeleteFleetError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DescribeFleetErrorKind::InvalidParameterException(inner) => {
+            crate::operation::delete_fleet::DeleteFleetError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::DescribeFleetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeFleetErrorKind::ThrottlingException(inner) => {
+            crate::operation::delete_fleet::DeleteFleetError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DescribeFleetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_fleet::DeleteFleetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRobotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeRobotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeRobotError> for Error {
-    fn from(err: crate::error::DescribeRobotError) -> Self {
-        match err.kind {
-            crate::error::DescribeRobotErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeRobotErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeRobotErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeRobotErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeRobotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRobotApplicationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_robot::DeleteRobotError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeRobotApplicationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_robot::DeleteRobotError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeRobotApplicationError> for Error {
-    fn from(err: crate::error::DescribeRobotApplicationError) -> Self {
-        match err.kind {
-            crate::error::DescribeRobotApplicationErrorKind::InternalServerException(inner) => {
+impl From<crate::operation::delete_robot::DeleteRobotError> for Error {
+    fn from(err: crate::operation::delete_robot::DeleteRobotError) -> Self {
+        match err {
+            crate::operation::delete_robot::DeleteRobotError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DescribeRobotApplicationErrorKind::InvalidParameterException(inner) => {
+            crate::operation::delete_robot::DeleteRobotError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::DescribeRobotApplicationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeRobotApplicationErrorKind::ThrottlingException(inner) => {
+            crate::operation::delete_robot::DeleteRobotError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DescribeRobotApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_robot::DeleteRobotError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSimulationApplicationError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_robot_application::DeleteRobotApplicationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSimulationApplicationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_robot_application::DeleteRobotApplicationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeSimulationApplicationError> for Error {
-    fn from(err: crate::error::DescribeSimulationApplicationError) -> Self {
-        match err.kind {
-            crate::error::DescribeSimulationApplicationErrorKind::InternalServerException(
+impl From<crate::operation::delete_robot_application::DeleteRobotApplicationError> for Error {
+    fn from(err: crate::operation::delete_robot_application::DeleteRobotApplicationError) -> Self {
+        match err {
+            crate::operation::delete_robot_application::DeleteRobotApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_robot_application::DeleteRobotApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_robot_application::DeleteRobotApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_robot_application::DeleteRobotApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_simulation_application::DeleteSimulationApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_simulation_application::DeleteSimulationApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_simulation_application::DeleteSimulationApplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_simulation_application::DeleteSimulationApplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_simulation_application::DeleteSimulationApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_simulation_application::DeleteSimulationApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_simulation_application::DeleteSimulationApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_simulation_application::DeleteSimulationApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_world_template::DeleteWorldTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_world_template::DeleteWorldTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_world_template::DeleteWorldTemplateError> for Error {
+    fn from(err: crate::operation::delete_world_template::DeleteWorldTemplateError) -> Self {
+        match err {
+            crate::operation::delete_world_template::DeleteWorldTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_world_template::DeleteWorldTemplateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_world_template::DeleteWorldTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_world_template::DeleteWorldTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_world_template::DeleteWorldTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::deregister_robot::DeregisterRobotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::deregister_robot::DeregisterRobotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deregister_robot::DeregisterRobotError> for Error {
+    fn from(err: crate::operation::deregister_robot::DeregisterRobotError) -> Self {
+        match err {
+            crate::operation::deregister_robot::DeregisterRobotError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::DescribeSimulationApplicationErrorKind::InvalidParameterException(
+            crate::operation::deregister_robot::DeregisterRobotError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::DescribeSimulationApplicationErrorKind::ResourceNotFoundException(
+            crate::operation::deregister_robot::DeregisterRobotError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeSimulationApplicationErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeSimulationApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSimulationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSimulationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSimulationJobError> for Error {
-    fn from(err: crate::error::DescribeSimulationJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeSimulationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeSimulationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeSimulationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeSimulationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeSimulationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSimulationJobBatchError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSimulationJobBatchError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSimulationJobBatchError> for Error {
-    fn from(err: crate::error::DescribeSimulationJobBatchError) -> Self {
-        match err.kind {
-            crate::error::DescribeSimulationJobBatchErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeSimulationJobBatchErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeSimulationJobBatchErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeSimulationJobBatchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWorldError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeWorldError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeWorldError> for Error {
-    fn from(err: crate::error::DescribeWorldError) -> Self {
-        match err.kind {
-            crate::error::DescribeWorldErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeWorldErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeWorldErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeWorldErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeWorldErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWorldExportJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeWorldExportJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeWorldExportJobError> for Error {
-    fn from(err: crate::error::DescribeWorldExportJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeWorldExportJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeWorldExportJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeWorldExportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeWorldExportJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeWorldExportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWorldGenerationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeWorldGenerationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeWorldGenerationJobError> for Error {
-    fn from(err: crate::error::DescribeWorldGenerationJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeWorldGenerationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeWorldGenerationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeWorldGenerationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeWorldGenerationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeWorldGenerationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWorldTemplateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeWorldTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeWorldTemplateError> for Error {
-    fn from(err: crate::error::DescribeWorldTemplateError) -> Self {
-        match err.kind {
-            crate::error::DescribeWorldTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeWorldTemplateErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeWorldTemplateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeWorldTemplateErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeWorldTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWorldTemplateBodyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetWorldTemplateBodyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetWorldTemplateBodyError> for Error {
-    fn from(err: crate::error::GetWorldTemplateBodyError) -> Self {
-        match err.kind {
-            crate::error::GetWorldTemplateBodyErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetWorldTemplateBodyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetWorldTemplateBodyErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetWorldTemplateBodyErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetWorldTemplateBodyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDeploymentJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDeploymentJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListDeploymentJobsError> for Error {
-    fn from(err: crate::error::ListDeploymentJobsError) -> Self {
-        match err.kind {
-            crate::error::ListDeploymentJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListDeploymentJobsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListDeploymentJobsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListDeploymentJobsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListDeploymentJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListFleetsError> for Error {
-    fn from(err: crate::error::ListFleetsError) -> Self {
-        match err.kind {
-            crate::error::ListFleetsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListFleetsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListFleetsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListFleetsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListFleetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRobotApplicationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRobotApplicationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListRobotApplicationsError> for Error {
-    fn from(err: crate::error::ListRobotApplicationsError) -> Self {
-        match err.kind {
-            crate::error::ListRobotApplicationsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListRobotApplicationsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListRobotApplicationsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListRobotApplicationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRobotsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRobotsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListRobotsError> for Error {
-    fn from(err: crate::error::ListRobotsError) -> Self {
-        match err.kind {
-            crate::error::ListRobotsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListRobotsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListRobotsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListRobotsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListRobotsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSimulationApplicationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSimulationApplicationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListSimulationApplicationsError> for Error {
-    fn from(err: crate::error::ListSimulationApplicationsError) -> Self {
-        match err.kind {
-            crate::error::ListSimulationApplicationsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSimulationApplicationsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListSimulationApplicationsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListSimulationApplicationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSimulationJobBatchesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSimulationJobBatchesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListSimulationJobBatchesError> for Error {
-    fn from(err: crate::error::ListSimulationJobBatchesError) -> Self {
-        match err.kind {
-            crate::error::ListSimulationJobBatchesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSimulationJobBatchesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListSimulationJobBatchesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSimulationJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSimulationJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListSimulationJobsError> for Error {
-    fn from(err: crate::error::ListSimulationJobsError) -> Self {
-        match err.kind {
-            crate::error::ListSimulationJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSimulationJobsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListSimulationJobsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListSimulationJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorldExportJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListWorldExportJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListWorldExportJobsError> for Error {
-    fn from(err: crate::error::ListWorldExportJobsError) -> Self {
-        match err.kind {
-            crate::error::ListWorldExportJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListWorldExportJobsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListWorldExportJobsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListWorldExportJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorldGenerationJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListWorldGenerationJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListWorldGenerationJobsError> for Error {
-    fn from(err: crate::error::ListWorldGenerationJobsError) -> Self {
-        match err.kind {
-            crate::error::ListWorldGenerationJobsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListWorldGenerationJobsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListWorldGenerationJobsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListWorldGenerationJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorldsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListWorldsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListWorldsError> for Error {
-    fn from(err: crate::error::ListWorldsError) -> Self {
-        match err.kind {
-            crate::error::ListWorldsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListWorldsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListWorldsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListWorldsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorldTemplatesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListWorldTemplatesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListWorldTemplatesError> for Error {
-    fn from(err: crate::error::ListWorldTemplatesError) -> Self {
-        match err.kind {
-            crate::error::ListWorldTemplatesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListWorldTemplatesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListWorldTemplatesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListWorldTemplatesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterRobotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterRobotError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RegisterRobotError> for Error {
-    fn from(err: crate::error::RegisterRobotError) -> Self {
-        match err.kind {
-            crate::error::RegisterRobotErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::RegisterRobotErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RegisterRobotErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::RegisterRobotErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RegisterRobotErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::RegisterRobotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestartSimulationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RestartSimulationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RestartSimulationJobError> for Error {
-    fn from(err: crate::error::RestartSimulationJobError) -> Self {
-        match err.kind {
-            crate::error::RestartSimulationJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::RestartSimulationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RestartSimulationJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::RestartSimulationJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RestartSimulationJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::RestartSimulationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSimulationJobBatchError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartSimulationJobBatchError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartSimulationJobBatchError> for Error {
-    fn from(err: crate::error::StartSimulationJobBatchError) -> Self {
-        match err.kind {
-            crate::error::StartSimulationJobBatchErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartSimulationJobBatchErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartSimulationJobBatchErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartSimulationJobBatchErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::StartSimulationJobBatchErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartSimulationJobBatchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SyncDeploymentJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SyncDeploymentJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SyncDeploymentJobError> for Error {
-    fn from(err: crate::error::SyncDeploymentJobError) -> Self {
-        match err.kind {
-            crate::error::SyncDeploymentJobErrorKind::ConcurrentDeploymentException(inner) => {
-                Error::ConcurrentDeploymentException(inner)
-            }
-            crate::error::SyncDeploymentJobErrorKind::IdempotentParameterMismatchException(
+            crate::operation::deregister_robot::DeregisterRobotError::ThrottlingException(
                 inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::SyncDeploymentJobErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::SyncDeploymentJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SyncDeploymentJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::SyncDeploymentJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SyncDeploymentJobErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::SyncDeploymentJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            ) => Error::ThrottlingException(inner),
+            crate::operation::deregister_robot::DeregisterRobotError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRobotApplicationError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRobotApplicationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateRobotApplicationError> for Error {
-    fn from(err: crate::error::UpdateRobotApplicationError) -> Self {
-        match err.kind {
-            crate::error::UpdateRobotApplicationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateRobotApplicationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateRobotApplicationErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateRobotApplicationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateRobotApplicationErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UpdateRobotApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::describe_deployment_job::DescribeDeploymentJobError> for Error {
+    fn from(err: crate::operation::describe_deployment_job::DescribeDeploymentJobError) -> Self {
+        match err {
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSimulationApplicationError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_fleet::DescribeFleetError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSimulationApplicationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet::DescribeFleetError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateSimulationApplicationError> for Error {
-    fn from(err: crate::error::UpdateSimulationApplicationError) -> Self {
-        match err.kind {
-            crate::error::UpdateSimulationApplicationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateSimulationApplicationErrorKind::InvalidParameterException(
+impl From<crate::operation::describe_fleet::DescribeFleetError> for Error {
+    fn from(err: crate::operation::describe_fleet::DescribeFleetError) -> Self {
+        match err {
+            crate::operation::describe_fleet::DescribeFleetError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::describe_fleet::DescribeFleetError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::UpdateSimulationApplicationErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateSimulationApplicationErrorKind::ResourceNotFoundException(
+            crate::operation::describe_fleet::DescribeFleetError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateSimulationApplicationErrorKind::ThrottlingException(inner) => {
+            crate::operation::describe_fleet::DescribeFleetError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::UpdateSimulationApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::describe_fleet::DescribeFleetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateWorldTemplateError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_robot::DescribeRobotError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateWorldTemplateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_robot::DescribeRobotError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateWorldTemplateError> for Error {
-    fn from(err: crate::error::UpdateWorldTemplateError) -> Self {
-        match err.kind {
-            crate::error::UpdateWorldTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateWorldTemplateErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateWorldTemplateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateWorldTemplateErrorKind::ThrottlingException(inner) => {
+impl From<crate::operation::describe_robot::DescribeRobotError> for Error {
+    fn from(err: crate::operation::describe_robot::DescribeRobotError) -> Self {
+        match err {
+            crate::operation::describe_robot::DescribeRobotError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::describe_robot::DescribeRobotError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_robot::DescribeRobotError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_robot::DescribeRobotError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::UpdateWorldTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::describe_robot::DescribeRobotError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_robot_application::DescribeRobotApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_robot_application::DescribeRobotApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_robot_application::DescribeRobotApplicationError> for Error {
+    fn from(
+        err: crate::operation::describe_robot_application::DescribeRobotApplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_robot_application::DescribeRobotApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_robot_application::DescribeRobotApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_robot_application::DescribeRobotApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_robot_application::DescribeRobotApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_robot_application::DescribeRobotApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_simulation_application::DescribeSimulationApplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_simulation_application::DescribeSimulationApplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation_job::DescribeSimulationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation_job::DescribeSimulationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_simulation_job::DescribeSimulationJobError> for Error {
+    fn from(err: crate::operation::describe_simulation_job::DescribeSimulationJobError) -> Self {
+        match err {
+            crate::operation::describe_simulation_job::DescribeSimulationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_simulation_job::DescribeSimulationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_simulation_job::DescribeSimulationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_simulation_job::DescribeSimulationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_simulation_job::DescribeSimulationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_world::DescribeWorldError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_world::DescribeWorldError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_world::DescribeWorldError> for Error {
+    fn from(err: crate::operation::describe_world::DescribeWorldError) -> Self {
+        match err {
+            crate::operation::describe_world::DescribeWorldError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::describe_world::DescribeWorldError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_world::DescribeWorldError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_world::DescribeWorldError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_world::DescribeWorldError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_world_export_job::DescribeWorldExportJobError> for Error {
+    fn from(err: crate::operation::describe_world_export_job::DescribeWorldExportJobError) -> Self {
+        match err {
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_world_export_job::DescribeWorldExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_template::DescribeWorldTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_template::DescribeWorldTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_world_template::DescribeWorldTemplateError> for Error {
+    fn from(err: crate::operation::describe_world_template::DescribeWorldTemplateError) -> Self {
+        match err {
+            crate::operation::describe_world_template::DescribeWorldTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_world_template::DescribeWorldTemplateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_world_template::DescribeWorldTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_world_template::DescribeWorldTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_world_template::DescribeWorldTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_world_template_body::GetWorldTemplateBodyError> for Error {
+    fn from(err: crate::operation::get_world_template_body::GetWorldTemplateBodyError) -> Self {
+        match err {
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_world_template_body::GetWorldTemplateBodyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_deployment_jobs::ListDeploymentJobsError> for Error {
+    fn from(err: crate::operation::list_deployment_jobs::ListDeploymentJobsError) -> Self {
+        match err {
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_fleets::ListFleetsError> for Error {
+    fn from(err: crate::operation::list_fleets::ListFleetsError) -> Self {
+        match err {
+            crate::operation::list_fleets::ListFleetsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_robot_applications::ListRobotApplicationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_robot_applications::ListRobotApplicationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_robot_applications::ListRobotApplicationsError> for Error {
+    fn from(err: crate::operation::list_robot_applications::ListRobotApplicationsError) -> Self {
+        match err {
+            crate::operation::list_robot_applications::ListRobotApplicationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_robot_applications::ListRobotApplicationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_robot_applications::ListRobotApplicationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_robot_applications::ListRobotApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_robots::ListRobotsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_robots::ListRobotsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_robots::ListRobotsError> for Error {
+    fn from(err: crate::operation::list_robots::ListRobotsError) -> Self {
+        match err {
+            crate::operation::list_robots::ListRobotsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_robots::ListRobotsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_robots::ListRobotsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_robots::ListRobotsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_robots::ListRobotsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_simulation_applications::ListSimulationApplicationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_simulation_applications::ListSimulationApplicationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError> for Error {
+    fn from(
+        err: crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_jobs::ListSimulationJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_jobs::ListSimulationJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_simulation_jobs::ListSimulationJobsError> for Error {
+    fn from(err: crate::operation::list_simulation_jobs::ListSimulationJobsError) -> Self {
+        match err {
+            crate::operation::list_simulation_jobs::ListSimulationJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_simulation_jobs::ListSimulationJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_simulation_jobs::ListSimulationJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_simulation_jobs::ListSimulationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_world_export_jobs::ListWorldExportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_world_export_jobs::ListWorldExportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_world_export_jobs::ListWorldExportJobsError> for Error {
+    fn from(err: crate::operation::list_world_export_jobs::ListWorldExportJobsError) -> Self {
+        match err {
+            crate::operation::list_world_export_jobs::ListWorldExportJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_world_export_jobs::ListWorldExportJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_world_export_jobs::ListWorldExportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_world_export_jobs::ListWorldExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError> for Error {
+    fn from(
+        err: crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_worlds::ListWorldsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_worlds::ListWorldsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_worlds::ListWorldsError> for Error {
+    fn from(err: crate::operation::list_worlds::ListWorldsError) -> Self {
+        match err {
+            crate::operation::list_worlds::ListWorldsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_worlds::ListWorldsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_worlds::ListWorldsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_worlds::ListWorldsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_world_templates::ListWorldTemplatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_world_templates::ListWorldTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_world_templates::ListWorldTemplatesError> for Error {
+    fn from(err: crate::operation::list_world_templates::ListWorldTemplatesError) -> Self {
+        match err {
+            crate::operation::list_world_templates::ListWorldTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_world_templates::ListWorldTemplatesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_world_templates::ListWorldTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_world_templates::ListWorldTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::register_robot::RegisterRobotError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_robot::RegisterRobotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::register_robot::RegisterRobotError> for Error {
+    fn from(err: crate::operation::register_robot::RegisterRobotError) -> Self {
+        match err {
+            crate::operation::register_robot::RegisterRobotError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::register_robot::RegisterRobotError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::register_robot::RegisterRobotError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::register_robot::RegisterRobotError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::register_robot::RegisterRobotError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_robot::RegisterRobotError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::restart_simulation_job::RestartSimulationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::restart_simulation_job::RestartSimulationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::restart_simulation_job::RestartSimulationJobError> for Error {
+    fn from(err: crate::operation::restart_simulation_job::RestartSimulationJobError) -> Self {
+        match err {
+            crate::operation::restart_simulation_job::RestartSimulationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::restart_simulation_job::RestartSimulationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::restart_simulation_job::RestartSimulationJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::restart_simulation_job::RestartSimulationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::restart_simulation_job::RestartSimulationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::restart_simulation_job::RestartSimulationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_simulation_job_batch::StartSimulationJobBatchError> for Error {
+    fn from(
+        err: crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
+    ) -> Self {
+        match err {
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::sync_deployment_job::SyncDeploymentJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::sync_deployment_job::SyncDeploymentJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::sync_deployment_job::SyncDeploymentJobError> for Error {
+    fn from(err: crate::operation::sync_deployment_job::SyncDeploymentJobError) -> Self {
+        match err {
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::ConcurrentDeploymentException(inner) => Error::ConcurrentDeploymentException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::sync_deployment_job::SyncDeploymentJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_robot_application::UpdateRobotApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_robot_application::UpdateRobotApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_robot_application::UpdateRobotApplicationError> for Error {
+    fn from(err: crate::operation::update_robot_application::UpdateRobotApplicationError) -> Self {
+        match err {
+            crate::operation::update_robot_application::UpdateRobotApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_robot_application::UpdateRobotApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_robot_application::UpdateRobotApplicationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_robot_application::UpdateRobotApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_robot_application::UpdateRobotApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_robot_application::UpdateRobotApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_simulation_application::UpdateSimulationApplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_simulation_application::UpdateSimulationApplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_world_template::UpdateWorldTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_world_template::UpdateWorldTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_world_template::UpdateWorldTemplateError> for Error {
+    fn from(err: crate::operation::update_world_template::UpdateWorldTemplateError) -> Self {
+        match err {
+            crate::operation::update_world_template::UpdateWorldTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_world_template::UpdateWorldTemplateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_world_template::UpdateWorldTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_world_template::UpdateWorldTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_world_template::UpdateWorldTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConcurrentDeploymentException(e) => e.request_id(),
+            Self::IdempotentParameterMismatchException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ResourceAlreadyExistsException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

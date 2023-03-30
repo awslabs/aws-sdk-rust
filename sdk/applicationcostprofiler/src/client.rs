@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Application Cost Profiler. Each operation on AWS Application Cost Profiler is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_applicationcostprofiler::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_applicationcostprofiler::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_applicationcostprofiler::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_applicationcostprofiler::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_applicationcostprofiler::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteReportDefinition`](crate::operation::delete_report_definition) operation has
+/// a [`Client::delete_report_definition`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_report_definition()
+///     .report_id("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,650 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`DeleteReportDefinition`](crate::client::fluent_builders::DeleteReportDefinition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::DeleteReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::DeleteReportDefinition::set_report_id): <p>Required. ID of the report to delete.</p>
-    /// - On success, responds with [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::output::DeleteReportDefinitionOutput::report_id): <p>ID of the report that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteReportDefinitionError>`](crate::error::DeleteReportDefinitionError)
-    pub fn delete_report_definition(&self) -> fluent_builders::DeleteReportDefinition {
-        fluent_builders::DeleteReportDefinition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetReportDefinition`](crate::client::fluent_builders::GetReportDefinition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::GetReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::GetReportDefinition::set_report_id): <p>ID of the report to retrieve.</p>
-    /// - On success, responds with [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::output::GetReportDefinitionOutput::report_id): <p>ID of the report retrieved.</p>
-    ///   - [`report_description(Option<String>)`](crate::output::GetReportDefinitionOutput::report_description): <p>Description of the report.</p>
-    ///   - [`report_frequency(Option<ReportFrequency>)`](crate::output::GetReportDefinitionOutput::report_frequency): <p>Cadence used to generate the report.</p>
-    ///   - [`format(Option<Format>)`](crate::output::GetReportDefinitionOutput::format): <p>Format of the generated report.</p>
-    ///   - [`destination_s3_location(Option<S3Location>)`](crate::output::GetReportDefinitionOutput::destination_s3_location): <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::GetReportDefinitionOutput::created_at): <p>Timestamp (milliseconds) when this report definition was created.</p>
-    ///   - [`last_updated(Option<DateTime>)`](crate::output::GetReportDefinitionOutput::last_updated): <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    /// - On failure, responds with [`SdkError<GetReportDefinitionError>`](crate::error::GetReportDefinitionError)
-    pub fn get_report_definition(&self) -> fluent_builders::GetReportDefinition {
-        fluent_builders::GetReportDefinition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ImportApplicationUsage`](crate::client::fluent_builders::ImportApplicationUsage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_s3_location(SourceS3Location)`](crate::client::fluent_builders::ImportApplicationUsage::source_s3_location) / [`set_source_s3_location(Option<SourceS3Location>)`](crate::client::fluent_builders::ImportApplicationUsage::set_source_s3_location): <p>Amazon S3 location to import application usage data from.</p>
-    /// - On success, responds with [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput) with field(s):
-    ///   - [`import_id(Option<String>)`](crate::output::ImportApplicationUsageOutput::import_id): <p>ID of the import request.</p>
-    /// - On failure, responds with [`SdkError<ImportApplicationUsageError>`](crate::error::ImportApplicationUsageError)
-    pub fn import_application_usage(&self) -> fluent_builders::ImportApplicationUsage {
-        fluent_builders::ImportApplicationUsage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListReportDefinitions`](crate::client::fluent_builders::ListReportDefinitions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReportDefinitions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReportDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReportDefinitions::set_next_token): <p>The token value from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReportDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReportDefinitions::set_max_results): <p>The maximum number of results to return.</p>
-    /// - On success, responds with [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput) with field(s):
-    ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::output::ListReportDefinitionsOutput::report_definitions): <p>The retrieved reports.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListReportDefinitionsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListReportDefinitionsError>`](crate::error::ListReportDefinitionsError)
-    pub fn list_report_definitions(&self) -> fluent_builders::ListReportDefinitions {
-        fluent_builders::ListReportDefinitions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutReportDefinition`](crate::client::fluent_builders::PutReportDefinition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::PutReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::PutReportDefinition::set_report_id): <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-    ///   - [`report_description(impl Into<String>)`](crate::client::fluent_builders::PutReportDefinition::report_description) / [`set_report_description(Option<String>)`](crate::client::fluent_builders::PutReportDefinition::set_report_description): <p>Required. Description of the report.</p>
-    ///   - [`report_frequency(ReportFrequency)`](crate::client::fluent_builders::PutReportDefinition::report_frequency) / [`set_report_frequency(Option<ReportFrequency>)`](crate::client::fluent_builders::PutReportDefinition::set_report_frequency): <p>Required. The cadence to generate the report.</p>
-    ///   - [`format(Format)`](crate::client::fluent_builders::PutReportDefinition::format) / [`set_format(Option<Format>)`](crate::client::fluent_builders::PutReportDefinition::set_format): <p>Required. The format to use for the generated report.</p>
-    ///   - [`destination_s3_location(S3Location)`](crate::client::fluent_builders::PutReportDefinition::destination_s3_location) / [`set_destination_s3_location(Option<S3Location>)`](crate::client::fluent_builders::PutReportDefinition::set_destination_s3_location): <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    /// - On success, responds with [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::output::PutReportDefinitionOutput::report_id): <p>ID of the report.</p>
-    /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::error::PutReportDefinitionError)
-    pub fn put_report_definition(&self) -> fluent_builders::PutReportDefinition {
-        fluent_builders::PutReportDefinition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateReportDefinition`](crate::client::fluent_builders::UpdateReportDefinition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::UpdateReportDefinition::set_report_id): <p>Required. ID of the report to update.</p>
-    ///   - [`report_description(impl Into<String>)`](crate::client::fluent_builders::UpdateReportDefinition::report_description) / [`set_report_description(Option<String>)`](crate::client::fluent_builders::UpdateReportDefinition::set_report_description): <p>Required. Description of the report.</p>
-    ///   - [`report_frequency(ReportFrequency)`](crate::client::fluent_builders::UpdateReportDefinition::report_frequency) / [`set_report_frequency(Option<ReportFrequency>)`](crate::client::fluent_builders::UpdateReportDefinition::set_report_frequency): <p>Required. The cadence to generate the report.</p>
-    ///   - [`format(Format)`](crate::client::fluent_builders::UpdateReportDefinition::format) / [`set_format(Option<Format>)`](crate::client::fluent_builders::UpdateReportDefinition::set_format): <p>Required. The format to use for the generated report.</p>
-    ///   - [`destination_s3_location(S3Location)`](crate::client::fluent_builders::UpdateReportDefinition::destination_s3_location) / [`set_destination_s3_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateReportDefinition::set_destination_s3_location): <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    /// - On success, responds with [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::output::UpdateReportDefinitionOutput::report_id): <p>ID of the report.</p>
-    /// - On failure, responds with [`SdkError<UpdateReportDefinitionError>`](crate::error::UpdateReportDefinitionError)
-    pub fn update_report_definition(&self) -> fluent_builders::UpdateReportDefinition {
-        fluent_builders::UpdateReportDefinition::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DeleteReportDefinition`.
-    ///
-    /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteReportDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_report_definition_input::Builder,
-    }
-    impl DeleteReportDefinition {
-        /// Creates a new `DeleteReportDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteReportDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteReportDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. ID of the report to delete.</p>
-        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(input.into());
-            self
-        }
-        /// <p>Required. ID of the report to delete.</p>
-        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_report_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetReportDefinition`.
-    ///
-    /// <p>Retrieves the definition of a report already configured in AWS Application Cost Profiler.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetReportDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_report_definition_input::Builder,
-    }
-    impl GetReportDefinition {
-        /// Creates a new `GetReportDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetReportDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetReportDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetReportDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetReportDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>ID of the report to retrieve.</p>
-        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(input.into());
-            self
-        }
-        /// <p>ID of the report to retrieve.</p>
-        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_report_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ImportApplicationUsage`.
-    ///
-    /// <p>Ingests application usage data from Amazon Simple Storage Service (Amazon S3).</p>
-    /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing asynchronously.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ImportApplicationUsage {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::import_application_usage_input::Builder,
-    }
-    impl ImportApplicationUsage {
-        /// Creates a new `ImportApplicationUsage`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ImportApplicationUsage,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ImportApplicationUsageError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ImportApplicationUsageOutput,
-            aws_smithy_http::result::SdkError<crate::error::ImportApplicationUsageError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Amazon S3 location to import application usage data from.</p>
-        pub fn source_s3_location(mut self, input: crate::model::SourceS3Location) -> Self {
-            self.inner = self.inner.source_s3_location(input);
-            self
-        }
-        /// <p>Amazon S3 location to import application usage data from.</p>
-        pub fn set_source_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::SourceS3Location>,
-        ) -> Self {
-            self.inner = self.inner.set_source_s3_location(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListReportDefinitions`.
-    ///
-    /// <p>Retrieves a list of all reports and their configurations for your AWS account.</p>
-    /// <p>The maximum number of reports is one.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListReportDefinitions {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_report_definitions_input::Builder,
-    }
-    impl ListReportDefinitions {
-        /// Creates a new `ListReportDefinitions`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListReportDefinitions,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListReportDefinitionsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListReportDefinitionsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListReportDefinitionsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListReportDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListReportDefinitionsPaginator {
-            crate::paginator::ListReportDefinitionsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The token value from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token value from a previous call to access the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutReportDefinition`.
-    ///
-    /// <p>Creates the report definition for a report in Application Cost Profiler.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutReportDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_report_definition_input::Builder,
-    }
-    impl PutReportDefinition {
-        /// Creates a new `PutReportDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutReportDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PutReportDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutReportDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::PutReportDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(input.into());
-            self
-        }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_report_id(input);
-            self
-        }
-        /// <p>Required. Description of the report.</p>
-        pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_description(input.into());
-            self
-        }
-        /// <p>Required. Description of the report.</p>
-        pub fn set_report_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_report_description(input);
-            self
-        }
-        /// <p>Required. The cadence to generate the report.</p>
-        pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(input);
-            self
-        }
-        /// <p>Required. The cadence to generate the report.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.inner = self.inner.set_report_frequency(input);
-            self
-        }
-        /// <p>Required. The format to use for the generated report.</p>
-        pub fn format(mut self, input: crate::model::Format) -> Self {
-            self.inner = self.inner.format(input);
-            self
-        }
-        /// <p>Required. The format to use for the generated report.</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.inner = self.inner.set_format(input);
-            self
-        }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-        pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
-            self.inner = self.inner.destination_s3_location(input);
-            self
-        }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-        pub fn set_destination_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.inner = self.inner.set_destination_s3_location(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateReportDefinition`.
-    ///
-    /// <p>Updates existing report in AWS Application Cost Profiler.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateReportDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_report_definition_input::Builder,
-    }
-    impl UpdateReportDefinition {
-        /// Creates a new `UpdateReportDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateReportDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateReportDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateReportDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateReportDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. ID of the report to update.</p>
-        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(input.into());
-            self
-        }
-        /// <p>Required. ID of the report to update.</p>
-        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_report_id(input);
-            self
-        }
-        /// <p>Required. Description of the report.</p>
-        pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_description(input.into());
-            self
-        }
-        /// <p>Required. Description of the report.</p>
-        pub fn set_report_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_report_description(input);
-            self
-        }
-        /// <p>Required. The cadence to generate the report.</p>
-        pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(input);
-            self
-        }
-        /// <p>Required. The cadence to generate the report.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.inner = self.inner.set_report_frequency(input);
-            self
-        }
-        /// <p>Required. The format to use for the generated report.</p>
-        pub fn format(mut self, input: crate::model::Format) -> Self {
-            self.inner = self.inner.format(input);
-            self
-        }
-        /// <p>Required. The format to use for the generated report.</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.inner = self.inner.set_format(input);
-            self
-        }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-        pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
-            self.inner = self.inner.destination_s3_location(input);
-            self
-        }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-        pub fn set_destination_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.inner = self.inner.set_destination_s3_location(input);
-            self
-        }
     }
 }
 
@@ -808,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -818,3 +211,43 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_applicationcostprofiler::Error> {
+/// # let client: aws_sdk_applicationcostprofiler::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.delete_report_definition()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_report_definition;
+
+mod get_report_definition;
+
+mod import_application_usage;
+
+mod list_report_definitions;
+
+mod put_report_definition;
+
+mod update_report_definition;

@@ -6,12 +6,13 @@
 use aws_sdk_dynamodb as dynamodb;
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
-use dynamodb::model::{
+use dynamodb::config::{Credentials, Region};
+use dynamodb::operation::query::QueryOutput;
+use dynamodb::types::{
     AttributeDefinition, AttributeValue, KeySchemaElement, KeyType, ProvisionedThroughput,
     ScalarAttributeType, TableStatus,
 };
-use dynamodb::output::QueryOutput;
-use dynamodb::{Client, Credentials, Region};
+use dynamodb::Client;
 use http::header::{HeaderName, AUTHORIZATION};
 use http::Uri;
 use serde_json::Value;

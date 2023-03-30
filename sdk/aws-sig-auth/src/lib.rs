@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![allow(clippy::derive_partial_eq_without_eq)]
+
 //! AWS Signature Authentication Package
 //!
 //! This crate may be used to generate presigned URLs for unmodeled behavior such as `rds-iam-token`

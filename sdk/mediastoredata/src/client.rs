@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Elemental MediaStore Data Plane. Each operation on AWS Elemental MediaStore Data Plane is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_mediastoredata::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_mediastoredata::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_mediastoredata::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_mediastoredata::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_mediastoredata::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteObject`](crate::operation::delete_object) operation has
+/// a [`Client::delete_object`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_object()
+///     .path("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,644 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`DeleteObject`](crate::client::fluent_builders::DeleteObject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::DeleteObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::DeleteObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
-    /// - On success, responds with [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::error::DeleteObjectError)
-    pub fn delete_object(&self) -> fluent_builders::DeleteObject {
-        fluent_builders::DeleteObject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeObject`](crate::client::fluent_builders::DescribeObject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::DescribeObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::DescribeObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
-    /// - On success, responds with [`DescribeObjectOutput`](crate::output::DescribeObjectOutput) with field(s):
-    ///   - [`e_tag(Option<String>)`](crate::output::DescribeObjectOutput::e_tag): <p>The ETag that represents a unique instance of the object.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::DescribeObjectOutput::content_type): <p>The content type of the object.</p>
-    ///   - [`content_length(Option<i64>)`](crate::output::DescribeObjectOutput::content_length): <p>The length of the object in bytes.</p>
-    ///   - [`cache_control(Option<String>)`](crate::output::DescribeObjectOutput::cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
-    ///   - [`last_modified(Option<DateTime>)`](crate::output::DescribeObjectOutput::last_modified): <p>The date and time that the object was last modified.</p>
-    /// - On failure, responds with [`SdkError<DescribeObjectError>`](crate::error::DescribeObjectError)
-    pub fn describe_object(&self) -> fluent_builders::DescribeObject {
-        fluent_builders::DescribeObject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetObject`](crate::client::fluent_builders::GetObject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::GetObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::GetObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>  <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>  <p>Do not include the container name in this path.</p>  <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>  <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>  <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>  <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-    ///   - [`range(impl Into<String>)`](crate::client::fluent_builders::GetObject::range) / [`set_range(Option<String>)`](crate::client::fluent_builders::GetObject::set_range): <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
-    /// - On success, responds with [`GetObjectOutput`](crate::output::GetObjectOutput) with field(s):
-    ///   - [`body(ByteStream)`](crate::output::GetObjectOutput::body): <p>The bytes of the object. </p>
-    ///   - [`cache_control(Option<String>)`](crate::output::GetObjectOutput::cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
-    ///   - [`content_range(Option<String>)`](crate::output::GetObjectOutput::content_range): <p>The range of bytes to retrieve.</p>
-    ///   - [`content_length(Option<i64>)`](crate::output::GetObjectOutput::content_length): <p>The length of the object in bytes.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::GetObjectOutput::content_type): <p>The content type of the object.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetObjectOutput::e_tag): <p>The ETag that represents a unique instance of the object.</p>
-    ///   - [`last_modified(Option<DateTime>)`](crate::output::GetObjectOutput::last_modified): <p>The date and time that the object was last modified.</p>
-    ///   - [`status_code(i32)`](crate::output::GetObjectOutput::status_code): <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
-    /// - On failure, responds with [`SdkError<GetObjectError>`](crate::error::GetObjectError)
-    pub fn get_object(&self) -> fluent_builders::GetObject {
-        fluent_builders::GetObject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListItems`](crate::client::fluent_builders::ListItems) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListItems::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::ListItems::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::ListItems::set_path): <p>The path in the container from which to retrieve items. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListItems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListItems::set_max_results): <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>  <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListItems::set_next_token): <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>  <p>Tokens expire after 15 minutes.</p>
-    /// - On success, responds with [`ListItemsOutput`](crate::output::ListItemsOutput) with field(s):
-    ///   - [`items(Option<Vec<Item>>)`](crate::output::ListItemsOutput::items): <p>The metadata entries for the folders and objects at the requested path.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListItemsOutput::next_token): <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
-    /// - On failure, responds with [`SdkError<ListItemsError>`](crate::error::ListItemsError)
-    pub fn list_items(&self) -> fluent_builders::ListItems {
-        fluent_builders::ListItems::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutObject`](crate::client::fluent_builders::PutObject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`body(ByteStream)`](crate::client::fluent_builders::PutObject::body) / [`set_body(ByteStream)`](crate::client::fluent_builders::PutObject::set_body): <p>The bytes to be stored. </p>
-    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::PutObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::PutObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>  <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>  <p>Do not include the container name in this path.</p>  <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>  <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>  <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>  <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::PutObject::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::PutObject::set_content_type): <p>The content type of the object.</p>
-    ///   - [`cache_control(impl Into<String>)`](crate::client::fluent_builders::PutObject::cache_control) / [`set_cache_control(Option<String>)`](crate::client::fluent_builders::PutObject::set_cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
-    ///   - [`storage_class(StorageClass)`](crate::client::fluent_builders::PutObject::storage_class) / [`set_storage_class(Option<StorageClass>)`](crate::client::fluent_builders::PutObject::set_storage_class): <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
-    ///   - [`upload_availability(UploadAvailability)`](crate::client::fluent_builders::PutObject::upload_availability) / [`set_upload_availability(Option<UploadAvailability>)`](crate::client::fluent_builders::PutObject::set_upload_availability): <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>  <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
-    /// - On success, responds with [`PutObjectOutput`](crate::output::PutObjectOutput) with field(s):
-    ///   - [`content_sha256(Option<String>)`](crate::output::PutObjectOutput::content_sha256): <p>The SHA256 digest of the object that is persisted.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::PutObjectOutput::e_tag): <p>Unique identifier of the object in the container.</p>
-    ///   - [`storage_class(Option<StorageClass>)`](crate::output::PutObjectOutput::storage_class): <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
-    /// - On failure, responds with [`SdkError<PutObjectError>`](crate::error::PutObjectError)
-    pub fn put_object(&self) -> fluent_builders::PutObject {
-        fluent_builders::PutObject::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DeleteObject`.
-    ///
-    /// <p>Deletes an object at the specified path.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteObject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_object_input::Builder,
-    }
-    impl DeleteObject {
-        /// Creates a new `DeleteObject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteObject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteObjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteObjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteObjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(input.into());
-            self
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeObject`.
-    ///
-    /// <p>Gets the headers for an object at the specified path.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeObject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_object_input::Builder,
-    }
-    impl DescribeObject {
-        /// Creates a new `DescribeObject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeObject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeObjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeObjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeObjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(input.into());
-            self
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetObject`.
-    ///
-    /// <p>Downloads the object at the specified path. If the object’s upload availability is set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even if it’s still uploading the object.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetObject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_object_input::Builder,
-    }
-    impl GetObject {
-        /// Creates a new `GetObject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetObject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetObjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetObjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetObjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
-        /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(input.into());
-            self
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
-        /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(input);
-            self
-        }
-        /// <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
-        pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.range(input.into());
-            self
-        }
-        /// <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
-        pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_range(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListItems`.
-    ///
-    /// <p>Provides a list of metadata entries about folders and objects in the specified folder.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListItems {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_items_input::Builder,
-    }
-    impl ListItems {
-        /// Creates a new `ListItems`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListItems,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListItemsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListItemsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListItemsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListItemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListItemsPaginator {
-            crate::paginator::ListItemsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The path in the container from which to retrieve items. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(input.into());
-            self
-        }
-        /// <p>The path in the container from which to retrieve items. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(input);
-            self
-        }
-        /// <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>
-        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>
-        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
-        /// <p>Tokens expire after 15 minutes.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
-        /// <p>Tokens expire after 15 minutes.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutObject`.
-    ///
-    /// <p>Uploads an object to the specified path. Object sizes are limited to 25 MB for standard upload availability and 10 MB for streaming upload availability.</p>
-    #[derive(std::fmt::Debug)]
-    pub struct PutObject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_object_input::Builder,
-    }
-    impl PutObject {
-        /// Creates a new `PutObject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutObject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PutObjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutObjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::PutObjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The bytes to be stored. </p>
-        pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(input);
-            self
-        }
-        /// <p>The bytes to be stored. </p>
-        pub fn set_body(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.inner = self.inner.set_body(input);
-            self
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
-        /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(input.into());
-            self
-        }
-        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
-        /// /
-        /// <folder name>
-        /// /
-        /// <file name></file>
-        /// </folder>
-        /// </folder></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
-        /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(input);
-            self
-        }
-        /// <p>The content type of the object.</p>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(input.into());
-            self
-        }
-        /// <p>The content type of the object.</p>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(input);
-            self
-        }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
-        /// <p>Headers with a custom user-defined value are also accepted.</p>
-        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_control(input.into());
-            self
-        }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
-        /// <p>Headers with a custom user-defined value are also accepted.</p>
-        pub fn set_cache_control(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_cache_control(input);
-            self
-        }
-        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
-        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
-            self.inner = self.inner.storage_class(input);
-            self
-        }
-        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::StorageClass>,
-        ) -> Self {
-            self.inner = self.inner.set_storage_class(input);
-            self
-        }
-        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
-        /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
-        pub fn upload_availability(mut self, input: crate::model::UploadAvailability) -> Self {
-            self.inner = self.inner.upload_availability(input);
-            self
-        }
-        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
-        /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
-        pub fn set_upload_availability(
-            mut self,
-            input: std::option::Option<crate::model::UploadAvailability>,
-        ) -> Self {
-            self.inner = self.inner.set_upload_availability(input);
-            self
-        }
     }
 }
 
@@ -802,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -812,3 +211,41 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_mediastoredata::Error> {
+/// # let client: aws_sdk_mediastoredata::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.delete_object()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_object;
+
+mod describe_object;
+
+mod get_object;
+
+mod list_items;
+
+mod put_object;

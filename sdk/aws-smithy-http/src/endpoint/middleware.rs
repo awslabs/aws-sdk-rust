@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! [`MapRequest`]-based middleware for resolving and applying a request's endpoint.
+
 use crate::endpoint;
 use crate::endpoint::{apply_endpoint, EndpointPrefix, ResolveEndpointError};
 use crate::middleware::MapRequest;
@@ -19,6 +21,7 @@ use std::str::FromStr;
 #[derive(Default, Debug, Clone)]
 pub struct SmithyEndpointStage;
 impl SmithyEndpointStage {
+    /// Create a new `SmithyEndpointStage`.
     pub fn new() -> Self {
         Self::default()
     }

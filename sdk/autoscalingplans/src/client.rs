@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Auto Scaling Plans. Each operation on AWS Auto Scaling Plans is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_autoscalingplans::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_autoscalingplans::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_autoscalingplans::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_autoscalingplans::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_autoscalingplans::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateScalingPlan`](crate::operation::create_scaling_plan) operation has
+/// a [`Client::create_scaling_plan`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.create_scaling_plan()
+///     .scaling_plan_name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,836 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CreateScalingPlan`](crate::client::fluent_builders::CreateScalingPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::CreateScalingPlan::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::CreateScalingPlan::set_scaling_plan_name): <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
-    ///   - [`application_source(ApplicationSource)`](crate::client::fluent_builders::CreateScalingPlan::application_source) / [`set_application_source(Option<ApplicationSource>)`](crate::client::fluent_builders::CreateScalingPlan::set_application_source): <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    ///   - [`scaling_instructions(Vec<ScalingInstruction>)`](crate::client::fluent_builders::CreateScalingPlan::scaling_instructions) / [`set_scaling_instructions(Option<Vec<ScalingInstruction>>)`](crate::client::fluent_builders::CreateScalingPlan::set_scaling_instructions): <p>The scaling instructions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    /// - On success, responds with [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput) with field(s):
-    ///   - [`scaling_plan_version(Option<i64>)`](crate::output::CreateScalingPlanOutput::scaling_plan_version): <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-    /// - On failure, responds with [`SdkError<CreateScalingPlanError>`](crate::error::CreateScalingPlanError)
-    pub fn create_scaling_plan(&self) -> fluent_builders::CreateScalingPlan {
-        fluent_builders::CreateScalingPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteScalingPlan`](crate::client::fluent_builders::DeleteScalingPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::DeleteScalingPlan::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::DeleteScalingPlan::set_scaling_plan_name): <p>The name of the scaling plan.</p>
-    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::DeleteScalingPlan::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::DeleteScalingPlan::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    /// - On success, responds with [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteScalingPlanError>`](crate::error::DeleteScalingPlanError)
-    pub fn delete_scaling_plan(&self) -> fluent_builders::DeleteScalingPlan {
-        fluent_builders::DeleteScalingPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeScalingPlanResources`](crate::client::fluent_builders::DescribeScalingPlanResources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_scaling_plan_name): <p>The name of the scaling plan.</p>
-    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::DescribeScalingPlanResources::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeScalingPlanResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_max_results): <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_next_token): <p>The token for the next set of results.</p>
-    /// - On success, responds with [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput) with field(s):
-    ///   - [`scaling_plan_resources(Option<Vec<ScalingPlanResource>>)`](crate::output::DescribeScalingPlanResourcesOutput::scaling_plan_resources): <p>Information about the scalable resources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingPlanResourcesOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeScalingPlanResourcesError>`](crate::error::DescribeScalingPlanResourcesError)
-    pub fn describe_scaling_plan_resources(&self) -> fluent_builders::DescribeScalingPlanResources {
-        fluent_builders::DescribeScalingPlanResources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeScalingPlans`](crate::client::fluent_builders::DescribeScalingPlans) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_names(Vec<String>)`](crate::client::fluent_builders::DescribeScalingPlans::scaling_plan_names) / [`set_scaling_plan_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeScalingPlans::set_scaling_plan_names): <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::DescribeScalingPlans::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::DescribeScalingPlans::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>   <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>  </note>
-    ///   - [`application_sources(Vec<ApplicationSource>)`](crate::client::fluent_builders::DescribeScalingPlans::application_sources) / [`set_application_sources(Option<Vec<ApplicationSource>>)`](crate::client::fluent_builders::DescribeScalingPlans::set_application_sources): <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeScalingPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeScalingPlans::set_max_results): <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScalingPlans::set_next_token): <p>The token for the next set of results.</p>
-    /// - On success, responds with [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput) with field(s):
-    ///   - [`scaling_plans(Option<Vec<ScalingPlan>>)`](crate::output::DescribeScalingPlansOutput::scaling_plans): <p>Information about the scaling plans.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingPlansOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeScalingPlansError>`](crate::error::DescribeScalingPlansError)
-    pub fn describe_scaling_plans(&self) -> fluent_builders::DescribeScalingPlans {
-        fluent_builders::DescribeScalingPlans::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetScalingPlanResourceForecastData`](crate::client::fluent_builders::GetScalingPlanResourceForecastData) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_scaling_plan_name): <p>The name of the scaling plan.</p>
-    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    ///   - [`service_namespace(ServiceNamespace)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::service_namespace) / [`set_service_namespace(Option<ServiceNamespace>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_service_namespace): <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_resource_id): <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
-    ///   - [`scalable_dimension(ScalableDimension)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::scalable_dimension) / [`set_scalable_dimension(Option<ScalableDimension>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_scalable_dimension): <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-    ///   - [`forecast_data_type(ForecastDataType)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::forecast_data_type) / [`set_forecast_data_type(Option<ForecastDataType>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_forecast_data_type): <p>The type of forecast data to get.</p>  <ul>   <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>   <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>   <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>   <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>  </ul>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_start_time): <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_end_time): <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>  <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    /// - On success, responds with [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput) with field(s):
-    ///   - [`datapoints(Option<Vec<Datapoint>>)`](crate::output::GetScalingPlanResourceForecastDataOutput::datapoints): <p>The data points to return.</p>
-    /// - On failure, responds with [`SdkError<GetScalingPlanResourceForecastDataError>`](crate::error::GetScalingPlanResourceForecastDataError)
-    pub fn get_scaling_plan_resource_forecast_data(
-        &self,
-    ) -> fluent_builders::GetScalingPlanResourceForecastData {
-        fluent_builders::GetScalingPlanResourceForecastData::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateScalingPlan`](crate::client::fluent_builders::UpdateScalingPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::UpdateScalingPlan::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::UpdateScalingPlan::set_scaling_plan_name): <p>The name of the scaling plan.</p>
-    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::UpdateScalingPlan::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::UpdateScalingPlan::set_scaling_plan_version): <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-    ///   - [`application_source(ApplicationSource)`](crate::client::fluent_builders::UpdateScalingPlan::application_source) / [`set_application_source(Option<ApplicationSource>)`](crate::client::fluent_builders::UpdateScalingPlan::set_application_source): <p>A CloudFormation stack or set of tags.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    ///   - [`scaling_instructions(Vec<ScalingInstruction>)`](crate::client::fluent_builders::UpdateScalingPlan::scaling_instructions) / [`set_scaling_instructions(Option<Vec<ScalingInstruction>>)`](crate::client::fluent_builders::UpdateScalingPlan::set_scaling_instructions): <p>The scaling instructions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    /// - On success, responds with [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateScalingPlanError>`](crate::error::UpdateScalingPlanError)
-    pub fn update_scaling_plan(&self) -> fluent_builders::UpdateScalingPlan {
-        fluent_builders::UpdateScalingPlan::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateScalingPlan`.
-    ///
-    /// <p>Creates a scaling plan. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateScalingPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_scaling_plan_input::Builder,
-    }
-    impl CreateScalingPlan {
-        /// Creates a new `CreateScalingPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateScalingPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateScalingPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateScalingPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateScalingPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
-        pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(input.into());
-            self
-        }
-        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
-        pub fn set_scaling_plan_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_plan_name(input);
-            self
-        }
-        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn application_source(mut self, input: crate::model::ApplicationSource) -> Self {
-            self.inner = self.inner.application_source(input);
-            self
-        }
-        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn set_application_source(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSource>,
-        ) -> Self {
-            self.inner = self.inner.set_application_source(input);
-            self
-        }
-        /// Appends an item to `ScalingInstructions`.
-        ///
-        /// To override the contents of this collection use [`set_scaling_instructions`](Self::set_scaling_instructions).
-        ///
-        /// <p>The scaling instructions.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
-            self.inner = self.inner.scaling_instructions(input);
-            self
-        }
-        /// <p>The scaling instructions.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn set_scaling_instructions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_instructions(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteScalingPlan`.
-    ///
-    /// <p>Deletes the specified scaling plan.</p>
-    /// <p>Deleting a scaling plan deletes the underlying <code>ScalingInstruction</code> for all of the scalable resources that are covered by the plan.</p>
-    /// <p>If the plan has launched resources or has scaling activities in progress, you must delete those resources separately.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteScalingPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_scaling_plan_input::Builder,
-    }
-    impl DeleteScalingPlan {
-        /// Creates a new `DeleteScalingPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteScalingPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteScalingPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteScalingPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteScalingPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(input.into());
-            self
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn set_scaling_plan_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_plan_name(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-        pub fn scaling_plan_version(mut self, input: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-        pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_scaling_plan_version(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeScalingPlanResources`.
-    ///
-    /// <p>Describes the scalable resources in the specified scaling plan.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeScalingPlanResources {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_scaling_plan_resources_input::Builder,
-    }
-    impl DescribeScalingPlanResources {
-        /// Creates a new `DescribeScalingPlanResources`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeScalingPlanResources,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlanResourcesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeScalingPlanResourcesOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlanResourcesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(input.into());
-            self
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn set_scaling_plan_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_plan_name(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-        pub fn scaling_plan_version(mut self, input: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-        pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_scaling_plan_version(input);
-            self
-        }
-        /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeScalingPlans`.
-    ///
-    /// <p>Describes one or more of your scaling plans.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeScalingPlans {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_scaling_plans_input::Builder,
-    }
-    impl DescribeScalingPlans {
-        /// Creates a new `DescribeScalingPlans`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeScalingPlans,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlansError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeScalingPlansOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlansError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `ScalingPlanNames`.
-        ///
-        /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
-        ///
-        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-        pub fn scaling_plan_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_names(input.into());
-            self
-        }
-        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-        pub fn set_scaling_plan_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_plan_names(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
-        /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
-        /// </note>
-        pub fn scaling_plan_version(mut self, input: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
-        /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
-        /// </note>
-        pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_scaling_plan_version(input);
-            self
-        }
-        /// Appends an item to `ApplicationSources`.
-        ///
-        /// To override the contents of this collection use [`set_application_sources`](Self::set_application_sources).
-        ///
-        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-        pub fn application_sources(mut self, input: crate::model::ApplicationSource) -> Self {
-            self.inner = self.inner.application_sources(input);
-            self
-        }
-        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-        pub fn set_application_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSource>>,
-        ) -> Self {
-            self.inner = self.inner.set_application_sources(input);
-            self
-        }
-        /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetScalingPlanResourceForecastData`.
-    ///
-    /// <p>Retrieves the forecast data for a scalable resource.</p>
-    /// <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetScalingPlanResourceForecastData {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_scaling_plan_resource_forecast_data_input::Builder,
-    }
-    impl GetScalingPlanResourceForecastData {
-        /// Creates a new `GetScalingPlanResourceForecastData`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetScalingPlanResourceForecastData,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::GetScalingPlanResourceForecastDataError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetScalingPlanResourceForecastDataOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::GetScalingPlanResourceForecastDataError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(input.into());
-            self
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn set_scaling_plan_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_plan_name(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-        pub fn scaling_plan_version(mut self, input: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-        pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_scaling_plan_version(input);
-            self
-        }
-        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
-        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(input);
-            self
-        }
-        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
-        pub fn set_service_namespace(
-            mut self,
-            input: std::option::Option<crate::model::ServiceNamespace>,
-        ) -> Self {
-            self.inner = self.inner.set_service_namespace(input);
-            self
-        }
-        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
-        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(input.into());
-            self
-        }
-        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
-        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_id(input);
-            self
-        }
-        /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(input);
-            self
-        }
-        /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-        pub fn set_scalable_dimension(
-            mut self,
-            input: std::option::Option<crate::model::ScalableDimension>,
-        ) -> Self {
-            self.inner = self.inner.set_scalable_dimension(input);
-            self
-        }
-        /// <p>The type of forecast data to get.</p>
-        /// <ul>
-        /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
-        /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
-        /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
-        /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
-        /// </ul>
-        pub fn forecast_data_type(mut self, input: crate::model::ForecastDataType) -> Self {
-            self.inner = self.inner.forecast_data_type(input);
-            self
-        }
-        /// <p>The type of forecast data to get.</p>
-        /// <ul>
-        /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
-        /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
-        /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
-        /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
-        /// </ul>
-        pub fn set_forecast_data_type(
-            mut self,
-            input: std::option::Option<crate::model::ForecastDataType>,
-        ) -> Self {
-            self.inner = self.inner.set_forecast_data_type(input);
-            self
-        }
-        /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
-        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(input);
-            self
-        }
-        /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_start_time(input);
-            self
-        }
-        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
-        /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(input);
-            self
-        }
-        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
-        /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_end_time(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateScalingPlan`.
-    ///
-    /// <p>Updates the specified scaling plan.</p>
-    /// <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateScalingPlan {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_scaling_plan_input::Builder,
-    }
-    impl UpdateScalingPlan {
-        /// Creates a new `UpdateScalingPlan`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateScalingPlan,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateScalingPlanError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateScalingPlanOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateScalingPlanError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(input.into());
-            self
-        }
-        /// <p>The name of the scaling plan.</p>
-        pub fn set_scaling_plan_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_plan_name(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-        pub fn scaling_plan_version(mut self, input: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(input);
-            self
-        }
-        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-        pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_scaling_plan_version(input);
-            self
-        }
-        /// <p>A CloudFormation stack or set of tags.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn application_source(mut self, input: crate::model::ApplicationSource) -> Self {
-            self.inner = self.inner.application_source(input);
-            self
-        }
-        /// <p>A CloudFormation stack or set of tags.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn set_application_source(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSource>,
-        ) -> Self {
-            self.inner = self.inner.set_application_source(input);
-            self
-        }
-        /// Appends an item to `ScalingInstructions`.
-        ///
-        /// To override the contents of this collection use [`set_scaling_instructions`](Self::set_scaling_instructions).
-        ///
-        /// <p>The scaling instructions.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
-            self.inner = self.inner.scaling_instructions(input);
-            self
-        }
-        /// <p>The scaling instructions.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn set_scaling_instructions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
-        ) -> Self {
-            self.inner = self.inner.set_scaling_instructions(input);
-            self
-        }
     }
 }
 
@@ -994,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1004,3 +211,43 @@ impl Client {
         }
     }
 }
+
+mod create_scaling_plan;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_autoscalingplans::Error> {
+/// # let client: aws_sdk_autoscalingplans::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.create_scaling_plan()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_scaling_plan;
+
+mod describe_scaling_plan_resources;
+
+mod describe_scaling_plans;
+
+mod get_scaling_plan_resource_forecast_data;
+
+mod update_scaling_plan;

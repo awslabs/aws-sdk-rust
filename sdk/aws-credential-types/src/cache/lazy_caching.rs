@@ -20,6 +20,7 @@ use crate::time_source::TimeSource;
 const DEFAULT_LOAD_TIMEOUT: Duration = Duration::from_secs(5);
 const DEFAULT_CREDENTIAL_EXPIRATION: Duration = Duration::from_secs(15 * 60);
 const DEFAULT_BUFFER_TIME: Duration = Duration::from_secs(10);
+const DEFAULT_BUFFER_TIME_JITTER_FRACTION: fn() -> f64 = fastrand::f64;
 
 #[derive(Debug)]
 pub(crate) struct LazyCredentialsCache {
@@ -28,6 +29,8 @@ pub(crate) struct LazyCredentialsCache {
     cache: ExpiringCache<Credentials, CredentialsError>,
     provider: SharedCredentialsProvider,
     load_timeout: Duration,
+    buffer_time: Duration,
+    buffer_time_jitter_fraction: fn() -> f64,
     default_credential_expiration: Duration,
 }
 
@@ -37,8 +40,9 @@ impl LazyCredentialsCache {
         sleeper: Arc<dyn AsyncSleep>,
         provider: SharedCredentialsProvider,
         load_timeout: Duration,
-        default_credential_expiration: Duration,
         buffer_time: Duration,
+        buffer_time_jitter_fraction: fn() -> f64,
+        default_credential_expiration: Duration,
     ) -> Self {
         Self {
             time,
@@ -46,6 +50,8 @@ impl LazyCredentialsCache {
             cache: ExpiringCache::new(buffer_time),
             provider,
             load_timeout,
+            buffer_time,
+            buffer_time_jitter_fraction,
             default_credential_expiration,
         }
     }
@@ -78,25 +84,45 @@ impl ProvideCachedCredentials for LazyCredentialsCache {
                 let result = cache
                     .get_or_load(|| {
                         let span = info_span!("lazy_load_credentials");
+                        let provider = provider.clone();
                         async move {
-                            let credentials = future.await.map_err(|_err| {
-                                CredentialsError::provider_timed_out(load_timeout)
-                            })??;
+                            let credentials = match future.await {
+                                Ok(creds) => creds?,
+                                Err(_err) => match provider.fallback_on_interrupt() {
+                                    Some(creds) => creds,
+                                    None => {
+                                        return Err(CredentialsError::provider_timed_out(
+                                            load_timeout,
+                                        ))
+                                    }
+                                },
+                            };
                             // If the credentials don't have an expiration time, then create a default one
                             let expiry = credentials
                                 .expiry()
                                 .unwrap_or(now + default_credential_expiration);
-                            Ok((credentials, expiry))
+
+                            let jitter = self
+                                .buffer_time
+                                .mul_f64((self.buffer_time_jitter_fraction)());
+
+                            // Logging for cache miss should be emitted here as opposed to after the call to
+                            // `cache.get_or_load` above. In the case of multiple threads concurrently executing
+                            // `cache.get_or_load`, logging inside `cache.get_or_load` ensures that it is emitted
+                            // only once for the first thread that succeeds in populating a cache value.
+                            info!(
+                                "credentials cache miss occurred; added new AWS credentials (took {:?})",
+                                start_time.elapsed()
+                            );
+
+                            Ok((credentials, expiry + jitter))
                         }
                         // Only instrument the the actual load future so that no span
                         // is opened if the cache decides not to execute it.
                         .instrument(span)
                     })
                     .await;
-                info!(
-                    "credentials cache miss occurred; retrieved new AWS credentials (took {:?})",
-                    start_time.elapsed()
-                );
+                debug!("loaded credentials");
                 result
             }
         })
@@ -116,8 +142,8 @@ mod builder {
 
     use super::TimeSource;
     use super::{
-        LazyCredentialsCache, DEFAULT_BUFFER_TIME, DEFAULT_CREDENTIAL_EXPIRATION,
-        DEFAULT_LOAD_TIMEOUT,
+        LazyCredentialsCache, DEFAULT_BUFFER_TIME, DEFAULT_BUFFER_TIME_JITTER_FRACTION,
+        DEFAULT_CREDENTIAL_EXPIRATION, DEFAULT_LOAD_TIMEOUT,
     };
 
     /// Builder for constructing a `LazyCredentialsCache`.
@@ -138,6 +164,7 @@ mod builder {
         time_source: Option<TimeSource>,
         load_timeout: Option<Duration>,
         buffer_time: Option<Duration>,
+        buffer_time_jitter_fraction: Option<fn() -> f64>,
         default_credential_expiration: Option<Duration>,
     }
 
@@ -219,6 +246,38 @@ mod builder {
             self
         }
 
+        /// A random percentage by which buffer time is jittered for randomization.
+        ///
+        /// For example, if credentials are expiring in 15 minutes, the buffer time is 10 seconds,
+        /// and buffer time jitter fraction is 0.2, then buffer time is adjusted to 8 seconds.
+        /// Therefore, any requests made after 14 minutes and 52 seconds will load new credentials.
+        ///
+        /// Defaults to a randomly generated value between 0.0 and 1.0. This setter is for testing only.
+        #[cfg(feature = "test-util")]
+        pub fn buffer_time_jitter_fraction(
+            mut self,
+            buffer_time_jitter_fraction: fn() -> f64,
+        ) -> Self {
+            self.set_buffer_time_jitter_fraction(Some(buffer_time_jitter_fraction));
+            self
+        }
+
+        /// A random percentage by which buffer time is jittered for randomization.
+        ///
+        /// For example, if credentials are expiring in 15 minutes, the buffer time is 10 seconds,
+        /// and buffer time jitter fraction is 0.2, then buffer time is adjusted to 8 seconds.
+        /// Therefore, any requests made after 14 minutes and 52 seconds will load new credentials.
+        ///
+        /// Defaults to a randomly generated value between 0.0 and 1.0. This setter is for testing only.
+        #[cfg(feature = "test-util")]
+        pub fn set_buffer_time_jitter_fraction(
+            &mut self,
+            buffer_time_jitter_fraction: Option<fn() -> f64>,
+        ) -> &mut Self {
+            self.buffer_time_jitter_fraction = buffer_time_jitter_fraction;
+            self
+        }
+
         /// Default expiration time to set on credentials if they don't have an expiration time.
         ///
         /// This is only used if the given [`ProvideCredentials`](crate::provider::ProvideCredentials) returns
@@ -274,8 +333,10 @@ mod builder {
                 }),
                 provider,
                 self.load_timeout.unwrap_or(DEFAULT_LOAD_TIMEOUT),
-                default_credential_expiration,
                 self.buffer_time.unwrap_or(DEFAULT_BUFFER_TIME),
+                self.buffer_time_jitter_fraction
+                    .unwrap_or(DEFAULT_BUFFER_TIME_JITTER_FRACTION),
+                default_credential_expiration,
             )
         }
     }
@@ -301,8 +362,11 @@ mod tests {
         DEFAULT_LOAD_TIMEOUT,
     };
 
+    const BUFFER_TIME_NO_JITTER: fn() -> f64 = || 0_f64;
+
     fn test_provider(
         time: TimeSource,
+        buffer_time_jitter_fraction: fn() -> f64,
         load_list: Vec<crate::provider::Result>,
     ) -> LazyCredentialsCache {
         let load_list = Arc::new(Mutex::new(load_list));
@@ -318,8 +382,9 @@ mod tests {
                 }
             })),
             DEFAULT_LOAD_TIMEOUT,
-            DEFAULT_CREDENTIAL_EXPIRATION,
             DEFAULT_BUFFER_TIME,
+            buffer_time_jitter_fraction,
+            DEFAULT_CREDENTIAL_EXPIRATION,
         )
     }
 
@@ -352,8 +417,9 @@ mod tests {
             Arc::new(TokioSleep::new()),
             provider,
             DEFAULT_LOAD_TIMEOUT,
-            DEFAULT_CREDENTIAL_EXPIRATION,
             DEFAULT_BUFFER_TIME,
+            BUFFER_TIME_NO_JITTER,
+            DEFAULT_CREDENTIAL_EXPIRATION,
         );
         assert_eq!(
             epoch_secs(1000),
@@ -372,6 +438,7 @@ mod tests {
         let mut time = TestingTimeSource::new(epoch_secs(100));
         let credentials_cache = test_provider(
             TimeSource::testing(&time),
+            BUFFER_TIME_NO_JITTER,
             vec![
                 Ok(credentials(1000)),
                 Ok(credentials(2000)),
@@ -395,6 +462,7 @@ mod tests {
         let mut time = TestingTimeSource::new(epoch_secs(100));
         let credentials_cache = test_provider(
             TimeSource::testing(&time),
+            BUFFER_TIME_NO_JITTER,
             vec![
                 Ok(credentials(1000)),
                 Err(CredentialsError::not_loaded("failed")),
@@ -421,6 +489,7 @@ mod tests {
         let time = TestingTimeSource::new(epoch_secs(0));
         let credentials_cache = Arc::new(test_provider(
             TimeSource::testing(&time),
+            BUFFER_TIME_NO_JITTER,
             vec![
                 Ok(credentials(500)),
                 Ok(credentials(1500)),
@@ -471,13 +540,40 @@ mod tests {
                 Ok(credentials(1000))
             })),
             Duration::from_millis(5),
-            DEFAULT_CREDENTIAL_EXPIRATION,
             DEFAULT_BUFFER_TIME,
+            BUFFER_TIME_NO_JITTER,
+            DEFAULT_CREDENTIAL_EXPIRATION,
         );
 
         assert!(matches!(
             credentials_cache.provide_cached_credentials().await,
             Err(CredentialsError::ProviderTimedOut { .. })
         ));
+    }
+
+    #[tokio::test]
+    async fn buffer_time_jitter() {
+        let mut time = TestingTimeSource::new(epoch_secs(100));
+        let buffer_time_jitter_fraction = || 0.5_f64;
+        let credentials_cache = test_provider(
+            TimeSource::testing(&time),
+            buffer_time_jitter_fraction,
+            vec![Ok(credentials(1000)), Ok(credentials(2000))],
+        );
+
+        expect_creds(1000, &credentials_cache).await;
+        let buffer_time_with_jitter =
+            (DEFAULT_BUFFER_TIME.as_secs_f64() * buffer_time_jitter_fraction()) as u64;
+        assert_eq!(buffer_time_with_jitter, 5);
+        // Advance time to the point where the first credentials are about to expire (but haven't).
+        let almost_expired_secs = 1000 - buffer_time_with_jitter - 1;
+        time.set_time(epoch_secs(almost_expired_secs));
+        // We should still use the first credentials.
+        expect_creds(1000, &credentials_cache).await;
+        // Now let the first credentials expire.
+        let expired_secs = almost_expired_secs + 1;
+        time.set_time(epoch_secs(expired_secs));
+        // Now that the first credentials have been expired, the second credentials will be retrieved.
+        expect_creds(2000, &credentials_cache).await;
     }
 }

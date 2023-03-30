@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Macie. Each operation on Amazon Macie is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_macie::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_macie::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_macie::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_macie::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_macie::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`AssociateMemberAccount`](crate::operation::associate_member_account) operation has
+/// a [`Client::associate_member_account`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.associate_member_account()
+///     .member_account_id("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,721 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateMemberAccount`](crate::client::fluent_builders::AssociateMemberAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::AssociateMemberAccount::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::AssociateMemberAccount::set_member_account_id): <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
-    /// - On success, responds with [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateMemberAccountError>`](crate::error::AssociateMemberAccountError)
-    pub fn associate_member_account(&self) -> fluent_builders::AssociateMemberAccount {
-        fluent_builders::AssociateMemberAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateS3Resources`](crate::client::fluent_builders::AssociateS3Resources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::AssociateS3Resources::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::AssociateS3Resources::set_member_account_id): <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-    ///   - [`s3_resources(Vec<S3ResourceClassification>)`](crate::client::fluent_builders::AssociateS3Resources::s3_resources) / [`set_s3_resources(Option<Vec<S3ResourceClassification>>)`](crate::client::fluent_builders::AssociateS3Resources::set_s3_resources): <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    /// - On success, responds with [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput) with field(s):
-    ///   - [`failed_s3_resources(Option<Vec<FailedS3Resource>>)`](crate::output::AssociateS3ResourcesOutput::failed_s3_resources): <p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
-    /// - On failure, responds with [`SdkError<AssociateS3ResourcesError>`](crate::error::AssociateS3ResourcesError)
-    pub fn associate_s3_resources(&self) -> fluent_builders::AssociateS3Resources {
-        fluent_builders::AssociateS3Resources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateMemberAccount`](crate::client::fluent_builders::DisassociateMemberAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMemberAccount::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::DisassociateMemberAccount::set_member_account_id): <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-    /// - On success, responds with [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateMemberAccountError>`](crate::error::DisassociateMemberAccountError)
-    pub fn disassociate_member_account(&self) -> fluent_builders::DisassociateMemberAccount {
-        fluent_builders::DisassociateMemberAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateS3Resources`](crate::client::fluent_builders::DisassociateS3Resources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateS3Resources::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::DisassociateS3Resources::set_member_account_id): <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-    ///   - [`associated_s3_resources(Vec<S3Resource>)`](crate::client::fluent_builders::DisassociateS3Resources::associated_s3_resources) / [`set_associated_s3_resources(Option<Vec<S3Resource>>)`](crate::client::fluent_builders::DisassociateS3Resources::set_associated_s3_resources): <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-    /// - On success, responds with [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput) with field(s):
-    ///   - [`failed_s3_resources(Option<Vec<FailedS3Resource>>)`](crate::output::DisassociateS3ResourcesOutput::failed_s3_resources): <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
-    /// - On failure, responds with [`SdkError<DisassociateS3ResourcesError>`](crate::error::DisassociateS3ResourcesError)
-    pub fn disassociate_s3_resources(&self) -> fluent_builders::DisassociateS3Resources {
-        fluent_builders::DisassociateS3Resources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMemberAccounts`](crate::client::fluent_builders::ListMemberAccounts) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMemberAccounts::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMemberAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMemberAccounts::set_next_token): <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMemberAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMemberAccounts::set_max_results): <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
-    /// - On success, responds with [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput) with field(s):
-    ///   - [`member_accounts(Option<Vec<MemberAccount>>)`](crate::output::ListMemberAccountsOutput::member_accounts): <p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMemberAccountsOutput::next_token): <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
-    /// - On failure, responds with [`SdkError<ListMemberAccountsError>`](crate::error::ListMemberAccountsError)
-    pub fn list_member_accounts(&self) -> fluent_builders::ListMemberAccounts {
-        fluent_builders::ListMemberAccounts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListS3Resources`](crate::client::fluent_builders::ListS3Resources) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListS3Resources::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::ListS3Resources::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::ListS3Resources::set_member_account_id): <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListS3Resources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListS3Resources::set_next_token): <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListS3Resources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListS3Resources::set_max_results): <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
-    /// - On success, responds with [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput) with field(s):
-    ///   - [`s3_resources(Option<Vec<S3ResourceClassification>>)`](crate::output::ListS3ResourcesOutput::s3_resources): <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListS3ResourcesOutput::next_token): <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
-    /// - On failure, responds with [`SdkError<ListS3ResourcesError>`](crate::error::ListS3ResourcesError)
-    pub fn list_s3_resources(&self) -> fluent_builders::ListS3Resources {
-        fluent_builders::ListS3Resources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateS3Resources`](crate::client::fluent_builders::UpdateS3Resources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateS3Resources::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::UpdateS3Resources::set_member_account_id): <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
-    ///   - [`s3_resources_update(Vec<S3ResourceClassificationUpdate>)`](crate::client::fluent_builders::UpdateS3Resources::s3_resources_update) / [`set_s3_resources_update(Option<Vec<S3ResourceClassificationUpdate>>)`](crate::client::fluent_builders::UpdateS3Resources::set_s3_resources_update): <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    /// - On success, responds with [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput) with field(s):
-    ///   - [`failed_s3_resources(Option<Vec<FailedS3Resource>>)`](crate::output::UpdateS3ResourcesOutput::failed_s3_resources): <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
-    /// - On failure, responds with [`SdkError<UpdateS3ResourcesError>`](crate::error::UpdateS3ResourcesError)
-    pub fn update_s3_resources(&self) -> fluent_builders::UpdateS3Resources {
-        fluent_builders::UpdateS3Resources::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `AssociateMemberAccount`.
-    ///
-    /// <p>(Discontinued) Associates a specified Amazon Web Services account with Amazon Macie Classic as a member account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateMemberAccount {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::associate_member_account_input::Builder,
-    }
-    impl AssociateMemberAccount {
-        /// Creates a new `AssociateMemberAccount`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::AssociateMemberAccount,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::AssociateMemberAccountError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::AssociateMemberAccountOutput,
-            aws_smithy_http::result::SdkError<crate::error::AssociateMemberAccountError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
-        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(input.into());
-            self
-        }
-        /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
-        pub fn set_member_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_member_account_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateS3Resources`.
-    ///
-    /// <p>(Discontinued) Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If <code>memberAccountId</code> isn't specified, the action associates specified S3 resources with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action associates specified S3 resources with Macie Classic for the specified member account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateS3Resources {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::associate_s3_resources_input::Builder,
-    }
-    impl AssociateS3Resources {
-        /// Creates a new `AssociateS3Resources`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::AssociateS3Resources,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::AssociateS3ResourcesOutput,
-            aws_smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(input.into());
-            self
-        }
-        /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-        pub fn set_member_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_member_account_id(input);
-            self
-        }
-        /// Appends an item to `s3Resources`.
-        ///
-        /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
-        ///
-        /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-        pub fn s3_resources(mut self, input: crate::model::S3ResourceClassification) -> Self {
-            self.inner = self.inner.s3_resources(input);
-            self
-        }
-        /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-        pub fn set_s3_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
-        ) -> Self {
-            self.inner = self.inner.set_s3_resources(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateMemberAccount`.
-    ///
-    /// <p>(Discontinued) Removes the specified member account from Amazon Macie Classic.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateMemberAccount {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::disassociate_member_account_input::Builder,
-    }
-    impl DisassociateMemberAccount {
-        /// Creates a new `DisassociateMemberAccount`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DisassociateMemberAccount,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DisassociateMemberAccountOutput,
-            aws_smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(input.into());
-            self
-        }
-        /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-        pub fn set_member_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_member_account_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateS3Resources`.
-    ///
-    /// <p>(Discontinued) Removes specified S3 resources from being monitored by Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action removes specified S3 resources from Macie Classic for the specified member account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateS3Resources {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::disassociate_s3_resources_input::Builder,
-    }
-    impl DisassociateS3Resources {
-        /// Creates a new `DisassociateS3Resources`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DisassociateS3Resources,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DisassociateS3ResourcesOutput,
-            aws_smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(input.into());
-            self
-        }
-        /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-        pub fn set_member_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_member_account_id(input);
-            self
-        }
-        /// Appends an item to `associatedS3Resources`.
-        ///
-        /// To override the contents of this collection use [`set_associated_s3_resources`](Self::set_associated_s3_resources).
-        ///
-        /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-        pub fn associated_s3_resources(mut self, input: crate::model::S3Resource) -> Self {
-            self.inner = self.inner.associated_s3_resources(input);
-            self
-        }
-        /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-        pub fn set_associated_s3_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
-        ) -> Self {
-            self.inner = self.inner.set_associated_s3_resources(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListMemberAccounts`.
-    ///
-    /// <p>(Discontinued) Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListMemberAccounts {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_member_accounts_input::Builder,
-    }
-    impl ListMemberAccounts {
-        /// Creates a new `ListMemberAccounts`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListMemberAccounts,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListMemberAccountsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListMemberAccountsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListMemberAccountsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListMemberAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListMemberAccountsPaginator {
-            crate::paginator::ListMemberAccountsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListS3Resources`.
-    ///
-    /// <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListS3Resources {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_s3_resources_input::Builder,
-    }
-    impl ListS3Resources {
-        /// Creates a new `ListS3Resources`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListS3Resources,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListS3ResourcesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListS3ResourcesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListS3ResourcesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListS3ResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListS3ResourcesPaginator {
-            crate::paginator::ListS3ResourcesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
-        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(input.into());
-            self
-        }
-        /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
-        pub fn set_member_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_member_account_id(input);
-            self
-        }
-        /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateS3Resources`.
-    ///
-    /// <p>(Discontinued) Updates the classification types for the specified S3 resources. If <code>memberAccountId</code> isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateS3Resources {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_s3_resources_input::Builder,
-    }
-    impl UpdateS3Resources {
-        /// Creates a new `UpdateS3Resources`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateS3Resources,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateS3ResourcesOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
-        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(input.into());
-            self
-        }
-        /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
-        pub fn set_member_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_member_account_id(input);
-            self
-        }
-        /// Appends an item to `s3ResourcesUpdate`.
-        ///
-        /// To override the contents of this collection use [`set_s3_resources_update`](Self::set_s3_resources_update).
-        ///
-        /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-        pub fn s3_resources_update(
-            mut self,
-            input: crate::model::S3ResourceClassificationUpdate,
-        ) -> Self {
-            self.inner = self.inner.s3_resources_update(input);
-            self
-        }
-        /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-        pub fn set_s3_resources_update(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassificationUpdate>>,
-        ) -> Self {
-            self.inner = self.inner.set_s3_resources_update(input);
-            self
-        }
     }
 }
 
@@ -879,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -889,3 +211,45 @@ impl Client {
         }
     }
 }
+
+mod associate_member_account;
+
+mod associate_s3_resources;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_macie::Error> {
+/// # let client: aws_sdk_macie::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.associate_member_account()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod disassociate_member_account;
+
+mod disassociate_s3_resources;
+
+mod list_member_accounts;
+
+mod list_s3_resources;
+
+mod update_s3_resources;

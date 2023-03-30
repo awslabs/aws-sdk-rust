@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Lex Runtime V2. Each operation on Amazon Lex Runtime V2 is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_lexruntimev2::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_lexruntimev2::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_lexruntimev2::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_lexruntimev2::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_lexruntimev2::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteSession`](crate::operation::delete_session) operation has
+/// a [`Client::delete_session`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_session()
+///     .bot_id("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,917 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`DeleteSession`](crate::client::fluent_builders::DeleteSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSession::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::DeleteSession::set_bot_id): <p>The identifier of the bot that contains the session data.</p>
-    ///   - [`bot_alias_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSession::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::client::fluent_builders::DeleteSession::set_bot_alias_id): <p>The alias identifier in use for the bot that contains the session data.</p>
-    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSession::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::DeleteSession::set_locale_id): <p>The locale where the session is in use.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::DeleteSession::set_session_id): <p>The identifier of the session to delete.</p>
-    /// - On success, responds with [`DeleteSessionOutput`](crate::output::DeleteSessionOutput) with field(s):
-    ///   - [`bot_id(Option<String>)`](crate::output::DeleteSessionOutput::bot_id): <p>The identifier of the bot that contained the session data.</p>
-    ///   - [`bot_alias_id(Option<String>)`](crate::output::DeleteSessionOutput::bot_alias_id): <p>The alias identifier in use for the bot that contained the session data.</p>
-    ///   - [`locale_id(Option<String>)`](crate::output::DeleteSessionOutput::locale_id): <p>The locale where the session was used.</p>
-    ///   - [`session_id(Option<String>)`](crate::output::DeleteSessionOutput::session_id): <p>The identifier of the deleted session.</p>
-    /// - On failure, responds with [`SdkError<DeleteSessionError>`](crate::error::DeleteSessionError)
-    pub fn delete_session(&self) -> fluent_builders::DeleteSession {
-        fluent_builders::DeleteSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSession`](crate::client::fluent_builders::GetSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::GetSession::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::GetSession::set_bot_id): <p>The identifier of the bot that contains the session data.</p>
-    ///   - [`bot_alias_id(impl Into<String>)`](crate::client::fluent_builders::GetSession::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::client::fluent_builders::GetSession::set_bot_alias_id): <p>The alias identifier in use for the bot that contains the session data.</p>
-    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::GetSession::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::GetSession::set_locale_id): <p>The locale where the session is in use.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetSession::set_session_id): <p>The identifier of the session to return.</p>
-    /// - On success, responds with [`GetSessionOutput`](crate::output::GetSessionOutput) with field(s):
-    ///   - [`session_id(Option<String>)`](crate::output::GetSessionOutput::session_id): <p>The identifier of the returned session.</p>
-    ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetSessionOutput::messages): <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
-    ///   - [`interpretations(Option<Vec<Interpretation>>)`](crate::output::GetSessionOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>  <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    ///   - [`session_state(Option<SessionState>)`](crate::output::GetSessionOutput::session_state): <p>Represents the current state of the dialog between the user and the bot.</p>  <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
-    /// - On failure, responds with [`SdkError<GetSessionError>`](crate::error::GetSessionError)
-    pub fn get_session(&self) -> fluent_builders::GetSession {
-        fluent_builders::GetSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutSession`](crate::client::fluent_builders::PutSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::PutSession::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::PutSession::set_bot_id): <p>The identifier of the bot that receives the session data.</p>
-    ///   - [`bot_alias_id(impl Into<String>)`](crate::client::fluent_builders::PutSession::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::client::fluent_builders::PutSession::set_bot_alias_id): <p>The alias identifier of the bot that receives the session data.</p>
-    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::PutSession::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::PutSession::set_locale_id): <p>The locale where the session is in use.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::PutSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::PutSession::set_session_id): <p>The identifier of the session that receives the session data.</p>
-    ///   - [`messages(Vec<Message>)`](crate::client::fluent_builders::PutSession::messages) / [`set_messages(Option<Vec<Message>>)`](crate::client::fluent_builders::PutSession::set_messages): <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    ///   - [`session_state(SessionState)`](crate::client::fluent_builders::PutSession::session_state) / [`set_session_state(Option<SessionState>)`](crate::client::fluent_builders::PutSession::set_session_state): <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-    ///   - [`request_attributes(HashMap<String, String>)`](crate::client::fluent_builders::PutSession::request_attributes) / [`set_request_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutSession::set_request_attributes): <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>  <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    ///   - [`response_content_type(impl Into<String>)`](crate::client::fluent_builders::PutSession::response_content_type) / [`set_response_content_type(Option<String>)`](crate::client::fluent_builders::PutSession::set_response_content_type): <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>  <ul>   <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>  </ul>
-    /// - On success, responds with [`PutSessionOutput`](crate::output::PutSessionOutput) with field(s):
-    ///   - [`content_type(Option<String>)`](crate::output::PutSessionOutput::content_type): <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
-    ///   - [`messages(Option<String>)`](crate::output::PutSessionOutput::messages): <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
-    ///   - [`session_state(Option<String>)`](crate::output::PutSessionOutput::session_state): <p>Represents the current state of the dialog between the user and the bot.</p>  <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    ///   - [`request_attributes(Option<String>)`](crate::output::PutSessionOutput::request_attributes): <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
-    ///   - [`session_id(Option<String>)`](crate::output::PutSessionOutput::session_id): <p>The identifier of the session that received the data.</p>
-    ///   - [`audio_stream(ByteStream)`](crate::output::PutSessionOutput::audio_stream): <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    /// - On failure, responds with [`SdkError<PutSessionError>`](crate::error::PutSessionError)
-    pub fn put_session(&self) -> fluent_builders::PutSession {
-        fluent_builders::PutSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RecognizeText`](crate::client::fluent_builders::RecognizeText) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeText::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::RecognizeText::set_bot_id): <p>The identifier of the bot that processes the request.</p>
-    ///   - [`bot_alias_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeText::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::client::fluent_builders::RecognizeText::set_bot_alias_id): <p>The alias identifier in use for the bot that processes the request.</p>
-    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeText::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::RecognizeText::set_locale_id): <p>The locale where the session is in use.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeText::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::RecognizeText::set_session_id): <p>The identifier of the user session that is having the conversation.</p>
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::RecognizeText::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::RecognizeText::set_text): <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-    ///   - [`session_state(SessionState)`](crate::client::fluent_builders::RecognizeText::session_state) / [`set_session_state(Option<SessionState>)`](crate::client::fluent_builders::RecognizeText::set_session_state): <p>The current state of the dialog between the user and the bot.</p>
-    ///   - [`request_attributes(HashMap<String, String>)`](crate::client::fluent_builders::RecognizeText::request_attributes) / [`set_request_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RecognizeText::set_request_attributes): <p>Request-specific information passed between the client application and Amazon Lex V2 </p>  <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    /// - On success, responds with [`RecognizeTextOutput`](crate::output::RecognizeTextOutput) with field(s):
-    ///   - [`messages(Option<Vec<Message>>)`](crate::output::RecognizeTextOutput::messages): <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
-    ///   - [`session_state(Option<SessionState>)`](crate::output::RecognizeTextOutput::session_state): <p>Represents the current state of the dialog between the user and the bot. </p>  <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    ///   - [`interpretations(Option<Vec<Interpretation>>)`](crate::output::RecognizeTextOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>  <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    ///   - [`request_attributes(Option<HashMap<String, String>>)`](crate::output::RecognizeTextOutput::request_attributes): <p>The attributes sent in the request.</p>
-    ///   - [`session_id(Option<String>)`](crate::output::RecognizeTextOutput::session_id): <p>The identifier of the session in use.</p>
-    /// - On failure, responds with [`SdkError<RecognizeTextError>`](crate::error::RecognizeTextError)
-    pub fn recognize_text(&self) -> fluent_builders::RecognizeText {
-        fluent_builders::RecognizeText::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RecognizeUtterance`](crate::client::fluent_builders::RecognizeUtterance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_bot_id): <p>The identifier of the bot that should receive the request.</p>
-    ///   - [`bot_alias_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_bot_alias_id): <p>The alias identifier in use for the bot that should receive the request.</p>
-    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_locale_id): <p>The locale where the session is in use.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_session_id): <p>The identifier of the session in use.</p>
-    ///   - [`session_state(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::session_state) / [`set_session_state(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_session_state): <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>  <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    ///   - [`request_attributes(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::request_attributes) / [`set_request_attributes(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_request_attributes): <p>Request-specific information passed between the client application and Amazon Lex V2 </p>  <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>  <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    ///   - [`request_content_type(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::request_content_type) / [`set_request_content_type(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_request_content_type): <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>  <ul>   <li> <p>PCM format, audio data must be in little-endian byte order.</p>    <ul>     <li> <p>audio/l16; rate=16000; channels=1</p> </li>     <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>     <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>    </ul> </li>   <li> <p>Opus format</p>    <ul>     <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>    </ul> </li>   <li> <p>Text format</p>    <ul>     <li> <p>text/plain; charset=utf-8</p> </li>    </ul> </li>  </ul>
-    ///   - [`response_content_type(impl Into<String>)`](crate::client::fluent_builders::RecognizeUtterance::response_content_type) / [`set_response_content_type(Option<String>)`](crate::client::fluent_builders::RecognizeUtterance::set_response_content_type): <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>  <ul>   <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>   <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>   <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>   <li> <p>The following are the accepted values:</p>    <ul>     <li> <p>audio/mpeg</p> </li>     <li> <p>audio/ogg</p> </li>     <li> <p>audio/pcm (16 KHz)</p> </li>     <li> <p>audio/* (defaults to mpeg)</p> </li>     <li> <p>text/plain; charset=utf-8</p> </li>    </ul> </li>  </ul>
-    ///   - [`input_stream(ByteStream)`](crate::client::fluent_builders::RecognizeUtterance::input_stream) / [`set_input_stream(ByteStream)`](crate::client::fluent_builders::RecognizeUtterance::set_input_stream): <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    /// - On success, responds with [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput) with field(s):
-    ///   - [`input_mode(Option<String>)`](crate::output::RecognizeUtteranceOutput::input_mode): <p>Indicates whether the input mode to the operation was text or speech. </p>
-    ///   - [`content_type(Option<String>)`](crate::output::RecognizeUtteranceOutput::content_type): <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
-    ///   - [`messages(Option<String>)`](crate::output::RecognizeUtteranceOutput::messages): <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>  <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    ///   - [`interpretations(Option<String>)`](crate::output::RecognizeUtteranceOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>  <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>  <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    ///   - [`session_state(Option<String>)`](crate::output::RecognizeUtteranceOutput::session_state): <p>Represents the current state of the dialog between the user and the bot.</p>  <p>Use this to determine the progress of the conversation and what the next action might be.</p>  <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    ///   - [`request_attributes(Option<String>)`](crate::output::RecognizeUtteranceOutput::request_attributes): <p>The attributes sent in the request.</p>  <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
-    ///   - [`session_id(Option<String>)`](crate::output::RecognizeUtteranceOutput::session_id): <p>The identifier of the session in use.</p>
-    ///   - [`input_transcript(Option<String>)`](crate::output::RecognizeUtteranceOutput::input_transcript): <p>The text used to process the request.</p>  <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>  <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    ///   - [`audio_stream(ByteStream)`](crate::output::RecognizeUtteranceOutput::audio_stream): <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    /// - On failure, responds with [`SdkError<RecognizeUtteranceError>`](crate::error::RecognizeUtteranceError)
-    pub fn recognize_utterance(&self) -> fluent_builders::RecognizeUtterance {
-        fluent_builders::RecognizeUtterance::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DeleteSession`.
-    ///
-    /// <p>Removes session information for a specified bot, alias, and user ID. </p>
-    /// <p>You can use this operation to restart a conversation with a bot. When you remove a session, the entire history of the session is removed so that you can start again.</p>
-    /// <p>You don't need to delete a session. Sessions have a time limit and will expire. Set the session time limit when you create the bot. The default is 5 minutes, but you can specify anything between 1 minute and 24 hours.</p>
-    /// <p>If you specify a bot or alias ID that doesn't exist, you receive a <code>BadRequestException.</code> </p>
-    /// <p>If the locale doesn't exist in the bot, or if the locale hasn't been enables for the alias, you receive a <code>BadRequestException</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSession {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_session_input::Builder,
-    }
-    impl DeleteSession {
-        /// Creates a new `DeleteSession`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteSession,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteSessionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteSessionOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteSessionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(input.into());
-            self
-        }
-        /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_id(input);
-            self
-        }
-        /// <p>The alias identifier in use for the bot that contains the session data.</p>
-        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(input.into());
-            self
-        }
-        /// <p>The alias identifier in use for the bot that contains the session data.</p>
-        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_alias_id(input);
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(input.into());
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale_id(input);
-            self
-        }
-        /// <p>The identifier of the session to delete.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The identifier of the session to delete.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetSession`.
-    ///
-    /// <p>Returns session information for a specified bot, alias, and user.</p>
-    /// <p>For example, you can use this operation to retrieve session information for a user that has left a long-running session in use.</p>
-    /// <p>If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>. If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetSession {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_session_input::Builder,
-    }
-    impl GetSession {
-        /// Creates a new `GetSession`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetSession,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetSessionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetSessionOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetSessionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(input.into());
-            self
-        }
-        /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_id(input);
-            self
-        }
-        /// <p>The alias identifier in use for the bot that contains the session data.</p>
-        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(input.into());
-            self
-        }
-        /// <p>The alias identifier in use for the bot that contains the session data.</p>
-        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_alias_id(input);
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(input.into());
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale_id(input);
-            self
-        }
-        /// <p>The identifier of the session to return.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The identifier of the session to return.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutSession`.
-    ///
-    /// <p>Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use this operation to enable your application to set the state of the bot.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutSession {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_session_input::Builder,
-    }
-    impl PutSession {
-        /// Creates a new `PutSession`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutSession,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PutSessionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutSessionOutput,
-            aws_smithy_http::result::SdkError<crate::error::PutSessionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the bot that receives the session data.</p>
-        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(input.into());
-            self
-        }
-        /// <p>The identifier of the bot that receives the session data.</p>
-        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_id(input);
-            self
-        }
-        /// <p>The alias identifier of the bot that receives the session data.</p>
-        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(input.into());
-            self
-        }
-        /// <p>The alias identifier of the bot that receives the session data.</p>
-        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_alias_id(input);
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(input.into());
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale_id(input);
-            self
-        }
-        /// <p>The identifier of the session that receives the session data.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The identifier of the session that receives the session data.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-        /// Appends an item to `messages`.
-        ///
-        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
-        ///
-        /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-        pub fn messages(mut self, input: crate::model::Message) -> Self {
-            self.inner = self.inner.messages(input);
-            self
-        }
-        /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
-        ) -> Self {
-            self.inner = self.inner.set_messages(input);
-            self
-        }
-        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-        pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
-            self.inner = self.inner.session_state(input);
-            self
-        }
-        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-        pub fn set_session_state(
-            mut self,
-            input: std::option::Option<crate::model::SessionState>,
-        ) -> Self {
-            self.inner = self.inner.set_session_state(input);
-            self
-        }
-        /// Adds a key-value pair to `requestAttributes`.
-        ///
-        /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
-        ///
-        /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-        pub fn request_attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.request_attributes(k.into(), v.into());
-            self
-        }
-        /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-        pub fn set_request_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_request_attributes(input);
-            self
-        }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
-        /// <ul>
-        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
-        /// </ul>
-        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(input.into());
-            self
-        }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
-        /// <ul>
-        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
-        /// </ul>
-        pub fn set_response_content_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_response_content_type(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RecognizeText`.
-    ///
-    /// <p>Sends user input to Amazon Lex V2. Client applications use this API to send requests to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the machine learning model that it build for the bot.</p>
-    /// <p>In response, Amazon Lex V2 returns the next message to convey to the user and an optional response card to display.</p>
-    /// <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
-    /// <ul>
-    /// <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li>
-    /// <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li>
-    /// <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RecognizeText {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::recognize_text_input::Builder,
-    }
-    impl RecognizeText {
-        /// Creates a new `RecognizeText`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::RecognizeText,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::RecognizeTextError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::RecognizeTextOutput,
-            aws_smithy_http::result::SdkError<crate::error::RecognizeTextError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the bot that processes the request.</p>
-        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(input.into());
-            self
-        }
-        /// <p>The identifier of the bot that processes the request.</p>
-        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_id(input);
-            self
-        }
-        /// <p>The alias identifier in use for the bot that processes the request.</p>
-        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(input.into());
-            self
-        }
-        /// <p>The alias identifier in use for the bot that processes the request.</p>
-        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_alias_id(input);
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(input.into());
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale_id(input);
-            self
-        }
-        /// <p>The identifier of the user session that is having the conversation.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The identifier of the user session that is having the conversation.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-        /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-        /// <p>The current state of the dialog between the user and the bot.</p>
-        pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
-            self.inner = self.inner.session_state(input);
-            self
-        }
-        /// <p>The current state of the dialog between the user and the bot.</p>
-        pub fn set_session_state(
-            mut self,
-            input: std::option::Option<crate::model::SessionState>,
-        ) -> Self {
-            self.inner = self.inner.set_session_state(input);
-            self
-        }
-        /// Adds a key-value pair to `requestAttributes`.
-        ///
-        /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
-        ///
-        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-        pub fn request_attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.request_attributes(k.into(), v.into());
-            self
-        }
-        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-        pub fn set_request_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_request_attributes(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RecognizeUtterance`.
-    ///
-    /// <p>Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets the user input using the machine learning model built for the bot.</p>
-    /// <p>The following request fields must be compressed with gzip and then base64 encoded before you send them to Amazon Lex V2. </p>
-    /// <ul>
-    /// <li> <p>requestAttributes</p> </li>
-    /// <li> <p>sessionState</p> </li>
-    /// </ul>
-    /// <p>The following response fields are compressed using gzip and then base64 encoded by Amazon Lex V2. Before you can use these fields, you must decode and decompress them. </p>
-    /// <ul>
-    /// <li> <p>inputTranscript</p> </li>
-    /// <li> <p>interpretations</p> </li>
-    /// <li> <p>messages</p> </li>
-    /// <li> <p>requestAttributes</p> </li>
-    /// <li> <p>sessionState</p> </li>
-    /// </ul>
-    /// <p>The example contains a Java application that compresses and encodes a Java object to send to Amazon Lex V2, and a second that decodes and decompresses a response from Amazon Lex V2.</p>
-    /// <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
-    /// <ul>
-    /// <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li>
-    /// <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li>
-    /// <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
-    #[derive(std::fmt::Debug)]
-    pub struct RecognizeUtterance {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::recognize_utterance_input::Builder,
-    }
-    impl RecognizeUtterance {
-        /// Creates a new `RecognizeUtterance`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::RecognizeUtterance,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::RecognizeUtteranceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::RecognizeUtteranceOutput,
-            aws_smithy_http::result::SdkError<crate::error::RecognizeUtteranceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the bot that should receive the request.</p>
-        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(input.into());
-            self
-        }
-        /// <p>The identifier of the bot that should receive the request.</p>
-        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_id(input);
-            self
-        }
-        /// <p>The alias identifier in use for the bot that should receive the request.</p>
-        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(input.into());
-            self
-        }
-        /// <p>The alias identifier in use for the bot that should receive the request.</p>
-        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bot_alias_id(input);
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(input.into());
-            self
-        }
-        /// <p>The locale where the session is in use.</p>
-        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale_id(input);
-            self
-        }
-        /// <p>The identifier of the session in use.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The identifier of the session in use.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-        /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_state(input.into());
-            self
-        }
-        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-        /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn set_session_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_session_state(input);
-            self
-        }
-        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-        /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_attributes(input.into());
-            self
-        }
-        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-        /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn set_request_attributes(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_request_attributes(input);
-            self
-        }
-        /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
-        /// <ul>
-        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
-        /// <ul>
-        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
-        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
-        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
-        /// </ul> </li>
-        /// <li> <p>Opus format</p>
-        /// <ul>
-        /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
-        /// </ul> </li>
-        /// <li> <p>Text format</p>
-        /// <ul>
-        /// <li> <p>text/plain; charset=utf-8</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        pub fn request_content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_content_type(input.into());
-            self
-        }
-        /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
-        /// <ul>
-        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
-        /// <ul>
-        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
-        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
-        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
-        /// </ul> </li>
-        /// <li> <p>Opus format</p>
-        /// <ul>
-        /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
-        /// </ul> </li>
-        /// <li> <p>Text format</p>
-        /// <ul>
-        /// <li> <p>text/plain; charset=utf-8</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        pub fn set_request_content_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_request_content_type(input);
-            self
-        }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
-        /// <ul>
-        /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
-        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
-        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
-        /// <li> <p>The following are the accepted values:</p>
-        /// <ul>
-        /// <li> <p>audio/mpeg</p> </li>
-        /// <li> <p>audio/ogg</p> </li>
-        /// <li> <p>audio/pcm (16 KHz)</p> </li>
-        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
-        /// <li> <p>text/plain; charset=utf-8</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(input.into());
-            self
-        }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
-        /// <ul>
-        /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
-        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
-        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
-        /// <li> <p>The following are the accepted values:</p>
-        /// <ul>
-        /// <li> <p>audio/mpeg</p> </li>
-        /// <li> <p>audio/ogg</p> </li>
-        /// <li> <p>audio/pcm (16 KHz)</p> </li>
-        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
-        /// <li> <p>text/plain; charset=utf-8</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        pub fn set_response_content_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_response_content_type(input);
-            self
-        }
-        /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-        pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.input_stream(input);
-            self
-        }
-        /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-        pub fn set_input_stream(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.inner = self.inner.set_input_stream(input);
-            self
-        }
     }
 }
 
@@ -1075,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1085,3 +211,41 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_lexruntimev2::Error> {
+/// # let client: aws_sdk_lexruntimev2::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.delete_session()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_session;
+
+mod get_session;
+
+mod put_session;
+
+mod recognize_text;
+
+mod recognize_utterance;

@@ -4,281 +4,306 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You are not authorized to access the cluster.</p>
-    AccessToClusterDeniedFault(crate::error::AccessToClusterDeniedFault),
+    AccessToClusterDeniedFault(crate::types::error::AccessToClusterDeniedFault),
     /// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
-    AccessToSnapshotDeniedFault(crate::error::AccessToSnapshotDeniedFault),
+    AccessToSnapshotDeniedFault(crate::types::error::AccessToSnapshotDeniedFault),
     /// <p>The authentication profile already exists.</p>
-    AuthenticationProfileAlreadyExistsFault(crate::error::AuthenticationProfileAlreadyExistsFault),
+    AuthenticationProfileAlreadyExistsFault(
+        crate::types::error::AuthenticationProfileAlreadyExistsFault,
+    ),
     /// <p>The authentication profile can't be found.</p>
-    AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
+    AuthenticationProfileNotFoundFault(crate::types::error::AuthenticationProfileNotFoundFault),
     /// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
-    AuthenticationProfileQuotaExceededFault(crate::error::AuthenticationProfileQuotaExceededFault),
+    AuthenticationProfileQuotaExceededFault(
+        crate::types::error::AuthenticationProfileQuotaExceededFault,
+    ),
     /// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
-    AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
+    AuthorizationAlreadyExistsFault(crate::types::error::AuthorizationAlreadyExistsFault),
     /// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
-    AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
+    AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
     /// <p>The authorization quota for the cluster security group has been reached.</p>
-    AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
+    AuthorizationQuotaExceededFault(crate::types::error::AuthorizationQuotaExceededFault),
     /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100. </p>
-    BatchDeleteRequestSizeExceededFault(crate::error::BatchDeleteRequestSizeExceededFault),
+    BatchDeleteRequestSizeExceededFault(crate::types::error::BatchDeleteRequestSizeExceededFault),
     /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100. </p>
     BatchModifyClusterSnapshotsLimitExceededFault(
-        crate::error::BatchModifyClusterSnapshotsLimitExceededFault,
+        crate::types::error::BatchModifyClusterSnapshotsLimitExceededFault,
     ),
     /// <p>Could not find the specified S3 bucket.</p>
-    BucketNotFoundFault(crate::error::BucketNotFoundFault),
+    BucketNotFoundFault(crate::types::error::BucketNotFoundFault),
     /// <p>The account already has a cluster with the given identifier.</p>
-    ClusterAlreadyExistsFault(crate::error::ClusterAlreadyExistsFault),
+    ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
     /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
-    ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
+    ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>Cluster is already on the latest database revision.</p>
-    ClusterOnLatestRevisionFault(crate::error::ClusterOnLatestRevisionFault),
+    ClusterOnLatestRevisionFault(crate::types::error::ClusterOnLatestRevisionFault),
     /// <p>A cluster parameter group with the same name already exists.</p>
-    ClusterParameterGroupAlreadyExistsFault(crate::error::ClusterParameterGroupAlreadyExistsFault),
+    ClusterParameterGroupAlreadyExistsFault(
+        crate::types::error::ClusterParameterGroupAlreadyExistsFault,
+    ),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
-    ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
+    ClusterParameterGroupNotFoundFault(crate::types::error::ClusterParameterGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    ClusterParameterGroupQuotaExceededFault(crate::error::ClusterParameterGroupQuotaExceededFault),
+    ClusterParameterGroupQuotaExceededFault(
+        crate::types::error::ClusterParameterGroupQuotaExceededFault,
+    ),
     /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    ClusterQuotaExceededFault(crate::error::ClusterQuotaExceededFault),
+    ClusterQuotaExceededFault(crate::types::error::ClusterQuotaExceededFault),
     /// <p>A cluster security group with the same name already exists.</p>
-    ClusterSecurityGroupAlreadyExistsFault(crate::error::ClusterSecurityGroupAlreadyExistsFault),
+    ClusterSecurityGroupAlreadyExistsFault(
+        crate::types::error::ClusterSecurityGroupAlreadyExistsFault,
+    ),
     /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
-    ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
+    ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    ClusterSecurityGroupQuotaExceededFault(crate::error::ClusterSecurityGroupQuotaExceededFault),
+    ClusterSecurityGroupQuotaExceededFault(
+        crate::types::error::ClusterSecurityGroupQuotaExceededFault,
+    ),
     /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
-    ClusterSnapshotAlreadyExistsFault(crate::error::ClusterSnapshotAlreadyExistsFault),
+    ClusterSnapshotAlreadyExistsFault(crate::types::error::ClusterSnapshotAlreadyExistsFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
-    ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
+    ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
-    ClusterSnapshotQuotaExceededFault(crate::error::ClusterSnapshotQuotaExceededFault),
+    ClusterSnapshotQuotaExceededFault(crate::types::error::ClusterSnapshotQuotaExceededFault),
     /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
-    ClusterSubnetGroupAlreadyExistsFault(crate::error::ClusterSubnetGroupAlreadyExistsFault),
+    ClusterSubnetGroupAlreadyExistsFault(crate::types::error::ClusterSubnetGroupAlreadyExistsFault),
     /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
-    ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
+    ClusterSubnetGroupNotFoundFault(crate::types::error::ClusterSubnetGroupNotFoundFault),
     /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    ClusterSubnetGroupQuotaExceededFault(crate::error::ClusterSubnetGroupQuotaExceededFault),
+    ClusterSubnetGroupQuotaExceededFault(crate::types::error::ClusterSubnetGroupQuotaExceededFault),
     /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    ClusterSubnetQuotaExceededFault(crate::error::ClusterSubnetQuotaExceededFault),
+    ClusterSubnetQuotaExceededFault(crate::types::error::ClusterSubnetQuotaExceededFault),
     /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
-    CopyToRegionDisabledFault(crate::error::CopyToRegionDisabledFault),
+    CopyToRegionDisabledFault(crate::types::error::CopyToRegionDisabledFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
-    DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
+    DependentServiceRequestThrottlingFault(
+        crate::types::error::DependentServiceRequestThrottlingFault,
+    ),
     /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
-    DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
+    DependentServiceUnavailableFault(crate::types::error::DependentServiceUnavailableFault),
     /// <p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>
-    EndpointAlreadyExistsFault(crate::error::EndpointAlreadyExistsFault),
+    EndpointAlreadyExistsFault(crate::types::error::EndpointAlreadyExistsFault),
     /// <p>The authorization already exists for this endpoint.</p>
-    EndpointAuthorizationAlreadyExistsFault(crate::error::EndpointAuthorizationAlreadyExistsFault),
+    EndpointAuthorizationAlreadyExistsFault(
+        crate::types::error::EndpointAuthorizationAlreadyExistsFault,
+    ),
     /// <p>The authorization for this endpoint can't be found.</p>
-    EndpointAuthorizationNotFoundFault(crate::error::EndpointAuthorizationNotFoundFault),
+    EndpointAuthorizationNotFoundFault(crate::types::error::EndpointAuthorizationNotFoundFault),
     /// <p>The number of endpoint authorizations per cluster has exceeded its limit.</p>
     EndpointAuthorizationsPerClusterLimitExceededFault(
-        crate::error::EndpointAuthorizationsPerClusterLimitExceededFault,
+        crate::types::error::EndpointAuthorizationsPerClusterLimitExceededFault,
     ),
     /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
-    EndpointNotFoundFault(crate::error::EndpointNotFoundFault),
+    EndpointNotFoundFault(crate::types::error::EndpointNotFoundFault),
     /// <p>The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.</p>
     EndpointsPerAuthorizationLimitExceededFault(
-        crate::error::EndpointsPerAuthorizationLimitExceededFault,
+        crate::types::error::EndpointsPerAuthorizationLimitExceededFault,
     ),
     /// <p>The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.</p>
-    EndpointsPerClusterLimitExceededFault(crate::error::EndpointsPerClusterLimitExceededFault),
+    EndpointsPerClusterLimitExceededFault(
+        crate::types::error::EndpointsPerClusterLimitExceededFault,
+    ),
     /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
+    EventSubscriptionQuotaExceededFault(crate::types::error::EventSubscriptionQuotaExceededFault),
     /// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
-    HsmClientCertificateAlreadyExistsFault(crate::error::HsmClientCertificateAlreadyExistsFault),
+    HsmClientCertificateAlreadyExistsFault(
+        crate::types::error::HsmClientCertificateAlreadyExistsFault,
+    ),
     /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
-    HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
+    HsmClientCertificateNotFoundFault(crate::types::error::HsmClientCertificateNotFoundFault),
     /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    HsmClientCertificateQuotaExceededFault(crate::error::HsmClientCertificateQuotaExceededFault),
+    HsmClientCertificateQuotaExceededFault(
+        crate::types::error::HsmClientCertificateQuotaExceededFault,
+    ),
     /// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
-    HsmConfigurationAlreadyExistsFault(crate::error::HsmConfigurationAlreadyExistsFault),
+    HsmConfigurationAlreadyExistsFault(crate::types::error::HsmConfigurationAlreadyExistsFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
-    HsmConfigurationNotFoundFault(crate::error::HsmConfigurationNotFoundFault),
+    HsmConfigurationNotFoundFault(crate::types::error::HsmConfigurationNotFoundFault),
     /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    HsmConfigurationQuotaExceededFault(crate::error::HsmConfigurationQuotaExceededFault),
+    HsmConfigurationQuotaExceededFault(crate::types::error::HsmConfigurationQuotaExceededFault),
     /// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
     InProgressTableRestoreQuotaExceededFault(
-        crate::error::InProgressTableRestoreQuotaExceededFault,
+        crate::types::error::InProgressTableRestoreQuotaExceededFault,
     ),
     /// <p>The specified options are incompatible.</p>
-    IncompatibleOrderableOptions(crate::error::IncompatibleOrderableOptions),
+    IncompatibleOrderableOptions(crate::types::error::IncompatibleOrderableOptions),
     /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
-    InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
+    InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
     /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
-    InsufficientS3BucketPolicyFault(crate::error::InsufficientS3BucketPolicyFault),
+    InsufficientS3BucketPolicyFault(crate::types::error::InsufficientS3BucketPolicyFault),
     /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(
-        crate::error::InvalidAuthenticationProfileRequestFault,
+        crate::types::error::InvalidAuthenticationProfileRequestFault,
     ),
     /// <p>The status of the authorization is not valid.</p>
-    InvalidAuthorizationStateFault(crate::error::InvalidAuthorizationStateFault),
+    InvalidAuthorizationStateFault(crate::types::error::InvalidAuthorizationStateFault),
     /// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
-    InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
+    InvalidClusterParameterGroupStateFault(
+        crate::types::error::InvalidClusterParameterGroupStateFault,
+    ),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
-    InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
+    InvalidClusterSecurityGroupStateFault(
+        crate::types::error::InvalidClusterSecurityGroupStateFault,
+    ),
     /// <p>The cluster snapshot schedule state is not valid.</p>
     InvalidClusterSnapshotScheduleStateFault(
-        crate::error::InvalidClusterSnapshotScheduleStateFault,
+        crate::types::error::InvalidClusterSnapshotScheduleStateFault,
     ),
     /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
-    InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
+    InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
-    InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
+    InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
-    InvalidClusterSubnetGroupStateFault(crate::error::InvalidClusterSubnetGroupStateFault),
+    InvalidClusterSubnetGroupStateFault(crate::types::error::InvalidClusterSubnetGroupStateFault),
     /// <p>The state of the subnet is invalid.</p>
-    InvalidClusterSubnetStateFault(crate::error::InvalidClusterSubnetStateFault),
+    InvalidClusterSubnetStateFault(crate::types::error::InvalidClusterSubnetStateFault),
     /// <p>The provided cluster track name is not valid.</p>
-    InvalidClusterTrackFault(crate::error::InvalidClusterTrackFault),
+    InvalidClusterTrackFault(crate::types::error::InvalidClusterTrackFault),
     /// <p>There is an error with the datashare.</p>
-    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    InvalidDataShareFault(crate::types::error::InvalidDataShareFault),
     /// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
-    InvalidElasticIpFault(crate::error::InvalidElasticIpFault),
+    InvalidElasticIpFault(crate::types::error::InvalidElasticIpFault),
     /// <p>The status of the endpoint is not valid.</p>
-    InvalidEndpointStateFault(crate::error::InvalidEndpointStateFault),
+    InvalidEndpointStateFault(crate::types::error::InvalidEndpointStateFault),
     /// <p>The specified HSM client certificate is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
-    InvalidHsmClientCertificateStateFault(crate::error::InvalidHsmClientCertificateStateFault),
+    InvalidHsmClientCertificateStateFault(
+        crate::types::error::InvalidHsmClientCertificateStateFault,
+    ),
     /// <p>The specified HSM configuration is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
-    InvalidHsmConfigurationStateFault(crate::error::InvalidHsmConfigurationStateFault),
+    InvalidHsmConfigurationStateFault(crate::types::error::InvalidHsmConfigurationStateFault),
     /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
-    InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
+    InvalidNamespaceFault(crate::types::error::InvalidNamespaceFault),
     /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
-    InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
+    InvalidReservedNodeStateFault(crate::types::error::InvalidReservedNodeStateFault),
     /// <p>The restore is invalid.</p>
-    InvalidRestoreFault(crate::error::InvalidRestoreFault),
+    InvalidRestoreFault(crate::types::error::InvalidRestoreFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
+    InvalidRetentionPeriodFault(crate::types::error::InvalidRetentionPeriodFault),
     /// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
-    InvalidS3BucketNameFault(crate::error::InvalidS3BucketNameFault),
+    InvalidS3BucketNameFault(crate::types::error::InvalidS3BucketNameFault),
     /// <p>The string specified for the logging S3 key prefix does not comply with the documented constraints.</p>
-    InvalidS3KeyPrefixFault(crate::error::InvalidS3KeyPrefixFault),
+    InvalidS3KeyPrefixFault(crate::types::error::InvalidS3KeyPrefixFault),
     /// <p>The schedule you submitted isn't valid.</p>
-    InvalidScheduleFault(crate::error::InvalidScheduleFault),
+    InvalidScheduleFault(crate::types::error::InvalidScheduleFault),
     /// <p>The scheduled action is not valid. </p>
-    InvalidScheduledActionFault(crate::error::InvalidScheduledActionFault),
+    InvalidScheduledActionFault(crate::types::error::InvalidScheduledActionFault),
     /// <p>The snapshot copy grant can't be deleted because it is used by one or more clusters.</p>
-    InvalidSnapshotCopyGrantStateFault(crate::error::InvalidSnapshotCopyGrantStateFault),
+    InvalidSnapshotCopyGrantStateFault(crate::types::error::InvalidSnapshotCopyGrantStateFault),
     /// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
-    InvalidSubnet(crate::error::InvalidSubnet),
+    InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
-    InvalidSubscriptionStateFault(crate::error::InvalidSubscriptionStateFault),
+    InvalidSubscriptionStateFault(crate::types::error::InvalidSubscriptionStateFault),
     /// <p>The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.</p>
-    InvalidTableRestoreArgumentFault(crate::error::InvalidTableRestoreArgumentFault),
+    InvalidTableRestoreArgumentFault(crate::types::error::InvalidTableRestoreArgumentFault),
     /// <p>The tag is invalid.</p>
-    InvalidTagFault(crate::error::InvalidTagFault),
+    InvalidTagFault(crate::types::error::InvalidTagFault),
     /// <p>The usage limit is not valid.</p>
-    InvalidUsageLimitFault(crate::error::InvalidUsageLimitFault),
+    InvalidUsageLimitFault(crate::types::error::InvalidUsageLimitFault),
     /// <p>The cluster subnet group does not cover all Availability Zones.</p>
-    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
-    LimitExceededFault(crate::error::LimitExceededFault),
+    LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
     NumberOfNodesPerClusterLimitExceededFault(
-        crate::error::NumberOfNodesPerClusterLimitExceededFault,
+        crate::types::error::NumberOfNodesPerClusterLimitExceededFault,
     ),
     /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
+    NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
     /// <p>The name of the partner was not found.</p>
-    PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
+    PartnerNotFoundFault(crate::types::error::PartnerNotFoundFault),
     /// <p>User already has a reservation with the given identifier.</p>
-    ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
+    ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
     /// <p>Indicates that the reserved node has already been exchanged.</p>
-    ReservedNodeAlreadyMigratedFault(crate::error::ReservedNodeAlreadyMigratedFault),
+    ReservedNodeAlreadyMigratedFault(crate::types::error::ReservedNodeAlreadyMigratedFault),
     /// <p>The reserved-node exchange status wasn't found.</p>
-    ReservedNodeExchangeNotFoundFault(crate::error::ReservedNodeExchangeNotFoundFault),
+    ReservedNodeExchangeNotFoundFault(crate::types::error::ReservedNodeExchangeNotFoundFault),
     /// <p>The specified reserved compute node not found.</p>
-    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    ReservedNodeNotFoundFault(crate::types::error::ReservedNodeNotFoundFault),
     /// <p>Specified offering does not exist.</p>
-    ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
+    ReservedNodeOfferingNotFoundFault(crate::types::error::ReservedNodeOfferingNotFoundFault),
     /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    ReservedNodeQuotaExceededFault(crate::error::ReservedNodeQuotaExceededFault),
+    ReservedNodeQuotaExceededFault(crate::types::error::ReservedNodeQuotaExceededFault),
     /// <p>A resize operation for the specified cluster is not found.</p>
-    ResizeNotFoundFault(crate::error::ResizeNotFoundFault),
+    ResizeNotFoundFault(crate::types::error::ResizeNotFoundFault),
     /// <p>The resource could not be found.</p>
-    ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
+    ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),
     /// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
-    SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
+    SnsInvalidTopicFault(crate::types::error::SnsInvalidTopicFault),
     /// <p>You do not have permission to publish to the specified Amazon SNS topic.</p>
-    SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
+    SnsNoAuthorizationFault(crate::types::error::SnsNoAuthorizationFault),
     /// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
-    SnsTopicArnNotFoundFault(crate::error::SnsTopicArnNotFoundFault),
+    SnsTopicArnNotFoundFault(crate::types::error::SnsTopicArnNotFoundFault),
     /// <p>The definition you submitted is not supported.</p>
-    ScheduleDefinitionTypeUnsupportedFault(crate::error::ScheduleDefinitionTypeUnsupportedFault),
+    ScheduleDefinitionTypeUnsupportedFault(
+        crate::types::error::ScheduleDefinitionTypeUnsupportedFault,
+    ),
     /// <p>The scheduled action already exists. </p>
-    ScheduledActionAlreadyExistsFault(crate::error::ScheduledActionAlreadyExistsFault),
+    ScheduledActionAlreadyExistsFault(crate::types::error::ScheduledActionAlreadyExistsFault),
     /// <p>The scheduled action cannot be found. </p>
-    ScheduledActionNotFoundFault(crate::error::ScheduledActionNotFoundFault),
+    ScheduledActionNotFoundFault(crate::types::error::ScheduledActionNotFoundFault),
     /// <p>The quota for scheduled actions exceeded. </p>
-    ScheduledActionQuotaExceededFault(crate::error::ScheduledActionQuotaExceededFault),
+    ScheduledActionQuotaExceededFault(crate::types::error::ScheduledActionQuotaExceededFault),
     /// <p>The action type specified for a scheduled action is not supported. </p>
-    ScheduledActionTypeUnsupportedFault(crate::error::ScheduledActionTypeUnsupportedFault),
+    ScheduledActionTypeUnsupportedFault(crate::types::error::ScheduledActionTypeUnsupportedFault),
     /// <p>The cluster already has cross-region snapshot copy disabled.</p>
-    SnapshotCopyAlreadyDisabledFault(crate::error::SnapshotCopyAlreadyDisabledFault),
+    SnapshotCopyAlreadyDisabledFault(crate::types::error::SnapshotCopyAlreadyDisabledFault),
     /// <p>The cluster already has cross-region snapshot copy enabled.</p>
-    SnapshotCopyAlreadyEnabledFault(crate::error::SnapshotCopyAlreadyEnabledFault),
+    SnapshotCopyAlreadyEnabledFault(crate::types::error::SnapshotCopyAlreadyEnabledFault),
     /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
-    SnapshotCopyDisabledFault(crate::error::SnapshotCopyDisabledFault),
+    SnapshotCopyDisabledFault(crate::types::error::SnapshotCopyDisabledFault),
     /// <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
-    SnapshotCopyGrantAlreadyExistsFault(crate::error::SnapshotCopyGrantAlreadyExistsFault),
+    SnapshotCopyGrantAlreadyExistsFault(crate::types::error::SnapshotCopyGrantAlreadyExistsFault),
     /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
-    SnapshotCopyGrantNotFoundFault(crate::error::SnapshotCopyGrantNotFoundFault),
+    SnapshotCopyGrantNotFoundFault(crate::types::error::SnapshotCopyGrantNotFoundFault),
     /// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this region.</p>
-    SnapshotCopyGrantQuotaExceededFault(crate::error::SnapshotCopyGrantQuotaExceededFault),
+    SnapshotCopyGrantQuotaExceededFault(crate::types::error::SnapshotCopyGrantQuotaExceededFault),
     /// <p>The specified snapshot schedule already exists. </p>
-    SnapshotScheduleAlreadyExistsFault(crate::error::SnapshotScheduleAlreadyExistsFault),
+    SnapshotScheduleAlreadyExistsFault(crate::types::error::SnapshotScheduleAlreadyExistsFault),
     /// <p>We could not find the specified snapshot schedule. </p>
-    SnapshotScheduleNotFoundFault(crate::error::SnapshotScheduleNotFoundFault),
+    SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
     /// <p>You have exceeded the quota of snapshot schedules. </p>
-    SnapshotScheduleQuotaExceededFault(crate::error::SnapshotScheduleQuotaExceededFault),
+    SnapshotScheduleQuotaExceededFault(crate::types::error::SnapshotScheduleQuotaExceededFault),
     /// <p>The specified snapshot schedule is already being updated.</p>
-    SnapshotScheduleUpdateInProgressFault(crate::error::SnapshotScheduleUpdateInProgressFault),
+    SnapshotScheduleUpdateInProgressFault(
+        crate::types::error::SnapshotScheduleUpdateInProgressFault,
+    ),
     /// <p>The specified Amazon Redshift event source could not be found.</p>
-    SourceNotFoundFault(crate::error::SourceNotFoundFault),
+    SourceNotFoundFault(crate::types::error::SourceNotFoundFault),
     /// <p>A specified subnet is already in use by another cluster.</p>
-    SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
+    SubnetAlreadyInUse(crate::types::error::SubnetAlreadyInUse),
     /// <p>There is already an existing event notification subscription with the specified name.</p>
-    SubscriptionAlreadyExistFault(crate::error::SubscriptionAlreadyExistFault),
+    SubscriptionAlreadyExistFault(crate::types::error::SubscriptionAlreadyExistFault),
     /// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
-    SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
+    SubscriptionCategoryNotFoundFault(crate::types::error::SubscriptionCategoryNotFoundFault),
     /// <p>An Amazon Redshift event with the specified event ID does not exist.</p>
-    SubscriptionEventIdNotFoundFault(crate::error::SubscriptionEventIdNotFoundFault),
+    SubscriptionEventIdNotFoundFault(crate::types::error::SubscriptionEventIdNotFoundFault),
     /// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
-    SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
+    SubscriptionNotFoundFault(crate::types::error::SubscriptionNotFoundFault),
     /// <p>The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source type. The allowed values are ERROR and INFO.</p>
-    SubscriptionSeverityNotFoundFault(crate::error::SubscriptionSeverityNotFoundFault),
+    SubscriptionSeverityNotFoundFault(crate::types::error::SubscriptionSeverityNotFoundFault),
     /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
-    TableLimitExceededFault(crate::error::TableLimitExceededFault),
+    TableLimitExceededFault(crate::types::error::TableLimitExceededFault),
     /// <p>The specified <code>TableRestoreRequestId</code> value was not found.</p>
-    TableRestoreNotFoundFault(crate::error::TableRestoreNotFoundFault),
+    TableRestoreNotFoundFault(crate::types::error::TableRestoreNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
-    TagLimitExceededFault(crate::error::TagLimitExceededFault),
+    TagLimitExceededFault(crate::types::error::TagLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
-    UnauthorizedOperation(crate::error::UnauthorizedOperation),
+    UnauthorizedOperation(crate::types::error::UnauthorizedOperation),
     /// <p>The partner integration is not authorized.</p>
-    UnauthorizedPartnerIntegrationFault(crate::error::UnauthorizedPartnerIntegrationFault),
+    UnauthorizedPartnerIntegrationFault(crate::types::error::UnauthorizedPartnerIntegrationFault),
     /// <p>The specified region is incorrect or does not exist.</p>
-    UnknownSnapshotCopyRegionFault(crate::error::UnknownSnapshotCopyRegionFault),
+    UnknownSnapshotCopyRegionFault(crate::types::error::UnknownSnapshotCopyRegionFault),
     /// <p>The requested operation isn't supported.</p>
-    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// <p>A request option was specified that is not supported.</p>
-    UnsupportedOptionFault(crate::error::UnsupportedOptionFault),
+    UnsupportedOptionFault(crate::types::error::UnsupportedOptionFault),
     /// <p>The usage limit already exists. </p>
-    UsageLimitAlreadyExistsFault(crate::error::UsageLimitAlreadyExistsFault),
+    UsageLimitAlreadyExistsFault(crate::types::error::UsageLimitAlreadyExistsFault),
     /// <p>The usage limit identifier can't be found.</p>
-    UsageLimitNotFoundFault(crate::error::UsageLimitNotFoundFault),
-    ///
+    UsageLimitNotFoundFault(crate::types::error::UsageLimitNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -413,102 +438,10 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchangeError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchangeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AcceptReservedNodeExchangeError> for Error {
-    fn from(err: crate::error::AcceptReservedNodeExchangeError) -> Self {
-        match err.kind {
-            crate::error::AcceptReservedNodeExchangeErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::AcceptReservedNodeExchangeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddPartnerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AddPartnerError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AddPartnerError> for Error {
-    fn from(err: crate::error::AddPartnerError) -> Self {
-        match err.kind {
-            crate::error::AddPartnerErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::AddPartnerErrorKind::PartnerNotFoundFault(inner) => {
-                Error::PartnerNotFoundFault(inner)
-            }
-            crate::error::AddPartnerErrorKind::UnauthorizedPartnerIntegrationFault(inner) => {
-                Error::UnauthorizedPartnerIntegrationFault(inner)
-            }
-            crate::error::AddPartnerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AssociateDataShareConsumerError> for Error {
-    fn from(err: crate::error::AssociateDataShareConsumerError) -> Self {
-        match err.kind {
-            crate::error::AssociateDataShareConsumerErrorKind::InvalidDataShareFault(inner) => {
-                Error::InvalidDataShareFault(inner)
-            }
-            crate::error::AssociateDataShareConsumerErrorKind::InvalidNamespaceFault(inner) => {
-                Error::InvalidNamespaceFault(inner)
-            }
-            crate::error::AssociateDataShareConsumerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::AuthorizeClusterSecurityGroupIngressError,
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
             R,
         >,
     > for Error
@@ -517,7 +450,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::AuthorizeClusterSecurityGroupIngressError,
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
             R,
         >,
     ) -> Self {
@@ -525,3768 +458,5094 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::AuthorizeClusterSecurityGroupIngressError> for Error {
-    fn from(err: crate::error::AuthorizeClusterSecurityGroupIngressError) -> Self {
-        match err.kind {
-            crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(inner) => Error::AuthorizationAlreadyExistsFault(inner),
-            crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault(inner) => Error::AuthorizationQuotaExceededFault(inner),
-            crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
-            crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AuthorizeDataShareError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
+impl From<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError>
+    for Error
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AuthorizeDataShareError, R>,
+        err: crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::AuthorizeDataShareError> for Error {
-    fn from(err: crate::error::AuthorizeDataShareError) -> Self {
-        match err.kind {
-            crate::error::AuthorizeDataShareErrorKind::InvalidDataShareFault(inner) => {
-                Error::InvalidDataShareFault(inner)
-            }
-            crate::error::AuthorizeDataShareErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::add_partner::AddPartnerError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::add_partner::AddPartnerError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::AuthorizeEndpointAccessError> for Error {
-    fn from(err: crate::error::AuthorizeEndpointAccessError) -> Self {
-        match err.kind {
-            crate::error::AuthorizeEndpointAccessErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::AuthorizeEndpointAccessErrorKind::EndpointAuthorizationAlreadyExistsFault(inner) => Error::EndpointAuthorizationAlreadyExistsFault(inner),
-            crate::error::AuthorizeEndpointAccessErrorKind::EndpointAuthorizationsPerClusterLimitExceededFault(inner) => Error::EndpointAuthorizationsPerClusterLimitExceededFault(inner),
-            crate::error::AuthorizeEndpointAccessErrorKind::InvalidAuthorizationStateFault(inner) => Error::InvalidAuthorizationStateFault(inner),
-            crate::error::AuthorizeEndpointAccessErrorKind::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::error::AuthorizeEndpointAccessErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::AuthorizeEndpointAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessError, R>,
-    ) -> Self {
+impl From<crate::operation::add_partner::AddPartnerError> for Error {
+    fn from(err: crate::operation::add_partner::AddPartnerError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AuthorizeSnapshotAccessError> for Error {
-    fn from(err: crate::error::AuthorizeSnapshotAccessError) -> Self {
-        match err.kind {
-            crate::error::AuthorizeSnapshotAccessErrorKind::AuthorizationAlreadyExistsFault(inner) => Error::AuthorizationAlreadyExistsFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::AuthorizationQuotaExceededFault(inner) => Error::AuthorizationQuotaExceededFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::AuthorizeSnapshotAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshotsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshotsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::BatchDeleteClusterSnapshotsError> for Error {
-    fn from(err: crate::error::BatchDeleteClusterSnapshotsError) -> Self {
-        match err.kind {
-            crate::error::BatchDeleteClusterSnapshotsErrorKind::BatchDeleteRequestSizeExceededFault(inner) => Error::BatchDeleteRequestSizeExceededFault(inner),
-            crate::error::BatchDeleteClusterSnapshotsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshotsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshotsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::BatchModifyClusterSnapshotsError> for Error {
-    fn from(err: crate::error::BatchModifyClusterSnapshotsError) -> Self {
-        match err.kind {
-            crate::error::BatchModifyClusterSnapshotsErrorKind::BatchModifyClusterSnapshotsLimitExceededFault(inner) => Error::BatchModifyClusterSnapshotsLimitExceededFault(inner),
-            crate::error::BatchModifyClusterSnapshotsErrorKind::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
-            crate::error::BatchModifyClusterSnapshotsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelResizeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelResizeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CancelResizeError> for Error {
-    fn from(err: crate::error::CancelResizeError) -> Self {
-        match err.kind {
-            crate::error::CancelResizeErrorKind::ClusterNotFoundFault(inner) => {
+            crate::operation::add_partner::AddPartnerError::ClusterNotFoundFault(inner) => {
                 Error::ClusterNotFoundFault(inner)
             }
-            crate::error::CancelResizeErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::CancelResizeErrorKind::ResizeNotFoundFault(inner) => {
-                Error::ResizeNotFoundFault(inner)
-            }
-            crate::error::CancelResizeErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::CancelResizeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CopyClusterSnapshotError> for Error {
-    fn from(err: crate::error::CopyClusterSnapshotError) -> Self {
-        match err.kind {
-            crate::error::CopyClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault(
-                inner,
-            ) => Error::ClusterSnapshotAlreadyExistsFault(inner),
-            crate::error::CopyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(inner) => {
-                Error::ClusterSnapshotNotFoundFault(inner)
-            }
-            crate::error::CopyClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault(
-                inner,
-            ) => Error::ClusterSnapshotQuotaExceededFault(inner),
-            crate::error::CopyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(inner) => {
-                Error::InvalidClusterSnapshotStateFault(inner)
-            }
-            crate::error::CopyClusterSnapshotErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::CopyClusterSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateAuthenticationProfileError> for Error {
-    fn from(err: crate::error::CreateAuthenticationProfileError) -> Self {
-        match err.kind {
-            crate::error::CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault(inner) => Error::AuthenticationProfileAlreadyExistsFault(inner),
-            crate::error::CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(inner) => Error::AuthenticationProfileQuotaExceededFault(inner),
-            crate::error::CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
-            crate::error::CreateAuthenticationProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateClusterError> for Error {
-    fn from(err: crate::error::CreateClusterError) -> Self {
-        match err.kind {
-            crate::error::CreateClusterErrorKind::ClusterAlreadyExistsFault(inner) => {
-                Error::ClusterAlreadyExistsFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::ClusterParameterGroupNotFoundFault(inner) => {
-                Error::ClusterParameterGroupNotFoundFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::ClusterQuotaExceededFault(inner) => {
-                Error::ClusterQuotaExceededFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::ClusterSecurityGroupNotFoundFault(inner) => {
-                Error::ClusterSecurityGroupNotFoundFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::ClusterSubnetGroupNotFoundFault(inner) => {
-                Error::ClusterSubnetGroupNotFoundFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::DependentServiceRequestThrottlingFault(inner) => {
-                Error::DependentServiceRequestThrottlingFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::HsmClientCertificateNotFoundFault(inner) => {
-                Error::HsmClientCertificateNotFoundFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::HsmConfigurationNotFoundFault(inner) => {
-                Error::HsmConfigurationNotFoundFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InsufficientClusterCapacityFault(inner) => {
-                Error::InsufficientClusterCapacityFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidClusterSubnetGroupStateFault(inner) => {
-                Error::InvalidClusterSubnetGroupStateFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidClusterTrackFault(inner) => {
-                Error::InvalidClusterTrackFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidElasticIpFault(inner) => {
-                Error::InvalidElasticIpFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidSubnet(inner) => {
-                Error::InvalidSubnet(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::InvalidVpcNetworkStateFault(inner) => {
-                Error::InvalidVpcNetworkStateFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::LimitExceededFault(inner) => {
-                Error::LimitExceededFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(
-                inner,
-            ) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
-            crate::error::CreateClusterErrorKind::NumberOfNodesQuotaExceededFault(inner) => {
-                Error::NumberOfNodesQuotaExceededFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::SnapshotScheduleNotFoundFault(inner) => {
-                Error::SnapshotScheduleNotFoundFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::TagLimitExceededFault(inner) => {
-                Error::TagLimitExceededFault(inner)
-            }
-            crate::error::CreateClusterErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::CreateClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateClusterParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateClusterParameterGroupError> for Error {
-    fn from(err: crate::error::CreateClusterParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateClusterParameterGroupErrorKind::ClusterParameterGroupAlreadyExistsFault(inner) => Error::ClusterParameterGroupAlreadyExistsFault(inner),
-            crate::error::CreateClusterParameterGroupErrorKind::ClusterParameterGroupQuotaExceededFault(inner) => Error::ClusterParameterGroupQuotaExceededFault(inner),
-            crate::error::CreateClusterParameterGroupErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::CreateClusterParameterGroupErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::CreateClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateClusterSecurityGroupError> for Error {
-    fn from(err: crate::error::CreateClusterSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupAlreadyExistsFault(inner) => Error::ClusterSecurityGroupAlreadyExistsFault(inner),
-            crate::error::CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupQuotaExceededFault(inner) => Error::ClusterSecurityGroupQuotaExceededFault(inner),
-            crate::error::CreateClusterSecurityGroupErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::CreateClusterSecurityGroupErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::CreateClusterSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateClusterSnapshotError> for Error {
-    fn from(err: crate::error::CreateClusterSnapshotError) -> Self {
-        match err.kind {
-            crate::error::CreateClusterSnapshotErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::CreateClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault(
-                inner,
-            ) => Error::ClusterSnapshotAlreadyExistsFault(inner),
-            crate::error::CreateClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault(
-                inner,
-            ) => Error::ClusterSnapshotQuotaExceededFault(inner),
-            crate::error::CreateClusterSnapshotErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::CreateClusterSnapshotErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::CreateClusterSnapshotErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::CreateClusterSnapshotErrorKind::TagLimitExceededFault(inner) => {
-                Error::TagLimitExceededFault(inner)
-            }
-            crate::error::CreateClusterSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateClusterSubnetGroupError> for Error {
-    fn from(err: crate::error::CreateClusterSubnetGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupAlreadyExistsFault(inner) => Error::ClusterSubnetGroupAlreadyExistsFault(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupQuotaExceededFault(inner) => Error::ClusterSubnetGroupQuotaExceededFault(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault(inner) => Error::ClusterSubnetQuotaExceededFault(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
-            crate::error::CreateClusterSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEndpointAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateEndpointAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateEndpointAccessError> for Error {
-    fn from(err: crate::error::CreateEndpointAccessError) -> Self {
-        match err.kind {
-            crate::error::CreateEndpointAccessErrorKind::AccessToClusterDeniedFault(inner) => Error::AccessToClusterDeniedFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::EndpointAlreadyExistsFault(inner) => Error::EndpointAlreadyExistsFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::EndpointsPerAuthorizationLimitExceededFault(inner) => Error::EndpointsPerAuthorizationLimitExceededFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::EndpointsPerClusterLimitExceededFault(inner) => Error::EndpointsPerClusterLimitExceededFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
-            crate::error::CreateEndpointAccessErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::CreateEndpointAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateEventSubscriptionError> for Error {
-    fn from(err: crate::error::CreateEventSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(
-                inner,
-            ) => Error::EventSubscriptionQuotaExceededFault(inner),
-            crate::error::CreateEventSubscriptionErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(inner) => {
-                Error::SnsInvalidTopicFault(inner)
-            }
-            crate::error::CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault(inner) => {
-                Error::SnsNoAuthorizationFault(inner)
-            }
-            crate::error::CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(inner) => {
-                Error::SnsTopicArnNotFoundFault(inner)
-            }
-            crate::error::CreateEventSubscriptionErrorKind::SourceNotFoundFault(inner) => {
-                Error::SourceNotFoundFault(inner)
-            }
-            crate::error::CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(
-                inner,
-            ) => Error::SubscriptionAlreadyExistFault(inner),
-            crate::error::CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(
-                inner,
-            ) => Error::SubscriptionCategoryNotFoundFault(inner),
-            crate::error::CreateEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault(
-                inner,
-            ) => Error::SubscriptionEventIdNotFoundFault(inner),
-            crate::error::CreateEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault(
-                inner,
-            ) => Error::SubscriptionSeverityNotFoundFault(inner),
-            crate::error::CreateEventSubscriptionErrorKind::TagLimitExceededFault(inner) => {
-                Error::TagLimitExceededFault(inner)
-            }
-            crate::error::CreateEventSubscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateHsmClientCertificateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateHsmClientCertificateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateHsmClientCertificateError> for Error {
-    fn from(err: crate::error::CreateHsmClientCertificateError) -> Self {
-        match err.kind {
-            crate::error::CreateHsmClientCertificateErrorKind::HsmClientCertificateAlreadyExistsFault(inner) => Error::HsmClientCertificateAlreadyExistsFault(inner),
-            crate::error::CreateHsmClientCertificateErrorKind::HsmClientCertificateQuotaExceededFault(inner) => Error::HsmClientCertificateQuotaExceededFault(inner),
-            crate::error::CreateHsmClientCertificateErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::CreateHsmClientCertificateErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::CreateHsmClientCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateHsmConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateHsmConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateHsmConfigurationError> for Error {
-    fn from(err: crate::error::CreateHsmConfigurationError) -> Self {
-        match err.kind {
-            crate::error::CreateHsmConfigurationErrorKind::HsmConfigurationAlreadyExistsFault(
-                inner,
-            ) => Error::HsmConfigurationAlreadyExistsFault(inner),
-            crate::error::CreateHsmConfigurationErrorKind::HsmConfigurationQuotaExceededFault(
-                inner,
-            ) => Error::HsmConfigurationQuotaExceededFault(inner),
-            crate::error::CreateHsmConfigurationErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::CreateHsmConfigurationErrorKind::TagLimitExceededFault(inner) => {
-                Error::TagLimitExceededFault(inner)
-            }
-            crate::error::CreateHsmConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScheduledActionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateScheduledActionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateScheduledActionError> for Error {
-    fn from(err: crate::error::CreateScheduledActionError) -> Self {
-        match err.kind {
-            crate::error::CreateScheduledActionErrorKind::InvalidScheduledActionFault(inner) => {
-                Error::InvalidScheduledActionFault(inner)
-            }
-            crate::error::CreateScheduledActionErrorKind::InvalidScheduleFault(inner) => {
-                Error::InvalidScheduleFault(inner)
-            }
-            crate::error::CreateScheduledActionErrorKind::ScheduledActionAlreadyExistsFault(
-                inner,
-            ) => Error::ScheduledActionAlreadyExistsFault(inner),
-            crate::error::CreateScheduledActionErrorKind::ScheduledActionQuotaExceededFault(
-                inner,
-            ) => Error::ScheduledActionQuotaExceededFault(inner),
-            crate::error::CreateScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault(
-                inner,
-            ) => Error::ScheduledActionTypeUnsupportedFault(inner),
-            crate::error::CreateScheduledActionErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::CreateScheduledActionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateSnapshotCopyGrantError> for Error {
-    fn from(err: crate::error::CreateSnapshotCopyGrantError) -> Self {
-        match err.kind {
-            crate::error::CreateSnapshotCopyGrantErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::CreateSnapshotCopyGrantErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::CreateSnapshotCopyGrantErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
-            crate::error::CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantAlreadyExistsFault(inner) => Error::SnapshotCopyGrantAlreadyExistsFault(inner),
-            crate::error::CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantQuotaExceededFault(inner) => Error::SnapshotCopyGrantQuotaExceededFault(inner),
-            crate::error::CreateSnapshotCopyGrantErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::CreateSnapshotCopyGrantErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateSnapshotScheduleError> for Error {
-    fn from(err: crate::error::CreateSnapshotScheduleError) -> Self {
-        match err.kind {
-            crate::error::CreateSnapshotScheduleErrorKind::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
-            crate::error::CreateSnapshotScheduleErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::CreateSnapshotScheduleErrorKind::ScheduleDefinitionTypeUnsupportedFault(inner) => Error::ScheduleDefinitionTypeUnsupportedFault(inner),
-            crate::error::CreateSnapshotScheduleErrorKind::SnapshotScheduleAlreadyExistsFault(inner) => Error::SnapshotScheduleAlreadyExistsFault(inner),
-            crate::error::CreateSnapshotScheduleErrorKind::SnapshotScheduleQuotaExceededFault(inner) => Error::SnapshotScheduleQuotaExceededFault(inner),
-            crate::error::CreateSnapshotScheduleErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::CreateSnapshotScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateTagsError> for Error {
-    fn from(err: crate::error::CreateTagsError) -> Self {
-        match err.kind {
-            crate::error::CreateTagsErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::CreateTagsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::CreateTagsErrorKind::ResourceNotFoundFault(inner) => {
-                Error::ResourceNotFoundFault(inner)
-            }
-            crate::error::CreateTagsErrorKind::TagLimitExceededFault(inner) => {
-                Error::TagLimitExceededFault(inner)
-            }
-            crate::error::CreateTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUsageLimitError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateUsageLimitError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUsageLimitError> for Error {
-    fn from(err: crate::error::CreateUsageLimitError) -> Self {
-        match err.kind {
-            crate::error::CreateUsageLimitErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::InvalidUsageLimitFault(inner) => {
-                Error::InvalidUsageLimitFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::LimitExceededFault(inner) => {
-                Error::LimitExceededFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::TagLimitExceededFault(inner) => {
-                Error::TagLimitExceededFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::UsageLimitAlreadyExistsFault(inner) => {
-                Error::UsageLimitAlreadyExistsFault(inner)
-            }
-            crate::error::CreateUsageLimitErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeauthorizeDataShareError> for Error {
-    fn from(err: crate::error::DeauthorizeDataShareError) -> Self {
-        match err.kind {
-            crate::error::DeauthorizeDataShareErrorKind::InvalidDataShareFault(inner) => {
-                Error::InvalidDataShareFault(inner)
-            }
-            crate::error::DeauthorizeDataShareErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAuthenticationProfileError> for Error {
-    fn from(err: crate::error::DeleteAuthenticationProfileError) -> Self {
-        match err.kind {
-            crate::error::DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
-            crate::error::DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
-            crate::error::DeleteAuthenticationProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteClusterError> for Error {
-    fn from(err: crate::error::DeleteClusterError) -> Self {
-        match err.kind {
-            crate::error::DeleteClusterErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DeleteClusterErrorKind::ClusterSnapshotAlreadyExistsFault(inner) => {
-                Error::ClusterSnapshotAlreadyExistsFault(inner)
-            }
-            crate::error::DeleteClusterErrorKind::ClusterSnapshotQuotaExceededFault(inner) => {
-                Error::ClusterSnapshotQuotaExceededFault(inner)
-            }
-            crate::error::DeleteClusterErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::DeleteClusterErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::DeleteClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteClusterParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteClusterParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteClusterParameterGroupError> for Error {
-    fn from(err: crate::error::DeleteClusterParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
-            crate::error::DeleteClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault(inner) => Error::InvalidClusterParameterGroupStateFault(inner),
-            crate::error::DeleteClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteClusterSecurityGroupError> for Error {
-    fn from(err: crate::error::DeleteClusterSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteClusterSecurityGroupErrorKind::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
-            crate::error::DeleteClusterSecurityGroupErrorKind::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::DeleteClusterSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteClusterSnapshotError> for Error {
-    fn from(err: crate::error::DeleteClusterSnapshotError) -> Self {
-        match err.kind {
-            crate::error::DeleteClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(inner) => {
-                Error::ClusterSnapshotNotFoundFault(inner)
-            }
-            crate::error::DeleteClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(
-                inner,
-            ) => Error::InvalidClusterSnapshotStateFault(inner),
-            crate::error::DeleteClusterSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteClusterSubnetGroupError> for Error {
-    fn from(err: crate::error::DeleteClusterSubnetGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
-            crate::error::DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
-            crate::error::DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetStateFault(inner) => Error::InvalidClusterSubnetStateFault(inner),
-            crate::error::DeleteClusterSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteEndpointAccessError> for Error {
-    fn from(err: crate::error::DeleteEndpointAccessError) -> Self {
-        match err.kind {
-            crate::error::DeleteEndpointAccessErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DeleteEndpointAccessErrorKind::EndpointNotFoundFault(inner) => {
-                Error::EndpointNotFoundFault(inner)
-            }
-            crate::error::DeleteEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(
-                inner,
-            ) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::DeleteEndpointAccessErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::DeleteEndpointAccessErrorKind::InvalidEndpointStateFault(inner) => {
-                Error::InvalidEndpointStateFault(inner)
-            }
-            crate::error::DeleteEndpointAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteEventSubscriptionError> for Error {
-    fn from(err: crate::error::DeleteEventSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::DeleteEventSubscriptionErrorKind::InvalidSubscriptionStateFault(
-                inner,
-            ) => Error::InvalidSubscriptionStateFault(inner),
-            crate::error::DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => {
-                Error::SubscriptionNotFoundFault(inner)
-            }
-            crate::error::DeleteEventSubscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteHsmClientCertificateError> for Error {
-    fn from(err: crate::error::DeleteHsmClientCertificateError) -> Self {
-        match err.kind {
-            crate::error::DeleteHsmClientCertificateErrorKind::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
-            crate::error::DeleteHsmClientCertificateErrorKind::InvalidHsmClientCertificateStateFault(inner) => Error::InvalidHsmClientCertificateStateFault(inner),
-            crate::error::DeleteHsmClientCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteHsmConfigurationError> for Error {
-    fn from(err: crate::error::DeleteHsmConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteHsmConfigurationErrorKind::HsmConfigurationNotFoundFault(inner) => {
-                Error::HsmConfigurationNotFoundFault(inner)
-            }
-            crate::error::DeleteHsmConfigurationErrorKind::InvalidHsmConfigurationStateFault(
-                inner,
-            ) => Error::InvalidHsmConfigurationStateFault(inner),
-            crate::error::DeleteHsmConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePartnerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePartnerError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeletePartnerError> for Error {
-    fn from(err: crate::error::DeletePartnerError) -> Self {
-        match err.kind {
-            crate::error::DeletePartnerErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DeletePartnerErrorKind::PartnerNotFoundFault(inner) => {
+            crate::operation::add_partner::AddPartnerError::PartnerNotFoundFault(inner) => {
                 Error::PartnerNotFoundFault(inner)
             }
-            crate::error::DeletePartnerErrorKind::UnauthorizedPartnerIntegrationFault(inner) => {
-                Error::UnauthorizedPartnerIntegrationFault(inner)
-            }
-            crate::error::DeletePartnerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteScheduledActionError> for Error {
-    fn from(err: crate::error::DeleteScheduledActionError) -> Self {
-        match err.kind {
-            crate::error::DeleteScheduledActionErrorKind::ScheduledActionNotFoundFault(inner) => {
-                Error::ScheduledActionNotFoundFault(inner)
-            }
-            crate::error::DeleteScheduledActionErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::DeleteScheduledActionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSnapshotCopyGrantError> for Error {
-    fn from(err: crate::error::DeleteSnapshotCopyGrantError) -> Self {
-        match err.kind {
-            crate::error::DeleteSnapshotCopyGrantErrorKind::InvalidSnapshotCopyGrantStateFault(
-                inner,
-            ) => Error::InvalidSnapshotCopyGrantStateFault(inner),
-            crate::error::DeleteSnapshotCopyGrantErrorKind::SnapshotCopyGrantNotFoundFault(
-                inner,
-            ) => Error::SnapshotCopyGrantNotFoundFault(inner),
-            crate::error::DeleteSnapshotCopyGrantErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteSnapshotScheduleError> for Error {
-    fn from(err: crate::error::DeleteSnapshotScheduleError) -> Self {
-        match err.kind {
-            crate::error::DeleteSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault(inner) => Error::InvalidClusterSnapshotScheduleStateFault(inner),
-            crate::error::DeleteSnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
-            crate::error::DeleteSnapshotScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteTagsError> for Error {
-    fn from(err: crate::error::DeleteTagsError) -> Self {
-        match err.kind {
-            crate::error::DeleteTagsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DeleteTagsErrorKind::ResourceNotFoundFault(inner) => {
-                Error::ResourceNotFoundFault(inner)
-            }
-            crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUsageLimitError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUsageLimitError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUsageLimitError> for Error {
-    fn from(err: crate::error::DeleteUsageLimitError) -> Self {
-        match err.kind {
-            crate::error::DeleteUsageLimitErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::DeleteUsageLimitErrorKind::UsageLimitNotFoundFault(inner) => {
-                Error::UsageLimitNotFoundFault(inner)
-            }
-            crate::error::DeleteUsageLimitErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeAccountAttributesError> for Error {
-    fn from(err: crate::error::DescribeAccountAttributesError) -> Self {
-        match err.kind {
-            crate::error::DescribeAccountAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeAuthenticationProfilesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeAuthenticationProfilesError> for Error {
-    fn from(err: crate::error::DescribeAuthenticationProfilesError) -> Self {
-        match err.kind {
-            crate::error::DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
-            crate::error::DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
-            crate::error::DescribeAuthenticationProfilesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterDbRevisionsError> for Error {
-    fn from(err: crate::error::DescribeClusterDbRevisionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterDbRevisionsErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeClusterDbRevisionsErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::DescribeClusterDbRevisionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterParameterGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeClusterParameterGroupsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterParameterGroupsError> for Error {
-    fn from(err: crate::error::DescribeClusterParameterGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterParameterGroupsErrorKind::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
-            crate::error::DescribeClusterParameterGroupsErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::DescribeClusterParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterParametersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterParametersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterParametersError> for Error {
-    fn from(err: crate::error::DescribeClusterParametersError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterParametersErrorKind::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
-            crate::error::DescribeClusterParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClustersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClustersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClustersError> for Error {
-    fn from(err: crate::error::DescribeClustersError) -> Self {
-        match err.kind {
-            crate::error::DescribeClustersErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeClustersErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeClustersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterSecurityGroupsError> for Error {
-    fn from(err: crate::error::DescribeClusterSecurityGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterSecurityGroupsErrorKind::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
-            crate::error::DescribeClusterSecurityGroupsErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::DescribeClusterSecurityGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterSnapshotsError> for Error {
-    fn from(err: crate::error::DescribeClusterSnapshotsError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterSnapshotsErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeClusterSnapshotsErrorKind::ClusterSnapshotNotFoundFault(
-                inner,
-            ) => Error::ClusterSnapshotNotFoundFault(inner),
-            crate::error::DescribeClusterSnapshotsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::DescribeClusterSnapshotsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterSubnetGroupsError> for Error {
-    fn from(err: crate::error::DescribeClusterSubnetGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterSubnetGroupsErrorKind::ClusterSubnetGroupNotFoundFault(
-                inner,
-            ) => Error::ClusterSubnetGroupNotFoundFault(inner),
-            crate::error::DescribeClusterSubnetGroupsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeClusterSubnetGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterTracksError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterTracksError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterTracksError> for Error {
-    fn from(err: crate::error::DescribeClusterTracksError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterTracksErrorKind::InvalidClusterTrackFault(inner) => {
-                Error::InvalidClusterTrackFault(inner)
-            }
-            crate::error::DescribeClusterTracksErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::DescribeClusterTracksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterVersionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterVersionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterVersionsError> for Error {
-    fn from(err: crate::error::DescribeClusterVersionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeClusterVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDataSharesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDataSharesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDataSharesError> for Error {
-    fn from(err: crate::error::DescribeDataSharesError) -> Self {
-        match err.kind {
-            crate::error::DescribeDataSharesErrorKind::InvalidDataShareFault(inner) => {
-                Error::InvalidDataShareFault(inner)
-            }
-            crate::error::DescribeDataSharesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDataSharesForConsumerError> for Error {
-    fn from(err: crate::error::DescribeDataSharesForConsumerError) -> Self {
-        match err.kind {
-            crate::error::DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault(inner) => {
-                Error::InvalidNamespaceFault(inner)
-            }
-            crate::error::DescribeDataSharesForConsumerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDataSharesForProducerError> for Error {
-    fn from(err: crate::error::DescribeDataSharesForProducerError) -> Self {
-        match err.kind {
-            crate::error::DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault(inner) => {
-                Error::InvalidNamespaceFault(inner)
-            }
-            crate::error::DescribeDataSharesForProducerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeDefaultClusterParametersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeDefaultClusterParametersError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeDefaultClusterParametersError> for Error {
-    fn from(err: crate::error::DescribeDefaultClusterParametersError) -> Self {
-        match err.kind {
-            crate::error::DescribeDefaultClusterParametersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEndpointAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEndpointAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEndpointAccessError> for Error {
-    fn from(err: crate::error::DescribeEndpointAccessError) -> Self {
-        match err.kind {
-            crate::error::DescribeEndpointAccessErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeEndpointAccessErrorKind::EndpointNotFoundFault(inner) => {
-                Error::EndpointNotFoundFault(inner)
-            }
-            crate::error::DescribeEndpointAccessErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::DescribeEndpointAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEndpointAuthorizationError> for Error {
-    fn from(err: crate::error::DescribeEndpointAuthorizationError) -> Self {
-        match err.kind {
-            crate::error::DescribeEndpointAuthorizationErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeEndpointAuthorizationErrorKind::UnsupportedOperationFault(
-                inner,
-            ) => Error::UnsupportedOperationFault(inner),
-            crate::error::DescribeEndpointAuthorizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEventCategoriesError> for Error {
-    fn from(err: crate::error::DescribeEventCategoriesError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventCategoriesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEventsError> for Error {
-    fn from(err: crate::error::DescribeEventsError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeEventSubscriptionsError> for Error {
-    fn from(err: crate::error::DescribeEventSubscriptionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventSubscriptionsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault(inner) => {
-                Error::SubscriptionNotFoundFault(inner)
-            }
-            crate::error::DescribeEventSubscriptionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHsmClientCertificatesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeHsmClientCertificatesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeHsmClientCertificatesError> for Error {
-    fn from(err: crate::error::DescribeHsmClientCertificatesError) -> Self {
-        match err.kind {
-            crate::error::DescribeHsmClientCertificatesErrorKind::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
-            crate::error::DescribeHsmClientCertificatesErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::DescribeHsmClientCertificatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeHsmConfigurationsError> for Error {
-    fn from(err: crate::error::DescribeHsmConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::DescribeHsmConfigurationsErrorKind::HsmConfigurationNotFoundFault(
-                inner,
-            ) => Error::HsmConfigurationNotFoundFault(inner),
-            crate::error::DescribeHsmConfigurationsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeHsmConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeLoggingStatusError> for Error {
-    fn from(err: crate::error::DescribeLoggingStatusError) -> Self {
-        match err.kind {
-            crate::error::DescribeLoggingStatusErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeLoggingStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeNodeConfigurationOptionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeNodeConfigurationOptionsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeNodeConfigurationOptionsError> for Error {
-    fn from(err: crate::error::DescribeNodeConfigurationOptionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeNodeConfigurationOptionsErrorKind::AccessToSnapshotDeniedFault(inner) => Error::AccessToSnapshotDeniedFault(inner),
-            crate::error::DescribeNodeConfigurationOptionsErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::DescribeNodeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
-            crate::error::DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
-            crate::error::DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::DescribeNodeConfigurationOptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeOrderableClusterOptionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrderableClusterOptionsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeOrderableClusterOptionsError> for Error {
-    fn from(err: crate::error::DescribeOrderableClusterOptionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeOrderableClusterOptionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePartnersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribePartnersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribePartnersError> for Error {
-    fn from(err: crate::error::DescribePartnersError) -> Self {
-        match err.kind {
-            crate::error::DescribePartnersErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribePartnersErrorKind::UnauthorizedPartnerIntegrationFault(inner) => {
-                Error::UnauthorizedPartnerIntegrationFault(inner)
-            }
-            crate::error::DescribePartnersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodeExchangeStatusError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeReservedNodeExchangeStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeReservedNodeExchangeStatusError> for Error {
-    fn from(err: crate::error::DescribeReservedNodeExchangeStatusError) -> Self {
-        match err.kind {
-            crate::error::DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault(inner) => Error::ReservedNodeExchangeNotFoundFault(inner),
-            crate::error::DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
-            crate::error::DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::DescribeReservedNodeExchangeStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeReservedNodeOfferingsError> for Error {
-    fn from(err: crate::error::DescribeReservedNodeOfferingsError) -> Self {
-        match err.kind {
-            crate::error::DescribeReservedNodeOfferingsErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
-            crate::error::DescribeReservedNodeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
-            crate::error::DescribeReservedNodeOfferingsErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::DescribeReservedNodeOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeReservedNodesError> for Error {
-    fn from(err: crate::error::DescribeReservedNodesError) -> Self {
-        match err.kind {
-            crate::error::DescribeReservedNodesErrorKind::DependentServiceUnavailableFault(
-                inner,
-            ) => Error::DependentServiceUnavailableFault(inner),
-            crate::error::DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault(inner) => {
-                Error::ReservedNodeNotFoundFault(inner)
-            }
-            crate::error::DescribeReservedNodesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResizeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeResizeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeResizeError> for Error {
-    fn from(err: crate::error::DescribeResizeError) -> Self {
-        match err.kind {
-            crate::error::DescribeResizeErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeResizeErrorKind::ResizeNotFoundFault(inner) => {
-                Error::ResizeNotFoundFault(inner)
-            }
-            crate::error::DescribeResizeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeScheduledActionsError> for Error {
-    fn from(err: crate::error::DescribeScheduledActionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeScheduledActionsErrorKind::ScheduledActionNotFoundFault(
-                inner,
-            ) => Error::ScheduledActionNotFoundFault(inner),
-            crate::error::DescribeScheduledActionsErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::DescribeScheduledActionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrantsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrantsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSnapshotCopyGrantsError> for Error {
-    fn from(err: crate::error::DescribeSnapshotCopyGrantsError) -> Self {
-        match err.kind {
-            crate::error::DescribeSnapshotCopyGrantsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeSnapshotCopyGrantsErrorKind::SnapshotCopyGrantNotFoundFault(
-                inner,
-            ) => Error::SnapshotCopyGrantNotFoundFault(inner),
-            crate::error::DescribeSnapshotCopyGrantsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeSnapshotSchedulesError> for Error {
-    fn from(err: crate::error::DescribeSnapshotSchedulesError) -> Self {
-        match err.kind {
-            crate::error::DescribeSnapshotSchedulesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStorageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStorageError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeStorageError> for Error {
-    fn from(err: crate::error::DescribeStorageError) -> Self {
-        match err.kind {
-            crate::error::DescribeStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeTableRestoreStatusError> for Error {
-    fn from(err: crate::error::DescribeTableRestoreStatusError) -> Self {
-        match err.kind {
-            crate::error::DescribeTableRestoreStatusErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeTableRestoreStatusErrorKind::TableRestoreNotFoundFault(inner) => {
-                Error::TableRestoreNotFoundFault(inner)
-            }
-            crate::error::DescribeTableRestoreStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeTagsError> for Error {
-    fn from(err: crate::error::DescribeTagsError) -> Self {
-        match err.kind {
-            crate::error::DescribeTagsErrorKind::InvalidTagFault(inner) => {
-                Error::InvalidTagFault(inner)
-            }
-            crate::error::DescribeTagsErrorKind::ResourceNotFoundFault(inner) => {
-                Error::ResourceNotFoundFault(inner)
-            }
-            crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUsageLimitsError> for Error {
-    fn from(err: crate::error::DescribeUsageLimitsError) -> Self {
-        match err.kind {
-            crate::error::DescribeUsageLimitsErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DescribeUsageLimitsErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::DescribeUsageLimitsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableLoggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableLoggingError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DisableLoggingError> for Error {
-    fn from(err: crate::error::DisableLoggingError) -> Self {
-        match err.kind {
-            crate::error::DisableLoggingErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DisableLoggingErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::DisableLoggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DisableSnapshotCopyError> for Error {
-    fn from(err: crate::error::DisableSnapshotCopyError) -> Self {
-        match err.kind {
-            crate::error::DisableSnapshotCopyErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::DisableSnapshotCopyErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::DisableSnapshotCopyErrorKind::SnapshotCopyAlreadyDisabledFault(inner) => {
-                Error::SnapshotCopyAlreadyDisabledFault(inner)
-            }
-            crate::error::DisableSnapshotCopyErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::DisableSnapshotCopyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DisassociateDataShareConsumerError> for Error {
-    fn from(err: crate::error::DisassociateDataShareConsumerError) -> Self {
-        match err.kind {
-            crate::error::DisassociateDataShareConsumerErrorKind::InvalidDataShareFault(inner) => {
-                Error::InvalidDataShareFault(inner)
-            }
-            crate::error::DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault(inner) => {
-                Error::InvalidNamespaceFault(inner)
-            }
-            crate::error::DisassociateDataShareConsumerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableLoggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableLoggingError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::EnableLoggingError> for Error {
-    fn from(err: crate::error::EnableLoggingError) -> Self {
-        match err.kind {
-            crate::error::EnableLoggingErrorKind::BucketNotFoundFault(inner) => {
-                Error::BucketNotFoundFault(inner)
-            }
-            crate::error::EnableLoggingErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::EnableLoggingErrorKind::InsufficientS3BucketPolicyFault(inner) => {
-                Error::InsufficientS3BucketPolicyFault(inner)
-            }
-            crate::error::EnableLoggingErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::EnableLoggingErrorKind::InvalidS3BucketNameFault(inner) => {
-                Error::InvalidS3BucketNameFault(inner)
-            }
-            crate::error::EnableLoggingErrorKind::InvalidS3KeyPrefixFault(inner) => {
-                Error::InvalidS3KeyPrefixFault(inner)
-            }
-            crate::error::EnableLoggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::EnableSnapshotCopyError> for Error {
-    fn from(err: crate::error::EnableSnapshotCopyError) -> Self {
-        match err.kind {
-            crate::error::EnableSnapshotCopyErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::CopyToRegionDisabledFault(inner) => {
-                Error::CopyToRegionDisabledFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::DependentServiceRequestThrottlingFault(
-                inner,
-            ) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::EnableSnapshotCopyErrorKind::IncompatibleOrderableOptions(inner) => {
-                Error::IncompatibleOrderableOptions(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::LimitExceededFault(inner) => {
-                Error::LimitExceededFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::SnapshotCopyAlreadyEnabledFault(inner) => {
-                Error::SnapshotCopyAlreadyEnabledFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::SnapshotCopyGrantNotFoundFault(inner) => {
-                Error::SnapshotCopyGrantNotFoundFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::UnknownSnapshotCopyRegionFault(inner) => {
-                Error::UnknownSnapshotCopyRegionFault(inner)
-            }
-            crate::error::EnableSnapshotCopyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetClusterCredentialsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetClusterCredentialsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetClusterCredentialsError> for Error {
-    fn from(err: crate::error::GetClusterCredentialsError) -> Self {
-        match err.kind {
-            crate::error::GetClusterCredentialsErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::GetClusterCredentialsErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::GetClusterCredentialsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetClusterCredentialsWithIAMError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetClusterCredentialsWithIAMError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetClusterCredentialsWithIAMError> for Error {
-    fn from(err: crate::error::GetClusterCredentialsWithIAMError) -> Self {
-        match err.kind {
-            crate::error::GetClusterCredentialsWithIAMErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::GetClusterCredentialsWithIAMErrorKind::UnsupportedOperationFault(
-                inner,
-            ) => Error::UnsupportedOperationFault(inner),
-            crate::error::GetClusterCredentialsWithIAMErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetReservedNodeExchangeConfigurationOptionsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetReservedNodeExchangeConfigurationOptionsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetReservedNodeExchangeConfigurationOptionsError> for Error {
-    fn from(err: crate::error::GetReservedNodeExchangeConfigurationOptionsError) -> Self {
-        match err.kind {
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetReservedNodeExchangeOfferingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetReservedNodeExchangeOfferingsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetReservedNodeExchangeOfferingsError> for Error {
-    fn from(err: crate::error::GetReservedNodeExchangeOfferingsError) -> Self {
-        match err.kind {
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::GetReservedNodeExchangeOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyAquaConfigurationError> for Error {
-    fn from(err: crate::error::ModifyAquaConfigurationError) -> Self {
-        match err.kind {
-            crate::error::ModifyAquaConfigurationErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyAquaConfigurationErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ModifyAquaConfigurationErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::ModifyAquaConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyAuthenticationProfileError> for Error {
-    fn from(err: crate::error::ModifyAuthenticationProfileError) -> Self {
-        match err.kind {
-            crate::error::ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
-            crate::error::ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(inner) => Error::AuthenticationProfileQuotaExceededFault(inner),
-            crate::error::ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
-            crate::error::ModifyAuthenticationProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterError> for Error {
-    fn from(err: crate::error::ModifyClusterError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterErrorKind::ClusterAlreadyExistsFault(inner) => {
-                Error::ClusterAlreadyExistsFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::ClusterParameterGroupNotFoundFault(inner) => {
-                Error::ClusterParameterGroupNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::ClusterSecurityGroupNotFoundFault(inner) => {
-                Error::ClusterSecurityGroupNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::DependentServiceRequestThrottlingFault(inner) => {
-                Error::DependentServiceRequestThrottlingFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::HsmClientCertificateNotFoundFault(inner) => {
-                Error::HsmClientCertificateNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::HsmConfigurationNotFoundFault(inner) => {
-                Error::HsmConfigurationNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::InsufficientClusterCapacityFault(inner) => {
-                Error::InsufficientClusterCapacityFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::InvalidClusterSecurityGroupStateFault(inner) => {
-                Error::InvalidClusterSecurityGroupStateFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::InvalidClusterTrackFault(inner) => {
-                Error::InvalidClusterTrackFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::InvalidElasticIpFault(inner) => {
-                Error::InvalidElasticIpFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::LimitExceededFault(inner) => {
-                Error::LimitExceededFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(
-                inner,
-            ) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
-            crate::error::ModifyClusterErrorKind::NumberOfNodesQuotaExceededFault(inner) => {
-                Error::NumberOfNodesQuotaExceededFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::TableLimitExceededFault(inner) => {
-                Error::TableLimitExceededFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::ModifyClusterErrorKind::UnsupportedOptionFault(inner) => {
-                Error::UnsupportedOptionFault(inner)
-            }
-            crate::error::ModifyClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterDbRevisionError> for Error {
-    fn from(err: crate::error::ModifyClusterDbRevisionError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterDbRevisionErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterDbRevisionErrorKind::ClusterOnLatestRevisionFault(inner) => {
-                Error::ClusterOnLatestRevisionFault(inner)
-            }
-            crate::error::ModifyClusterDbRevisionErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ModifyClusterDbRevisionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterIamRolesError> for Error {
-    fn from(err: crate::error::ModifyClusterIamRolesError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterIamRolesErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterIamRolesErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ModifyClusterIamRolesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterMaintenanceError> for Error {
-    fn from(err: crate::error::ModifyClusterMaintenanceError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterMaintenanceErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterMaintenanceErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ModifyClusterMaintenanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterParameterGroupError> for Error {
-    fn from(err: crate::error::ModifyClusterParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
-            crate::error::ModifyClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault(inner) => Error::InvalidClusterParameterGroupStateFault(inner),
-            crate::error::ModifyClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterSnapshotError> for Error {
-    fn from(err: crate::error::ModifyClusterSnapshotError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(inner) => {
-                Error::ClusterSnapshotNotFoundFault(inner)
-            }
-            crate::error::ModifyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(
-                inner,
-            ) => Error::InvalidClusterSnapshotStateFault(inner),
-            crate::error::ModifyClusterSnapshotErrorKind::InvalidRetentionPeriodFault(inner) => {
-                Error::InvalidRetentionPeriodFault(inner)
-            }
-            crate::error::ModifyClusterSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotScheduleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotScheduleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterSnapshotScheduleError> for Error {
-    fn from(err: crate::error::ModifyClusterSnapshotScheduleError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterSnapshotScheduleErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::ModifyClusterSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault(inner) => Error::InvalidClusterSnapshotScheduleStateFault(inner),
-            crate::error::ModifyClusterSnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
-            crate::error::ModifyClusterSnapshotScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyClusterSubnetGroupError> for Error {
-    fn from(err: crate::error::ModifyClusterSubnetGroupError) -> Self {
-        match err.kind {
-            crate::error::ModifyClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
-            crate::error::ModifyClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault(inner) => Error::ClusterSubnetQuotaExceededFault(inner),
-            crate::error::ModifyClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::ModifyClusterSubnetGroupErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
-            crate::error::ModifyClusterSubnetGroupErrorKind::SubnetAlreadyInUse(inner) => Error::SubnetAlreadyInUse(inner),
-            crate::error::ModifyClusterSubnetGroupErrorKind::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
-            crate::error::ModifyClusterSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyEndpointAccessError> for Error {
-    fn from(err: crate::error::ModifyEndpointAccessError) -> Self {
-        match err.kind {
-            crate::error::ModifyEndpointAccessErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ModifyEndpointAccessErrorKind::EndpointNotFoundFault(inner) => {
-                Error::EndpointNotFoundFault(inner)
-            }
-            crate::error::ModifyEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(
-                inner,
-            ) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::ModifyEndpointAccessErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ModifyEndpointAccessErrorKind::InvalidEndpointStateFault(inner) => {
-                Error::InvalidEndpointStateFault(inner)
-            }
-            crate::error::ModifyEndpointAccessErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::ModifyEndpointAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyEventSubscriptionError> for Error {
-    fn from(err: crate::error::ModifyEventSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::ModifyEventSubscriptionErrorKind::InvalidSubscriptionStateFault(
-                inner,
-            ) => Error::InvalidSubscriptionStateFault(inner),
-            crate::error::ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(inner) => {
-                Error::SnsInvalidTopicFault(inner)
-            }
-            crate::error::ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault(inner) => {
-                Error::SnsNoAuthorizationFault(inner)
-            }
-            crate::error::ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(inner) => {
-                Error::SnsTopicArnNotFoundFault(inner)
-            }
-            crate::error::ModifyEventSubscriptionErrorKind::SourceNotFoundFault(inner) => {
-                Error::SourceNotFoundFault(inner)
-            }
-            crate::error::ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(
-                inner,
-            ) => Error::SubscriptionCategoryNotFoundFault(inner),
-            crate::error::ModifyEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault(
-                inner,
-            ) => Error::SubscriptionEventIdNotFoundFault(inner),
-            crate::error::ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => {
-                Error::SubscriptionNotFoundFault(inner)
-            }
-            crate::error::ModifyEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault(
-                inner,
-            ) => Error::SubscriptionSeverityNotFoundFault(inner),
-            crate::error::ModifyEventSubscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyScheduledActionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyScheduledActionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyScheduledActionError> for Error {
-    fn from(err: crate::error::ModifyScheduledActionError) -> Self {
-        match err.kind {
-            crate::error::ModifyScheduledActionErrorKind::InvalidScheduledActionFault(inner) => {
-                Error::InvalidScheduledActionFault(inner)
-            }
-            crate::error::ModifyScheduledActionErrorKind::InvalidScheduleFault(inner) => {
-                Error::InvalidScheduleFault(inner)
-            }
-            crate::error::ModifyScheduledActionErrorKind::ScheduledActionNotFoundFault(inner) => {
-                Error::ScheduledActionNotFoundFault(inner)
-            }
-            crate::error::ModifyScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault(
-                inner,
-            ) => Error::ScheduledActionTypeUnsupportedFault(inner),
-            crate::error::ModifyScheduledActionErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::ModifyScheduledActionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ModifySnapshotCopyRetentionPeriodError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ModifySnapshotCopyRetentionPeriodError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifySnapshotCopyRetentionPeriodError> for Error {
-    fn from(err: crate::error::ModifySnapshotCopyRetentionPeriodError) -> Self {
-        match err.kind {
-            crate::error::ModifySnapshotCopyRetentionPeriodErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::ModifySnapshotCopyRetentionPeriodErrorKind::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::error::ModifySnapshotCopyRetentionPeriodErrorKind::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
-            crate::error::ModifySnapshotCopyRetentionPeriodErrorKind::SnapshotCopyDisabledFault(inner) => Error::SnapshotCopyDisabledFault(inner),
-            crate::error::ModifySnapshotCopyRetentionPeriodErrorKind::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
-            crate::error::ModifySnapshotCopyRetentionPeriodErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifySnapshotScheduleError> for Error {
-    fn from(err: crate::error::ModifySnapshotScheduleError) -> Self {
-        match err.kind {
-            crate::error::ModifySnapshotScheduleErrorKind::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
-            crate::error::ModifySnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
-            crate::error::ModifySnapshotScheduleErrorKind::SnapshotScheduleUpdateInProgressFault(inner) => Error::SnapshotScheduleUpdateInProgressFault(inner),
-            crate::error::ModifySnapshotScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyUsageLimitError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyUsageLimitError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ModifyUsageLimitError> for Error {
-    fn from(err: crate::error::ModifyUsageLimitError) -> Self {
-        match err.kind {
-            crate::error::ModifyUsageLimitErrorKind::InvalidUsageLimitFault(inner) => {
-                Error::InvalidUsageLimitFault(inner)
-            }
-            crate::error::ModifyUsageLimitErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::ModifyUsageLimitErrorKind::UsageLimitNotFoundFault(inner) => {
-                Error::UsageLimitNotFoundFault(inner)
-            }
-            crate::error::ModifyUsageLimitErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PauseClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PauseClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PauseClusterError> for Error {
-    fn from(err: crate::error::PauseClusterError) -> Self {
-        match err.kind {
-            crate::error::PauseClusterErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::PauseClusterErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::PauseClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferingError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferingError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PurchaseReservedNodeOfferingError> for Error {
-    fn from(err: crate::error::PurchaseReservedNodeOfferingError) -> Self {
-        match err.kind {
-            crate::error::PurchaseReservedNodeOfferingErrorKind::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
-            crate::error::PurchaseReservedNodeOfferingErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
-            crate::error::PurchaseReservedNodeOfferingErrorKind::ReservedNodeQuotaExceededFault(inner) => Error::ReservedNodeQuotaExceededFault(inner),
-            crate::error::PurchaseReservedNodeOfferingErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::PurchaseReservedNodeOfferingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RebootClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RebootClusterError> for Error {
-    fn from(err: crate::error::RebootClusterError) -> Self {
-        match err.kind {
-            crate::error::RebootClusterErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::RebootClusterErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::RebootClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RejectDataShareError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RejectDataShareError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RejectDataShareError> for Error {
-    fn from(err: crate::error::RejectDataShareError) -> Self {
-        match err.kind {
-            crate::error::RejectDataShareErrorKind::InvalidDataShareFault(inner) => {
-                Error::InvalidDataShareFault(inner)
-            }
-            crate::error::RejectDataShareErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResetClusterParameterGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ResetClusterParameterGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ResetClusterParameterGroupError> for Error {
-    fn from(err: crate::error::ResetClusterParameterGroupError) -> Self {
-        match err.kind {
-            crate::error::ResetClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
-            crate::error::ResetClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault(inner) => Error::InvalidClusterParameterGroupStateFault(inner),
-            crate::error::ResetClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResizeClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResizeClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ResizeClusterError> for Error {
-    fn from(err: crate::error::ResizeClusterError) -> Self {
-        match err.kind {
-            crate::error::ResizeClusterErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::DependentServiceUnavailableFault(inner) => {
-                Error::DependentServiceUnavailableFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::InsufficientClusterCapacityFault(inner) => {
-                Error::InsufficientClusterCapacityFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::InvalidReservedNodeStateFault(inner) => {
-                Error::InvalidReservedNodeStateFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::LimitExceededFault(inner) => {
-                Error::LimitExceededFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(
-                inner,
-            ) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
-            crate::error::ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault(inner) => {
-                Error::NumberOfNodesQuotaExceededFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault(inner) => {
-                Error::ReservedNodeAlreadyExistsFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault(inner) => {
-                Error::ReservedNodeAlreadyMigratedFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::ReservedNodeNotFoundFault(inner) => {
-                Error::ReservedNodeNotFoundFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault(inner) => {
-                Error::ReservedNodeOfferingNotFoundFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::UnauthorizedOperation(inner) => {
-                Error::UnauthorizedOperation(inner)
-            }
-            crate::error::ResizeClusterErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::UnsupportedOptionFault(inner) => {
-                Error::UnsupportedOptionFault(inner)
-            }
-            crate::error::ResizeClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshotError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshotError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RestoreFromClusterSnapshotError> for Error {
-    fn from(err: crate::error::RestoreFromClusterSnapshotError) -> Self {
-        match err.kind {
-            crate::error::RestoreFromClusterSnapshotErrorKind::AccessToSnapshotDeniedFault(inner) => Error::AccessToSnapshotDeniedFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ClusterAlreadyExistsFault(inner) => Error::ClusterAlreadyExistsFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ClusterQuotaExceededFault(inner) => Error::ClusterQuotaExceededFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault(inner) => Error::InvalidElasticIpFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault(inner) => Error::InvalidRestoreFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::NumberOfNodesPerClusterLimitExceededFault(inner) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::RestoreFromClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::RestoreTableFromClusterSnapshotError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::RestoreTableFromClusterSnapshotError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RestoreTableFromClusterSnapshotError> for Error {
-    fn from(err: crate::error::RestoreTableFromClusterSnapshotError) -> Self {
-        match err.kind {
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::InProgressTableRestoreQuotaExceededFault(inner) => Error::InProgressTableRestoreQuotaExceededFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::InvalidTableRestoreArgumentFault(inner) => Error::InvalidTableRestoreArgumentFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
-            crate::error::RestoreTableFromClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResumeClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResumeClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ResumeClusterError> for Error {
-    fn from(err: crate::error::ResumeClusterError) -> Self {
-        match err.kind {
-            crate::error::ResumeClusterErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::ResumeClusterErrorKind::InsufficientClusterCapacityFault(inner) => {
-                Error::InsufficientClusterCapacityFault(inner)
-            }
-            crate::error::ResumeClusterErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::ResumeClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::RevokeClusterSecurityGroupIngressError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::RevokeClusterSecurityGroupIngressError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RevokeClusterSecurityGroupIngressError> for Error {
-    fn from(err: crate::error::RevokeClusterSecurityGroupIngressError) -> Self {
-        match err.kind {
-            crate::error::RevokeClusterSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
-            crate::error::RevokeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
-            crate::error::RevokeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::RevokeClusterSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RevokeEndpointAccessError> for Error {
-    fn from(err: crate::error::RevokeEndpointAccessError) -> Self {
-        match err.kind {
-            crate::error::RevokeEndpointAccessErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::RevokeEndpointAccessErrorKind::EndpointAuthorizationNotFoundFault(
-                inner,
-            ) => Error::EndpointAuthorizationNotFoundFault(inner),
-            crate::error::RevokeEndpointAccessErrorKind::EndpointNotFoundFault(inner) => {
-                Error::EndpointNotFoundFault(inner)
-            }
-            crate::error::RevokeEndpointAccessErrorKind::InvalidAuthorizationStateFault(inner) => {
-                Error::InvalidAuthorizationStateFault(inner)
-            }
-            crate::error::RevokeEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(
-                inner,
-            ) => Error::InvalidClusterSecurityGroupStateFault(inner),
-            crate::error::RevokeEndpointAccessErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::RevokeEndpointAccessErrorKind::InvalidEndpointStateFault(inner) => {
-                Error::InvalidEndpointStateFault(inner)
-            }
-            crate::error::RevokeEndpointAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RevokeSnapshotAccessError> for Error {
-    fn from(err: crate::error::RevokeSnapshotAccessError) -> Self {
-        match err.kind {
-            crate::error::RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault(inner) => {
-                Error::AccessToSnapshotDeniedFault(inner)
-            }
-            crate::error::RevokeSnapshotAccessErrorKind::AuthorizationNotFoundFault(inner) => {
-                Error::AuthorizationNotFoundFault(inner)
-            }
-            crate::error::RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(inner) => {
-                Error::ClusterSnapshotNotFoundFault(inner)
-            }
-            crate::error::RevokeSnapshotAccessErrorKind::UnsupportedOperationFault(inner) => {
-                Error::UnsupportedOperationFault(inner)
-            }
-            crate::error::RevokeSnapshotAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RotateEncryptionKeyError> for Error {
-    fn from(err: crate::error::RotateEncryptionKeyError) -> Self {
-        match err.kind {
-            crate::error::RotateEncryptionKeyErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::RotateEncryptionKeyErrorKind::DependentServiceRequestThrottlingFault(
-                inner,
-            ) => Error::DependentServiceRequestThrottlingFault(inner),
-            crate::error::RotateEncryptionKeyErrorKind::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::error::RotateEncryptionKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePartnerStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePartnerStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdatePartnerStatusError> for Error {
-    fn from(err: crate::error::UpdatePartnerStatusError) -> Self {
-        match err.kind {
-            crate::error::UpdatePartnerStatusErrorKind::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::error::UpdatePartnerStatusErrorKind::PartnerNotFoundFault(inner) => {
-                Error::PartnerNotFoundFault(inner)
-            }
-            crate::error::UpdatePartnerStatusErrorKind::UnauthorizedPartnerIntegrationFault(
+            crate::operation::add_partner::AddPartnerError::UnauthorizedPartnerIntegrationFault(
                 inner,
             ) => Error::UnauthorizedPartnerIntegrationFault(inner),
-            crate::error::UpdatePartnerStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::add_partner::AddPartnerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::InvalidDataShareFault(inner) => Error::InvalidDataShareFault(inner),
+            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::InvalidNamespaceFault(inner) => Error::InvalidNamespaceFault(inner),
+            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError> for Error {
+    fn from(err: crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError) -> Self {
+        match err {
+            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::AuthorizationAlreadyExistsFault(inner) => Error::AuthorizationAlreadyExistsFault(inner),
+            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::AuthorizationQuotaExceededFault(inner) => Error::AuthorizationQuotaExceededFault(inner),
+            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_data_share::AuthorizeDataShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::authorize_data_share::AuthorizeDataShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::authorize_data_share::AuthorizeDataShareError> for Error {
+    fn from(err: crate::operation::authorize_data_share::AuthorizeDataShareError) -> Self {
+        match err {
+            crate::operation::authorize_data_share::AuthorizeDataShareError::InvalidDataShareFault(inner) => Error::InvalidDataShareFault(inner),
+            crate::operation::authorize_data_share::AuthorizeDataShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError> for Error {
+    fn from(
+        err: crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
+    ) -> Self {
+        match err {
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::EndpointAuthorizationAlreadyExistsFault(inner) => Error::EndpointAuthorizationAlreadyExistsFault(inner),
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::EndpointAuthorizationsPerClusterLimitExceededFault(inner) => Error::EndpointAuthorizationsPerClusterLimitExceededFault(inner),
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::InvalidAuthorizationStateFault(inner) => Error::InvalidAuthorizationStateFault(inner),
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError> for Error {
+    fn from(
+        err: crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
+    ) -> Self {
+        match err {
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::AuthorizationAlreadyExistsFault(inner) => Error::AuthorizationAlreadyExistsFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::AuthorizationQuotaExceededFault(inner) => Error::AuthorizationQuotaExceededFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError::BatchDeleteRequestSizeExceededFault(inner) => Error::BatchDeleteRequestSizeExceededFault(inner),
+            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::BatchModifyClusterSnapshotsLimitExceededFault(inner) => Error::BatchModifyClusterSnapshotsLimitExceededFault(inner),
+            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::cancel_resize::CancelResizeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_resize::CancelResizeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_resize::CancelResizeError> for Error {
+    fn from(err: crate::operation::cancel_resize::CancelResizeError) -> Self {
+        match err {
+            crate::operation::cancel_resize::CancelResizeError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::cancel_resize::CancelResizeError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::cancel_resize::CancelResizeError::ResizeNotFoundFault(inner) => {
+                Error::ResizeNotFoundFault(inner)
+            }
+            crate::operation::cancel_resize::CancelResizeError::UnsupportedOperationFault(
+                inner,
+            ) => Error::UnsupportedOperationFault(inner),
+            crate::operation::cancel_resize::CancelResizeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError> for Error {
+    fn from(err: crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError) -> Self {
+        match err {
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterSnapshotAlreadyExistsFault(inner) => Error::ClusterSnapshotAlreadyExistsFault(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterSnapshotQuotaExceededFault(inner) => Error::ClusterSnapshotQuotaExceededFault(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_authentication_profile::CreateAuthenticationProfileError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_authentication_profile::CreateAuthenticationProfileError,
+    ) -> Self {
+        match err {
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError::AuthenticationProfileAlreadyExistsFault(inner) => Error::AuthenticationProfileAlreadyExistsFault(inner),
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError::AuthenticationProfileQuotaExceededFault(inner) => Error::AuthenticationProfileQuotaExceededFault(inner),
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster::CreateClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cluster::CreateClusterError> for Error {
+    fn from(err: crate::operation::create_cluster::CreateClusterError) -> Self {
+        match err {
+            crate::operation::create_cluster::CreateClusterError::ClusterAlreadyExistsFault(inner) => Error::ClusterAlreadyExistsFault(inner),
+            crate::operation::create_cluster::CreateClusterError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::create_cluster::CreateClusterError::ClusterQuotaExceededFault(inner) => Error::ClusterQuotaExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::create_cluster::CreateClusterError::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
+            crate::operation::create_cluster::CreateClusterError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::create_cluster::CreateClusterError::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
+            crate::operation::create_cluster::CreateClusterError::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidElasticIpFault(inner) => Error::InvalidElasticIpFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::create_cluster::CreateClusterError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::NumberOfNodesPerClusterLimitExceededFault(inner) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
+            crate::operation::create_cluster::CreateClusterError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::ClusterParameterGroupAlreadyExistsFault(inner) => Error::ClusterParameterGroupAlreadyExistsFault(inner),
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::ClusterParameterGroupQuotaExceededFault(inner) => Error::ClusterParameterGroupQuotaExceededFault(inner),
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::ClusterSecurityGroupAlreadyExistsFault(inner) => Error::ClusterSecurityGroupAlreadyExistsFault(inner),
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::ClusterSecurityGroupQuotaExceededFault(inner) => Error::ClusterSecurityGroupQuotaExceededFault(inner),
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError> for Error {
+    fn from(err: crate::operation::create_cluster_snapshot::CreateClusterSnapshotError) -> Self {
+        match err {
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::ClusterSnapshotAlreadyExistsFault(inner) => Error::ClusterSnapshotAlreadyExistsFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::ClusterSnapshotQuotaExceededFault(inner) => Error::ClusterSnapshotQuotaExceededFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError> for Error {
+    fn from(
+        err: crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetGroupAlreadyExistsFault(inner) => Error::ClusterSubnetGroupAlreadyExistsFault(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetGroupQuotaExceededFault(inner) => Error::ClusterSubnetGroupQuotaExceededFault(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::ClusterSubnetQuotaExceededFault(inner) => Error::ClusterSubnetQuotaExceededFault(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_endpoint_access::CreateEndpointAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_endpoint_access::CreateEndpointAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_endpoint_access::CreateEndpointAccessError> for Error {
+    fn from(err: crate::operation::create_endpoint_access::CreateEndpointAccessError) -> Self {
+        match err {
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::AccessToClusterDeniedFault(inner) => Error::AccessToClusterDeniedFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointAlreadyExistsFault(inner) => Error::EndpointAlreadyExistsFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointsPerAuthorizationLimitExceededFault(inner) => Error::EndpointsPerAuthorizationLimitExceededFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointsPerClusterLimitExceededFault(inner) => Error::EndpointsPerClusterLimitExceededFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_event_subscription::CreateEventSubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_event_subscription::CreateEventSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_event_subscription::CreateEventSubscriptionError> for Error {
+    fn from(
+        err: crate::operation::create_event_subscription::CreateEventSubscriptionError,
+    ) -> Self {
+        match err {
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::EventSubscriptionQuotaExceededFault(inner) => Error::EventSubscriptionQuotaExceededFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SnsInvalidTopicFault(inner) => Error::SnsInvalidTopicFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SnsNoAuthorizationFault(inner) => Error::SnsNoAuthorizationFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SnsTopicArnNotFoundFault(inner) => Error::SnsTopicArnNotFoundFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SourceNotFoundFault(inner) => Error::SourceNotFoundFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SubscriptionAlreadyExistFault(inner) => Error::SubscriptionAlreadyExistFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SubscriptionCategoryNotFoundFault(inner) => Error::SubscriptionCategoryNotFoundFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SubscriptionEventIdNotFoundFault(inner) => Error::SubscriptionEventIdNotFoundFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::SubscriptionSeverityNotFoundFault(inner) => Error::SubscriptionSeverityNotFoundFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_event_subscription::CreateEventSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
+    ) -> Self {
+        match err {
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::HsmClientCertificateAlreadyExistsFault(inner) => Error::HsmClientCertificateAlreadyExistsFault(inner),
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::HsmClientCertificateQuotaExceededFault(inner) => Error::HsmClientCertificateQuotaExceededFault(inner),
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_hsm_configuration::CreateHsmConfigurationError> for Error {
+    fn from(err: crate::operation::create_hsm_configuration::CreateHsmConfigurationError) -> Self {
+        match err {
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError::HsmConfigurationAlreadyExistsFault(inner) => Error::HsmConfigurationAlreadyExistsFault(inner),
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError::HsmConfigurationQuotaExceededFault(inner) => Error::HsmConfigurationQuotaExceededFault(inner),
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_action::CreateScheduledActionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_action::CreateScheduledActionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_scheduled_action::CreateScheduledActionError> for Error {
+    fn from(err: crate::operation::create_scheduled_action::CreateScheduledActionError) -> Self {
+        match err {
+            crate::operation::create_scheduled_action::CreateScheduledActionError::InvalidScheduledActionFault(inner) => Error::InvalidScheduledActionFault(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ScheduledActionAlreadyExistsFault(inner) => Error::ScheduledActionAlreadyExistsFault(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ScheduledActionQuotaExceededFault(inner) => Error::ScheduledActionQuotaExceededFault(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ScheduledActionTypeUnsupportedFault(inner) => Error::ScheduledActionTypeUnsupportedFault(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError> for Error {
+    fn from(
+        err: crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
+    ) -> Self {
+        match err {
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::SnapshotCopyGrantAlreadyExistsFault(inner) => Error::SnapshotCopyGrantAlreadyExistsFault(inner),
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::SnapshotCopyGrantQuotaExceededFault(inner) => Error::SnapshotCopyGrantQuotaExceededFault(inner),
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError> for Error {
+    fn from(err: crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError) -> Self {
+        match err {
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::ScheduleDefinitionTypeUnsupportedFault(inner) => Error::ScheduleDefinitionTypeUnsupportedFault(inner),
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::SnapshotScheduleAlreadyExistsFault(inner) => Error::SnapshotScheduleAlreadyExistsFault(inner),
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::SnapshotScheduleQuotaExceededFault(inner) => Error::SnapshotScheduleQuotaExceededFault(inner),
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_tags::CreateTagsError> for Error {
+    fn from(err: crate::operation::create_tags::CreateTagsError) -> Self {
+        match err {
+            crate::operation::create_tags::CreateTagsError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::create_tags::CreateTagsError::InvalidTagFault(inner) => {
+                Error::InvalidTagFault(inner)
+            }
+            crate::operation::create_tags::CreateTagsError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::create_tags::CreateTagsError::TagLimitExceededFault(inner) => {
+                Error::TagLimitExceededFault(inner)
+            }
+            crate::operation::create_tags::CreateTagsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_usage_limit::CreateUsageLimitError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_usage_limit::CreateUsageLimitError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_usage_limit::CreateUsageLimitError> for Error {
+    fn from(err: crate::operation::create_usage_limit::CreateUsageLimitError) -> Self {
+        match err {
+            crate::operation::create_usage_limit::CreateUsageLimitError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::InvalidUsageLimitFault(inner) => Error::InvalidUsageLimitFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::UsageLimitAlreadyExistsFault(inner) => Error::UsageLimitAlreadyExistsFault(inner),
+            crate::operation::create_usage_limit::CreateUsageLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deauthorize_data_share::DeauthorizeDataShareError> for Error {
+    fn from(err: crate::operation::deauthorize_data_share::DeauthorizeDataShareError) -> Self {
+        match err {
+            crate::operation::deauthorize_data_share::DeauthorizeDataShareError::InvalidDataShareFault(inner) => Error::InvalidDataShareFault(inner),
+            crate::operation::deauthorize_data_share::DeauthorizeDataShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
+            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster::DeleteClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
+    fn from(err: crate::operation::delete_cluster::DeleteClusterError) -> Self {
+        match err {
+            crate::operation::delete_cluster::DeleteClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::delete_cluster::DeleteClusterError::ClusterSnapshotAlreadyExistsFault(inner) => Error::ClusterSnapshotAlreadyExistsFault(inner),
+            crate::operation::delete_cluster::DeleteClusterError::ClusterSnapshotQuotaExceededFault(inner) => Error::ClusterSnapshotQuotaExceededFault(inner),
+            crate::operation::delete_cluster::DeleteClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::delete_cluster::DeleteClusterError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::InvalidClusterParameterGroupStateFault(inner) => Error::InvalidClusterParameterGroupStateFault(inner),
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError> for Error {
+    fn from(err: crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError) -> Self {
+        match err {
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError> for Error {
+    fn from(
+        err: crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::InvalidClusterSubnetStateFault(inner) => Error::InvalidClusterSubnetStateFault(inner),
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_endpoint_access::DeleteEndpointAccessError> for Error {
+    fn from(err: crate::operation::delete_endpoint_access::DeleteEndpointAccessError) -> Self {
+        match err {
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError::EndpointNotFoundFault(inner) => Error::EndpointNotFoundFault(inner),
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError::InvalidEndpointStateFault(inner) => Error::InvalidEndpointStateFault(inner),
+            crate::operation::delete_endpoint_access::DeleteEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_event_subscription::DeleteEventSubscriptionError> for Error {
+    fn from(
+        err: crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError::InvalidSubscriptionStateFault(inner) => Error::InvalidSubscriptionStateFault(inner),
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError::InvalidHsmClientCertificateStateFault(inner) => Error::InvalidHsmClientCertificateStateFault(inner),
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError> for Error {
+    fn from(err: crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
+            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError::InvalidHsmConfigurationStateFault(inner) => Error::InvalidHsmConfigurationStateFault(inner),
+            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_partner::DeletePartnerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_partner::DeletePartnerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_partner::DeletePartnerError> for Error {
+    fn from(err: crate::operation::delete_partner::DeletePartnerError) -> Self {
+        match err {
+            crate::operation::delete_partner::DeletePartnerError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::delete_partner::DeletePartnerError::PartnerNotFoundFault(inner) => Error::PartnerNotFoundFault(inner),
+            crate::operation::delete_partner::DeletePartnerError::UnauthorizedPartnerIntegrationFault(inner) => Error::UnauthorizedPartnerIntegrationFault(inner),
+            crate::operation::delete_partner::DeletePartnerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_scheduled_action::DeleteScheduledActionError> for Error {
+    fn from(err: crate::operation::delete_scheduled_action::DeleteScheduledActionError) -> Self {
+        match err {
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::ScheduledActionNotFoundFault(inner) => Error::ScheduledActionNotFoundFault(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError> for Error {
+    fn from(
+        err: crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::InvalidSnapshotCopyGrantStateFault(inner) => Error::InvalidSnapshotCopyGrantStateFault(inner),
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::SnapshotCopyGrantNotFoundFault(inner) => Error::SnapshotCopyGrantNotFoundFault(inner),
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError> for Error {
+    fn from(err: crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError) -> Self {
+        match err {
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::InvalidClusterSnapshotScheduleStateFault(inner) => Error::InvalidClusterSnapshotScheduleStateFault(inner),
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_tags::DeleteTagsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_tags::DeleteTagsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_tags::DeleteTagsError> for Error {
+    fn from(err: crate::operation::delete_tags::DeleteTagsError) -> Self {
+        match err {
+            crate::operation::delete_tags::DeleteTagsError::InvalidTagFault(inner) => {
+                Error::InvalidTagFault(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_usage_limit::DeleteUsageLimitError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_usage_limit::DeleteUsageLimitError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_usage_limit::DeleteUsageLimitError> for Error {
+    fn from(err: crate::operation::delete_usage_limit::DeleteUsageLimitError) -> Self {
+        match err {
+            crate::operation::delete_usage_limit::DeleteUsageLimitError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::delete_usage_limit::DeleteUsageLimitError::UsageLimitNotFoundFault(inner) => Error::UsageLimitNotFoundFault(inner),
+            crate::operation::delete_usage_limit::DeleteUsageLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_account_attributes::DescribeAccountAttributesError> for Error {
+    fn from(
+        err: crate::operation::describe_account_attributes::DescribeAccountAttributesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_account_attributes::DescribeAccountAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_parameters::DescribeClusterParametersError> for Error {
+    fn from(
+        err: crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_clusters::DescribeClustersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_clusters::DescribeClustersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_clusters::DescribeClustersError> for Error {
+    fn from(err: crate::operation::describe_clusters::DescribeClustersError) -> Self {
+        match err {
+            crate::operation::describe_clusters::DescribeClustersError::ClusterNotFoundFault(
+                inner,
+            ) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_clusters::DescribeClustersError::InvalidTagFault(inner) => {
+                Error::InvalidTagFault(inner)
+            }
+            crate::operation::describe_clusters::DescribeClustersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError> for Error {
+    fn from(
+        err: crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
+            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_tracks::DescribeClusterTracksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_tracks::DescribeClusterTracksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_tracks::DescribeClusterTracksError> for Error {
+    fn from(err: crate::operation::describe_cluster_tracks::DescribeClusterTracksError) -> Self {
+        match err {
+            crate::operation::describe_cluster_tracks::DescribeClusterTracksError::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
+            crate::operation::describe_cluster_tracks::DescribeClusterTracksError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::describe_cluster_tracks::DescribeClusterTracksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_versions::DescribeClusterVersionsError> for Error {
+    fn from(
+        err: crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares::DescribeDataSharesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares::DescribeDataSharesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_data_shares::DescribeDataSharesError> for Error {
+    fn from(err: crate::operation::describe_data_shares::DescribeDataSharesError) -> Self {
+        match err {
+            crate::operation::describe_data_shares::DescribeDataSharesError::InvalidDataShareFault(inner) => Error::InvalidDataShareFault(inner),
+            crate::operation::describe_data_shares::DescribeDataSharesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError::InvalidNamespaceFault(inner) => Error::InvalidNamespaceFault(inner),
+            crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError::InvalidNamespaceFault(inner) => Error::InvalidNamespaceFault(inner),
+            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersError> for Error {
+    fn from(err: crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersError) -> Self {
+        match err {
+            crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_endpoint_access::DescribeEndpointAccessError> for Error {
+    fn from(err: crate::operation::describe_endpoint_access::DescribeEndpointAccessError) -> Self {
+        match err {
+            crate::operation::describe_endpoint_access::DescribeEndpointAccessError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_endpoint_access::DescribeEndpointAccessError::EndpointNotFoundFault(inner) => Error::EndpointNotFoundFault(inner),
+            crate::operation::describe_endpoint_access::DescribeEndpointAccessError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::describe_endpoint_access::DescribeEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_categories::DescribeEventCategoriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_categories::DescribeEventCategoriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_event_categories::DescribeEventCategoriesError> for Error {
+    fn from(
+        err: crate::operation::describe_event_categories::DescribeEventCategoriesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_event_categories::DescribeEventCategoriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_events::DescribeEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_events::DescribeEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_events::DescribeEventsError> for Error {
+    fn from(err: crate::operation::describe_events::DescribeEventsError) -> Self {
+        match err {
+            crate::operation::describe_events::DescribeEventsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
+            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
+            crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError> for Error {
+    fn from(
+        err: crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
+            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_logging_status::DescribeLoggingStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_logging_status::DescribeLoggingStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_logging_status::DescribeLoggingStatusError> for Error {
+    fn from(err: crate::operation::describe_logging_status::DescribeLoggingStatusError) -> Self {
+        match err {
+            crate::operation::describe_logging_status::DescribeLoggingStatusError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_logging_status::DescribeLoggingStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError> for Error {
+    fn from(err: crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError) -> Self {
+        match err {
+            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::AccessToSnapshotDeniedFault(inner) => Error::AccessToSnapshotDeniedFault(inner),
+            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_partners::DescribePartnersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_partners::DescribePartnersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_partners::DescribePartnersError> for Error {
+    fn from(err: crate::operation::describe_partners::DescribePartnersError) -> Self {
+        match err {
+            crate::operation::describe_partners::DescribePartnersError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_partners::DescribePartnersError::UnauthorizedPartnerIntegrationFault(inner) => Error::UnauthorizedPartnerIntegrationFault(inner),
+            crate::operation::describe_partners::DescribePartnersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError> for Error {
+    fn from(err: crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError) -> Self {
+        match err {
+            crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError::ReservedNodeExchangeNotFoundFault(inner) => Error::ReservedNodeExchangeNotFoundFault(inner),
+            crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_nodes::DescribeReservedNodesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_nodes::DescribeReservedNodesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_reserved_nodes::DescribeReservedNodesError> for Error {
+    fn from(err: crate::operation::describe_reserved_nodes::DescribeReservedNodesError) -> Self {
+        match err {
+            crate::operation::describe_reserved_nodes::DescribeReservedNodesError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::describe_reserved_nodes::DescribeReservedNodesError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::describe_reserved_nodes::DescribeReservedNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_resize::DescribeResizeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_resize::DescribeResizeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_resize::DescribeResizeError> for Error {
+    fn from(err: crate::operation::describe_resize::DescribeResizeError) -> Self {
+        match err {
+            crate::operation::describe_resize::DescribeResizeError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::describe_resize::DescribeResizeError::ResizeNotFoundFault(inner) => {
+                Error::ResizeNotFoundFault(inner)
+            }
+            crate::operation::describe_resize::DescribeResizeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError> for Error {
+    fn from(
+        err: crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::ScheduledActionNotFoundFault(inner) => Error::ScheduledActionNotFoundFault(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError::SnapshotCopyGrantNotFoundFault(inner) => Error::SnapshotCopyGrantNotFoundFault(inner),
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError> for Error {
+    fn from(
+        err: crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_storage::DescribeStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_storage::DescribeStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_storage::DescribeStorageError> for Error {
+    fn from(err: crate::operation::describe_storage::DescribeStorageError) -> Self {
+        match err {
+            crate::operation::describe_storage::DescribeStorageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError::TableRestoreNotFoundFault(inner) => Error::TableRestoreNotFoundFault(inner),
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_tags::DescribeTagsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_tags::DescribeTagsError> for Error {
+    fn from(err: crate::operation::describe_tags::DescribeTagsError) -> Self {
+        match err {
+            crate::operation::describe_tags::DescribeTagsError::InvalidTagFault(inner) => {
+                Error::InvalidTagFault(inner)
+            }
+            crate::operation::describe_tags::DescribeTagsError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::describe_tags::DescribeTagsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_usage_limits::DescribeUsageLimitsError> for Error {
+    fn from(err: crate::operation::describe_usage_limits::DescribeUsageLimitsError) -> Self {
+        match err {
+            crate::operation::describe_usage_limits::DescribeUsageLimitsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_usage_limits::DescribeUsageLimitsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_usage_limits::DescribeUsageLimitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disable_logging::DisableLoggingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disable_logging::DisableLoggingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disable_logging::DisableLoggingError> for Error {
+    fn from(err: crate::operation::disable_logging::DisableLoggingError) -> Self {
+        match err {
+            crate::operation::disable_logging::DisableLoggingError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::disable_logging::DisableLoggingError::InvalidClusterStateFault(
+                inner,
+            ) => Error::InvalidClusterStateFault(inner),
+            crate::operation::disable_logging::DisableLoggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disable_snapshot_copy::DisableSnapshotCopyError> for Error {
+    fn from(err: crate::operation::disable_snapshot_copy::DisableSnapshotCopyError) -> Self {
+        match err {
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::SnapshotCopyAlreadyDisabledFault(inner) => Error::SnapshotCopyAlreadyDisabledFault(inner),
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError>
+    for Error
+{
+    fn from(
+        err: crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError::InvalidDataShareFault(inner) => Error::InvalidDataShareFault(inner),
+            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError::InvalidNamespaceFault(inner) => Error::InvalidNamespaceFault(inner),
+            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::enable_logging::EnableLoggingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::enable_logging::EnableLoggingError> for Error {
+    fn from(err: crate::operation::enable_logging::EnableLoggingError) -> Self {
+        match err {
+            crate::operation::enable_logging::EnableLoggingError::BucketNotFoundFault(inner) => Error::BucketNotFoundFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::InsufficientS3BucketPolicyFault(inner) => Error::InsufficientS3BucketPolicyFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::InvalidS3BucketNameFault(inner) => Error::InvalidS3BucketNameFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::InvalidS3KeyPrefixFault(inner) => Error::InvalidS3KeyPrefixFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError> for Error {
+    fn from(err: crate::operation::enable_snapshot_copy::EnableSnapshotCopyError) -> Self {
+        match err {
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::CopyToRegionDisabledFault(inner) => Error::CopyToRegionDisabledFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::IncompatibleOrderableOptions(inner) => Error::IncompatibleOrderableOptions(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::SnapshotCopyAlreadyEnabledFault(inner) => Error::SnapshotCopyAlreadyEnabledFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::SnapshotCopyGrantNotFoundFault(inner) => Error::SnapshotCopyGrantNotFoundFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::UnknownSnapshotCopyRegionFault(inner) => Error::UnknownSnapshotCopyRegionFault(inner),
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_credentials::GetClusterCredentialsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_credentials::GetClusterCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_cluster_credentials::GetClusterCredentialsError> for Error {
+    fn from(err: crate::operation::get_cluster_credentials::GetClusterCredentialsError) -> Self {
+        match err {
+            crate::operation::get_cluster_credentials::GetClusterCredentialsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::get_cluster_credentials::GetClusterCredentialsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::get_cluster_credentials::GetClusterCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+    ) -> Self {
+        match err {
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError> for Error {
+    fn from(err: crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError) -> Self {
+        match err {
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError> for Error {
+    fn from(err: crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError) -> Self {
+        match err {
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError> for Error {
+    fn from(
+        err: crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError::AuthenticationProfileQuotaExceededFault(inner) => Error::AuthenticationProfileQuotaExceededFault(inner),
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::modify_cluster::ModifyClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster::ModifyClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster::ModifyClusterError> for Error {
+    fn from(err: crate::operation::modify_cluster::ModifyClusterError) -> Self {
+        match err {
+            crate::operation::modify_cluster::ModifyClusterError::ClusterAlreadyExistsFault(inner) => Error::ClusterAlreadyExistsFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::InvalidElasticIpFault(inner) => Error::InvalidElasticIpFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::NumberOfNodesPerClusterLimitExceededFault(inner) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::TableLimitExceededFault(inner) => Error::TableLimitExceededFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::modify_cluster::ModifyClusterError::UnsupportedOptionFault(inner) => Error::UnsupportedOptionFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError> for Error {
+    fn from(
+        err: crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::ClusterOnLatestRevisionFault(inner) => Error::ClusterOnLatestRevisionFault(inner),
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError> for Error {
+    fn from(err: crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError) -> Self {
+        match err {
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError> for Error {
+    fn from(
+        err: crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::InvalidClusterParameterGroupStateFault(inner) => Error::InvalidClusterParameterGroupStateFault(inner),
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError> for Error {
+    fn from(err: crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError) -> Self {
+        match err {
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError::InvalidClusterSnapshotScheduleStateFault(inner) => Error::InvalidClusterSnapshotScheduleStateFault(inner),
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError> for Error {
+    fn from(
+        err: crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::ClusterSubnetQuotaExceededFault(inner) => Error::ClusterSubnetQuotaExceededFault(inner),
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::SubnetAlreadyInUse(inner) => Error::SubnetAlreadyInUse(inner),
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_endpoint_access::ModifyEndpointAccessError> for Error {
+    fn from(err: crate::operation::modify_endpoint_access::ModifyEndpointAccessError) -> Self {
+        match err {
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::EndpointNotFoundFault(inner) => Error::EndpointNotFoundFault(inner),
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::InvalidEndpointStateFault(inner) => Error::InvalidEndpointStateFault(inner),
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_event_subscription::ModifyEventSubscriptionError> for Error {
+    fn from(
+        err: crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::InvalidSubscriptionStateFault(inner) => Error::InvalidSubscriptionStateFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SnsInvalidTopicFault(inner) => Error::SnsInvalidTopicFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SnsNoAuthorizationFault(inner) => Error::SnsNoAuthorizationFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SnsTopicArnNotFoundFault(inner) => Error::SnsTopicArnNotFoundFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SourceNotFoundFault(inner) => Error::SourceNotFoundFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionCategoryNotFoundFault(inner) => Error::SubscriptionCategoryNotFoundFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionEventIdNotFoundFault(inner) => Error::SubscriptionEventIdNotFoundFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::SubscriptionSeverityNotFoundFault(inner) => Error::SubscriptionSeverityNotFoundFault(inner),
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_scheduled_action::ModifyScheduledActionError> for Error {
+    fn from(err: crate::operation::modify_scheduled_action::ModifyScheduledActionError) -> Self {
+        match err {
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::InvalidScheduledActionFault(inner) => Error::InvalidScheduledActionFault(inner),
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::ScheduledActionNotFoundFault(inner) => Error::ScheduledActionNotFoundFault(inner),
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::ScheduledActionTypeUnsupportedFault(inner) => Error::ScheduledActionTypeUnsupportedFault(inner),
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError> for Error {
+    fn from(err: crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError) -> Self {
+        match err {
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError::SnapshotCopyDisabledFault(inner) => Error::SnapshotCopyDisabledFault(inner),
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError> for Error {
+    fn from(err: crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError) -> Self {
+        match err {
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError::SnapshotScheduleUpdateInProgressFault(inner) => Error::SnapshotScheduleUpdateInProgressFault(inner),
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_usage_limit::ModifyUsageLimitError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_usage_limit::ModifyUsageLimitError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_usage_limit::ModifyUsageLimitError> for Error {
+    fn from(err: crate::operation::modify_usage_limit::ModifyUsageLimitError) -> Self {
+        match err {
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::InvalidUsageLimitFault(inner) => Error::InvalidUsageLimitFault(inner),
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::UsageLimitNotFoundFault(inner) => Error::UsageLimitNotFoundFault(inner),
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::pause_cluster::PauseClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::pause_cluster::PauseClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::pause_cluster::PauseClusterError> for Error {
+    fn from(err: crate::operation::pause_cluster::PauseClusterError) -> Self {
+        match err {
+            crate::operation::pause_cluster::PauseClusterError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::pause_cluster::PauseClusterError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::pause_cluster::PauseClusterError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError>
+    for Error
+{
+    fn from(
+        err: crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
+    ) -> Self {
+        match err {
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::ReservedNodeQuotaExceededFault(inner) => Error::ReservedNodeQuotaExceededFault(inner),
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::reboot_cluster::RebootClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cluster::RebootClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reboot_cluster::RebootClusterError> for Error {
+    fn from(err: crate::operation::reboot_cluster::RebootClusterError) -> Self {
+        match err {
+            crate::operation::reboot_cluster::RebootClusterError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::reboot_cluster::RebootClusterError::InvalidClusterStateFault(
+                inner,
+            ) => Error::InvalidClusterStateFault(inner),
+            crate::operation::reboot_cluster::RebootClusterError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::reject_data_share::RejectDataShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reject_data_share::RejectDataShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reject_data_share::RejectDataShareError> for Error {
+    fn from(err: crate::operation::reject_data_share::RejectDataShareError) -> Self {
+        match err {
+            crate::operation::reject_data_share::RejectDataShareError::InvalidDataShareFault(
+                inner,
+            ) => Error::InvalidDataShareFault(inner),
+            crate::operation::reject_data_share::RejectDataShareError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError>
+    for Error
+{
+    fn from(
+        err: crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::InvalidClusterParameterGroupStateFault(inner) => Error::InvalidClusterParameterGroupStateFault(inner),
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::resize_cluster::ResizeClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::resize_cluster::ResizeClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::resize_cluster::ResizeClusterError> for Error {
+    fn from(err: crate::operation::resize_cluster::ResizeClusterError) -> Self {
+        match err {
+            crate::operation::resize_cluster::ResizeClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::NumberOfNodesPerClusterLimitExceededFault(inner) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::resize_cluster::ResizeClusterError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::UnsupportedOptionFault(inner) => Error::UnsupportedOptionFault(inner),
+            crate::operation::resize_cluster::ResizeClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError>
+    for Error
+{
+    fn from(
+        err: crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
+    ) -> Self {
+        match err {
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::AccessToSnapshotDeniedFault(inner) => Error::AccessToSnapshotDeniedFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterAlreadyExistsFault(inner) => Error::ClusterAlreadyExistsFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterQuotaExceededFault(inner) => Error::ClusterQuotaExceededFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidElasticIpFault(inner) => Error::InvalidElasticIpFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidRestoreFault(inner) => Error::InvalidRestoreFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::NumberOfNodesPerClusterLimitExceededFault(inner) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
+    ) -> Self {
+        match err {
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InProgressTableRestoreQuotaExceededFault(inner) => Error::InProgressTableRestoreQuotaExceededFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InvalidTableRestoreArgumentFault(inner) => Error::InvalidTableRestoreArgumentFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::resume_cluster::ResumeClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::resume_cluster::ResumeClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::resume_cluster::ResumeClusterError> for Error {
+    fn from(err: crate::operation::resume_cluster::ResumeClusterError) -> Self {
+        match err {
+            crate::operation::resume_cluster::ResumeClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::resume_cluster::ResumeClusterError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
+            crate::operation::resume_cluster::ResumeClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::resume_cluster::ResumeClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError> for Error {
+    fn from(err: crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError) -> Self {
+        match err {
+            crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
+            crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::revoke_endpoint_access::RevokeEndpointAccessError> for Error {
+    fn from(err: crate::operation::revoke_endpoint_access::RevokeEndpointAccessError) -> Self {
+        match err {
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::EndpointAuthorizationNotFoundFault(inner) => Error::EndpointAuthorizationNotFoundFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::EndpointNotFoundFault(inner) => Error::EndpointNotFoundFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidAuthorizationStateFault(inner) => Error::InvalidAuthorizationStateFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidEndpointStateFault(inner) => Error::InvalidEndpointStateFault(inner),
+            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError> for Error {
+    fn from(err: crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError) -> Self {
+        match err {
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::AccessToSnapshotDeniedFault(inner) => Error::AccessToSnapshotDeniedFault(inner),
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::rotate_encryption_key::RotateEncryptionKeyError> for Error {
+    fn from(err: crate::operation::rotate_encryption_key::RotateEncryptionKeyError) -> Self {
+        match err {
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_partner_status::UpdatePartnerStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_partner_status::UpdatePartnerStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_partner_status::UpdatePartnerStatusError> for Error {
+    fn from(err: crate::operation::update_partner_status::UpdatePartnerStatusError) -> Self {
+        match err {
+            crate::operation::update_partner_status::UpdatePartnerStatusError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::update_partner_status::UpdatePartnerStatusError::PartnerNotFoundFault(inner) => Error::PartnerNotFoundFault(inner),
+            crate::operation::update_partner_status::UpdatePartnerStatusError::UnauthorizedPartnerIntegrationFault(inner) => Error::UnauthorizedPartnerIntegrationFault(inner),
+            crate::operation::update_partner_status::UpdatePartnerStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessToClusterDeniedFault(e) => e.request_id(),
+            Self::AccessToSnapshotDeniedFault(e) => e.request_id(),
+            Self::AuthenticationProfileAlreadyExistsFault(e) => e.request_id(),
+            Self::AuthenticationProfileNotFoundFault(e) => e.request_id(),
+            Self::AuthenticationProfileQuotaExceededFault(e) => e.request_id(),
+            Self::AuthorizationAlreadyExistsFault(e) => e.request_id(),
+            Self::AuthorizationNotFoundFault(e) => e.request_id(),
+            Self::AuthorizationQuotaExceededFault(e) => e.request_id(),
+            Self::BatchDeleteRequestSizeExceededFault(e) => e.request_id(),
+            Self::BatchModifyClusterSnapshotsLimitExceededFault(e) => e.request_id(),
+            Self::BucketNotFoundFault(e) => e.request_id(),
+            Self::ClusterAlreadyExistsFault(e) => e.request_id(),
+            Self::ClusterNotFoundFault(e) => e.request_id(),
+            Self::ClusterOnLatestRevisionFault(e) => e.request_id(),
+            Self::ClusterParameterGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::ClusterParameterGroupNotFoundFault(e) => e.request_id(),
+            Self::ClusterParameterGroupQuotaExceededFault(e) => e.request_id(),
+            Self::ClusterQuotaExceededFault(e) => e.request_id(),
+            Self::ClusterSecurityGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::ClusterSecurityGroupNotFoundFault(e) => e.request_id(),
+            Self::ClusterSecurityGroupQuotaExceededFault(e) => e.request_id(),
+            Self::ClusterSnapshotAlreadyExistsFault(e) => e.request_id(),
+            Self::ClusterSnapshotNotFoundFault(e) => e.request_id(),
+            Self::ClusterSnapshotQuotaExceededFault(e) => e.request_id(),
+            Self::ClusterSubnetGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::ClusterSubnetGroupNotFoundFault(e) => e.request_id(),
+            Self::ClusterSubnetGroupQuotaExceededFault(e) => e.request_id(),
+            Self::ClusterSubnetQuotaExceededFault(e) => e.request_id(),
+            Self::CopyToRegionDisabledFault(e) => e.request_id(),
+            Self::DependentServiceRequestThrottlingFault(e) => e.request_id(),
+            Self::DependentServiceUnavailableFault(e) => e.request_id(),
+            Self::EndpointAlreadyExistsFault(e) => e.request_id(),
+            Self::EndpointAuthorizationAlreadyExistsFault(e) => e.request_id(),
+            Self::EndpointAuthorizationNotFoundFault(e) => e.request_id(),
+            Self::EndpointAuthorizationsPerClusterLimitExceededFault(e) => e.request_id(),
+            Self::EndpointNotFoundFault(e) => e.request_id(),
+            Self::EndpointsPerAuthorizationLimitExceededFault(e) => e.request_id(),
+            Self::EndpointsPerClusterLimitExceededFault(e) => e.request_id(),
+            Self::EventSubscriptionQuotaExceededFault(e) => e.request_id(),
+            Self::HsmClientCertificateAlreadyExistsFault(e) => e.request_id(),
+            Self::HsmClientCertificateNotFoundFault(e) => e.request_id(),
+            Self::HsmClientCertificateQuotaExceededFault(e) => e.request_id(),
+            Self::HsmConfigurationAlreadyExistsFault(e) => e.request_id(),
+            Self::HsmConfigurationNotFoundFault(e) => e.request_id(),
+            Self::HsmConfigurationQuotaExceededFault(e) => e.request_id(),
+            Self::InProgressTableRestoreQuotaExceededFault(e) => e.request_id(),
+            Self::IncompatibleOrderableOptions(e) => e.request_id(),
+            Self::InsufficientClusterCapacityFault(e) => e.request_id(),
+            Self::InsufficientS3BucketPolicyFault(e) => e.request_id(),
+            Self::InvalidAuthenticationProfileRequestFault(e) => e.request_id(),
+            Self::InvalidAuthorizationStateFault(e) => e.request_id(),
+            Self::InvalidClusterParameterGroupStateFault(e) => e.request_id(),
+            Self::InvalidClusterSecurityGroupStateFault(e) => e.request_id(),
+            Self::InvalidClusterSnapshotScheduleStateFault(e) => e.request_id(),
+            Self::InvalidClusterSnapshotStateFault(e) => e.request_id(),
+            Self::InvalidClusterStateFault(e) => e.request_id(),
+            Self::InvalidClusterSubnetGroupStateFault(e) => e.request_id(),
+            Self::InvalidClusterSubnetStateFault(e) => e.request_id(),
+            Self::InvalidClusterTrackFault(e) => e.request_id(),
+            Self::InvalidDataShareFault(e) => e.request_id(),
+            Self::InvalidElasticIpFault(e) => e.request_id(),
+            Self::InvalidEndpointStateFault(e) => e.request_id(),
+            Self::InvalidHsmClientCertificateStateFault(e) => e.request_id(),
+            Self::InvalidHsmConfigurationStateFault(e) => e.request_id(),
+            Self::InvalidNamespaceFault(e) => e.request_id(),
+            Self::InvalidReservedNodeStateFault(e) => e.request_id(),
+            Self::InvalidRestoreFault(e) => e.request_id(),
+            Self::InvalidRetentionPeriodFault(e) => e.request_id(),
+            Self::InvalidS3BucketNameFault(e) => e.request_id(),
+            Self::InvalidS3KeyPrefixFault(e) => e.request_id(),
+            Self::InvalidScheduleFault(e) => e.request_id(),
+            Self::InvalidScheduledActionFault(e) => e.request_id(),
+            Self::InvalidSnapshotCopyGrantStateFault(e) => e.request_id(),
+            Self::InvalidSubnet(e) => e.request_id(),
+            Self::InvalidSubscriptionStateFault(e) => e.request_id(),
+            Self::InvalidTableRestoreArgumentFault(e) => e.request_id(),
+            Self::InvalidTagFault(e) => e.request_id(),
+            Self::InvalidUsageLimitFault(e) => e.request_id(),
+            Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
+            Self::LimitExceededFault(e) => e.request_id(),
+            Self::NumberOfNodesPerClusterLimitExceededFault(e) => e.request_id(),
+            Self::NumberOfNodesQuotaExceededFault(e) => e.request_id(),
+            Self::PartnerNotFoundFault(e) => e.request_id(),
+            Self::ReservedNodeAlreadyExistsFault(e) => e.request_id(),
+            Self::ReservedNodeAlreadyMigratedFault(e) => e.request_id(),
+            Self::ReservedNodeExchangeNotFoundFault(e) => e.request_id(),
+            Self::ReservedNodeNotFoundFault(e) => e.request_id(),
+            Self::ReservedNodeOfferingNotFoundFault(e) => e.request_id(),
+            Self::ReservedNodeQuotaExceededFault(e) => e.request_id(),
+            Self::ResizeNotFoundFault(e) => e.request_id(),
+            Self::ResourceNotFoundFault(e) => e.request_id(),
+            Self::SnsInvalidTopicFault(e) => e.request_id(),
+            Self::SnsNoAuthorizationFault(e) => e.request_id(),
+            Self::SnsTopicArnNotFoundFault(e) => e.request_id(),
+            Self::ScheduleDefinitionTypeUnsupportedFault(e) => e.request_id(),
+            Self::ScheduledActionAlreadyExistsFault(e) => e.request_id(),
+            Self::ScheduledActionNotFoundFault(e) => e.request_id(),
+            Self::ScheduledActionQuotaExceededFault(e) => e.request_id(),
+            Self::ScheduledActionTypeUnsupportedFault(e) => e.request_id(),
+            Self::SnapshotCopyAlreadyDisabledFault(e) => e.request_id(),
+            Self::SnapshotCopyAlreadyEnabledFault(e) => e.request_id(),
+            Self::SnapshotCopyDisabledFault(e) => e.request_id(),
+            Self::SnapshotCopyGrantAlreadyExistsFault(e) => e.request_id(),
+            Self::SnapshotCopyGrantNotFoundFault(e) => e.request_id(),
+            Self::SnapshotCopyGrantQuotaExceededFault(e) => e.request_id(),
+            Self::SnapshotScheduleAlreadyExistsFault(e) => e.request_id(),
+            Self::SnapshotScheduleNotFoundFault(e) => e.request_id(),
+            Self::SnapshotScheduleQuotaExceededFault(e) => e.request_id(),
+            Self::SnapshotScheduleUpdateInProgressFault(e) => e.request_id(),
+            Self::SourceNotFoundFault(e) => e.request_id(),
+            Self::SubnetAlreadyInUse(e) => e.request_id(),
+            Self::SubscriptionAlreadyExistFault(e) => e.request_id(),
+            Self::SubscriptionCategoryNotFoundFault(e) => e.request_id(),
+            Self::SubscriptionEventIdNotFoundFault(e) => e.request_id(),
+            Self::SubscriptionNotFoundFault(e) => e.request_id(),
+            Self::SubscriptionSeverityNotFoundFault(e) => e.request_id(),
+            Self::TableLimitExceededFault(e) => e.request_id(),
+            Self::TableRestoreNotFoundFault(e) => e.request_id(),
+            Self::TagLimitExceededFault(e) => e.request_id(),
+            Self::UnauthorizedOperation(e) => e.request_id(),
+            Self::UnauthorizedPartnerIntegrationFault(e) => e.request_id(),
+            Self::UnknownSnapshotCopyRegionFault(e) => e.request_id(),
+            Self::UnsupportedOperationFault(e) => e.request_id(),
+            Self::UnsupportedOptionFault(e) => e.request_id(),
+            Self::UsageLimitAlreadyExistsFault(e) => e.request_id(),
+            Self::UsageLimitNotFoundFault(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

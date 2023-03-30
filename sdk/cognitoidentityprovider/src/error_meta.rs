@@ -4,98 +4,95 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
-    AliasExistsException(crate::error::AliasExistsException),
+    AliasExistsException(crate::types::error::AliasExistsException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
-    CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
+    CodeDeliveryFailureException(crate::types::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
-    CodeMismatchException(crate::error::CodeMismatchException),
+    CodeMismatchException(crate::types::error::CodeMismatchException),
     /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
-    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>This exception is thrown when the provider is already supported by the user pool.</p>
-    DuplicateProviderException(crate::error::DuplicateProviderException),
+    DuplicateProviderException(crate::types::error::DuplicateProviderException),
     /// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
-    EnableSoftwareTokenMfaException(crate::error::EnableSoftwareTokenMfaException),
+    EnableSoftwareTokenMfaException(crate::types::error::EnableSoftwareTokenMfaException),
     /// <p>This exception is thrown if a code has expired.</p>
-    ExpiredCodeException(crate::error::ExpiredCodeException),
+    ExpiredCodeException(crate::types::error::ExpiredCodeException),
     /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>
-    GroupExistsException(crate::error::GroupExistsException),
+    GroupExistsException(crate::types::error::GroupExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
-    InternalErrorException(crate::error::InternalErrorException),
+    InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
-    InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
+    InvalidEmailRoleAccessPolicyException(
+        crate::types::error::InvalidEmailRoleAccessPolicyException,
+    ),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
-    InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
+    InvalidLambdaResponseException(crate::types::error::InvalidLambdaResponseException),
     /// <p>This exception is thrown when the specified OAuth flow is not valid.</p>
-    InvalidOAuthFlowException(crate::error::InvalidOAuthFlowException),
+    InvalidOAuthFlowException(crate::types::error::InvalidOAuthFlowException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid password.</p>
-    InvalidPasswordException(crate::error::InvalidPasswordException),
+    InvalidPasswordException(crate::types::error::InvalidPasswordException),
     /// <p>This exception is returned when the role provided for SMS configuration doesn't have permission to publish using Amazon SNS.</p>
-    InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
+    InvalidSmsRoleAccessPolicyException(crate::types::error::InvalidSmsRoleAccessPolicyException),
     /// <p>This exception is thrown when the trust relationship is not valid for the role provided for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
-        crate::error::InvalidSmsRoleTrustRelationshipException,
+        crate::types::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when the user pool configuration is not valid.</p>
-    InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
+    InvalidUserPoolConfigurationException(
+        crate::types::error::InvalidUserPoolConfigurationException,
+    ),
     /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when Amazon Cognito can't find a multi-factor authentication (MFA) method.</p>
-    MfaMethodNotFoundException(crate::error::MfaMethodNotFoundException),
+    MfaMethodNotFoundException(crate::types::error::MfaMethodNotFoundException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
-    NotAuthorizedException(crate::error::NotAuthorizedException),
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
-    PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
+    PasswordResetRequiredException(crate::types::error::PasswordResetRequiredException),
     /// <p>This exception is thrown when a precondition is not met.</p>
-    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
     /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the specified scope doesn't exist.</p>
-    ScopeDoesNotExistException(crate::error::ScopeDoesNotExistException),
+    ScopeDoesNotExistException(crate::types::error::ScopeDoesNotExistException),
     /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
-    SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
+    SoftwareTokenMfaNotFoundException(crate::types::error::SoftwareTokenMfaNotFoundException),
     /// <p>This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.</p>
-    TooManyFailedAttemptsException(crate::error::TooManyFailedAttemptsException),
+    TooManyFailedAttemptsException(crate::types::error::TooManyFailedAttemptsException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Exception that is thrown when the request isn't authorized. This can happen due to an invalid access token in the request.</p>
-    UnauthorizedException(crate::error::UnauthorizedException),
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>This exception is thrown when Amazon Cognito encounters an unexpected exception with Lambda.</p>
-    UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
+    UnexpectedLambdaException(crate::types::error::UnexpectedLambdaException),
     /// <p>This exception is thrown when the specified identifier isn't supported.</p>
-    UnsupportedIdentityProviderException(crate::error::UnsupportedIdentityProviderException),
+    UnsupportedIdentityProviderException(crate::types::error::UnsupportedIdentityProviderException),
     /// <p>Exception that is thrown when you attempt to perform an operation that isn't enabled for the user pool client.</p>
-    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// <p>Exception that is thrown when an unsupported token is passed to an operation.</p>
-    UnsupportedTokenTypeException(crate::error::UnsupportedTokenTypeException),
+    UnsupportedTokenTypeException(crate::types::error::UnsupportedTokenTypeException),
     /// <p>The request failed because the user is in an unsupported state.</p>
-    UnsupportedUserStateException(crate::error::UnsupportedUserStateException),
+    UnsupportedUserStateException(crate::types::error::UnsupportedUserStateException),
     /// <p>This exception is thrown when you're trying to modify a user pool while a user import job is in progress for that pool.</p>
-    UserImportInProgressException(crate::error::UserImportInProgressException),
+    UserImportInProgressException(crate::types::error::UserImportInProgressException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
-    UserLambdaValidationException(crate::error::UserLambdaValidationException),
+    UserLambdaValidationException(crate::types::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user isn't confirmed successfully.</p>
-    UserNotConfirmedException(crate::error::UserNotConfirmedException),
+    UserNotConfirmedException(crate::types::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user isn't found.</p>
-    UserNotFoundException(crate::error::UserNotFoundException),
+    UserNotFoundException(crate::types::error::UserNotFoundException),
     /// <p>This exception is thrown when user pool add-ons aren't enabled.</p>
-    UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
+    UserPoolAddOnNotEnabledException(crate::types::error::UserPoolAddOnNotEnabledException),
     /// <p>This exception is thrown when a user pool tag can't be set or updated.</p>
-    UserPoolTaggingException(crate::error::UserPoolTaggingException),
+    UserPoolTaggingException(crate::types::error::UserPoolTaggingException),
     /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
-    UsernameExistsException(crate::error::UsernameExistsException),
-    ///
+    UsernameExistsException(crate::types::error::UsernameExistsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -145,2692 +142,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddCustomAttributesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AddCustomAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AddCustomAttributesError> for Error {
-    fn from(err: crate::error::AddCustomAttributesError) -> Self {
-        match err.kind {
-            crate::error::AddCustomAttributesErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AddCustomAttributesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AddCustomAttributesErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AddCustomAttributesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AddCustomAttributesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AddCustomAttributesErrorKind::UserImportInProgressException(inner) => {
-                Error::UserImportInProgressException(inner)
-            }
-            crate::error::AddCustomAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminAddUserToGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminAddUserToGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminAddUserToGroupError> for Error {
-    fn from(err: crate::error::AdminAddUserToGroupError) -> Self {
-        match err.kind {
-            crate::error::AdminAddUserToGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminAddUserToGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminAddUserToGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminAddUserToGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminAddUserToGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminAddUserToGroupErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminAddUserToGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminConfirmSignUpError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminConfirmSignUpError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminConfirmSignUpError> for Error {
-    fn from(err: crate::error::AdminConfirmSignUpError) -> Self {
-        match err.kind {
-            crate::error::AdminConfirmSignUpErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::TooManyFailedAttemptsException(inner) => {
-                Error::TooManyFailedAttemptsException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminConfirmSignUpErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminCreateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AdminCreateUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminCreateUserError> for Error {
-    fn from(err: crate::error::AdminCreateUserError) -> Self {
-        match err.kind {
-            crate::error::AdminCreateUserErrorKind::CodeDeliveryFailureException(inner) => {
-                Error::CodeDeliveryFailureException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::InvalidPasswordException(inner) => {
-                Error::InvalidPasswordException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::InvalidSmsRoleAccessPolicyException(inner) => {
-                Error::InvalidSmsRoleAccessPolicyException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::InvalidSmsRoleTrustRelationshipException(
-                inner,
-            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::AdminCreateUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::PreconditionNotMetException(inner) => {
-                Error::PreconditionNotMetException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::UnsupportedUserStateException(inner) => {
-                Error::UnsupportedUserStateException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::UsernameExistsException(inner) => {
-                Error::UsernameExistsException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminCreateUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminDeleteUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AdminDeleteUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminDeleteUserError> for Error {
-    fn from(err: crate::error::AdminDeleteUserError) -> Self {
-        match err.kind {
-            crate::error::AdminDeleteUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminDeleteUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminDeleteUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminDeleteUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminDeleteUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminDeleteUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminDeleteUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminDeleteUserAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminDeleteUserAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminDeleteUserAttributesError> for Error {
-    fn from(err: crate::error::AdminDeleteUserAttributesError) -> Self {
-        match err.kind {
-            crate::error::AdminDeleteUserAttributesErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminDeleteUserAttributesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminDeleteUserAttributesErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminDeleteUserAttributesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminDeleteUserAttributesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminDeleteUserAttributesErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminDeleteUserAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminDisableProviderForUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminDisableProviderForUserError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminDisableProviderForUserError> for Error {
-    fn from(err: crate::error::AdminDisableProviderForUserError) -> Self {
-        match err.kind {
-            crate::error::AdminDisableProviderForUserErrorKind::AliasExistsException(inner) => {
-                Error::AliasExistsException(inner)
-            }
-            crate::error::AdminDisableProviderForUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminDisableProviderForUserErrorKind::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::error::AdminDisableProviderForUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminDisableProviderForUserErrorKind::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::AdminDisableProviderForUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminDisableProviderForUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminDisableProviderForUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminDisableUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminDisableUserError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminDisableUserError> for Error {
-    fn from(err: crate::error::AdminDisableUserError) -> Self {
-        match err.kind {
-            crate::error::AdminDisableUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminDisableUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminDisableUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminDisableUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminDisableUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminDisableUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminDisableUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminEnableUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AdminEnableUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminEnableUserError> for Error {
-    fn from(err: crate::error::AdminEnableUserError) -> Self {
-        match err.kind {
-            crate::error::AdminEnableUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminEnableUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminEnableUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminEnableUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminEnableUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminEnableUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminEnableUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminForgetDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminForgetDeviceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminForgetDeviceError> for Error {
-    fn from(err: crate::error::AdminForgetDeviceError) -> Self {
-        match err.kind {
-            crate::error::AdminForgetDeviceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminForgetDeviceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminForgetDeviceErrorKind::InvalidUserPoolConfigurationException(
-                inner,
-            ) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::AdminForgetDeviceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminForgetDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminForgetDeviceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminForgetDeviceErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminForgetDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminGetDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AdminGetDeviceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminGetDeviceError> for Error {
-    fn from(err: crate::error::AdminGetDeviceError) -> Self {
-        match err.kind {
-            crate::error::AdminGetDeviceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminGetDeviceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminGetDeviceErrorKind::InvalidUserPoolConfigurationException(inner) => {
-                Error::InvalidUserPoolConfigurationException(inner)
-            }
-            crate::error::AdminGetDeviceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminGetDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminGetDeviceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminGetDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminGetUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AdminGetUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminGetUserError> for Error {
-    fn from(err: crate::error::AdminGetUserError) -> Self {
-        match err.kind {
-            crate::error::AdminGetUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminGetUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminGetUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminGetUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminGetUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminGetUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminGetUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminInitiateAuthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminInitiateAuthError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminInitiateAuthError> for Error {
-    fn from(err: crate::error::AdminInitiateAuthError) -> Self {
-        match err.kind {
-            crate::error::AdminInitiateAuthErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException(
-                inner,
-            ) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::AdminInitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException(
-                inner,
-            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::AdminInitiateAuthErrorKind::InvalidUserPoolConfigurationException(
-                inner,
-            ) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::AdminInitiateAuthErrorKind::MfaMethodNotFoundException(inner) => {
-                Error::MfaMethodNotFoundException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminInitiateAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminLinkProviderForUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminLinkProviderForUserError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminLinkProviderForUserError> for Error {
-    fn from(err: crate::error::AdminLinkProviderForUserError) -> Self {
-        match err.kind {
-            crate::error::AdminLinkProviderForUserErrorKind::AliasExistsException(inner) => {
-                Error::AliasExistsException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminLinkProviderForUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminListDevicesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminListDevicesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminListDevicesError> for Error {
-    fn from(err: crate::error::AdminListDevicesError) -> Self {
-        match err.kind {
-            crate::error::AdminListDevicesErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminListDevicesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminListDevicesErrorKind::InvalidUserPoolConfigurationException(
-                inner,
-            ) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::AdminListDevicesErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminListDevicesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminListDevicesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminListDevicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminListGroupsForUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminListGroupsForUserError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminListGroupsForUserError> for Error {
-    fn from(err: crate::error::AdminListGroupsForUserError) -> Self {
-        match err.kind {
-            crate::error::AdminListGroupsForUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminListGroupsForUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminListGroupsForUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminListGroupsForUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminListGroupsForUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminListGroupsForUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminListGroupsForUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminListUserAuthEventsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminListUserAuthEventsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminListUserAuthEventsError> for Error {
-    fn from(err: crate::error::AdminListUserAuthEventsError) -> Self {
-        match err.kind {
-            crate::error::AdminListUserAuthEventsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminListUserAuthEventsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminListUserAuthEventsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminListUserAuthEventsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminListUserAuthEventsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminListUserAuthEventsErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminListUserAuthEventsErrorKind::UserPoolAddOnNotEnabledException(
-                inner,
-            ) => Error::UserPoolAddOnNotEnabledException(inner),
-            crate::error::AdminListUserAuthEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminRemoveUserFromGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminRemoveUserFromGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminRemoveUserFromGroupError> for Error {
-    fn from(err: crate::error::AdminRemoveUserFromGroupError) -> Self {
-        match err.kind {
-            crate::error::AdminRemoveUserFromGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminRemoveUserFromGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminRemoveUserFromGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminRemoveUserFromGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminRemoveUserFromGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminRemoveUserFromGroupErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminRemoveUserFromGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminResetUserPasswordError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminResetUserPasswordError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminResetUserPasswordError> for Error {
-    fn from(err: crate::error::AdminResetUserPasswordError) -> Self {
-        match err.kind {
-            crate::error::AdminResetUserPasswordErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::AdminResetUserPasswordErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminRespondToAuthChallengeError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminRespondToAuthChallengeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminRespondToAuthChallengeError> for Error {
-    fn from(err: crate::error::AdminRespondToAuthChallengeError) -> Self {
-        match err.kind {
-            crate::error::AdminRespondToAuthChallengeErrorKind::AliasExistsException(inner) => Error::AliasExistsException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::MfaMethodNotFoundException(inner) => Error::MfaMethodNotFoundException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException(inner) => Error::SoftwareTokenMfaNotFoundException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::AdminRespondToAuthChallengeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminSetUserMFAPreferenceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminSetUserMFAPreferenceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminSetUserMFAPreferenceError> for Error {
-    fn from(err: crate::error::AdminSetUserMFAPreferenceError) -> Self {
-        match err.kind {
-            crate::error::AdminSetUserMFAPreferenceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminSetUserMFAPreferenceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminSetUserMFAPreferenceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminSetUserMFAPreferenceErrorKind::PasswordResetRequiredException(
-                inner,
-            ) => Error::PasswordResetRequiredException(inner),
-            crate::error::AdminSetUserMFAPreferenceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminSetUserMFAPreferenceErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::AdminSetUserMFAPreferenceErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminSetUserMFAPreferenceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminSetUserPasswordError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminSetUserPasswordError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminSetUserPasswordError> for Error {
-    fn from(err: crate::error::AdminSetUserPasswordError) -> Self {
-        match err.kind {
-            crate::error::AdminSetUserPasswordErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::InvalidPasswordException(inner) => {
-                Error::InvalidPasswordException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminSetUserPasswordErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminSetUserSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminSetUserSettingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminSetUserSettingsError> for Error {
-    fn from(err: crate::error::AdminSetUserSettingsError) -> Self {
-        match err.kind {
-            crate::error::AdminSetUserSettingsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminSetUserSettingsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminSetUserSettingsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminSetUserSettingsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminSetUserSettingsErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminSetUserSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminUpdateAuthEventFeedbackError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminUpdateAuthEventFeedbackError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminUpdateAuthEventFeedbackError> for Error {
-    fn from(err: crate::error::AdminUpdateAuthEventFeedbackError) -> Self {
-        match err.kind {
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException(inner) => Error::UserPoolAddOnNotEnabledException(inner),
-            crate::error::AdminUpdateAuthEventFeedbackErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminUpdateDeviceStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminUpdateDeviceStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminUpdateDeviceStatusError> for Error {
-    fn from(err: crate::error::AdminUpdateDeviceStatusError) -> Self {
-        match err.kind {
-            crate::error::AdminUpdateDeviceStatusErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::AdminUpdateDeviceStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminUpdateUserAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminUpdateUserAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminUpdateUserAttributesError> for Error {
-    fn from(err: crate::error::AdminUpdateUserAttributesError) -> Self {
-        match err.kind {
-            crate::error::AdminUpdateUserAttributesErrorKind::AliasExistsException(inner) => Error::AliasExistsException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::AdminUpdateUserAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AdminUserGlobalSignOutError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AdminUserGlobalSignOutError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AdminUserGlobalSignOutError> for Error {
-    fn from(err: crate::error::AdminUserGlobalSignOutError) -> Self {
-        match err.kind {
-            crate::error::AdminUserGlobalSignOutErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AdminUserGlobalSignOutErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AdminUserGlobalSignOutErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AdminUserGlobalSignOutErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AdminUserGlobalSignOutErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AdminUserGlobalSignOutErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::AdminUserGlobalSignOutErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateSoftwareTokenError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssociateSoftwareTokenError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::AssociateSoftwareTokenError> for Error {
-    fn from(err: crate::error::AssociateSoftwareTokenError) -> Self {
-        match err.kind {
-            crate::error::AssociateSoftwareTokenErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::AssociateSoftwareTokenErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::AssociateSoftwareTokenErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::AssociateSoftwareTokenErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AssociateSoftwareTokenErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::AssociateSoftwareTokenErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AssociateSoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException(
-                inner,
-            ) => Error::SoftwareTokenMfaNotFoundException(inner),
-            crate::error::AssociateSoftwareTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangePasswordError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ChangePasswordError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ChangePasswordError> for Error {
-    fn from(err: crate::error::ChangePasswordError) -> Self {
-        match err.kind {
-            crate::error::ChangePasswordErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::InvalidPasswordException(inner) => {
-                Error::InvalidPasswordException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ChangePasswordErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ConfirmDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ConfirmDeviceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ConfirmDeviceError> for Error {
-    fn from(err: crate::error::ConfirmDeviceError) -> Self {
-        match err.kind {
-            crate::error::ConfirmDeviceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::InvalidPasswordException(inner) => {
-                Error::InvalidPasswordException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::InvalidUserPoolConfigurationException(inner) => {
-                Error::InvalidUserPoolConfigurationException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::UsernameExistsException(inner) => {
-                Error::UsernameExistsException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ConfirmDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ConfirmForgotPasswordError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ConfirmForgotPasswordError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ConfirmForgotPasswordError> for Error {
-    fn from(err: crate::error::ConfirmForgotPasswordError) -> Self {
-        match err.kind {
-            crate::error::ConfirmForgotPasswordErrorKind::CodeMismatchException(inner) => {
-                Error::CodeMismatchException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::ExpiredCodeException(inner) => {
-                Error::ExpiredCodeException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::InvalidPasswordException(inner) => {
-                Error::InvalidPasswordException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::TooManyFailedAttemptsException(inner) => {
-                Error::TooManyFailedAttemptsException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ConfirmForgotPasswordErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ConfirmSignUpError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ConfirmSignUpError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ConfirmSignUpError> for Error {
-    fn from(err: crate::error::ConfirmSignUpError) -> Self {
-        match err.kind {
-            crate::error::ConfirmSignUpErrorKind::AliasExistsException(inner) => {
-                Error::AliasExistsException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::CodeMismatchException(inner) => {
-                Error::CodeMismatchException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::ExpiredCodeException(inner) => {
-                Error::ExpiredCodeException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::TooManyFailedAttemptsException(inner) => {
-                Error::TooManyFailedAttemptsException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ConfirmSignUpErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateGroupError> for Error {
-    fn from(err: crate::error::CreateGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateGroupErrorKind::GroupExistsException(inner) => {
-                Error::GroupExistsException(inner)
-            }
-            crate::error::CreateGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateGroupErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIdentityProviderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateIdentityProviderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateIdentityProviderError> for Error {
-    fn from(err: crate::error::CreateIdentityProviderError) -> Self {
-        match err.kind {
-            crate::error::CreateIdentityProviderErrorKind::DuplicateProviderException(inner) => {
-                Error::DuplicateProviderException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateIdentityProviderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResourceServerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateResourceServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateResourceServerError> for Error {
-    fn from(err: crate::error::CreateResourceServerError) -> Self {
-        match err.kind {
-            crate::error::CreateResourceServerErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateResourceServerErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateResourceServerErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateResourceServerErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateResourceServerErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateResourceServerErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateResourceServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserImportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateUserImportJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserImportJobError> for Error {
-    fn from(err: crate::error::CreateUserImportJobError) -> Self {
-        match err.kind {
-            crate::error::CreateUserImportJobErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::PreconditionNotMetException(inner) => {
-                Error::PreconditionNotMetException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateUserImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserPoolError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateUserPoolError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserPoolError> for Error {
-    fn from(err: crate::error::CreateUserPoolError) -> Self {
-        match err.kind {
-            crate::error::CreateUserPoolErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException(inner) => {
-                Error::InvalidEmailRoleAccessPolicyException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException(inner) => {
-                Error::InvalidSmsRoleAccessPolicyException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException(
-                inner,
-            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::CreateUserPoolErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::UserPoolTaggingException(inner) => {
-                Error::UserPoolTaggingException(inner)
-            }
-            crate::error::CreateUserPoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserPoolClientError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateUserPoolClientError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserPoolClientError> for Error {
-    fn from(err: crate::error::CreateUserPoolClientError) -> Self {
-        match err.kind {
-            crate::error::CreateUserPoolClientErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::InvalidOAuthFlowException(inner) => {
-                Error::InvalidOAuthFlowException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::ScopeDoesNotExistException(inner) => {
-                Error::ScopeDoesNotExistException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateUserPoolClientErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserPoolDomainError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateUserPoolDomainError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateUserPoolDomainError> for Error {
-    fn from(err: crate::error::CreateUserPoolDomainError) -> Self {
-        match err.kind {
-            crate::error::CreateUserPoolDomainErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::CreateUserPoolDomainErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateUserPoolDomainErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateUserPoolDomainErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::CreateUserPoolDomainErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateUserPoolDomainErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteGroupError> for Error {
-    fn from(err: crate::error::DeleteGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIdentityProviderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteIdentityProviderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteIdentityProviderError> for Error {
-    fn from(err: crate::error::DeleteIdentityProviderError) -> Self {
-        match err.kind {
-            crate::error::DeleteIdentityProviderErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteIdentityProviderErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteIdentityProviderErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteIdentityProviderErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteIdentityProviderErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteIdentityProviderErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteIdentityProviderErrorKind::UnsupportedIdentityProviderException(
-                inner,
-            ) => Error::UnsupportedIdentityProviderException(inner),
-            crate::error::DeleteIdentityProviderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourceServerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourceServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteResourceServerError> for Error {
-    fn from(err: crate::error::DeleteResourceServerError) -> Self {
-        match err.kind {
-            crate::error::DeleteResourceServerErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteResourceServerErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteResourceServerErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteResourceServerErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteResourceServerErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteResourceServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserError> for Error {
-    fn from(err: crate::error::DeleteUserError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteUserErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::DeleteUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteUserErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::DeleteUserErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::DeleteUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUserAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserAttributesError> for Error {
-    fn from(err: crate::error::DeleteUserAttributesError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserAttributesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::DeleteUserAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserPoolError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUserPoolError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserPoolError> for Error {
-    fn from(err: crate::error::DeleteUserPoolError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserPoolErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteUserPoolErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteUserPoolErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteUserPoolErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteUserPoolErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteUserPoolErrorKind::UserImportInProgressException(inner) => {
-                Error::UserImportInProgressException(inner)
-            }
-            crate::error::DeleteUserPoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserPoolClientError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUserPoolClientError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserPoolClientError> for Error {
-    fn from(err: crate::error::DeleteUserPoolClientError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserPoolClientErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeleteUserPoolClientErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteUserPoolClientErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteUserPoolClientErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteUserPoolClientErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteUserPoolClientErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteUserPoolClientErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserPoolDomainError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUserPoolDomainError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteUserPoolDomainError> for Error {
-    fn from(err: crate::error::DeleteUserPoolDomainError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserPoolDomainErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteUserPoolDomainErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteUserPoolDomainErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DeleteUserPoolDomainErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteUserPoolDomainErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeIdentityProviderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeIdentityProviderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeIdentityProviderError> for Error {
-    fn from(err: crate::error::DescribeIdentityProviderError) -> Self {
-        match err.kind {
-            crate::error::DescribeIdentityProviderErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeIdentityProviderErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeIdentityProviderErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeIdentityProviderErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeIdentityProviderErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeIdentityProviderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResourceServerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeResourceServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeResourceServerError> for Error {
-    fn from(err: crate::error::DescribeResourceServerError) -> Self {
-        match err.kind {
-            crate::error::DescribeResourceServerErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeResourceServerErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeResourceServerErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeResourceServerErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeResourceServerErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeResourceServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRiskConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeRiskConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeRiskConfigurationError> for Error {
-    fn from(err: crate::error::DescribeRiskConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DescribeRiskConfigurationErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeRiskConfigurationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeRiskConfigurationErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeRiskConfigurationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeRiskConfigurationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeRiskConfigurationErrorKind::UserPoolAddOnNotEnabledException(
-                inner,
-            ) => Error::UserPoolAddOnNotEnabledException(inner),
-            crate::error::DescribeRiskConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUserImportJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUserImportJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUserImportJobError> for Error {
-    fn from(err: crate::error::DescribeUserImportJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeUserImportJobErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeUserImportJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeUserImportJobErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeUserImportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeUserImportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeUserImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUserPoolError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUserPoolError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUserPoolError> for Error {
-    fn from(err: crate::error::DescribeUserPoolError) -> Self {
-        match err.kind {
-            crate::error::DescribeUserPoolErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeUserPoolErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeUserPoolErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeUserPoolErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeUserPoolErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeUserPoolErrorKind::UserPoolTaggingException(inner) => {
-                Error::UserPoolTaggingException(inner)
-            }
-            crate::error::DescribeUserPoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUserPoolClientError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUserPoolClientError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUserPoolClientError> for Error {
-    fn from(err: crate::error::DescribeUserPoolClientError) -> Self {
-        match err.kind {
-            crate::error::DescribeUserPoolClientErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeUserPoolClientErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeUserPoolClientErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeUserPoolClientErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeUserPoolClientErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeUserPoolClientErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUserPoolDomainError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeUserPoolDomainError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeUserPoolDomainError> for Error {
-    fn from(err: crate::error::DescribeUserPoolDomainError) -> Self {
-        match err.kind {
-            crate::error::DescribeUserPoolDomainErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeUserPoolDomainErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeUserPoolDomainErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::DescribeUserPoolDomainErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeUserPoolDomainErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ForgetDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ForgetDeviceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ForgetDeviceError> for Error {
-    fn from(err: crate::error::ForgetDeviceError) -> Self {
-        match err.kind {
-            crate::error::ForgetDeviceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::InvalidUserPoolConfigurationException(inner) => {
-                Error::InvalidUserPoolConfigurationException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ForgetDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ForgotPasswordError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ForgotPasswordError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ForgotPasswordError> for Error {
-    fn from(err: crate::error::ForgotPasswordError) -> Self {
-        match err.kind {
-            crate::error::ForgotPasswordErrorKind::CodeDeliveryFailureException(inner) => {
-                Error::CodeDeliveryFailureException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::InvalidEmailRoleAccessPolicyException(inner) => {
-                Error::InvalidEmailRoleAccessPolicyException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::InvalidSmsRoleAccessPolicyException(inner) => {
-                Error::InvalidSmsRoleAccessPolicyException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::InvalidSmsRoleTrustRelationshipException(
-                inner,
-            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::ForgotPasswordErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ForgotPasswordErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCSVHeaderError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCSVHeaderError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCSVHeaderError> for Error {
-    fn from(err: crate::error::GetCSVHeaderError) -> Self {
-        match err.kind {
-            crate::error::GetCSVHeaderErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetCSVHeaderErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetCSVHeaderErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetCSVHeaderErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetCSVHeaderErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetCSVHeaderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDeviceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDeviceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetDeviceError> for Error {
-    fn from(err: crate::error::GetDeviceError) -> Self {
-        match err.kind {
-            crate::error::GetDeviceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetDeviceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetDeviceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetDeviceErrorKind::InvalidUserPoolConfigurationException(inner) => {
-                Error::InvalidUserPoolConfigurationException(inner)
-            }
-            crate::error::GetDeviceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetDeviceErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::GetDeviceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetDeviceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetDeviceErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::GetDeviceErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::GetDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetGroupError> for Error {
-    fn from(err: crate::error::GetGroupError) -> Self {
-        match err.kind {
-            crate::error::GetGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetIdentityProviderByIdentifierError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::add_custom_attributes::AddCustomAttributesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetIdentityProviderByIdentifierError,
+            crate::operation::add_custom_attributes::AddCustomAttributesError,
             R,
         >,
     ) -> Self {
@@ -2838,165 +162,562 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetIdentityProviderByIdentifierError> for Error {
-    fn from(err: crate::error::GetIdentityProviderByIdentifierError) -> Self {
-        match err.kind {
-            crate::error::GetIdentityProviderByIdentifierErrorKind::InternalErrorException(
-                inner,
-            ) => Error::InternalErrorException(inner),
-            crate::error::GetIdentityProviderByIdentifierErrorKind::InvalidParameterException(
+impl From<crate::operation::add_custom_attributes::AddCustomAttributesError> for Error {
+    fn from(err: crate::operation::add_custom_attributes::AddCustomAttributesError) -> Self {
+        match err {
+            crate::operation::add_custom_attributes::AddCustomAttributesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::UserImportInProgressException(inner) => Error::UserImportInProgressException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_add_user_to_group::AdminAddUserToGroupError> for Error {
+    fn from(err: crate::operation::admin_add_user_to_group::AdminAddUserToGroupError) -> Self {
+        match err {
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError> for Error {
+    fn from(err: crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError) -> Self {
+        match err {
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::TooManyFailedAttemptsException(inner) => Error::TooManyFailedAttemptsException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_create_user::AdminCreateUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_create_user::AdminCreateUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_create_user::AdminCreateUserError> for Error {
+    fn from(err: crate::operation::admin_create_user::AdminCreateUserError) -> Self {
+        match err {
+            crate::operation::admin_create_user::AdminCreateUserError::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::UnsupportedUserStateException(inner) => Error::UnsupportedUserStateException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::UsernameExistsException(inner) => Error::UsernameExistsException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_delete_user::AdminDeleteUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_delete_user::AdminDeleteUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_delete_user::AdminDeleteUserError> for Error {
+    fn from(err: crate::operation::admin_delete_user::AdminDeleteUserError) -> Self {
+        match err {
+            crate::operation::admin_delete_user::AdminDeleteUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError>
+    for Error
+{
+    fn from(
+        err: crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_disable_user::AdminDisableUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_disable_user::AdminDisableUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_disable_user::AdminDisableUserError> for Error {
+    fn from(err: crate::operation::admin_disable_user::AdminDisableUserError) -> Self {
+        match err {
+            crate::operation::admin_disable_user::AdminDisableUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_enable_user::AdminEnableUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_enable_user::AdminEnableUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_enable_user::AdminEnableUserError> for Error {
+    fn from(err: crate::operation::admin_enable_user::AdminEnableUserError) -> Self {
+        match err {
+            crate::operation::admin_enable_user::AdminEnableUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_forget_device::AdminForgetDeviceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_forget_device::AdminForgetDeviceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_forget_device::AdminForgetDeviceError> for Error {
+    fn from(err: crate::operation::admin_forget_device::AdminForgetDeviceError) -> Self {
+        match err {
+            crate::operation::admin_forget_device::AdminForgetDeviceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_get_device::AdminGetDeviceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_get_device::AdminGetDeviceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_get_device::AdminGetDeviceError> for Error {
+    fn from(err: crate::operation::admin_get_device::AdminGetDeviceError) -> Self {
+        match err {
+            crate::operation::admin_get_device::AdminGetDeviceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::admin_get_user::AdminGetUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_get_user::AdminGetUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_get_user::AdminGetUserError> for Error {
+    fn from(err: crate::operation::admin_get_user::AdminGetUserError) -> Self {
+        match err {
+            crate::operation::admin_get_user::AdminGetUserError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::admin_get_user::AdminGetUserError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::GetIdentityProviderByIdentifierErrorKind::NotAuthorizedException(
-                inner,
-            ) => Error::NotAuthorizedException(inner),
-            crate::error::GetIdentityProviderByIdentifierErrorKind::ResourceNotFoundException(
+            crate::operation::admin_get_user::AdminGetUserError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_get_user::AdminGetUserError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::GetIdentityProviderByIdentifierErrorKind::TooManyRequestsException(
+            crate::operation::admin_get_user::AdminGetUserError::TooManyRequestsException(
                 inner,
             ) => Error::TooManyRequestsException(inner),
-            crate::error::GetIdentityProviderByIdentifierErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSigningCertificateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSigningCertificateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSigningCertificateError> for Error {
-    fn from(err: crate::error::GetSigningCertificateError) -> Self {
-        match err.kind {
-            crate::error::GetSigningCertificateErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetSigningCertificateErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetSigningCertificateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetSigningCertificateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUICustomizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetUICustomizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetUICustomizationError> for Error {
-    fn from(err: crate::error::GetUICustomizationError) -> Self {
-        match err.kind {
-            crate::error::GetUICustomizationErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetUICustomizationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetUICustomizationErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetUICustomizationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetUICustomizationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetUICustomizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetUserError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetUserError> for Error {
-    fn from(err: crate::error::GetUserError) -> Self {
-        match err.kind {
-            crate::error::GetUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetUserErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetUserErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetUserErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetUserErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::GetUserErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetUserErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetUserErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::GetUserErrorKind::UserNotFoundException(inner) => {
+            crate::operation::admin_get_user::AdminGetUserError::UserNotFoundException(inner) => {
                 Error::UserNotFoundException(inner)
             }
-            crate::error::GetUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::admin_get_user::AdminGetUserError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetUserAttributeVerificationCodeError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetUserAttributeVerificationCodeError,
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
             R,
         >,
     ) -> Self {
@@ -3004,1678 +725,4226 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetUserAttributeVerificationCodeError> for Error {
-    fn from(err: crate::error::GetUserAttributeVerificationCodeError) -> Self {
-        match err.kind {
-            crate::error::GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::GetUserAttributeVerificationCodeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::admin_initiate_auth::AdminInitiateAuthError> for Error {
+    fn from(err: crate::operation::admin_initiate_auth::AdminInitiateAuthError) -> Self {
+        match err {
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::MfaMethodNotFoundException(inner) => Error::MfaMethodNotFoundException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserPoolMfaConfigError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError> for Error {
+    fn from(
+        err: crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_devices::AdminListDevicesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_devices::AdminListDevicesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_list_devices::AdminListDevicesError> for Error {
+    fn from(err: crate::operation::admin_list_devices::AdminListDevicesError) -> Self {
+        match err {
+            crate::operation::admin_list_devices::AdminListDevicesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError> for Error {
+    fn from(
+        err: crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError> for Error {
+    fn from(
+        err: crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::UserPoolAddOnNotEnabledException(inner) => Error::UserPoolAddOnNotEnabledException(inner),
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError> for Error {
+    fn from(
+        err: crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_reset_user_password::AdminResetUserPasswordError> for Error {
+    fn from(err: crate::operation::admin_reset_user_password::AdminResetUserPasswordError) -> Self {
+        match err {
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError>
+    for Error
+{
+    fn from(
+        err: crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::MfaMethodNotFoundException(inner) => Error::MfaMethodNotFoundException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::SoftwareTokenMfaNotFoundException(inner) => Error::SoftwareTokenMfaNotFoundException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError>
+    for Error
+{
+    fn from(
+        err: crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_set_user_password::AdminSetUserPasswordError> for Error {
+    fn from(err: crate::operation::admin_set_user_password::AdminSetUserPasswordError) -> Self {
+        match err {
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_set_user_settings::AdminSetUserSettingsError> for Error {
+    fn from(err: crate::operation::admin_set_user_settings::AdminSetUserSettingsError) -> Self {
+        match err {
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError>
+    for Error
+{
+    fn from(
+        err: crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::UserPoolAddOnNotEnabledException(inner) => Error::UserPoolAddOnNotEnabledException(inner),
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError> for Error {
+    fn from(
+        err: crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError> for Error {
+    fn from(
+        err: crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
+    ) -> Self {
+        match err {
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::associate_software_token::AssociateSoftwareTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::associate_software_token::AssociateSoftwareTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_software_token::AssociateSoftwareTokenError> for Error {
+    fn from(err: crate::operation::associate_software_token::AssociateSoftwareTokenError) -> Self {
+        match err {
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::SoftwareTokenMfaNotFoundException(inner) => Error::SoftwareTokenMfaNotFoundException(inner),
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::change_password::ChangePasswordError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::change_password::ChangePasswordError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::change_password::ChangePasswordError> for Error {
+    fn from(err: crate::operation::change_password::ChangePasswordError) -> Self {
+        match err {
+            crate::operation::change_password::ChangePasswordError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::change_password::ChangePasswordError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::change_password::ChangePasswordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::change_password::ChangePasswordError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::change_password::ChangePasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::change_password::ChangePasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::change_password::ChangePasswordError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::change_password::ChangePasswordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::change_password::ChangePasswordError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::change_password::ChangePasswordError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::change_password::ChangePasswordError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::change_password::ChangePasswordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetUserPoolMfaConfigError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::confirm_device::ConfirmDeviceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetUserPoolMfaConfigError> for Error {
-    fn from(err: crate::error::GetUserPoolMfaConfigError) -> Self {
-        match err.kind {
-            crate::error::GetUserPoolMfaConfigErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetUserPoolMfaConfigErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetUserPoolMfaConfigErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetUserPoolMfaConfigErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetUserPoolMfaConfigErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetUserPoolMfaConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::confirm_device::ConfirmDeviceError> for Error {
+    fn from(err: crate::operation::confirm_device::ConfirmDeviceError) -> Self {
+        match err {
+            crate::operation::confirm_device::ConfirmDeviceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::UsernameExistsException(inner) => Error::UsernameExistsException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GlobalSignOutError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GlobalSignOutError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GlobalSignOutError> for Error {
-    fn from(err: crate::error::GlobalSignOutError) -> Self {
-        match err.kind {
-            crate::error::GlobalSignOutErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::GlobalSignOutErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::confirm_forgot_password::ConfirmForgotPasswordError> for Error {
+    fn from(err: crate::operation::confirm_forgot_password::ConfirmForgotPasswordError) -> Self {
+        match err {
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::TooManyFailedAttemptsException(inner) => Error::TooManyFailedAttemptsException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateAuthError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError, R>,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InitiateAuthError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::confirm_sign_up::ConfirmSignUpError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::InitiateAuthError> for Error {
-    fn from(err: crate::error::InitiateAuthError) -> Self {
-        match err.kind {
-            crate::error::InitiateAuthErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException(inner) => {
-                Error::InvalidSmsRoleAccessPolicyException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException(
-                inner,
-            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::InitiateAuthErrorKind::InvalidUserPoolConfigurationException(inner) => {
-                Error::InvalidUserPoolConfigurationException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::InitiateAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDevicesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDevicesError, R>) -> Self {
+impl From<crate::operation::confirm_sign_up::ConfirmSignUpError> for Error {
+    fn from(err: crate::operation::confirm_sign_up::ConfirmSignUpError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::TooManyFailedAttemptsException(inner) => Error::TooManyFailedAttemptsException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::ListDevicesError> for Error {
-    fn from(err: crate::error::ListDevicesError) -> Self {
-        match err.kind {
-            crate::error::ListDevicesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListDevicesErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListDevicesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListDevicesErrorKind::InvalidUserPoolConfigurationException(inner) => {
-                Error::InvalidUserPoolConfigurationException(inner)
-            }
-            crate::error::ListDevicesErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListDevicesErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::ListDevicesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListDevicesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListDevicesErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::ListDevicesErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::ListDevicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGroupsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListGroupsError> for Error {
-    fn from(err: crate::error::ListGroupsError) -> Self {
-        match err.kind {
-            crate::error::ListGroupsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListGroupsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListGroupsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListGroupsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListGroupsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIdentityProvidersError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListIdentityProvidersError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListIdentityProvidersError> for Error {
-    fn from(err: crate::error::ListIdentityProvidersError) -> Self {
-        match err.kind {
-            crate::error::ListIdentityProvidersErrorKind::InternalErrorException(inner) => {
+impl From<crate::operation::create_group::CreateGroupError> for Error {
+    fn from(err: crate::operation::create_group::CreateGroupError) -> Self {
+        match err {
+            crate::operation::create_group::CreateGroupError::GroupExistsException(inner) => {
+                Error::GroupExistsException(inner)
+            }
+            crate::operation::create_group::CreateGroupError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
-            crate::error::ListIdentityProvidersErrorKind::InvalidParameterException(inner) => {
+            crate::operation::create_group::CreateGroupError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::ListIdentityProvidersErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListIdentityProvidersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListIdentityProvidersErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListIdentityProvidersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceServersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListResourceServersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListResourceServersError> for Error {
-    fn from(err: crate::error::ListResourceServersError) -> Self {
-        match err.kind {
-            crate::error::ListResourceServersErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListResourceServersErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListResourceServersErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListResourceServersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListResourceServersErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListResourceServersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUserImportJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListUserImportJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListUserImportJobsError> for Error {
-    fn from(err: crate::error::ListUserImportJobsError) -> Self {
-        match err.kind {
-            crate::error::ListUserImportJobsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListUserImportJobsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListUserImportJobsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListUserImportJobsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListUserImportJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListUserImportJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUserPoolClientsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListUserPoolClientsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListUserPoolClientsError> for Error {
-    fn from(err: crate::error::ListUserPoolClientsError) -> Self {
-        match err.kind {
-            crate::error::ListUserPoolClientsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListUserPoolClientsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListUserPoolClientsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListUserPoolClientsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListUserPoolClientsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListUserPoolClientsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUserPoolsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListUserPoolsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListUserPoolsError> for Error {
-    fn from(err: crate::error::ListUserPoolsError) -> Self {
-        match err.kind {
-            crate::error::ListUserPoolsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListUserPoolsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListUserPoolsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListUserPoolsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListUserPoolsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUsersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListUsersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListUsersError> for Error {
-    fn from(err: crate::error::ListUsersError) -> Self {
-        match err.kind {
-            crate::error::ListUsersErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListUsersErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListUsersErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListUsersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListUsersErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListUsersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUsersInGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListUsersInGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListUsersInGroupError> for Error {
-    fn from(err: crate::error::ListUsersInGroupError) -> Self {
-        match err.kind {
-            crate::error::ListUsersInGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ListUsersInGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListUsersInGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListUsersInGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListUsersInGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListUsersInGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResendConfirmationCodeError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ResendConfirmationCodeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ResendConfirmationCodeError> for Error {
-    fn from(err: crate::error::ResendConfirmationCodeError) -> Self {
-        match err.kind {
-            crate::error::ResendConfirmationCodeErrorKind::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::ResendConfirmationCodeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RespondToAuthChallengeError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RespondToAuthChallengeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RespondToAuthChallengeError> for Error {
-    fn from(err: crate::error::RespondToAuthChallengeError) -> Self {
-        match err.kind {
-            crate::error::RespondToAuthChallengeErrorKind::AliasExistsException(inner) => Error::AliasExistsException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::MfaMethodNotFoundException(inner) => Error::MfaMethodNotFoundException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException(inner) => Error::SoftwareTokenMfaNotFoundException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::RespondToAuthChallengeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RevokeTokenError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::RevokeTokenError> for Error {
-    fn from(err: crate::error::RevokeTokenError) -> Self {
-        match err.kind {
-            crate::error::RevokeTokenErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::UnsupportedTokenTypeException(inner) => {
-                Error::UnsupportedTokenTypeException(inner)
-            }
-            crate::error::RevokeTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetRiskConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SetRiskConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SetRiskConfigurationError> for Error {
-    fn from(err: crate::error::SetRiskConfigurationError) -> Self {
-        match err.kind {
-            crate::error::SetRiskConfigurationErrorKind::CodeDeliveryFailureException(inner) => {
-                Error::CodeDeliveryFailureException(inner)
-            }
-            crate::error::SetRiskConfigurationErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SetRiskConfigurationErrorKind::InvalidEmailRoleAccessPolicyException(
-                inner,
-            ) => Error::InvalidEmailRoleAccessPolicyException(inner),
-            crate::error::SetRiskConfigurationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SetRiskConfigurationErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SetRiskConfigurationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SetRiskConfigurationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SetRiskConfigurationErrorKind::UserPoolAddOnNotEnabledException(
-                inner,
-            ) => Error::UserPoolAddOnNotEnabledException(inner),
-            crate::error::SetRiskConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetUICustomizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SetUICustomizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SetUICustomizationError> for Error {
-    fn from(err: crate::error::SetUICustomizationError) -> Self {
-        match err.kind {
-            crate::error::SetUICustomizationErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SetUICustomizationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SetUICustomizationErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SetUICustomizationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SetUICustomizationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SetUICustomizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetUserMFAPreferenceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SetUserMFAPreferenceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SetUserMFAPreferenceError> for Error {
-    fn from(err: crate::error::SetUserMFAPreferenceError) -> Self {
-        match err.kind {
-            crate::error::SetUserMFAPreferenceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::SetUserMFAPreferenceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetUserPoolMfaConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SetUserPoolMfaConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SetUserPoolMfaConfigError> for Error {
-    fn from(err: crate::error::SetUserPoolMfaConfigError) -> Self {
-        match err.kind {
-            crate::error::SetUserPoolMfaConfigErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::SetUserPoolMfaConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetUserSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetUserSettingsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SetUserSettingsError> for Error {
-    fn from(err: crate::error::SetUserSettingsError) -> Self {
-        match err.kind {
-            crate::error::SetUserSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::SetUserSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SignUpError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SignUpError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::SignUpError> for Error {
-    fn from(err: crate::error::SignUpError) -> Self {
-        match err.kind {
-            crate::error::SignUpErrorKind::CodeDeliveryFailureException(inner) => {
-                Error::CodeDeliveryFailureException(inner)
-            }
-            crate::error::SignUpErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SignUpErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::SignUpErrorKind::InvalidEmailRoleAccessPolicyException(inner) => {
-                Error::InvalidEmailRoleAccessPolicyException(inner)
-            }
-            crate::error::SignUpErrorKind::InvalidLambdaResponseException(inner) => {
-                Error::InvalidLambdaResponseException(inner)
-            }
-            crate::error::SignUpErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SignUpErrorKind::InvalidPasswordException(inner) => {
-                Error::InvalidPasswordException(inner)
-            }
-            crate::error::SignUpErrorKind::InvalidSmsRoleAccessPolicyException(inner) => {
-                Error::InvalidSmsRoleAccessPolicyException(inner)
-            }
-            crate::error::SignUpErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => {
-                Error::InvalidSmsRoleTrustRelationshipException(inner)
-            }
-            crate::error::SignUpErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SignUpErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SignUpErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::SignUpErrorKind::UnexpectedLambdaException(inner) => {
-                Error::UnexpectedLambdaException(inner)
-            }
-            crate::error::SignUpErrorKind::UserLambdaValidationException(inner) => {
-                Error::UserLambdaValidationException(inner)
-            }
-            crate::error::SignUpErrorKind::UsernameExistsException(inner) => {
-                Error::UsernameExistsException(inner)
-            }
-            crate::error::SignUpErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartUserImportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartUserImportJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartUserImportJobError> for Error {
-    fn from(err: crate::error::StartUserImportJobError) -> Self {
-        match err.kind {
-            crate::error::StartUserImportJobErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::StartUserImportJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartUserImportJobErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::StartUserImportJobErrorKind::PreconditionNotMetException(inner) => {
-                Error::PreconditionNotMetException(inner)
-            }
-            crate::error::StartUserImportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartUserImportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StartUserImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopUserImportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopUserImportJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopUserImportJobError> for Error {
-    fn from(err: crate::error::StopUserImportJobError) -> Self {
-        match err.kind {
-            crate::error::StopUserImportJobErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::StopUserImportJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StopUserImportJobErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::StopUserImportJobErrorKind::PreconditionNotMetException(inner) => {
-                Error::PreconditionNotMetException(inner)
-            }
-            crate::error::StopUserImportJobErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopUserImportJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::StopUserImportJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::TagResourceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UntagResourceErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAuthEventFeedbackError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAuthEventFeedbackError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateAuthEventFeedbackError> for Error {
-    fn from(err: crate::error::UpdateAuthEventFeedbackError) -> Self {
-        match err.kind {
-            crate::error::UpdateAuthEventFeedbackErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateAuthEventFeedbackErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateAuthEventFeedbackErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateAuthEventFeedbackErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateAuthEventFeedbackErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateAuthEventFeedbackErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::UpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException(
-                inner,
-            ) => Error::UserPoolAddOnNotEnabledException(inner),
-            crate::error::UpdateAuthEventFeedbackErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDeviceStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateDeviceStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateDeviceStatusError> for Error {
-    fn from(err: crate::error::UpdateDeviceStatusError) -> Self {
-        match err.kind {
-            crate::error::UpdateDeviceStatusErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(
-                inner,
-            ) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::UpdateDeviceStatusErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::UpdateDeviceStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGroupError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateGroupError> for Error {
-    fn from(err: crate::error::UpdateGroupError) -> Self {
-        match err.kind {
-            crate::error::UpdateGroupErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateGroupErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateGroupErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateIdentityProviderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateIdentityProviderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateIdentityProviderError> for Error {
-    fn from(err: crate::error::UpdateIdentityProviderError) -> Self {
-        match err.kind {
-            crate::error::UpdateIdentityProviderErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateIdentityProviderErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateIdentityProviderErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateIdentityProviderErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateIdentityProviderErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateIdentityProviderErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateIdentityProviderErrorKind::UnsupportedIdentityProviderException(
-                inner,
-            ) => Error::UnsupportedIdentityProviderException(inner),
-            crate::error::UpdateIdentityProviderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResourceServerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateResourceServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateResourceServerError> for Error {
-    fn from(err: crate::error::UpdateResourceServerError) -> Self {
-        match err.kind {
-            crate::error::UpdateResourceServerErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateResourceServerErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateResourceServerErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateResourceServerErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateResourceServerErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateResourceServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateUserAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateUserAttributesError> for Error {
-    fn from(err: crate::error::UpdateUserAttributesError) -> Self {
-        match err.kind {
-            crate::error::UpdateUserAttributesErrorKind::AliasExistsException(inner) => Error::AliasExistsException(inner),
-            crate::error::UpdateUserAttributesErrorKind::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
-            crate::error::UpdateUserAttributesErrorKind::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
-            crate::error::UpdateUserAttributesErrorKind::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
-            crate::error::UpdateUserAttributesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::UpdateUserAttributesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::error::UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
-            crate::error::UpdateUserAttributesErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
-            crate::error::UpdateUserAttributesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
-            crate::error::UpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::UpdateUserAttributesErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::UpdateUserAttributesErrorKind::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
-            crate::error::UpdateUserAttributesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateUserAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::UpdateUserAttributesErrorKind::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
-            crate::error::UpdateUserAttributesErrorKind::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
-            crate::error::UpdateUserAttributesErrorKind::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
-            crate::error::UpdateUserAttributesErrorKind::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
-            crate::error::UpdateUserAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserPoolError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateUserPoolError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateUserPoolError> for Error {
-    fn from(err: crate::error::UpdateUserPoolError) -> Self {
-        match err.kind {
-            crate::error::UpdateUserPoolErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException(inner) => {
-                Error::InvalidEmailRoleAccessPolicyException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException(inner) => {
-                Error::InvalidSmsRoleAccessPolicyException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException(
-                inner,
-            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
-            crate::error::UpdateUserPoolErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::UserImportInProgressException(inner) => {
-                Error::UserImportInProgressException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::UserPoolTaggingException(inner) => {
-                Error::UserPoolTaggingException(inner)
-            }
-            crate::error::UpdateUserPoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserPoolClientError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateUserPoolClientError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateUserPoolClientError> for Error {
-    fn from(err: crate::error::UpdateUserPoolClientError) -> Self {
-        match err.kind {
-            crate::error::UpdateUserPoolClientErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::InvalidOAuthFlowException(inner) => {
-                Error::InvalidOAuthFlowException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::ScopeDoesNotExistException(inner) => {
-                Error::ScopeDoesNotExistException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateUserPoolClientErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserPoolDomainError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateUserPoolDomainError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateUserPoolDomainError> for Error {
-    fn from(err: crate::error::UpdateUserPoolDomainError) -> Self {
-        match err.kind {
-            crate::error::UpdateUserPoolDomainErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::UpdateUserPoolDomainErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateUserPoolDomainErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::UpdateUserPoolDomainErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateUserPoolDomainErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateUserPoolDomainErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::VerifySoftwareTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::VerifySoftwareTokenError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::VerifySoftwareTokenError> for Error {
-    fn from(err: crate::error::VerifySoftwareTokenError) -> Self {
-        match err.kind {
-            crate::error::VerifySoftwareTokenErrorKind::CodeMismatchException(inner) => {
-                Error::CodeMismatchException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException(inner) => {
-                Error::EnableSoftwareTokenMfaException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException(
-                inner,
-            ) => Error::InvalidUserPoolConfigurationException(inner),
-            crate::error::VerifySoftwareTokenErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException(
-                inner,
-            ) => Error::SoftwareTokenMfaNotFoundException(inner),
-            crate::error::VerifySoftwareTokenErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::UserNotConfirmedException(inner) => {
-                Error::UserNotConfirmedException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::UserNotFoundException(inner) => {
-                Error::UserNotFoundException(inner)
-            }
-            crate::error::VerifySoftwareTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::VerifyUserAttributeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::VerifyUserAttributeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::VerifyUserAttributeError> for Error {
-    fn from(err: crate::error::VerifyUserAttributeError) -> Self {
-        match err.kind {
-            crate::error::VerifyUserAttributeErrorKind::AliasExistsException(inner) => {
-                Error::AliasExistsException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::CodeMismatchException(inner) => {
-                Error::CodeMismatchException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::ExpiredCodeException(inner) => {
-                Error::ExpiredCodeException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::LimitExceededException(inner) => {
+            crate::operation::create_group::CreateGroupError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::VerifyUserAttributeErrorKind::NotAuthorizedException(inner) => {
+            crate::operation::create_group::CreateGroupError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::VerifyUserAttributeErrorKind::PasswordResetRequiredException(inner) => {
-                Error::PasswordResetRequiredException(inner)
-            }
-            crate::error::VerifyUserAttributeErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::create_group::CreateGroupError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::VerifyUserAttributeErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::create_group::CreateGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::VerifyUserAttributeErrorKind::UserNotConfirmedException(inner) => {
+            crate::operation::create_group::CreateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_identity_provider::CreateIdentityProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_identity_provider::CreateIdentityProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_identity_provider::CreateIdentityProviderError> for Error {
+    fn from(err: crate::operation::create_identity_provider::CreateIdentityProviderError) -> Self {
+        match err {
+            crate::operation::create_identity_provider::CreateIdentityProviderError::DuplicateProviderException(inner) => Error::DuplicateProviderException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_identity_provider::CreateIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_server::CreateResourceServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_server::CreateResourceServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_resource_server::CreateResourceServerError> for Error {
+    fn from(err: crate::operation::create_resource_server::CreateResourceServerError) -> Self {
+        match err {
+            crate::operation::create_resource_server::CreateResourceServerError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_resource_server::CreateResourceServerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_resource_server::CreateResourceServerError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_resource_server::CreateResourceServerError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_resource_server::CreateResourceServerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_resource_server::CreateResourceServerError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_resource_server::CreateResourceServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_user_import_job::CreateUserImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_user_import_job::CreateUserImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user_import_job::CreateUserImportJobError> for Error {
+    fn from(err: crate::operation::create_user_import_job::CreateUserImportJobError) -> Self {
+        match err {
+            crate::operation::create_user_import_job::CreateUserImportJobError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool::CreateUserPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool::CreateUserPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user_pool::CreateUserPoolError> for Error {
+    fn from(err: crate::operation::create_user_pool::CreateUserPoolError) -> Self {
+        match err {
+            crate::operation::create_user_pool::CreateUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::UserPoolTaggingException(inner) => Error::UserPoolTaggingException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool_client::CreateUserPoolClientError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool_client::CreateUserPoolClientError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user_pool_client::CreateUserPoolClientError> for Error {
+    fn from(err: crate::operation::create_user_pool_client::CreateUserPoolClientError) -> Self {
+        match err {
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::InvalidOAuthFlowException(inner) => Error::InvalidOAuthFlowException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::ScopeDoesNotExistException(inner) => Error::ScopeDoesNotExistException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_user_pool_domain::CreateUserPoolDomainError> for Error {
+    fn from(err: crate::operation::create_user_pool_domain::CreateUserPoolDomainError) -> Self {
+        match err {
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_group::DeleteGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_group::DeleteGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_group::DeleteGroupError> for Error {
+    fn from(err: crate::operation::delete_group::DeleteGroupError) -> Self {
+        match err {
+            crate::operation::delete_group::DeleteGroupError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::delete_group::DeleteGroupError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_group::DeleteGroupError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_group::DeleteGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_group::DeleteGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_group::DeleteGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_identity_provider::DeleteIdentityProviderError> for Error {
+    fn from(err: crate::operation::delete_identity_provider::DeleteIdentityProviderError) -> Self {
+        match err {
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::UnsupportedIdentityProviderException(inner) => Error::UnsupportedIdentityProviderException(inner),
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_server::DeleteResourceServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_server::DeleteResourceServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_server::DeleteResourceServerError> for Error {
+    fn from(err: crate::operation::delete_resource_server::DeleteResourceServerError) -> Self {
+        match err {
+            crate::operation::delete_resource_server::DeleteResourceServerError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_resource_server::DeleteResourceServerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_resource_server::DeleteResourceServerError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_resource_server::DeleteResourceServerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resource_server::DeleteResourceServerError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_resource_server::DeleteResourceServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user::DeleteUserError> for Error {
+    fn from(err: crate::operation::delete_user::DeleteUserError) -> Self {
+        match err {
+            crate::operation::delete_user::DeleteUserError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_user::DeleteUserError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::delete_user::DeleteUserError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_user::DeleteUserError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_user::DeleteUserError::PasswordResetRequiredException(
+                inner,
+            ) => Error::PasswordResetRequiredException(inner),
+            crate::operation::delete_user::DeleteUserError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_user::DeleteUserError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_user::DeleteUserError::UserNotConfirmedException(inner) => {
                 Error::UserNotConfirmedException(inner)
             }
-            crate::error::VerifyUserAttributeErrorKind::UserNotFoundException(inner) => {
+            crate::operation::delete_user::DeleteUserError::UserNotFoundException(inner) => {
                 Error::UserNotFoundException(inner)
             }
-            crate::error::VerifyUserAttributeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_user::DeleteUserError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_attributes::DeleteUserAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_attributes::DeleteUserAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_attributes::DeleteUserAttributesError> for Error {
+    fn from(err: crate::operation::delete_user_attributes::DeleteUserAttributesError) -> Self {
+        match err {
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_pool::DeleteUserPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_pool::DeleteUserPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_pool::DeleteUserPoolError> for Error {
+    fn from(err: crate::operation::delete_user_pool::DeleteUserPoolError) -> Self {
+        match err {
+            crate::operation::delete_user_pool::DeleteUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::UserImportInProgressException(inner) => Error::UserImportInProgressException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_pool_client::DeleteUserPoolClientError> for Error {
+    fn from(err: crate::operation::delete_user_pool_client::DeleteUserPoolClientError) -> Self {
+        match err {
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError> for Error {
+    fn from(err: crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError) -> Self {
+        match err {
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_identity_provider::DescribeIdentityProviderError> for Error {
+    fn from(
+        err: crate::operation::describe_identity_provider::DescribeIdentityProviderError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_identity_provider::DescribeIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_server::DescribeResourceServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_server::DescribeResourceServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_resource_server::DescribeResourceServerError> for Error {
+    fn from(err: crate::operation::describe_resource_server::DescribeResourceServerError) -> Self {
+        match err {
+            crate::operation::describe_resource_server::DescribeResourceServerError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_resource_server::DescribeResourceServerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_resource_server::DescribeResourceServerError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_resource_server::DescribeResourceServerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_resource_server::DescribeResourceServerError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_resource_server::DescribeResourceServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_risk_configuration::DescribeRiskConfigurationError> for Error {
+    fn from(
+        err: crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::UserPoolAddOnNotEnabledException(inner) => Error::UserPoolAddOnNotEnabledException(inner),
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_import_job::DescribeUserImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_import_job::DescribeUserImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_user_import_job::DescribeUserImportJobError> for Error {
+    fn from(err: crate::operation::describe_user_import_job::DescribeUserImportJobError) -> Self {
+        match err {
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool::DescribeUserPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool::DescribeUserPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_user_pool::DescribeUserPoolError> for Error {
+    fn from(err: crate::operation::describe_user_pool::DescribeUserPoolError) -> Self {
+        match err {
+            crate::operation::describe_user_pool::DescribeUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::UserPoolTaggingException(inner) => Error::UserPoolTaggingException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_user_pool_client::DescribeUserPoolClientError> for Error {
+    fn from(err: crate::operation::describe_user_pool_client::DescribeUserPoolClientError) -> Self {
+        match err {
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError> for Error {
+    fn from(err: crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError) -> Self {
+        match err {
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::forget_device::ForgetDeviceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::forget_device::ForgetDeviceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::forget_device::ForgetDeviceError> for Error {
+    fn from(err: crate::operation::forget_device::ForgetDeviceError) -> Self {
+        match err {
+            crate::operation::forget_device::ForgetDeviceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::forget_device::ForgetDeviceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::forget_device::ForgetDeviceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::forget_device::ForgetDeviceError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::forget_device::ForgetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::forget_device::ForgetDeviceError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::forget_device::ForgetDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::forget_device::ForgetDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::forget_device::ForgetDeviceError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::forget_device::ForgetDeviceError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::forget_device::ForgetDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::forgot_password::ForgotPasswordError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::forgot_password::ForgotPasswordError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::forgot_password::ForgotPasswordError> for Error {
+    fn from(err: crate::operation::forgot_password::ForgotPasswordError) -> Self {
+        match err {
+            crate::operation::forgot_password::ForgotPasswordError::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_csv_header::GetCSVHeaderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_csv_header::GetCSVHeaderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_csv_header::GetCSVHeaderError> for Error {
+    fn from(err: crate::operation::get_csv_header::GetCSVHeaderError) -> Self {
+        match err {
+            crate::operation::get_csv_header::GetCSVHeaderError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_csv_header::GetCSVHeaderError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::get_csv_header::GetCSVHeaderError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_csv_header::GetCSVHeaderError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_csv_header::GetCSVHeaderError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_csv_header::GetCSVHeaderError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_device::GetDeviceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_device::GetDeviceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_device::GetDeviceError> for Error {
+    fn from(err: crate::operation::get_device::GetDeviceError) -> Self {
+        match err {
+            crate::operation::get_device::GetDeviceError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::InvalidUserPoolConfigurationException(
+                inner,
+            ) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::get_device::GetDeviceError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::UserNotConfirmedException(inner) => {
+                Error::UserNotConfirmedException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::get_device::GetDeviceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_group::GetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_group::GetGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_group::GetGroupError> for Error {
+    fn from(err: crate::operation::get_group::GetGroupError) -> Self {
+        match err {
+            crate::operation::get_group::GetGroupError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_group::GetGroupError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_group::GetGroupError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_group::GetGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_group::GetGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_group::GetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
+    ) -> Self {
+        match err {
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_signing_certificate::GetSigningCertificateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_signing_certificate::GetSigningCertificateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_signing_certificate::GetSigningCertificateError> for Error {
+    fn from(err: crate::operation::get_signing_certificate::GetSigningCertificateError) -> Self {
+        match err {
+            crate::operation::get_signing_certificate::GetSigningCertificateError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_signing_certificate::GetSigningCertificateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_signing_certificate::GetSigningCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_signing_certificate::GetSigningCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ui_customization::GetUICustomizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ui_customization::GetUICustomizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_ui_customization::GetUICustomizationError> for Error {
+    fn from(err: crate::operation::get_ui_customization::GetUICustomizationError) -> Self {
+        match err {
+            crate::operation::get_ui_customization::GetUICustomizationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_ui_customization::GetUICustomizationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_ui_customization::GetUICustomizationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_ui_customization::GetUICustomizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ui_customization::GetUICustomizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_ui_customization::GetUICustomizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_user::GetUserError> for Error {
+    fn from(err: crate::operation::get_user::GetUserError) -> Self {
+        match err {
+            crate::operation::get_user::GetUserError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_user::GetUserError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_user::GetUserError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_user::GetUserError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_user::GetUserError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
+            }
+            crate::operation::get_user::GetUserError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_user::GetUserError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_user::GetUserError::UserNotConfirmedException(inner) => {
+                Error::UserNotConfirmedException(inner)
+            }
+            crate::operation::get_user::GetUserError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::get_user::GetUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError> for Error {
+    fn from(err: crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError) -> Self {
+        match err {
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError> for Error {
+    fn from(err: crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError) -> Self {
+        match err {
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::global_sign_out::GlobalSignOutError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::global_sign_out::GlobalSignOutError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::global_sign_out::GlobalSignOutError> for Error {
+    fn from(err: crate::operation::global_sign_out::GlobalSignOutError) -> Self {
+        match err {
+            crate::operation::global_sign_out::GlobalSignOutError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::initiate_auth::InitiateAuthError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::initiate_auth::InitiateAuthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::initiate_auth::InitiateAuthError> for Error {
+    fn from(err: crate::operation::initiate_auth::InitiateAuthError) -> Self {
+        match err {
+            crate::operation::initiate_auth::InitiateAuthError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_devices::ListDevicesError> for Error {
+    fn from(err: crate::operation::list_devices::ListDevicesError) -> Self {
+        match err {
+            crate::operation::list_devices::ListDevicesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_devices::ListDevicesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_devices::ListDevicesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_devices::ListDevicesError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::list_devices::ListDevicesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_devices::ListDevicesError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::list_devices::ListDevicesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_devices::ListDevicesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_devices::ListDevicesError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::list_devices::ListDevicesError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::list_devices::ListDevicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_groups::ListGroupsError> for Error {
+    fn from(err: crate::operation::list_groups::ListGroupsError) -> Self {
+        match err {
+            crate::operation::list_groups::ListGroupsError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_groups::ListGroupsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_groups::ListGroupsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_groups::ListGroupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_groups::ListGroupsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_groups::ListGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_providers::ListIdentityProvidersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_providers::ListIdentityProvidersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_identity_providers::ListIdentityProvidersError> for Error {
+    fn from(err: crate::operation::list_identity_providers::ListIdentityProvidersError) -> Self {
+        match err {
+            crate::operation::list_identity_providers::ListIdentityProvidersError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_servers::ListResourceServersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_servers::ListResourceServersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_resource_servers::ListResourceServersError> for Error {
+    fn from(err: crate::operation::list_resource_servers::ListResourceServersError) -> Self {
+        match err {
+            crate::operation::list_resource_servers::ListResourceServersError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_resource_servers::ListResourceServersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resource_servers::ListResourceServersError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_resource_servers::ListResourceServersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_resource_servers::ListResourceServersError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_resource_servers::ListResourceServersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_user_import_jobs::ListUserImportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_user_import_jobs::ListUserImportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_user_import_jobs::ListUserImportJobsError> for Error {
+    fn from(err: crate::operation::list_user_import_jobs::ListUserImportJobsError) -> Self {
+        match err {
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_user_pool_clients::ListUserPoolClientsError> for Error {
+    fn from(err: crate::operation::list_user_pool_clients::ListUserPoolClientsError) -> Self {
+        match err {
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_user_pools::ListUserPoolsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_user_pools::ListUserPoolsError> for Error {
+    fn from(err: crate::operation::list_user_pools::ListUserPoolsError) -> Self {
+        match err {
+            crate::operation::list_user_pools::ListUserPoolsError::InternalErrorException(
+                inner,
+            ) => Error::InternalErrorException(inner),
+            crate::operation::list_user_pools::ListUserPoolsError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::list_user_pools::ListUserPoolsError::NotAuthorizedException(
+                inner,
+            ) => Error::NotAuthorizedException(inner),
+            crate::operation::list_user_pools::ListUserPoolsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_user_pools::ListUserPoolsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_users::ListUsersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_users::ListUsersError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_users::ListUsersError> for Error {
+    fn from(err: crate::operation::list_users::ListUsersError) -> Self {
+        match err {
+            crate::operation::list_users::ListUsersError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_users::ListUsersError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_users::ListUsersError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_users::ListUsersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_users::ListUsersError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_users::ListUsersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_users_in_group::ListUsersInGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_users_in_group::ListUsersInGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_users_in_group::ListUsersInGroupError> for Error {
+    fn from(err: crate::operation::list_users_in_group::ListUsersInGroupError) -> Self {
+        match err {
+            crate::operation::list_users_in_group::ListUsersInGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_users_in_group::ListUsersInGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_users_in_group::ListUsersInGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_users_in_group::ListUsersInGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_users_in_group::ListUsersInGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_users_in_group::ListUsersInGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::resend_confirmation_code::ResendConfirmationCodeError> for Error {
+    fn from(err: crate::operation::resend_confirmation_code::ResendConfirmationCodeError) -> Self {
+        match err {
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError> for Error {
+    fn from(err: crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError) -> Self {
+        match err {
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::MfaMethodNotFoundException(inner) => Error::MfaMethodNotFoundException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::SoftwareTokenMfaNotFoundException(inner) => Error::SoftwareTokenMfaNotFoundException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::revoke_token::RevokeTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::revoke_token::RevokeTokenError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::revoke_token::RevokeTokenError> for Error {
+    fn from(err: crate::operation::revoke_token::RevokeTokenError) -> Self {
+        match err {
+            crate::operation::revoke_token::RevokeTokenError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::revoke_token::RevokeTokenError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::revoke_token::RevokeTokenError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::revoke_token::RevokeTokenError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::revoke_token::RevokeTokenError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::revoke_token::RevokeTokenError::UnsupportedOperationException(
+                inner,
+            ) => Error::UnsupportedOperationException(inner),
+            crate::operation::revoke_token::RevokeTokenError::UnsupportedTokenTypeException(
+                inner,
+            ) => Error::UnsupportedTokenTypeException(inner),
+            crate::operation::revoke_token::RevokeTokenError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_risk_configuration::SetRiskConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_risk_configuration::SetRiskConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_risk_configuration::SetRiskConfigurationError> for Error {
+    fn from(err: crate::operation::set_risk_configuration::SetRiskConfigurationError) -> Self {
+        match err {
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::UserPoolAddOnNotEnabledException(inner) => Error::UserPoolAddOnNotEnabledException(inner),
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_ui_customization::SetUICustomizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_ui_customization::SetUICustomizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_ui_customization::SetUICustomizationError> for Error {
+    fn from(err: crate::operation::set_ui_customization::SetUICustomizationError) -> Self {
+        match err {
+            crate::operation::set_ui_customization::SetUICustomizationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_ui_customization::SetUICustomizationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_ui_customization::SetUICustomizationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_ui_customization::SetUICustomizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_ui_customization::SetUICustomizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::set_ui_customization::SetUICustomizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError> for Error {
+    fn from(err: crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError) -> Self {
+        match err {
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError> for Error {
+    fn from(err: crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError) -> Self {
+        match err {
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_user_settings::SetUserSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::set_user_settings::SetUserSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_user_settings::SetUserSettingsError> for Error {
+    fn from(err: crate::operation::set_user_settings::SetUserSettingsError) -> Self {
+        match err {
+            crate::operation::set_user_settings::SetUserSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::sign_up::SignUpError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::sign_up::SignUpError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::sign_up::SignUpError> for Error {
+    fn from(err: crate::operation::sign_up::SignUpError) -> Self {
+        match err {
+            crate::operation::sign_up::SignUpError::CodeDeliveryFailureException(inner) => {
+                Error::CodeDeliveryFailureException(inner)
+            }
+            crate::operation::sign_up::SignUpError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::sign_up::SignUpError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::sign_up::SignUpError::InvalidEmailRoleAccessPolicyException(
+                inner,
+            ) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::sign_up::SignUpError::InvalidLambdaResponseException(inner) => {
+                Error::InvalidLambdaResponseException(inner)
+            }
+            crate::operation::sign_up::SignUpError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::sign_up::SignUpError::InvalidPasswordException(inner) => {
+                Error::InvalidPasswordException(inner)
+            }
+            crate::operation::sign_up::SignUpError::InvalidSmsRoleAccessPolicyException(inner) => {
+                Error::InvalidSmsRoleAccessPolicyException(inner)
+            }
+            crate::operation::sign_up::SignUpError::InvalidSmsRoleTrustRelationshipException(
+                inner,
+            ) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::sign_up::SignUpError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::sign_up::SignUpError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::sign_up::SignUpError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::sign_up::SignUpError::UnexpectedLambdaException(inner) => {
+                Error::UnexpectedLambdaException(inner)
+            }
+            crate::operation::sign_up::SignUpError::UserLambdaValidationException(inner) => {
+                Error::UserLambdaValidationException(inner)
+            }
+            crate::operation::sign_up::SignUpError::UsernameExistsException(inner) => {
+                Error::UsernameExistsException(inner)
+            }
+            crate::operation::sign_up::SignUpError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_user_import_job::StartUserImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_user_import_job::StartUserImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_user_import_job::StartUserImportJobError> for Error {
+    fn from(err: crate::operation::start_user_import_job::StartUserImportJobError) -> Self {
+        match err {
+            crate::operation::start_user_import_job::StartUserImportJobError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_user_import_job::StopUserImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_user_import_job::StopUserImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_user_import_job::StopUserImportJobError> for Error {
+    fn from(err: crate::operation::stop_user_import_job::StopUserImportJobError) -> Self {
+        match err {
+            crate::operation::stop_user_import_job::StopUserImportJobError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError> for Error {
+    fn from(
+        err: crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
+    ) -> Self {
+        match err {
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::UserPoolAddOnNotEnabledException(inner) => Error::UserPoolAddOnNotEnabledException(inner),
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_device_status::UpdateDeviceStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_device_status::UpdateDeviceStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_device_status::UpdateDeviceStatusError> for Error {
+    fn from(err: crate::operation::update_device_status::UpdateDeviceStatusError) -> Self {
+        match err {
+            crate::operation::update_device_status::UpdateDeviceStatusError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_group::UpdateGroupError> for Error {
+    fn from(err: crate::operation::update_group::UpdateGroupError) -> Self {
+        match err {
+            crate::operation::update_group::UpdateGroupError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::update_group::UpdateGroupError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_group::UpdateGroupError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_group::UpdateGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_group::UpdateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_group::UpdateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_identity_provider::UpdateIdentityProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_identity_provider::UpdateIdentityProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_identity_provider::UpdateIdentityProviderError> for Error {
+    fn from(err: crate::operation::update_identity_provider::UpdateIdentityProviderError) -> Self {
+        match err {
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::UnsupportedIdentityProviderException(inner) => Error::UnsupportedIdentityProviderException(inner),
+            crate::operation::update_identity_provider::UpdateIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_server::UpdateResourceServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_server::UpdateResourceServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_resource_server::UpdateResourceServerError> for Error {
+    fn from(err: crate::operation::update_resource_server::UpdateResourceServerError) -> Self {
+        match err {
+            crate::operation::update_resource_server::UpdateResourceServerError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_resource_server::UpdateResourceServerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_resource_server::UpdateResourceServerError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_resource_server::UpdateResourceServerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_resource_server::UpdateResourceServerError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_resource_server::UpdateResourceServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_attributes::UpdateUserAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_user_attributes::UpdateUserAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_user_attributes::UpdateUserAttributesError> for Error {
+    fn from(err: crate::operation::update_user_attributes::UpdateUserAttributesError) -> Self {
+        match err {
+            crate::operation::update_user_attributes::UpdateUserAttributesError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::update_user_attributes::UpdateUserAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool::UpdateUserPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool::UpdateUserPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_user_pool::UpdateUserPoolError> for Error {
+    fn from(err: crate::operation::update_user_pool::UpdateUserPoolError) -> Self {
+        match err {
+            crate::operation::update_user_pool::UpdateUserPoolError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::InvalidSmsRoleAccessPolicyException(inner) => Error::InvalidSmsRoleAccessPolicyException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::UserImportInProgressException(inner) => Error::UserImportInProgressException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::UserPoolTaggingException(inner) => Error::UserPoolTaggingException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_user_pool_client::UpdateUserPoolClientError> for Error {
+    fn from(err: crate::operation::update_user_pool_client::UpdateUserPoolClientError) -> Self {
+        match err {
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::InvalidOAuthFlowException(inner) => Error::InvalidOAuthFlowException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::ScopeDoesNotExistException(inner) => Error::ScopeDoesNotExistException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError> for Error {
+    fn from(err: crate::operation::update_user_pool_domain::UpdateUserPoolDomainError) -> Self {
+        match err {
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::verify_software_token::VerifySoftwareTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::verify_software_token::VerifySoftwareTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::verify_software_token::VerifySoftwareTokenError> for Error {
+    fn from(err: crate::operation::verify_software_token::VerifySoftwareTokenError) -> Self {
+        match err {
+            crate::operation::verify_software_token::VerifySoftwareTokenError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::EnableSoftwareTokenMfaException(inner) => Error::EnableSoftwareTokenMfaException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::SoftwareTokenMfaNotFoundException(inner) => Error::SoftwareTokenMfaNotFoundException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::verify_user_attribute::VerifyUserAttributeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::verify_user_attribute::VerifyUserAttributeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::verify_user_attribute::VerifyUserAttributeError> for Error {
+    fn from(err: crate::operation::verify_user_attribute::VerifyUserAttributeError) -> Self {
+        match err {
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::AliasExistsException(inner) => Error::AliasExistsException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AliasExistsException(e) => e.request_id(),
+            Self::CodeDeliveryFailureException(e) => e.request_id(),
+            Self::CodeMismatchException(e) => e.request_id(),
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::DuplicateProviderException(e) => e.request_id(),
+            Self::EnableSoftwareTokenMfaException(e) => e.request_id(),
+            Self::ExpiredCodeException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::GroupExistsException(e) => e.request_id(),
+            Self::InternalErrorException(e) => e.request_id(),
+            Self::InvalidEmailRoleAccessPolicyException(e) => e.request_id(),
+            Self::InvalidLambdaResponseException(e) => e.request_id(),
+            Self::InvalidOAuthFlowException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::InvalidPasswordException(e) => e.request_id(),
+            Self::InvalidSmsRoleAccessPolicyException(e) => e.request_id(),
+            Self::InvalidSmsRoleTrustRelationshipException(e) => e.request_id(),
+            Self::InvalidUserPoolConfigurationException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::MfaMethodNotFoundException(e) => e.request_id(),
+            Self::NotAuthorizedException(e) => e.request_id(),
+            Self::PasswordResetRequiredException(e) => e.request_id(),
+            Self::PreconditionNotMetException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ScopeDoesNotExistException(e) => e.request_id(),
+            Self::SoftwareTokenMfaNotFoundException(e) => e.request_id(),
+            Self::TooManyFailedAttemptsException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
+            Self::UnexpectedLambdaException(e) => e.request_id(),
+            Self::UnsupportedIdentityProviderException(e) => e.request_id(),
+            Self::UnsupportedOperationException(e) => e.request_id(),
+            Self::UnsupportedTokenTypeException(e) => e.request_id(),
+            Self::UnsupportedUserStateException(e) => e.request_id(),
+            Self::UserImportInProgressException(e) => e.request_id(),
+            Self::UserLambdaValidationException(e) => e.request_id(),
+            Self::UserNotConfirmedException(e) => e.request_id(),
+            Self::UserNotFoundException(e) => e.request_id(),
+            Self::UserPoolAddOnNotEnabledException(e) => e.request_id(),
+            Self::UserPoolTaggingException(e) => e.request_id(),
+            Self::UsernameExistsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

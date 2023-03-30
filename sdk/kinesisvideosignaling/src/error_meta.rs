@@ -4,26 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Your request was throttled because you have exceeded the limit of allowed client calls. Try making the call later.</p>
-    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
-    InvalidArgumentException(crate::error::InvalidArgumentException),
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The specified client is invalid.</p>
-    InvalidClientException(crate::error::InvalidClientException),
+    InvalidClientException(crate::types::error::InvalidClientException),
     /// <p>The caller is not authorized to perform this operation.</p>
-    NotAuthorizedException(crate::error::NotAuthorizedException),
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>The specified resource is not found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>If the client session is expired. Once the client is connected, the session is valid for 45 minutes. Client should reconnect to the channel to continue sending/receiving messages.</p>
-    SessionExpiredException(crate::error::SessionExpiredException),
-    ///
+    SessionExpiredException(crate::types::error::SessionExpiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38,83 +31,105 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIceServerConfigError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ice_server_config::GetIceServerConfigError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetIceServerConfigError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ice_server_config::GetIceServerConfigError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetIceServerConfigError> for Error {
-    fn from(err: crate::error::GetIceServerConfigError) -> Self {
-        match err.kind {
-            crate::error::GetIceServerConfigErrorKind::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::GetIceServerConfigErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetIceServerConfigErrorKind::InvalidClientException(inner) => {
-                Error::InvalidClientException(inner)
-            }
-            crate::error::GetIceServerConfigErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetIceServerConfigErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetIceServerConfigErrorKind::SessionExpiredException(inner) => {
-                Error::SessionExpiredException(inner)
-            }
-            crate::error::GetIceServerConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_ice_server_config::GetIceServerConfigError> for Error {
+    fn from(err: crate::operation::get_ice_server_config::GetIceServerConfigError) -> Self {
+        match err {
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidClientException(inner) => Error::InvalidClientException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::SessionExpiredException(inner) => Error::SessionExpiredException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::SendAlexaOfferToMasterError> for Error {
-    fn from(err: crate::error::SendAlexaOfferToMasterError) -> Self {
-        match err.kind {
-            crate::error::SendAlexaOfferToMasterErrorKind::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError> for Error {
+    fn from(
+        err: crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+    ) -> Self {
+        match err {
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ClientLimitExceededException(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::InvalidClientException(e) => e.request_id(),
+            Self::NotAuthorizedException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::SessionExpiredException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -3,6 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![allow(clippy::derive_partial_eq_without_eq)]
+#![warn(
+    // missing_docs,
+    // rustdoc::missing_crate_level_docs,
+    unreachable_pub,
+    rust_2018_idioms
+)]
+
 pub mod dispatch;
 pub mod map_request;
 pub mod parse_response;

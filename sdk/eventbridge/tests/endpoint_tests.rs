@@ -22,7 +22,7 @@ async fn operation_input_test_put_events_1() {
             .put_events()
             .set_endpoint_id(Some("abc123.456def".to_owned()))
             .set_entries(Some(vec![
-                aws_sdk_eventbridge::model::PutEventsRequestEntry::builder()
+                aws_sdk_eventbridge::types::PutEventsRequestEntry::builder()
                     .set_detail_type(Some("detailType".to_owned()))
                     .set_detail(Some("{ \"test\": [\"test\"] }".to_owned()))
                     .set_event_bus_name(Some("my-sdk-app".to_owned()))

@@ -6,14 +6,14 @@
 use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_kms as kms;
 use aws_sdk_kms::middleware::DefaultMiddleware;
+use aws_sdk_kms::operation::RequestId;
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_client::{Client as CoreClient, SdkError};
 use aws_smithy_http::body::SdkBody;
 use http::header::AUTHORIZATION;
 use http::Uri;
-use kms::operation::GenerateRandom;
-use kms::Credentials;
-use kms::{Config, Region};
+use kms::config::{Config, Credentials, Region};
+use kms::operation::generate_random::GenerateRandomInput;
 use std::time::{Duration, UNIX_EPOCH};
 
 type Client<C> = CoreClient<C, DefaultMiddleware>;
@@ -73,7 +73,7 @@ async fn generate_random() {
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .build();
-    let mut op = GenerateRandom::builder()
+    let mut op = GenerateRandomInput::builder()
         .number_of_bytes(64)
         .build()
         .unwrap()
@@ -111,7 +111,7 @@ async fn generate_random_malformed_response() {
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .build();
-    let op = GenerateRandom::builder()
+    let op = GenerateRandomInput::builder()
         .number_of_bytes(64)
         .build()
         .unwrap()
@@ -151,7 +151,7 @@ async fn generate_random_keystore_not_found() {
             .body(r#"{"__type":"CustomKeyStoreNotFoundException"}"#).unwrap())
     ]);
 
-    let mut op = GenerateRandom::builder()
+    let mut op = GenerateRandomInput::builder()
         .number_of_bytes(64)
         .custom_key_store_id("does not exist")
         .build()

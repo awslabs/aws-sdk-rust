@@ -109,6 +109,7 @@ enum ReceiverErrorKind {
     UnexpectedEndOfStream,
 }
 
+/// An error that occurs within an event stream receiver.
 #[derive(Debug)]
 pub struct ReceiverError {
     kind: ReceiverErrorKind,

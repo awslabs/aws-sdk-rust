@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Marketplace Catalog Service. Each operation on AWS Marketplace Catalog Service is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_marketplacecatalog::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_marketplacecatalog::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_marketplacecatalog::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_marketplacecatalog::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_marketplacecatalog::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CancelChangeSet`](crate::operation::cancel_change_set) operation has
+/// a [`Client::cancel_change_set`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.cancel_change_set()
+///     .catalog("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1049 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CancelChangeSet`](crate::client::fluent_builders::CancelChangeSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::CancelChangeSet::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::CancelChangeSet::set_catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-    ///   - [`change_set_id(impl Into<String>)`](crate::client::fluent_builders::CancelChangeSet::change_set_id) / [`set_change_set_id(Option<String>)`](crate::client::fluent_builders::CancelChangeSet::set_change_set_id): <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-    /// - On success, responds with [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput) with field(s):
-    ///   - [`change_set_id(Option<String>)`](crate::output::CancelChangeSetOutput::change_set_id): <p>The unique identifier for the change set referenced in this request.</p>
-    ///   - [`change_set_arn(Option<String>)`](crate::output::CancelChangeSetOutput::change_set_arn): <p>The ARN associated with the change set referenced in this request.</p>
-    /// - On failure, responds with [`SdkError<CancelChangeSetError>`](crate::error::CancelChangeSetError)
-    pub fn cancel_change_set(&self) -> fluent_builders::CancelChangeSet {
-        fluent_builders::CancelChangeSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeChangeSet`](crate::client::fluent_builders::DescribeChangeSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::DescribeChangeSet::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::DescribeChangeSet::set_catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`change_set_id(impl Into<String>)`](crate::client::fluent_builders::DescribeChangeSet::change_set_id) / [`set_change_set_id(Option<String>)`](crate::client::fluent_builders::DescribeChangeSet::set_change_set_id): <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-    /// - On success, responds with [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput) with field(s):
-    ///   - [`change_set_id(Option<String>)`](crate::output::DescribeChangeSetOutput::change_set_id): <p>Required. The unique identifier for the change set referenced in this request.</p>
-    ///   - [`change_set_arn(Option<String>)`](crate::output::DescribeChangeSetOutput::change_set_arn): <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    ///   - [`change_set_name(Option<String>)`](crate::output::DescribeChangeSetOutput::change_set_name): <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-    ///   - [`start_time(Option<String>)`](crate::output::DescribeChangeSetOutput::start_time): <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
-    ///   - [`end_time(Option<String>)`](crate::output::DescribeChangeSetOutput::end_time): <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
-    ///   - [`status(Option<ChangeStatus>)`](crate::output::DescribeChangeSetOutput::status): <p>The status of the change request.</p>
-    ///   - [`failure_code(Option<FailureCode>)`](crate::output::DescribeChangeSetOutput::failure_code): <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    ///   - [`failure_description(Option<String>)`](crate::output::DescribeChangeSetOutput::failure_description): <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    ///   - [`change_set(Option<Vec<ChangeSummary>>)`](crate::output::DescribeChangeSetOutput::change_set): <p>An array of <code>ChangeSummary</code> objects.</p>
-    /// - On failure, responds with [`SdkError<DescribeChangeSetError>`](crate::error::DescribeChangeSetError)
-    pub fn describe_change_set(&self) -> fluent_builders::DescribeChangeSet {
-        fluent_builders::DescribeChangeSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEntity`](crate::client::fluent_builders::DescribeEntity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::DescribeEntity::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::DescribeEntity::set_catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`entity_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEntity::entity_id) / [`set_entity_id(Option<String>)`](crate::client::fluent_builders::DescribeEntity::set_entity_id): <p>Required. The unique ID of the entity to describe.</p>
-    /// - On success, responds with [`DescribeEntityOutput`](crate::output::DescribeEntityOutput) with field(s):
-    ///   - [`entity_type(Option<String>)`](crate::output::DescribeEntityOutput::entity_type): <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
-    ///   - [`entity_identifier(Option<String>)`](crate::output::DescribeEntityOutput::entity_identifier): <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    ///   - [`entity_arn(Option<String>)`](crate::output::DescribeEntityOutput::entity_arn): <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
-    ///   - [`last_modified_date(Option<String>)`](crate::output::DescribeEntityOutput::last_modified_date): <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    ///   - [`details(Option<String>)`](crate::output::DescribeEntityOutput::details): <p>This stringified JSON object includes the details of the entity.</p>
-    /// - On failure, responds with [`SdkError<DescribeEntityError>`](crate::error::DescribeEntityError)
-    pub fn describe_entity(&self) -> fluent_builders::DescribeEntity {
-        fluent_builders::DescribeEntity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChangeSets`](crate::client::fluent_builders::ListChangeSets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChangeSets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::ListChangeSets::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::ListChangeSets::set_catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`filter_list(Vec<Filter>)`](crate::client::fluent_builders::ListChangeSets::filter_list) / [`set_filter_list(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListChangeSets::set_filter_list): <p>An array of filter objects.</p>
-    ///   - [`sort(Sort)`](crate::client::fluent_builders::ListChangeSets::sort) / [`set_sort(Option<Sort>)`](crate::client::fluent_builders::ListChangeSets::set_sort): <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChangeSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChangeSets::set_max_results): <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChangeSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChangeSets::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On success, responds with [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput) with field(s):
-    ///   - [`change_set_summary_list(Option<Vec<ChangeSetSummaryListItem>>)`](crate::output::ListChangeSetsOutput::change_set_summary_list): <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChangeSetsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListChangeSetsError>`](crate::error::ListChangeSetsError)
-    pub fn list_change_sets(&self) -> fluent_builders::ListChangeSets {
-        fluent_builders::ListChangeSets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEntities`](crate::client::fluent_builders::ListEntities) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEntities::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::ListEntities::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::ListEntities::set_catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`entity_type(impl Into<String>)`](crate::client::fluent_builders::ListEntities::entity_type) / [`set_entity_type(Option<String>)`](crate::client::fluent_builders::ListEntities::set_entity_type): <p>The type of entities to retrieve.</p>
-    ///   - [`filter_list(Vec<Filter>)`](crate::client::fluent_builders::ListEntities::filter_list) / [`set_filter_list(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListEntities::set_filter_list): <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    ///   - [`sort(Sort)`](crate::client::fluent_builders::ListEntities::sort) / [`set_sort(Option<Sort>)`](crate::client::fluent_builders::ListEntities::set_sort): <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntities::set_next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntities::set_max_results): <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
-    /// - On success, responds with [`ListEntitiesOutput`](crate::output::ListEntitiesOutput) with field(s):
-    ///   - [`entity_summary_list(Option<Vec<EntitySummary>>)`](crate::output::ListEntitiesOutput::entity_summary_list): <p> Array of <code>EntitySummary</code> object.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEntitiesOutput::next_token): <p>The value of the next token if it exists. Null if there is no more result.</p>
-    /// - On failure, responds with [`SdkError<ListEntitiesError>`](crate::error::ListEntitiesError)
-    pub fn list_entities(&self) -> fluent_builders::ListEntities {
-        fluent_builders::ListEntities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>Required. The ARN associated with the resource you want to list tags on.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartChangeSet`](crate::client::fluent_builders::StartChangeSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::StartChangeSet::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::StartChangeSet::set_catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`change_set(Vec<Change>)`](crate::client::fluent_builders::StartChangeSet::change_set) / [`set_change_set(Option<Vec<Change>>)`](crate::client::fluent_builders::StartChangeSet::set_change_set): <p>Array of <code>change</code> object.</p>
-    ///   - [`change_set_name(impl Into<String>)`](crate::client::fluent_builders::StartChangeSet::change_set_name) / [`set_change_set_name(Option<String>)`](crate::client::fluent_builders::StartChangeSet::set_change_set_name): <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartChangeSet::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartChangeSet::set_client_request_token): <p>A unique token to identify the request to ensure idempotency.</p>
-    ///   - [`change_set_tags(Vec<Tag>)`](crate::client::fluent_builders::StartChangeSet::change_set_tags) / [`set_change_set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartChangeSet::set_change_set_tags): <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    /// - On success, responds with [`StartChangeSetOutput`](crate::output::StartChangeSetOutput) with field(s):
-    ///   - [`change_set_id(Option<String>)`](crate::output::StartChangeSetOutput::change_set_id): <p>Unique identifier generated for the request.</p>
-    ///   - [`change_set_arn(Option<String>)`](crate::output::StartChangeSetOutput::change_set_arn): <p>The ARN associated to the unique identifier generated for the request.</p>
-    /// - On failure, responds with [`SdkError<StartChangeSetError>`](crate::error::StartChangeSetError)
-    pub fn start_change_set(&self) -> fluent_builders::StartChangeSet {
-        fluent_builders::StartChangeSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CancelChangeSet`.
-    ///
-    /// <p>Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CancelChangeSet {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::cancel_change_set_input::Builder,
-    }
-    impl CancelChangeSet {
-        /// Creates a new `CancelChangeSet`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CancelChangeSet,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CancelChangeSetError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CancelChangeSetOutput,
-            aws_smithy_http::result::SdkError<crate::error::CancelChangeSetError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(input.into());
-            self
-        }
-        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-        pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_catalog(input);
-            self
-        }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_id(input.into());
-            self
-        }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_change_set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeChangeSet`.
-    ///
-    /// <p>Provides information about a given change set.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeChangeSet {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_change_set_input::Builder,
-    }
-    impl DescribeChangeSet {
-        /// Creates a new `DescribeChangeSet`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeChangeSet,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeChangeSetError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeChangeSetOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeChangeSetError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(input.into());
-            self
-        }
-        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_catalog(input);
-            self
-        }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_id(input.into());
-            self
-        }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_change_set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeEntity`.
-    ///
-    /// <p>Returns the metadata and content of the entity.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeEntity {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_entity_input::Builder,
-    }
-    impl DescribeEntity {
-        /// Creates a new `DescribeEntity`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeEntity,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeEntityError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeEntityOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeEntityError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(input.into());
-            self
-        }
-        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_catalog(input);
-            self
-        }
-        /// <p>Required. The unique ID of the entity to describe.</p>
-        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(input.into());
-            self
-        }
-        /// <p>Required. The unique ID of the entity to describe.</p>
-        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_entity_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListChangeSets`.
-    ///
-    /// <p>Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of <code>entityId</code>, <code>ChangeSetName</code>, and status. If you provide more than one filter, the API operation applies a logical AND between the filters.</p>
-    /// <p>You can describe a change during the 60-day request history retention period for API calls.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListChangeSets {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_change_sets_input::Builder,
-    }
-    impl ListChangeSets {
-        /// Creates a new `ListChangeSets`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListChangeSets,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListChangeSetsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListChangeSetsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListChangeSetsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListChangeSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListChangeSetsPaginator {
-            crate::paginator::ListChangeSetsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(input.into());
-            self
-        }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_catalog(input);
-            self
-        }
-        /// Appends an item to `FilterList`.
-        ///
-        /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
-        ///
-        /// <p>An array of filter objects.</p>
-        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filter_list(input);
-            self
-        }
-        /// <p>An array of filter objects.</p>
-        pub fn set_filter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filter_list(input);
-            self
-        }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-        pub fn sort(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort(input);
-            self
-        }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-        pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
-            self.inner = self.inner.set_sort(input);
-            self
-        }
-        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListEntities`.
-    ///
-    /// <p>Provides the list of entities of a given type.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListEntities {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_entities_input::Builder,
-    }
-    impl ListEntities {
-        /// Creates a new `ListEntities`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListEntities,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListEntitiesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListEntitiesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListEntitiesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListEntitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListEntitiesPaginator {
-            crate::paginator::ListEntitiesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(input.into());
-            self
-        }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_catalog(input);
-            self
-        }
-        /// <p>The type of entities to retrieve.</p>
-        pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_type(input.into());
-            self
-        }
-        /// <p>The type of entities to retrieve.</p>
-        pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_entity_type(input);
-            self
-        }
-        /// Appends an item to `FilterList`.
-        ///
-        /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
-        ///
-        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filter_list(input);
-            self
-        }
-        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-        pub fn set_filter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filter_list(input);
-            self
-        }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-        pub fn sort(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort(input);
-            self
-        }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-        pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
-            self.inner = self.inner.set_sort(input);
-            self
-        }
-        /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Lists all tags that have been added to a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a> or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change set</a>).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartChangeSet`.
-    ///
-    /// <p>Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code> error.</p>
-    /// <p>For example, you can't start the <code>ChangeSet</code> described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).</p>
-    /// <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"> Working with change sets</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartChangeSet {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::start_change_set_input::Builder,
-    }
-    impl StartChangeSet {
-        /// Creates a new `StartChangeSet`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::StartChangeSet,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::StartChangeSetError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::StartChangeSetOutput,
-            aws_smithy_http::result::SdkError<crate::error::StartChangeSetError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(input.into());
-            self
-        }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-        pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_catalog(input);
-            self
-        }
-        /// Appends an item to `ChangeSet`.
-        ///
-        /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
-        ///
-        /// <p>Array of <code>change</code> object.</p>
-        pub fn change_set(mut self, input: crate::model::Change) -> Self {
-            self.inner = self.inner.change_set(input);
-            self
-        }
-        /// <p>Array of <code>change</code> object.</p>
-        pub fn set_change_set(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Change>>,
-        ) -> Self {
-            self.inner = self.inner.set_change_set(input);
-            self
-        }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(input.into());
-            self
-        }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-        pub fn set_change_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_change_set_name(input);
-            self
-        }
-        /// <p>A unique token to identify the request to ensure idempotency.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique token to identify the request to ensure idempotency.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `ChangeSetTags`.
-        ///
-        /// To override the contents of this collection use [`set_change_set_tags`](Self::set_change_set_tags).
-        ///
-        /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-        pub fn change_set_tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.change_set_tags(input);
-            self
-        }
-        /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-        pub fn set_change_set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_change_set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Tags a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a> or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change set</a>).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes a tag or list of tags from a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a> or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change set</a>).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
     }
 }
 
@@ -1207,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1217,3 +211,49 @@ impl Client {
         }
     }
 }
+
+mod cancel_change_set;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_marketplacecatalog::Error> {
+/// # let client: aws_sdk_marketplacecatalog::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.cancel_change_set()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod describe_change_set;
+
+mod describe_entity;
+
+mod list_change_sets;
+
+mod list_entities;
+
+mod list_tags_for_resource;
+
+mod start_change_set;
+
+mod tag_resource;
+
+mod untag_resource;

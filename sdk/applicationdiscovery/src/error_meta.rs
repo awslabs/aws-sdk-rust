@@ -4,32 +4,25 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
-    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    AuthorizationErrorException(crate::types::error::AuthorizationErrorException),
     /// <p></p>
-    ConflictErrorException(crate::error::ConflictErrorException),
+    ConflictErrorException(crate::types::error::ConflictErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
-    HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
+    HomeRegionNotSetException(crate::types::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
-    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
-    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
-    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
-    ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    ///
+    ServerInternalErrorException(crate::types::error::ServerInternalErrorException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,10 +40,35 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError> for Error {
+    fn from(err: crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError) -> Self {
+        match err {
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::AssociateConfigurationItemsToApplicationError,
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
             R,
         >,
     > for Error
@@ -59,7 +77,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::AssociateConfigurationItemsToApplicationError,
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
             R,
         >,
     ) -> Self {
@@ -67,508 +85,565 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::AssociateConfigurationItemsToApplicationError> for Error {
-    fn from(err: crate::error::AssociateConfigurationItemsToApplicationError) -> Self {
-        match err.kind {
-            crate::error::AssociateConfigurationItemsToApplicationErrorKind::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
-            crate::error::AssociateConfigurationItemsToApplicationErrorKind::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
-            crate::error::AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::AssociateConfigurationItemsToApplicationErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-            crate::error::AssociateConfigurationItemsToApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::batch_delete_import_data::BatchDeleteImportDataError> for Error {
+    fn from(err: crate::operation::batch_delete_import_data::BatchDeleteImportDataError) -> Self {
+        match err {
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteImportDataError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_application::CreateApplicationError> for Error {
+    fn from(err: crate::operation::create_application::CreateApplicationError) -> Self {
+        match err {
+            crate::operation::create_application::CreateApplicationError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::create_application::CreateApplicationError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::create_application::CreateApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_application::CreateApplicationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_application::CreateApplicationError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDeleteImportDataError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::BatchDeleteImportDataError> for Error {
-    fn from(err: crate::error::BatchDeleteImportDataError) -> Self {
-        match err.kind {
-            crate::error::BatchDeleteImportDataErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::BatchDeleteImportDataErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::BatchDeleteImportDataErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::BatchDeleteImportDataErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::BatchDeleteImportDataErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::BatchDeleteImportDataErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateApplicationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateApplicationError, R>,
-    ) -> Self {
+impl From<crate::operation::create_tags::CreateTagsError> for Error {
+    fn from(err: crate::operation::create_tags::CreateTagsError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateApplicationError> for Error {
-    fn from(err: crate::error::CreateApplicationError) -> Self {
-        match err.kind {
-            crate::error::CreateApplicationErrorKind::AuthorizationErrorException(inner) => {
+            crate::operation::create_tags::CreateTagsError::AuthorizationErrorException(inner) => {
                 Error::AuthorizationErrorException(inner)
             }
-            crate::error::CreateApplicationErrorKind::HomeRegionNotSetException(inner) => {
+            crate::operation::create_tags::CreateTagsError::HomeRegionNotSetException(inner) => {
                 Error::HomeRegionNotSetException(inner)
             }
-            crate::error::CreateApplicationErrorKind::InvalidParameterException(inner) => {
+            crate::operation::create_tags::CreateTagsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::CreateApplicationErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CreateApplicationErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateTagsError> for Error {
-    fn from(err: crate::error::CreateTagsError) -> Self {
-        match err.kind {
-            crate::error::CreateTagsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::CreateTagsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::CreateTagsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateTagsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::CreateTagsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateTagsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::CreateTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteApplicationsError> for Error {
-    fn from(err: crate::error::DeleteApplicationsError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DeleteApplicationsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DeleteApplicationsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteApplicationsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DeleteApplicationsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DeleteApplicationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteTagsError> for Error {
-    fn from(err: crate::error::DeleteTagsError) -> Self {
-        match err.kind {
-            crate::error::DeleteTagsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DeleteTagsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DeleteTagsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteTagsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DeleteTagsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteTagsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAgentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAgentsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeAgentsError> for Error {
-    fn from(err: crate::error::DescribeAgentsError) -> Self {
-        match err.kind {
-            crate::error::DescribeAgentsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DescribeAgentsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DescribeAgentsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeAgentsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeAgentsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DescribeAgentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigurationsError> for Error {
-    fn from(err: crate::error::DescribeConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::DescribeConfigurationsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DescribeConfigurationsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DescribeConfigurationsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeConfigurationsErrorKind::InvalidParameterValueException(
+            crate::operation::create_tags::CreateTagsError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeConfigurationsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DescribeConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeContinuousExportsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeContinuousExportsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeContinuousExportsError> for Error {
-    fn from(err: crate::error::DescribeContinuousExportsError) -> Self {
-        match err.kind {
-            crate::error::DescribeContinuousExportsErrorKind::AuthorizationErrorException(
-                inner,
-            ) => Error::AuthorizationErrorException(inner),
-            crate::error::DescribeContinuousExportsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DescribeContinuousExportsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeContinuousExportsErrorKind::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeContinuousExportsErrorKind::OperationNotPermittedException(
-                inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::DescribeContinuousExportsErrorKind::ResourceNotFoundException(inner) => {
+            crate::operation::create_tags::CreateTagsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DescribeContinuousExportsErrorKind::ServerInternalErrorException(
-                inner,
-            ) => Error::ServerInternalErrorException(inner),
-            crate::error::DescribeContinuousExportsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_tags::CreateTagsError::ServerInternalErrorException(inner) => {
+                Error::ServerInternalErrorException(inner)
+            }
+            crate::operation::create_tags::CreateTagsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeExportConfigurationsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_applications::DeleteApplicationsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeExportConfigurationsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_applications::DeleteApplicationsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeExportConfigurationsError> for Error {
-    fn from(err: crate::error::DescribeExportConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::DescribeExportConfigurationsErrorKind::AuthorizationErrorException(
+impl From<crate::operation::delete_applications::DeleteApplicationsError> for Error {
+    fn from(err: crate::operation::delete_applications::DeleteApplicationsError) -> Self {
+        match err {
+            crate::operation::delete_applications::DeleteApplicationsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::delete_applications::DeleteApplicationsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::delete_applications::DeleteApplicationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_applications::DeleteApplicationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_applications::DeleteApplicationsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::delete_applications::DeleteApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_tags::DeleteTagsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_tags::DeleteTagsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_tags::DeleteTagsError> for Error {
+    fn from(err: crate::operation::delete_tags::DeleteTagsError) -> Self {
+        match err {
+            crate::operation::delete_tags::DeleteTagsError::AuthorizationErrorException(inner) => {
+                Error::AuthorizationErrorException(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::HomeRegionNotSetException(inner) => {
+                Error::HomeRegionNotSetException(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_tags::DeleteTagsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::ServerInternalErrorException(inner) => {
+                Error::ServerInternalErrorException(inner)
+            }
+            crate::operation::delete_tags::DeleteTagsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_agents::DescribeAgentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_agents::DescribeAgentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_agents::DescribeAgentsError> for Error {
+    fn from(err: crate::operation::describe_agents::DescribeAgentsError) -> Self {
+        match err {
+            crate::operation::describe_agents::DescribeAgentsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_agents::DescribeAgentsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_agents::DescribeAgentsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_agents::DescribeAgentsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_agents::DescribeAgentsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_agents::DescribeAgentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_configurations::DescribeConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_configurations::DescribeConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_configurations::DescribeConfigurationsError> for Error {
+    fn from(err: crate::operation::describe_configurations::DescribeConfigurationsError) -> Self {
+        match err {
+            crate::operation::describe_configurations::DescribeConfigurationsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_configurations::DescribeConfigurationsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_configurations::DescribeConfigurationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_configurations::DescribeConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_configurations::DescribeConfigurationsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_configurations::DescribeConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_continuous_exports::DescribeContinuousExportsError> for Error {
+    fn from(
+        err: crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_export_configurations::DescribeExportConfigurationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_tasks::DescribeExportTasksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_tasks::DescribeExportTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_export_tasks::DescribeExportTasksError> for Error {
+    fn from(err: crate::operation::describe_export_tasks::DescribeExportTasksError) -> Self {
+        match err {
+            crate::operation::describe_export_tasks::DescribeExportTasksError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_export_tasks::DescribeExportTasksError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_export_tasks::DescribeExportTasksError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_export_tasks::DescribeExportTasksError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_export_tasks::DescribeExportTasksError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_export_tasks::DescribeExportTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_import_tasks::DescribeImportTasksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_import_tasks::DescribeImportTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_import_tasks::DescribeImportTasksError> for Error {
+    fn from(err: crate::operation::describe_import_tasks::DescribeImportTasksError) -> Self {
+        match err {
+            crate::operation::describe_import_tasks::DescribeImportTasksError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_tags::DescribeTagsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_tags::DescribeTagsError> for Error {
+    fn from(err: crate::operation::describe_tags::DescribeTagsError) -> Self {
+        match err {
+            crate::operation::describe_tags::DescribeTagsError::AuthorizationErrorException(
                 inner,
             ) => Error::AuthorizationErrorException(inner),
-            crate::error::DescribeExportConfigurationsErrorKind::HomeRegionNotSetException(
+            crate::operation::describe_tags::DescribeTagsError::HomeRegionNotSetException(
                 inner,
             ) => Error::HomeRegionNotSetException(inner),
-            crate::error::DescribeExportConfigurationsErrorKind::InvalidParameterException(
+            crate::operation::describe_tags::DescribeTagsError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::DescribeExportConfigurationsErrorKind::InvalidParameterValueException(
+            crate::operation::describe_tags::DescribeTagsError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeExportConfigurationsErrorKind::ResourceNotFoundException(
+            crate::operation::describe_tags::DescribeTagsError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeExportConfigurationsErrorKind::ServerInternalErrorException(
+            crate::operation::describe_tags::DescribeTagsError::ServerInternalErrorException(
                 inner,
             ) => Error::ServerInternalErrorException(inner),
-            crate::error::DescribeExportConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::describe_tags::DescribeTagsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeExportTasksError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeExportTasksError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::DescribeExportTasksError> for Error {
-    fn from(err: crate::error::DescribeExportTasksError) -> Self {
-        match err.kind {
-            crate::error::DescribeExportTasksErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DescribeExportTasksErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DescribeExportTasksErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeExportTasksErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeExportTasksErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DescribeExportTasksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeImportTasksError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeImportTasksError, R>,
-    ) -> Self {
+impl From<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError> for Error {
+    fn from(err: crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeImportTasksError> for Error {
-    fn from(err: crate::error::DescribeImportTasksError) -> Self {
-        match err.kind {
-            crate::error::DescribeImportTasksErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DescribeImportTasksErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DescribeImportTasksErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeImportTasksErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeImportTasksErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DescribeImportTasksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeTagsError> for Error {
-    fn from(err: crate::error::DescribeTagsError) -> Self {
-        match err.kind {
-            crate::error::DescribeTagsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::DescribeTagsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::DescribeTagsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeTagsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeTagsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeTagsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DisassociateConfigurationItemsFromApplicationError,
+            crate::operation::export_configurations::ExportConfigurationsError,
             R,
         >,
     > for Error
@@ -577,7 +652,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociateConfigurationItemsFromApplicationError,
+            crate::operation::export_configurations::ExportConfigurationsError,
             R,
         >,
     ) -> Self {
@@ -585,468 +660,473 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DisassociateConfigurationItemsFromApplicationError> for Error {
-    fn from(err: crate::error::DisassociateConfigurationItemsFromApplicationError) -> Self {
-        match err.kind {
-            crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
-            crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
-            crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-            crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::export_configurations::ExportConfigurationsError> for Error {
+    fn from(err: crate::operation::export_configurations::ExportConfigurationsError) -> Self {
+        match err {
+            crate::operation::export_configurations::ExportConfigurationsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::export_configurations::ExportConfigurationsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::export_configurations::ExportConfigurationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::export_configurations::ExportConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::export_configurations::ExportConfigurationsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::export_configurations::ExportConfigurationsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::export_configurations::ExportConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExportConfigurationsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_discovery_summary::GetDiscoverySummaryError> for Error {
+    fn from(err: crate::operation::get_discovery_summary::GetDiscoverySummaryError) -> Self {
+        match err {
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_configurations::ListConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_configurations::ListConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_configurations::ListConfigurationsError> for Error {
+    fn from(err: crate::operation::list_configurations::ListConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_configurations::ListConfigurationsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_server_neighbors::ListServerNeighborsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_server_neighbors::ListServerNeighborsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_server_neighbors::ListServerNeighborsError> for Error {
+    fn from(err: crate::operation::list_server_neighbors::ListServerNeighborsError) -> Self {
+        match err {
+            crate::operation::list_server_neighbors::ListServerNeighborsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::list_server_neighbors::ListServerNeighborsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::list_server_neighbors::ListServerNeighborsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_server_neighbors::ListServerNeighborsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_server_neighbors::ListServerNeighborsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::list_server_neighbors::ListServerNeighborsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_continuous_export::StartContinuousExportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_continuous_export::StartContinuousExportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_continuous_export::StartContinuousExportError> for Error {
+    fn from(err: crate::operation::start_continuous_export::StartContinuousExportError) -> Self {
+        match err {
+            crate::operation::start_continuous_export::StartContinuousExportError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::ConflictErrorException(inner) => Error::ConflictErrorException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::start_continuous_export::StartContinuousExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>
     for Error
+{
+    fn from(
+        err: crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError,
+    ) -> Self {
+        match err {
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_export_task::StartExportTaskError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ExportConfigurationsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_export_task::StartExportTaskError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ExportConfigurationsError> for Error {
-    fn from(err: crate::error::ExportConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::ExportConfigurationsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::ExportConfigurationsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::ExportConfigurationsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ExportConfigurationsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ExportConfigurationsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ExportConfigurationsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::ExportConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::start_export_task::StartExportTaskError> for Error {
+    fn from(err: crate::operation::start_export_task::StartExportTaskError) -> Self {
+        match err {
+            crate::operation::start_export_task::StartExportTaskError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::start_export_task::StartExportTaskError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::start_export_task::StartExportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_export_task::StartExportTaskError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_export_task::StartExportTaskError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_export_task::StartExportTaskError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::start_export_task::StartExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiscoverySummaryError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_import_task::StartImportTaskError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDiscoverySummaryError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_import_task::StartImportTaskError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetDiscoverySummaryError> for Error {
-    fn from(err: crate::error::GetDiscoverySummaryError) -> Self {
-        match err.kind {
-            crate::error::GetDiscoverySummaryErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::GetDiscoverySummaryErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::GetDiscoverySummaryErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetDiscoverySummaryErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::GetDiscoverySummaryErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::GetDiscoverySummaryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::start_import_task::StartImportTaskError> for Error {
+    fn from(err: crate::operation::start_import_task::StartImportTaskError) -> Self {
+        match err {
+            crate::operation::start_import_task::StartImportTaskError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::start_import_task::StartImportTaskError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::start_import_task::StartImportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_import_task::StartImportTaskError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_import_task::StartImportTaskError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_import_task::StartImportTaskError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::start_import_task::StartImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListConfigurationsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_continuous_export::StopContinuousExportError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListConfigurationsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_continuous_export::StopContinuousExportError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListConfigurationsError> for Error {
-    fn from(err: crate::error::ListConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::ListConfigurationsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::ListConfigurationsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::ListConfigurationsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListConfigurationsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ListConfigurationsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListConfigurationsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::ListConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::stop_continuous_export::StopContinuousExportError> for Error {
+    fn from(err: crate::operation::stop_continuous_export::StopContinuousExportError) -> Self {
+        match err {
+            crate::operation::stop_continuous_export::StopContinuousExportError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::stop_continuous_export::StopContinuousExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListServerNeighborsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListServerNeighborsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListServerNeighborsError> for Error {
-    fn from(err: crate::error::ListServerNeighborsError) -> Self {
-        match err.kind {
-            crate::error::ListServerNeighborsErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::ListServerNeighborsErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::ListServerNeighborsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListServerNeighborsErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ListServerNeighborsErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::ListServerNeighborsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartContinuousExportError, R>>
+impl From<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError>
     for Error
+{
+    fn from(
+        err: crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_application::UpdateApplicationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartContinuousExportError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_application::UpdateApplicationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartContinuousExportError> for Error {
-    fn from(err: crate::error::StartContinuousExportError) -> Self {
-        match err.kind {
-            crate::error::StartContinuousExportErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::ConflictErrorException(inner) => {
-                Error::ConflictErrorException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::StartContinuousExportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartDataCollectionByAgentIdsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartDataCollectionByAgentIdsError, R>,
-    ) -> Self {
+impl From<crate::operation::update_application::UpdateApplicationError> for Error {
+    fn from(err: crate::operation::update_application::UpdateApplicationError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartDataCollectionByAgentIdsError> for Error {
-    fn from(err: crate::error::StartDataCollectionByAgentIdsError) -> Self {
-        match err.kind {
-            crate::error::StartDataCollectionByAgentIdsErrorKind::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
-            crate::error::StartDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
-            crate::error::StartDataCollectionByAgentIdsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartDataCollectionByAgentIdsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::StartDataCollectionByAgentIdsErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-            crate::error::StartDataCollectionByAgentIdsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartExportTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartExportTaskError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartExportTaskError> for Error {
-    fn from(err: crate::error::StartExportTaskError) -> Self {
-        match err.kind {
-            crate::error::StartExportTaskErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::StartExportTaskErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::StartExportTaskErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartExportTaskErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::StartExportTaskErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StartExportTaskErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::StartExportTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartImportTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartImportTaskError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartImportTaskError> for Error {
-    fn from(err: crate::error::StartImportTaskError) -> Self {
-        match err.kind {
-            crate::error::StartImportTaskErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::StartImportTaskErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::StartImportTaskErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartImportTaskErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::StartImportTaskErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StartImportTaskErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::StartImportTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopContinuousExportError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopContinuousExportError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopContinuousExportError> for Error {
-    fn from(err: crate::error::StopContinuousExportError) -> Self {
-        match err.kind {
-            crate::error::StopContinuousExportErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::StopContinuousExportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopDataCollectionByAgentIdsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopDataCollectionByAgentIdsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopDataCollectionByAgentIdsError> for Error {
-    fn from(err: crate::error::StopDataCollectionByAgentIdsError) -> Self {
-        match err.kind {
-            crate::error::StopDataCollectionByAgentIdsErrorKind::AuthorizationErrorException(
-                inner,
-            ) => Error::AuthorizationErrorException(inner),
-            crate::error::StopDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException(
-                inner,
-            ) => Error::HomeRegionNotSetException(inner),
-            crate::error::StopDataCollectionByAgentIdsErrorKind::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::error::StopDataCollectionByAgentIdsErrorKind::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::StopDataCollectionByAgentIdsErrorKind::ServerInternalErrorException(
-                inner,
-            ) => Error::ServerInternalErrorException(inner),
-            crate::error::StopDataCollectionByAgentIdsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateApplicationError> for Error {
-    fn from(err: crate::error::UpdateApplicationError) -> Self {
-        match err.kind {
-            crate::error::UpdateApplicationErrorKind::AuthorizationErrorException(inner) => {
-                Error::AuthorizationErrorException(inner)
-            }
-            crate::error::UpdateApplicationErrorKind::HomeRegionNotSetException(inner) => {
-                Error::HomeRegionNotSetException(inner)
-            }
-            crate::error::UpdateApplicationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateApplicationErrorKind::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::UpdateApplicationErrorKind::ServerInternalErrorException(inner) => {
-                Error::ServerInternalErrorException(inner)
-            }
-            crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::update_application::UpdateApplicationError::AuthorizationErrorException(inner) => Error::AuthorizationErrorException(inner),
+            crate::operation::update_application::UpdateApplicationError::HomeRegionNotSetException(inner) => Error::HomeRegionNotSetException(inner),
+            crate::operation::update_application::UpdateApplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_application::UpdateApplicationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_application::UpdateApplicationError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
+            crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AuthorizationErrorException(e) => e.request_id(),
+            Self::ConflictErrorException(e) => e.request_id(),
+            Self::HomeRegionNotSetException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::InvalidParameterValueException(e) => e.request_id(),
+            Self::OperationNotPermittedException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServerInternalErrorException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

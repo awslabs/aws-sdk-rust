@@ -15,7 +15,7 @@ use std::borrow::Cow;
 ///
 /// If no escape sequences are present, Cow<&'str> will be returned, avoiding the need
 /// to copy the String.
-pub fn unescape(s: &str) -> Result<Cow<str>, XmlDecodeError> {
+pub(crate) fn unescape(s: &str) -> Result<Cow<'_, str>, XmlDecodeError> {
     // no &, no need to escape anything
     if !s.contains('&') {
         return Ok(Cow::Borrowed(s));

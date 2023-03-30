@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_iam::{Credentials, Region};
+use aws_sdk_iam::config::{Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
 
 // this test is ignored because pseudoregions have been removed. This test should be re-enabled

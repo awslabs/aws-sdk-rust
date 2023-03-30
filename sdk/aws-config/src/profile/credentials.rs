@@ -61,9 +61,8 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 /// let provider = ProfileFileCredentialsProvider::builder().build();
 /// ```
 ///
-/// _Note: Profile providers to not implement any caching. They will reload and reparse the profile
-/// from the file system when called. See [CredentialsCache](aws_credential_types::cache::CredentialsCache) for
-/// more information about caching._
+/// _Note: Profile providers, when called, will load and parse the profile from the file system
+/// only once. Parsed file contents will be cached indefinitely._
 ///
 /// This provider supports several different credentials formats:
 /// ### Credentials defined explicitly within the file
@@ -470,6 +469,7 @@ mod test {
                     "./test-data/profile-provider/",
                     stringify!($name)
                 ))
+                .await
                 .unwrap()
                 .execute(|conf| async move { Builder::default().configure(&conf).build() })
                 .await

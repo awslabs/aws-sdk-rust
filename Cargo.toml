@@ -1,5 +1,8 @@
 [workspace]
-members = [
+exclude = [
+    "tests/no-default-features",
+    "tests/aws-smithy-runtime-test",
+    "tests/using-native-tls-instead-of-rustls",
     "examples/apigateway",
     "examples/apigatewaymanagement",
     "examples/applicationautoscaling",
@@ -21,6 +24,7 @@ members = [
     "examples/ecr",
     "examples/ecs",
     "examples/eks",
+    "examples/firehose",
     "examples/globalaccelerator",
     "examples/glue",
     "examples/greengrassv2",
@@ -49,11 +53,13 @@ members = [
     "examples/sqs",
     "examples/ssm",
     "examples/stepfunction",
+    "examples/sts",
     "examples/test-utils",
     "examples/testing",
     "examples/tls",
     "examples/transcribestreaming",
-    "examples/using-native-tls-instead-of-rustls",
+]
+members = [
     "sdk/accessanalyzer",
     "sdk/account",
     "sdk/acm",
@@ -95,10 +101,13 @@ members = [
     "sdk/aws-smithy-client",
     "sdk/aws-smithy-eventstream",
     "sdk/aws-smithy-http",
+    "sdk/aws-smithy-http-auth",
     "sdk/aws-smithy-http-tower",
     "sdk/aws-smithy-json",
     "sdk/aws-smithy-protocol-test",
     "sdk/aws-smithy-query",
+    "sdk/aws-smithy-runtime",
+    "sdk/aws-smithy-runtime-api",
     "sdk/aws-smithy-types",
     "sdk/aws-smithy-types-convert",
     "sdk/aws-smithy-xml",

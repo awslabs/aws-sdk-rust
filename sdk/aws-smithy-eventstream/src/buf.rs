@@ -3,5 +3,5 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-pub mod count;
-pub mod crc;
+pub(crate) mod count;
+pub(crate) mod crc;

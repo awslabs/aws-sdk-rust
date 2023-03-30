@@ -4,24 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The operation failed because it specified a resource that can't be found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
-    ValidationException(crate::error::ValidationException),
-    ///
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35,196 +28,229 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAlternateContactError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAlternateContactError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteAlternateContactError> for Error {
-    fn from(err: crate::error::DeleteAlternateContactError) -> Self {
-        match err.kind {
-            crate::error::DeleteAlternateContactErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteAlternateContactErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteAlternateContactErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteAlternateContactErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteAlternateContactErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteAlternateContactErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::delete_alternate_contact::DeleteAlternateContactError> for Error {
+    fn from(err: crate::operation::delete_alternate_contact::DeleteAlternateContactError) -> Self {
+        match err {
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAlternateContactError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_alternate_contact::GetAlternateContactError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAlternateContactError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_alternate_contact::GetAlternateContactError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetAlternateContactError> for Error {
-    fn from(err: crate::error::GetAlternateContactError) -> Self {
-        match err.kind {
-            crate::error::GetAlternateContactErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetAlternateContactErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetAlternateContactErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetAlternateContactErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetAlternateContactErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetAlternateContactErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_alternate_contact::GetAlternateContactError> for Error {
+    fn from(err: crate::operation::get_alternate_contact::GetAlternateContactError) -> Self {
+        match err {
+            crate::operation::get_alternate_contact::GetAlternateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_alternate_contact::GetAlternateContactError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_alternate_contact::GetAlternateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_alternate_contact::GetAlternateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_alternate_contact::GetAlternateContactError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_alternate_contact::GetAlternateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContactInformationError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_information::GetContactInformationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetContactInformationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_information::GetContactInformationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetContactInformationError> for Error {
-    fn from(err: crate::error::GetContactInformationError) -> Self {
-        match err.kind {
-            crate::error::GetContactInformationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetContactInformationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetContactInformationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetContactInformationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetContactInformationErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetContactInformationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_contact_information::GetContactInformationError> for Error {
+    fn from(err: crate::operation::get_contact_information::GetContactInformationError) -> Self {
+        match err {
+            crate::operation::get_contact_information::GetContactInformationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_contact_information::GetContactInformationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_contact_information::GetContactInformationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_contact_information::GetContactInformationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_contact_information::GetContactInformationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_contact_information::GetContactInformationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAlternateContactError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_alternate_contact::PutAlternateContactError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutAlternateContactError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_alternate_contact::PutAlternateContactError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutAlternateContactError> for Error {
-    fn from(err: crate::error::PutAlternateContactError) -> Self {
-        match err.kind {
-            crate::error::PutAlternateContactErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutAlternateContactErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::PutAlternateContactErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PutAlternateContactErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::PutAlternateContactErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::put_alternate_contact::PutAlternateContactError> for Error {
+    fn from(err: crate::operation::put_alternate_contact::PutAlternateContactError) -> Self {
+        match err {
+            crate::operation::put_alternate_contact::PutAlternateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_alternate_contact::PutAlternateContactError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_alternate_contact::PutAlternateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_alternate_contact::PutAlternateContactError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_alternate_contact::PutAlternateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutContactInformationError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_contact_information::PutContactInformationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutContactInformationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_contact_information::PutContactInformationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutContactInformationError> for Error {
-    fn from(err: crate::error::PutContactInformationError) -> Self {
-        match err.kind {
-            crate::error::PutContactInformationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutContactInformationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::PutContactInformationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PutContactInformationErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::PutContactInformationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::put_contact_information::PutContactInformationError> for Error {
+    fn from(err: crate::operation::put_contact_information::PutContactInformationError) -> Self {
+        match err {
+            crate::operation::put_contact_information::PutContactInformationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_contact_information::PutContactInformationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_contact_information::PutContactInformationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_contact_information::PutContactInformationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_contact_information::PutContactInformationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

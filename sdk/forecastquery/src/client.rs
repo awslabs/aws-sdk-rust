@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Forecast Query Service. Each operation on Amazon Forecast Query Service is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_forecastquery::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_forecastquery::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_forecastquery::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_forecastquery::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_forecastquery::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`QueryForecast`](crate::operation::query_forecast) operation has
+/// a [`Client::query_forecast`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.query_forecast()
+///     .forecast_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,312 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`QueryForecast`](crate::client::fluent_builders::QueryForecast) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`forecast_arn(impl Into<String>)`](crate::client::fluent_builders::QueryForecast::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::client::fluent_builders::QueryForecast::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-    ///   - [`start_date(impl Into<String>)`](crate::client::fluent_builders::QueryForecast::start_date) / [`set_start_date(Option<String>)`](crate::client::fluent_builders::QueryForecast::set_start_date): <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-    ///   - [`end_date(impl Into<String>)`](crate::client::fluent_builders::QueryForecast::end_date) / [`set_end_date(Option<String>)`](crate::client::fluent_builders::QueryForecast::set_end_date): <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-    ///   - [`filters(HashMap<String, String>)`](crate::client::fluent_builders::QueryForecast::filters) / [`set_filters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::QueryForecast::set_filters): <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>  <p> <code>{"item_id" : "client_21"}</code> </p>  <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::QueryForecast::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::QueryForecast::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    /// - On success, responds with [`QueryForecastOutput`](crate::output::QueryForecastOutput) with field(s):
-    ///   - [`forecast(Option<Forecast>)`](crate::output::QueryForecastOutput::forecast): <p>The forecast.</p>
-    /// - On failure, responds with [`SdkError<QueryForecastError>`](crate::error::QueryForecastError)
-    pub fn query_forecast(&self) -> fluent_builders::QueryForecast {
-        fluent_builders::QueryForecast::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`QueryWhatIfForecast`](crate::client::fluent_builders::QueryWhatIfForecast) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`what_if_forecast_arn(impl Into<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    ///   - [`start_date(impl Into<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::start_date) / [`set_start_date(Option<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::set_start_date): <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-    ///   - [`end_date(impl Into<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::end_date) / [`set_end_date(Option<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::set_end_date): <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-    ///   - [`filters(HashMap<String, String>)`](crate::client::fluent_builders::QueryWhatIfForecast::filters) / [`set_filters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::QueryWhatIfForecast::set_filters): <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>  <p> <code>{"item_id" : "client_21"}</code> </p>  <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::QueryWhatIfForecast::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    /// - On success, responds with [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput) with field(s):
-    ///   - [`forecast(Option<Forecast>)`](crate::output::QueryWhatIfForecastOutput::forecast): <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
-    /// - On failure, responds with [`SdkError<QueryWhatIfForecastError>`](crate::error::QueryWhatIfForecastError)
-    pub fn query_what_if_forecast(&self) -> fluent_builders::QueryWhatIfForecast {
-        fluent_builders::QueryWhatIfForecast::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `QueryForecast`.
-    ///
-    /// <p>Retrieves a forecast for a single item, filtered by the supplied criteria.</p>
-    /// <p>The criteria is a key-value pair. The key is either <code>item_id</code> (or the equivalent non-timestamp, non-target field) from the <code>TARGET_TIME_SERIES</code> dataset, or one of the forecast dimensions specified as part of the <code>FeaturizationConfig</code> object.</p>
-    /// <p>By default, <code>QueryForecast</code> returns the complete date range for the filtered forecast. You can request a specific date range.</p>
-    /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p> <note>
-    /// <p>The forecasts generated by Amazon Forecast are in the same timezone as the dataset that was used to create the predictor.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct QueryForecast {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::query_forecast_input::Builder,
-    }
-    impl QueryForecast {
-        /// Creates a new `QueryForecast`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::QueryForecast,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::QueryForecastError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::QueryForecastOutput,
-            aws_smithy_http::result::SdkError<crate::error::QueryForecastError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-        pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_forecast_arn(input);
-            self
-        }
-        /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(input.into());
-            self
-        }
-        /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_start_date(input);
-            self
-        }
-        /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(input.into());
-            self
-        }
-        /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_end_date(input);
-            self
-        }
-        /// Adds a key-value pair to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-        /// <p> <code>{"item_id" : "client_21"}</code> </p>
-        /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-        pub fn filters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.filters(k.into(), v.into());
-            self
-        }
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-        /// <p> <code>{"item_id" : "client_21"}</code> </p>
-        /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `QueryWhatIfForecast`.
-    ///
-    /// <p>Retrieves a what-if forecast.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct QueryWhatIfForecast {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::query_what_if_forecast_input::Builder,
-    }
-    impl QueryWhatIfForecast {
-        /// Creates a new `QueryWhatIfForecast`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::QueryWhatIfForecast,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::QueryWhatIfForecastError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::QueryWhatIfForecastOutput,
-            aws_smithy_http::result::SdkError<crate::error::QueryWhatIfForecastError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-        pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.what_if_forecast_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-        pub fn set_what_if_forecast_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_what_if_forecast_arn(input);
-            self
-        }
-        /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(input.into());
-            self
-        }
-        /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_start_date(input);
-            self
-        }
-        /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(input.into());
-            self
-        }
-        /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_end_date(input);
-            self
-        }
-        /// Adds a key-value pair to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-        /// <p> <code>{"item_id" : "client_21"}</code> </p>
-        /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-        pub fn filters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.filters(k.into(), v.into());
-            self
-        }
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-        /// <p> <code>{"item_id" : "client_21"}</code> </p>
-        /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
     }
 }
 
@@ -470,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -480,3 +211,35 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_forecastquery::Error> {
+/// # let client: aws_sdk_forecastquery::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.query_forecast()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod query_forecast;
+
+mod query_what_if_forecast;

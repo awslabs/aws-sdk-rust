@@ -17,14 +17,15 @@ use std::pin::Pin;
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
-use crate::{SdkError, SdkSuccess};
+use tracing::Instrument;
 
 use aws_smithy_async::rt::sleep::AsyncSleep;
+
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 
-use tracing::Instrument;
+use crate::{SdkError, SdkSuccess};
 
 /// A policy instantiator.
 ///
@@ -197,7 +198,7 @@ impl Default for RequestLocalRetryState {
 }
 
 impl RequestLocalRetryState {
-    pub fn new() -> Self {
+    fn new() -> Self {
         Self::default()
     }
 }
@@ -218,7 +219,7 @@ struct CrossRequestRetryState {
 // significantly more complicated for negligible benefit.
 #[allow(clippy::mutex_atomic)]
 impl CrossRequestRetryState {
-    pub fn new(initial_quota: usize) -> Self {
+    fn new(initial_quota: usize) -> Self {
         Self {
             quota_available: Arc::new(Mutex::new(initial_quota)),
         }
@@ -292,9 +293,20 @@ impl RetryHandler {
     fn should_retry_error(&self, error_kind: &ErrorKind) -> Option<(Self, Duration)> {
         let quota_used = {
             if self.local.attempts == self.config.max_attempts {
+                tracing::trace!(
+                    attempts = self.local.attempts,
+                    max_attempts = self.config.max_attempts,
+                    "not retrying becuase we are out of attempts"
+                );
                 return None;
             }
-            self.shared.quota_acquire(error_kind, &self.config)?
+            match self.shared.quota_acquire(error_kind, &self.config) {
+                Some(quota) => quota,
+                None => {
+                    tracing::trace!(state = ?self.shared, "not retrying because no quota is available");
+                    return None;
+                }
+            }
         };
         let backoff = calculate_exponential_backoff(
             // Generate a random base multiplier to create jitter
@@ -334,7 +346,9 @@ impl RetryHandler {
     }
 
     fn retry_for(&self, retry_kind: RetryKind) -> Option<BoxFuture<Self>> {
-        let (next, dur) = self.should_retry(&retry_kind)?;
+        let retry = self.should_retry(&retry_kind);
+        tracing::trace!(retry=?retry, retry_kind = ?retry_kind, "retry action");
+        let (next, dur) = retry?;
 
         let sleep = match &self.sleep_impl {
             Some(sleep) => sleep,
@@ -377,6 +391,7 @@ where
     ) -> Option<Self::Future> {
         let classifier = req.retry_classifier();
         let retry_kind = classifier.classify_retry(result);
+        tracing::trace!(retry_kind = ?retry_kind, "retry classification");
         self.retry_for(retry_kind)
     }
 

@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Types for representing the body of an HTTP request or response
+
 use bytes::Bytes;
 use http::{HeaderMap, HeaderValue};
 use http_body::{Body, SizeHint};
@@ -13,6 +15,7 @@ use std::pin::Pin;
 use std::sync::Arc;
 use std::task::{Context, Poll};
 
+/// A generic, boxed error that's `Send` and `Sync`
 pub type Error = Box<dyn StdError + Send + Sync>;
 
 pin_project! {
@@ -44,6 +47,7 @@ impl Debug for SdkBody {
     }
 }
 
+/// A boxed generic HTTP body that, when consumed, will result in [`Bytes`] or an [`Error`].
 pub type BoxBody = http_body::combinators::BoxBody<Bytes, Error>;
 
 pin_project! {
@@ -109,6 +113,8 @@ impl SdkBody {
         }
     }
 
+    /// When an SdkBody is read, the inner data must be consumed. In order to do this, the SdkBody
+    /// is swapped with a "taken" body. This "taken" body cannot be read but aids in debugging.
     pub fn taken() -> Self {
         Self {
             inner: Inner::Taken,
@@ -116,6 +122,7 @@ impl SdkBody {
         }
     }
 
+    /// Create an empty SdkBody for requests and responses that don't transfer any data in the body.
     pub fn empty() -> Self {
         Self {
             inner: Inner::Once { inner: None },
@@ -157,6 +164,8 @@ impl SdkBody {
         }
     }
 
+    /// Attempt to clone this SdkBody. This will fail if the inner data is not cloneable, such as when
+    /// it is a single-use stream that can't be recreated.
     pub fn try_clone(&self) -> Option<Self> {
         self.rebuild.as_ref().map(|rebuild| {
             let next = rebuild();
@@ -167,10 +176,14 @@ impl SdkBody {
         })
     }
 
+    /// Return the length, in bytes, of this SdkBody. If this returns `None`, then the body does not
+    /// have a known length.
     pub fn content_length(&self) -> Option<u64> {
         http_body::Body::size_hint(self).exact()
     }
 
+    /// Given a function to modify an `SdkBody`, run that function against this `SdkBody` before
+    /// returning the result.
     pub fn map(self, f: impl Fn(SdkBody) -> SdkBody + Sync + Send + 'static) -> SdkBody {
         if self.rebuild.is_some() {
             SdkBody::retryable(move || f(self.try_clone().unwrap()))
@@ -277,6 +290,7 @@ mod test {
         assert_eq!(SdkBody::from("").size_hint().exact(), Some(0));
     }
 
+    #[allow(clippy::bool_assert_comparison)]
     #[test]
     fn valid_eos() {
         assert_eq!(SdkBody::from("hello").is_end_stream(), false);

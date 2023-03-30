@@ -6,7 +6,8 @@
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::Builder;
-use aws_sdk_s3::{Client, Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::Client;
 use aws_smithy_client::test_connection::{capture_request, CaptureRequestReceiver};
 use std::convert::Infallible;
 use std::time::{Duration, UNIX_EPOCH};
@@ -16,7 +17,7 @@ fn test_client(update_builder: fn(Builder) -> Builder) -> (CaptureRequestReceive
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-west-4"))
-        .http_connector(conn.clone())
+        .http_connector(conn)
         .build();
     let client = Client::from_conf(update_builder(Builder::from(&sdk_config)).build());
     (captured_request, client)

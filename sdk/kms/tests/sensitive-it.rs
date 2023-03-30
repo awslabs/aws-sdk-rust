@@ -12,19 +12,23 @@ use aws_smithy_http::result::SdkError;
 use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use bytes::Bytes;
-use kms::error::CreateAliasError;
-use kms::operation::{CreateAlias, GenerateRandom};
-use kms::output::GenerateRandomOutput;
-use kms::types::Blob;
+use kms::operation::create_alias::{CreateAlias, CreateAliasError, CreateAliasInput};
+use kms::operation::generate_random::{GenerateRandom, GenerateRandomOutput};
+use kms::primitives::Blob;
 
 #[test]
 fn validate_sensitive_trait() {
+    let builder = GenerateRandomOutput::builder().plaintext(Blob::new("some output"));
+    assert_eq!(
+        format!("{:?}", builder),
+        "GenerateRandomOutputBuilder { plaintext: \"*** Sensitive Data Redacted ***\", _request_id: None }"
+    );
     let output = GenerateRandomOutput::builder()
         .plaintext(Blob::new("some output"))
         .build();
     assert_eq!(
         format!("{:?}", output),
-        "GenerateRandomOutput { plaintext: \"*** Sensitive Data Redacted ***\" }"
+        "GenerateRandomOutput { plaintext: \"*** Sensitive Data Redacted ***\", _request_id: None }"
     );
 }
 
@@ -35,9 +39,9 @@ fn assert_debug<T: std::fmt::Debug>() {}
 #[tokio::test]
 async fn types_are_send_sync() {
     assert_send_sync::<kms::Error>();
-    assert_send_sync::<kms::types::SdkError<CreateAliasError>>();
-    assert_send_sync::<kms::error::CreateAliasError>();
-    assert_send_sync::<kms::output::CreateAliasOutput>();
+    assert_send_sync::<kms::error::SdkError<CreateAliasError>>();
+    assert_send_sync::<kms::operation::create_alias::CreateAliasError>();
+    assert_send_sync::<kms::operation::create_alias::CreateAliasOutput>();
     assert_send_sync::<kms::Client>();
     assert_send_sync::<GenerateRandom>();
     let conf = kms::Config::builder().build();
@@ -66,13 +70,13 @@ async fn client_is_clone() {
 #[test]
 fn types_are_debug() {
     assert_debug::<kms::Client>();
-    assert_debug::<kms::client::fluent_builders::GenerateRandom>();
-    assert_debug::<kms::client::fluent_builders::CreateAlias>();
+    assert_debug::<kms::operation::generate_random::builders::GenerateRandomFluentBuilder>();
+    assert_debug::<kms::operation::create_alias::builders::CreateAliasFluentBuilder>();
 }
 
 async fn create_alias_op() -> Parts<CreateAlias, AwsResponseRetryClassifier> {
     let conf = kms::Config::builder().build();
-    let (_, parts) = CreateAlias::builder()
+    let (_, parts) = CreateAliasInput::builder()
         .build()
         .unwrap()
         .make_operation(&conf)

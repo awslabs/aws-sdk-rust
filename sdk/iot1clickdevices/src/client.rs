@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS IoT 1-Click Devices Service. Each operation on AWS IoT 1-Click Devices Service is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_iot1clickdevices::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_iot1clickdevices::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_iot1clickdevices::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_iot1clickdevices::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_iot1clickdevices::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`ClaimDevicesByClaimCode`](crate::operation::claim_devices_by_claim_code) operation has
+/// a [`Client::claim_devices_by_claim_code`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.claim_devices_by_claim_code()
+///     .claim_code("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1283 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`ClaimDevicesByClaimCode`](crate::client::fluent_builders::ClaimDevicesByClaimCode) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`claim_code(impl Into<String>)`](crate::client::fluent_builders::ClaimDevicesByClaimCode::claim_code) / [`set_claim_code(Option<String>)`](crate::client::fluent_builders::ClaimDevicesByClaimCode::set_claim_code): <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-    /// - On success, responds with [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput) with field(s):
-    ///   - [`claim_code(Option<String>)`](crate::output::ClaimDevicesByClaimCodeOutput::claim_code): <p>The claim code provided by the device manufacturer.</p>
-    ///   - [`total(i32)`](crate::output::ClaimDevicesByClaimCodeOutput::total): <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
-    /// - On failure, responds with [`SdkError<ClaimDevicesByClaimCodeError>`](crate::error::ClaimDevicesByClaimCodeError)
-    pub fn claim_devices_by_claim_code(&self) -> fluent_builders::ClaimDevicesByClaimCode {
-        fluent_builders::ClaimDevicesByClaimCode::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_device_id): <p>The unique identifier of the device.</p>
-    /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
-    ///   - [`device_description(Option<DeviceDescription>)`](crate::output::DescribeDeviceOutput::device_description): <p>Device details.</p>
-    /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
-    pub fn describe_device(&self) -> fluent_builders::DescribeDevice {
-        fluent_builders::DescribeDevice::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`FinalizeDeviceClaim`](crate::client::fluent_builders::FinalizeDeviceClaim) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::FinalizeDeviceClaim::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::FinalizeDeviceClaim::set_device_id): <p>The unique identifier of the device.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::FinalizeDeviceClaim::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::FinalizeDeviceClaim::set_tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
-    /// - On success, responds with [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput) with field(s):
-    ///   - [`state(Option<String>)`](crate::output::FinalizeDeviceClaimOutput::state): <p>The device's final claim state.</p>
-    /// - On failure, responds with [`SdkError<FinalizeDeviceClaimError>`](crate::error::FinalizeDeviceClaimError)
-    pub fn finalize_device_claim(&self) -> fluent_builders::FinalizeDeviceClaim {
-        fluent_builders::FinalizeDeviceClaim::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDeviceMethods`](crate::client::fluent_builders::GetDeviceMethods) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::GetDeviceMethods::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::GetDeviceMethods::set_device_id): <p>The unique identifier of the device.</p>
-    /// - On success, responds with [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput) with field(s):
-    ///   - [`device_methods(Option<Vec<DeviceMethod>>)`](crate::output::GetDeviceMethodsOutput::device_methods): <p>List of available device APIs.</p>
-    /// - On failure, responds with [`SdkError<GetDeviceMethodsError>`](crate::error::GetDeviceMethodsError)
-    pub fn get_device_methods(&self) -> fluent_builders::GetDeviceMethods {
-        fluent_builders::GetDeviceMethods::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`InitiateDeviceClaim`](crate::client::fluent_builders::InitiateDeviceClaim) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::InitiateDeviceClaim::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::InitiateDeviceClaim::set_device_id): <p>The unique identifier of the device.</p>
-    /// - On success, responds with [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput) with field(s):
-    ///   - [`state(Option<String>)`](crate::output::InitiateDeviceClaimOutput::state): <p>The device's final claim state.</p>
-    /// - On failure, responds with [`SdkError<InitiateDeviceClaimError>`](crate::error::InitiateDeviceClaimError)
-    pub fn initiate_device_claim(&self) -> fluent_builders::InitiateDeviceClaim {
-        fluent_builders::InitiateDeviceClaim::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`InvokeDeviceMethod`](crate::client::fluent_builders::InvokeDeviceMethod) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::set_device_id): <p>The unique identifier of the device.</p>
-    ///   - [`device_method(DeviceMethod)`](crate::client::fluent_builders::InvokeDeviceMethod::device_method) / [`set_device_method(Option<DeviceMethod>)`](crate::client::fluent_builders::InvokeDeviceMethod::set_device_method): <p>The device method to invoke.</p>
-    ///   - [`device_method_parameters(impl Into<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::device_method_parameters) / [`set_device_method_parameters(Option<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::set_device_method_parameters): <p>A JSON encoded string containing the device method request parameters.</p>
-    /// - On success, responds with [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput) with field(s):
-    ///   - [`device_method_response(Option<String>)`](crate::output::InvokeDeviceMethodOutput::device_method_response): <p>A JSON encoded string containing the device method response.</p>
-    /// - On failure, responds with [`SdkError<InvokeDeviceMethodError>`](crate::error::InvokeDeviceMethodError)
-    pub fn invoke_device_method(&self) -> fluent_builders::InvokeDeviceMethod {
-        fluent_builders::InvokeDeviceMethod::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDeviceEvents`](crate::client::fluent_builders::ListDeviceEvents) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::ListDeviceEvents::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::ListDeviceEvents::set_device_id): <p>The unique identifier of the device.</p>
-    ///   - [`from_time_stamp(DateTime)`](crate::client::fluent_builders::ListDeviceEvents::from_time_stamp) / [`set_from_time_stamp(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceEvents::set_from_time_stamp): <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceEvents::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDeviceEvents::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceEvents::set_next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`to_time_stamp(DateTime)`](crate::client::fluent_builders::ListDeviceEvents::to_time_stamp) / [`set_to_time_stamp(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceEvents::set_to_time_stamp): <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    /// - On success, responds with [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput) with field(s):
-    ///   - [`events(Option<Vec<DeviceEvent>>)`](crate::output::ListDeviceEventsOutput::events): <p>An array of zero or more elements describing the event(s) associated with the device.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDeviceEventsOutput::next_token): <p>The token to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::error::ListDeviceEventsError)
-    pub fn list_device_events(&self) -> fluent_builders::ListDeviceEvents {
-        fluent_builders::ListDeviceEvents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_type(impl Into<String>)`](crate::client::fluent_builders::ListDevices::device_type) / [`set_device_type(Option<String>)`](crate::client::fluent_builders::ListDevices::set_device_type): <p>The type of the device, such as "button".</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevices::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDevices::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>The token to retrieve the next set of results.</p>
-    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
-    ///   - [`devices(Option<Vec<DeviceDescription>>)`](crate::output::ListDevicesOutput::devices): <p>A list of devices.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>The token to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
-    pub fn list_devices(&self) -> fluent_builders::ListDevices {
-        fluent_builders::ListDevices::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnclaimDevice`](crate::client::fluent_builders::UnclaimDevice) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::UnclaimDevice::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::UnclaimDevice::set_device_id): <p>The unique identifier of the device.</p>
-    /// - On success, responds with [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput) with field(s):
-    ///   - [`state(Option<String>)`](crate::output::UnclaimDeviceOutput::state): <p>The device's final claim state.</p>
-    /// - On failure, responds with [`SdkError<UnclaimDeviceError>`](crate::error::UnclaimDeviceError)
-    pub fn unclaim_device(&self) -> fluent_builders::UnclaimDevice {
-        fluent_builders::UnclaimDevice::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A collections of tag keys. For example, {"key1","key2"}</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDeviceState`](crate::client::fluent_builders::UpdateDeviceState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceState::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::UpdateDeviceState::set_device_id): <p>The unique identifier of the device.</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateDeviceState::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::UpdateDeviceState::set_enabled): <p>If true, the device is enabled. If false, the device is disabled.</p>
-    /// - On success, responds with [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDeviceStateError>`](crate::error::UpdateDeviceStateError)
-    pub fn update_device_state(&self) -> fluent_builders::UpdateDeviceState {
-        fluent_builders::UpdateDeviceState::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `ClaimDevicesByClaimCode`.
-    ///
-    /// <p>Adds device(s) to your account (i.e., claim one or more devices) if and only if you received a claim code with the device(s).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ClaimDevicesByClaimCode {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::claim_devices_by_claim_code_input::Builder,
-    }
-    impl ClaimDevicesByClaimCode {
-        /// Creates a new `ClaimDevicesByClaimCode`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ClaimDevicesByClaimCode,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ClaimDevicesByClaimCodeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ClaimDevicesByClaimCodeOutput,
-            aws_smithy_http::result::SdkError<crate::error::ClaimDevicesByClaimCodeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-        pub fn claim_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.claim_code(input.into());
-            self
-        }
-        /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-        pub fn set_claim_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_claim_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeDevice`.
-    ///
-    /// <p>Given a device ID, returns a DescribeDeviceResponse object describing the details of the device.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeDevice {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_device_input::Builder,
-    }
-    impl DescribeDevice {
-        /// Creates a new `DescribeDevice`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeDevice,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeDeviceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeDeviceOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeDeviceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `FinalizeDeviceClaim`.
-    ///
-    /// <p>Given a device ID, finalizes the claim request for the associated device.</p><note>
-    /// <p>Claiming a device consists of initiating a claim, then publishing a device event, and finalizing the claim. For a device of type button, a device event can be published by simply clicking the device.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct FinalizeDeviceClaim {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::finalize_device_claim_input::Builder,
-    }
-    impl FinalizeDeviceClaim {
-        /// Creates a new `FinalizeDeviceClaim`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::FinalizeDeviceClaim,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::FinalizeDeviceClaimError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::FinalizeDeviceClaimOutput,
-            aws_smithy_http::result::SdkError<crate::error::FinalizeDeviceClaimError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
-        /// <p> </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
-        /// <p> </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDeviceMethods`.
-    ///
-    /// <p>Given a device ID, returns the invokable methods associated with the device.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDeviceMethods {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_device_methods_input::Builder,
-    }
-    impl GetDeviceMethods {
-        /// Creates a new `GetDeviceMethods`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetDeviceMethods,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetDeviceMethodsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetDeviceMethodsOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetDeviceMethodsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InitiateDeviceClaim`.
-    ///
-    /// <p>Given a device ID, initiates a claim request for the associated device.</p><note>
-    /// <p>Claiming a device consists of initiating a claim, then publishing a device event, and finalizing the claim. For a device of type button, a device event can be published by simply clicking the device.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InitiateDeviceClaim {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::initiate_device_claim_input::Builder,
-    }
-    impl InitiateDeviceClaim {
-        /// Creates a new `InitiateDeviceClaim`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::InitiateDeviceClaim,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::InitiateDeviceClaimError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::InitiateDeviceClaimOutput,
-            aws_smithy_http::result::SdkError<crate::error::InitiateDeviceClaimError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InvokeDeviceMethod`.
-    ///
-    /// <p>Given a device ID, issues a request to invoke a named device method (with possible parameters). See the "Example POST" code snippet below.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InvokeDeviceMethod {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::invoke_device_method_input::Builder,
-    }
-    impl InvokeDeviceMethod {
-        /// Creates a new `InvokeDeviceMethod`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::InvokeDeviceMethod,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::InvokeDeviceMethodError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::InvokeDeviceMethodOutput,
-            aws_smithy_http::result::SdkError<crate::error::InvokeDeviceMethodError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-        /// <p>The device method to invoke.</p>
-        pub fn device_method(mut self, input: crate::model::DeviceMethod) -> Self {
-            self.inner = self.inner.device_method(input);
-            self
-        }
-        /// <p>The device method to invoke.</p>
-        pub fn set_device_method(
-            mut self,
-            input: std::option::Option<crate::model::DeviceMethod>,
-        ) -> Self {
-            self.inner = self.inner.set_device_method(input);
-            self
-        }
-        /// <p>A JSON encoded string containing the device method request parameters.</p>
-        pub fn device_method_parameters(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_method_parameters(input.into());
-            self
-        }
-        /// <p>A JSON encoded string containing the device method request parameters.</p>
-        pub fn set_device_method_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_device_method_parameters(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDeviceEvents`.
-    ///
-    /// <p>Using a device ID, returns a DeviceEventsResponse object containing an array of events for the device.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDeviceEvents {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_device_events_input::Builder,
-    }
-    impl ListDeviceEvents {
-        /// Creates a new `ListDeviceEvents`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListDeviceEvents,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListDeviceEventsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListDeviceEventsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListDeviceEventsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-        pub fn from_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_time_stamp(input);
-            self
-        }
-        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-        pub fn set_from_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_from_time_stamp(input);
-            self
-        }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-        pub fn to_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to_time_stamp(input);
-            self
-        }
-        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-        pub fn set_to_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inner = self.inner.set_to_time_stamp(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDevices`.
-    ///
-    /// <p>Lists the 1-Click compatible devices associated with your AWS account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDevices {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_devices_input::Builder,
-    }
-    impl ListDevices {
-        /// Creates a new `ListDevices`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListDevices,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListDevicesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListDevicesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListDevicesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The type of the device, such as "button".</p>
-        pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_type(input.into());
-            self
-        }
-        /// <p>The type of the device, such as "button".</p>
-        pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_type(input);
-            self
-        }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Lists the tags associated with the specified resource ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Adds or updates the tags associated with the resource ARN. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
-        /// <p> </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
-        /// <p> </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UnclaimDevice`.
-    ///
-    /// <p>Disassociates a device from your AWS account using its device ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UnclaimDevice {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::unclaim_device_input::Builder,
-    }
-    impl UnclaimDevice {
-        /// Creates a new `UnclaimDevice`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UnclaimDevice,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UnclaimDeviceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UnclaimDeviceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UnclaimDeviceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Using tag keys, deletes the tags (key/value pairs) associated with the specified resource ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>A collections of tag keys. For example, {"key1","key2"}</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>A collections of tag keys. For example, {"key1","key2"}</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDeviceState`.
-    ///
-    /// <p>Using a Boolean value (true or false), this operation enables or disables the device given a device ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDeviceState {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_device_state_input::Builder,
-    }
-    impl UpdateDeviceState {
-        /// Creates a new `UpdateDeviceState`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateDeviceState,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateDeviceStateError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateDeviceStateOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateDeviceStateError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the device.</p>
-        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_id(input);
-            self
-        }
-        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
-        pub fn enabled(mut self, input: bool) -> Self {
-            self.inner = self.inner.enabled(input);
-            self
-        }
-        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
-        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enabled(input);
-            self
-        }
     }
 }
 
@@ -1441,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1451,3 +211,57 @@ impl Client {
         }
     }
 }
+
+mod claim_devices_by_claim_code;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_iot1clickdevices::Error> {
+/// # let client: aws_sdk_iot1clickdevices::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.claim_devices_by_claim_code()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod describe_device;
+
+mod finalize_device_claim;
+
+mod get_device_methods;
+
+mod initiate_device_claim;
+
+mod invoke_device_method;
+
+mod list_device_events;
+
+mod list_devices;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod unclaim_device;
+
+mod untag_resource;
+
+mod update_device_state;

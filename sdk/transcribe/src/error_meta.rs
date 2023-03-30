@@ -4,24 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Your request didn't pass one or more validation tests. This can occur when the entity you're trying to delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the exception message field for more information.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>A resource already exists with this name. Resource names must be unique within an Amazon Web Services account.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>There was an internal error. Check the error message, correct the issue, and try your request again.</p>
-    InternalFailureException(crate::error::InternalFailureException),
+    InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>You've either sent too many requests or your input file is too long. Wait before retrying your request, or use a smaller file and try your request again.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check that the specified name is correct and try your request again.</p>
-    NotFoundException(crate::error::NotFoundException),
-    ///
+    NotFoundException(crate::types::error::NotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35,1406 +28,1707 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCallAnalyticsCategoryError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+    ) -> Self {
+        match err {
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_language_model::CreateLanguageModelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_language_model::CreateLanguageModelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_language_model::CreateLanguageModelError> for Error {
+    fn from(err: crate::operation::create_language_model::CreateLanguageModelError) -> Self {
+        match err {
+            crate::operation::create_language_model::CreateLanguageModelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_language_model::CreateLanguageModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_language_model::CreateLanguageModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_language_model::CreateLanguageModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_language_model::CreateLanguageModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError> for Error {
+    fn from(
+        err: crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
+    ) -> Self {
+        match err {
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_vocabulary::CreateVocabularyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_vocabulary::CreateVocabularyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_vocabulary::CreateVocabularyError> for Error {
+    fn from(err: crate::operation::create_vocabulary::CreateVocabularyError) -> Self {
+        match err {
+            crate::operation::create_vocabulary::CreateVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_vocabulary::CreateVocabularyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_vocabulary::CreateVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_vocabulary::CreateVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_vocabulary::CreateVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_vocabulary_filter::CreateVocabularyFilterError> for Error {
+    fn from(err: crate::operation::create_vocabulary_filter::CreateVocabularyFilterError) -> Self {
+        match err {
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_vocabulary_filter::CreateVocabularyFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError> for Error {
+    fn from(err: crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError) -> Self {
+        match err {
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_language_model::DeleteLanguageModelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_language_model::DeleteLanguageModelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_language_model::DeleteLanguageModelError> for Error {
+    fn from(err: crate::operation::delete_language_model::DeleteLanguageModelError) -> Self {
+        match err {
+            crate::operation::delete_language_model::DeleteLanguageModelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_language_model::DeleteLanguageModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_language_model::DeleteLanguageModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_language_model::DeleteLanguageModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError> for Error {
+    fn from(
+        err: crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_transcription_job::DeleteTranscriptionJobError> for Error {
+    fn from(err: crate::operation::delete_transcription_job::DeleteTranscriptionJobError) -> Self {
+        match err {
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vocabulary::DeleteVocabularyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vocabulary::DeleteVocabularyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vocabulary::DeleteVocabularyError> for Error {
+    fn from(err: crate::operation::delete_vocabulary::DeleteVocabularyError) -> Self {
+        match err {
+            crate::operation::delete_vocabulary::DeleteVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_vocabulary::DeleteVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_vocabulary::DeleteVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_vocabulary::DeleteVocabularyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_vocabulary::DeleteVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError> for Error {
+    fn from(err: crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError) -> Self {
+        match err {
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_language_model::DescribeLanguageModelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_language_model::DescribeLanguageModelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_language_model::DescribeLanguageModelError> for Error {
+    fn from(err: crate::operation::describe_language_model::DescribeLanguageModelError) -> Self {
+        match err {
+            crate::operation::describe_language_model::DescribeLanguageModelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_language_model::DescribeLanguageModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_language_model::DescribeLanguageModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::describe_language_model::DescribeLanguageModelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_language_model::DescribeLanguageModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError> for Error {
+    fn from(
+        err: crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError,
+    ) -> Self {
+        match err {
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_call_analytics_job::GetCallAnalyticsJobError> for Error {
+    fn from(err: crate::operation::get_call_analytics_job::GetCallAnalyticsJobError) -> Self {
+        match err {
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
+    ) -> Self {
+        match err {
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_medical_vocabulary::GetMedicalVocabularyError> for Error {
+    fn from(err: crate::operation::get_medical_vocabulary::GetMedicalVocabularyError) -> Self {
+        match err {
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_transcription_job::GetTranscriptionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_transcription_job::GetTranscriptionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_transcription_job::GetTranscriptionJobError> for Error {
+    fn from(err: crate::operation::get_transcription_job::GetTranscriptionJobError) -> Self {
+        match err {
+            crate::operation::get_transcription_job::GetTranscriptionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_transcription_job::GetTranscriptionJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_transcription_job::GetTranscriptionJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_transcription_job::GetTranscriptionJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_transcription_job::GetTranscriptionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_vocabulary::GetVocabularyError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCallAnalyticsCategoryError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_vocabulary::GetVocabularyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateCallAnalyticsCategoryError> for Error {
-    fn from(err: crate::error::CreateCallAnalyticsCategoryError) -> Self {
-        match err.kind {
-            crate::error::CreateCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateCallAnalyticsCategoryErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateCallAnalyticsCategoryErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateCallAnalyticsCategoryErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLanguageModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLanguageModelError, R>,
-    ) -> Self {
+impl From<crate::operation::get_vocabulary::GetVocabularyError> for Error {
+    fn from(err: crate::operation::get_vocabulary::GetVocabularyError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateLanguageModelError> for Error {
-    fn from(err: crate::error::CreateLanguageModelError) -> Self {
-        match err.kind {
-            crate::error::CreateLanguageModelErrorKind::BadRequestException(inner) => {
+            crate::operation::get_vocabulary::GetVocabularyError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateLanguageModelErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateLanguageModelErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateLanguageModelErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateLanguageModelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMedicalVocabularyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMedicalVocabularyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateMedicalVocabularyError> for Error {
-    fn from(err: crate::error::CreateMedicalVocabularyError) -> Self {
-        match err.kind {
-            crate::error::CreateMedicalVocabularyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateMedicalVocabularyErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateMedicalVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateMedicalVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateMedicalVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVocabularyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVocabularyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateVocabularyError> for Error {
-    fn from(err: crate::error::CreateVocabularyError) -> Self {
-        match err.kind {
-            crate::error::CreateVocabularyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVocabularyErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVocabularyFilterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVocabularyFilterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateVocabularyFilterError> for Error {
-    fn from(err: crate::error::CreateVocabularyFilterError) -> Self {
-        match err.kind {
-            crate::error::CreateVocabularyFilterErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVocabularyFilterErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateVocabularyFilterErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateVocabularyFilterErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateVocabularyFilterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsCategoryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsCategoryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCallAnalyticsCategoryError> for Error {
-    fn from(err: crate::error::DeleteCallAnalyticsCategoryError) -> Self {
-        match err.kind {
-            crate::error::DeleteCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteCallAnalyticsCategoryErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteCallAnalyticsCategoryErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteCallAnalyticsCategoryErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteCallAnalyticsJobError> for Error {
-    fn from(err: crate::error::DeleteCallAnalyticsJobError) -> Self {
-        match err.kind {
-            crate::error::DeleteCallAnalyticsJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteCallAnalyticsJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteCallAnalyticsJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteCallAnalyticsJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLanguageModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteLanguageModelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteLanguageModelError> for Error {
-    fn from(err: crate::error::DeleteLanguageModelError) -> Self {
-        match err.kind {
-            crate::error::DeleteLanguageModelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteLanguageModelErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteLanguageModelErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteLanguageModelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMedicalTranscriptionJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMedicalTranscriptionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteMedicalTranscriptionJobError> for Error {
-    fn from(err: crate::error::DeleteMedicalTranscriptionJobError) -> Self {
-        match err.kind {
-            crate::error::DeleteMedicalTranscriptionJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteMedicalTranscriptionJobErrorKind::InternalFailureException(
+            crate::operation::get_vocabulary::GetVocabularyError::InternalFailureException(
                 inner,
             ) => Error::InternalFailureException(inner),
-            crate::error::DeleteMedicalTranscriptionJobErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_vocabulary::GetVocabularyError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteMedicalTranscriptionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_vocabulary::GetVocabularyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_vocabulary::GetVocabularyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMedicalVocabularyError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_vocabulary_filter::GetVocabularyFilterError> for Error {
+    fn from(err: crate::operation::get_vocabulary_filter::GetVocabularyFilterError) -> Self {
+        match err {
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError> for Error {
+    fn from(err: crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError) -> Self {
+        match err {
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_language_models::ListLanguageModelsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_language_models::ListLanguageModelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_language_models::ListLanguageModelsError> for Error {
+    fn from(err: crate::operation::list_language_models::ListLanguageModelsError) -> Self {
+        match err {
+            crate::operation::list_language_models::ListLanguageModelsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_language_models::ListLanguageModelsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_language_models::ListLanguageModelsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_language_models::ListLanguageModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError> for Error {
+    fn from(
+        err: crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_transcription_jobs::ListTranscriptionJobsError> for Error {
+    fn from(err: crate::operation::list_transcription_jobs::ListTranscriptionJobsError) -> Self {
+        match err {
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_vocabularies::ListVocabulariesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_vocabularies::ListVocabulariesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_vocabularies::ListVocabulariesError> for Error {
+    fn from(err: crate::operation::list_vocabularies::ListVocabulariesError) -> Self {
+        match err {
+            crate::operation::list_vocabularies::ListVocabulariesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_vocabularies::ListVocabulariesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_vocabularies::ListVocabulariesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_vocabularies::ListVocabulariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_vocabulary_filters::ListVocabularyFiltersError> for Error {
+    fn from(err: crate::operation::list_vocabulary_filters::ListVocabularyFiltersError) -> Self {
+        match err {
+            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError> for Error {
+    fn from(err: crate::operation::start_call_analytics_job::StartCallAnalyticsJobError) -> Self {
+        match err {
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_transcription_job::StartTranscriptionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_transcription_job::StartTranscriptionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_transcription_job::StartTranscriptionJobError> for Error {
+    fn from(err: crate::operation::start_transcription_job::StartTranscriptionJobError) -> Self {
+        match err {
+            crate::operation::start_transcription_job::StartTranscriptionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_transcription_job::StartTranscriptionJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_transcription_job::StartTranscriptionJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::start_transcription_job::StartTranscriptionJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_transcription_job::StartTranscriptionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMedicalVocabularyError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteMedicalVocabularyError> for Error {
-    fn from(err: crate::error::DeleteMedicalVocabularyError) -> Self {
-        match err.kind {
-            crate::error::DeleteMedicalVocabularyErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteMedicalVocabularyErrorKind::InternalFailureException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::DeleteMedicalVocabularyErrorKind::LimitExceededException(inner) => {
+            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteMedicalVocabularyErrorKind::NotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteMedicalVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTranscriptionJobError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteTranscriptionJobError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteTranscriptionJobError> for Error {
-    fn from(err: crate::error::DeleteTranscriptionJobError) -> Self {
-        match err.kind {
-            crate::error::DeleteTranscriptionJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteTranscriptionJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteTranscriptionJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteTranscriptionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVocabularyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVocabularyError, R>,
-    ) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteVocabularyError> for Error {
-    fn from(err: crate::error::DeleteVocabularyError) -> Self {
-        match err.kind {
-            crate::error::DeleteVocabularyErrorKind::BadRequestException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
-            crate::error::DeleteVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteVocabularyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVocabularyFilterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVocabularyFilterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteVocabularyFilterError> for Error {
-    fn from(err: crate::error::DeleteVocabularyFilterError) -> Self {
-        match err.kind {
-            crate::error::DeleteVocabularyFilterErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVocabularyFilterErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteVocabularyFilterErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteVocabularyFilterErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVocabularyFilterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLanguageModelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLanguageModelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeLanguageModelError> for Error {
-    fn from(err: crate::error::DescribeLanguageModelError) -> Self {
-        match err.kind {
-            crate::error::DescribeLanguageModelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeLanguageModelErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DescribeLanguageModelErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DescribeLanguageModelErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeLanguageModelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCallAnalyticsCategoryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCallAnalyticsCategoryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCallAnalyticsCategoryError> for Error {
-    fn from(err: crate::error::GetCallAnalyticsCategoryError) -> Self {
-        match err.kind {
-            crate::error::GetCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCallAnalyticsCategoryErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetCallAnalyticsCategoryErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetCallAnalyticsCategoryErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCallAnalyticsJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCallAnalyticsJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetCallAnalyticsJobError> for Error {
-    fn from(err: crate::error::GetCallAnalyticsJobError) -> Self {
-        match err.kind {
-            crate::error::GetCallAnalyticsJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetCallAnalyticsJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetCallAnalyticsJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetCallAnalyticsJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetCallAnalyticsJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMedicalTranscriptionJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMedicalTranscriptionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMedicalTranscriptionJobError> for Error {
-    fn from(err: crate::error::GetMedicalTranscriptionJobError) -> Self {
-        match err.kind {
-            crate::error::GetMedicalTranscriptionJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMedicalTranscriptionJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetMedicalTranscriptionJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetMedicalTranscriptionJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetMedicalTranscriptionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMedicalVocabularyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMedicalVocabularyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMedicalVocabularyError> for Error {
-    fn from(err: crate::error::GetMedicalVocabularyError) -> Self {
-        match err.kind {
-            crate::error::GetMedicalVocabularyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMedicalVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetMedicalVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetMedicalVocabularyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetMedicalVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTranscriptionJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetTranscriptionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetTranscriptionJobError> for Error {
-    fn from(err: crate::error::GetTranscriptionJobError) -> Self {
-        match err.kind {
-            crate::error::GetTranscriptionJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetTranscriptionJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetTranscriptionJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetTranscriptionJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetTranscriptionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVocabularyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVocabularyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetVocabularyError> for Error {
-    fn from(err: crate::error::GetVocabularyError) -> Self {
-        match err.kind {
-            crate::error::GetVocabularyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetVocabularyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVocabularyFilterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVocabularyFilterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetVocabularyFilterError> for Error {
-    fn from(err: crate::error::GetVocabularyFilterError) -> Self {
-        match err.kind {
-            crate::error::GetVocabularyFilterErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVocabularyFilterErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetVocabularyFilterErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetVocabularyFilterErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVocabularyFilterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCallAnalyticsCategoriesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCallAnalyticsCategoriesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListCallAnalyticsCategoriesError> for Error {
-    fn from(err: crate::error::ListCallAnalyticsCategoriesError) -> Self {
-        match err.kind {
-            crate::error::ListCallAnalyticsCategoriesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListCallAnalyticsCategoriesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListCallAnalyticsCategoriesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListCallAnalyticsCategoriesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCallAnalyticsJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCallAnalyticsJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListCallAnalyticsJobsError> for Error {
-    fn from(err: crate::error::ListCallAnalyticsJobsError) -> Self {
-        match err.kind {
-            crate::error::ListCallAnalyticsJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListCallAnalyticsJobsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListCallAnalyticsJobsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListCallAnalyticsJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLanguageModelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListLanguageModelsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListLanguageModelsError> for Error {
-    fn from(err: crate::error::ListLanguageModelsError) -> Self {
-        match err.kind {
-            crate::error::ListLanguageModelsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListLanguageModelsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListLanguageModelsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListLanguageModelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMedicalTranscriptionJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListMedicalTranscriptionJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListMedicalTranscriptionJobsError> for Error {
-    fn from(err: crate::error::ListMedicalTranscriptionJobsError) -> Self {
-        match err.kind {
-            crate::error::ListMedicalTranscriptionJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMedicalTranscriptionJobsErrorKind::InternalFailureException(
+            crate::operation::untag_resource::UntagResourceError::InternalFailureException(
                 inner,
             ) => Error::InternalFailureException(inner),
-            crate::error::ListMedicalTranscriptionJobsErrorKind::LimitExceededException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListMedicalTranscriptionJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMedicalVocabulariesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListMedicalVocabulariesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListMedicalVocabulariesError> for Error {
-    fn from(err: crate::error::ListMedicalVocabulariesError) -> Self {
-        match err.kind {
-            crate::error::ListMedicalVocabulariesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMedicalVocabulariesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListMedicalVocabulariesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListMedicalVocabulariesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTranscriptionJobsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError>
     for Error
+{
+    fn from(
+        err: crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
+    ) -> Self {
+        match err {
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTranscriptionJobsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListTranscriptionJobsError> for Error {
-    fn from(err: crate::error::ListTranscriptionJobsError) -> Self {
-        match err.kind {
-            crate::error::ListTranscriptionJobsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTranscriptionJobsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListTranscriptionJobsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListTranscriptionJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError> for Error {
+    fn from(
+        err: crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
+    ) -> Self {
+        match err {
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVocabulariesError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_vocabulary::UpdateVocabularyError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVocabulariesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_vocabulary::UpdateVocabularyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListVocabulariesError> for Error {
-    fn from(err: crate::error::ListVocabulariesError) -> Self {
-        match err.kind {
-            crate::error::ListVocabulariesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVocabulariesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListVocabulariesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListVocabulariesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::update_vocabulary::UpdateVocabularyError> for Error {
+    fn from(err: crate::operation::update_vocabulary::UpdateVocabularyError) -> Self {
+        match err {
+            crate::operation::update_vocabulary::UpdateVocabularyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_vocabulary::UpdateVocabularyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_vocabulary::UpdateVocabularyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_vocabulary::UpdateVocabularyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_vocabulary::UpdateVocabularyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_vocabulary::UpdateVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVocabularyFiltersError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVocabularyFiltersError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListVocabularyFiltersError> for Error {
-    fn from(err: crate::error::ListVocabularyFiltersError) -> Self {
-        match err.kind {
-            crate::error::ListVocabularyFiltersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVocabularyFiltersErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::ListVocabularyFiltersErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ListVocabularyFiltersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartCallAnalyticsJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartCallAnalyticsJobError, R>,
-    ) -> Self {
+impl From<crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError> for Error {
+    fn from(err: crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartCallAnalyticsJobError> for Error {
-    fn from(err: crate::error::StartCallAnalyticsJobError) -> Self {
-        match err.kind {
-            crate::error::StartCallAnalyticsJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::StartCallAnalyticsJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartCallAnalyticsJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::StartCallAnalyticsJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartCallAnalyticsJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMedicalTranscriptionJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMedicalTranscriptionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartMedicalTranscriptionJobError> for Error {
-    fn from(err: crate::error::StartMedicalTranscriptionJobError) -> Self {
-        match err.kind {
-            crate::error::StartMedicalTranscriptionJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::StartMedicalTranscriptionJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartMedicalTranscriptionJobErrorKind::InternalFailureException(
-                inner,
-            ) => Error::InternalFailureException(inner),
-            crate::error::StartMedicalTranscriptionJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartMedicalTranscriptionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTranscriptionJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartTranscriptionJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartTranscriptionJobError> for Error {
-    fn from(err: crate::error::StartTranscriptionJobError) -> Self {
-        match err.kind {
-            crate::error::StartTranscriptionJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::StartTranscriptionJobErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartTranscriptionJobErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::StartTranscriptionJobErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartTranscriptionJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::TagResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UntagResourceErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCallAnalyticsCategoryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateCallAnalyticsCategoryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateCallAnalyticsCategoryError> for Error {
-    fn from(err: crate::error::UpdateCallAnalyticsCategoryError) -> Self {
-        match err.kind {
-            crate::error::UpdateCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateCallAnalyticsCategoryErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateCallAnalyticsCategoryErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UpdateCallAnalyticsCategoryErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateCallAnalyticsCategoryErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMedicalVocabularyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateMedicalVocabularyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateMedicalVocabularyError> for Error {
-    fn from(err: crate::error::UpdateMedicalVocabularyError) -> Self {
-        match err.kind {
-            crate::error::UpdateMedicalVocabularyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateMedicalVocabularyErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateMedicalVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UpdateMedicalVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateMedicalVocabularyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateMedicalVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVocabularyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVocabularyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateVocabularyError> for Error {
-    fn from(err: crate::error::UpdateVocabularyError) -> Self {
-        match err.kind {
-            crate::error::UpdateVocabularyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVocabularyErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateVocabularyErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UpdateVocabularyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateVocabularyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVocabularyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVocabularyFilterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVocabularyFilterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateVocabularyFilterError> for Error {
-    fn from(err: crate::error::UpdateVocabularyFilterError) -> Self {
-        match err.kind {
-            crate::error::UpdateVocabularyFilterErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVocabularyFilterErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UpdateVocabularyFilterErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateVocabularyFilterErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVocabularyFilterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalFailureException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -3,8 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#![allow(clippy::result_large_err)]
+
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_s3::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_s3::{
+    config::Region,
+    error::SdkError,
+    meta::PKG_VERSION,
+    operation::copy_object::{CopyObjectError, CopyObjectOutput},
+    Client, Error,
+};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -42,7 +50,7 @@ async fn cp_object(
     destination_bucket: &str,
     source_object: &str,
     destination_object: &str,
-) -> Result<(), Error> {
+) -> Result<CopyObjectOutput, SdkError<CopyObjectError>> {
     // Create source of object:
     //   source-bucket-name/source-object-name
     let mut source_bucket_and_object: String = "".to_owned();
@@ -56,13 +64,36 @@ async fn cp_object(
         .bucket(destination_bucket)
         .key(destination_object)
         .send()
-        .await?;
-
-    println!("Object copied.");
-
-    Ok(())
+        .await
 }
 // snippet-end:[bin.rust.copy-object]
+
+#[cfg(test)]
+mod test_cp_object {
+    use sdk_examples_test_utils::single_shot_client;
+
+    use crate::cp_object;
+
+    #[tokio::test]
+    async fn test_cp_object() {
+        let client = single_shot_client! {
+            sdk: aws_sdk_s3,
+            status: 200,
+            response: r#""#
+        };
+
+        let response = cp_object(
+            &client,
+            "source_bucket",
+            "destination_bucket",
+            "source_object",
+            "destination_object",
+        )
+        .await;
+
+        assert!(response.is_ok(), "{response:?}");
+    }
+}
 
 /// Copies an object from one Amazon S3 bucket to another.
 /// # Arguments
@@ -113,5 +144,9 @@ async fn main() -> Result<(), Error> {
     let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    cp_object(&client, &source, &destination, &key, &new_name).await
+    cp_object(&client, &source, &destination, &key, &new_name).await?;
+
+    println!("Object copied.");
+
+    Ok(())
 }

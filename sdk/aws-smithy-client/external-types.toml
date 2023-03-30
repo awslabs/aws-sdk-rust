@@ -21,10 +21,12 @@ allowed_external_types = [
     "tokio::io::async_read::AsyncRead",
     "tokio::io::async_write::AsyncWrite",
 
+
     # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `test-utils` feature
     "bytes::bytes::Bytes",
     "serde::ser::Serialize",
     "serde::de::Deserialize",
+    "hyper::client::connect::dns::Name",
 
     # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if we want to continue exposing tower_layer
     "tower_layer::Layer",

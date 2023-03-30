@@ -6,6 +6,7 @@
 use std::borrow::Cow;
 
 use aws_credential_types::provider::{self, future, ProvideCredentials};
+use aws_credential_types::Credentials;
 use tracing::Instrument;
 
 use crate::environment::credentials::EnvironmentVariableCredentialsProvider;
@@ -82,6 +83,10 @@ impl ProvideCredentials for DefaultCredentialsChain {
         Self: 'a,
     {
         future::ProvideCredentials::new(self.credentials())
+    }
+
+    fn fallback_on_interrupt(&self) -> Option<Credentials> {
+        self.provider_chain.fallback_on_interrupt()
     }
 }
 
@@ -231,6 +236,12 @@ mod test {
             make_test!($name, execute_from_live_traffic);
         };
         ($name: ident, $func: ident) => {
+            make_test!($name, $func, std::convert::identity);
+        };
+        ($name: ident, $provider_config_builder: expr) => {
+            make_test!($name, execute, $provider_config_builder);
+        };
+        ($name: ident, $func: ident, $provider_config_builder: expr) => {
             #[traced_test]
             #[tokio::test]
             async fn $name() {
@@ -238,7 +249,9 @@ mod test {
                     "./test-data/default-provider-chain/",
                     stringify!($name)
                 ))
+                .await
                 .unwrap()
+                .with_provider_config($provider_config_builder)
                 .$func(|conf| async {
                     crate::default_provider::credentials::Builder::default()
                         .configure(conf)
@@ -264,12 +277,23 @@ mod test {
 
     make_test!(imds_no_iam_role);
     make_test!(imds_default_chain_error);
-    make_test!(imds_default_chain_success);
+    make_test!(imds_default_chain_success, |config| {
+        config.with_time_source(aws_credential_types::time_source::TimeSource::testing(
+            &aws_credential_types::time_source::TestingTimeSource::new(std::time::UNIX_EPOCH),
+        ))
+    });
     make_test!(imds_assume_role);
-    make_test!(imds_config_with_no_creds);
+    make_test!(imds_config_with_no_creds, |config| {
+        config.with_time_source(aws_credential_types::time_source::TimeSource::testing(
+            &aws_credential_types::time_source::TestingTimeSource::new(std::time::UNIX_EPOCH),
+        ))
+    });
     make_test!(imds_disabled);
-    make_test!(imds_default_chain_retries);
-
+    make_test!(imds_default_chain_retries, |config| {
+        config.with_time_source(aws_credential_types::time_source::TimeSource::testing(
+            &aws_credential_types::time_source::TestingTimeSource::new(std::time::UNIX_EPOCH),
+        ))
+    });
     make_test!(ecs_assume_role);
     make_test!(ecs_credentials);
     make_test!(ecs_credentials_invalid_profile);
@@ -279,11 +303,12 @@ mod test {
 
     #[tokio::test]
     async fn profile_name_override() {
-        let (_, conf) =
+        let conf =
             TestEnvironment::from_dir("./test-data/default-provider-chain/profile_static_keys")
+                .await
                 .unwrap()
                 .provider_config()
-                .await;
+                .clone();
         let provider = DefaultCredentialsChain::builder()
             .profile_name("secondary")
             .configure(conf)

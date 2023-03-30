@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! Utilites for calculating CRC-32 while reading from a [`Buf`] or writing to a [`BufMut`].
+//! Utilities for calculating CRC-32 while reading from a [`Buf`] or writing to a [`BufMut`].
 
 use bytes::buf::UninitSlice;
 use bytes::{Buf, BufMut};
@@ -11,7 +11,7 @@ use crc32fast::Hasher;
 
 /// Implementation of [`Buf`] that calculates a CRC-32 checksum of the data
 /// being read from an underlying `Buf` instance.
-pub struct CrcBuf<'a, B>
+pub(crate) struct CrcBuf<'a, B>
 where
     B: Buf,
 {
@@ -24,7 +24,7 @@ where
     B: Buf,
 {
     /// Creates a new `CrcBuf` by wrapping the given `buffer`.
-    pub fn new(buffer: &'a mut B) -> Self {
+    pub(crate) fn new(buffer: &'a mut B) -> Self {
         CrcBuf {
             buffer,
             crc: Hasher::new(),
@@ -32,7 +32,7 @@ where
     }
 
     /// Consumes the `CrcBuf` and returns the calculated checksum.
-    pub fn into_crc(self) -> u32 {
+    pub(crate) fn into_crc(self) -> u32 {
         self.crc.finalize()
     }
 }
@@ -98,14 +98,14 @@ mod crc_buf_tests {
 /// Implementation of [`BufMut`] that calculates a CRC-32 checksum of the data
 /// being written to an underlying `Buf` instance, with a function to then write
 /// the calculated CRC-32 to the buffer.
-pub struct CrcBufMut<'a> {
+pub(crate) struct CrcBufMut<'a> {
     buffer: &'a mut dyn BufMut,
     crc: Hasher,
 }
 
 impl<'a> CrcBufMut<'a> {
     /// Creates a new `CrcBufMut` by wrapping the given `buffer`.
-    pub fn new(buffer: &'a mut dyn BufMut) -> Self {
+    pub(crate) fn new(buffer: &'a mut dyn BufMut) -> Self {
         CrcBufMut {
             buffer,
             crc: Hasher::new(),
@@ -115,7 +115,7 @@ impl<'a> CrcBufMut<'a> {
     /// Puts the calculated CRC-32 to the buffer as a Big Endian 32-bit integer.
     /// This can be called multiple times, and each successive call will include
     /// the previously written checksum in its new checksum.
-    pub fn put_crc(&mut self) {
+    pub(crate) fn put_crc(&mut self) {
         self.put_u32(self.crc.clone().finalize());
     }
 }

@@ -323,49 +323,6 @@ impl Builder {
         self.timeout_config = timeout_config;
         self
     }
-    /// Overrides the endpoint resolver to use when making requests.
-    ///
-    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
-    ///
-    /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
-    /// for `aws_sdk_computeoptimizer`.
-    ///
-    /// # Examples
-    /// ```no_run
-    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
-    /// use aws_types::region::Region;
-    /// use aws_sdk_computeoptimizer::config::{Builder, Config};
-    /// use aws_sdk_computeoptimizer::Endpoint;
-    ///
-    /// let config = aws_sdk_computeoptimizer::Config::builder()
-    ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
-    ///     .build();
-    /// # Ok(())
-    /// # }
-    /// ```
-    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
-    pub fn aws_endpoint_resolver(
-        mut self,
-        endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
-    ) -> Self {
-        self.endpoint_resolver = Some(std::sync::Arc::new(
-            aws_endpoint::EndpointShim::from_resolver(endpoint_resolver),
-        ) as _);
-        self
-    }
-
-    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
-    /// Sets the endpoint resolver to use when making requests.
-    ///
-    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
-    pub fn set_aws_endpoint_resolver(
-        &mut self,
-        endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
-    ) -> &mut Self {
-        self.endpoint_resolver = endpoint_resolver
-            .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
-        self
-    }
     /// Sets the name of the app that is using the client.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -614,31 +571,26 @@ impl Builder {
     }
 }
 
+pub use aws_credential_types::Credentials;
+
+pub use aws_types::region::Region;
+
 impl From<&aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder.set_credentials_cache(input.credentials_cache().cloned());
-
         builder.set_credentials_provider(input.credentials_provider().cloned());
-
         builder = builder.region(input.region().cloned());
-
         builder.set_use_fips(input.use_fips());
-
         builder.set_use_dual_stack(input.use_dual_stack());
-
         builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
-
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
         builder.set_sleep_impl(input.sleep_impl());
 
         builder.set_http_connector(input.http_connector().cloned());
-
         builder.set_app_name(input.app_name().cloned());
-
-        builder.set_aws_endpoint_resolver(input.endpoint_resolver().clone());
 
         builder
     }
@@ -649,6 +601,8 @@ impl From<&aws_types::sdk_config::SdkConfig> for Config {
         Builder::from(sdk_config).build()
     }
 }
+
+pub use aws_types::app_name::AppName;
 
 pub use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 

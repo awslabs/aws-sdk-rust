@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS IoT Events Data. Each operation on AWS IoT Events Data is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_ioteventsdata::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_ioteventsdata::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_ioteventsdata::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_ioteventsdata::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_ioteventsdata::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DescribeAlarm`](crate::operation::describe_alarm) operation has
+/// a [`Client::describe_alarm`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.describe_alarm()
+///     .alarm_model_name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,1174 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`BatchAcknowledgeAlarm`](crate::client::fluent_builders::BatchAcknowledgeAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`acknowledge_action_requests(Vec<AcknowledgeAlarmActionRequest>)`](crate::client::fluent_builders::BatchAcknowledgeAlarm::acknowledge_action_requests) / [`set_acknowledge_action_requests(Option<Vec<AcknowledgeAlarmActionRequest>>)`](crate::client::fluent_builders::BatchAcknowledgeAlarm::set_acknowledge_action_requests): <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchAcknowledgeAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchAcknowledgeAlarmError>`](crate::error::BatchAcknowledgeAlarmError)
-    pub fn batch_acknowledge_alarm(&self) -> fluent_builders::BatchAcknowledgeAlarm {
-        fluent_builders::BatchAcknowledgeAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteDetector`](crate::client::fluent_builders::BatchDeleteDetector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detectors(Vec<DeleteDetectorRequest>)`](crate::client::fluent_builders::BatchDeleteDetector::detectors) / [`set_detectors(Option<Vec<DeleteDetectorRequest>>)`](crate::client::fluent_builders::BatchDeleteDetector::set_detectors): <p>The list of one or more detectors to be deleted.</p>
-    /// - On success, responds with [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput) with field(s):
-    ///   - [`batch_delete_detector_error_entries(Option<Vec<BatchDeleteDetectorErrorEntry>>)`](crate::output::BatchDeleteDetectorOutput::batch_delete_detector_error_entries): <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteDetectorError>`](crate::error::BatchDeleteDetectorError)
-    pub fn batch_delete_detector(&self) -> fluent_builders::BatchDeleteDetector {
-        fluent_builders::BatchDeleteDetector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDisableAlarm`](crate::client::fluent_builders::BatchDisableAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`disable_action_requests(Vec<DisableAlarmActionRequest>)`](crate::client::fluent_builders::BatchDisableAlarm::disable_action_requests) / [`set_disable_action_requests(Option<Vec<DisableAlarmActionRequest>>)`](crate::client::fluent_builders::BatchDisableAlarm::set_disable_action_requests): <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchDisableAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchDisableAlarmError>`](crate::error::BatchDisableAlarmError)
-    pub fn batch_disable_alarm(&self) -> fluent_builders::BatchDisableAlarm {
-        fluent_builders::BatchDisableAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchEnableAlarm`](crate::client::fluent_builders::BatchEnableAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`enable_action_requests(Vec<EnableAlarmActionRequest>)`](crate::client::fluent_builders::BatchEnableAlarm::enable_action_requests) / [`set_enable_action_requests(Option<Vec<EnableAlarmActionRequest>>)`](crate::client::fluent_builders::BatchEnableAlarm::set_enable_action_requests): <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchEnableAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchEnableAlarmError>`](crate::error::BatchEnableAlarmError)
-    pub fn batch_enable_alarm(&self) -> fluent_builders::BatchEnableAlarm {
-        fluent_builders::BatchEnableAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchPutMessage`](crate::client::fluent_builders::BatchPutMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`messages(Vec<Message>)`](crate::client::fluent_builders::BatchPutMessage::messages) / [`set_messages(Option<Vec<Message>>)`](crate::client::fluent_builders::BatchPutMessage::set_messages): <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    /// - On success, responds with [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput) with field(s):
-    ///   - [`batch_put_message_error_entries(Option<Vec<BatchPutMessageErrorEntry>>)`](crate::output::BatchPutMessageOutput::batch_put_message_error_entries): <p>A list of any errors encountered when sending the messages.</p>
-    /// - On failure, responds with [`SdkError<BatchPutMessageError>`](crate::error::BatchPutMessageError)
-    pub fn batch_put_message(&self) -> fluent_builders::BatchPutMessage {
-        fluent_builders::BatchPutMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchResetAlarm`](crate::client::fluent_builders::BatchResetAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`reset_action_requests(Vec<ResetAlarmActionRequest>)`](crate::client::fluent_builders::BatchResetAlarm::reset_action_requests) / [`set_reset_action_requests(Option<Vec<ResetAlarmActionRequest>>)`](crate::client::fluent_builders::BatchResetAlarm::set_reset_action_requests): <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchResetAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchResetAlarmError>`](crate::error::BatchResetAlarmError)
-    pub fn batch_reset_alarm(&self) -> fluent_builders::BatchResetAlarm {
-        fluent_builders::BatchResetAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchSnoozeAlarm`](crate::client::fluent_builders::BatchSnoozeAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`snooze_action_requests(Vec<SnoozeAlarmActionRequest>)`](crate::client::fluent_builders::BatchSnoozeAlarm::snooze_action_requests) / [`set_snooze_action_requests(Option<Vec<SnoozeAlarmActionRequest>>)`](crate::client::fluent_builders::BatchSnoozeAlarm::set_snooze_action_requests): <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchSnoozeAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchSnoozeAlarmError>`](crate::error::BatchSnoozeAlarmError)
-    pub fn batch_snooze_alarm(&self) -> fluent_builders::BatchSnoozeAlarm {
-        fluent_builders::BatchSnoozeAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdateDetector`](crate::client::fluent_builders::BatchUpdateDetector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detectors(Vec<UpdateDetectorRequest>)`](crate::client::fluent_builders::BatchUpdateDetector::detectors) / [`set_detectors(Option<Vec<UpdateDetectorRequest>>)`](crate::client::fluent_builders::BatchUpdateDetector::set_detectors): <p>The list of detectors (instances) to update, along with the values to update.</p>
-    /// - On success, responds with [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput) with field(s):
-    ///   - [`batch_update_detector_error_entries(Option<Vec<BatchUpdateDetectorErrorEntry>>)`](crate::output::BatchUpdateDetectorOutput::batch_update_detector_error_entries): <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    /// - On failure, responds with [`SdkError<BatchUpdateDetectorError>`](crate::error::BatchUpdateDetectorError)
-    pub fn batch_update_detector(&self) -> fluent_builders::BatchUpdateDetector {
-        fluent_builders::BatchUpdateDetector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAlarm`](crate::client::fluent_builders::DescribeAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAlarm::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::DescribeAlarm::set_alarm_model_name): <p>The name of the alarm model.</p>
-    ///   - [`key_value(impl Into<String>)`](crate::client::fluent_builders::DescribeAlarm::key_value) / [`set_key_value(Option<String>)`](crate::client::fluent_builders::DescribeAlarm::set_key_value): <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    /// - On success, responds with [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput) with field(s):
-    ///   - [`alarm(Option<Alarm>)`](crate::output::DescribeAlarmOutput::alarm): <p>Contains information about an alarm.</p>
-    /// - On failure, responds with [`SdkError<DescribeAlarmError>`](crate::error::DescribeAlarmError)
-    pub fn describe_alarm(&self) -> fluent_builders::DescribeAlarm {
-        fluent_builders::DescribeAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDetector`](crate::client::fluent_builders::DescribeDetector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDetector::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::DescribeDetector::set_detector_model_name): <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    ///   - [`key_value(impl Into<String>)`](crate::client::fluent_builders::DescribeDetector::key_value) / [`set_key_value(Option<String>)`](crate::client::fluent_builders::DescribeDetector::set_key_value): <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-    /// - On success, responds with [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput) with field(s):
-    ///   - [`detector(Option<Detector>)`](crate::output::DescribeDetectorOutput::detector): <p>Information about the detector (instance).</p>
-    /// - On failure, responds with [`SdkError<DescribeDetectorError>`](crate::error::DescribeDetectorError)
-    pub fn describe_detector(&self) -> fluent_builders::DescribeDetector {
-        fluent_builders::DescribeDetector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAlarms`](crate::client::fluent_builders::ListAlarms) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::ListAlarms::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::ListAlarms::set_alarm_model_name): <p>The name of the alarm model.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlarms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlarms::set_next_token): <p>The token that you can use to return the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlarms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlarms::set_max_results): <p>The maximum number of results to be returned per request.</p>
-    /// - On success, responds with [`ListAlarmsOutput`](crate::output::ListAlarmsOutput) with field(s):
-    ///   - [`alarm_summaries(Option<Vec<AlarmSummary>>)`](crate::output::ListAlarmsOutput::alarm_summaries): <p>A list that summarizes each alarm.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAlarmsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListAlarmsError>`](crate::error::ListAlarmsError)
-    pub fn list_alarms(&self) -> fluent_builders::ListAlarms {
-        fluent_builders::ListAlarms::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDetectors`](crate::client::fluent_builders::ListDetectors) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_detector_model_name): <p>The name of the detector model whose detectors (instances) are listed.</p>
-    ///   - [`state_name(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::state_name) / [`set_state_name(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_state_name): <p>A filter that limits results to those detectors (instances) in the given state.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_next_token): <p>The token that you can use to return the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDetectors::set_max_results): <p>The maximum number of results to be returned per request.</p>
-    /// - On success, responds with [`ListDetectorsOutput`](crate::output::ListDetectorsOutput) with field(s):
-    ///   - [`detector_summaries(Option<Vec<DetectorSummary>>)`](crate::output::ListDetectorsOutput::detector_summaries): <p>A list of summary information about the detectors (instances).</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDetectorsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::error::ListDetectorsError)
-    pub fn list_detectors(&self) -> fluent_builders::ListDetectors {
-        fluent_builders::ListDetectors::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `BatchAcknowledgeAlarm`.
-    ///
-    /// <p>Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge them.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchAcknowledgeAlarm {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_acknowledge_alarm_input::Builder,
-    }
-    impl BatchAcknowledgeAlarm {
-        /// Creates a new `BatchAcknowledgeAlarm`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchAcknowledgeAlarm,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchAcknowledgeAlarmError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchAcknowledgeAlarmOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchAcknowledgeAlarmError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `acknowledgeActionRequests`.
-        ///
-        /// To override the contents of this collection use [`set_acknowledge_action_requests`](Self::set_acknowledge_action_requests).
-        ///
-        /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-        pub fn acknowledge_action_requests(
-            mut self,
-            input: crate::model::AcknowledgeAlarmActionRequest,
-        ) -> Self {
-            self.inner = self.inner.acknowledge_action_requests(input);
-            self
-        }
-        /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_acknowledge_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_acknowledge_action_requests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchDeleteDetector`.
-    ///
-    /// <p>Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a> API call.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchDeleteDetector {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_delete_detector_input::Builder,
-    }
-    impl BatchDeleteDetector {
-        /// Creates a new `BatchDeleteDetector`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchDeleteDetector,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchDeleteDetectorError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchDeleteDetectorOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchDeleteDetectorError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `detectors`.
-        ///
-        /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
-        ///
-        /// <p>The list of one or more detectors to be deleted.</p>
-        pub fn detectors(mut self, input: crate::model::DeleteDetectorRequest) -> Self {
-            self.inner = self.inner.detectors(input);
-            self
-        }
-        /// <p>The list of one or more detectors to be deleted.</p>
-        pub fn set_detectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_detectors(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchDisableAlarm`.
-    ///
-    /// <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchDisableAlarm {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_disable_alarm_input::Builder,
-    }
-    impl BatchDisableAlarm {
-        /// Creates a new `BatchDisableAlarm`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchDisableAlarm,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchDisableAlarmError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchDisableAlarmOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchDisableAlarmError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `disableActionRequests`.
-        ///
-        /// To override the contents of this collection use [`set_disable_action_requests`](Self::set_disable_action_requests).
-        ///
-        /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn disable_action_requests(
-            mut self,
-            input: crate::model::DisableAlarmActionRequest,
-        ) -> Self {
-            self.inner = self.inner.disable_action_requests(input);
-            self
-        }
-        /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_disable_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_disable_action_requests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchEnableAlarm`.
-    ///
-    /// <p>Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchEnableAlarm {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_enable_alarm_input::Builder,
-    }
-    impl BatchEnableAlarm {
-        /// Creates a new `BatchEnableAlarm`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchEnableAlarm,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchEnableAlarmError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchEnableAlarmOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchEnableAlarmError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `enableActionRequests`.
-        ///
-        /// To override the contents of this collection use [`set_enable_action_requests`](Self::set_enable_action_requests).
-        ///
-        /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn enable_action_requests(
-            mut self,
-            input: crate::model::EnableAlarmActionRequest,
-        ) -> Self {
-            self.inner = self.inner.enable_action_requests(input);
-            self
-        }
-        /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_enable_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_enable_action_requests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchPutMessage`.
-    ///
-    /// <p>Sends a set of messages to the IoT Events system. Each message payload is transformed into the input you specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send messages one at a time and wait for a successful response.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchPutMessage {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_put_message_input::Builder,
-    }
-    impl BatchPutMessage {
-        /// Creates a new `BatchPutMessage`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchPutMessage,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchPutMessageError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchPutMessageOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchPutMessageError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `messages`.
-        ///
-        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
-        ///
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-        pub fn messages(mut self, input: crate::model::Message) -> Self {
-            self.inner = self.inner.messages(input);
-            self
-        }
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
-        ) -> Self {
-            self.inner = self.inner.set_messages(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchResetAlarm`.
-    ///
-    /// <p>Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchResetAlarm {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_reset_alarm_input::Builder,
-    }
-    impl BatchResetAlarm {
-        /// Creates a new `BatchResetAlarm`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchResetAlarm,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchResetAlarmError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchResetAlarmOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchResetAlarmError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `resetActionRequests`.
-        ///
-        /// To override the contents of this collection use [`set_reset_action_requests`](Self::set_reset_action_requests).
-        ///
-        /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-        pub fn reset_action_requests(
-            mut self,
-            input: crate::model::ResetAlarmActionRequest,
-        ) -> Self {
-            self.inner = self.inner.reset_action_requests(input);
-            self
-        }
-        /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_reset_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_reset_action_requests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchSnoozeAlarm`.
-    ///
-    /// <p>Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchSnoozeAlarm {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_snooze_alarm_input::Builder,
-    }
-    impl BatchSnoozeAlarm {
-        /// Creates a new `BatchSnoozeAlarm`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchSnoozeAlarm,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchSnoozeAlarmError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchSnoozeAlarmOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchSnoozeAlarmError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `snoozeActionRequests`.
-        ///
-        /// To override the contents of this collection use [`set_snooze_action_requests`](Self::set_snooze_action_requests).
-        ///
-        /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-        pub fn snooze_action_requests(
-            mut self,
-            input: crate::model::SnoozeAlarmActionRequest,
-        ) -> Self {
-            self.inner = self.inner.snooze_action_requests(input);
-            self
-        }
-        /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-        pub fn set_snooze_action_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_snooze_action_requests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchUpdateDetector`.
-    ///
-    /// <p>Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified detector model.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchUpdateDetector {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::batch_update_detector_input::Builder,
-    }
-    impl BatchUpdateDetector {
-        /// Creates a new `BatchUpdateDetector`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::BatchUpdateDetector,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::BatchUpdateDetectorError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::BatchUpdateDetectorOutput,
-            aws_smithy_http::result::SdkError<crate::error::BatchUpdateDetectorError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `detectors`.
-        ///
-        /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
-        ///
-        /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-        pub fn detectors(mut self, input: crate::model::UpdateDetectorRequest) -> Self {
-            self.inner = self.inner.detectors(input);
-            self
-        }
-        /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-        pub fn set_detectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
-        ) -> Self {
-            self.inner = self.inner.set_detectors(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAlarm`.
-    ///
-    /// <p>Retrieves information about an alarm.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAlarm {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_alarm_input::Builder,
-    }
-    impl DescribeAlarm {
-        /// Creates a new `DescribeAlarm`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeAlarm,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeAlarmError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeAlarmOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeAlarmError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(input.into());
-            self
-        }
-        /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_alarm_model_name(input);
-            self
-        }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-        pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_value(input.into());
-            self
-        }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-        pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_value(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeDetector`.
-    ///
-    /// <p>Returns information about the specified detector (instance).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeDetector {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_detector_input::Builder,
-    }
-    impl DescribeDetector {
-        /// Creates a new `DescribeDetector`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeDetector,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeDetectorError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeDetectorOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeDetectorError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(input.into());
-            self
-        }
-        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_detector_model_name(input);
-            self
-        }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-        pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_value(input.into());
-            self
-        }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-        pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_value(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAlarms`.
-    ///
-    /// <p>Lists one or more alarms. The operation returns only the metadata associated with each alarm.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAlarms {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_alarms_input::Builder,
-    }
-    impl ListAlarms {
-        /// Creates a new `ListAlarms`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListAlarms,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListAlarmsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListAlarmsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListAlarmsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(input.into());
-            self
-        }
-        /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_alarm_model_name(input);
-            self
-        }
-        /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that you can use to return the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to be returned per request.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDetectors`.
-    ///
-    /// <p>Lists detectors (the instances of a detector model).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDetectors {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_detectors_input::Builder,
-    }
-    impl ListDetectors {
-        /// Creates a new `ListDetectors`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListDetectors,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListDetectorsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListDetectorsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListDetectorsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(input.into());
-            self
-        }
-        /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_detector_model_name(input);
-            self
-        }
-        /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
-        pub fn state_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_name(input.into());
-            self
-        }
-        /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
-        pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_state_name(input);
-            self
-        }
-        /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that you can use to return the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to be returned per request.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
     }
 }
 
@@ -1332,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1342,3 +211,55 @@ impl Client {
         }
     }
 }
+
+mod batch_acknowledge_alarm;
+
+mod batch_delete_detector;
+
+mod batch_disable_alarm;
+
+mod batch_enable_alarm;
+
+mod batch_put_message;
+
+mod batch_reset_alarm;
+
+mod batch_snooze_alarm;
+
+mod batch_update_detector;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_ioteventsdata::Error> {
+/// # let client: aws_sdk_ioteventsdata::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.batch_acknowledge_alarm()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod describe_alarm;
+
+mod describe_detector;
+
+mod list_alarms;
+
+mod list_detectors;

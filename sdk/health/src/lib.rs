@@ -4,71 +4,93 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
-#![allow(clippy::blacklisted_name)]
+#![allow(clippy::disallowed_names)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
+#![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <fullname>Health</fullname>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! <p>The Health API provides programmatic access to the Health information that
-//! appears in the <a href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You
-//! can use the API operations to get information about events that might affect your Amazon Web Services services and resources.</p>
-//! <note>
-//! <ul>
-//! <li>
-//! <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health
-//! API. If you call the Health API from an Amazon Web Services account that
-//! doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a
-//! <code>SubscriptionRequiredException</code> error.</p>
-//! </li>
-//! <li>
-//! <p>You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS) to
-//! call the Health API operations. Health supports a multi-Region
-//! application architecture and has two regional endpoints in an active-passive
-//! configuration. You can use the high availability endpoint example to determine
-//! which Amazon Web Services Region is active, so that you can get the latest information from the
-//! API. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/health-api.html">Accessing the Health API</a> in the
-//! <i>Health User Guide</i>.</p>
-//! </li>
-//! </ul>
-//! </note>
-//! <p>For authentication of requests, Health uses the <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
-//! Process</a>.</p>
-//! <p>If your Amazon Web Services account is part of Organizations, you can use the Health organizational
-//! view feature. This feature provides a centralized view of Health events across all
-//! accounts in your organization. You can aggregate Health events in real time to
-//! identify accounts in your organization that are affected by an operational event or get
-//! notified of security vulnerabilities. Use the organizational view API operations to enable
-//! this feature and return event information. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
-//! Health events</a> in the <i>Health User Guide</i>.</p>
-//! <note>
-//! <p>When you use the Health API operations to return Health events, see the
-//! following recommendations:</p>
-//! <ul>
-//! <li>
-//! <p>Use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a> parameter to specify whether to return Health
-//! events that are public or account-specific.</p>
-//! </li>
-//! <li>
-//! <p>Use pagination to view all events from the response. For example, if you call
-//! the <code>DescribeEventsForOrganization</code> operation to get all events in your
-//! organization, you might receive several page results. Specify the
-//! <code>nextToken</code> in the next request to return more results.</p>
-//! </li>
-//! </ul>
-//! </note>
+//! The Health API provides programmatic access to the Health information that appears in the [Personal Health Dashboard](https://phd.aws.amazon.com/phd/home#/). You can use the API operations to get information about events that might affect your Amazon Web Services services and resources.
+//!
+//! For authentication of requests, Health uses the [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
+//!
+//! If your Amazon Web Services account is part of Organizations, you can use the Health organizational view feature. This feature provides a centralized view of Health events across all accounts in your organization. You can aggregate Health events in real time to identify accounts in your organization that are affected by an operational event or get notified of security vulnerabilities. Use the organizational view API operations to enable this feature and return event information. For more information, see [Aggregating Health events](https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html) in the _Health User Guide_.
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-health` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.55.0"
+//! aws-sdk-health = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_health as health;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), health::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = health::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-health/latest/aws_sdk_health/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!
-//! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
-//! by the service.
+//! The entry point for most customers will be [`Client`], which exposes one method for each API
+//! offered by AWS Health APIs and Notifications. The return value of each of these methods is a "fluent builder",
+//! where the different inputs for that API are added by builder-style function call chaining,
+//! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
+//! either a successful output or a [`SdkError`](crate::error::SdkError).
 //!
-//! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
+//! Some of these API inputs may be structs or enums to provide more complex structured information.
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
+//! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
 //!
-//! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
-//! error encompassing all possible errors that can be returned by the service.
+//! All types required to configure a client via the [`Config`](crate::Config) struct live
+//! in [`config`](crate::config).
+//!
+//! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
+//! is the input, output, and error type for that API, as well as builders to construct each of those.
+//!
+//! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
+//! client can return. Any other error type can be converted to this `Error` type via the
+//! [`From`](std::convert::From) trait.
 //!
 //! The other modules within this crate are not required for normal usage.
 
@@ -78,65 +100,109 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-/// Client and fluent builders for calling the service.
+/// Client for calling AWS Health APIs and Notifications.
+/// ## Constructing a `Client`
+///
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_health::Client::new(&config);
+/// # }
+/// ```
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_health::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DescribeAffectedAccountsForOrganization`](crate::operation::describe_affected_accounts_for_organization) operation has
+/// a [`Client::describe_affected_accounts_for_organization`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.describe_affected_accounts_for_organization()
+///     .event_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
-/// Configuration for the service.
+/// Configuration for AWS Health APIs and Notifications.
 pub mod config;
 
-/// Endpoint resolution functionality
+/// Endpoint resolution functionality.
 pub mod endpoint;
 
-/// All error types that operations can return. Documentation on these types is copied from the model.
+/// Common errors and error handling utilities.
 pub mod error;
 
 mod error_meta;
 
-/// Input structures for operations. Documentation on these types is copied from the model.
-pub mod input;
-
-/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
-pub mod model;
+/// Information about this crate.
+pub mod meta;
 
 /// All operations that this crate can perform.
 pub mod operation;
 
-/// Output structures for operations. Documentation on these types is copied from the model.
-pub mod output;
+/// Primitives such as `Blob` or `DateTime` used by other types.
+pub mod primitives;
 
-/// Data primitives referenced by other data types.
+/// Data structures used by operation inputs/outputs.
 pub mod types;
 
+///
 pub mod middleware;
 
+///
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
-/// Paginators for the service
-pub mod paginator;
-
-mod json_deser;
-
-mod json_ser;
-
-/// Generated accessors for nested fields
 mod lens;
 
-/// Endpoints standard library functions
+pub(crate) mod protocol_serde;
+
 mod endpoint_lib;
 
 mod json_errors;
 
-/// Crate version number.
-pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use aws_smithy_http::endpoint::Endpoint;
-static API_METADATA: aws_http::user_agent::ApiMetadata =
-    aws_http::user_agent::ApiMetadata::new("health", PKG_VERSION);
-pub use aws_credential_types::Credentials;
-pub use aws_types::app_name::AppName;
-pub use aws_types::region::Region;
 #[doc(inline)]
 pub use client::Client;

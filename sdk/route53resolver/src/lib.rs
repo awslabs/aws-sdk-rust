@@ -4,55 +4,101 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
-#![allow(clippy::blacklisted_name)]
+#![allow(clippy::disallowed_names)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
+#![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC
-//! from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain names
-//! such as domain names for EC2 instances or Elastic Load Balancing load balancers.
-//! Resolver performs recursive lookups against public name servers for all other domain
-//! names.</p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! <p>You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:</p>
+//! When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or Elastic Load Balancing load balancers. Resolver performs recursive lookups against public name servers for all other domain names.
 //!
-//! <p>
-//! <b>Forward DNS queries from resolvers on your network to Route 53 Resolver</b>
-//! </p>
+//! You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:
 //!
-//! <p>DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows your DNS resolvers
-//! to easily resolve domain names for Amazon Web Services resources such as EC2 instances or records in a Route 53 private hosted zone.
-//! For more information, see
-//! <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How DNS Resolvers
-//! on Your Network Forward DNS Queries to Route 53 Resolver</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+//! __Forward DNS queries from resolvers on your network to Route 53 Resolver__
 //!
-//! <p>
-//! <b>Conditionally forward queries from a VPC to resolvers on your network</b>
-//! </p>
+//! DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows your DNS resolvers to easily resolve domain names for Amazon Web Services resources such as EC2 instances or records in a Route 53 private hosted zone. For more information, see [How DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc) in the _Amazon Route 53 Developer Guide_.
 //!
-//! <p>You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to DNS resolvers on your network.
-//! To forward selected queries, you create Resolver rules that specify the domain names for the DNS queries that you want to forward
-//! (such as example.com), and the IP addresses of the DNS resolvers on your network that you want to forward the queries to.
-//! If a query matches multiple rules (example.com, acme.example.com), Resolver chooses the rule with the most specific match
-//! (acme.example.com) and forwards the query to the IP addresses that you specified in that rule. For more information, see
-//! <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network">How Route 53 Resolver
-//! Forwards DNS Queries from Your VPCs to Your Network</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+//! __Conditionally forward queries from a VPC to resolvers on your network__
 //!
-//! <p>Like Amazon VPC, Resolver is Regional. In each Region where you have VPCs, you can choose
-//! whether to forward queries from your VPCs to your network (outbound queries), from your
-//! network to your VPCs (inbound queries), or both.</p>
+//! You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to DNS resolvers on your network. To forward selected queries, you create Resolver rules that specify the domain names for the DNS queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network that you want to forward the queries to. If a query matches multiple rules (example.com, acme.example.com), Resolver chooses the rule with the most specific match (acme.example.com) and forwards the query to the IP addresses that you specified in that rule. For more information, see [How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network) in the _Amazon Route 53 Developer Guide_.
+//!
+//! Like Amazon VPC, Resolver is Regional. In each Region where you have VPCs, you can choose whether to forward queries from your VPCs to your network (outbound queries), from your network to your VPCs (inbound queries), or both.
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-route53resolver` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.55.0"
+//! aws-sdk-route53resolver = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_route53resolver as route53resolver;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), route53resolver::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = route53resolver::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-route53resolver/latest/aws_sdk_route53resolver/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!
-//! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
-//! by the service.
+//! The entry point for most customers will be [`Client`], which exposes one method for each API
+//! offered by Amazon Route 53 Resolver. The return value of each of these methods is a "fluent builder",
+//! where the different inputs for that API are added by builder-style function call chaining,
+//! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
+//! either a successful output or a [`SdkError`](crate::error::SdkError).
 //!
-//! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
+//! Some of these API inputs may be structs or enums to provide more complex structured information.
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
+//! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
 //!
-//! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
-//! error encompassing all possible errors that can be returned by the service.
+//! All types required to configure a client via the [`Config`](crate::Config) struct live
+//! in [`config`](crate::config).
+//!
+//! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
+//! is the input, output, and error type for that API, as well as builders to construct each of those.
+//!
+//! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
+//! client can return. Any other error type can be converted to this `Error` type via the
+//! [`From`](std::convert::From) trait.
 //!
 //! The other modules within this crate are not required for normal usage.
 
@@ -62,67 +108,111 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-/// Client and fluent builders for calling the service.
+/// Client for calling Amazon Route 53 Resolver.
+/// ## Constructing a `Client`
+///
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_route53resolver::Client::new(&config);
+/// # }
+/// ```
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_route53resolver::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`AssociateFirewallRuleGroup`](crate::operation::associate_firewall_rule_group) operation has
+/// a [`Client::associate_firewall_rule_group`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.associate_firewall_rule_group()
+///     .creator_request_id("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
-/// Configuration for the service.
+/// Configuration for Amazon Route 53 Resolver.
 pub mod config;
 
-/// Endpoint resolution functionality
+/// Endpoint resolution functionality.
 pub mod endpoint;
 
-/// All error types that operations can return. Documentation on these types is copied from the model.
+/// Common errors and error handling utilities.
 pub mod error;
 
 mod error_meta;
 
-/// Input structures for operations. Documentation on these types is copied from the model.
-pub mod input;
-
-/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
-pub mod model;
+/// Information about this crate.
+pub mod meta;
 
 /// All operations that this crate can perform.
 pub mod operation;
 
-/// Output structures for operations. Documentation on these types is copied from the model.
-pub mod output;
+/// Primitives such as `Blob` or `DateTime` used by other types.
+pub mod primitives;
 
-/// Data primitives referenced by other data types.
+/// Data structures used by operation inputs/outputs.
 pub mod types;
 
 mod idempotency_token;
 
+///
 pub mod middleware;
 
+///
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
-/// Paginators for the service
-pub mod paginator;
-
-mod json_deser;
-
-mod json_ser;
-
-/// Generated accessors for nested fields
 mod lens;
 
-/// Endpoints standard library functions
+pub(crate) mod protocol_serde;
+
 mod endpoint_lib;
 
 mod json_errors;
 
-/// Crate version number.
-pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use aws_smithy_http::endpoint::Endpoint;
-static API_METADATA: aws_http::user_agent::ApiMetadata =
-    aws_http::user_agent::ApiMetadata::new("route53resolver", PKG_VERSION);
-pub use aws_credential_types::Credentials;
-pub use aws_types::app_name::AppName;
-pub use aws_types::region::Region;
 #[doc(inline)]
 pub use client::Client;

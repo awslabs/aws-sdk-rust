@@ -8,10 +8,10 @@ use super::{PayloadChecksumKind, SignatureLocation};
 use crate::http_request::canonical_request::header;
 use crate::http_request::canonical_request::param;
 use crate::http_request::canonical_request::{CanonicalRequest, StringToSign, HMAC_256};
-use crate::http_request::query_writer::QueryWriter;
 use crate::http_request::SigningParams;
 use crate::sign::{calculate_signature, generate_signing_key, sha256_hex_string};
 use crate::SigningOutput;
+use aws_smithy_http::query_writer::QueryWriter;
 use http::header::HeaderValue;
 use http::{HeaderMap, Method, Uri};
 use std::borrow::Cow;
@@ -380,9 +380,11 @@ mod tests {
 
     #[test]
     fn test_sign_vanilla_with_query_params() {
-        let mut settings = SigningSettings::default();
-        settings.signature_location = SignatureLocation::QueryParams;
-        settings.expires_in = Some(Duration::from_secs(35));
+        let settings = SigningSettings {
+            signature_location: SignatureLocation::QueryParams,
+            expires_in: Some(Duration::from_secs(35)),
+            ..Default::default()
+        };
         let params = SigningParams {
             access_key: "AKIDEXAMPLE",
             secret_key: "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",

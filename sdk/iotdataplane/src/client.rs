@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS IoT Data Plane. Each operation on AWS IoT Data Plane is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_iotdataplane::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_iotdataplane::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_iotdataplane::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_iotdataplane::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_iotdataplane::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteThingShadow`](crate::operation::delete_thing_shadow) operation has
+/// a [`Client::delete_thing_shadow`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_thing_shadow()
+///     .thing_name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,830 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`DeleteThingShadow`](crate::client::fluent_builders::DeleteThingShadow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DeleteThingShadow::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::DeleteThingShadow::set_shadow_name): <p>The name of the shadow.</p>
-    /// - On success, responds with [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput) with field(s):
-    ///   - [`payload(Option<Blob>)`](crate::output::DeleteThingShadowOutput::payload): <p>The state information, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<DeleteThingShadowError>`](crate::error::DeleteThingShadowError)
-    pub fn delete_thing_shadow(&self) -> fluent_builders::DeleteThingShadow {
-        fluent_builders::DeleteThingShadow::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRetainedMessage`](crate::client::fluent_builders::GetRetainedMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::GetRetainedMessage::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::GetRetainedMessage::set_topic): <p>The topic name of the retained message to retrieve.</p>
-    /// - On success, responds with [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput) with field(s):
-    ///   - [`topic(Option<String>)`](crate::output::GetRetainedMessageOutput::topic): <p>The topic name to which the retained message was published.</p>
-    ///   - [`payload(Option<Blob>)`](crate::output::GetRetainedMessageOutput::payload): <p>The Base64-encoded message payload of the retained message body.</p>
-    ///   - [`qos(i32)`](crate::output::GetRetainedMessageOutput::qos): <p>The quality of service (QoS) level used to publish the retained message.</p>
-    ///   - [`last_modified_time(i64)`](crate::output::GetRetainedMessageOutput::last_modified_time): <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
-    /// - On failure, responds with [`SdkError<GetRetainedMessageError>`](crate::error::GetRetainedMessageError)
-    pub fn get_retained_message(&self) -> fluent_builders::GetRetainedMessage {
-        fluent_builders::GetRetainedMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetThingShadow`](crate::client::fluent_builders::GetThingShadow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::GetThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::GetThingShadow::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::GetThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::GetThingShadow::set_shadow_name): <p>The name of the shadow.</p>
-    /// - On success, responds with [`GetThingShadowOutput`](crate::output::GetThingShadowOutput) with field(s):
-    ///   - [`payload(Option<Blob>)`](crate::output::GetThingShadowOutput::payload): <p>The state information, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<GetThingShadowError>`](crate::error::GetThingShadowError)
-    pub fn get_thing_shadow(&self) -> fluent_builders::GetThingShadow {
-        fluent_builders::GetThingShadow::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListNamedShadowsForThing`](crate::client::fluent_builders::ListNamedShadowsForThing) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListNamedShadowsForThing::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_page_size): <p>The result page size.</p>
-    /// - On success, responds with [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput) with field(s):
-    ///   - [`results(Option<Vec<String>>)`](crate::output::ListNamedShadowsForThingOutput::results): <p>The list of shadows for the specified thing.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListNamedShadowsForThingOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`timestamp(i64)`](crate::output::ListNamedShadowsForThingOutput::timestamp): <p>The Epoch date and time the response was generated by IoT.</p>
-    /// - On failure, responds with [`SdkError<ListNamedShadowsForThingError>`](crate::error::ListNamedShadowsForThingError)
-    pub fn list_named_shadows_for_thing(&self) -> fluent_builders::ListNamedShadowsForThing {
-        fluent_builders::ListNamedShadowsForThing::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRetainedMessages`](crate::client::fluent_builders::ListRetainedMessages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRetainedMessages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRetainedMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRetainedMessages::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRetainedMessages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRetainedMessages::set_max_results): <p>The maximum number of results to return at one time.</p>
-    /// - On success, responds with [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput) with field(s):
-    ///   - [`retained_topics(Option<Vec<RetainedMessageSummary>>)`](crate::output::ListRetainedMessagesOutput::retained_topics): <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRetainedMessagesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListRetainedMessagesError>`](crate::error::ListRetainedMessagesError)
-    pub fn list_retained_messages(&self) -> fluent_builders::ListRetainedMessages {
-        fluent_builders::ListRetainedMessages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`Publish`](crate::client::fluent_builders::Publish) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::Publish::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::Publish::set_topic): <p>The name of the MQTT topic.</p>
-    ///   - [`qos(i32)`](crate::client::fluent_builders::Publish::qos) / [`set_qos(i32)`](crate::client::fluent_builders::Publish::set_qos): <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-    ///   - [`retain(bool)`](crate::client::fluent_builders::Publish::retain) / [`set_retain(bool)`](crate::client::fluent_builders::Publish::set_retain): <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>  <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>  <p>Default value: <code>false</code> </p>
-    ///   - [`payload(Blob)`](crate::client::fluent_builders::Publish::payload) / [`set_payload(Option<Blob>)`](crate::client::fluent_builders::Publish::set_payload): <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>  <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    ///   - [`user_properties(impl Into<String>)`](crate::client::fluent_builders::Publish::user_properties) / [`set_user_properties(Option<String>)`](crate::client::fluent_builders::Publish::set_user_properties): <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>  <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>  <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    ///   - [`payload_format_indicator(PayloadFormatIndicator)`](crate::client::fluent_builders::Publish::payload_format_indicator) / [`set_payload_format_indicator(Option<PayloadFormatIndicator>)`](crate::client::fluent_builders::Publish::set_payload_format_indicator): <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::Publish::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::Publish::set_content_type): <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    ///   - [`response_topic(impl Into<String>)`](crate::client::fluent_builders::Publish::response_topic) / [`set_response_topic(Option<String>)`](crate::client::fluent_builders::Publish::set_response_topic): <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    ///   - [`correlation_data(impl Into<String>)`](crate::client::fluent_builders::Publish::correlation_data) / [`set_correlation_data(Option<String>)`](crate::client::fluent_builders::Publish::set_correlation_data): <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    ///   - [`message_expiry(i64)`](crate::client::fluent_builders::Publish::message_expiry) / [`set_message_expiry(i64)`](crate::client::fluent_builders::Publish::set_message_expiry): <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-    /// - On success, responds with [`PublishOutput`](crate::output::PublishOutput)
-
-    /// - On failure, responds with [`SdkError<PublishError>`](crate::error::PublishError)
-    pub fn publish(&self) -> fluent_builders::Publish {
-        fluent_builders::Publish::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateThingShadow`](crate::client::fluent_builders::UpdateThingShadow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::UpdateThingShadow::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::UpdateThingShadow::set_shadow_name): <p>The name of the shadow.</p>
-    ///   - [`payload(Blob)`](crate::client::fluent_builders::UpdateThingShadow::payload) / [`set_payload(Option<Blob>)`](crate::client::fluent_builders::UpdateThingShadow::set_payload): <p>The state information, in JSON format.</p>
-    /// - On success, responds with [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput) with field(s):
-    ///   - [`payload(Option<Blob>)`](crate::output::UpdateThingShadowOutput::payload): <p>The state information, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<UpdateThingShadowError>`](crate::error::UpdateThingShadowError)
-    pub fn update_thing_shadow(&self) -> fluent_builders::UpdateThingShadow {
-        fluent_builders::UpdateThingShadow::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DeleteThingShadow`.
-    ///
-    /// <p>Deletes the shadow for the specified thing.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingShadow</a> action.</p>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in the IoT Developer Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteThingShadow {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_thing_shadow_input::Builder,
-    }
-    impl DeleteThingShadow {
-        /// Creates a new `DeleteThingShadow`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteThingShadow,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteThingShadowError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteThingShadowOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteThingShadowError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>The name of the shadow.</p>
-        pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shadow_name(input.into());
-            self
-        }
-        /// <p>The name of the shadow.</p>
-        pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shadow_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetRetainedMessage`.
-    ///
-    /// <p>Gets the details of a single retained message for the specified topic.</p>
-    /// <p>This action returns the message payload of the retained message, which can incur messaging costs. To list only the topic names of the retained messages, call <a href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a> action.</p>
-    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRetainedMessage {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_retained_message_input::Builder,
-    }
-    impl GetRetainedMessage {
-        /// Creates a new `GetRetainedMessage`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetRetainedMessage,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetRetainedMessageError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetRetainedMessageOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetRetainedMessageError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The topic name of the retained message to retrieve.</p>
-        pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic(input.into());
-            self
-        }
-        /// <p>The topic name of the retained message to retrieve.</p>
-        pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetThingShadow`.
-    ///
-    /// <p>Gets the shadow for the specified thing.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetThingShadow</a> action.</p>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the IoT Developer Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetThingShadow {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_thing_shadow_input::Builder,
-    }
-    impl GetThingShadow {
-        /// Creates a new `GetThingShadow`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetThingShadow,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetThingShadowError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetThingShadowOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetThingShadowError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>The name of the shadow.</p>
-        pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shadow_name(input.into());
-            self
-        }
-        /// <p>The name of the shadow.</p>
-        pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shadow_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListNamedShadowsForThing`.
-    ///
-    /// <p>Lists the shadows for the specified thing.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListNamedShadowsForThing</a> action.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListNamedShadowsForThing {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_named_shadows_for_thing_input::Builder,
-    }
-    impl ListNamedShadowsForThing {
-        /// Creates a new `ListNamedShadowsForThing`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListNamedShadowsForThing,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListNamedShadowsForThingOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The result page size.</p>
-        pub fn page_size(mut self, input: i32) -> Self {
-            self.inner = self.inner.page_size(input);
-            self
-        }
-        /// <p>The result page size.</p>
-        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRetainedMessages`.
-    ///
-    /// <p>Lists summary information about the retained messages stored for the account.</p>
-    /// <p>This action returns only the topic names of the retained messages. It doesn't return any message payloads. Although this action doesn't return a message payload, it can still incur messaging costs.</p>
-    /// <p>To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a> with the topic name of the retained message.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a> action.</p>
-    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRetainedMessages {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_retained_messages_input::Builder,
-    }
-    impl ListRetainedMessages {
-        /// Creates a new `ListRetainedMessages`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListRetainedMessages,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListRetainedMessagesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListRetainedMessagesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListRetainedMessagesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRetainedMessagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::ListRetainedMessagesPaginator {
-            crate::paginator::ListRetainedMessagesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return at one time.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return at one time.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `Publish`.
-    ///
-    /// <p>Publishes an MQTT message.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a> action.</p>
-    /// <p>For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the IoT Developer Guide.</p>
-    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct Publish {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::publish_input::Builder,
-    }
-    impl Publish {
-        /// Creates a new `Publish`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::Publish,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PublishError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PublishOutput,
-            aws_smithy_http::result::SdkError<crate::error::PublishError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the MQTT topic.</p>
-        pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic(input.into());
-            self
-        }
-        /// <p>The name of the MQTT topic.</p>
-        pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic(input);
-            self
-        }
-        /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-        pub fn qos(mut self, input: i32) -> Self {
-            self.inner = self.inner.qos(input);
-            self
-        }
-        /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-        pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_qos(input);
-            self
-        }
-        /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-        /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-        /// <p>Default value: <code>false</code> </p>
-        pub fn retain(mut self, input: bool) -> Self {
-            self.inner = self.inner.retain(input);
-            self
-        }
-        /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-        /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-        /// <p>Default value: <code>false</code> </p>
-        pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_retain(input);
-            self
-        }
-        /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(input);
-            self
-        }
-        /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_payload(input);
-            self
-        }
-        /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-        /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-        /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-        pub fn user_properties(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_properties(input.into());
-            self
-        }
-        /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-        /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-        /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-        pub fn set_user_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_user_properties(input);
-            self
-        }
-        /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-        pub fn payload_format_indicator(
-            mut self,
-            input: crate::model::PayloadFormatIndicator,
-        ) -> Self {
-            self.inner = self.inner.payload_format_indicator(input);
-            self
-        }
-        /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-        pub fn set_payload_format_indicator(
-            mut self,
-            input: std::option::Option<crate::model::PayloadFormatIndicator>,
-        ) -> Self {
-            self.inner = self.inner.set_payload_format_indicator(input);
-            self
-        }
-        /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(input.into());
-            self
-        }
-        /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(input);
-            self
-        }
-        /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-        pub fn response_topic(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_topic(input.into());
-            self
-        }
-        /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-        pub fn set_response_topic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_response_topic(input);
-            self
-        }
-        /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-        pub fn correlation_data(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.correlation_data(input.into());
-            self
-        }
-        /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-        pub fn set_correlation_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_correlation_data(input);
-            self
-        }
-        /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-        pub fn message_expiry(mut self, input: i64) -> Self {
-            self.inner = self.inner.message_expiry(input);
-            self
-        }
-        /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-        pub fn set_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_message_expiry(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateThingShadow`.
-    ///
-    /// <p>Updates the shadow for the specified thing.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingShadow</a> action.</p>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the IoT Developer Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateThingShadow {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_thing_shadow_input::Builder,
-    }
-    impl UpdateThingShadow {
-        /// Creates a new `UpdateThingShadow`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateThingShadow,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateThingShadowError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateThingShadowOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateThingShadowError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the thing.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>The name of the shadow.</p>
-        pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shadow_name(input.into());
-            self
-        }
-        /// <p>The name of the shadow.</p>
-        pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shadow_name(input);
-            self
-        }
-        /// <p>The state information, in JSON format.</p>
-        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(input);
-            self
-        }
-        /// <p>The state information, in JSON format.</p>
-        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_payload(input);
-            self
-        }
     }
 }
 
@@ -988,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -998,3 +211,45 @@ impl Client {
         }
     }
 }
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_iotdataplane::Error> {
+/// # let client: aws_sdk_iotdataplane::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.delete_thing_shadow()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_thing_shadow;
+
+mod get_retained_message;
+
+mod get_thing_shadow;
+
+mod list_named_shadows_for_thing;
+
+mod list_retained_messages;
+
+mod publish;
+
+mod update_thing_shadow;

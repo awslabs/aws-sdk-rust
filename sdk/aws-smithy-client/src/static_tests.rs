@@ -5,7 +5,7 @@
 //! This module provides types useful for static tests.
 #![allow(missing_docs, missing_debug_implementations)]
 
-use crate::{Builder, Error, Operation, ParseHttpResponse, ProvideErrorKind};
+use crate::{Builder, Operation, ParseHttpResponse, ProvideErrorKind};
 use aws_smithy_http::operation;
 use aws_smithy_http::retry::DefaultResponseRetryClassifier;
 
@@ -17,7 +17,7 @@ impl std::fmt::Display for TestOperationError {
         unreachable!("only used for static tests")
     }
 }
-impl Error for TestOperationError {}
+impl std::error::Error for TestOperationError {}
 impl ProvideErrorKind for TestOperationError {
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         unreachable!("only used for static tests")

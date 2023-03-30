@@ -12,31 +12,70 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on Amazon Data Lifecycle Manager. Each operation on Amazon Data Lifecycle Manager is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// ## Constructing a `Client`
 ///
-/// # Examples
-/// **Constructing a client and invoking an operation**
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_dlm::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_dlm::Client::new(&config);
 /// # }
 /// ```
-/// **Constructing a client with custom configuration**
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
 /// ```rust,no_run
-/// use aws_config::retry::RetryConfig;
-/// # async fn docs() {
-/// let shared_config = aws_config::load_from_env().await;
-/// let config = aws_sdk_dlm::config::Builder::from(&shared_config)
-///   .retry_config(RetryConfig::disabled())
-///   .build();
-/// let client = aws_sdk_dlm::Client::from_conf(config);
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_dlm::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
 /// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateLifecyclePolicy`](crate::operation::create_lifecycle_policy) operation has
+/// a [`Client::create_lifecycle_policy`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.create_lifecycle_policy()
+///     .execution_role_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,
@@ -49,9 +88,6 @@ impl std::clone::Clone for Client {
         }
     }
 }
-
-#[doc(inline)]
-pub use aws_smithy_client::Builder;
 
 impl
     From<
@@ -88,925 +124,6 @@ impl Client {
     /// Returns the client's configuration.
     pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
-    }
-}
-impl Client {
-    /// Constructs a fluent builder for the [`CreateLifecyclePolicy`](crate::client::fluent_builders::CreateLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_description): <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
-    ///   - [`state(SettablePolicyStateValues)`](crate::client::fluent_builders::CreateLifecyclePolicy::state) / [`set_state(Option<SettablePolicyStateValues>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_state): <p>The desired activation state of the lifecycle policy after creation.</p>
-    ///   - [`policy_details(PolicyDetails)`](crate::client::fluent_builders::CreateLifecyclePolicy::policy_details) / [`set_policy_details(Option<PolicyDetails>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_policy_details): <p>The configuration details of the lifecycle policy.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_tags): <p>The tags to apply to the lifecycle policy during creation.</p>
-    /// - On success, responds with [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput) with field(s):
-    ///   - [`policy_id(Option<String>)`](crate::output::CreateLifecyclePolicyOutput::policy_id): <p>The identifier of the lifecycle policy.</p>
-    /// - On failure, responds with [`SdkError<CreateLifecyclePolicyError>`](crate::error::CreateLifecyclePolicyError)
-    pub fn create_lifecycle_policy(&self) -> fluent_builders::CreateLifecyclePolicy {
-        fluent_builders::CreateLifecyclePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLifecyclePolicy`](crate::client::fluent_builders::DeleteLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::set_policy_id): <p>The identifier of the lifecycle policy.</p>
-    /// - On success, responds with [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLifecyclePolicyError>`](crate::error::DeleteLifecyclePolicyError)
-    pub fn delete_lifecycle_policy(&self) -> fluent_builders::DeleteLifecyclePolicy {
-        fluent_builders::DeleteLifecyclePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLifecyclePolicies`](crate::client::fluent_builders::GetLifecyclePolicies) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`policy_ids(Vec<String>)`](crate::client::fluent_builders::GetLifecyclePolicies::policy_ids) / [`set_policy_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_policy_ids): <p>The identifiers of the data lifecycle policies.</p>
-    ///   - [`state(GettablePolicyStateValues)`](crate::client::fluent_builders::GetLifecyclePolicies::state) / [`set_state(Option<GettablePolicyStateValues>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_state): <p>The activation state.</p>
-    ///   - [`resource_types(Vec<ResourceTypeValues>)`](crate::client::fluent_builders::GetLifecyclePolicies::resource_types) / [`set_resource_types(Option<Vec<ResourceTypeValues>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_resource_types): <p>The resource type.</p>
-    ///   - [`target_tags(Vec<String>)`](crate::client::fluent_builders::GetLifecyclePolicies::target_tags) / [`set_target_tags(Option<Vec<String>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_target_tags): <p>The target tag for a policy.</p>  <p>Tags are strings in the format <code>key=value</code>.</p>
-    ///   - [`tags_to_add(Vec<String>)`](crate::client::fluent_builders::GetLifecyclePolicies::tags_to_add) / [`set_tags_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_tags_to_add): <p>The tags to add to objects created by the policy.</p>  <p>Tags are strings in the format <code>key=value</code>.</p>  <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    /// - On success, responds with [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput) with field(s):
-    ///   - [`policies(Option<Vec<LifecyclePolicySummary>>)`](crate::output::GetLifecyclePoliciesOutput::policies): <p>Summary information about the lifecycle policies.</p>
-    /// - On failure, responds with [`SdkError<GetLifecyclePoliciesError>`](crate::error::GetLifecyclePoliciesError)
-    pub fn get_lifecycle_policies(&self) -> fluent_builders::GetLifecyclePolicies {
-        fluent_builders::GetLifecyclePolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLifecyclePolicy`](crate::client::fluent_builders::GetLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::set_policy_id): <p>The identifier of the lifecycle policy.</p>
-    /// - On success, responds with [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput) with field(s):
-    ///   - [`policy(Option<LifecyclePolicy>)`](crate::output::GetLifecyclePolicyOutput::policy): <p>Detailed information about the lifecycle policy.</p>
-    /// - On failure, responds with [`SdkError<GetLifecyclePolicyError>`](crate::error::GetLifecyclePolicyError)
-    pub fn get_lifecycle_policy(&self) -> fluent_builders::GetLifecyclePolicy {
-        fluent_builders::GetLifecyclePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLifecyclePolicy`](crate::client::fluent_builders::UpdateLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_policy_id): <p>The identifier of the lifecycle policy.</p>
-    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    ///   - [`state(SettablePolicyStateValues)`](crate::client::fluent_builders::UpdateLifecyclePolicy::state) / [`set_state(Option<SettablePolicyStateValues>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_state): <p>The desired activation state of the lifecycle policy after creation.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_description): <p>A description of the lifecycle policy.</p>
-    ///   - [`policy_details(PolicyDetails)`](crate::client::fluent_builders::UpdateLifecyclePolicy::policy_details) / [`set_policy_details(Option<PolicyDetails>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_policy_details): <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-    /// - On success, responds with [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateLifecyclePolicyError>`](crate::error::UpdateLifecyclePolicyError)
-    pub fn update_lifecycle_policy(&self) -> fluent_builders::UpdateLifecyclePolicy {
-        fluent_builders::UpdateLifecyclePolicy::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateLifecyclePolicy`.
-    ///
-    /// <p>Creates a policy to manage the lifecycle of the specified Amazon Web Services resources. You can create up to 100 lifecycle policies.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateLifecyclePolicy {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_lifecycle_policy_input::Builder,
-    }
-    impl CreateLifecyclePolicy {
-        /// Creates a new `CreateLifecyclePolicy`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateLifecyclePolicy,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateLifecyclePolicyOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_execution_role_arn(input);
-            self
-        }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The desired activation state of the lifecycle policy after creation.</p>
-        pub fn state(mut self, input: crate::model::SettablePolicyStateValues) -> Self {
-            self.inner = self.inner.state(input);
-            self
-        }
-        /// <p>The desired activation state of the lifecycle policy after creation.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::SettablePolicyStateValues>,
-        ) -> Self {
-            self.inner = self.inner.set_state(input);
-            self
-        }
-        /// <p>The configuration details of the lifecycle policy.</p>
-        pub fn policy_details(mut self, input: crate::model::PolicyDetails) -> Self {
-            self.inner = self.inner.policy_details(input);
-            self
-        }
-        /// <p>The configuration details of the lifecycle policy.</p>
-        pub fn set_policy_details(
-            mut self,
-            input: std::option::Option<crate::model::PolicyDetails>,
-        ) -> Self {
-            self.inner = self.inner.set_policy_details(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to apply to the lifecycle policy during creation.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags to apply to the lifecycle policy during creation.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
-    ///
-    /// <p>Deletes the specified lifecycle policy and halts the automated operations that the policy specified.</p>
-    /// <p>For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete lifecycle policies</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteLifecyclePolicy {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_lifecycle_policy_input::Builder,
-    }
-    impl DeleteLifecyclePolicy {
-        /// Creates a new `DeleteLifecyclePolicy`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteLifecyclePolicy,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteLifecyclePolicyOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the lifecycle policy.</p>
-        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(input.into());
-            self
-        }
-        /// <p>The identifier of the lifecycle policy.</p>
-        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetLifecyclePolicies`.
-    ///
-    /// <p>Gets summary information about all or the specified data lifecycle policies.</p>
-    /// <p>To get complete information about a policy, use <code>GetLifecyclePolicy</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetLifecyclePolicies {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_lifecycle_policies_input::Builder,
-    }
-    impl GetLifecyclePolicies {
-        /// Creates a new `GetLifecyclePolicies`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetLifecyclePolicies,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetLifecyclePoliciesOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Appends an item to `PolicyIds`.
-        ///
-        /// To override the contents of this collection use [`set_policy_ids`](Self::set_policy_ids).
-        ///
-        /// <p>The identifiers of the data lifecycle policies.</p>
-        pub fn policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_ids(input.into());
-            self
-        }
-        /// <p>The identifiers of the data lifecycle policies.</p>
-        pub fn set_policy_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_policy_ids(input);
-            self
-        }
-        /// <p>The activation state.</p>
-        pub fn state(mut self, input: crate::model::GettablePolicyStateValues) -> Self {
-            self.inner = self.inner.state(input);
-            self
-        }
-        /// <p>The activation state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::GettablePolicyStateValues>,
-        ) -> Self {
-            self.inner = self.inner.set_state(input);
-            self
-        }
-        /// Appends an item to `ResourceTypes`.
-        ///
-        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
-        ///
-        /// <p>The resource type.</p>
-        pub fn resource_types(mut self, input: crate::model::ResourceTypeValues) -> Self {
-            self.inner = self.inner.resource_types(input);
-            self
-        }
-        /// <p>The resource type.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
-        ) -> Self {
-            self.inner = self.inner.set_resource_types(input);
-            self
-        }
-        /// Appends an item to `TargetTags`.
-        ///
-        /// To override the contents of this collection use [`set_target_tags`](Self::set_target_tags).
-        ///
-        /// <p>The target tag for a policy.</p>
-        /// <p>Tags are strings in the format <code>key=value</code>.</p>
-        pub fn target_tags(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_tags(input.into());
-            self
-        }
-        /// <p>The target tag for a policy.</p>
-        /// <p>Tags are strings in the format <code>key=value</code>.</p>
-        pub fn set_target_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_target_tags(input);
-            self
-        }
-        /// Appends an item to `TagsToAdd`.
-        ///
-        /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
-        ///
-        /// <p>The tags to add to objects created by the policy.</p>
-        /// <p>Tags are strings in the format <code>key=value</code>.</p>
-        /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-        pub fn tags_to_add(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags_to_add(input.into());
-            self
-        }
-        /// <p>The tags to add to objects created by the policy.</p>
-        /// <p>Tags are strings in the format <code>key=value</code>.</p>
-        /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-        pub fn set_tags_to_add(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags_to_add(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetLifecyclePolicy`.
-    ///
-    /// <p>Gets detailed information about the specified lifecycle policy.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetLifecyclePolicy {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_lifecycle_policy_input::Builder,
-    }
-    impl GetLifecyclePolicy {
-        /// Creates a new `GetLifecyclePolicy`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetLifecyclePolicy,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetLifecyclePolicyOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the lifecycle policy.</p>
-        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(input.into());
-            self
-        }
-        /// <p>The identifier of the lifecycle policy.</p>
-        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Adds the specified tags to the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>One or more tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>One or more tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The tag keys.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateLifecyclePolicy`.
-    ///
-    /// <p>Updates the specified lifecycle policy.</p>
-    /// <p>For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle policies</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateLifecyclePolicy {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_lifecycle_policy_input::Builder,
-    }
-    impl UpdateLifecyclePolicy {
-        /// Creates a new `UpdateLifecyclePolicy`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateLifecyclePolicy,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateLifecyclePolicyError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateLifecyclePolicyOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateLifecyclePolicyError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the lifecycle policy.</p>
-        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(input.into());
-            self
-        }
-        /// <p>The identifier of the lifecycle policy.</p>
-        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_execution_role_arn(input);
-            self
-        }
-        /// <p>The desired activation state of the lifecycle policy after creation.</p>
-        pub fn state(mut self, input: crate::model::SettablePolicyStateValues) -> Self {
-            self.inner = self.inner.state(input);
-            self
-        }
-        /// <p>The desired activation state of the lifecycle policy after creation.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::SettablePolicyStateValues>,
-        ) -> Self {
-            self.inner = self.inner.set_state(input);
-            self
-        }
-        /// <p>A description of the lifecycle policy.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description of the lifecycle policy.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-        pub fn policy_details(mut self, input: crate::model::PolicyDetails) -> Self {
-            self.inner = self.inner.policy_details(input);
-            self
-        }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-        pub fn set_policy_details(
-            mut self,
-            input: std::option::Option<crate::model::PolicyDetails>,
-        ) -> Self {
-            self.inner = self.inner.set_policy_details(input);
-            self
-        }
     }
 }
 
@@ -1083,6 +200,7 @@ impl Client {
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
             ))
+            .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());
         builder.set_sleep_impl(sleep_impl);
@@ -1093,3 +211,47 @@ impl Client {
         }
     }
 }
+
+mod create_lifecycle_policy;
+
+/// Operation customization and supporting types.
+///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> Result<(), aws_sdk_dlm::Error> {
+/// # let client: aws_sdk_dlm::Client = unimplemented!();
+/// use http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.create_lifecycle_policy()
+///     .customize()
+///     .await?
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
+pub mod customize;
+
+mod delete_lifecycle_policy;
+
+mod get_lifecycle_policies;
+
+mod get_lifecycle_policy;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_lifecycle_policy;

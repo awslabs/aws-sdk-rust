@@ -4,22 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>An error returned if a request is not formed properly.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>An error returned if there's a temporary issue with the service.</p>
-    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    GatewayTimeoutException(crate::types::error::GatewayTimeoutException),
     /// <p>An error returned when a specific resource type is not found.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32,1101 +25,1384 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CloneBackendError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CloneBackendError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CloneBackendError> for Error {
-    fn from(err: crate::error::CloneBackendError) -> Self {
-        match err.kind {
-            crate::error::CloneBackendErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CloneBackendErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::CloneBackendErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CloneBackendErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CloneBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBackendError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBackendError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateBackendError> for Error {
-    fn from(err: crate::error::CreateBackendError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBackendErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::CreateBackendErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBackendErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBackendAPIError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateBackendAPIError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateBackendAPIError> for Error {
-    fn from(err: crate::error::CreateBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendAPIErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBackendAPIErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::CreateBackendAPIErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBackendAPIErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBackendAuthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateBackendAuthError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateBackendAuthError> for Error {
-    fn from(err: crate::error::CreateBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendAuthErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBackendAuthErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::CreateBackendAuthErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBackendAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBackendConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateBackendConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateBackendConfigError> for Error {
-    fn from(err: crate::error::CreateBackendConfigError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendConfigErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBackendConfigErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::CreateBackendConfigErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBackendConfigErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateBackendConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBackendStorageError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::clone_backend::CloneBackendError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateBackendStorageError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::clone_backend::CloneBackendError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateBackendStorageError> for Error {
-    fn from(err: crate::error::CreateBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendStorageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBackendStorageErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::CreateBackendStorageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBackendStorageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTokenError, R>) -> Self {
+impl From<crate::operation::clone_backend::CloneBackendError> for Error {
+    fn from(err: crate::operation::clone_backend::CloneBackendError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateTokenError> for Error {
-    fn from(err: crate::error::CreateTokenError) -> Self {
-        match err.kind {
-            crate::error::CreateTokenErrorKind::BadRequestException(inner) => {
+            crate::operation::clone_backend::CloneBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateTokenErrorKind::GatewayTimeoutException(inner) => {
+            crate::operation::clone_backend::CloneBackendError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateTokenErrorKind::NotFoundException(inner) => {
+            crate::operation::clone_backend::CloneBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateTokenErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::clone_backend::CloneBackendError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::clone_backend::CloneBackendError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBackendError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBackendError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteBackendError> for Error {
-    fn from(err: crate::error::DeleteBackendError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteBackendErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::DeleteBackendErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBackendErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBackendAPIError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBackendAPIError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteBackendAPIError> for Error {
-    fn from(err: crate::error::DeleteBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendAPIErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteBackendAPIErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::DeleteBackendAPIErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBackendAPIErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBackendAuthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBackendAuthError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteBackendAuthError> for Error {
-    fn from(err: crate::error::DeleteBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendAuthErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteBackendAuthErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::DeleteBackendAuthErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBackendAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBackendStorageError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_backend::CreateBackendError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBackendStorageError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_backend::CreateBackendError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteBackendStorageError> for Error {
-    fn from(err: crate::error::DeleteBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendStorageErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::create_backend::CreateBackendError> for Error {
+    fn from(err: crate::operation::create_backend::CreateBackendError) -> Self {
+        match err {
+            crate::operation::create_backend::CreateBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBackendStorageErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::DeleteBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::operation::create_backend::CreateBackendError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::create_backend::CreateBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBackendStorageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_backend::CreateBackendError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::create_backend::CreateBackendError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTokenError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_api::CreateBackendAPIError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTokenError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_api::CreateBackendAPIError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteTokenError> for Error {
-    fn from(err: crate::error::DeleteTokenError) -> Self {
-        match err.kind {
-            crate::error::DeleteTokenErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteTokenErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::DeleteTokenErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteTokenErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_backend_api::CreateBackendAPIError> for Error {
+    fn from(err: crate::operation::create_backend_api::CreateBackendAPIError) -> Self {
+        match err {
+            crate::operation::create_backend_api::CreateBackendAPIError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_backend_api::CreateBackendAPIError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::create_backend_api::CreateBackendAPIError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_backend_api::CreateBackendAPIError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_backend_api::CreateBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateBackendAPIModelsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_auth::CreateBackendAuthError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_auth::CreateBackendAuthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_backend_auth::CreateBackendAuthError> for Error {
+    fn from(err: crate::operation::create_backend_auth::CreateBackendAuthError) -> Self {
+        match err {
+            crate::operation::create_backend_auth::CreateBackendAuthError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_backend_auth::CreateBackendAuthError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::create_backend_auth::CreateBackendAuthError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_backend_auth::CreateBackendAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_backend_auth::CreateBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_config::CreateBackendConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_config::CreateBackendConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_backend_config::CreateBackendConfigError> for Error {
+    fn from(err: crate::operation::create_backend_config::CreateBackendConfigError) -> Self {
+        match err {
+            crate::operation::create_backend_config::CreateBackendConfigError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_backend_config::CreateBackendConfigError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::create_backend_config::CreateBackendConfigError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_backend_config::CreateBackendConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_backend_config::CreateBackendConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_storage::CreateBackendStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_storage::CreateBackendStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_backend_storage::CreateBackendStorageError> for Error {
+    fn from(err: crate::operation::create_backend_storage::CreateBackendStorageError) -> Self {
+        match err {
+            crate::operation::create_backend_storage::CreateBackendStorageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_backend_storage::CreateBackendStorageError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::create_backend_storage::CreateBackendStorageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_backend_storage::CreateBackendStorageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_backend_storage::CreateBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GenerateBackendAPIModelsError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GenerateBackendAPIModelsError> for Error {
-    fn from(err: crate::error::GenerateBackendAPIModelsError) -> Self {
-        match err.kind {
-            crate::error::GenerateBackendAPIModelsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GenerateBackendAPIModelsErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GenerateBackendAPIModelsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GenerateBackendAPIModelsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GenerateBackendAPIModelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBackendError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBackendError, R>) -> Self {
+impl From<crate::operation::create_token::CreateTokenError> for Error {
+    fn from(err: crate::operation::create_token::CreateTokenError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBackendError> for Error {
-    fn from(err: crate::error::GetBackendError) -> Self {
-        match err.kind {
-            crate::error::GetBackendErrorKind::BadRequestException(inner) => {
+            crate::operation::create_token::CreateTokenError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendErrorKind::GatewayTimeoutException(inner) => {
+            crate::operation::create_token::CreateTokenError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendErrorKind::NotFoundException(inner) => {
+            crate::operation::create_token::CreateTokenError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::create_token::CreateTokenError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_token::CreateTokenError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBackendAPIError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBackendAPIError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBackendAPIError> for Error {
-    fn from(err: crate::error::GetBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::GetBackendAPIErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBackendAPIErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GetBackendAPIErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBackendAPIErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBackendAPIModelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBackendAPIModelsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBackendAPIModelsError> for Error {
-    fn from(err: crate::error::GetBackendAPIModelsError) -> Self {
-        match err.kind {
-            crate::error::GetBackendAPIModelsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBackendAPIModelsErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GetBackendAPIModelsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBackendAPIModelsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetBackendAPIModelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBackendAuthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBackendAuthError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBackendAuthError> for Error {
-    fn from(err: crate::error::GetBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::GetBackendAuthErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBackendAuthErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GetBackendAuthErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBackendAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBackendJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBackendJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBackendJobError> for Error {
-    fn from(err: crate::error::GetBackendJobError) -> Self {
-        match err.kind {
-            crate::error::GetBackendJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBackendJobErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GetBackendJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBackendJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetBackendJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBackendStorageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBackendStorageError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBackendStorageError> for Error {
-    fn from(err: crate::error::GetBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::GetBackendStorageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBackendStorageErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GetBackendStorageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBackendStorageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTokenError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetTokenError> for Error {
-    fn from(err: crate::error::GetTokenError) -> Self {
-        match err.kind {
-            crate::error::GetTokenErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetTokenErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::GetTokenErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetTokenErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportBackendAuthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ImportBackendAuthError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ImportBackendAuthError> for Error {
-    fn from(err: crate::error::ImportBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::ImportBackendAuthErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ImportBackendAuthErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::ImportBackendAuthErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ImportBackendAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ImportBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportBackendStorageError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_backend::DeleteBackendError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ImportBackendStorageError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend::DeleteBackendError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ImportBackendStorageError> for Error {
-    fn from(err: crate::error::ImportBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::ImportBackendStorageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ImportBackendStorageErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::ImportBackendStorageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ImportBackendStorageErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ImportBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBackendJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBackendJobsError, R>) -> Self {
+impl From<crate::operation::delete_backend::DeleteBackendError> for Error {
+    fn from(err: crate::operation::delete_backend::DeleteBackendError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListBackendJobsError> for Error {
-    fn from(err: crate::error::ListBackendJobsError) -> Self {
-        match err.kind {
-            crate::error::ListBackendJobsErrorKind::BadRequestException(inner) => {
+            crate::operation::delete_backend::DeleteBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListBackendJobsErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::ListBackendJobsErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_backend::DeleteBackendError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::delete_backend::DeleteBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListBackendJobsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListBackendJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListS3BucketsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListS3BucketsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListS3BucketsError> for Error {
-    fn from(err: crate::error::ListS3BucketsError) -> Self {
-        match err.kind {
-            crate::error::ListS3BucketsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListS3BucketsErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::ListS3BucketsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListS3BucketsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListS3BucketsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_backend::DeleteBackendError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_backend::DeleteBackendError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveAllBackendsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_api::DeleteBackendAPIError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RemoveAllBackendsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_api::DeleteBackendAPIError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::RemoveAllBackendsError> for Error {
-    fn from(err: crate::error::RemoveAllBackendsError) -> Self {
-        match err.kind {
-            crate::error::RemoveAllBackendsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RemoveAllBackendsErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::RemoveAllBackendsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RemoveAllBackendsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::RemoveAllBackendsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::delete_backend_api::DeleteBackendAPIError> for Error {
+    fn from(err: crate::operation::delete_backend_api::DeleteBackendAPIError) -> Self {
+        match err {
+            crate::operation::delete_backend_api::DeleteBackendAPIError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_backend_api::DeleteBackendAPIError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::delete_backend_api::DeleteBackendAPIError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_backend_api::DeleteBackendAPIError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_backend_api::DeleteBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveBackendConfigError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_auth::DeleteBackendAuthError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RemoveBackendConfigError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_auth::DeleteBackendAuthError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::RemoveBackendConfigError> for Error {
-    fn from(err: crate::error::RemoveBackendConfigError) -> Self {
-        match err.kind {
-            crate::error::RemoveBackendConfigErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RemoveBackendConfigErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::RemoveBackendConfigErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RemoveBackendConfigErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::RemoveBackendConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::delete_backend_auth::DeleteBackendAuthError> for Error {
+    fn from(err: crate::operation::delete_backend_auth::DeleteBackendAuthError) -> Self {
+        match err {
+            crate::operation::delete_backend_auth::DeleteBackendAuthError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_backend_auth::DeleteBackendAuthError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::delete_backend_auth::DeleteBackendAuthError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_backend_auth::DeleteBackendAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_backend_auth::DeleteBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBackendAPIError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_storage::DeleteBackendStorageError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateBackendAPIError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_storage::DeleteBackendStorageError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateBackendAPIError> for Error {
-    fn from(err: crate::error::UpdateBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendAPIErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateBackendAPIErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::UpdateBackendAPIErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBackendAPIErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBackendAuthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateBackendAuthError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_backend_storage::DeleteBackendStorageError> for Error {
+    fn from(err: crate::operation::delete_backend_storage::DeleteBackendStorageError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::delete_backend_storage::DeleteBackendStorageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_backend_storage::DeleteBackendStorageError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::delete_backend_storage::DeleteBackendStorageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_backend_storage::DeleteBackendStorageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_backend_storage::DeleteBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::UpdateBackendAuthError> for Error {
-    fn from(err: crate::error::UpdateBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendAuthErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateBackendAuthErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::UpdateBackendAuthErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBackendAuthErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBackendConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateBackendConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateBackendConfigError> for Error {
-    fn from(err: crate::error::UpdateBackendConfigError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendConfigErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateBackendConfigErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::UpdateBackendConfigErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBackendConfigErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateBackendConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBackendJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateBackendJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateBackendJobError> for Error {
-    fn from(err: crate::error::UpdateBackendJobError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendJobErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateBackendJobErrorKind::GatewayTimeoutException(inner) => {
-                Error::GatewayTimeoutException(inner)
-            }
-            crate::error::UpdateBackendJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBackendJobErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateBackendJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBackendStorageError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_token::DeleteTokenError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateBackendStorageError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_token::DeleteTokenError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UpdateBackendStorageError> for Error {
-    fn from(err: crate::error::UpdateBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendStorageErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_token::DeleteTokenError> for Error {
+    fn from(err: crate::operation::delete_token::DeleteTokenError) -> Self {
+        match err {
+            crate::operation::delete_token::DeleteTokenError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::GatewayTimeoutException(inner) => {
+            crate::operation::delete_token::DeleteTokenError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_token::DeleteTokenError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::TooManyRequestsException(inner) => {
+            crate::operation::delete_token::DeleteTokenError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_token::DeleteTokenError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError> for Error {
+    fn from(
+        err: crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError,
+    ) -> Self {
+        match err {
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_backend::GetBackendError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_backend::GetBackendError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_backend::GetBackendError> for Error {
+    fn from(err: crate::operation::get_backend::GetBackendError) -> Self {
+        match err {
+            crate::operation::get_backend::GetBackendError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_backend::GetBackendError::GatewayTimeoutException(inner) => {
+                Error::GatewayTimeoutException(inner)
+            }
+            crate::operation::get_backend::GetBackendError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_backend::GetBackendError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_backend::GetBackendError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_backend_api::GetBackendAPIError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_api::GetBackendAPIError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_backend_api::GetBackendAPIError> for Error {
+    fn from(err: crate::operation::get_backend_api::GetBackendAPIError) -> Self {
+        match err {
+            crate::operation::get_backend_api::GetBackendAPIError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_backend_api::GetBackendAPIError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::get_backend_api::GetBackendAPIError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_backend_api::GetBackendAPIError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_backend_api::GetBackendAPIError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_backend_api_models::GetBackendAPIModelsError> for Error {
+    fn from(err: crate::operation::get_backend_api_models::GetBackendAPIModelsError) -> Self {
+        match err {
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_auth::GetBackendAuthError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_auth::GetBackendAuthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_backend_auth::GetBackendAuthError> for Error {
+    fn from(err: crate::operation::get_backend_auth::GetBackendAuthError) -> Self {
+        match err {
+            crate::operation::get_backend_auth::GetBackendAuthError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_backend_auth::GetBackendAuthError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::get_backend_auth::GetBackendAuthError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_backend_auth::GetBackendAuthError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_backend_auth::GetBackendAuthError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_backend_job::GetBackendJobError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_job::GetBackendJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_backend_job::GetBackendJobError> for Error {
+    fn from(err: crate::operation::get_backend_job::GetBackendJobError) -> Self {
+        match err {
+            crate::operation::get_backend_job::GetBackendJobError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_backend_job::GetBackendJobError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::get_backend_job::GetBackendJobError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_backend_job::GetBackendJobError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_backend_job::GetBackendJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_storage::GetBackendStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_storage::GetBackendStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_backend_storage::GetBackendStorageError> for Error {
+    fn from(err: crate::operation::get_backend_storage::GetBackendStorageError) -> Self {
+        match err {
+            crate::operation::get_backend_storage::GetBackendStorageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_backend_storage::GetBackendStorageError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::get_backend_storage::GetBackendStorageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_backend_storage::GetBackendStorageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_backend_storage::GetBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_token::GetTokenError> for Error {
+    fn from(err: crate::operation::get_token::GetTokenError) -> Self {
+        match err {
+            crate::operation::get_token::GetTokenError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_token::GetTokenError::GatewayTimeoutException(inner) => {
+                Error::GatewayTimeoutException(inner)
+            }
+            crate::operation::get_token::GetTokenError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_token::GetTokenError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_token::GetTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_backend_auth::ImportBackendAuthError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::import_backend_auth::ImportBackendAuthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::import_backend_auth::ImportBackendAuthError> for Error {
+    fn from(err: crate::operation::import_backend_auth::ImportBackendAuthError) -> Self {
+        match err {
+            crate::operation::import_backend_auth::ImportBackendAuthError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::import_backend_auth::ImportBackendAuthError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::import_backend_auth::ImportBackendAuthError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::import_backend_auth::ImportBackendAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::import_backend_auth::ImportBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_backend_storage::ImportBackendStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::import_backend_storage::ImportBackendStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::import_backend_storage::ImportBackendStorageError> for Error {
+    fn from(err: crate::operation::import_backend_storage::ImportBackendStorageError) -> Self {
+        match err {
+            crate::operation::import_backend_storage::ImportBackendStorageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::import_backend_storage::ImportBackendStorageError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::import_backend_storage::ImportBackendStorageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::import_backend_storage::ImportBackendStorageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::import_backend_storage::ImportBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_backend_jobs::ListBackendJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_backend_jobs::ListBackendJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_backend_jobs::ListBackendJobsError> for Error {
+    fn from(err: crate::operation::list_backend_jobs::ListBackendJobsError) -> Self {
+        match err {
+            crate::operation::list_backend_jobs::ListBackendJobsError::BadRequestException(
+                inner,
+            ) => Error::BadRequestException(inner),
+            crate::operation::list_backend_jobs::ListBackendJobsError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::list_backend_jobs::ListBackendJobsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_backend_jobs::ListBackendJobsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_backend_jobs::ListBackendJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::list_s3_buckets::ListS3BucketsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_s3_buckets::ListS3BucketsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_s3_buckets::ListS3BucketsError> for Error {
+    fn from(err: crate::operation::list_s3_buckets::ListS3BucketsError) -> Self {
+        match err {
+            crate::operation::list_s3_buckets::ListS3BucketsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_s3_buckets::ListS3BucketsError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::operation::list_s3_buckets::ListS3BucketsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_s3_buckets::ListS3BucketsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_s3_buckets::ListS3BucketsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_all_backends::RemoveAllBackendsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::remove_all_backends::RemoveAllBackendsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_all_backends::RemoveAllBackendsError> for Error {
+    fn from(err: crate::operation::remove_all_backends::RemoveAllBackendsError) -> Self {
+        match err {
+            crate::operation::remove_all_backends::RemoveAllBackendsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::remove_all_backends::RemoveAllBackendsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::remove_all_backends::RemoveAllBackendsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::remove_all_backends::RemoveAllBackendsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::remove_all_backends::RemoveAllBackendsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_backend_config::RemoveBackendConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::remove_backend_config::RemoveBackendConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_backend_config::RemoveBackendConfigError> for Error {
+    fn from(err: crate::operation::remove_backend_config::RemoveBackendConfigError) -> Self {
+        match err {
+            crate::operation::remove_backend_config::RemoveBackendConfigError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::remove_backend_config::RemoveBackendConfigError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::remove_backend_config::RemoveBackendConfigError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::remove_backend_config::RemoveBackendConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::remove_backend_config::RemoveBackendConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_api::UpdateBackendAPIError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_api::UpdateBackendAPIError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_backend_api::UpdateBackendAPIError> for Error {
+    fn from(err: crate::operation::update_backend_api::UpdateBackendAPIError) -> Self {
+        match err {
+            crate::operation::update_backend_api::UpdateBackendAPIError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_backend_api::UpdateBackendAPIError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_backend_api::UpdateBackendAPIError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_backend_api::UpdateBackendAPIError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_backend_api::UpdateBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_auth::UpdateBackendAuthError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_auth::UpdateBackendAuthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_backend_auth::UpdateBackendAuthError> for Error {
+    fn from(err: crate::operation::update_backend_auth::UpdateBackendAuthError) -> Self {
+        match err {
+            crate::operation::update_backend_auth::UpdateBackendAuthError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_backend_auth::UpdateBackendAuthError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_backend_auth::UpdateBackendAuthError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_backend_auth::UpdateBackendAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_backend_auth::UpdateBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_config::UpdateBackendConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_config::UpdateBackendConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_backend_config::UpdateBackendConfigError> for Error {
+    fn from(err: crate::operation::update_backend_config::UpdateBackendConfigError) -> Self {
+        match err {
+            crate::operation::update_backend_config::UpdateBackendConfigError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_backend_config::UpdateBackendConfigError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_backend_config::UpdateBackendConfigError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_backend_config::UpdateBackendConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_backend_config::UpdateBackendConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_job::UpdateBackendJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_job::UpdateBackendJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_backend_job::UpdateBackendJobError> for Error {
+    fn from(err: crate::operation::update_backend_job::UpdateBackendJobError) -> Self {
+        match err {
+            crate::operation::update_backend_job::UpdateBackendJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_backend_job::UpdateBackendJobError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_backend_job::UpdateBackendJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_backend_job::UpdateBackendJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_backend_job::UpdateBackendJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_storage::UpdateBackendStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_storage::UpdateBackendStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_backend_storage::UpdateBackendStorageError> for Error {
+    fn from(err: crate::operation::update_backend_storage::UpdateBackendStorageError) -> Self {
+        match err {
+            crate::operation::update_backend_storage::UpdateBackendStorageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_backend_storage::UpdateBackendStorageError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_backend_storage::UpdateBackendStorageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_backend_storage::UpdateBackendStorageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_backend_storage::UpdateBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::GatewayTimeoutException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

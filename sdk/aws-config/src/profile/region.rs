@@ -158,7 +158,7 @@ mod test {
     use crate::profile::ProfileFileRegionProvider;
     use crate::provider_config::ProviderConfig;
     use crate::test_case::no_traffic_connector;
-    use aws_sdk_sts::Region;
+    use aws_sdk_sts::config::Region;
     use aws_types::os_shim_internal::{Env, Fs};
     use futures_util::FutureExt;
     use tracing_test::traced_test;

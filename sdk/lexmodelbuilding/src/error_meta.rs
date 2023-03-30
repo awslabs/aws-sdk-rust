@@ -4,34 +4,27 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required to migrate your bot.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p> There was a conflict processing the request. Try your request again. </p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
-    InternalFailureException(crate::error::InternalFailureException),
+    InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
-    PreconditionFailedException(crate::error::PreconditionFailedException),
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
     /// <p>The body of the exception contains a JSON object that describes the resource.</p>
     /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
     /// <p> <code>"resourceReference": {</code> </p>
     /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
-    ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48,1534 +41,1953 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotVersionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_bot_version::CreateBotVersionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateBotVersionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_bot_version::CreateBotVersionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateBotVersionError> for Error {
-    fn from(err: crate::error::CreateBotVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateBotVersionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBotVersionErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateBotVersionErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateBotVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateBotVersionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBotVersionErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::error::CreateBotVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_bot_version::CreateBotVersionError> for Error {
+    fn from(err: crate::operation::create_bot_version::CreateBotVersionError) -> Self {
+        match err {
+            crate::operation::create_bot_version::CreateBotVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_bot_version::CreateBotVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_bot_version::CreateBotVersionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_bot_version::CreateBotVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_bot_version::CreateBotVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_bot_version::CreateBotVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::create_bot_version::CreateBotVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIntentVersionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_intent_version::CreateIntentVersionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateIntentVersionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_intent_version::CreateIntentVersionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateIntentVersionError> for Error {
-    fn from(err: crate::error::CreateIntentVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateIntentVersionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateIntentVersionErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateIntentVersionErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::CreateIntentVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateIntentVersionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateIntentVersionErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::error::CreateIntentVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_intent_version::CreateIntentVersionError> for Error {
+    fn from(err: crate::operation::create_intent_version::CreateIntentVersionError) -> Self {
+        match err {
+            crate::operation::create_intent_version::CreateIntentVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_intent_version::CreateIntentVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_intent_version::CreateIntentVersionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_intent_version::CreateIntentVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_intent_version::CreateIntentVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_intent_version::CreateIntentVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::create_intent_version::CreateIntentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSlotTypeVersionError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_slot_type_version::CreateSlotTypeVersionError> for Error {
+    fn from(err: crate::operation::create_slot_type_version::CreateSlotTypeVersionError) -> Self {
+        match err {
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_bot::DeleteBotError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSlotTypeVersionError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_bot::DeleteBotError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateSlotTypeVersionError> for Error {
-    fn from(err: crate::error::CreateSlotTypeVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateSlotTypeVersionErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_bot::DeleteBotError> for Error {
+    fn from(err: crate::operation::delete_bot::DeleteBotError) -> Self {
+        match err {
+            crate::operation::delete_bot::DeleteBotError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateSlotTypeVersionErrorKind::ConflictException(inner) => {
+            crate::operation::delete_bot::DeleteBotError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateSlotTypeVersionErrorKind::InternalFailureException(inner) => {
+            crate::operation::delete_bot::DeleteBotError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::CreateSlotTypeVersionErrorKind::LimitExceededException(inner) => {
+            crate::operation::delete_bot::DeleteBotError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateSlotTypeVersionErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_bot::DeleteBotError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateSlotTypeVersionErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
+            crate::operation::delete_bot::DeleteBotError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
-            crate::error::CreateSlotTypeVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_bot::DeleteBotError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_alias::DeleteBotAliasError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBotError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_alias::DeleteBotAliasError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteBotError> for Error {
-    fn from(err: crate::error::DeleteBotError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_bot_alias::DeleteBotAliasError> for Error {
+    fn from(err: crate::operation::delete_bot_alias::DeleteBotAliasError) -> Self {
+        match err {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBotErrorKind::ConflictException(inner) => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteBotErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteBotErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteBotErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::delete_bot_alias::DeleteBotAliasError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::delete_bot_alias::DeleteBotAliasError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBotErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteBotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_bot_alias::DeleteBotAliasError::ResourceInUseException(
+                inner,
+            ) => Error::ResourceInUseException(inner),
+            crate::operation::delete_bot_alias::DeleteBotAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotAliasError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBotAliasError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteBotAliasError> for Error {
-    fn from(err: crate::error::DeleteBotAliasError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotAliasErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteBotAliasErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteBotAliasErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteBotAliasErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteBotAliasErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBotAliasErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteBotAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotChannelAssociationError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_version::DeleteBotVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_version::DeleteBotVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_bot_version::DeleteBotVersionError> for Error {
+    fn from(err: crate::operation::delete_bot_version::DeleteBotVersionError) -> Self {
+        match err {
+            crate::operation::delete_bot_version::DeleteBotVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_bot_version::DeleteBotVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_bot_version::DeleteBotVersionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_bot_version::DeleteBotVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_bot_version::DeleteBotVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_bot_version::DeleteBotVersionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_bot_version::DeleteBotVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_intent::DeleteIntentError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBotChannelAssociationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_intent::DeleteIntentError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteBotChannelAssociationError> for Error {
-    fn from(err: crate::error::DeleteBotChannelAssociationError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotChannelAssociationErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_intent::DeleteIntentError> for Error {
+    fn from(err: crate::operation::delete_intent::DeleteIntentError) -> Self {
+        match err {
+            crate::operation::delete_intent::DeleteIntentError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBotChannelAssociationErrorKind::ConflictException(inner) => {
+            crate::operation::delete_intent::DeleteIntentError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteBotChannelAssociationErrorKind::InternalFailureException(inner) => {
+            crate::operation::delete_intent::DeleteIntentError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::DeleteBotChannelAssociationErrorKind::LimitExceededException(inner) => {
+            crate::operation::delete_intent::DeleteIntentError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteBotChannelAssociationErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_intent::DeleteIntentError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBotChannelAssociationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_intent::DeleteIntentError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::delete_intent::DeleteIntentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotVersionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_intent_version::DeleteIntentVersionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteBotVersionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_intent_version::DeleteIntentVersionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteBotVersionError> for Error {
-    fn from(err: crate::error::DeleteBotVersionError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotVersionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteBotVersionErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteBotVersionErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteBotVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteBotVersionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBotVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteBotVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIntentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIntentError, R>) -> Self {
+impl From<crate::operation::delete_intent_version::DeleteIntentVersionError> for Error {
+    fn from(err: crate::operation::delete_intent_version::DeleteIntentVersionError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_intent_version::DeleteIntentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::DeleteIntentError> for Error {
-    fn from(err: crate::error::DeleteIntentError) -> Self {
-        match err.kind {
-            crate::error::DeleteIntentErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteIntentErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteIntentErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteIntentErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteIntentErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteIntentErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteIntentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIntentVersionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_slot_type::DeleteSlotTypeError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteIntentVersionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_slot_type::DeleteSlotTypeError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteIntentVersionError> for Error {
-    fn from(err: crate::error::DeleteIntentVersionError) -> Self {
-        match err.kind {
-            crate::error::DeleteIntentVersionErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_slot_type::DeleteSlotTypeError> for Error {
+    fn from(err: crate::operation::delete_slot_type::DeleteSlotTypeError) -> Self {
+        match err {
+            crate::operation::delete_slot_type::DeleteSlotTypeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteIntentVersionErrorKind::ConflictException(inner) => {
+            crate::operation::delete_slot_type::DeleteSlotTypeError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteIntentVersionErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteIntentVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteIntentVersionErrorKind::NotFoundException(inner) => {
+            crate::operation::delete_slot_type::DeleteSlotTypeError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::delete_slot_type::DeleteSlotTypeError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::delete_slot_type::DeleteSlotTypeError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteIntentVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteIntentVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::delete_slot_type::DeleteSlotTypeError::ResourceInUseException(
+                inner,
+            ) => Error::ResourceInUseException(inner),
+            crate::operation::delete_slot_type::DeleteSlotTypeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSlotTypeError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSlotTypeError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteSlotTypeError> for Error {
-    fn from(err: crate::error::DeleteSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::DeleteSlotTypeErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError> for Error {
+    fn from(err: crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError) -> Self {
+        match err {
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_utterances::DeleteUtterancesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_utterances::DeleteUtterancesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_utterances::DeleteUtterancesError> for Error {
+    fn from(err: crate::operation::delete_utterances::DeleteUtterancesError) -> Self {
+        match err {
+            crate::operation::delete_utterances::DeleteUtterancesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_utterances::DeleteUtterancesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_utterances::DeleteUtterancesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_utterances::DeleteUtterancesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_utterances::DeleteUtterancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_bot::GetBotError> for Error {
+    fn from(err: crate::operation::get_bot::GetBotError) -> Self {
+        match err {
+            crate::operation::get_bot::GetBotError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteSlotTypeErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteSlotTypeErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_bot::GetBotError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::DeleteSlotTypeErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_bot::GetBotError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteSlotTypeErrorKind::NotFoundException(inner) => {
+            crate::operation::get_bot::GetBotError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteSlotTypeErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteSlotTypeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::get_bot::GetBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSlotTypeVersionError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_bot_alias::GetBotAliasError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSlotTypeVersionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_alias::GetBotAliasError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteSlotTypeVersionError> for Error {
-    fn from(err: crate::error::DeleteSlotTypeVersionError) -> Self {
-        match err.kind {
-            crate::error::DeleteSlotTypeVersionErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_bot_alias::GetBotAliasError> for Error {
+    fn from(err: crate::operation::get_bot_alias::GetBotAliasError) -> Self {
+        match err {
+            crate::operation::get_bot_alias::GetBotAliasError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteSlotTypeVersionErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteSlotTypeVersionErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_bot_alias::GetBotAliasError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::DeleteSlotTypeVersionErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_bot_alias::GetBotAliasError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteSlotTypeVersionErrorKind::NotFoundException(inner) => {
+            crate::operation::get_bot_alias::GetBotAliasError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteSlotTypeVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteSlotTypeVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_bot_alias::GetBotAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUtterancesError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_bot_aliases::GetBotAliasesError, R>,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteUtterancesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_aliases::GetBotAliasesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteUtterancesError> for Error {
-    fn from(err: crate::error::DeleteUtterancesError) -> Self {
-        match err.kind {
-            crate::error::DeleteUtterancesErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_bot_aliases::GetBotAliasesError> for Error {
+    fn from(err: crate::operation::get_bot_aliases::GetBotAliasesError) -> Self {
+        match err {
+            crate::operation::get_bot_aliases::GetBotAliasesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteUtterancesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::DeleteUtterancesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteUtterancesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteUtterancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_bot_aliases::GetBotAliasesError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::get_bot_aliases::GetBotAliasesError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::get_bot_aliases::GetBotAliasesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBotError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBotError> for Error {
-    fn from(err: crate::error::GetBotError) -> Self {
-        match err.kind {
-            crate::error::GetBotErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBotErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetBotErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetBotErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::get_bot_channel_association::GetBotChannelAssociationError> for Error {
+    fn from(
+        err: crate::operation::get_bot_channel_association::GetBotChannelAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotAliasError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBotAliasError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBotAliasError> for Error {
-    fn from(err: crate::error::GetBotAliasError) -> Self {
-        match err.kind {
-            crate::error::GetBotAliasErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBotAliasErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetBotAliasErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetBotAliasErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBotAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotAliasesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
+impl From<crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError>
+    for Error
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBotAliasesError, R>) -> Self {
+    fn from(
+        err: crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::GetBotAliasesError> for Error {
-    fn from(err: crate::error::GetBotAliasesError) -> Self {
-        match err.kind {
-            crate::error::GetBotAliasesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBotAliasesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetBotAliasesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetBotAliasesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotChannelAssociationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bots::GetBotsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBotChannelAssociationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_bots::GetBotsError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBotChannelAssociationError> for Error {
-    fn from(err: crate::error::GetBotChannelAssociationError) -> Self {
-        match err.kind {
-            crate::error::GetBotChannelAssociationErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_bots::GetBotsError> for Error {
+    fn from(err: crate::operation::get_bots::GetBotsError) -> Self {
+        match err {
+            crate::operation::get_bots::GetBotsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBotChannelAssociationErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_bots::GetBotsError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetBotChannelAssociationErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_bots::GetBotsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetBotChannelAssociationErrorKind::NotFoundException(inner) => {
+            crate::operation::get_bots::GetBotsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBotChannelAssociationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_bots::GetBotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_versions::GetBotVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_versions::GetBotVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_bot_versions::GetBotVersionsError> for Error {
+    fn from(err: crate::operation::get_bot_versions::GetBotVersionsError) -> Self {
+        match err {
+            crate::operation::get_bot_versions::GetBotVersionsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_bot_versions::GetBotVersionsError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::get_bot_versions::GetBotVersionsError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::get_bot_versions::GetBotVersionsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_bot_versions::GetBotVersionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotChannelAssociationsError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_intent::GetBuiltinIntentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_intent::GetBuiltinIntentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_builtin_intent::GetBuiltinIntentError> for Error {
+    fn from(err: crate::operation::get_builtin_intent::GetBuiltinIntentError) -> Self {
+        match err {
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_builtin_intents::GetBuiltinIntentsError> for Error {
+    fn from(err: crate::operation::get_builtin_intents::GetBuiltinIntentsError) -> Self {
+        match err {
+            crate::operation::get_builtin_intents::GetBuiltinIntentsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_builtin_intents::GetBuiltinIntentsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_builtin_intents::GetBuiltinIntentsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_builtin_intents::GetBuiltinIntentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError> for Error {
+    fn from(err: crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError) -> Self {
+        match err {
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_export::GetExportError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBotChannelAssociationsError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_export::GetExportError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBotChannelAssociationsError> for Error {
-    fn from(err: crate::error::GetBotChannelAssociationsError) -> Self {
-        match err.kind {
-            crate::error::GetBotChannelAssociationsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBotChannelAssociationsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetBotChannelAssociationsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetBotChannelAssociationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBotsError, R>) -> Self {
+impl From<crate::operation::get_export::GetExportError> for Error {
+    fn from(err: crate::operation::get_export::GetExportError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBotsError> for Error {
-    fn from(err: crate::error::GetBotsError) -> Self {
-        match err.kind {
-            crate::error::GetBotsErrorKind::BadRequestException(inner) => {
+            crate::operation::get_export::GetExportError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBotsErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_export::GetExportError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetBotsErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_export::GetExportError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetBotsErrorKind::NotFoundException(inner) => {
+            crate::operation::get_export::GetExportError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBotsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_export::GetExportError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotVersionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBotVersionsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetBotVersionsError> for Error {
-    fn from(err: crate::error::GetBotVersionsError) -> Self {
-        match err.kind {
-            crate::error::GetBotVersionsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBotVersionsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetBotVersionsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetBotVersionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBotVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBuiltinIntentError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_import::GetImportError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBuiltinIntentError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_import::GetImportError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBuiltinIntentError> for Error {
-    fn from(err: crate::error::GetBuiltinIntentError) -> Self {
-        match err.kind {
-            crate::error::GetBuiltinIntentErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_import::GetImportError> for Error {
+    fn from(err: crate::operation::get_import::GetImportError) -> Self {
+        match err {
+            crate::operation::get_import::GetImportError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBuiltinIntentErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_import::GetImportError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetBuiltinIntentErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_import::GetImportError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetBuiltinIntentErrorKind::NotFoundException(inner) => {
+            crate::operation::get_import::GetImportError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBuiltinIntentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_import::GetImportError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBuiltinIntentsError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_intent::GetIntentError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBuiltinIntentsError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_intent::GetIntentError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBuiltinIntentsError> for Error {
-    fn from(err: crate::error::GetBuiltinIntentsError) -> Self {
-        match err.kind {
-            crate::error::GetBuiltinIntentsErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_intent::GetIntentError> for Error {
+    fn from(err: crate::operation::get_intent::GetIntentError) -> Self {
+        match err {
+            crate::operation::get_intent::GetIntentError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBuiltinIntentsErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_intent::GetIntentError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetBuiltinIntentsErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_intent::GetIntentError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetBuiltinIntentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_intent::GetIntentError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_intent::GetIntentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBuiltinSlotTypesError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_intents::GetIntentsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetBuiltinSlotTypesError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_intents::GetIntentsError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetBuiltinSlotTypesError> for Error {
-    fn from(err: crate::error::GetBuiltinSlotTypesError) -> Self {
-        match err.kind {
-            crate::error::GetBuiltinSlotTypesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBuiltinSlotTypesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetBuiltinSlotTypesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetBuiltinSlotTypesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExportError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetExportError, R>) -> Self {
+impl From<crate::operation::get_intents::GetIntentsError> for Error {
+    fn from(err: crate::operation::get_intents::GetIntentsError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetExportError> for Error {
-    fn from(err: crate::error::GetExportError) -> Self {
-        match err.kind {
-            crate::error::GetExportErrorKind::BadRequestException(inner) => {
+            crate::operation::get_intents::GetIntentsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetExportErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_intents::GetIntentsError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetExportErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_intents::GetIntentsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetExportErrorKind::NotFoundException(inner) => {
+            crate::operation::get_intents::GetIntentsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetExportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_intents::GetIntentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImportError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImportError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetImportError> for Error {
-    fn from(err: crate::error::GetImportError) -> Self {
-        match err.kind {
-            crate::error::GetImportErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetImportErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetImportErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetImportErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetImportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIntentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIntentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetIntentError> for Error {
-    fn from(err: crate::error::GetIntentError) -> Self {
-        match err.kind {
-            crate::error::GetIntentErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetIntentErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetIntentErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetIntentErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetIntentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIntentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIntentsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetIntentsError> for Error {
-    fn from(err: crate::error::GetIntentsError) -> Self {
-        match err.kind {
-            crate::error::GetIntentsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetIntentsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetIntentsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetIntentsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetIntentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIntentVersionsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_intent_versions::GetIntentVersionsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetIntentVersionsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_intent_versions::GetIntentVersionsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetIntentVersionsError> for Error {
-    fn from(err: crate::error::GetIntentVersionsError) -> Self {
-        match err.kind {
-            crate::error::GetIntentVersionsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetIntentVersionsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetIntentVersionsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetIntentVersionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetIntentVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMigrationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMigrationError, R>) -> Self {
+impl From<crate::operation::get_intent_versions::GetIntentVersionsError> for Error {
+    fn from(err: crate::operation::get_intent_versions::GetIntentVersionsError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::get_intent_versions::GetIntentVersionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_intent_versions::GetIntentVersionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_intent_versions::GetIntentVersionsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_intent_versions::GetIntentVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_intent_versions::GetIntentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::GetMigrationError> for Error {
-    fn from(err: crate::error::GetMigrationError) -> Self {
-        match err.kind {
-            crate::error::GetMigrationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMigrationErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetMigrationErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetMigrationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetMigrationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMigrationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMigrationsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetMigrationsError> for Error {
-    fn from(err: crate::error::GetMigrationsError) -> Self {
-        match err.kind {
-            crate::error::GetMigrationsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMigrationsErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetMigrationsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetMigrationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSlotTypeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSlotTypeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSlotTypeError> for Error {
-    fn from(err: crate::error::GetSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::GetSlotTypeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSlotTypeErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetSlotTypeErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetSlotTypeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSlotTypeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSlotTypesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSlotTypesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetSlotTypesError> for Error {
-    fn from(err: crate::error::GetSlotTypesError) -> Self {
-        match err.kind {
-            crate::error::GetSlotTypesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSlotTypesErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetSlotTypesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetSlotTypesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSlotTypesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSlotTypeVersionsError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_migration::GetMigrationError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSlotTypeVersionsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_migration::GetMigrationError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetSlotTypeVersionsError> for Error {
-    fn from(err: crate::error::GetSlotTypeVersionsError) -> Self {
-        match err.kind {
-            crate::error::GetSlotTypeVersionsErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_migration::GetMigrationError> for Error {
+    fn from(err: crate::operation::get_migration::GetMigrationError) -> Self {
+        match err {
+            crate::operation::get_migration::GetMigrationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetSlotTypeVersionsErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_migration::GetMigrationError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::GetSlotTypeVersionsErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_migration::GetMigrationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetSlotTypeVersionsErrorKind::NotFoundException(inner) => {
+            crate::operation::get_migration::GetMigrationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetSlotTypeVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_migration::GetMigrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUtterancesViewError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetUtterancesViewError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_migrations::GetMigrationsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetUtterancesViewError> for Error {
-    fn from(err: crate::error::GetUtterancesViewError) -> Self {
-        match err.kind {
-            crate::error::GetUtterancesViewErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_migrations::GetMigrationsError> for Error {
+    fn from(err: crate::operation::get_migrations::GetMigrationsError) -> Self {
+        match err {
+            crate::operation::get_migrations::GetMigrationsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetUtterancesViewErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::GetUtterancesViewErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_migrations::GetMigrationsError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::get_migrations::GetMigrationsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetUtterancesViewErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_migrations::GetMigrationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_slot_type::GetSlotTypeError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_slot_type::GetSlotTypeError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_slot_type::GetSlotTypeError> for Error {
+    fn from(err: crate::operation::get_slot_type::GetSlotTypeError) -> Self {
+        match err {
+            crate::operation::get_slot_type::GetSlotTypeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InternalFailureException(inner) => {
+            crate::operation::get_slot_type::GetSlotTypeError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::LimitExceededException(inner) => {
+            crate::operation::get_slot_type::GetSlotTypeError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+            crate::operation::get_slot_type::GetSlotTypeError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_slot_type::GetSlotTypeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutBotError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_slot_types::GetSlotTypesError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutBotError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_slot_types::GetSlotTypesError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutBotError> for Error {
-    fn from(err: crate::error::PutBotError) -> Self {
-        match err.kind {
-            crate::error::PutBotErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::get_slot_types::GetSlotTypesError> for Error {
+    fn from(err: crate::operation::get_slot_types::GetSlotTypesError) -> Self {
+        match err {
+            crate::operation::get_slot_types::GetSlotTypesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::PutBotErrorKind::ConflictException(inner) => {
+            crate::operation::get_slot_types::GetSlotTypesError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::get_slot_types::GetSlotTypesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_slot_types::GetSlotTypesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_slot_types::GetSlotTypesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_slot_type_versions::GetSlotTypeVersionsError> for Error {
+    fn from(err: crate::operation::get_slot_type_versions::GetSlotTypeVersionsError) -> Self {
+        match err {
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_utterances_view::GetUtterancesViewError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_utterances_view::GetUtterancesViewError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_utterances_view::GetUtterancesViewError> for Error {
+    fn from(err: crate::operation::get_utterances_view::GetUtterancesViewError) -> Self {
+        match err {
+            crate::operation::get_utterances_view::GetUtterancesViewError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_utterances_view::GetUtterancesViewError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_utterances_view::GetUtterancesViewError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_utterances_view::GetUtterancesViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_bot::PutBotError> for Error {
+    fn from(err: crate::operation::put_bot::PutBotError) -> Self {
+        match err {
+            crate::operation::put_bot::PutBotError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_bot::PutBotError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::PutBotErrorKind::InternalFailureException(inner) => {
+            crate::operation::put_bot::PutBotError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::PutBotErrorKind::LimitExceededException(inner) => {
+            crate::operation::put_bot::PutBotError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::PutBotErrorKind::PreconditionFailedException(inner) => {
+            crate::operation::put_bot::PutBotError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
-            crate::error::PutBotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::put_bot::PutBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutBotAliasError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::put_bot_alias::PutBotAliasError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutBotAliasError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_bot_alias::PutBotAliasError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutBotAliasError> for Error {
-    fn from(err: crate::error::PutBotAliasError) -> Self {
-        match err.kind {
-            crate::error::PutBotAliasErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::put_bot_alias::PutBotAliasError> for Error {
+    fn from(err: crate::operation::put_bot_alias::PutBotAliasError) -> Self {
+        match err {
+            crate::operation::put_bot_alias::PutBotAliasError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::PutBotAliasErrorKind::ConflictException(inner) => {
+            crate::operation::put_bot_alias::PutBotAliasError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::PutBotAliasErrorKind::InternalFailureException(inner) => {
+            crate::operation::put_bot_alias::PutBotAliasError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::PutBotAliasErrorKind::LimitExceededException(inner) => {
+            crate::operation::put_bot_alias::PutBotAliasError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::PutBotAliasErrorKind::PreconditionFailedException(inner) => {
+            crate::operation::put_bot_alias::PutBotAliasError::PreconditionFailedException(
+                inner,
+            ) => Error::PreconditionFailedException(inner),
+            crate::operation::put_bot_alias::PutBotAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_intent::PutIntentError> for Error {
+    fn from(err: crate::operation::put_intent::PutIntentError) -> Self {
+        match err {
+            crate::operation::put_intent::PutIntentError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_intent::PutIntentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_intent::PutIntentError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::put_intent::PutIntentError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::put_intent::PutIntentError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
-            crate::error::PutBotAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::put_intent::PutIntentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutIntentError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::put_slot_type::PutSlotTypeError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutIntentError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_slot_type::PutSlotTypeError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutIntentError> for Error {
-    fn from(err: crate::error::PutIntentError) -> Self {
-        match err.kind {
-            crate::error::PutIntentErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::put_slot_type::PutSlotTypeError> for Error {
+    fn from(err: crate::operation::put_slot_type::PutSlotTypeError) -> Self {
+        match err {
+            crate::operation::put_slot_type::PutSlotTypeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::PutIntentErrorKind::ConflictException(inner) => {
+            crate::operation::put_slot_type::PutSlotTypeError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::PutIntentErrorKind::InternalFailureException(inner) => {
+            crate::operation::put_slot_type::PutSlotTypeError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::PutIntentErrorKind::LimitExceededException(inner) => {
+            crate::operation::put_slot_type::PutSlotTypeError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::PutIntentErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::error::PutIntentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::put_slot_type::PutSlotTypeError::PreconditionFailedException(
+                inner,
+            ) => Error::PreconditionFailedException(inner),
+            crate::operation::put_slot_type::PutSlotTypeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutSlotTypeError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutSlotTypeError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutSlotTypeError> for Error {
-    fn from(err: crate::error::PutSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::PutSlotTypeErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::start_import::StartImportError> for Error {
+    fn from(err: crate::operation::start_import::StartImportError) -> Self {
+        match err {
+            crate::operation::start_import::StartImportError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::PutSlotTypeErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::PutSlotTypeErrorKind::InternalFailureException(inner) => {
+            crate::operation::start_import::StartImportError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::PutSlotTypeErrorKind::LimitExceededException(inner) => {
+            crate::operation::start_import::StartImportError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::PutSlotTypeErrorKind::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::error::PutSlotTypeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::start_import::StartImportError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartImportError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_migration::StartMigrationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartImportError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_migration::StartMigrationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartImportError> for Error {
-    fn from(err: crate::error::StartImportError) -> Self {
-        match err.kind {
-            crate::error::StartImportErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::StartImportErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::StartImportErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartImportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMigrationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartMigrationError, R>) -> Self {
+impl From<crate::operation::start_migration::StartMigrationError> for Error {
+    fn from(err: crate::operation::start_migration::StartMigrationError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartMigrationError> for Error {
-    fn from(err: crate::error::StartMigrationError) -> Self {
-        match err.kind {
-            crate::error::StartMigrationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartMigrationErrorKind::BadRequestException(inner) => {
+            crate::operation::start_migration::StartMigrationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::start_migration::StartMigrationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::StartMigrationErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::StartMigrationErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartMigrationErrorKind::NotFoundException(inner) => {
+            crate::operation::start_migration::StartMigrationError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::start_migration::StartMigrationError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::start_migration::StartMigrationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::StartMigrationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::start_migration::StartMigrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::TagResourceErrorKind::ConflictException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::TagResourceErrorKind::InternalFailureException(inner) => {
+            crate::operation::tag_resource::TagResourceError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
+            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UntagResourceErrorKind::ConflictException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UntagResourceErrorKind::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::error::UntagResourceErrorKind::LimitExceededException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalFailureException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::PreconditionFailedException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

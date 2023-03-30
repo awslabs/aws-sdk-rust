@@ -4,81 +4,102 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
-#![allow(clippy::blacklisted_name)]
+#![allow(clippy::disallowed_names)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
+#![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <fullname>WAF</fullname>
-//! <note>
-//! <p>This is the latest version of the <b>WAF</b> API,
-//! released in November, 2019. The names of the entities that you use to access this API,
-//! like endpoints and namespaces, all have the versioning information added, like "V2" or
-//! "v2", to distinguish from the prior version. We recommend migrating your resources to
-//! this version, because it has a number of significant improvements.</p>
-//! <p>If you used WAF prior to this release, you can't use this WAFV2 API to access any
-//! WAF resources that you created before. You can access your old rules, web ACLs, and
-//! other WAF resources only through the WAF Classic APIs. The WAF Classic APIs
-//! have retained the prior names, endpoints, and namespaces. </p>
-//! <p>For information, including how to migrate your WAF resources to this version,
-//! see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-//! </note>
-//! <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS
-//! requests that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync
-//! GraphQL API, or an Amazon Cognito user pool. WAF also lets you control access to your content. Based on conditions that
-//! you specify, such as the IP addresses that requests originate from or the values of query
-//! strings, the Amazon API Gateway REST API, CloudFront distribution, the Application Load Balancer, the AppSync GraphQL
-//! API, or the Amazon Cognito user pool responds to requests either with the requested content or with an HTTP 403 status code
-//! (Forbidden). You also can configure CloudFront to return a custom error page when a request is
-//! blocked.</p>
-//! <p>This API guide is for developers who need detailed information about WAF API actions,
-//! data types, and errors. For detailed information about WAF features and an overview of
-//! how to use WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer
-//! Guide</a>.</p>
-//! <p>You can make calls using the endpoints listed in <a href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF endpoints and quotas</a>. </p>
-//! <ul>
-//! <li>
-//! <p>For regional applications, you can use any of the endpoints in the list.
-//! A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
-//! </li>
-//! <li>
-//! <p>For Amazon CloudFront applications, you must use the API endpoint listed for
-//! US East (N. Virginia): us-east-1.</p>
-//! </li>
-//! </ul>
-//! <p>Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's tailored to the
-//! programming language or platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p>
-//! <p>We currently provide two versions of the WAF API: this API and the prior versions,
-//! the classic WAF APIs. This new API provides the same functionality as the older versions,
-//! with the following major improvements:</p>
-//! <ul>
-//! <li>
-//! <p>You use one API for both global and regional applications. Where you need to
-//! distinguish the scope, you specify a <code>Scope</code> parameter and set it to
-//! <code>CLOUDFRONT</code> or <code>REGIONAL</code>. </p>
-//! </li>
-//! <li>
-//! <p>You can define a web ACL or rule group with a single call, and update it with a
-//! single call. You define all rule specifications in JSON format, and pass them to your
-//! rule group or web ACL calls.</p>
-//! </li>
-//! <li>
-//! <p>The limits WAF places on the use of rules more closely reflects the cost of
-//! running each type of rule. Rule groups include capacity settings, so you know the
-//! maximum cost of a rule group when you use it.</p>
-//! </li>
-//! </ul>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//!
+//! WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. WAF also lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, the Amazon API Gateway REST API, CloudFront distribution, the Application Load Balancer, the AppSync GraphQL API, or the Amazon Cognito user pool responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You also can configure CloudFront to return a custom error page when a request is blocked.
+//!
+//! This API guide is for developers who need detailed information about WAF API actions, data types, and errors. For detailed information about WAF features and an overview of how to use WAF, see the [WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html).
+//!
+//! You can make calls using the endpoints listed in [WAF endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/waf.html).
+//!   - For regional applications, you can use any of the endpoints in the list. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+//!   - For Amazon CloudFront applications, you must use the API endpoint listed for US East (N. Virginia): us-east-1.
+//!
+//! Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's tailored to the programming language or platform that you're using. For more information, see [Amazon Web Services SDKs](http://aws.amazon.com/tools/#SDKs).
+//!
+//! We currently provide two versions of the WAF API: this API and the prior versions, the classic WAF APIs. This new API provides the same functionality as the older versions, with the following major improvements:
+//!   - You use one API for both global and regional applications. Where you need to distinguish the scope, you specify a Scope parameter and set it to CLOUDFRONT or REGIONAL.
+//!   - You can define a web ACL or rule group with a single call, and update it with a single call. You define all rule specifications in JSON format, and pass them to your rule group or web ACL calls.
+//!   - The limits WAF places on the use of rules more closely reflects the cost of running each type of rule. Rule groups include capacity settings, so you know the maximum cost of a rule group when you use it.
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-wafv2` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.55.0"
+//! aws-sdk-wafv2 = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_wafv2 as wafv2;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), wafv2::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = wafv2::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-wafv2/latest/aws_sdk_wafv2/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!
-//! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
-//! by the service.
+//! The entry point for most customers will be [`Client`], which exposes one method for each API
+//! offered by AWS WAFV2. The return value of each of these methods is a "fluent builder",
+//! where the different inputs for that API are added by builder-style function call chaining,
+//! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
+//! either a successful output or a [`SdkError`](crate::error::SdkError).
 //!
-//! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
+//! Some of these API inputs may be structs or enums to provide more complex structured information.
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
+//! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
 //!
-//! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
-//! error encompassing all possible errors that can be returned by the service.
+//! All types required to configure a client via the [`Config`](crate::Config) struct live
+//! in [`config`](crate::config).
+//!
+//! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
+//! is the input, output, and error type for that API, as well as builders to construct each of those.
+//!
+//! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
+//! client can return. Any other error type can be converted to this `Error` type via the
+//! [`From`](std::convert::From) trait.
 //!
 //! The other modules within this crate are not required for normal usage.
 
@@ -88,59 +109,107 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-/// Client and fluent builders for calling the service.
+/// Client for calling AWS WAFV2.
+/// ## Constructing a `Client`
+///
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_wafv2::Client::new(&config);
+/// # }
+/// ```
+///
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_wafv2::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`AssociateWebACL`](crate::operation::associate_web_acl) operation has
+/// a [`Client::associate_web_acl`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.associate_web_acl()
+///     .web_acl_arn("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
-/// Configuration for the service.
+/// Configuration for AWS WAFV2.
 pub mod config;
 
-/// Endpoint resolution functionality
+/// Endpoint resolution functionality.
 pub mod endpoint;
 
-/// All error types that operations can return. Documentation on these types is copied from the model.
+/// Common errors and error handling utilities.
 pub mod error;
 
 mod error_meta;
 
-/// Input structures for operations. Documentation on these types is copied from the model.
-pub mod input;
-
-/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
-pub mod model;
+/// Information about this crate.
+pub mod meta;
 
 /// All operations that this crate can perform.
 pub mod operation;
 
-/// Output structures for operations. Documentation on these types is copied from the model.
-pub mod output;
+/// Primitives such as `Blob` or `DateTime` used by other types.
+pub mod primitives;
 
-/// Data primitives referenced by other data types.
+/// Data structures used by operation inputs/outputs.
 pub mod types;
 
+///
 pub mod middleware;
 
+///
 mod no_credentials;
 
-mod operation_deser;
+pub(crate) mod protocol_serde;
 
-mod operation_ser;
-
-mod json_deser;
-
-mod json_ser;
-
-/// Endpoints standard library functions
 mod endpoint_lib;
 
 mod json_errors;
 
-/// Crate version number.
-pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use aws_smithy_http::endpoint::Endpoint;
-static API_METADATA: aws_http::user_agent::ApiMetadata =
-    aws_http::user_agent::ApiMetadata::new("wafv2", PKG_VERSION);
-pub use aws_credential_types::Credentials;
-pub use aws_types::app_name::AppName;
-pub use aws_types::region::Region;
 #[doc(inline)]
 pub use client::Client;

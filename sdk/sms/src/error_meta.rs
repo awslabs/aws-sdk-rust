@@ -4,38 +4,31 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
-    DryRunOperationException(crate::error::DryRunOperationException),
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>An internal error occurred.</p>
-    InternalError(crate::error::InternalError),
+    InternalError(crate::types::error::InternalError),
     /// <p>A specified parameter is not valid.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
-    MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
+    MissingRequiredParameterException(crate::types::error::MissingRequiredParameterException),
     /// <p>There are no connectors available.</p>
-    NoConnectorsAvailableException(crate::error::NoConnectorsAvailableException),
+    NoConnectorsAvailableException(crate::types::error::NoConnectorsAvailableException),
     /// <p>This operation is not allowed.</p>
-    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>The specified replication job already exists.</p>
-    ReplicationJobAlreadyExistsException(crate::error::ReplicationJobAlreadyExistsException),
+    ReplicationJobAlreadyExistsException(crate::types::error::ReplicationJobAlreadyExistsException),
     /// <p>The specified replication job does not exist.</p>
-    ReplicationJobNotFoundException(crate::error::ReplicationJobNotFoundException),
+    ReplicationJobNotFoundException(crate::types::error::ReplicationJobNotFoundException),
     /// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
-    ReplicationRunLimitExceededException(crate::error::ReplicationRunLimitExceededException),
+    ReplicationRunLimitExceededException(crate::types::error::ReplicationRunLimitExceededException),
     /// <p>The specified server cannot be replicated.</p>
-    ServerCannotBeReplicatedException(crate::error::ServerCannotBeReplicatedException),
+    ServerCannotBeReplicatedException(crate::types::error::ServerCannotBeReplicatedException),
     /// <p>The service is temporarily unavailable.</p>
-    TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
+    TemporarilyUnavailableException(crate::types::error::TemporarilyUnavailableException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
-    UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    ///
+    UnauthorizedOperationException(crate::types::error::UnauthorizedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,165 +49,66 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateAppError> for Error {
-    fn from(err: crate::error::CreateAppError) -> Self {
-        match err.kind {
-            crate::error::CreateAppErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::CreateAppErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateAppErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::CreateAppErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::CreateAppErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::CreateAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateReplicationJobError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateReplicationJobError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateReplicationJobError> for Error {
-    fn from(err: crate::error::CreateReplicationJobError) -> Self {
-        match err.kind {
-            crate::error::CreateReplicationJobErrorKind::InternalError(inner) => {
+impl From<crate::operation::create_app::CreateAppError> for Error {
+    fn from(err: crate::operation::create_app::CreateAppError) -> Self {
+        match err {
+            crate::operation::create_app::CreateAppError::InternalError(inner) => {
                 Error::InternalError(inner)
             }
-            crate::error::CreateReplicationJobErrorKind::InvalidParameterException(inner) => {
+            crate::operation::create_app::CreateAppError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::CreateReplicationJobErrorKind::MissingRequiredParameterException(
+            crate::operation::create_app::CreateAppError::MissingRequiredParameterException(
                 inner,
             ) => Error::MissingRequiredParameterException(inner),
-            crate::error::CreateReplicationJobErrorKind::NoConnectorsAvailableException(inner) => {
-                Error::NoConnectorsAvailableException(inner)
-            }
-            crate::error::CreateReplicationJobErrorKind::OperationNotPermittedException(inner) => {
+            crate::operation::create_app::CreateAppError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
-            crate::error::CreateReplicationJobErrorKind::ReplicationJobAlreadyExistsException(
-                inner,
-            ) => Error::ReplicationJobAlreadyExistsException(inner),
-            crate::error::CreateReplicationJobErrorKind::ServerCannotBeReplicatedException(
-                inner,
-            ) => Error::ServerCannotBeReplicatedException(inner),
-            crate::error::CreateReplicationJobErrorKind::TemporarilyUnavailableException(inner) => {
-                Error::TemporarilyUnavailableException(inner)
-            }
-            crate::error::CreateReplicationJobErrorKind::UnauthorizedOperationException(inner) => {
+            crate::operation::create_app::CreateAppError::UnauthorizedOperationException(inner) => {
                 Error::UnauthorizedOperationException(inner)
             }
-            crate::error::CreateReplicationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::create_app::CreateAppError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAppError> for Error {
-    fn from(err: crate::error::DeleteAppError) -> Self {
-        match err.kind {
-            crate::error::DeleteAppErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::DeleteAppErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteAppErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::DeleteAppErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DeleteAppErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::DeleteAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DeleteAppLaunchConfigurationError> for Error {
-    fn from(err: crate::error::DeleteAppLaunchConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteAppLaunchConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::DeleteAppLaunchConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::DeleteAppLaunchConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::DeleteAppLaunchConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteAppReplicationConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_job::CreateReplicationJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAppReplicationConfigurationError,
+            crate::operation::create_replication_job::CreateReplicationJobError,
             R,
         >,
     ) -> Self {
@@ -222,31 +116,93 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteAppReplicationConfigurationError> for Error {
-    fn from(err: crate::error::DeleteAppReplicationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteAppReplicationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::DeleteAppReplicationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::DeleteAppReplicationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::DeleteAppReplicationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::create_replication_job::CreateReplicationJobError> for Error {
+    fn from(err: crate::operation::create_replication_job::CreateReplicationJobError) -> Self {
+        match err {
+            crate::operation::create_replication_job::CreateReplicationJobError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::NoConnectorsAvailableException(inner) => Error::NoConnectorsAvailableException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::ReplicationJobAlreadyExistsException(inner) => Error::ReplicationJobAlreadyExistsException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::ServerCannotBeReplicatedException(inner) => Error::ServerCannotBeReplicatedException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::TemporarilyUnavailableException(inner) => Error::TemporarilyUnavailableException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteAppValidationConfigurationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_app::DeleteAppError> for Error {
+    fn from(err: crate::operation::delete_app::DeleteAppError) -> Self {
+        match err {
+            crate::operation::delete_app::DeleteAppError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::delete_app::DeleteAppError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_app::DeleteAppError::MissingRequiredParameterException(
+                inner,
+            ) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app::DeleteAppError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_app::DeleteAppError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::delete_app::DeleteAppError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAppValidationConfigurationError,
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError,
             R,
         >,
     ) -> Self {
@@ -254,297 +210,96 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteAppValidationConfigurationError> for Error {
-    fn from(err: crate::error::DeleteAppValidationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteAppValidationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::DeleteAppValidationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::DeleteAppValidationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::DeleteAppValidationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteReplicationJobError, R>>
+impl From<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteReplicationJobError, R>,
+        err: crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::DeleteReplicationJobError> for Error {
-    fn from(err: crate::error::DeleteReplicationJobError) -> Self {
-        match err.kind {
-            crate::error::DeleteReplicationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteReplicationJobErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::DeleteReplicationJobErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DeleteReplicationJobErrorKind::ReplicationJobNotFoundException(inner) => {
-                Error::ReplicationJobNotFoundException(inner)
-            }
-            crate::error::DeleteReplicationJobErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::DeleteReplicationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteServerCatalogError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteServerCatalogError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::DeleteServerCatalogError> for Error {
-    fn from(err: crate::error::DeleteServerCatalogError) -> Self {
-        match err.kind {
-            crate::error::DeleteServerCatalogErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteServerCatalogErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::DeleteServerCatalogErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DeleteServerCatalogErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::DeleteServerCatalogErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateConnectorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisassociateConnectorError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError> for Error {
+    fn from(err: crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::DisassociateConnectorError> for Error {
-    fn from(err: crate::error::DisassociateConnectorError) -> Self {
-        match err.kind {
-            crate::error::DisassociateConnectorErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DisassociateConnectorErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::DisassociateConnectorErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DisassociateConnectorErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::DisassociateConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateChangeSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GenerateChangeSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::GenerateChangeSetError> for Error {
-    fn from(err: crate::error::GenerateChangeSetError) -> Self {
-        match err.kind {
-            crate::error::GenerateChangeSetErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::GenerateChangeSetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GenerateChangeSetErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::GenerateChangeSetErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GenerateChangeSetErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GenerateChangeSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GenerateTemplateError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError> for Error {
+    fn from(err: crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GenerateTemplateError> for Error {
-    fn from(err: crate::error::GenerateTemplateError) -> Self {
-        match err.kind {
-            crate::error::GenerateTemplateErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::GenerateTemplateErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GenerateTemplateErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::GenerateTemplateErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GenerateTemplateErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GenerateTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAppError> for Error {
-    fn from(err: crate::error::GetAppError) -> Self {
-        match err.kind {
-            crate::error::GetAppErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::GetAppErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetAppErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::GetAppErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetAppErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GetAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAppLaunchConfigurationError> for Error {
-    fn from(err: crate::error::GetAppLaunchConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetAppLaunchConfigurationErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::GetAppLaunchConfigurationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetAppLaunchConfigurationErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::GetAppLaunchConfigurationErrorKind::OperationNotPermittedException(
-                inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::GetAppLaunchConfigurationErrorKind::UnauthorizedOperationException(
-                inner,
-            ) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetAppLaunchConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetAppReplicationConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_replication_job::DeleteReplicationJobError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetAppReplicationConfigurationError,
+            crate::operation::delete_replication_job::DeleteReplicationJobError,
             R,
         >,
     ) -> Self {
@@ -552,450 +307,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::GetAppReplicationConfigurationError> for Error {
-    fn from(err: crate::error::GetAppReplicationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetAppReplicationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::GetAppReplicationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::GetAppReplicationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::GetAppReplicationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError, R>,
-    ) -> Self {
+impl From<crate::operation::delete_replication_job::DeleteReplicationJobError> for Error {
+    fn from(err: crate::operation::delete_replication_job::DeleteReplicationJobError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAppValidationConfigurationError> for Error {
-    fn from(err: crate::error::GetAppValidationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetAppValidationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::GetAppValidationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::GetAppValidationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::GetAppValidationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppValidationOutputError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAppValidationOutputError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetAppValidationOutputError> for Error {
-    fn from(err: crate::error::GetAppValidationOutputError) -> Self {
-        match err.kind {
-            crate::error::GetAppValidationOutputErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::GetAppValidationOutputErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetAppValidationOutputErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::GetAppValidationOutputErrorKind::OperationNotPermittedException(
-                inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::GetAppValidationOutputErrorKind::UnauthorizedOperationException(
-                inner,
-            ) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetAppValidationOutputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetConnectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetConnectorsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetConnectorsError> for Error {
-    fn from(err: crate::error::GetConnectorsError) -> Self {
-        match err.kind {
-            crate::error::GetConnectorsErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GetConnectorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetReplicationJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetReplicationJobsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetReplicationJobsError> for Error {
-    fn from(err: crate::error::GetReplicationJobsError) -> Self {
-        match err.kind {
-            crate::error::GetReplicationJobsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetReplicationJobsErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::GetReplicationJobsErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GetReplicationJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetReplicationRunsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetReplicationRunsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetReplicationRunsError> for Error {
-    fn from(err: crate::error::GetReplicationRunsError) -> Self {
-        match err.kind {
-            crate::error::GetReplicationRunsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetReplicationRunsErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::GetReplicationRunsErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GetReplicationRunsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetServersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetServersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::GetServersError> for Error {
-    fn from(err: crate::error::GetServersError) -> Self {
-        match err.kind {
-            crate::error::GetServersErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::GetServersErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetServersErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::GetServersErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::GetServersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportAppCatalogError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ImportAppCatalogError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ImportAppCatalogError> for Error {
-    fn from(err: crate::error::ImportAppCatalogError) -> Self {
-        match err.kind {
-            crate::error::ImportAppCatalogErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::ImportAppCatalogErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ImportAppCatalogErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::ImportAppCatalogErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ImportAppCatalogErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::ImportAppCatalogErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportServerCatalogError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ImportServerCatalogError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ImportServerCatalogError> for Error {
-    fn from(err: crate::error::ImportServerCatalogError) -> Self {
-        match err.kind {
-            crate::error::ImportServerCatalogErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ImportServerCatalogErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::ImportServerCatalogErrorKind::NoConnectorsAvailableException(inner) => {
-                Error::NoConnectorsAvailableException(inner)
-            }
-            crate::error::ImportServerCatalogErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ImportServerCatalogErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::ImportServerCatalogErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::LaunchAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::LaunchAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::LaunchAppError> for Error {
-    fn from(err: crate::error::LaunchAppError) -> Self {
-        match err.kind {
-            crate::error::LaunchAppErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::LaunchAppErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::LaunchAppErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::LaunchAppErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::LaunchAppErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::LaunchAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAppsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListAppsError> for Error {
-    fn from(err: crate::error::ListAppsError) -> Self {
-        match err.kind {
-            crate::error::ListAppsErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::ListAppsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListAppsErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::ListAppsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListAppsErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::ListAppsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::NotifyAppValidationOutputError> for Error {
-    fn from(err: crate::error::NotifyAppValidationOutputError) -> Self {
-        match err.kind {
-            crate::error::NotifyAppValidationOutputErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::NotifyAppValidationOutputErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::NotifyAppValidationOutputErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::NotifyAppValidationOutputErrorKind::OperationNotPermittedException(
-                inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::NotifyAppValidationOutputErrorKind::UnauthorizedOperationException(
-                inner,
-            ) => Error::UnauthorizedOperationException(inner),
-            crate::error::NotifyAppValidationOutputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::PutAppLaunchConfigurationError> for Error {
-    fn from(err: crate::error::PutAppLaunchConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutAppLaunchConfigurationErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::PutAppLaunchConfigurationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::PutAppLaunchConfigurationErrorKind::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::error::PutAppLaunchConfigurationErrorKind::OperationNotPermittedException(
-                inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::PutAppLaunchConfigurationErrorKind::UnauthorizedOperationException(
-                inner,
-            ) => Error::UnauthorizedOperationException(inner),
-            crate::error::PutAppLaunchConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::delete_replication_job::DeleteReplicationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_replication_job::DeleteReplicationJobError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_replication_job::DeleteReplicationJobError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_replication_job::DeleteReplicationJobError::ReplicationJobNotFoundException(inner) => Error::ReplicationJobNotFoundException(inner),
+            crate::operation::delete_replication_job::DeleteReplicationJobError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_replication_job::DeleteReplicationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::PutAppReplicationConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_server_catalog::DeleteServerCatalogError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::PutAppReplicationConfigurationError,
+            crate::operation::delete_server_catalog::DeleteServerCatalogError,
             R,
         >,
     ) -> Self {
@@ -1003,304 +350,1205 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutAppReplicationConfigurationError> for Error {
-    fn from(err: crate::error::PutAppReplicationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutAppReplicationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::PutAppReplicationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::PutAppReplicationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::PutAppReplicationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::PutAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::delete_server_catalog::DeleteServerCatalogError> for Error {
+    fn from(err: crate::operation::delete_server_catalog::DeleteServerCatalogError) -> Self {
+        match err {
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_connector::DisassociateConnectorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_connector::DisassociateConnectorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_connector::DisassociateConnectorError> for Error {
+    fn from(err: crate::operation::disassociate_connector::DisassociateConnectorError) -> Self {
+        match err {
+            crate::operation::disassociate_connector::DisassociateConnectorError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_connector::DisassociateConnectorError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::disassociate_connector::DisassociateConnectorError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::disassociate_connector::DisassociateConnectorError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::disassociate_connector::DisassociateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::generate_change_set::GenerateChangeSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::generate_change_set::GenerateChangeSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::generate_change_set::GenerateChangeSetError> for Error {
+    fn from(err: crate::operation::generate_change_set::GenerateChangeSetError) -> Self {
+        match err {
+            crate::operation::generate_change_set::GenerateChangeSetError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::generate_change_set::GenerateChangeSetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::generate_change_set::GenerateChangeSetError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::generate_change_set::GenerateChangeSetError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::generate_change_set::GenerateChangeSetError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::generate_change_set::GenerateChangeSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::generate_template::GenerateTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::generate_template::GenerateTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::generate_template::GenerateTemplateError> for Error {
+    fn from(err: crate::operation::generate_template::GenerateTemplateError) -> Self {
+        match err {
+            crate::operation::generate_template::GenerateTemplateError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::generate_template::GenerateTemplateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::generate_template::GenerateTemplateError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::generate_template::GenerateTemplateError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::generate_template::GenerateTemplateError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::generate_template::GenerateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app::GetAppError> for Error {
+    fn from(err: crate::operation::get_app::GetAppError) -> Self {
+        match err {
+            crate::operation::get_app::GetAppError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::get_app::GetAppError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_app::GetAppError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_app::GetAppError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_app::GetAppError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::get_app::GetAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_app_validation_output::GetAppValidationOutputError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_app_validation_output::GetAppValidationOutputError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app_validation_output::GetAppValidationOutputError> for Error {
+    fn from(err: crate::operation::get_app_validation_output::GetAppValidationOutputError) -> Self {
+        match err {
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_connectors::GetConnectorsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_connectors::GetConnectorsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::PutAppValidationConfigurationError> for Error {
-    fn from(err: crate::error::PutAppValidationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutAppValidationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::PutAppValidationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::PutAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::PutAppValidationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::PutAppValidationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::PutAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+impl From<crate::operation::get_connectors::GetConnectorsError> for Error {
+    fn from(err: crate::operation::get_connectors::GetConnectorsError) -> Self {
+        match err {
+            crate::operation::get_connectors::GetConnectorsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_connectors::GetConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAppReplicationError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_jobs::GetReplicationJobsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartAppReplicationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_jobs::GetReplicationJobsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartAppReplicationError> for Error {
-    fn from(err: crate::error::StartAppReplicationError) -> Self {
-        match err.kind {
-            crate::error::StartAppReplicationErrorKind::InternalError(inner) => {
+impl From<crate::operation::get_replication_jobs::GetReplicationJobsError> for Error {
+    fn from(err: crate::operation::get_replication_jobs::GetReplicationJobsError) -> Self {
+        match err {
+            crate::operation::get_replication_jobs::GetReplicationJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_replication_jobs::GetReplicationJobsError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_replication_jobs::GetReplicationJobsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_replication_jobs::GetReplicationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_runs::GetReplicationRunsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_runs::GetReplicationRunsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_replication_runs::GetReplicationRunsError> for Error {
+    fn from(err: crate::operation::get_replication_runs::GetReplicationRunsError) -> Self {
+        match err {
+            crate::operation::get_replication_runs::GetReplicationRunsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_replication_runs::GetReplicationRunsError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_replication_runs::GetReplicationRunsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_replication_runs::GetReplicationRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_servers::GetServersError> for Error {
+    fn from(err: crate::operation::get_servers::GetServersError) -> Self {
+        match err {
+            crate::operation::get_servers::GetServersError::InternalError(inner) => {
                 Error::InternalError(inner)
             }
-            crate::error::StartAppReplicationErrorKind::InvalidParameterException(inner) => {
+            crate::operation::get_servers::GetServersError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::StartAppReplicationErrorKind::MissingRequiredParameterException(
+            crate::operation::get_servers::GetServersError::MissingRequiredParameterException(
                 inner,
             ) => Error::MissingRequiredParameterException(inner),
-            crate::error::StartAppReplicationErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StartAppReplicationErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::StartAppReplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::get_servers::GetServersError::UnauthorizedOperationException(
+                inner,
+            ) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_servers::GetServersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_app_catalog::ImportAppCatalogError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::import_app_catalog::ImportAppCatalogError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::import_app_catalog::ImportAppCatalogError> for Error {
+    fn from(err: crate::operation::import_app_catalog::ImportAppCatalogError) -> Self {
+        match err {
+            crate::operation::import_app_catalog::ImportAppCatalogError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::import_app_catalog::ImportAppCatalogError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::import_app_catalog::ImportAppCatalogError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::import_app_catalog::ImportAppCatalogError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::import_app_catalog::ImportAppCatalogError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::import_app_catalog::ImportAppCatalogError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_server_catalog::ImportServerCatalogError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::import_server_catalog::ImportServerCatalogError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::import_server_catalog::ImportServerCatalogError> for Error {
+    fn from(err: crate::operation::import_server_catalog::ImportServerCatalogError) -> Self {
+        match err {
+            crate::operation::import_server_catalog::ImportServerCatalogError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::import_server_catalog::ImportServerCatalogError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::import_server_catalog::ImportServerCatalogError::NoConnectorsAvailableException(inner) => Error::NoConnectorsAvailableException(inner),
+            crate::operation::import_server_catalog::ImportServerCatalogError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::import_server_catalog::ImportServerCatalogError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::import_server_catalog::ImportServerCatalogError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::launch_app::LaunchAppError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::launch_app::LaunchAppError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::StartOnDemandAppReplicationError> for Error {
-    fn from(err: crate::error::StartOnDemandAppReplicationError) -> Self {
-        match err.kind {
-            crate::error::StartOnDemandAppReplicationErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::StartOnDemandAppReplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::StartOnDemandAppReplicationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::StartOnDemandAppReplicationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::StartOnDemandAppReplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError, R>,
-    ) -> Self {
+impl From<crate::operation::launch_app::LaunchAppError> for Error {
+    fn from(err: crate::operation::launch_app::LaunchAppError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StartOnDemandReplicationRunError> for Error {
-    fn from(err: crate::error::StartOnDemandReplicationRunError) -> Self {
-        match err.kind {
-            crate::error::StartOnDemandReplicationRunErrorKind::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
-            crate::error::StartOnDemandReplicationRunErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartOnDemandReplicationRunErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::StartOnDemandReplicationRunErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::StartOnDemandReplicationRunErrorKind::ReplicationRunLimitExceededException(inner) => Error::ReplicationRunLimitExceededException(inner),
-            crate::error::StartOnDemandReplicationRunErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::StartOnDemandReplicationRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopAppReplicationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopAppReplicationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::StopAppReplicationError> for Error {
-    fn from(err: crate::error::StopAppReplicationError) -> Self {
-        match err.kind {
-            crate::error::StopAppReplicationErrorKind::InternalError(inner) => {
+            crate::operation::launch_app::LaunchAppError::InternalError(inner) => {
                 Error::InternalError(inner)
             }
-            crate::error::StopAppReplicationErrorKind::InvalidParameterException(inner) => {
+            crate::operation::launch_app::LaunchAppError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::StopAppReplicationErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::StopAppReplicationErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StopAppReplicationErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::StopAppReplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TerminateAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TerminateAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::TerminateAppError> for Error {
-    fn from(err: crate::error::TerminateAppError) -> Self {
-        match err.kind {
-            crate::error::TerminateAppErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::TerminateAppErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::TerminateAppErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::TerminateAppErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::TerminateAppErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::TerminateAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAppError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAppError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateAppError> for Error {
-    fn from(err: crate::error::UpdateAppError) -> Self {
-        match err.kind {
-            crate::error::UpdateAppErrorKind::InternalError(inner) => Error::InternalError(inner),
-            crate::error::UpdateAppErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateAppErrorKind::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::UpdateAppErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::UpdateAppErrorKind::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::error::UpdateAppErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateReplicationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateReplicationJobError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateReplicationJobError> for Error {
-    fn from(err: crate::error::UpdateReplicationJobError) -> Self {
-        match err.kind {
-            crate::error::UpdateReplicationJobErrorKind::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::error::UpdateReplicationJobErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateReplicationJobErrorKind::MissingRequiredParameterException(
+            crate::operation::launch_app::LaunchAppError::MissingRequiredParameterException(
                 inner,
             ) => Error::MissingRequiredParameterException(inner),
-            crate::error::UpdateReplicationJobErrorKind::OperationNotPermittedException(inner) => {
+            crate::operation::launch_app::LaunchAppError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
-            crate::error::UpdateReplicationJobErrorKind::ReplicationJobNotFoundException(inner) => {
-                Error::ReplicationJobNotFoundException(inner)
-            }
-            crate::error::UpdateReplicationJobErrorKind::ServerCannotBeReplicatedException(
-                inner,
-            ) => Error::ServerCannotBeReplicatedException(inner),
-            crate::error::UpdateReplicationJobErrorKind::TemporarilyUnavailableException(inner) => {
-                Error::TemporarilyUnavailableException(inner)
-            }
-            crate::error::UpdateReplicationJobErrorKind::UnauthorizedOperationException(inner) => {
+            crate::operation::launch_app::LaunchAppError::UnauthorizedOperationException(inner) => {
                 Error::UnauthorizedOperationException(inner)
             }
-            crate::error::UpdateReplicationJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::operation::launch_app::LaunchAppError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_apps::ListAppsError> for Error {
+    fn from(err: crate::operation::list_apps::ListAppsError) -> Self {
+        match err {
+            crate::operation::list_apps::ListAppsError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::list_apps::ListAppsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_apps::ListAppsError::MissingRequiredParameterException(
+                inner,
+            ) => Error::MissingRequiredParameterException(inner),
+            crate::operation::list_apps::ListAppsError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::list_apps::ListAppsError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::list_apps::ListAppsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError>
+    for Error
+{
+    fn from(
+        err: crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
+    ) -> Self {
+        match err {
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_app_replication::StartAppReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_app_replication::StartAppReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_app_replication::StartAppReplicationError> for Error {
+    fn from(err: crate::operation::start_app_replication::StartAppReplicationError) -> Self {
+        match err {
+            crate::operation::start_app_replication::StartAppReplicationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::start_app_replication::StartAppReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_app_replication::StartAppReplicationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::start_app_replication::StartAppReplicationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_app_replication::StartAppReplicationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::start_app_replication::StartAppReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
+    ) -> Self {
+        match err {
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::ReplicationRunLimitExceededException(inner) => Error::ReplicationRunLimitExceededException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_app_replication::StopAppReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_app_replication::StopAppReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_app_replication::StopAppReplicationError> for Error {
+    fn from(err: crate::operation::stop_app_replication::StopAppReplicationError) -> Self {
+        match err {
+            crate::operation::stop_app_replication::StopAppReplicationError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::stop_app_replication::StopAppReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::stop_app_replication::StopAppReplicationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::stop_app_replication::StopAppReplicationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::stop_app_replication::StopAppReplicationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::stop_app_replication::StopAppReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::terminate_app::TerminateAppError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::terminate_app::TerminateAppError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::terminate_app::TerminateAppError> for Error {
+    fn from(err: crate::operation::terminate_app::TerminateAppError) -> Self {
+        match err {
+            crate::operation::terminate_app::TerminateAppError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::terminate_app::TerminateAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::terminate_app::TerminateAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::terminate_app::TerminateAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::terminate_app::TerminateAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::terminate_app::TerminateAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_app::UpdateAppError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_app::UpdateAppError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_app::UpdateAppError> for Error {
+    fn from(err: crate::operation::update_app::UpdateAppError) -> Self {
+        match err {
+            crate::operation::update_app::UpdateAppError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::update_app::UpdateAppError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_app::UpdateAppError::MissingRequiredParameterException(
+                inner,
+            ) => Error::MissingRequiredParameterException(inner),
+            crate::operation::update_app::UpdateAppError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::update_app::UpdateAppError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::update_app::UpdateAppError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_replication_job::UpdateReplicationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_replication_job::UpdateReplicationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_replication_job::UpdateReplicationJobError> for Error {
+    fn from(err: crate::operation::update_replication_job::UpdateReplicationJobError) -> Self {
+        match err {
+            crate::operation::update_replication_job::UpdateReplicationJobError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::ReplicationJobNotFoundException(inner) => Error::ReplicationJobNotFoundException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::ServerCannotBeReplicatedException(inner) => Error::ServerCannotBeReplicatedException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::TemporarilyUnavailableException(inner) => Error::TemporarilyUnavailableException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::DryRunOperationException(e) => e.request_id(),
+            Self::InternalError(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::MissingRequiredParameterException(e) => e.request_id(),
+            Self::NoConnectorsAvailableException(e) => e.request_id(),
+            Self::OperationNotPermittedException(e) => e.request_id(),
+            Self::ReplicationJobAlreadyExistsException(e) => e.request_id(),
+            Self::ReplicationJobNotFoundException(e) => e.request_id(),
+            Self::ReplicationRunLimitExceededException(e) => e.request_id(),
+            Self::ServerCannotBeReplicatedException(e) => e.request_id(),
+            Self::TemporarilyUnavailableException(e) => e.request_id(),
+            Self::UnauthorizedOperationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

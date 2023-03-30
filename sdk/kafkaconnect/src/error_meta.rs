@@ -4,30 +4,23 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your request with another name.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>
-    InternalServerErrorException(crate::error::InternalServerErrorException),
+    InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// <p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
-    UnauthorizedException(crate::error::UnauthorizedException),
-    ///
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,549 +37,570 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateConnectorError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateConnectorError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::CreateConnectorError> for Error {
-    fn from(err: crate::error::CreateConnectorError) -> Self {
-        match err.kind {
-            crate::error::CreateConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCustomPluginError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_connector::CreateConnectorError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCustomPluginError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_connector::CreateConnectorError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateCustomPluginError> for Error {
-    fn from(err: crate::error::CreateCustomPluginError) -> Self {
-        match err.kind {
-            crate::error::CreateCustomPluginErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateCustomPluginErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::create_connector::CreateConnectorError> for Error {
+    fn from(err: crate::operation::create_connector::CreateConnectorError) -> Self {
+        match err {
+            crate::operation::create_connector::CreateConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_connector::CreateConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_connector::CreateConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_connector::CreateConnectorError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_connector::CreateConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_connector::CreateConnectorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_connector::CreateConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_connector::CreateConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_connector::CreateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWorkerConfigurationError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_plugin::CreateCustomPluginError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_plugin::CreateCustomPluginError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_custom_plugin::CreateCustomPluginError> for Error {
+    fn from(err: crate::operation::create_custom_plugin::CreateCustomPluginError) -> Self {
+        match err {
+            crate::operation::create_custom_plugin::CreateCustomPluginError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_custom_plugin::CreateCustomPluginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_worker_configuration::CreateWorkerConfigurationError> for Error {
+    fn from(
+        err: crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_connector::DeleteConnectorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_connector::DeleteConnectorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_connector::DeleteConnectorError> for Error {
+    fn from(err: crate::operation::delete_connector::DeleteConnectorError) -> Self {
+        match err {
+            crate::operation::delete_connector::DeleteConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_plugin::DeleteCustomPluginError> for Error {
+    fn from(err: crate::operation::delete_custom_plugin::DeleteCustomPluginError) -> Self {
+        match err {
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_connector::DescribeConnectorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_connector::DescribeConnectorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_connector::DescribeConnectorError> for Error {
+    fn from(err: crate::operation::describe_connector::DescribeConnectorError) -> Self {
+        match err {
+            crate::operation::describe_connector::DescribeConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_connector::DescribeConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_custom_plugin::DescribeCustomPluginError> for Error {
+    fn from(err: crate::operation::describe_custom_plugin::DescribeCustomPluginError) -> Self {
+        match err {
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_custom_plugin::DescribeCustomPluginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError>
     for Error
+{
+    fn from(
+        err: crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_connectors::ListConnectorsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateWorkerConfigurationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_connectors::ListConnectorsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::CreateWorkerConfigurationError> for Error {
-    fn from(err: crate::error::CreateWorkerConfigurationError) -> Self {
-        match err.kind {
-            crate::error::CreateWorkerConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateWorkerConfigurationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateWorkerConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateWorkerConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::CreateWorkerConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateWorkerConfigurationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateWorkerConfigurationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateWorkerConfigurationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateWorkerConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConnectorError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteConnectorError, R>) -> Self {
+impl From<crate::operation::list_connectors::ListConnectorsError> for Error {
+    fn from(err: crate::operation::list_connectors::ListConnectorsError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            crate::operation::list_connectors::ListConnectorsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_connectors::ListConnectorsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_connectors::ListConnectorsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_connectors::ListConnectorsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_connectors::ListConnectorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_connectors::ListConnectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_connectors::ListConnectorsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_connectors::ListConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::DeleteConnectorError> for Error {
-    fn from(err: crate::error::DeleteConnectorError) -> Self {
-        match err.kind {
-            crate::error::DeleteConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomPluginError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_plugins::ListCustomPluginsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomPluginError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_plugins::ListCustomPluginsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DeleteCustomPluginError> for Error {
-    fn from(err: crate::error::DeleteCustomPluginError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomPluginErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteCustomPluginErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::list_custom_plugins::ListCustomPluginsError> for Error {
+    fn from(err: crate::operation::list_custom_plugins::ListCustomPluginsError) -> Self {
+        match err {
+            crate::operation::list_custom_plugins::ListCustomPluginsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_custom_plugins::ListCustomPluginsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeConnectorError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeConnectorError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeConnectorError> for Error {
-    fn from(err: crate::error::DescribeConnectorError) -> Self {
-        match err.kind {
-            crate::error::DescribeConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+impl From<crate::operation::list_worker_configurations::ListWorkerConfigurationsError> for Error {
+    fn from(
+        err: crate::operation::list_worker_configurations::ListWorkerConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCustomPluginError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_connector::UpdateConnectorError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCustomPluginError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_connector::UpdateConnectorError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::error::DescribeCustomPluginError> for Error {
-    fn from(err: crate::error::DescribeCustomPluginError) -> Self {
-        match err.kind {
-            crate::error::DescribeCustomPluginErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeCustomPluginErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWorkerConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeWorkerConfigurationError, R>,
-    ) -> Self {
+impl From<crate::operation::update_connector::UpdateConnectorError> for Error {
+    fn from(err: crate::operation::update_connector::UpdateConnectorError) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::DescribeWorkerConfigurationError> for Error {
-    fn from(err: crate::error::DescribeWorkerConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DescribeWorkerConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeWorkerConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeWorkerConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DescribeWorkerConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeWorkerConfigurationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeWorkerConfigurationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeWorkerConfigurationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeWorkerConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListConnectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListConnectorsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListConnectorsError> for Error {
-    fn from(err: crate::error::ListConnectorsError) -> Self {
-        match err.kind {
-            crate::error::ListConnectorsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListConnectorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCustomPluginsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCustomPluginsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListCustomPluginsError> for Error {
-    fn from(err: crate::error::ListCustomPluginsError) -> Self {
-        match err.kind {
-            crate::error::ListCustomPluginsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListCustomPluginsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorkerConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListWorkerConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::ListWorkerConfigurationsError> for Error {
-    fn from(err: crate::error::ListWorkerConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::ListWorkerConfigurationsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListWorkerConfigurationsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListWorkerConfigurationsErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::ListWorkerConfigurationsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListWorkerConfigurationsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListWorkerConfigurationsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListWorkerConfigurationsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListWorkerConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateConnectorError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateConnectorError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-}
-impl From<crate::error::UpdateConnectorError> for Error {
-    fn from(err: crate::error::UpdateConnectorError) -> Self {
-        match err.kind {
-            crate::error::UpdateConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::operation::update_connector::UpdateConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_connector::UpdateConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_connector::UpdateConnectorError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_connector::UpdateConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_connector::UpdateConnectorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_connector::UpdateConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_connector::UpdateConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_connector::UpdateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::InternalServerErrorException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
