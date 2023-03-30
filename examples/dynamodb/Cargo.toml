@@ -6,6 +6,8 @@ authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 axum = "0.5.16"
 http = "0.2.5"

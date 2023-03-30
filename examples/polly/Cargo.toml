@@ -6,6 +6,8 @@ authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 bytes = "1"
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }

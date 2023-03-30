@@ -7,6 +7,8 @@ description = "A collection of examples that demonstrate how to run AWS SDK requ
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 futures = "0.3.25"
 tracing = "0.1.37"

@@ -10,6 +10,8 @@ edition = "2021"
 description = "MVP Scenario to show many features of the Rust AWS Glue SDK. https://github.com/awsdocs/aws-doc-sdk-examples/issues/2941"
 publish = false
 
+[workspace]
+
 [dependencies]
 tracing = "0.1.37"
 async_once = "0.2.6"

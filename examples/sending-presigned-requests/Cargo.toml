@@ -6,6 +6,8 @@ authors = ["Zelda Hessler <zhessler@amazon.com>"]
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 http = "0.2.6"
 hyper = "0.14"

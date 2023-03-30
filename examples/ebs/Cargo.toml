@@ -6,6 +6,8 @@ authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 base64 = "0.13.0"
 sha2 = "0.9.5"

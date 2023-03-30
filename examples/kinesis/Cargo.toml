@@ -10,6 +10,8 @@ publish = false
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
 aws-sdk-kinesis= { version = "0.25.0", path = "../../sdk/kinesis" }
 
+[workspace]
+
 [dependencies.tokio]
 version = "1.20.1"
 features = ["full"]

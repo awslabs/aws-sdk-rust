@@ -11,6 +11,8 @@ edition = "2021"
 description = "Example usage of the IAM service"
 publish = false
 
+[workspace]
+
 [lib]
 name = "iam_service"
 path = "src/iam-service-lib.rs"

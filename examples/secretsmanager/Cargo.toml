@@ -11,6 +11,8 @@ publish = false
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
 aws-sdk-secretsmanager= { version = "0.25.0", path = "../../sdk/secretsmanager" }
 
+[workspace]
+
 [dependencies.tokio]
 version = "1.20.1"
 features = ["full"]

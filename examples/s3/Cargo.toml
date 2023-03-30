@@ -10,6 +10,8 @@ authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com
 edition = "2021"
 publish = false
 
+[workspace]
+
 [lib]
 name = "s3_service"
 path = "src/s3-service-lib.rs"

@@ -5,6 +5,8 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 thiserror = "1.0"
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }

@@ -6,6 +6,8 @@ authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.
 edition = "2021"
 publish = false
 
+[workspace]
+
 [dependencies]
 async-stream = "0.3"
 bytes = "1"
