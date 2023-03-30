@@ -3121,7 +3121,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomVerificationEmailTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomVerificationEmailTemplatesPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListCustomVerificationEmailTemplatesPaginator {
                                         crate::paginator::ListCustomVerificationEmailTemplatesPaginator::new(self.handle, self.inner)
                                     }
@@ -3193,7 +3193,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListIdentitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListIdentitiesPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListIdentitiesPaginator {
                                         crate::paginator::ListIdentitiesPaginator::new(self.handle, self.inner)
                                     }

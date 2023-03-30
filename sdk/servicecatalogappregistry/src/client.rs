@@ -1235,7 +1235,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator {
                                         crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
                                     }
@@ -1306,7 +1306,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedAttributeGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedAttributeGroupsPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListAssociatedAttributeGroupsPaginator {
                                         crate::paginator::ListAssociatedAttributeGroupsPaginator::new(self.handle, self.inner)
                                     }
@@ -1389,7 +1389,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedResourcesPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListAssociatedResourcesPaginator {
                                         crate::paginator::ListAssociatedResourcesPaginator::new(self.handle, self.inner)
                                     }
@@ -1470,7 +1470,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAttributeGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAttributeGroupsPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListAttributeGroupsPaginator {
                                         crate::paginator::ListAttributeGroupsPaginator::new(self.handle, self.inner)
                                     }
@@ -1541,7 +1541,7 @@ pub mod fluent_builders {
                                 }
         /// Create a paginator for this request
                                     ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAttributeGroupsForApplicationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAttributeGroupsForApplicationPaginator::send) which returns a `Stream`.
                                     pub fn into_paginator(self) -> crate::paginator::ListAttributeGroupsForApplicationPaginator {
                                         crate::paginator::ListAttributeGroupsForApplicationPaginator::new(self.handle, self.inner)
                                     }
