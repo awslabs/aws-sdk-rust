@@ -74,6 +74,7 @@ March 30th, 2023
     Although there is no API breakage from this change, it alters the client behavior in a way that may cause breakage for customers.
 - ⚠ ([smithy-rs#2390](https://github.com/awslabs/smithy-rs/issues/2390), [smithy-rs#1784](https://github.com/awslabs/smithy-rs/issues/1784)) Remove deprecated `ResolveAwsEndpoint` interfaces.
     [For details see the longform changelog entry](https://github.com/awslabs/aws-sdk-rust/discussions/755).
+- ⚠🎉 ([smithy-rs#2222](https://github.com/awslabs/smithy-rs/issues/2222), @Nugine) Upgrade Rust MSRV to 1.63.0
 
 **New this release:**
 - 🐛🎉 ([aws-sdk-rust#740](https://github.com/awslabs/aws-sdk-rust/issues/740)) Fluent builder methods on the client are now marked as deprecated when the related operation is deprecated.
@@ -87,6 +88,55 @@ March 30th, 2023
     **Behavior Change**: Prior to this change, the Hyper client would be shared between all service clients. After this change, each service client will use its own Hyper Client.
     To revert to the previous behavior, set `HttpConnector::Prebuilt` on `SdkConfig::http_connector`.
 - ([smithy-rs#2474](https://github.com/awslabs/smithy-rs/issues/2474)) Increase Tokio version to 1.23.1 for all crates. This is to address [RUSTSEC-2023-0001](https://rustsec.org/advisories/RUSTSEC-2023-0001)
+- 🎉 ([smithy-rs#2258](https://github.com/awslabs/smithy-rs/issues/2258)) Add static stability support to IMDS credentials provider. It does not alter common use cases for the provider, but allows the provider to serve expired credentials in case IMDS is unreachable. This allows requests to be dispatched to a target service with expired credentials. This, in turn, allows the target service to make the ultimate decision as to whether requests sent are valid or not.
+- ([smithy-rs#2246](https://github.com/awslabs/smithy-rs/issues/2246)) Provide a way to retrieve fallback credentials if a call to `provide_credentials` is interrupted. An interrupt can occur when a timeout future is raced against a future for `provide_credentials`, and the former wins the race. A new method, `fallback_on_interrupt` on the `ProvideCredentials` trait, can be used in that case. The following code snippet from `LazyCredentialsCache::provide_cached_credentials` has been updated like so:
+
+    Before:
+    ```rust
+    let timeout_future = self.sleeper.sleep(self.load_timeout);
+    // --snip--
+    let future = Timeout::new(provider.provide_credentials(), timeout_future);
+    let result = cache
+        .get_or_load(|| {
+            async move {
+                let credentials = future.await.map_err(|_err| {
+                    CredentialsError::provider_timed_out(load_timeout)
+                })??;
+                // --snip--
+            }
+        }).await;
+    // --snip--
+    ```
+
+    After:
+    ```rust
+    let timeout_future = self.sleeper.sleep(self.load_timeout);
+    // --snip--
+    let future = Timeout::new(provider.provide_credentials(), timeout_future);
+    let result = cache
+        .get_or_load(|| {
+            async move {
+               let credentials = match future.await {
+                    Ok(creds) => creds?,
+                    Err(_err) => match provider.fallback_on_interrupt() { // can provide fallback credentials
+                        Some(creds) => creds,
+                        None => return Err(CredentialsError::provider_timed_out(load_timeout)),
+                    }
+                };
+                // --snip--
+            }
+        }).await;
+    // --snip--
+    ```
+- 🐛 ([smithy-rs#2271](https://github.com/awslabs/smithy-rs/issues/2271)) Fix broken doc link for `tokio_stream::Stream` that is a re-export of `futures_core::Stream`.
+- 🐛 ([smithy-rs#2261](https://github.com/awslabs/smithy-rs/issues/2261), [aws-sdk-rust#720](https://github.com/awslabs/aws-sdk-rust/issues/720), @nipunn1313) Fix request canonicalization for HTTP requests with repeated headers (for example S3's `GetObjectAttributes`). Previously requests with repeated headers would fail with a 403 signature mismatch due to this bug.
+- ([smithy-rs#2335](https://github.com/awslabs/smithy-rs/issues/2335)) Adds jitter to `LazyCredentialsCache`. This allows credentials with the same expiry to expire at slightly different times, thereby preventing thundering herds.
+- 🐛 ([aws-sdk-rust#736](https://github.com/awslabs/aws-sdk-rust/issues/736)) Fix issue where clients using native-tls connector were prevented from making HTTPS requests.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @Nugine ([smithy-rs#2222](https://github.com/awslabs/smithy-rs/issues/2222))
+- @nipunn1313 ([aws-sdk-rust#720](https://github.com/awslabs/aws-sdk-rust/issues/720), [smithy-rs#2261](https://github.com/awslabs/smithy-rs/issues/2261))
 
 
 January 26th, 2023
